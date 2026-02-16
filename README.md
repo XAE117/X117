@@ -1,74 +1,90 @@
-# Dating Contact Tracker
+# LifeOS
 
-A simple CLI tool to track your dating connections from various platforms.
+A personal life operating system -- a collection of CLI tools to manage every aspect of your life from the terminal.
 
-## Features
-
-- Track contacts from any dating platform (Tinder, Bumble, Hinge, etc.)
-- Record when you first started talking
-- See how long you've been talking to each person
-- Add notes about important details to remember
-- Track last contact date with reminders
-- Search through contacts and notes
-- Filter by status (active, dating, ghosted, ended)
-
-## Usage
+## Quick Start
 
 ```bash
+# Launch the unified dashboard
+python3 lifeos.py
+
+# Or run any component directly
 python3 dating_tracker.py
+python3 habit_tracker.py
+python3 fitness_tracker.py
+python3 finance_tracker.py
+python3 journal.py
+python3 goal_tracker.py
 ```
 
-### Commands
+## Components
 
-| Command | Description |
-|---------|-------------|
-| `list [status] [platform]` | List all contacts with optional filters |
-| `add` | Add a new contact (interactive) |
-| `view <id>` | View detailed contact info and notes |
-| `update <id>` | Update contact information |
-| `delete <id>` | Delete a contact |
-| `note <id> <text>` | Add a note to a contact |
-| `contacted <id> [date]` | Mark contact as contacted |
-| `search <term>` | Search contacts by name or notes |
-| `reminders` | Show contacts to reach out to |
-| `help` | Show help message |
-| `quit` | Exit the program |
+### Dating Contact Tracker (`dating_tracker.py`)
+Track dating connections across platforms with notes, reminders, and status tracking.
+- Manage contacts from Tinder, Bumble, Hinge, etc.
+- Record conversation notes and important details
+- Get reminders for contacts you haven't reached out to
+- Filter by status (active, dating, ghosted, ended)
 
-### Example Session
+### Habit Tracker (`habit_tracker.py`)
+Build better habits with daily tracking, streaks, and completion rates.
+- Define daily or weekly habits with categories
+- Log completions and view today's checklist
+- Track current streaks and 30-day completion rates
+- Archive old habits without losing history
 
-```
-> add
-Name: Sarah
-Platform (Tinder/Bumble/Hinge/etc.): Tinder
-Phone number (optional): 555-1234
-First contact date (YYYY-MM-DD, or press Enter for today): 2025-12-01
-Status (active/dating/ghosted/ended) [active]: active
-Add an initial note? Likes hiking and coffee
+### Fitness & Health Tracker (`fitness_tracker.py`)
+Track workouts, exercises, and body metrics over time.
+- Log workouts with type, duration, and intensity
+- Record individual exercises with sets/reps/weight
+- Track body metrics: weight, body fat, heart rate, sleep, hydration
+- View weekly fitness summaries
 
-> list
-ID   Name                 Platform     Talking For     Last Contact    Status
-1    Sarah                Tinder       1 month         1 month ago     active
+### Finance Tracker (`finance_tracker.py`)
+Track income, expenses, budgets, and recurring transactions.
+- Record income and expenses by category
+- Set monthly budgets with spending alerts
+- Track recurring transactions (rent, subscriptions, salary)
+- View monthly financial summaries with category breakdowns
 
-> note 1 Works as a nurse at the hospital downtown
+### Journal (`journal.py`)
+Daily journaling with mood/energy tracking and gratitude logging.
+- Write free-form journal entries with titles and tags
+- Track mood and energy levels (1-10 scale)
+- Log daily gratitude items
+- View mood trends over time and search past entries
 
-> view 1
-  CONTACT DETAILS - ID: 1
-  Name:              Sarah
-  Platform:          Tinder
-  ...
-  NOTES:
-  [2025-01-15 10:30:00] Likes hiking and coffee
-  [2025-01-15 10:35:00] Works as a nurse at the hospital downtown
+### Goal Tracker (`goal_tracker.py`)
+Set goals, define milestones, and track progress toward what matters.
+- Create goals with categories, priorities, and target dates
+- Break goals into milestones with auto-progress tracking
+- Log progress updates with notes
+- View overdue items and progress bars
 
-> contacted 1
-  Last contact date set to: 2025-01-15
-```
+### Unified Dashboard (`lifeos.py`)
+A single entry point that shows a cross-system overview and launches components.
+- View stats from all components at a glance
+- Launch any component with `open <name>`
+- See today's habits, this week's workouts, monthly finances, and more
+
+## Claude Integration
+
+LifeOS includes tools for AI-assisted analysis of your data:
+
+- **CLAUDE.md** - Auto-loaded context for Claude Code sessions with DB schema and queries
+- **export_archive.py** - Export data to text/JSON/markdown for uploading to Claude.ai
+- **mcp_server.py** - MCP server for live database queries from Claude Desktop or Claude Code
+
+## Data Storage
+
+All data is stored locally in SQLite databases in the project directory:
+- `contacts.db` - Dating contact tracker data
+- `lifeos.db` - All other component data (habits, fitness, finance, journal, goals)
+
+No cloud, no accounts, no external dependencies. Your data stays on your machine.
 
 ## Requirements
 
 - Python 3.6+
 - No external dependencies (uses built-in sqlite3)
-
-## Data Storage
-
-All data is stored locally in a SQLite database file (`contacts.db`) in the same directory as the script.
+- Optional: `pip install mcp` for the MCP server integration
