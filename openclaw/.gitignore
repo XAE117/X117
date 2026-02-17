@@ -3,6 +3,8 @@
 *.key
 *.pem
 *.p12
+credentials/*
+!credentials/.gitkeep
 
 # OpenClaw runtime state
 config/openclaw.json

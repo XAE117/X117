@@ -1,0 +1,36 @@
+{
+  "$schema": "https://code.claude.com/schema/mcp.json",
+
+  "mcpServers": {
+    "notion-rw": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "${NOTION_RW_TOKEN}"
+      }
+    },
+    "notion-ro": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "${NOTION_RO_TOKEN}"
+      }
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": ["-y", "@cocal/google-calendar-mcp"],
+      "env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "${HOME}/.credentials/google-oauth.keys.json",
+        "ENABLED_TOOLS": "list-calendars,list-events,get-event,search-events,get-freebusy,get-current-time,list-colors"
+      }
+    },
+    "gmail": {
+      "command": "npx",
+      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"],
+      "env": {
+        "GMAIL_OAUTH_PATH": "${HOME}/.credentials/google-oauth.keys.json",
+        "GMAIL_CREDENTIALS_PATH": "${HOME}/.credentials/gmail-token.json"
+      }
+    }
+  }
+}

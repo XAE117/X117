@@ -67,6 +67,8 @@ services:
       - /tmp:size=256m,noexec,nosuid,nodev
       - /var/tmp:size=128m,noexec,nosuid,nodev
       - /run:size=64m,noexec,nosuid,nodev
+      # npx cache for MCP server subprocess spawning
+      - /home/node/.npm:size=512m,nodev
 
     volumes:
       # OpenClaw config -- read-only bind mount
@@ -75,6 +77,8 @@ services:
       - openclaw-state:/home/node/.openclaw-state
       # Workspace for agent sandboxes
       - openclaw-workspace:/home/node/.openclaw/workspace
+      # Google OAuth credentials for Calendar + Gmail MCP servers
+      - ./credentials:/home/node/.credentials:ro
 
     # --- Credentials via environment ---
     # All secrets come from .env file, never baked into image.

@@ -22,13 +22,46 @@
       "provider": "anthropic",
       "model": "claude-sonnet-4-5-20250929",
       "apiKey": "${ANTHROPIC_API_KEY}",
-      "systemPrompt": "You are LifeOS, a personal life management assistant. You help track habits, fitness, finances, journal entries, goals, and dating contacts. Be concise and actionable in Telegram messages. Use short paragraphs and bullet points.",
+      "systemPrompt": "You are LifeOS, a personal life management assistant. You help track habits, fitness, finances, journal entries, goals, and dating contacts. You have access to Notion (Projects, CRM, Daily Fuel Log, Time Tracking for read/write; Ancient Paths and Operations Room for read-only), Google Calendar (read-only), and Gmail (read-only). Be concise and actionable in Telegram messages. Use short paragraphs and bullet points.",
       "workspace": "/workspace/lifeos",
       "sandbox": {
         "scope": "agent",
         "readOnlyRoot": true,
         "network": "none",
         "workspaceAccess": "rw"
+      },
+
+      "mcpServers": {
+        "notion-rw": {
+          "command": "npx",
+          "args": ["-y", "@notionhq/notion-mcp-server"],
+          "env": {
+            "NOTION_TOKEN": "${NOTION_RW_TOKEN}"
+          }
+        },
+        "notion-ro": {
+          "command": "npx",
+          "args": ["-y", "@notionhq/notion-mcp-server"],
+          "env": {
+            "NOTION_TOKEN": "${NOTION_RO_TOKEN}"
+          }
+        },
+        "google-calendar": {
+          "command": "npx",
+          "args": ["-y", "@cocal/google-calendar-mcp"],
+          "env": {
+            "GOOGLE_OAUTH_CREDENTIALS": "/home/node/.credentials/google-oauth.keys.json",
+            "ENABLED_TOOLS": "list-calendars,list-events,get-event,search-events,get-freebusy,get-current-time,list-colors"
+          }
+        },
+        "gmail": {
+          "command": "npx",
+          "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"],
+          "env": {
+            "GMAIL_OAUTH_PATH": "/home/node/.credentials/google-oauth.keys.json",
+            "GMAIL_CREDENTIALS_PATH": "/home/node/.credentials/gmail-token.json"
+          }
+        }
       }
     }
   },
