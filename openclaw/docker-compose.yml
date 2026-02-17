@@ -1,8 +1,14 @@
-# OpenClaw Stage 1: Hardened Docker Environment
-# This compose file creates the secure container environment ONLY.
-# OpenClaw itself is NOT installed here -- that's Stage 2.
+# OpenClaw Stage 2: Gateway + Sandbox with Telegram Channel
 #
-# Hardening rationale:
+# Builds both images locally (pinned to CVE-patched versions) and
+# launches the hardened gateway with Telegram bot integration.
+#
+# Usage:
+#   docker compose build
+#   docker compose up -d
+#   docker compose logs -f openclaw-gateway
+#
+# Hardening carried forward from Stage 1:
 #   - read_only rootfs prevents runtime tampering
 #   - cap_drop ALL + no-new-privileges blocks privilege escalation
 #   - 127.0.0.1 binding ensures gateway is never publicly exposed
@@ -12,11 +18,14 @@
 #
 # CVE-2026-25253 mitigations:
 #   - Gateway bound to loopback only (no LAN/WAN exposure)
-#   - Control UI port NOT exposed (dashboard disabled until Stage 2)
-#   - WebSocket origin validation enforced in openclaw.json (Stage 2)
+#   - WebSocket origin validation enforced in openclaw.json
+#   - Dockerfile pins openclaw >= v2026.1.29
 
 services:
   openclaw-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: openclaw:local
     container_name: openclaw-gateway
     restart: unless-stopped
@@ -50,6 +59,7 @@ services:
       - "127.0.0.1:1455:1455"     # OAuth callback (localhost only)
     networks:
       - openclaw-internal
+      - openclaw-egress
 
     # --- Filesystem ---
     # Writable tmpfs for temp files; everything else is read-only
@@ -68,7 +78,6 @@ services:
 
     # --- Credentials via environment ---
     # All secrets come from .env file, never baked into image.
-    # See .env.template for required variables.
     env_file:
       - .env
 
@@ -79,7 +88,7 @@ services:
 
     # --- Health check ---
     healthcheck:
-      test: ["CMD", "node", "dist/index.js", "health", "--token", "$OPENCLAW_GATEWAY_TOKEN"]
+      test: ["CMD", "openclaw", "health", "--token", "$OPENCLAW_GATEWAY_TOKEN"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -94,6 +103,9 @@ services:
 
   # --- Sandbox container (used by gateway for agent execution) ---
   openclaw-sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile.sandbox
     image: openclaw-sandbox:bookworm-slim
     container_name: openclaw-sandbox
     read_only: true
@@ -134,6 +146,11 @@ networks:
   openclaw-internal:
     driver: bridge
     internal: true   # No outbound internet from this network
+
+  # Egress network -- gateway needs outbound to reach Telegram API + Anthropic API.
+  # Only the gateway is attached; sandbox stays fully isolated.
+  openclaw-egress:
+    driver: bridge
 
 volumes:
   openclaw-state:

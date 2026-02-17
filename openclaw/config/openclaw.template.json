@@ -22,6 +22,7 @@
       "provider": "anthropic",
       "model": "claude-sonnet-4-5-20250929",
       "apiKey": "${ANTHROPIC_API_KEY}",
+      "systemPrompt": "You are LifeOS, a personal life management assistant. You help track habits, fitness, finances, journal entries, goals, and dating contacts. Be concise and actionable in Telegram messages. Use short paragraphs and bullet points.",
       "workspace": "/workspace/lifeos",
       "sandbox": {
         "scope": "agent",
@@ -32,7 +33,24 @@
     }
   },
 
-  "channels": {},
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "token": "${TELEGRAM_BOT_TOKEN}",
+      "agent": "lifeos",
+      "allowedUsers": [],
+      "webhook": {
+        "enabled": false
+      },
+      "polling": {
+        "enabled": true,
+        "interval": 1000
+      },
+      "rateLimit": {
+        "maxMessagesPerMinute": 30
+      }
+    }
+  },
 
   "exec": {
     "approvals": {
