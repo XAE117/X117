@@ -1,0 +1,18 @@
+# Secrets -- never commit
+.env
+*.key
+*.pem
+*.p12
+
+# OpenClaw runtime state
+config/openclaw.json
+state/
+workspace/
+sandboxes/
+
+# Docker volumes
+data/
+
+# OS junk
+.DS_Store
+Thumbs.db

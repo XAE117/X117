@@ -1,0 +1,55 @@
+{
+  "$schema": "https://docs.openclaw.ai/schema/config.json",
+
+  "gateway": {
+    "bind": "127.0.0.1",
+    "port": 18789,
+    "token": "${OPENCLAW_GATEWAY_TOKEN}",
+
+    "security": {
+      "wsOriginValidation": true,
+      "corsAllowOrigins": ["http://127.0.0.1:18789"],
+      "rateLimiting": {
+        "enabled": true,
+        "maxRequestsPerMinute": 60
+      }
+    }
+  },
+
+  "agents": {
+    "lifeos": {
+      "displayName": "LifeOS Agent",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-20250929",
+      "apiKey": "${ANTHROPIC_API_KEY}",
+      "workspace": "/workspace/lifeos",
+      "sandbox": {
+        "scope": "agent",
+        "readOnlyRoot": true,
+        "network": "none",
+        "workspaceAccess": "rw"
+      }
+    }
+  },
+
+  "channels": {},
+
+  "exec": {
+    "approvals": {
+      "mode": "always-prompt"
+    },
+    "sandbox": {
+      "enabled": true,
+      "capDrop": ["ALL"],
+      "readOnlyRoot": true,
+      "tmpfs": ["/tmp", "/var/tmp"],
+      "memory": "1g",
+      "pidsLimit": 256
+    }
+  },
+
+  "logging": {
+    "level": "info",
+    "redactSecrets": true
+  }
+}
