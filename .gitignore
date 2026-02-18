@@ -1,6 +1,13 @@
 # Database
 contacts.db
 
+# Credentials — never commit
+.env
+
+# Toggl sync state and logs
+data/sync_state.json
+logs/*.log
+
 # Python
 __pycache__/
 *.py[cod]
