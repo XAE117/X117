@@ -12,11 +12,11 @@
  * Optional env: CHAT_DB_PATH (default: ~/Library/Messages/chat.db)
  */
 
-const { Client } = require('@notionhq/client');
-const Database   = require('better-sqlite3');
-const fs         = require('fs');
-const path       = require('path');
-const os         = require('os');
+const { Client }       = require('@notionhq/client');
+const { execSync }     = require('child_process');
+const fs               = require('fs');
+const path             = require('path');
+const os               = require('os');
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 
@@ -95,36 +95,38 @@ function fetchMessages(lastRowid) {
     );
   }
 
-  const db = new Database(CHAT_DB_PATH, { readonly: true, fileMustExist: true });
+  const sql = `
+    SELECT
+      m.ROWID,
+      m.text,
+      m.date        AS apple_ns,
+      m.is_from_me,
+      m.associated_message_type
+    FROM message m
+    JOIN handle h ON m.handle_id = h.ROWID
+    WHERE
+      h.id = '${LIZA_HANDLE}'
+      AND m.ROWID > ${lastRowid}
+      AND m.text IS NOT NULL
+      AND m.text != ''
+      AND m.associated_message_type = 0
+    ORDER BY m.date ASC
+  `.replace(/\s+/g, ' ').trim();
 
-  try {
-    const rows = db.prepare(`
-      SELECT
-        m.ROWID,
-        m.text,
-        m.date        AS apple_ns,
-        m.is_from_me,
-        m.associated_message_type
-      FROM message m
-      JOIN handle h ON m.handle_id = h.ROWID
-      WHERE
-        h.id = ?
-        AND m.ROWID > ?
-        AND m.text IS NOT NULL
-        AND m.text != ''
-        AND m.associated_message_type = 0
-      ORDER BY m.date ASC
-    `).all(LIZA_HANDLE, lastRowid);
+  const raw = execSync(`sqlite3 -json "${CHAT_DB_PATH}" "${sql.replace(/"/g, '\\"')}"`, {
+    encoding: 'utf8',
+    timeout: 30000,
+  });
 
-    return rows.map(r => ({
-      rowid:     r.ROWID,
-      timestamp: appleNsToDate(r.apple_ns),
-      body:      r.text.trim(),
-      isFromMe:  r.is_from_me === 1,
-    }));
-  } finally {
-    db.close();
-  }
+  if (!raw.trim()) return [];
+
+  const rows = JSON.parse(raw);
+  return rows.map(r => ({
+    rowid:     r.ROWID,
+    timestamp: appleNsToDate(r.apple_ns),
+    body:      r.text.trim(),
+    isFromMe:  r.is_from_me === 1,
+  }));
 }
 
 // ─── Week Helpers ─────────────────────────────────────────────────────────────

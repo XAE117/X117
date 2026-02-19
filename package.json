@@ -8,8 +8,7 @@
     "start": "node liza-sync.js"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15",
-    "better-sqlite3": "^9.4.3"
+    "@notionhq/client": "^2.2.15"
   },
   "engines": {
     "node": ">=18.0.0"
