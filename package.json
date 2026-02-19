@@ -1,14 +1,15 @@
 {
   "name": "liza-sync",
   "version": "1.0.0",
-  "description": "Nightly iMessage → Notion sync for Liza transcripts via BlueBubbles",
+  "description": "Nightly iMessage → Notion sync for Liza transcripts",
   "main": "liza-sync.js",
   "scripts": {
     "sync": "node liza-sync.js",
     "start": "node liza-sync.js"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15"
+    "@notionhq/client": "^2.2.15",
+    "better-sqlite3": "^9.4.3"
   },
   "engines": {
     "node": ">=18.0.0"
