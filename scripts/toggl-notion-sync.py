@@ -83,23 +83,20 @@ FIELD_MAP = {
     # Date range covering start→stop of the entry (type: "date")
     "date":     "Date",
 
-    # Duration in minutes (type: "number")
-    "duration": "Duration",
+    # Duration in hours (type: "number") — Notion field is "Duration (hrs)"
+    "duration": "Duration (hrs)",
 
     # Toggl project name as a select value (type: "select")
-    "project":  "Project",
+    "project":  "Toggl Project",
 
     # Toggl tags as multi-select values (type: "multi_select")
     "tags":     "Tags",
 
     # Toggl entry ID stored as text — used for deduplication (type: "rich_text")
-    # If your database uses a different field for this, change the name.
-    # If you don't have this field yet, add a "Toggl ID" rich_text property in Notion.
     "toggl_id": "Toggl ID",
 
-    # Optional: a plain-text notes/description field (type: "rich_text").
-    # Set to None to skip.
-    "notes": None,
+    # Plain-text notes/description (type: "rich_text")
+    "notes":    "Notes",
 }
 
 # Map Toggl project name → Notion select option value.
@@ -311,11 +308,11 @@ def build_notion_properties(entry: dict, project_name: str | None) -> dict:
             }
         }
 
-    # Duration in minutes
+    # Duration in hours
     dur_field = FIELD_MAP.get("duration")
     if dur_field and entry.get("duration") is not None:
-        minutes = round(entry["duration"] / 60, 2)
-        props[dur_field] = {"number": minutes}
+        hours = round(entry["duration"] / 3600, 2)
+        props[dur_field] = {"number": hours}
 
     # Project → select
     proj_field = FIELD_MAP.get("project")
@@ -345,6 +342,18 @@ def build_notion_properties(entry: dict, project_name: str | None) -> dict:
         props[notes_field] = {
             "rich_text": [{"text": {"content": entry["description"]}}]
         }
+
+    # Derived date fields — Week, Month, Year
+    if entry.get("start"):
+        try:
+            start_dt = datetime.fromisoformat(entry["start"].replace("Z", "+00:00"))
+            # ISO week number (e.g. "W07")
+            week_num = start_dt.strftime("W%V")
+            props["Week"]  = {"rich_text": [{"text": {"content": week_num}}]}
+            props["Month"] = {"rich_text": [{"text": {"content": start_dt.strftime("%B %Y")}}]}
+            props["Year"]  = {"select": {"name": str(start_dt.year)}}
+        except Exception:
+            pass
 
     return props
 
@@ -447,11 +456,11 @@ def cmd_sync(args, logger: logging.Logger):
         props = build_notion_properties(entry, project_name)
 
         desc = entry.get("description") or "(no description)"
-        dur_min = round(entry.get("duration", 0) / 60, 1)
+        dur_hrs = round(entry.get("duration", 0) / 3600, 2)
 
         if args.dry_run:
-            logger.info("[DRY-RUN] Would push: %s  (%s min, project=%s)",
-                        desc, dur_min, project_name or "none")
+            logger.info("[DRY-RUN] Would push: %s  (%.2f hrs, project=%s)",
+                        desc, dur_hrs, project_name or "none")
             pushed += 1
             continue
 
@@ -459,8 +468,8 @@ def cmd_sync(args, logger: logging.Logger):
             notion_create_page(props)
             pushed += 1
             new_synced_ids.append(entry_id)
-            logger.info("Pushed: %s  (%s min, project=%s, toggl_id=%s)",
-                        desc, dur_min, project_name or "none", entry_id)
+            logger.info("Pushed: %s  (%.2f hrs, project=%s, toggl_id=%s)",
+                        desc, dur_hrs, project_name or "none", entry_id)
         except Exception as exc:
             errors += 1
             logger.error("FAILED to push Toggl ID %s (%s): %s", entry_id, desc, exc)
