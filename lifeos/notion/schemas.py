@@ -6,6 +6,13 @@ in a Notion workspace via the Notion API. These schemas define the
 exact property types, options, and relations needed to replicate
 the local LifeOS architecture in Notion.
 
+Covers all 15 databases:
+  Core: Areas, Goals, Projects, Tasks, Inbox
+  Lifestyle: Habits, Habit Logs, Journal
+  Finance: Accounts, Transactions, Budgets
+  Fitness: Workouts, Body Metrics, Meals
+  Knowledge: Notes, Reading Tracker
+
 Usage:
     - Pass these schemas to the Notion API's "Create a database" endpoint
     - Use with the Notion MCP server for Claude-assisted setup
@@ -67,7 +74,7 @@ def get_goals_schema(parent_page_id):
             "Unit": {"rich_text": {}},
             "Start Date": {"date": {}},
             "Target Date": {"date": {}},
-            # Relations added after all databases are created
+            # Area relation added after all databases are created
         },
     }
 
@@ -121,6 +128,7 @@ def get_projects_schema(parent_page_id):
             "Start Date": {"date": {}},
             "Due Date": {"date": {}},
             "Completed Date": {"date": {}},
+            # Area, Goal relations added after creation
         },
     }
 
@@ -203,6 +211,7 @@ def get_tasks_schema(parent_page_id):
             },
             "Waiting For": {"rich_text": {}},
             "Delegated To": {"rich_text": {}},
+            # Project, Area, Goal relations added after creation
         },
     }
 
@@ -257,6 +266,23 @@ def get_habits_schema(parent_page_id):
             "Current Streak": {"number": {"format": "number"}},
             "Longest Streak": {"number": {"format": "number"}},
             "Active": {"checkbox": {}},
+            # Area relation added after creation
+        },
+    }
+
+
+def get_habit_logs_schema(parent_page_id):
+    """Generate Notion API schema for the Habit Logs database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "📊"},
+        "title": [{"type": "text", "text": {"content": "Habit Logs"}}],
+        "properties": {
+            "Log Entry": {"title": {}},
+            "Date": {"date": {}},
+            "Count": {"number": {"format": "number"}},
+            "Notes": {"rich_text": {}},
+            # Habit relation added after creation
         },
     }
 
@@ -296,7 +322,42 @@ def get_journal_schema(parent_page_id):
     }
 
 
-def get_finance_schema(parent_page_id):
+def get_finance_accounts_schema(parent_page_id):
+    """Generate Notion API schema for the Finance Accounts database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "🏦"},
+        "title": [{"type": "text", "text": {"content": "Finance Accounts"}}],
+        "properties": {
+            "Name": {"title": {}},
+            "Type": {
+                "select": {
+                    "options": [
+                        {"name": "Checking", "color": "blue"},
+                        {"name": "Savings", "color": "green"},
+                        {"name": "Credit Card", "color": "red"},
+                        {"name": "Investment", "color": "purple"},
+                        {"name": "Cash", "color": "yellow"},
+                        {"name": "Other", "color": "gray"},
+                    ]
+                }
+            },
+            "Balance": {"number": {"format": "dollar"}},
+            "Currency": {
+                "select": {
+                    "options": [
+                        {"name": "USD", "color": "green"},
+                        {"name": "EUR", "color": "blue"},
+                        {"name": "GBP", "color": "purple"},
+                    ]
+                }
+            },
+            "Active": {"checkbox": {}},
+        },
+    }
+
+
+def get_finance_transactions_schema(parent_page_id):
     """Generate Notion API schema for the Finance Transactions database."""
     return {
         "parent": {"type": "page_id", "page_id": parent_page_id},
@@ -323,18 +384,192 @@ def get_finance_schema(parent_page_id):
                         {"name": "Healthcare", "color": "red"},
                         {"name": "Entertainment", "color": "purple"},
                         {"name": "Education", "color": "blue"},
+                        {"name": "Clothing", "color": "pink"},
+                        {"name": "Subscriptions", "color": "purple"},
                         {"name": "Salary", "color": "green"},
                         {"name": "Freelance", "color": "green"},
                         {"name": "Investments", "color": "blue"},
+                        {"name": "Savings", "color": "green"},
+                        {"name": "Debt", "color": "red"},
+                        {"name": "Gifts", "color": "pink"},
                         {"name": "Other", "color": "gray"},
                     ]
                 }
             },
             "Amount": {"number": {"format": "dollar"}},
             "Date": {"date": {}},
-            "Account": {"rich_text": {}},
             "Tags": {"multi_select": {"options": []}},
             "Is Recurring": {"checkbox": {}},
+            # Account relation added after creation
+        },
+    }
+
+
+def get_finance_budgets_schema(parent_page_id):
+    """Generate Notion API schema for the Finance Budgets database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "📋"},
+        "title": [{"type": "text", "text": {"content": "Finance Budgets"}}],
+        "properties": {
+            "Category": {"title": {}},
+            "Monthly Limit": {"number": {"format": "dollar"}},
+            "Spent": {"number": {"format": "dollar"}},
+            "Period": {"rich_text": {}},
+            "Remaining": {"formula": {
+                "expression": 'prop("Monthly Limit") - prop("Spent")'
+            }},
+            "Pct Used": {"formula": {
+                "expression": 'if(prop("Monthly Limit") > 0, round(prop("Spent") / prop("Monthly Limit") * 100), 0)'
+            }},
+        },
+    }
+
+
+def get_workouts_schema(parent_page_id):
+    """Generate Notion API schema for the Workouts database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "🏋️"},
+        "title": [{"type": "text", "text": {"content": "Workouts"}}],
+        "properties": {
+            "Name": {"title": {}},
+            "Date": {"date": {}},
+            "Type": {
+                "select": {
+                    "options": [
+                        {"name": "Strength", "color": "red"},
+                        {"name": "Cardio", "color": "orange"},
+                        {"name": "Flexibility", "color": "green"},
+                        {"name": "Sports", "color": "blue"},
+                        {"name": "Walking", "color": "default"},
+                        {"name": "Running", "color": "orange"},
+                        {"name": "Cycling", "color": "yellow"},
+                        {"name": "Swimming", "color": "blue"},
+                        {"name": "Yoga", "color": "purple"},
+                        {"name": "HIIT", "color": "red"},
+                        {"name": "Other", "color": "gray"},
+                    ]
+                }
+            },
+            "Duration (min)": {"number": {"format": "number"}},
+            "Calories": {"number": {"format": "number"}},
+            "Intensity": {
+                "select": {
+                    "options": [
+                        {"name": "Low", "color": "green"},
+                        {"name": "Moderate", "color": "yellow"},
+                        {"name": "High", "color": "orange"},
+                        {"name": "Max", "color": "red"},
+                    ]
+                }
+            },
+            "Rating": {
+                "select": {
+                    "options": [
+                        {"name": "⭐", "color": "gray"},
+                        {"name": "⭐⭐", "color": "yellow"},
+                        {"name": "⭐⭐⭐", "color": "yellow"},
+                        {"name": "⭐⭐⭐⭐", "color": "green"},
+                        {"name": "⭐⭐⭐⭐⭐", "color": "green"},
+                    ]
+                }
+            },
+            "Exercises": {"rich_text": {}},
+            "Notes": {"rich_text": {}},
+        },
+    }
+
+
+def get_body_metrics_schema(parent_page_id):
+    """Generate Notion API schema for the Body Metrics database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "📈"},
+        "title": [{"type": "text", "text": {"content": "Body Metrics"}}],
+        "properties": {
+            "Date": {"title": {}},
+            "Weight": {"number": {"format": "number"}},
+            "Weight Unit": {
+                "select": {
+                    "options": [
+                        {"name": "lbs", "color": "blue"},
+                        {"name": "kg", "color": "green"},
+                    ]
+                }
+            },
+            "Body Fat %": {"number": {"format": "percent"}},
+            "Sleep (hrs)": {"number": {"format": "number"}},
+            "Water (oz)": {"number": {"format": "number"}},
+            "Steps": {"number": {"format": "number"}},
+            "Resting HR": {"number": {"format": "number"}},
+            "Notes": {"rich_text": {}},
+        },
+    }
+
+
+def get_meals_schema(parent_page_id):
+    """Generate Notion API schema for the Meals database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "🍽️"},
+        "title": [{"type": "text", "text": {"content": "Meals"}}],
+        "properties": {
+            "Name": {"title": {}},
+            "Date": {"date": {}},
+            "Meal Type": {
+                "select": {
+                    "options": [
+                        {"name": "Breakfast", "color": "yellow"},
+                        {"name": "Lunch", "color": "green"},
+                        {"name": "Dinner", "color": "blue"},
+                        {"name": "Snack", "color": "purple"},
+                    ]
+                }
+            },
+            "Calories": {"number": {"format": "number"}},
+            "Protein (g)": {"number": {"format": "number"}},
+            "Carbs (g)": {"number": {"format": "number"}},
+            "Fat (g)": {"number": {"format": "number"}},
+            "Notes": {"rich_text": {}},
+        },
+    }
+
+
+def get_notes_schema(parent_page_id):
+    """Generate Notion API schema for the Notes/Knowledge Base database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "🧠"},
+        "title": [{"type": "text", "text": {"content": "Notes"}}],
+        "properties": {
+            "Title": {"title": {}},
+            "Type": {
+                "select": {
+                    "options": [
+                        {"name": "Note", "color": "default"},
+                        {"name": "Meeting", "color": "blue"},
+                        {"name": "Idea", "color": "purple"},
+                        {"name": "Reference", "color": "yellow"},
+                        {"name": "Web Clip", "color": "orange"},
+                        {"name": "Template", "color": "green"},
+                    ]
+                }
+            },
+            "PARA Category": {
+                "select": {
+                    "options": [
+                        {"name": "Projects", "color": "blue"},
+                        {"name": "Areas", "color": "green"},
+                        {"name": "Resources", "color": "yellow"},
+                        {"name": "Archives", "color": "gray"},
+                    ]
+                }
+            },
+            "Tags": {"multi_select": {"options": []}},
+            "Starred": {"checkbox": {}},
+            "Source URL": {"url": {}},
+            # Area, Project relations added after creation
         },
     }
 
@@ -393,6 +628,72 @@ def get_reading_schema(parent_page_id):
             "Source URL": {"url": {}},
             "Summary": {"rich_text": {}},
             "Key Insights": {"rich_text": {}},
+            # Area relation added after creation
+        },
+    }
+
+
+def get_weekly_reviews_schema(parent_page_id):
+    """Generate Notion API schema for the Weekly Reviews database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "📝"},
+        "title": [{"type": "text", "text": {"content": "Weekly Reviews"}}],
+        "properties": {
+            "Review": {"title": {}},
+            "Week Number": {"number": {"format": "number"}},
+            "Date": {"date": {}},
+            "Wins": {"rich_text": {}},
+            "Challenges": {"rich_text": {}},
+            "Lessons": {"rich_text": {}},
+            "Next Week Priorities": {"rich_text": {}},
+            "Inbox Cleared": {"checkbox": {}},
+            "Projects Reviewed": {"checkbox": {}},
+            "Goals Reviewed": {"checkbox": {}},
+            "Habits Reviewed": {"checkbox": {}},
+            "Rating": {
+                "select": {
+                    "options": [
+                        {"name": "1", "color": "red"},
+                        {"name": "2", "color": "red"},
+                        {"name": "3", "color": "orange"},
+                        {"name": "4", "color": "orange"},
+                        {"name": "5", "color": "yellow"},
+                        {"name": "6", "color": "yellow"},
+                        {"name": "7", "color": "green"},
+                        {"name": "8", "color": "green"},
+                        {"name": "9", "color": "blue"},
+                        {"name": "10", "color": "blue"},
+                    ]
+                }
+            },
+        },
+    }
+
+
+def get_pomodoro_schema(parent_page_id):
+    """Generate Notion API schema for the Pomodoro Sessions database."""
+    return {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "icon": {"type": "emoji", "emoji": "🍅"},
+        "title": [{"type": "text", "text": {"content": "Pomodoro Sessions"}}],
+        "properties": {
+            "Session": {"title": {}},
+            "Date": {"date": {}},
+            "Start Time": {"rich_text": {}},
+            "Duration (min)": {"number": {"format": "number"}},
+            "Type": {
+                "select": {
+                    "options": [
+                        {"name": "Work", "color": "red"},
+                        {"name": "Break", "color": "green"},
+                        {"name": "Long Break", "color": "blue"},
+                    ]
+                }
+            },
+            "Completed": {"checkbox": {}},
+            "Notes": {"rich_text": {}},
+            # Task relation added after creation
         },
     }
 
@@ -400,15 +701,30 @@ def get_reading_schema(parent_page_id):
 def get_all_schemas(parent_page_id):
     """Get all database schemas for the complete LifeOS setup."""
     return {
+        # Core
         'areas': get_areas_schema(parent_page_id),
         'goals': get_goals_schema(parent_page_id),
         'projects': get_projects_schema(parent_page_id),
         'tasks': get_tasks_schema(parent_page_id),
         'inbox': get_inbox_schema(parent_page_id),
+        # Lifestyle
         'habits': get_habits_schema(parent_page_id),
+        'habit_logs': get_habit_logs_schema(parent_page_id),
         'journal': get_journal_schema(parent_page_id),
-        'finance': get_finance_schema(parent_page_id),
+        # Finance
+        'finance_accounts': get_finance_accounts_schema(parent_page_id),
+        'finance_transactions': get_finance_transactions_schema(parent_page_id),
+        'finance_budgets': get_finance_budgets_schema(parent_page_id),
+        # Fitness
+        'workouts': get_workouts_schema(parent_page_id),
+        'body_metrics': get_body_metrics_schema(parent_page_id),
+        'meals': get_meals_schema(parent_page_id),
+        # Knowledge
+        'notes': get_notes_schema(parent_page_id),
         'reading': get_reading_schema(parent_page_id),
+        # System
+        'weekly_reviews': get_weekly_reviews_schema(parent_page_id),
+        'pomodoro': get_pomodoro_schema(parent_page_id),
     }
 
 
@@ -422,12 +738,14 @@ def get_relation_mappings():
     Returns a list of relation definitions to be applied.
     """
     return [
+        # Goals -> Areas
         {
             'source': 'goals',
             'property_name': 'Area',
             'target': 'areas',
             'type': 'single',
         },
+        # Projects -> Areas, Goals
         {
             'source': 'projects',
             'property_name': 'Area',
@@ -440,6 +758,7 @@ def get_relation_mappings():
             'target': 'goals',
             'type': 'single',
         },
+        # Tasks -> Projects, Areas, Goals
         {
             'source': 'tasks',
             'property_name': 'Project',
@@ -458,16 +777,52 @@ def get_relation_mappings():
             'target': 'goals',
             'type': 'single',
         },
+        # Habits -> Areas
         {
             'source': 'habits',
             'property_name': 'Area',
             'target': 'areas',
             'type': 'single',
         },
+        # Habit Logs -> Habits
+        {
+            'source': 'habit_logs',
+            'property_name': 'Habit',
+            'target': 'habits',
+            'type': 'single',
+        },
+        # Finance Transactions -> Finance Accounts
+        {
+            'source': 'finance_transactions',
+            'property_name': 'Account',
+            'target': 'finance_accounts',
+            'type': 'single',
+        },
+        # Notes -> Areas, Projects
+        {
+            'source': 'notes',
+            'property_name': 'Area',
+            'target': 'areas',
+            'type': 'single',
+        },
+        {
+            'source': 'notes',
+            'property_name': 'Project',
+            'target': 'projects',
+            'type': 'single',
+        },
+        # Reading -> Areas
         {
             'source': 'reading',
             'property_name': 'Area',
             'target': 'areas',
+            'type': 'single',
+        },
+        # Pomodoro -> Tasks
+        {
+            'source': 'pomodoro',
+            'property_name': 'Task',
+            'target': 'tasks',
             'type': 'single',
         },
     ]

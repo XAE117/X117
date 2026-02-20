@@ -1,0 +1,10 @@
+# LifeOS Framework Dependencies
+#
+# Core (no external dependencies - uses Python stdlib only)
+# SQLite3 is included in Python standard library
+#
+# Optional: Notion Integration
+notion-client>=2.0.0
+
+# Optional: Development/Testing
+pytest>=7.0.0
