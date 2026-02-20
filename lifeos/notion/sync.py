@@ -155,9 +155,9 @@ class NotionSync:
         for area in areas:
             page = self._create_notion_page(db_id, {
                 "Name": _title(area['name']),
-                "Description": _rich_text(area.get('description', '')),
-                "Icon": _rich_text(area.get('icon', '')),
-                "Status": _select("Active"),
+                "Area Description": _rich_text(area.get('description', '')),
+                "Icon Emoji": _rich_text(area.get('icon', '')),
+                "Status": _status("Active"),
                 "Sort Order": _number(area.get('sort_order', 0)),
             })
             self._map_id('areas', area['id'], page['id'])
