@@ -157,7 +157,6 @@ class NotionSync:
                 "Name": _title(area['name']),
                 "Area Description": _rich_text(area.get('description', '')),
                 "Icon Emoji": _rich_text(area.get('icon', '')),
-                "Status": _status("Active"),
                 "Sort Order": _number(area.get('sort_order', 0)),
             })
             self._map_id('areas', area['id'], page['id'])

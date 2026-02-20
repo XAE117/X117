@@ -30,18 +30,6 @@ def get_areas_schema(parent_page_id):
             "Name": {"title": {}},
             "Area Description": {"rich_text": {}},
             "Icon Emoji": {"rich_text": {}},
-            "Status": {
-                "status": {
-                    "options": [
-                        {"name": "Active", "color": "green"},
-                        {"name": "Inactive", "color": "gray"},
-                    ],
-                    "groups": [
-                        {"name": "Active", "option_names": ["Active"]},
-                        {"name": "Done", "option_names": ["Inactive"]},
-                    ],
-                }
-            },
             "Sort Order": {"number": {"format": "number"}},
         },
     }
