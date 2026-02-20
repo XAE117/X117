@@ -11,9 +11,15 @@ areas_db_id = config['database_ids']['areas']
 print(f"Areas database ID: {areas_db_id}")
 print("\nFetching current database schema...")
 db = client.databases.retrieve(database_id=areas_db_id)
-print("\nExisting properties:")
-for name, prop in db['properties'].items():
-    print(f"  '{name}' -> type: {prop['type']}")
+print("\nRaw response keys:", list(db.keys()))
+print("Object type:", db.get('object'))
+if 'properties' in db:
+    print("\nExisting properties:")
+    for name, prop in db['properties'].items():
+        print(f"  '{name}' -> type: {prop['type']}")
+else:
+    print("\nNo 'properties' key! Full response:")
+    print(json.dumps(db, indent=2, default=str))
 
 # Step 2: Add missing properties
 print("\nAdding missing properties...")
