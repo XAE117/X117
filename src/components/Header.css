@@ -1,0 +1,62 @@
+/* ── Header ── */
+
+.palace-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.palace-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  margin: 0.75rem 0 0.4rem;
+  text-shadow: 0 0 40px rgba(201, 168, 76, 0.2);
+}
+
+.palace-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(0.7rem, 2vw, 0.95rem);
+  color: var(--cream);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.header-deco-line {
+  height: 1px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-dim) 15%,
+    var(--gold) 35%,
+    var(--gold) 50%,
+    var(--gold) 65%,
+    var(--gold-dim) 85%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.header-deco-line::before,
+.header-deco-line::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.header-deco-line::before {
+  left: 15%;
+}
+
+.header-deco-line::after {
+  right: 15%;
+}

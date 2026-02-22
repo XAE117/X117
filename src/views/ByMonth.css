@@ -1,0 +1,142 @@
+/* ── By Month View ── */
+
+.month-view {
+  padding-top: 1rem;
+}
+
+.month-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+
+.month-column {
+  min-width: 0;
+}
+
+.month-column-header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gold-dim);
+  position: relative;
+}
+
+.month-column-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.month-days {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.day-row {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.day-row:last-child {
+  border-bottom: none;
+}
+
+.day-header {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.day-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.day-screenings {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.day-screening-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.25rem 0;
+}
+
+.theater-tag {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.day-film-link {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.day-film-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.day-film-link:hover {
+  color: var(--gold);
+}
+
+.day-film-link:hover::after {
+  width: 100%;
+}
+
+.day-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 860px) {
+  .month-columns {
+    grid-template-columns: 1fr;
+  }
+}

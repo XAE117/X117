@@ -1,0 +1,261 @@
+{
+  "lastUpdated": "2026-02-22T00:00:00Z",
+  "theaters": [
+    {
+      "id": "new-beverly",
+      "name": "New Beverly Cinema",
+      "shortName": "New Bev",
+      "neighborhood": "Fairfax",
+      "url": "https://www.newbeverly.com",
+      "color": "#C9A84C",
+      "screenings": [
+        {
+          "id": "nb-001",
+          "title": "Chinatown",
+          "date": "2026-02-23",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "Double feature with The Long Goodbye",
+          "link": "https://www.newbeverly.com/screenings"
+        },
+        {
+          "id": "nb-002",
+          "title": "The Long Goodbye",
+          "date": "2026-02-23",
+          "time": "9:45 PM",
+          "format": "35mm",
+          "notes": "Double feature with Chinatown",
+          "link": "https://www.newbeverly.com/screenings"
+        },
+        {
+          "id": "nb-003",
+          "title": "Mulholland Drive",
+          "date": "2026-02-28",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "",
+          "link": "https://www.newbeverly.com/screenings"
+        },
+        {
+          "id": "nb-004",
+          "title": "Blue Velvet",
+          "date": "2026-02-28",
+          "time": "9:50 PM",
+          "format": "35mm",
+          "notes": "Double feature with Mulholland Drive",
+          "link": "https://www.newbeverly.com/screenings"
+        },
+        {
+          "id": "nb-005",
+          "title": "Sunset Boulevard",
+          "date": "2026-03-07",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "",
+          "link": "https://www.newbeverly.com/screenings"
+        },
+        {
+          "id": "nb-006",
+          "title": "The Apartment",
+          "date": "2026-03-14",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "Billy Wilder Double Feature with Some Like It Hot",
+          "link": "https://www.newbeverly.com/screenings"
+        },
+        {
+          "id": "nb-007",
+          "title": "Some Like It Hot",
+          "date": "2026-03-14",
+          "time": "9:40 PM",
+          "format": "35mm",
+          "notes": "Billy Wilder Double Feature with The Apartment",
+          "link": "https://www.newbeverly.com/screenings"
+        }
+      ]
+    },
+    {
+      "id": "vista-theatre",
+      "name": "Vista Theatre",
+      "shortName": "Vista",
+      "neighborhood": "Los Feliz",
+      "url": "https://www.vistatheatre.com",
+      "color": "#8B4513",
+      "screenings": [
+        {
+          "id": "vt-001",
+          "title": "2001: A Space Odyssey",
+          "date": "2026-02-24",
+          "time": "7:00 PM",
+          "format": "70mm",
+          "notes": "70mm presentation",
+          "link": "https://www.vistatheatre.com"
+        },
+        {
+          "id": "vt-002",
+          "title": "Lawrence of Arabia",
+          "date": "2026-03-01",
+          "time": "6:30 PM",
+          "format": "70mm",
+          "notes": "70mm presentation — Intermission included",
+          "link": "https://www.vistatheatre.com"
+        },
+        {
+          "id": "vt-003",
+          "title": "The Shining",
+          "date": "2026-03-08",
+          "time": "7:00 PM",
+          "format": "digital",
+          "notes": "Midnight Madness series",
+          "link": "https://www.vistatheatre.com"
+        },
+        {
+          "id": "vt-004",
+          "title": "Vertigo",
+          "date": "2026-03-15",
+          "time": "7:30 PM",
+          "format": "70mm",
+          "notes": "Hitchcock in 70mm series",
+          "link": "https://www.vistatheatre.com"
+        },
+        {
+          "id": "vt-005",
+          "title": "Rear Window",
+          "date": "2026-03-22",
+          "time": "7:30 PM",
+          "format": "digital",
+          "notes": "Hitchcock in 70mm series",
+          "link": "https://www.vistatheatre.com"
+        }
+      ]
+    },
+    {
+      "id": "academy-museum",
+      "name": "Academy Museum of Motion Pictures",
+      "shortName": "Academy",
+      "neighborhood": "Miracle Mile",
+      "url": "https://www.academymuseum.org",
+      "color": "#6B2737",
+      "screenings": [
+        {
+          "id": "am-001",
+          "title": "Spirited Away",
+          "date": "2026-02-25",
+          "time": "7:00 PM",
+          "format": "digital",
+          "notes": "Studio Ghibli retrospective",
+          "link": "https://www.academymuseum.org/en/programs"
+        },
+        {
+          "id": "am-002",
+          "title": "Princess Mononoke",
+          "date": "2026-02-26",
+          "time": "7:00 PM",
+          "format": "digital",
+          "notes": "Studio Ghibli retrospective",
+          "link": "https://www.academymuseum.org/en/programs"
+        },
+        {
+          "id": "am-003",
+          "title": "My Neighbor Totoro",
+          "date": "2026-03-04",
+          "time": "2:00 PM",
+          "format": "digital",
+          "notes": "Studio Ghibli retrospective — Family matinee",
+          "link": "https://www.academymuseum.org/en/programs"
+        },
+        {
+          "id": "am-004",
+          "title": "In the Mood for Love",
+          "date": "2026-03-11",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "Wong Kar-wai: A Retrospective",
+          "link": "https://www.academymuseum.org/en/programs"
+        },
+        {
+          "id": "am-005",
+          "title": "Chungking Express",
+          "date": "2026-03-18",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "Wong Kar-wai: A Retrospective — Q&A with cinematographer Christopher Doyle",
+          "link": "https://www.academymuseum.org/en/programs"
+        },
+        {
+          "id": "am-006",
+          "title": "Happy Together",
+          "date": "2026-03-25",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "Wong Kar-wai: A Retrospective",
+          "link": "https://www.academymuseum.org/en/programs"
+        }
+      ]
+    },
+    {
+      "id": "brain-dead",
+      "name": "Brain Dead Studios",
+      "shortName": "Brain Dead",
+      "neighborhood": "Fairfax",
+      "url": "https://www.braindead.us/cinema",
+      "color": "#4A7C59",
+      "screenings": [
+        {
+          "id": "bd-001",
+          "title": "Possession",
+          "date": "2026-02-22",
+          "time": "9:30 PM",
+          "format": "digital",
+          "notes": "Late night horror",
+          "link": "https://www.braindead.us/cinema"
+        },
+        {
+          "id": "bd-002",
+          "title": "Hausu",
+          "date": "2026-02-27",
+          "time": "10:00 PM",
+          "format": "digital",
+          "notes": "Midnight madness",
+          "link": "https://www.braindead.us/cinema"
+        },
+        {
+          "id": "bd-003",
+          "title": "Akira",
+          "date": "2026-03-06",
+          "time": "9:00 PM",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.braindead.us/cinema"
+        },
+        {
+          "id": "bd-004",
+          "title": "Eraserhead",
+          "date": "2026-03-13",
+          "time": "10:00 PM",
+          "format": "digital",
+          "notes": "Midnight Lynch",
+          "link": "https://www.braindead.us/cinema"
+        },
+        {
+          "id": "bd-005",
+          "title": "Suspiria",
+          "date": "2026-03-20",
+          "time": "9:30 PM",
+          "format": "digital",
+          "notes": "Argento night",
+          "link": "https://www.braindead.us/cinema"
+        },
+        {
+          "id": "bd-006",
+          "title": "Videodrome",
+          "date": "2026-03-27",
+          "time": "10:00 PM",
+          "format": "digital",
+          "notes": "Cronenberg body horror",
+          "link": "https://www.braindead.us/cinema"
+        }
+      ]
+    }
+  ]
+}

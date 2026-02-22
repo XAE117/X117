@@ -1,0 +1,296 @@
+/* ── By Theater View ── */
+
+.theater-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* ── Theater Card ── */
+
+.theater-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.theater-card:hover {
+  border-color: var(--gold-dim);
+}
+
+.theater-card.expanded {
+  grid-column: 1 / -1;
+  border-color: var(--gold-dim);
+}
+
+/* ── Corner Ornaments ── */
+
+.corner-ornament {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.corner-ornament::before,
+.corner-ornament::after {
+  content: '';
+  position: absolute;
+  background: var(--gold-dim);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.theater-card:hover .corner-ornament::before,
+.theater-card:hover .corner-ornament::after {
+  opacity: 0.7;
+}
+
+.corner-ornament.top-left { top: 6px; left: 6px; }
+.corner-ornament.top-right { top: 6px; right: 6px; }
+.corner-ornament.bottom-left { bottom: 6px; left: 6px; }
+.corner-ornament.bottom-right { bottom: 6px; right: 6px; }
+
+.corner-ornament.top-left::before,
+.corner-ornament.top-right::before,
+.corner-ornament.bottom-left::before,
+.corner-ornament.bottom-right::before {
+  width: 12px;
+  height: 1px;
+}
+
+.corner-ornament.top-left::after,
+.corner-ornament.top-right::after,
+.corner-ornament.bottom-left::after,
+.corner-ornament.bottom-right::after {
+  width: 1px;
+  height: 12px;
+}
+
+.corner-ornament.top-left::before,
+.corner-ornament.top-left::after { top: 0; left: 0; }
+.corner-ornament.top-right::before { top: 0; right: 0; }
+.corner-ornament.top-right::after { top: 0; right: 0; }
+.corner-ornament.bottom-left::before { bottom: 0; left: 0; }
+.corner-ornament.bottom-left::after { bottom: 0; left: 0; }
+.corner-ornament.bottom-right::before { bottom: 0; right: 0; }
+.corner-ornament.bottom-right::after { bottom: 0; right: 0; }
+
+/* Fan motif on hover */
+.theater-card.expanded .corner-ornament.top-left::before,
+.theater-card.expanded .corner-ornament.top-right::before {
+  width: 16px;
+  opacity: 0.6;
+}
+
+/* ── Card Header ── */
+
+.theater-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: background 0.2s ease;
+}
+
+.theater-card-header:hover {
+  background: var(--bg-card-hover);
+}
+
+.theater-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.theater-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.theater-neighborhood {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.theater-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.screening-count {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.expand-arrow {
+  color: var(--gold-dim);
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.expand-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* ── Screenings List ── */
+
+.theater-screenings {
+  padding: 0 1.5rem 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.month-group {
+  margin-top: 1rem;
+}
+
+.month-header {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.screening-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.screening-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid transparent;
+  transition: background 0.15s ease;
+  flex-wrap: wrap;
+}
+
+.screening-item:hover {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.screening-date-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--burgundy);
+  color: var(--cream);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.screening-title-link {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.screening-title-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.screening-title-link:hover {
+  color: var(--gold);
+}
+
+.screening-title-link:hover::after {
+  width: 100%;
+}
+
+.format-badge {
+  font-family: var(--font-mono, var(--font-body));
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.external-link {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.external-link:hover {
+  color: var(--gold);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .theater-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theater-card.expanded {
+    grid-column: 1;
+  }
+
+  .theater-card-header {
+    padding: 1rem;
+  }
+
+  .theater-screenings {
+    padding: 0 1rem 1rem;
+  }
+}

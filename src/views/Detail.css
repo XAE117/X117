@@ -1,0 +1,245 @@
+/* ── Detail Page ── */
+
+.detail-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.back-btn {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: var(--cream);
+}
+
+/* ── Detail Card ── */
+
+.detail-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+/* Corner ornaments */
+.detail-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.detail-corner::before,
+.detail-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--gold-dim);
+  opacity: 0.5;
+}
+
+.detail-corner::before {
+  width: 16px;
+  height: 1px;
+}
+
+.detail-corner::after {
+  width: 1px;
+  height: 16px;
+}
+
+.detail-corner.tl { top: 10px; left: 10px; }
+.detail-corner.tl::before, .detail-corner.tl::after { top: 0; left: 0; }
+
+.detail-corner.tr { top: 10px; right: 10px; }
+.detail-corner.tr::before { top: 0; right: 0; }
+.detail-corner.tr::after { top: 0; right: 0; }
+
+.detail-corner.bl { bottom: 10px; left: 10px; }
+.detail-corner.bl::before { bottom: 0; left: 0; }
+.detail-corner.bl::after { bottom: 0; left: 0; }
+
+.detail-corner.br { bottom: 10px; right: 10px; }
+.detail-corner.br::before { bottom: 0; right: 0; }
+.detail-corner.br::after { bottom: 0; right: 0; }
+
+/* ── Detail Content ── */
+
+.detail-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-theater-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.detail-theater-name:hover {
+  opacity: 0.8;
+}
+
+.detail-neighborhood {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.detail-info-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.detail-format-badge {
+  font-family: var(--font-mono, var(--font-body));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.detail-notes {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.detail-notes-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--cream);
+  line-height: 1.5;
+}
+
+/* ── Ticket Button ── */
+
+.ticket-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bg-dark);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ticket-btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* ── Not Found ── */
+
+.detail-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.detail-not-found h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.detail-not-found p {
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .detail-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .detail-info-grid {
+    gap: 1rem;
+  }
+}

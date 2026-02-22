@@ -1,0 +1,115 @@
+/* ── App Layout ── */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* ── Controls bar ── */
+
+.controls {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.week-filter {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.week-filter:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+}
+
+.week-filter.active {
+  background: var(--gold);
+  color: var(--bg-dark);
+  border-color: var(--gold);
+}
+
+/* ── Error state ── */
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-state h2 {
+  font-family: var(--font-display);
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.error-state p {
+  color: var(--text-dim);
+}
+
+/* ── Deco border utility ── */
+
+.deco-border-top {
+  border-top: 1px solid var(--gold-dim);
+  position: relative;
+}
+
+.deco-border-top::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-dim) 20%,
+    var(--gold) 50%,
+    var(--gold-dim) 80%,
+    transparent
+  );
+}
+
+.deco-rule {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-dim) 20%,
+    var(--gold) 50%,
+    var(--gold-dim) 80%,
+    transparent
+  );
+  margin: 2rem 0;
+}

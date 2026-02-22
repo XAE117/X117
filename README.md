@@ -1,74 +1,97 @@
-# Dating Contact Tracker
+# THE PALACE
 
-A simple CLI tool to track your dating connections from various platforms.
+A two-month repertory cinema calendar for Los Angeles arthouse and repertory theaters. Built with React + Vite, styled as a 1930s Art Deco film palace.
 
 ## Features
 
-- Track contacts from any dating platform (Tinder, Bumble, Hinge, etc.)
-- Record when you first started talking
-- See how long you've been talking to each person
-- Add notes about important details to remember
-- Track last contact date with reminders
-- Search through contacts and notes
-- Filter by status (active, dating, ghosted, ended)
+- **By Theater** view: grid of theater cards, click to expand and see full screening list
+- **By Month** view: two-column calendar showing all screenings across all theaters by date
+- **Detail Page**: full screening info with format badges, notes, and ticket links
+- **Search**: real-time filtering across all film titles
+- **This Week** filter: narrow both views to the next 7 days
+- Art Deco design with gold/charcoal/burgundy palette, geometric ornaments, and custom typography
 
-## Usage
+## Theaters Tracked
+
+- New Beverly Cinema
+- Vista Theatre
+- Academy Museum of Motion Pictures
+- Alamo Drafthouse LA
+- Vidiots (Eagle Theatre)
+- Brain Dead Studios
+- Billy Wilder Theater (Hammer Museum)
+- REDCAT
+- Laemmle Theatres (Nuart, NoHo 7, Los Feliz 3, Royal)
+
+## Setup
 
 ```bash
-python3 dating_tracker.py
+npm install
+npm run dev
 ```
 
-### Commands
+The app opens at `http://localhost:5173`.
+
+## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `list [status] [platform]` | List all contacts with optional filters |
-| `add` | Add a new contact (interactive) |
-| `view <id>` | View detailed contact info and notes |
-| `update <id>` | Update contact information |
-| `delete <id>` | Delete a contact |
-| `note <id> <text>` | Add a note to a contact |
-| `contacted <id> [date]` | Mark contact as contacted |
-| `search <term>` | Search contacts by name or notes |
-| `reminders` | Show contacts to reach out to |
-| `help` | Show help message |
-| `quit` | Exit the program |
+| `npm run dev` | Start dev server |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview production build |
+| `npm run scrape` | Re-scrape theater data from the web |
 
-### Example Session
+## Re-running the Scraper
 
-```
-> add
-Name: Sarah
-Platform (Tinder/Bumble/Hinge/etc.): Tinder
-Phone number (optional): 555-1234
-First contact date (YYYY-MM-DD, or press Enter for today): 2025-12-01
-Status (active/dating/ghosted/ended) [active]: active
-Add an initial note? Likes hiking and coffee
+The scraper fetches screening data from revivalhouses.com and individual theater websites, deduplicates entries, and writes `public/theaters.json`.
 
-> list
-ID   Name                 Platform     Talking For     Last Contact    Status
-1    Sarah                Tinder       1 month         1 month ago     active
-
-> note 1 Works as a nurse at the hospital downtown
-
-> view 1
-  CONTACT DETAILS - ID: 1
-  Name:              Sarah
-  Platform:          Tinder
-  ...
-  NOTES:
-  [2025-01-15 10:30:00] Likes hiking and coffee
-  [2025-01-15 10:35:00] Works as a nurse at the hospital downtown
-
-> contacted 1
-  Last contact date set to: 2025-01-15
+```bash
+npm install    # ensure scraper deps (axios, cheerio) are installed
+npm run scrape
 ```
 
-## Requirements
+The scraper will:
+1. Fetch from revivalhouses.com (primary aggregator)
+2. Fetch from each theater's website directly
+3. Deduplicate screenings (preferring direct theater data)
+4. Output `public/theaters.json` with a `lastUpdated` timestamp
 
-- Python 3.6+
-- No external dependencies (uses built-in sqlite3)
+Some theaters use JavaScript-heavy sites that may need Puppeteer for full rendering. The scraper gracefully handles fetch failures and logs which theaters couldn't be scraped.
 
-## Data Storage
+## Data Format
 
-All data is stored locally in a SQLite database file (`contacts.db`) in the same directory as the script.
+`public/theaters.json` follows this schema:
+
+```json
+{
+  "lastUpdated": "2026-02-22T00:00:00Z",
+  "theaters": [
+    {
+      "id": "new-beverly",
+      "name": "New Beverly Cinema",
+      "shortName": "New Bev",
+      "neighborhood": "Fairfax",
+      "url": "https://www.newbeverly.com",
+      "color": "#C9A84C",
+      "screenings": [
+        {
+          "id": "unique-screening-id",
+          "title": "Chinatown",
+          "date": "2026-02-22",
+          "time": "7:30 PM",
+          "format": "35mm",
+          "notes": "Double feature with The Long Goodbye",
+          "link": "https://direct-ticket-or-calendar-link"
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Tech Stack
+
+- React 19 + React Router
+- Vite 7
+- Cheerio + Axios (scraper)
+- Google Fonts: Playfair Display, Josefin Sans
