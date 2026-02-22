@@ -7,7 +7,20 @@ function FormatBadge({ format }) {
   return <span className="format-badge">{format}</span>
 }
 
-function ByTheater({ data }) {
+function FavButton({ screeningId, favorites, onToggle }) {
+  const isFav = favorites.includes(screeningId)
+  return (
+    <button
+      className={`fav-btn ${isFav ? 'is-fav' : ''}`}
+      onClick={(e) => { e.stopPropagation(); onToggle(screeningId) }}
+      title={isFav ? 'Remove from saved' : 'Save screening'}
+    >
+      {isFav ? '\u2605' : '\u2606'}
+    </button>
+  )
+}
+
+function ByTheater({ data, favorites = [], onToggleFavorite }) {
   const [expandedId, setExpandedId] = useState(null)
 
   const toggle = (id) => {
@@ -76,6 +89,11 @@ function ByTheater({ data }) {
                     <ul className="screening-list">
                       {screenings.map(s => (
                         <li key={s.id} className="screening-item" style={{ borderLeftColor: theater.color }}>
+                          <FavButton
+                            screeningId={s.id}
+                            favorites={favorites}
+                            onToggle={onToggleFavorite}
+                          />
                           <span className="screening-date-badge">{formatDate(s.date)}</span>
                           <Link to={`/screening/${s.id}`} className="screening-title-link">
                             {s.title}

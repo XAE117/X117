@@ -1,7 +1,20 @@
 import { Link } from 'react-router-dom'
 import './ByMonth.css'
 
-function ByMonth({ data }) {
+function FavButton({ screeningId, favorites, onToggle }) {
+  const isFav = favorites.includes(screeningId)
+  return (
+    <button
+      className={`fav-btn ${isFav ? 'is-fav' : ''}`}
+      onClick={(e) => { e.stopPropagation(); onToggle(screeningId) }}
+      title={isFav ? 'Remove from saved' : 'Save screening'}
+    >
+      {isFav ? '\u2605' : '\u2606'}
+    </button>
+  )
+}
+
+function ByMonth({ data, favorites = [], onToggleFavorite }) {
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
   }
@@ -58,6 +71,11 @@ function ByMonth({ data }) {
                     <ul className="day-screenings">
                       {day.screenings.map(s => (
                         <li key={s.id} className="day-screening-item">
+                          <FavButton
+                            screeningId={s.id}
+                            favorites={favorites}
+                            onToggle={onToggleFavorite}
+                          />
                           <span
                             className="theater-tag"
                             style={{ color: s.theaterColor }}
