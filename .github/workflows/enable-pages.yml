@@ -6,28 +6,11 @@ on:
 
 permissions:
   pages: write
+  contents: read
 
 jobs:
   enable-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Enable GitHub Pages
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/repos/${{ github.repository }}/pages")
-          if [ "$STATUS" = "404" ]; then
-            echo "Enabling GitHub Pages with Actions source..."
-            curl -sf -X POST \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer $GH_TOKEN" \
-              -H "Content-Type: application/json" \
-              "https://api.github.com/repos/${{ github.repository }}/pages" \
-              -d '{"build_type":"workflow"}'
-            echo "GitHub Pages enabled!"
-          else
-            echo "GitHub Pages already configured (status: $STATUS)"
-          fi
+        uses: actions/configure-pages@v5
