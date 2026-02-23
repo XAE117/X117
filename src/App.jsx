@@ -8,6 +8,7 @@ import LoadingSpinner from './components/LoadingSpinner.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByMonth from './views/ByMonth.jsx'
 import Detail from './views/Detail.jsx'
+import Dashboard from './views/Dashboard.jsx'
 import './App.css'
 
 const FAVORITES_KEY = 'palace-favorites'
@@ -180,6 +181,9 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={
+            <Dashboard data={data} />
+          } />
+          <Route path="/by-theater" element={
             <ByTheater data={filteredData} favorites={favorites} onToggleFavorite={toggleFavorite} />
           } />
           <Route path="/by-month" element={
