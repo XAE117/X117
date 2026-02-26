@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "scrape": "node scripts/scrape.js",
+    "notify": "node scripts/notify.js",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "puppeteer": "^23.0.0",
+    "twilio": "^5.12.2",
     "vite": "^7.3.1"
   }
 }

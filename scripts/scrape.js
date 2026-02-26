@@ -14,6 +14,7 @@ import * as cheerio from 'cheerio'
 import { writeFileSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { sendGodfatherSMS } from './notify.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'theaters.json')
@@ -26,20 +27,20 @@ const THEATERS = [
     name: 'New Beverly Cinema',
     shortName: 'New Bev',
     neighborhood: 'Fairfax',
-    url: 'https://www.newbeverly.com',
+    url: 'https://thenewbev.com',
     color: '#C9A84C',
-    scrapeUrl: 'https://www.newbeverly.com/screenings',
-    calendarUrl: 'https://www.newbeverly.com/screenings',
+    scrapeUrl: 'https://thenewbev.com/schedule/',
+    calendarUrl: 'https://thenewbev.com/schedule/',
   },
   {
     id: 'vista-theatre',
     name: 'Vista Theatre',
     shortName: 'Vista',
     neighborhood: 'Los Feliz',
-    url: 'https://www.vistatheatre.com',
+    url: 'https://www.vistatheaterhollywood.com',
     color: '#8B4513',
-    scrapeUrl: 'https://www.vistatheatre.com',
-    calendarUrl: 'https://www.vistatheatre.com',
+    scrapeUrl: 'https://www.vistatheaterhollywood.com',
+    calendarUrl: 'https://www.vistatheaterhollywood.com',
   },
   {
     id: 'academy-museum',
@@ -66,30 +67,30 @@ const THEATERS = [
     name: 'Vidiots (Eagle Theatre)',
     shortName: 'Vidiots',
     neighborhood: 'Eagle Rock',
-    url: 'https://vidiots.org',
+    url: 'https://vidiotsfoundation.org',
     color: '#5B8C5A',
-    scrapeUrl: 'https://vidiots.org',
-    calendarUrl: 'https://vidiots.org',
+    scrapeUrl: 'https://vidiotsfoundation.org/coming-soon/',
+    calendarUrl: 'https://vidiotsfoundation.org/coming-soon/',
   },
   {
     id: 'brain-dead',
     name: 'Brain Dead Studios',
     shortName: 'Brain Dead',
     neighborhood: 'Fairfax',
-    url: 'https://www.braindead.us/cinema',
+    url: 'https://studios.wearebraindead.com',
     color: '#4A7C59',
-    scrapeUrl: 'https://www.braindead.us/cinema',
-    calendarUrl: 'https://www.braindead.us/cinema',
+    scrapeUrl: 'https://studios.wearebraindead.com/coming-soon/',
+    calendarUrl: 'https://studios.wearebraindead.com/coming-soon/',
   },
   {
     id: 'billy-wilder',
     name: 'Billy Wilder Theater at the Hammer',
     shortName: 'Hammer',
     neighborhood: 'Westwood',
-    url: 'https://hammer.ucla.edu/programs',
+    url: 'https://hammer.ucla.edu/programs-events-events',
     color: '#2E5090',
-    scrapeUrl: 'https://hammer.ucla.edu/programs',
-    calendarUrl: 'https://hammer.ucla.edu/programs',
+    scrapeUrl: 'https://hammer.ucla.edu/programs-events-events',
+    calendarUrl: 'https://hammer.ucla.edu/programs-events-events',
   },
   {
     id: 'redcat',
@@ -345,7 +346,7 @@ async function scrapeNewBeverly() {
   const screenings = []
 
   try {
-    const html = await fetchPage('https://www.newbeverly.com/screenings')
+    const html = await fetchPage('https://thenewbev.com/schedule/')
     const $ = cheerio.load(html)
 
     // New Beverly typically lists screenings with date, title, and time info
@@ -371,7 +372,7 @@ async function scrapeNewBeverly() {
         time: timeMatch ? timeMatch[1] : '',
         format,
         notes: parseNotes(text.replace(title, '').replace(dateMatch ? dateMatch[0] : '', '').substring(0, 200)),
-        link: link.startsWith('http') ? link : link ? `https://www.newbeverly.com${link}` : 'https://www.newbeverly.com/screenings',
+        link: link.startsWith('http') ? link : link ? `https://thenewbev.com${link}` : 'https://thenewbev.com/screenings',
         source: 'direct',
       })
     })
@@ -437,7 +438,7 @@ async function scrapeBrainDead() {
   const screenings = []
 
   try {
-    const html = await fetchPage('https://www.braindead.us/cinema')
+    const html = await fetchPage('https://studios.wearebraindead.com/cinema')
     const $ = cheerio.load(html)
 
     $('article, .event, [class*="event"], [class*="screening"], [class*="film"], .product, [class*="product"]').each((_, el) => {
@@ -458,7 +459,7 @@ async function scrapeBrainDead() {
         time: timeMatch ? timeMatch[1] : '',
         format: detectFormat(text),
         notes: '',
-        link: link.startsWith('http') ? link : link ? `https://www.braindead.us${link}` : 'https://www.braindead.us/cinema',
+        link: link.startsWith('http') ? link : link ? `https://studios.wearebraindead.com${link}` : 'https://studios.wearebraindead.com/cinema',
         source: 'direct',
       })
     })
@@ -478,7 +479,7 @@ async function scrapeHammer() {
   const screenings = []
 
   try {
-    const html = await fetchPage('https://hammer.ucla.edu/programs')
+    const html = await fetchPage('https://hammer.ucla.edu/programs-events')
     const $ = cheerio.load(html)
 
     $('article, .event, [class*="event"], [class*="program"], [class*="screening"]').each((_, el) => {
@@ -501,7 +502,7 @@ async function scrapeHammer() {
           time: timeMatch ? timeMatch[1] : '',
           format: detectFormat(text),
           notes: '',
-          link: link.startsWith('http') ? link : link ? `https://hammer.ucla.edu${link}` : 'https://hammer.ucla.edu/programs',
+          link: link.startsWith('http') ? link : link ? `https://hammer.ucla.edu${link}` : 'https://hammer.ucla.edu/programs-events',
           source: 'direct',
         })
       }
@@ -563,7 +564,7 @@ async function scrapeVista() {
   const screenings = []
 
   try {
-    const html = await fetchPage('https://www.vistatheatre.com')
+    const html = await fetchPage('https://www.vistatheaterhollywood.com')
     const $ = cheerio.load(html)
 
     $('article, .event, [class*="event"], [class*="screening"], [class*="film"], [class*="show"]').each((_, el) => {
@@ -584,7 +585,7 @@ async function scrapeVista() {
         time: timeMatch ? timeMatch[1] : '',
         format: detectFormat(text),
         notes: '',
-        link: link.startsWith('http') ? link : link ? `https://www.vistatheatre.com${link}` : 'https://www.vistatheatre.com',
+        link: link.startsWith('http') ? link : link ? `https://www.vistatheaterhollywood.com${link}` : 'https://www.vistatheaterhollywood.com',
         source: 'direct',
       })
     })
@@ -645,7 +646,7 @@ async function scrapeVidiots() {
   const screenings = []
 
   try {
-    const html = await fetchPage('https://vidiots.org')
+    const html = await fetchPage('https://vidiotsfoundation.org')
     const $ = cheerio.load(html)
 
     $('article, .event, [class*="event"], [class*="screening"], [class*="film"]').each((_, el) => {
@@ -666,7 +667,7 @@ async function scrapeVidiots() {
         time: timeMatch ? timeMatch[1] : '',
         format: detectFormat(text),
         notes: '',
-        link: link.startsWith('http') ? link : link ? `https://vidiots.org${link}` : 'https://vidiots.org',
+        link: link.startsWith('http') ? link : link ? `https://vidiotsfoundation.org${link}` : 'https://vidiotsfoundation.org',
         source: 'direct',
       })
     })
@@ -889,6 +890,11 @@ async function main() {
   console.log('')
   console.log(`Done! Wrote ${totalScreenings} screenings across ${outputTheaters.length} theaters.`)
   console.log(`Output: ${OUTPUT_PATH}`)
+
+  // Send Liza an SMS if The Godfather is screening
+  console.log('')
+  console.log('Checking for Godfather screenings...')
+  await sendGodfatherSMS(result)
 
   if (totalScreenings === 0) {
     console.log('')
