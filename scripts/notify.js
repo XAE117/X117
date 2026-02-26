@@ -1,8 +1,11 @@
 /**
  * THE PALACE — Godfather SMS Alert
  *
- * Sends Liza an SMS via Twilio when The Godfather is screening
- * at any tracked LA repertory theater.
+ * Sends Liza an SMS via Twilio ONLY when new Godfather screenings
+ * appear that she hasn't been alerted about yet.
+ *
+ * Tracks previously notified screenings in .notified-screenings.json
+ * so she doesn't get the same text every day.
  *
  * Required env vars:
  *   TWILIO_ACCOUNT_SID
@@ -14,19 +17,35 @@
  */
 
 import twilio from 'twilio'
-import { readFileSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DATA_PATH = join(__dirname, '..', 'public', 'theaters.json')
+const NOTIFIED_PATH = join(__dirname, '..', '.notified-screenings.json')
 
 const LIZA_PHONE = '+12313490274'
 const APP_URL = 'https://xae117.github.io/X117/'
 
+function loadNotified() {
+  try {
+    if (existsSync(NOTIFIED_PATH)) {
+      return JSON.parse(readFileSync(NOTIFIED_PATH, 'utf-8'))
+    }
+  } catch {
+    // Corrupted file — start fresh
+  }
+  return []
+}
+
+function saveNotified(ids) {
+  writeFileSync(NOTIFIED_PATH, JSON.stringify(ids, null, 2))
+}
+
 /**
- * Scan theaters.json for Godfather screenings and send SMS if found.
- * Accepts either a parsed data object or reads from disk.
+ * Scan theaters.json for Godfather screenings and send SMS
+ * only for screenings Liza hasn't been texted about yet.
  */
 export async function sendGodfatherSMS(data) {
   const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } = process.env
@@ -48,11 +67,12 @@ export async function sendGodfatherSMS(data) {
   }
 
   // Find all Godfather screenings
-  const matches = []
+  const allMatches = []
   for (const theater of data.theaters) {
     for (const s of theater.screenings) {
       if (/godfather/i.test(s.title)) {
-        matches.push({
+        allMatches.push({
+          id: s.id,
           title: s.title,
           date: s.date,
           time: s.time,
@@ -64,13 +84,22 @@ export async function sendGodfatherSMS(data) {
     }
   }
 
-  if (matches.length === 0) {
+  if (allMatches.length === 0) {
     console.log('  No Godfather screenings found — no SMS to send.')
     return
   }
 
+  // Filter out screenings she's already been texted about
+  const alreadyNotified = loadNotified()
+  const newMatches = allMatches.filter(m => !alreadyNotified.includes(m.id))
+
+  if (newMatches.length === 0) {
+    console.log(`  ${allMatches.length} Godfather screening(s) found, but Liza's already been texted about all of them.`)
+    return
+  }
+
   // Build the message
-  const screeningLines = matches.map(m => {
+  const screeningLines = newMatches.map(m => {
     const d = new Date(m.date + 'T00:00:00')
     const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
     const fmt = m.format && m.format !== 'digital' ? ` (${m.format})` : ''
@@ -92,7 +121,11 @@ export async function sendGodfatherSMS(data) {
       from: TWILIO_PHONE_NUMBER,
       to: LIZA_PHONE,
     })
-    console.log(`  SMS sent to Liza! SID: ${result.sid}`)
+    console.log(`  SMS sent to Liza with ${newMatches.length} new screening(s)! SID: ${result.sid}`)
+
+    // Mark these as notified so she won't get them again
+    const updatedNotified = [...alreadyNotified, ...newMatches.map(m => m.id)]
+    saveNotified(updatedNotified)
   } catch (err) {
     console.error('  Failed to send SMS:', err.message)
   }

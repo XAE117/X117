@@ -87,10 +87,10 @@ const THEATERS = [
     name: 'Billy Wilder Theater at the Hammer',
     shortName: 'Hammer',
     neighborhood: 'Westwood',
-    url: 'https://hammer.ucla.edu/programs-events-events',
+    url: 'https://hammer.ucla.edu/programs-events',
     color: '#2E5090',
-    scrapeUrl: 'https://hammer.ucla.edu/programs-events-events',
-    calendarUrl: 'https://hammer.ucla.edu/programs-events-events',
+    scrapeUrl: 'https://hammer.ucla.edu/programs-events',
+    calendarUrl: 'https://hammer.ucla.edu/programs-events',
   },
   {
     id: 'redcat',
