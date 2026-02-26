@@ -17,7 +17,7 @@ function App() {
   const [thisWeekOnly, setThisWeekOnly] = useState(false)
 
   useEffect(() => {
-    fetch('/theaters.json')
+    fetch(import.meta.env.BASE_URL + 'theaters.json')
       .then(res => res.json())
       .then(d => {
         setData(d)
