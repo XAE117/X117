@@ -5,6 +5,7 @@ import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
 import SearchBar from './components/SearchBar.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
+import GodfatherAlert from './components/GodfatherAlert.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByMonth from './views/ByMonth.jsx'
 import Detail from './views/Detail.jsx'
@@ -79,6 +80,7 @@ function App() {
     <div className="app">
       <Header />
       <Nav />
+      <GodfatherAlert data={data} />
       <div className="controls">
         <SearchBar value={searchQuery} onChange={setSearchQuery} />
         <button
