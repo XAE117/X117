@@ -83,6 +83,7 @@ These are already built and operational:
 - `schedule create [YYYY-MM-DD]` — Auto-generate weekly schedule page in Notion
 - `/weekly-time-report` — Weekly Toggl analysis
 - `/ancient-paths` — Ancient Paths curriculum status briefing
+- `push-texts` — Push iMessage transcripts to Notion Liza archive (see below)
 
 ### MCP / OpenClaw
 
@@ -332,6 +333,58 @@ curl -s -X PATCH "https://api.notion.com/v1/blocks/BLOCK_ID/children" \
 - James away in mountains Feb 25 – Mar 4
 - Liza: TV writer, ~30, hyper-independent, Scorpio, never had a real relationship before
 - James: film editor/director/composer, ~40, in therapy, makes music
+
+-----
+
+## 🔄 Liza Transcript Update Procedure
+
+> **Tool:** `./scripts/push-texts.sh`
+> **When:** Whenever James provides new iMessage texts with Liza to archive.
+
+### Step-by-Step (for Claude Code sessions)
+
+1. **Get the raw texts from James.** He'll paste them into the chat or point to a file.
+2. **Save texts to a temp file** — one message per line. Format:
+   ```
+   WEDNESDAY, FEBRUARY 26
+   James 10:20 AM: Beautiful. Cold as hell.
+   Liza 10:25 AM: Send pics
+   James 10:26 AM: Reacted ❤️ to "Send pics"
+   ```
+3. **Dry-run first:** `./scripts/push-texts.sh --dry-run /tmp/texts.txt`
+   - Verify block count and formatting look correct
+4. **Push to Notion:** `./scripts/push-texts.sh /tmp/texts.txt`
+   - Appends to the **current week page** (default: Week 8)
+   - Batches in groups of 100 blocks
+5. **Post-push updates** (do all of these):
+   - Update the **weekly table row** (`df9af339-45c5-4a83-a3b2-658682b720a7`) with key events
+   - Update **appendices** (`2fec051d-73d2-81a3-8450-ee6ca4766a42`) with new inside jokes / personal details
+   - Update the **"Last updated" block** (`691ac0f7-16dd-468d-ae54-8883a6d02e43`) on the directory page
+   - Optionally update analysis/coaching pages
+
+### Input Format Rules
+
+| Pattern | Example | Result |
+|---------|---------|--------|
+| Day break | `WEDNESDAY, FEBRUARY 26` | `heading_2` block |
+| James message | `James 8:15 PM: text` | `🔵 James (8:15 PM): text` |
+| Liza message | `Liza 8:16 PM: text` | `⚪ Liza (8:16 PM): text` |
+| Reaction w/ time | `James 3:36 PM: Reacted 😂 to "text"` | `🔵 James (3:36 PM): Reacted 😂 to "text"` |
+| Reaction no time | `James Loved "text"` | `🔵 James: Loved "text"` |
+| Voice message | `James 🎙️ 8:20 PM: text` | `🔵 James (8:20 PM): 🎙️ text` |
+| Pre-formatted | `🔵 James (8:15 PM): text` | Passed through as-is |
+
+### Week Rollover
+
+When a new week starts, create a new child page under the transcript directory and update `WEEK8_PAGE_ID` in the script (or pass `--page-id` when that flag is added). Update the weekly table with a new row.
+
+### Key IDs
+
+- **Transcript Directory:** `2fec051d-73d2-81e7-aa7f-c66537ad064d`
+- **Weekly Table:** `df9af339-45c5-4a83-a3b2-658682b720a7`
+- **Week 8 Page:** `311c051d-73d2-8127-a9f2-ef0bc8f9b42e`
+- **Appendices:** `2fec051d-73d2-81a3-8450-ee6ca4766a42`
+- **Last Updated Block:** `691ac0f7-16dd-468d-ae54-8883a6d02e43`
 
 -----
 
