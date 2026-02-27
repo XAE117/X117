@@ -33,8 +33,15 @@ function App() {
   const getFilteredData = () => {
     if (!data) return null
 
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
     let theaters = data.theaters.map(theater => {
-      let screenings = theater.screenings
+      // Always filter out past screenings
+      let screenings = theater.screenings.filter(s => {
+        const d = new Date(s.date + 'T00:00:00')
+        return d >= today
+      })
 
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase()
@@ -44,12 +51,11 @@ function App() {
       }
 
       if (thisWeekOnly) {
-        const now = new Date()
-        const weekLater = new Date(now)
+        const weekLater = new Date(today)
         weekLater.setDate(weekLater.getDate() + 7)
         screenings = screenings.filter(s => {
           const d = new Date(s.date + 'T00:00:00')
-          return d >= now && d <= weekLater
+          return d <= weekLater
         })
       }
 
