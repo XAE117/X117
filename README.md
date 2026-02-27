@@ -71,7 +71,7 @@ Some theaters use JavaScript-heavy sites that may need Puppeteer for full render
       "name": "New Beverly Cinema",
       "shortName": "New Bev",
       "neighborhood": "Fairfax",
-      "url": "https://www.newbeverly.com",
+      "url": "https://thenewbev.com/schedule/",
       "color": "#C9A84C",
       "screenings": [
         {
