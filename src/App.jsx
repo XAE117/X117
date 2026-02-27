@@ -14,20 +14,29 @@ import './App.css'
 function App() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [refreshing, setRefreshing] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [thisWeekOnly, setThisWeekOnly] = useState(false)
 
-  useEffect(() => {
-    fetch(import.meta.env.BASE_URL + 'theaters.json')
+  const fetchData = (isRefresh = false) => {
+    if (isRefresh) setRefreshing(true)
+    const url = import.meta.env.BASE_URL + 'theaters.json?t=' + Date.now()
+    fetch(url)
       .then(res => res.json())
       .then(d => {
         setData(d)
         setLoading(false)
+        setRefreshing(false)
       })
       .catch(err => {
         console.error('Failed to load theater data:', err)
         setLoading(false)
+        setRefreshing(false)
       })
+  }
+
+  useEffect(() => {
+    fetchData()
   }, [])
 
   const getFilteredData = () => {
@@ -94,6 +103,19 @@ function App() {
           onClick={() => setThisWeekOnly(!thisWeekOnly)}
         >
           This Week
+        </button>
+        <button
+          className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+          onClick={() => fetchData(true)}
+          disabled={refreshing}
+          title="Refresh listings"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+            <path d="M23 4v6h-6" />
+            <path d="M1 20v-6h6" />
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+          </svg>
+          {refreshing ? 'Refreshing…' : 'Refresh'}
         </button>
       </div>
       <main className="main-content">
