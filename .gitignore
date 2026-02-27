@@ -12,6 +12,8 @@ dist
 dist-ssr
 .vite
 *.local
+*.local.*
+CLAUDE.local.md
 
 # Environment variables
 .env
