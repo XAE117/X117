@@ -883,28 +883,30 @@ async function main() {
     theaters: outputTheaters,
   }
 
-  // Step 5: Write output
-  writeFileSync(OUTPUT_PATH, JSON.stringify(result, null, 2))
-
   const totalScreenings = outputTheaters.reduce((sum, t) => sum + t.screenings.length, 0)
-  console.log('')
-  console.log(`Done! Wrote ${totalScreenings} screenings across ${outputTheaters.length} theaters.`)
-  console.log(`Output: ${OUTPUT_PATH}`)
 
-  // Send Liza an SMS if The Godfather is screening
-  console.log('')
-  console.log('Checking for Godfather screenings...')
-  await sendGodfatherSMS(result)
-
+  // Safety guard: never overwrite good data with empty results
   if (totalScreenings === 0) {
     console.log('')
-    console.log('⚠ No screenings were scraped. This may be because:')
+    console.log('⚠ No screenings were scraped. Keeping existing theaters.json intact.')
+    console.log('  This may be because:')
     console.log('  - Theater sites require JavaScript rendering (Puppeteer)')
     console.log('  - Site structures have changed')
     console.log('  - Network issues prevented fetching')
     console.log('')
-    console.log('The app will still work with the existing theaters.json data.')
     console.log('Consider adding Puppeteer-based scrapers for JS-heavy sites.')
+  } else {
+    // Step 5: Write output only when we have data
+    writeFileSync(OUTPUT_PATH, JSON.stringify(result, null, 2))
+
+    console.log('')
+    console.log(`Done! Wrote ${totalScreenings} screenings across ${outputTheaters.length} theaters.`)
+    console.log(`Output: ${OUTPUT_PATH}`)
+
+    // Send Liza an SMS if The Godfather is screening
+    console.log('')
+    console.log('Checking for Godfather screenings...')
+    await sendGodfatherSMS(result)
   }
 
   console.log('')
