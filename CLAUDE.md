@@ -261,68 +261,103 @@ Also update the Notion Context Master (`30bc051d-73d2-81d3-8d56-ffb659271e9b`) f
 
 -----
 
-## 💬 Liza Transcript Directory — Operational Details
+## 💬 Liza Transcript Directory — Complete Operational Guide
 
-**Notion API Token:** stored in `.env` as `NOTION_API_KEY`
+> **⚠️ CRITICAL REMINDER FOR ALL CLAUDE SESSIONS:** When James asks to update, sync, or push the Liza texts/transcript, **DO NOT ask him to paste texts.** The messages are already in Notion via BlueBubbles. Run the sync script. That's it.
 
-### Key Notion Block IDs
+### The Pipeline
 
-| Item | Block ID |
-|------|----------|
-| Directory page | `2fec051d-73d2-81e7-aa7f-c66537ad064d` |
-| Weekly table | `df9af339-45c5-4a83-a3b2-658682b720a7` |
-| Week 8 page | `311c051d-73d2-8127-a9f2-ef0bc8f9b42e` |
-| Appendices page | `2fec051d-73d2-81a3-8450-ee6ca4766a42` |
-| Psych profile page | `30cc051d-73d2-81c0-aa96-f674ce22ee6d` |
-| Growth log page | `30cc051d-73d2-81df-aae1-e9d5bdc1950d` |
-| Last updated block | `691ac0f7-16dd-468d-ae54-8883a6d02e43` |
-
-### Transcript Format
-
-Each message is a paragraph block:
-- **Bold** prefix: `🔵 James (TIME):` or `⚪ Liza (TIME):`
-- Regular text: message content
-- Reactions noted inline: `Loved "..."`, `Laughed at "..."`
-- Voice messages: 🎙️ prefix
-- Day breaks use `heading_2` blocks: `MONDAY, FEBRUARY 23`
-- In-person session notes use bullet lists under headings
-
-### Weekly Table Row Format
-
-3 columns: `Week` | `Dates` | `Key Events`
-Example: `Week 8` | `Feb 23–Mar 1` | `Music inspired by her. DATE 8: morning sex (trust milestone), coffee shop...`
-
-### Update Workflow
-
-When updating, typically:
-1. Add new transcript messages to the current week's child page
-2. Update the weekly table row with key events
-3. Update appendices with new inside jokes / personal details
-4. Update the "Last updated" date on the directory page
-5. Optionally update analysis/coaching pages
-
-### API Usage
-
-```bash
-# Read page
-curl -s "https://api.notion.com/v1/pages/PAGE_ID" \
-  -H "Authorization: Bearer $NOTION_API_KEY" \
-  -H "Notion-Version: 2022-06-28"
-
-# Read blocks (children)
-curl -s "https://api.notion.com/v1/blocks/BLOCK_ID/children?page_size=100" \
-  -H "Authorization: Bearer $NOTION_API_KEY" \
-  -H "Notion-Version: 2022-06-28"
-
-# Append blocks
-curl -s -X PATCH "https://api.notion.com/v1/blocks/BLOCK_ID/children" \
-  -H "Authorization: Bearer $NOTION_API_KEY" \
-  -H "Notion-Version: 2022-06-28" \
-  -H "Content-Type: application/json" \
-  -d '{"children": [...]}'
+```
+iMessages ──→ BlueBubbles ──→ Liza's Notion Contact Page ──→ sync script ──→ Transcript Directory
+  (auto)         (auto)        (auto, "me"/"Liza" format)      (on demand)    (🔵/⚪ format)
 ```
 
-### Relationship Context (as of Feb 25, 2026)
+**Source:** BlueBubbles continuously syncs iMessages to Liza's Notion contact page. Messages appear as `me (TIME): text` and `Liza (TIME): text` paragraph blocks, with `heading_2` day breaks like `Thursday, Feb 26`. BlueBubbles repeats month + day headers per batch (deduplication needed).
+
+**Destination:** The Liza Transcript Directory organizes messages into weekly child pages with formatted `🔵 James (TIME): text` and `⚪ Liza (TIME): text` blocks (bold prefix + regular content).
+
+### Sync Tool
+
+**Script:** `python3 scripts/sync-liza-transcript.py`
+
+```bash
+python3 scripts/sync-liza-transcript.py              # sync new messages
+python3 scripts/sync-liza-transcript.py --dry-run     # preview what would be pushed
+python3 scripts/sync-liza-transcript.py --status      # check if new messages exist
+```
+
+**What the script does:**
+1. Fetches all blocks from the current week's transcript page
+2. Finds the **last message** (last paragraph block)
+3. Fetches all blocks from BlueBubbles source (Liza's contact page)
+4. Matches the last transcript message against the source by **message content + time**
+5. Takes every block after the match point
+6. **Transforms:** `me` → `🔵 James`, `Liza` → `⚪ Liza`, deduplicates day headers
+7. **Pushes** to the transcript page in batches of 100 (Notion API limit)
+8. **Updates** the "Last updated" block on the directory page
+
+**Config lives in the script header** — update `CURRENT_WEEK_PAGE` and `CURRENT_WEEK_LABEL` on week rollover.
+
+### Full Session Workflow
+
+When James says "update the texts" / "sync the transcript" / anything about Liza messages:
+
+1. **Run:** `python3 scripts/sync-liza-transcript.py`
+2. **Post-sync** (do all when relevant new content exists):
+   - Update the **weekly table row** with key events from the new messages
+   - Update **appendices** with new inside jokes, personal details, preferences
+   - Optionally update **coaching notes** or **analysis pages**
+3. **Report** back: how many messages synced, date range covered, any notable content
+
+### Notion Block Format Reference
+
+| Block Type | Structure | Example |
+|------------|-----------|---------|
+| **James message** | `paragraph`: bold `🔵 James (TIME): ` + regular `text` | `🔵 James (8:11 PM): I hope you have fun` |
+| **Liza message** | `paragraph`: bold `⚪ Liza (TIME): ` + regular `text` | `⚪ Liza (10:10 PM): Did you make it safe?` |
+| **Reaction** | Same paragraph format, content is the reaction | `🔵 James (3:36 PM): Reacted 😂 to "text"` |
+| **Day break** | `heading_2`: plain text, all caps day + date | `WEDNESDAY, FEBRUARY 25` |
+| **Voice msg** | Same paragraph format with 🎙️ prefix on content | `⚪ Liza (8:20 PM): 🎙️ [voice message]` |
+
+### Notion API Patterns
+
+```bash
+# Read blocks (paginated — always loop on has_more/next_cursor)
+GET https://api.notion.com/v1/blocks/{BLOCK_ID}/children?page_size=100
+
+# Append blocks (max 100 per call)
+PATCH https://api.notion.com/v1/blocks/{BLOCK_ID}/children
+Body: {"children": [...blocks...]}
+
+# Update a single block (e.g., last-updated text)
+PATCH https://api.notion.com/v1/blocks/{BLOCK_ID}
+Body: {"paragraph": {"rich_text": [...]}}
+```
+
+Headers required: `Authorization: Bearer $NOTION_API_KEY`, `Notion-Version: 2022-06-28`, `Content-Type: application/json`
+
+### Key Notion IDs
+
+| Item | ID | Notes |
+|------|----|-------|
+| **BlueBubbles Source (Liza)** | `305c051d-73d2-815b-93c5-d4050c826099` | Auto-populated by BlueBubbles |
+| **Transcript Directory** | `2fec051d-73d2-81e7-aa7f-c66537ad064d` | Parent page for all week pages |
+| **Weekly Table** | `df9af339-45c5-4a83-a3b2-658682b720a7` | `Week` / `Dates` / `Key Events` columns |
+| **Week 8 Page** | `311c051d-73d2-8127-a9f2-ef0bc8f9b42e` | Current week (update on rollover) |
+| **Appendices** | `2fec051d-73d2-81a3-8450-ee6ca4766a42` | Inside jokes, details, preferences |
+| **Psych Profile** | `30cc051d-73d2-81c0-aa96-f674ce22ee6d` | Psychological analysis |
+| **Growth Log** | `30cc051d-73d2-81df-aae1-e9d5bdc1950d` | Relationship growth tracking |
+| **Last Updated Block** | `691ac0f7-16dd-468d-ae54-8883a6d02e43` | On directory page |
+
+### Week Rollover Procedure
+
+When a new week starts (Sunday):
+1. Create a new child page under the transcript directory (`2fec051d-73d2-81e7-aa7f-c66537ad064d`)
+2. Title it: `Week N — Mon DD–Mon DD (descriptive subtitle)`
+3. Update `CURRENT_WEEK_PAGE` and `CURRENT_WEEK_LABEL` in `scripts/sync-liza-transcript.py`
+4. Add a new row to the weekly table
+
+### Relationship Context (as of Feb 27, 2026)
 
 - James & Liza matched on Hinge Jan 6, 2026
 - Moved to iMessage Week 3, first date at L'Antica Pizzeria
@@ -331,58 +366,10 @@ curl -s -X PATCH "https://api.notion.com/v1/blocks/BLOCK_ID/children" \
 - Week 7: first sleepover at her apartment
 - Week 8 (current): morning intimacy milestone, James acknowledged being in love (not yet told to Liza)
 - James away in mountains Feb 25 – Mar 4
-- Liza: TV writer, ~30, hyper-independent, Scorpio, never had a real relationship before
-- James: film editor/director/composer, ~40, in therapy, makes music
-
------
-
-## 🔄 Liza Transcript Update Procedure
-
-> **Tool:** `python3 scripts/sync-liza-transcript.py`
-> **Source:** BlueBubbles auto-syncs iMessages to Liza's Notion contact page (`305c051d-73d2-815b-93c5-d4050c826099`)
-> **Destination:** Transcript Directory week pages with 🔵/⚪ formatting
-
-### How It Works (fully automatic)
-
-The sync script:
-1. Reads the **last message** in the current week's transcript page
-2. Finds that same message in the **BlueBubbles source** (Liza's contact page)
-3. Takes everything after it, transforms `me` → `🔵 James` and `Liza` → `⚪ Liza`
-4. Deduplicates day headers (BlueBubbles repeats them per batch)
-5. Pushes to the transcript page in batches of 100
-6. Updates the "Last updated" block
-
-### Commands
-
-```bash
-python3 scripts/sync-liza-transcript.py              # sync new messages
-python3 scripts/sync-liza-transcript.py --dry-run     # preview without pushing
-python3 scripts/sync-liza-transcript.py --status      # show sync status
-```
-
-### Step-by-Step (for Claude Code sessions)
-
-1. **Run the sync:** `python3 scripts/sync-liza-transcript.py` — that's it
-2. **Post-sync updates** (do manually or when asked):
-   - Update the **weekly table row** (`df9af339-45c5-4a83-a3b2-658682b720a7`) with key events
-   - Update **appendices** (`2fec051d-73d2-81a3-8450-ee6ca4766a42`) with new inside jokes / personal details
-   - Optionally update analysis/coaching pages
-
-### Week Rollover
-
-When a new week starts:
-1. Create a new child page under the transcript directory
-2. Update `CURRENT_WEEK_PAGE` and `CURRENT_WEEK_LABEL` in `scripts/sync-liza-transcript.py`
-3. Add a new row to the weekly table
-
-### Key IDs
-
-- **BlueBubbles Source (Liza):** `305c051d-73d2-815b-93c5-d4050c826099`
-- **Transcript Directory:** `2fec051d-73d2-81e7-aa7f-c66537ad064d`
-- **Weekly Table:** `df9af339-45c5-4a83-a3b2-658682b720a7`
-- **Week 8 Page:** `311c051d-73d2-8127-a9f2-ef0bc8f9b42e`
-- **Appendices:** `2fec051d-73d2-81a3-8450-ee6ca4766a42`
-- **Last Updated Block:** `691ac0f7-16dd-468d-ae54-8883a6d02e43`
+- Planning Date 9: La Dolce Vita at the Aero, Thursday Mar 6
+- Built THE PALACE cinema app for Liza — she loves it, requested Godfather notifications
+- Liza: TV writer, ~30, hyper-independent, Scorpio cusp, never had a real relationship before
+- James: film editor/director/composer, ~40, in therapy, makes music, 19+ months sober
 
 -----
 
