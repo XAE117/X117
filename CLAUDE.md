@@ -83,7 +83,7 @@ These are already built and operational:
 - `schedule create [YYYY-MM-DD]` — Auto-generate weekly schedule page in Notion
 - `/weekly-time-report` — Weekly Toggl analysis
 - `/ancient-paths` — Ancient Paths curriculum status briefing
-- `push-texts` — Push iMessage transcripts to Notion Liza archive (see below)
+- `sync-liza-transcript` — Auto-sync Liza iMessages from BlueBubbles → Notion transcript (see below)
 
 ### MCP / OpenClaw
 
@@ -338,48 +338,46 @@ curl -s -X PATCH "https://api.notion.com/v1/blocks/BLOCK_ID/children" \
 
 ## 🔄 Liza Transcript Update Procedure
 
-> **Tool:** `./scripts/push-texts.sh`
-> **When:** Whenever James provides new iMessage texts with Liza to archive.
+> **Tool:** `python3 scripts/sync-liza-transcript.py`
+> **Source:** BlueBubbles auto-syncs iMessages to Liza's Notion contact page (`305c051d-73d2-815b-93c5-d4050c826099`)
+> **Destination:** Transcript Directory week pages with 🔵/⚪ formatting
+
+### How It Works (fully automatic)
+
+The sync script:
+1. Reads the **last message** in the current week's transcript page
+2. Finds that same message in the **BlueBubbles source** (Liza's contact page)
+3. Takes everything after it, transforms `me` → `🔵 James` and `Liza` → `⚪ Liza`
+4. Deduplicates day headers (BlueBubbles repeats them per batch)
+5. Pushes to the transcript page in batches of 100
+6. Updates the "Last updated" block
+
+### Commands
+
+```bash
+python3 scripts/sync-liza-transcript.py              # sync new messages
+python3 scripts/sync-liza-transcript.py --dry-run     # preview without pushing
+python3 scripts/sync-liza-transcript.py --status      # show sync status
+```
 
 ### Step-by-Step (for Claude Code sessions)
 
-1. **Get the raw texts from James.** He'll paste them into the chat or point to a file.
-2. **Save texts to a temp file** — one message per line. Format:
-   ```
-   WEDNESDAY, FEBRUARY 26
-   James 10:20 AM: Beautiful. Cold as hell.
-   Liza 10:25 AM: Send pics
-   James 10:26 AM: Reacted ❤️ to "Send pics"
-   ```
-3. **Dry-run first:** `./scripts/push-texts.sh --dry-run /tmp/texts.txt`
-   - Verify block count and formatting look correct
-4. **Push to Notion:** `./scripts/push-texts.sh /tmp/texts.txt`
-   - Appends to the **current week page** (default: Week 8)
-   - Batches in groups of 100 blocks
-5. **Post-push updates** (do all of these):
+1. **Run the sync:** `python3 scripts/sync-liza-transcript.py` — that's it
+2. **Post-sync updates** (do manually or when asked):
    - Update the **weekly table row** (`df9af339-45c5-4a83-a3b2-658682b720a7`) with key events
    - Update **appendices** (`2fec051d-73d2-81a3-8450-ee6ca4766a42`) with new inside jokes / personal details
-   - Update the **"Last updated" block** (`691ac0f7-16dd-468d-ae54-8883a6d02e43`) on the directory page
    - Optionally update analysis/coaching pages
-
-### Input Format Rules
-
-| Pattern | Example | Result |
-|---------|---------|--------|
-| Day break | `WEDNESDAY, FEBRUARY 26` | `heading_2` block |
-| James message | `James 8:15 PM: text` | `🔵 James (8:15 PM): text` |
-| Liza message | `Liza 8:16 PM: text` | `⚪ Liza (8:16 PM): text` |
-| Reaction w/ time | `James 3:36 PM: Reacted 😂 to "text"` | `🔵 James (3:36 PM): Reacted 😂 to "text"` |
-| Reaction no time | `James Loved "text"` | `🔵 James: Loved "text"` |
-| Voice message | `James 🎙️ 8:20 PM: text` | `🔵 James (8:20 PM): 🎙️ text` |
-| Pre-formatted | `🔵 James (8:15 PM): text` | Passed through as-is |
 
 ### Week Rollover
 
-When a new week starts, create a new child page under the transcript directory and update `WEEK8_PAGE_ID` in the script (or pass `--page-id` when that flag is added). Update the weekly table with a new row.
+When a new week starts:
+1. Create a new child page under the transcript directory
+2. Update `CURRENT_WEEK_PAGE` and `CURRENT_WEEK_LABEL` in `scripts/sync-liza-transcript.py`
+3. Add a new row to the weekly table
 
 ### Key IDs
 
+- **BlueBubbles Source (Liza):** `305c051d-73d2-815b-93c5-d4050c826099`
 - **Transcript Directory:** `2fec051d-73d2-81e7-aa7f-c66537ad064d`
 - **Weekly Table:** `df9af339-45c5-4a83-a3b2-658682b720a7`
 - **Week 8 Page:** `311c051d-73d2-8127-a9f2-ef0bc8f9b42e`
