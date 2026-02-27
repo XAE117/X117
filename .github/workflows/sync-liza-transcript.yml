@@ -1,0 +1,22 @@
+name: Sync Liza Transcript
+
+on:
+  schedule:
+    # Daily at 2am PST (10am UTC)
+    - cron: '0 10 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync transcript
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+        run: python3 scripts/sync-liza-transcript.py

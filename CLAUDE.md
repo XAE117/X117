@@ -368,8 +368,12 @@ When a new week starts (Sunday):
 - James away in mountains Feb 25 – Mar 4
 - Planning Date 9: La Dolce Vita at the Aero, Thursday Mar 6
 - Built THE PALACE cinema app for Liza — she loves it, requested Godfather notifications
+- First phone call scheduled: Friday Feb 27 night ~11pm (her idea)
 - Liza: TV writer, ~30, hyper-independent, Scorpio cusp, never had a real relationship before
+- Liza: obsessed with swans, loves people watching, "cunt = passive aggressive, asshole = aggressive"
+- Liza on kids: "I love them for an hour" / "sexy about a man who's good with kids. Biology"
 - James: film editor/director/composer, ~40, in therapy, makes music, 19+ months sober
+- James: nephews call him "Uncle Benny," initiated asking about phone calls (vulnerability growth)
 
 -----
 
