@@ -8,6 +8,15 @@ function FormatBadge({ format }) {
   return <span className="search-format-badge">{format}</span>
 }
 
+function filmMeta(title, films) {
+  if (!films) return null
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const f = films[slug]
+  if (!f) return null
+  const parts = [f.director, f.year].filter(Boolean)
+  return parts.length > 0 ? parts.join(' · ') : null
+}
+
 function Search({ data }) {
   const [query, setQuery] = useState('')
   const [, setTick] = useState(0)
@@ -26,7 +35,13 @@ function Search({ data }) {
     data.theaters.forEach(theater => {
       theater.screenings.forEach(s => {
         const d = new Date(s.date + 'T00:00:00')
-        if (d >= today && s.title.toLowerCase().includes(q)) {
+        if (d < today) return
+        const titleMatch = s.title.toLowerCase().includes(q)
+        // Also search by director name from TMDB data
+        const slug = s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+        const film = data.films?.[slug]
+        const directorMatch = film?.director?.toLowerCase().includes(q)
+        if (titleMatch || directorMatch) {
           results.push({
             ...s,
             theaterName: theater.shortName,
@@ -91,6 +106,9 @@ function Search({ data }) {
               <Link to={`/screening/${s.id}`} className="search-result-title">
                 {s.title}
               </Link>
+              {filmMeta(s.title, data.films) && (
+                <span className="search-film-meta">{filmMeta(s.title, data.films)}</span>
+              )}
               <FormatBadge format={s.format} />
               {s.time && (
                 <span className="search-result-time">{s.time}</span>

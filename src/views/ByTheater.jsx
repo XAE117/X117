@@ -8,6 +8,15 @@ function FormatBadge({ format }) {
   return <span className="format-badge">{format}</span>
 }
 
+function filmMeta(title, films) {
+  if (!films) return null
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const f = films[slug]
+  if (!f) return null
+  const parts = [f.director, f.year].filter(Boolean)
+  return parts.length > 0 ? parts.join(' · ') : null
+}
+
 function ByTheater({ data }) {
   const [expandedId, setExpandedId] = useState(null)
   const [, setTick] = useState(0)
@@ -84,6 +93,9 @@ function ByTheater({ data }) {
                           <Link to={`/screening/${s.id}`} className="screening-title-link">
                             {s.title}
                           </Link>
+                          {filmMeta(s.title, data.films) && (
+                            <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
+                          )}
                           <FormatBadge format={s.format} />
                           {s.link && (
                             <a

@@ -139,6 +139,13 @@
   color: var(--gold);
 }
 
+.tonight-film-meta {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
 .tonight-sub {
   display: flex;
   align-items: center;

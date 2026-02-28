@@ -40,6 +40,15 @@ function getRelativeTime(screeningMinutes, nowMinutes) {
   return `Started ${mins}m ago`
 }
 
+function filmMeta(title, films) {
+  if (!films) return null
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const f = films[slug]
+  if (!f) return null
+  const parts = [f.director, f.year].filter(Boolean)
+  return parts.length > 0 ? parts.join(' · ') : null
+}
+
 function Tonight({ data }) {
   const [now, setNow] = useState(new Date())
 
@@ -127,6 +136,9 @@ function Tonight({ data }) {
                 <Link to={`/screening/${s.id}`} className="tonight-title-link">
                   {s.title}
                 </Link>
+                {filmMeta(s.title, data.films) && (
+                  <span className="tonight-film-meta">{filmMeta(s.title, data.films)}</span>
+                )}
                 <div className="tonight-sub">
                   <span className="tonight-theater" style={{ color: s.theaterColor }}>
                     {s.theaterName}

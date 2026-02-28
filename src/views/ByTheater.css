@@ -249,6 +249,15 @@
   width: 100%;
 }
 
+.screening-film-meta {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .format-badge {
   font-family: var(--font-mono, var(--font-body));
   font-size: 0.6rem;

@@ -49,15 +49,31 @@
 .day-screenshot-btn {
   display: inline-flex;
   align-items: center;
-  color: var(--text-muted);
+  gap: 0.3rem;
+  color: var(--cream);
+  opacity: 0.6;
   flex-shrink: 0;
   padding: 0.15rem;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
   order: 1;
+  text-decoration: none;
 }
 
 .day-screenshot-btn:hover {
   color: var(--gold);
+  opacity: 1;
+}
+
+.day-screenshot-label {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.day-screenshot-arrow {
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: -0.1rem;
 }
 
 /* ── Screening List ── */
@@ -109,6 +125,15 @@
 
 .day-film-link:hover {
   color: var(--gold);
+}
+
+.day-film-meta {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .day-format-badge {
