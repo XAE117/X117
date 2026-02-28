@@ -3,8 +3,14 @@
 /**
  * THE PALACE — Screening Scraper
  *
- * Fetches real repertory cinema data from revivalhouses.com,
- * filters to our tracked theaters, and outputs public/theaters.json.
+ * Primary source: revivalhouses.com (~7 days out)
+ * Supplemental: direct theater website scraping for further-out dates
+ *
+ * Theaters with extended scheduling horizons:
+ *   - New Beverly Cinema: ~1 month (thenewbev.com)
+ *   - Vista Theatre: ~5 weeks (vistatheaterhollywood.com)
+ *   - Brain Dead Studios: ~6 weeks (studios.wearebraindead.com)
+ *   - Vidiots: ~1 month (vidiotsfoundation.org)
  *
  * Usage: npm run scrape
  */
@@ -254,6 +260,305 @@ async function scrapeRevivalHouses() {
   return screeningsByTheater
 }
 
+// ── Month name → number lookup ──
+
+const MONTH_NUM = {
+  january: '01', february: '02', march: '03', april: '04',
+  may: '05', june: '06', july: '07', august: '08',
+  september: '09', october: '10', november: '11', december: '12',
+  jan: '01', feb: '02', mar: '03', apr: '04',
+  jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12',
+}
+
+function parseMonthDay(monthStr, dayStr, fallbackYear) {
+  const m = MONTH_NUM[monthStr.toLowerCase()]
+  if (!m) return null
+  const d = String(parseInt(dayStr, 10)).padStart(2, '0')
+  return `${fallbackYear}-${m}-${d}`
+}
+
+// ── Supplemental: New Beverly Cinema ──
+// Scrapes thenewbev.com/schedule/ which shows ~1 month of screenings
+
+async function scrapeNewBeverly(cutoffDate) {
+  console.log('  Fetching thenewbev.com/schedule/...')
+  try {
+    const html = fetchPage('https://thenewbev.com/schedule/')
+    const $ = cheerio.load(html)
+    const screenings = []
+
+    $('article.event-card').each((_, el) => {
+      const $el = $(el)
+      const monthName = $el.find('.event-card__month').text().trim()
+      const dayNum = $el.find('.event-card__numb').text().trim()
+      const yearText = $el.closest('.calendar-month').find('h2').text().trim()
+      const year = yearText.match(/(\d{4})/)?.[1] || new Date().getFullYear().toString()
+
+      const date = parseMonthDay(monthName, dayNum, year)
+      if (!date || date <= cutoffDate) return
+
+      // Get times (may be multiple for double features)
+      const times = []
+      $el.find('time.event-card__time').each((_, t) => {
+        times.push($(t).text().trim())
+      })
+
+      // Title (may include double feature separated by " / ")
+      const titleRaw = $el.find('h4.event-card__title').text().trim()
+        .replace(/\s+/g, ' ')
+      const link = $el.find('a').attr('href') || 'https://thenewbev.com/schedule/'
+
+      // Format label (Midnight, Grindhouse, etc.)
+      const label = $el.find('i.event-card__label').attr('aria-label') || ''
+
+      // Split double features into separate screenings
+      const titles = titleRaw.split(/\s*\/\s*/).filter(Boolean)
+      titles.forEach((title, i) => {
+        const cleanTitle = title.replace(/\s*\((?:70mm|35mm|16mm|IMAX|nitrate)\)\s*/gi, '').trim()
+        const time = times[i] || times[0] || ''
+        const format = detectFormat(`${cleanTitle} ${label}`)
+
+        screenings.push({
+          id: generateId('new-beverly', cleanTitle, date),
+          title: cleanTitle,
+          date,
+          time,
+          format,
+          notes: label || '',
+          link,
+        })
+      })
+    })
+
+    console.log(`    → ${screenings.length} screenings beyond cutoff`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
+// ── Supplemental: Vista Theatre ──
+// Scrapes vistatheaterhollywood.com which shows ~5 weeks
+
+async function scrapeVista(cutoffDate) {
+  console.log('  Fetching vistatheaterhollywood.com...')
+  try {
+    const html = fetchPage('https://www.vistatheaterhollywood.com')
+    const $ = cheerio.load(html)
+    const screenings = []
+    const currentYear = new Date().getFullYear().toString()
+
+    $('.shows__grid--row').each((_, row) => {
+      const $row = $(row)
+      const title = $row.find('h3.alt').text().trim()
+      if (!title) return
+
+      const metaText = $row.find('h3.alt').next('p').text().trim()
+      const format = detectFormat(metaText + ' ' + title)
+      const cleanTitle = title.replace(/\s*\((?:70mm|35mm|16mm|IMAX|nitrate)\)\s*/gi, '').trim()
+
+      // Parse dates and times from the first cell
+      // Dates are: p.month (optional), p.text__size-2 (day ordinal), p (day name), div.times
+      const scheduleCell = $row.find('.shows__grid--cell').first()
+      let currentMonth = null
+
+      // Walk all elements inside the inner container
+      const innerEl = scheduleCell.find('.inner')
+      const children = innerEl.find('p, div.times')
+
+      let pendingDay = null
+      children.each((_, child) => {
+        const $child = $(child)
+        const tagName = child.tagName?.toLowerCase()
+
+        if (tagName === 'p' && $child.hasClass('month')) {
+          currentMonth = $child.text().trim()
+        } else if (tagName === 'p' && $child.hasClass('text__size-2')) {
+          // Day number like "27th", "1st"
+          const dayStr = $child.text().trim().replace(/\D+$/, '')
+          pendingDay = dayStr
+        } else if (tagName === 'div' && $child.hasClass('times') && pendingDay && currentMonth) {
+          const date = parseMonthDay(currentMonth, pendingDay, currentYear)
+          if (!date || date <= cutoffDate) {
+            pendingDay = null
+            return
+          }
+
+          $child.find('a.card__button').each((_, a) => {
+            const $a = $(a)
+            if ($a.hasClass('sold-out')) return
+            const timeText = $a.clone().children().remove().end().text().trim()
+            const ticketLink = $a.attr('href') || 'https://www.vistatheaterhollywood.com'
+
+            screenings.push({
+              id: generateId('vista-theatre', cleanTitle, date) + `-${timeText.replace(/\s+/g, '')}`,
+              title: cleanTitle,
+              date,
+              time: timeText,
+              format,
+              notes: '',
+              link: ticketLink,
+            })
+          })
+          pendingDay = null
+        }
+      })
+    })
+
+    console.log(`    → ${screenings.length} screenings beyond cutoff`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
+// ── Supplemental: Filmbot-powered theaters (Brain Dead, Vidiots) ──
+// These sites use the Filmbot/Marquee WordPress theme with:
+//   - themeScheduledDates JS array listing all dates
+//   - Date-specific pages at /<YYYY-MM-DD>/ with now-playing shows + times
+
+function scrapeFilmbotDatePage($, theaterId, date, baseUrl) {
+  const screenings = []
+
+  // Each show in the #now-playing section
+  $('#now-playing .show').each((_, el) => {
+    const $show = $(el)
+    const title = $show.find('> a > h2').text().trim()
+    if (!title) return
+
+    const format = detectFormat(title)
+    const cleanTitle = title.replace(/\s*\((?:70mm|35mm|16mm|IMAX|nitrate)\)\s*/gi, '').trim()
+    const detailUrl = $show.find('> a').attr('href') || ''
+    const link = detailUrl.startsWith('http') ? detailUrl : `${baseUrl}${detailUrl}`
+
+    // Get showtimes from the adjacent <ol class="showtimes">
+    const $showtimes = $show.next('ol.showtimes').length
+      ? $show.next('ol.showtimes')
+      : $show.parent().find('ol.showtimes')
+
+    if ($showtimes.length) {
+      $showtimes.find('a.showtime').each((_, a) => {
+        const time = $(a).text().trim()
+        const ticketHref = $(a).attr('href') || ''
+        const ticketLink = ticketHref.startsWith('http') ? ticketHref : `${baseUrl}${ticketHref}`
+
+        screenings.push({
+          id: generateId(theaterId, cleanTitle, date) + `-${time.replace(/\s+/g, '')}`,
+          title: cleanTitle,
+          date,
+          time,
+          format,
+          notes: '',
+          link: ticketLink,
+        })
+      })
+    } else {
+      // No showtimes listed, just record the screening
+      screenings.push({
+        id: generateId(theaterId, cleanTitle, date),
+        title: cleanTitle,
+        date,
+        time: '',
+        format,
+        notes: '',
+        link,
+      })
+    }
+  })
+
+  return screenings
+}
+
+async function scrapeFilmbotSite(theaterId, baseUrl, cutoffDate) {
+  const label = baseUrl.replace(/^https?:\/\//, '')
+  console.log(`  Fetching ${label}...`)
+  try {
+    const html = fetchPage(baseUrl)
+    const $ = cheerio.load(html)
+
+    // Extract themeScheduledDates from inline script
+    let scheduledDates = []
+    $('script').each((_, el) => {
+      const text = $(el).html()
+      if (text && text.includes('themeScheduledDates')) {
+        const match = text.match(/themeScheduledDates[^=]*=\s*(\[.*?\])/)
+        if (match) {
+          try { scheduledDates = JSON.parse(match[1]) } catch {}
+        }
+      }
+    })
+
+    // Filter to dates beyond the cutoff
+    const futureDates = scheduledDates.filter(d => d > cutoffDate).sort()
+    console.log(`    → ${futureDates.length} dates beyond cutoff (through ${futureDates[futureDates.length - 1] || 'none'})`)
+
+    if (futureDates.length === 0) return []
+
+    // Fetch each date page to get actual show titles + times
+    const screenings = []
+    for (const date of futureDates) {
+      try {
+        const dateHtml = fetchPage(`${baseUrl}/${date}/`)
+        const $date = cheerio.load(dateHtml)
+        const dateScreenings = scrapeFilmbotDatePage($date, theaterId, date, baseUrl)
+        screenings.push(...dateScreenings)
+      } catch {
+        // Skip failed date pages silently
+      }
+    }
+
+    console.log(`    → ${screenings.length} total screenings`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
+async function scrapeBrainDead(cutoffDate) {
+  return scrapeFilmbotSite('brain-dead', 'https://studios.wearebraindead.com', cutoffDate)
+}
+
+// ── Supplemental: Vidiots ──
+
+async function scrapeVidiots(cutoffDate) {
+  return scrapeFilmbotSite('vidiots', 'https://vidiotsfoundation.org', cutoffDate)
+}
+
+// ── Run all supplemental scrapers ──
+// Only adds screenings with dates after the revivalhouses.com cutoff
+
+async function scrapeSupplemental(screeningsByTheater) {
+  // Find the latest date from revivalhouses data across all theaters
+  let maxDate = '0000-00-00'
+  for (const theaterId in screeningsByTheater) {
+    for (const s of screeningsByTheater[theaterId]) {
+      if (s.date > maxDate) maxDate = s.date
+    }
+  }
+  console.log(`  RevivalHouses cutoff: ${maxDate}`)
+
+  const supplementalResults = await Promise.all([
+    scrapeNewBeverly(maxDate),
+    scrapeVista(maxDate),
+    scrapeBrainDead(maxDate),
+    scrapeVidiots(maxDate),
+  ])
+
+  const [newBev, vista, brainDead, vidiots] = supplementalResults
+
+  // Merge supplemental screenings (only dates beyond the cutoff, so no dedup needed)
+  screeningsByTheater['new-beverly'].push(...newBev)
+  screeningsByTheater['vista-theatre'].push(...vista)
+  screeningsByTheater['brain-dead'].push(...brainDead)
+  screeningsByTheater['vidiots'].push(...vidiots)
+
+  const totalSupplemental = newBev.length + vista.length + brainDead.length + vidiots.length
+  return totalSupplemental
+}
+
 // ── Main ──
 
 async function main() {
@@ -264,6 +569,12 @@ async function main() {
   console.log('')
 
   const screeningsByTheater = await scrapeRevivalHouses()
+
+  // Scrape individual theater sites for further-out dates
+  console.log('')
+  console.log('Supplemental scraping (extended horizons)...')
+  const supplementalCount = await scrapeSupplemental(screeningsByTheater)
+  console.log(`  Total supplemental: ${supplementalCount} screenings`)
 
   // Build output
   const outputTheaters = THEATERS.map(theater => {
@@ -294,7 +605,7 @@ async function main() {
 
   const result = {
     lastUpdated: new Date().toISOString(),
-    source: 'revivalhouses.com',
+    source: 'revivalhouses.com + theater websites',
     theaters: outputTheaters,
   }
 
