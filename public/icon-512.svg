@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#0D0B0A"/>
+  <rect x="32" y="32" width="448" height="448" stroke="#C9A84C" stroke-width="3" fill="none"/>
+  <rect x="48" y="48" width="416" height="416" stroke="#A8893A" stroke-width="1.5" fill="none"/>
+  <!-- L -->
+  <text x="128" y="320" font-family="Georgia, serif" font-weight="bold" font-size="200" fill="#C9A84C">L</text>
+  <!-- P -->
+  <text x="260" y="320" font-family="Georgia, serif" font-weight="bold" font-size="200" fill="#C9A84C">P</text>
+  <!-- Corner ornaments -->
+  <line x1="40" y1="40" x2="80" y2="40" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="40" y1="40" x2="40" y2="80" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="472" y1="40" x2="432" y2="40" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="472" y1="40" x2="472" y2="80" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="40" y1="472" x2="80" y2="472" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="40" y1="472" x2="40" y2="432" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="472" y1="472" x2="432" y2="472" stroke="#C9A84C" stroke-width="2"/>
+  <line x1="472" y1="472" x2="472" y2="432" stroke="#C9A84C" stroke-width="2"/>
+  <!-- Decorative line -->
+  <line x1="80" y1="340" x2="432" y2="340" stroke="#A8893A" stroke-width="1" opacity="0.5"/>
+  <text x="180" y="380" font-family="sans-serif" font-weight="300" font-size="28" fill="#E8D5A3" letter-spacing="8">LIZA'S PALACE</text>
+</svg>
