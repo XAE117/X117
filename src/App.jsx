@@ -15,8 +15,6 @@ function App() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
-  const [thisWeekOnly, setThisWeekOnly] = useState(false)
-
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
     const url = import.meta.env.BASE_URL + 'theaters.json?t=' + Date.now()
@@ -44,21 +42,11 @@ function App() {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
-    let theaters = data.theaters.map(theater => {
-      // Always filter out past screenings
-      let screenings = theater.screenings.filter(s => {
+    const theaters = data.theaters.map(theater => {
+      const screenings = theater.screenings.filter(s => {
         const d = new Date(s.date + 'T00:00:00')
         return d >= today
       })
-
-      if (thisWeekOnly) {
-        const weekLater = new Date(today)
-        weekLater.setDate(weekLater.getDate() + 7)
-        screenings = screenings.filter(s => {
-          const d = new Date(s.date + 'T00:00:00')
-          return d <= weekLater
-        })
-      }
 
       return { ...theater, screenings }
     })
@@ -82,7 +70,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Nav thisWeekOnly={thisWeekOnly} onToggleThisWeek={() => setThisWeekOnly(!thisWeekOnly)} />
+      <Nav />
       <GodfatherAlert data={data} />
       <div className="controls">
         <button
