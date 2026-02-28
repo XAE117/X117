@@ -60,6 +60,8 @@
   color: var(--gold);
 }
 
+/* ── Screening List ── */
+
 .day-block-list {
   list-style: none;
   display: flex;
@@ -68,20 +70,28 @@
 }
 
 .day-block-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
   align-items: baseline;
-  gap: 0.6rem;
+  column-gap: 0.6rem;
   padding: 0.25rem 0;
 }
 
-.theater-tag {
+.day-item-theater {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  min-width: 70px;
-  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.day-item-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .day-film-link {
@@ -90,27 +100,15 @@
   font-size: 0.95rem;
   color: var(--text);
   text-decoration: none;
-  position: relative;
   transition: color 0.2s ease;
-}
-
-.day-film-link::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .day-film-link:hover {
   color: var(--gold);
-}
-
-.day-film-link:hover::after {
-  width: 100%;
 }
 
 .day-format-badge {
@@ -132,14 +130,48 @@
   font-weight: 300;
   font-size: 0.7rem;
   color: var(--text-muted);
-  margin-left: auto;
   white-space: nowrap;
+  text-align: right;
 }
 
-/* ── Responsive ── */
+/* ── Mobile: two-row layout ── */
 
 @media (max-width: 640px) {
   .day-block-item {
-    flex-wrap: wrap;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    row-gap: 0.1rem;
+  }
+
+  /* Heart spans both rows */
+  .day-block-item > .watchlist-btn {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  /* Row 1: theater name + time */
+  .day-item-theater {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .day-time {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  /* Row 2: title (wraps) + format badge */
+  .day-item-title-row {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    overflow: visible;
+  }
+
+  .day-film-link {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    font-size: 0.9rem;
   }
 }

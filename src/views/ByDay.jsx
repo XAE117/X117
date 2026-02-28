@@ -70,19 +70,16 @@ function ByDay({ data }) {
             {day.screenings.map(s => (
               <li key={s.id} className="day-block-item">
                 <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-                <span
-                  className="theater-tag"
-                  style={{ color: s.theaterColor }}
-                >
+                <span className="day-item-theater" style={{ color: s.theaterColor }}>
                   {s.theaterName}
                 </span>
-                <Link to={`/screening/${s.id}`} className="day-film-link">
-                  {s.title}
-                </Link>
-                <FormatBadge format={s.format} />
-                {s.time && (
-                  <span className="day-time">{s.time}</span>
-                )}
+                <span className="day-item-title-row">
+                  <Link to={`/screening/${s.id}`} className="day-film-link">
+                    {s.title}
+                  </Link>
+                  <FormatBadge format={s.format} />
+                </span>
+                <span className="day-time">{s.time || ''}</span>
               </li>
             ))}
           </ul>
