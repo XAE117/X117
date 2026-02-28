@@ -13,4 +13,11 @@ export const THEATER_COORDS = {
   'laemmle-noho': { lat: 34.1670, lng: -118.3791 },
   'los-feliz-3': { lat: 34.1075, lng: -118.2872 },
   'laemmle-royal': { lat: 34.0394, lng: -118.4483 },
+  // Expanded theaters
+  'secret-movie-club': { lat: 34.0907, lng: -118.2946 },
+  'cinespia': { lat: 34.0907, lng: -118.3197 },
+  '2220-arts': { lat: 34.0764, lng: -118.2752 },
+  'whammy-analog': { lat: 34.0838, lng: -118.3440 },
+  'glendale-theatre': { lat: 34.1461, lng: -118.2551 },
+  'lumiere-music-hall': { lat: 34.0687, lng: -118.3801 },
 }

@@ -155,6 +155,61 @@ const THEATERS = [
     url: 'https://www.laemmle.com',
     color: '#6A5B8E',
   },
+  // ── Expanded theaters ──
+  {
+    dataT: '70',
+    id: 'secret-movie-club',
+    name: 'Secret Movie Club',
+    shortName: 'Secret MC',
+    neighborhood: 'Various',
+    url: 'https://www.secretmovieclub.com',
+    color: '#E07C24',
+  },
+  {
+    dataT: '62',
+    id: 'cinespia',
+    name: 'Cinespia',
+    shortName: 'Cinespia',
+    neighborhood: 'Hollywood Forever',
+    url: 'https://cinespia.org',
+    color: '#3A7CA5',
+  },
+  {
+    dataT: '65',
+    id: '2220-arts',
+    name: '2220 Arts + Archives',
+    shortName: '2220 Arts',
+    neighborhood: 'Historic Filipinotown',
+    url: 'https://2220arts.com',
+    color: '#C75C8A',
+  },
+  {
+    dataT: '68',
+    id: 'whammy-analog',
+    name: 'WHAMMY! Analog Media',
+    shortName: 'WHAMMY!',
+    neighborhood: 'Various',
+    url: 'https://whammyanalog.com',
+    color: '#D4573B',
+  },
+  {
+    dataT: '71',
+    id: 'glendale-theatre',
+    name: 'Glendale Theatre',
+    shortName: 'Glendale',
+    neighborhood: 'Glendale',
+    url: 'https://www.regencymovies.com/theatres/glendale-theatre',
+    color: '#7B9E6B',
+  },
+  {
+    dataT: '72',
+    id: 'lumiere-music-hall',
+    name: 'Lumiere Music Hall',
+    shortName: 'Lumiere',
+    neighborhood: 'Beverly Hills',
+    url: 'https://lumieremusichall.com',
+    color: '#B8860B',
+  },
 ]
 
 // Build a lookup: data-t value → theater config
@@ -527,6 +582,103 @@ async function scrapeVidiots(cutoffDate) {
   return scrapeFilmbotSite('vidiots', 'https://vidiotsfoundation.org', cutoffDate)
 }
 
+// ── Supplemental: Cinespia ──
+// Scrapes cinespia.org for outdoor screenings at Hollywood Forever Cemetery
+
+async function scrapeCinespia(cutoffDate) {
+  console.log('  Fetching cinespia.org...')
+  try {
+    const html = fetchPage('https://cinespia.org')
+    const $ = cheerio.load(html)
+    const screenings = []
+    const currentYear = new Date().getFullYear().toString()
+
+    // Cinespia typically lists events on their main page
+    $('article, .event-item, .screening-item').each((_, el) => {
+      const $el = $(el)
+      const title = $el.find('h2, h3, .event-title').first().text().trim()
+      if (!title) return
+
+      const dateText = $el.find('time, .event-date, .date').first().text().trim()
+      if (!dateText) return
+
+      // Try to parse the date
+      const dateMatch = dateText.match(/(\w+)\s+(\d{1,2})/)
+      if (!dateMatch) return
+
+      const date = parseMonthDay(dateMatch[1], dateMatch[2], currentYear)
+      if (!date || date <= cutoffDate) return
+
+      const link = $el.find('a').first().attr('href') || 'https://cinespia.org'
+      const fullLink = link.startsWith('http') ? link : `https://cinespia.org${link}`
+
+      screenings.push({
+        id: generateId('cinespia', title, date),
+        title,
+        date,
+        time: '8:00 PM',
+        format: 'digital',
+        notes: 'Outdoor screening at Hollywood Forever Cemetery',
+        link: fullLink,
+      })
+    })
+
+    console.log(`    → ${screenings.length} screenings beyond cutoff`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
+// ── Supplemental: 2220 Arts + Archives ──
+
+async function scrape2220Arts(cutoffDate) {
+  console.log('  Fetching 2220arts.com...')
+  try {
+    const html = fetchPage('https://2220arts.com')
+    const $ = cheerio.load(html)
+    const screenings = []
+    const currentYear = new Date().getFullYear().toString()
+
+    // 2220 Arts lists events, look for film-related entries
+    $('.event, .event-item, article').each((_, el) => {
+      const $el = $(el)
+      const title = $el.find('h2, h3, .event-title').first().text().trim()
+      if (!title) return
+
+      const dateText = $el.find('time, .event-date, .date').first().text().trim()
+      if (!dateText) return
+
+      const dateMatch = dateText.match(/(\w+)\s+(\d{1,2})/)
+      if (!dateMatch) return
+
+      const date = parseMonthDay(dateMatch[1], dateMatch[2], currentYear)
+      if (!date || date <= cutoffDate) return
+
+      const link = $el.find('a').first().attr('href') || 'https://2220arts.com'
+      const fullLink = link.startsWith('http') ? link : `https://2220arts.com${link}`
+      const format = detectFormat(title)
+
+      screenings.push({
+        id: generateId('2220-arts', title, date),
+        title: title.replace(/\s*\((?:70mm|35mm|16mm|IMAX|nitrate)\)\s*/gi, '').trim(),
+        date,
+        time: '',
+        format,
+        notes: '',
+        link: fullLink,
+      })
+    })
+
+    console.log(`    → ${screenings.length} screenings beyond cutoff`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
 // ── Run all supplemental scrapers ──
 // Only adds screenings with dates after the revivalhouses.com cutoff
 
@@ -545,17 +697,21 @@ async function scrapeSupplemental(screeningsByTheater) {
     scrapeVista(maxDate),
     scrapeBrainDead(maxDate),
     scrapeVidiots(maxDate),
+    scrapeCinespia(maxDate),
+    scrape2220Arts(maxDate),
   ])
 
-  const [newBev, vista, brainDead, vidiots] = supplementalResults
+  const [newBev, vista, brainDead, vidiots, cinespia, arts2220] = supplementalResults
 
   // Merge supplemental screenings (only dates beyond the cutoff, so no dedup needed)
   screeningsByTheater['new-beverly'].push(...newBev)
   screeningsByTheater['vista-theatre'].push(...vista)
   screeningsByTheater['brain-dead'].push(...brainDead)
   screeningsByTheater['vidiots'].push(...vidiots)
+  screeningsByTheater['cinespia'].push(...cinespia)
+  screeningsByTheater['2220-arts'].push(...arts2220)
 
-  const totalSupplemental = newBev.length + vista.length + brainDead.length + vidiots.length
+  const totalSupplemental = newBev.length + vista.length + brainDead.length + vidiots.length + cinespia.length + arts2220.length
   return totalSupplemental
 }
 
