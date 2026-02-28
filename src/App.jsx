@@ -13,6 +13,7 @@ import Search from './views/Search.jsx'
 import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
+import DayScreenshot from './views/DayScreenshot.jsx'
 import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
@@ -96,6 +97,15 @@ function App() {
   }
 
   const filteredData = getFilteredData()
+
+  // Screenshot view renders standalone — no nav/header/footer chrome
+  if (location.pathname.startsWith('/day/')) {
+    return (
+      <Routes>
+        <Route path="/day/:date" element={<DayScreenshot data={data} />} />
+      </Routes>
+    )
+  }
 
   return (
     <div className="app">

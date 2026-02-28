@@ -56,7 +56,16 @@ function ByDay({ data }) {
     <div className="day-view">
       {dayEntries.map(([dateKey, day]) => (
         <div key={dateKey} className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
-          <h2 className="day-block-header">{day.label}</h2>
+          <h2 className="day-block-header">
+            {day.label}
+            <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                <rect x="2" y="3" width="20" height="18" rx="2" />
+                <circle cx="12" cy="13" r="4" />
+                <path d="M8 3V1" /><path d="M16 3V1" />
+              </svg>
+            </Link>
+          </h2>
           <ul className="day-block-list">
             {day.screenings.map(s => (
               <li key={s.id} className="day-block-item">

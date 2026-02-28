@@ -44,6 +44,22 @@
   background: var(--gold-dim);
 }
 
+/* ── Screenshot Button ── */
+
+.day-screenshot-btn {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  padding: 0.15rem;
+  transition: color 0.2s ease;
+  order: 1;
+}
+
+.day-screenshot-btn:hover {
+  color: var(--gold);
+}
+
 .day-block-list {
   list-style: none;
   display: flex;

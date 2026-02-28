@@ -1,0 +1,258 @@
+/* ── Day Screenshot View ── */
+
+.ss-page {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ── Outer Frame ── */
+
+.ss-frame {
+  position: relative;
+  background: var(--bg-dark);
+  border: 2px solid var(--gold);
+  padding: 6px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow:
+    0 0 0 1px var(--bg-dark),
+    0 0 0 3px var(--gold-dim),
+    0 0 30px rgba(201, 168, 76, 0.08);
+}
+
+/* ── Corner Ornaments ── */
+
+.ss-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  z-index: 2;
+}
+
+.ss-corner::before,
+.ss-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+}
+
+.ss-corner::before {
+  width: 20px;
+  height: 2px;
+}
+
+.ss-corner::after {
+  width: 2px;
+  height: 20px;
+}
+
+.ss-tl { top: -4px; left: -4px; }
+.ss-tl::before, .ss-tl::after { top: 0; left: 0; }
+
+.ss-tr { top: -4px; right: -4px; }
+.ss-tr::before { top: 0; right: 0; }
+.ss-tr::after { top: 0; right: 0; }
+
+.ss-bl { bottom: -4px; left: -4px; }
+.ss-bl::before { bottom: 0; left: 0; }
+.ss-bl::after { bottom: 0; left: 0; }
+
+.ss-br { bottom: -4px; right: -4px; }
+.ss-br::before { bottom: 0; right: 0; }
+.ss-br::after { bottom: 0; right: 0; }
+
+/* ── Inner Frame ── */
+
+.ss-inner-frame {
+  border: 1px solid var(--gold-dim);
+  padding: 1.75rem 1.5rem 1.25rem;
+}
+
+/* ── Header ── */
+
+.ss-hint {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.ss-divider-top {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.ss-diamond {
+  color: var(--gold-dim);
+  font-size: 0.4rem;
+  line-height: 1;
+}
+
+.ss-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-align: center;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+
+.ss-date {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Dividers ── */
+
+.ss-divider,
+.ss-divider-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ss-divider-bottom {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.ss-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.ss-diamond-mid {
+  color: var(--gold-dim);
+  font-size: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ── Screening List ── */
+
+.ss-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ss-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(42, 37, 32, 0.6);
+}
+
+.ss-item:last-child {
+  border-bottom: none;
+}
+
+.ss-theater {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.ss-film {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.ss-format-badge {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ss-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.ss-empty {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  padding: 1.5rem 0;
+}
+
+/* ── Footer ── */
+
+.ss-footer-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ── Back Link ── */
+
+.ss-back-link {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ss-back-link:hover {
+  color: var(--cream);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .ss-frame {
+    max-width: 100%;
+  }
+
+  .ss-inner-frame {
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  .ss-item {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+}
