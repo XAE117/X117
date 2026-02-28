@@ -559,6 +559,114 @@ async function scrapeSupplemental(screeningsByTheater) {
   return totalSupplemental
 }
 
+// ── TMDB Enrichment ──
+// Fetches poster, director, year, overview, rating, and runtime for each unique film title.
+// Requires TMDB_API_KEY env var. Gracefully skips if unavailable.
+
+function slugifyTitle(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
+async function tmdbSearch(title, apiKey) {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(title)}&api_key=${apiKey}`
+  const html = execSync(
+    `curl -s --max-time 10 '${url}'`,
+    { encoding: 'utf-8' },
+  )
+  return JSON.parse(html)
+}
+
+async function tmdbCredits(movieId, apiKey) {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
+  const html = execSync(
+    `curl -s --max-time 10 '${url}'`,
+    { encoding: 'utf-8' },
+  )
+  return JSON.parse(html)
+}
+
+async function tmdbMovieDetails(movieId, apiKey) {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+  const html = execSync(
+    `curl -s --max-time 10 '${url}'`,
+    { encoding: 'utf-8' },
+  )
+  return JSON.parse(html)
+}
+
+async function enrichWithTMDB(outputTheaters) {
+  const apiKey = process.env.TMDB_API_KEY
+  if (!apiKey) {
+    console.log('  TMDB_API_KEY not set — skipping enrichment.')
+    return {}
+  }
+
+  console.log('')
+  console.log('TMDB enrichment...')
+
+  // Collect unique film titles
+  const uniqueTitles = new Set()
+  for (const theater of outputTheaters) {
+    for (const s of theater.screenings) {
+      uniqueTitles.add(s.title)
+    }
+  }
+
+  console.log(`  ${uniqueTitles.size} unique titles to look up`)
+
+  const films = {}
+  let enriched = 0
+  let batch = 0
+
+  for (const title of uniqueTitles) {
+    const slug = slugifyTitle(title)
+    if (films[slug]) continue
+
+    try {
+      // Rate limiting: pause every 35 requests
+      batch++
+      if (batch > 0 && batch % 35 === 0) {
+        await new Promise(r => setTimeout(r, 10000))
+      }
+
+      const searchResult = await tmdbSearch(title, apiKey)
+      const movie = searchResult.results?.[0]
+      if (!movie) continue
+
+      // Get credits for director
+      let director = ''
+      try {
+        const credits = await tmdbCredits(movie.id, apiKey)
+        const directorEntry = credits.crew?.find(c => c.job === 'Director')
+        director = directorEntry?.name || ''
+      } catch {}
+
+      // Get runtime from movie details
+      let runtime = null
+      try {
+        const details = await tmdbMovieDetails(movie.id, apiKey)
+        runtime = details.runtime || null
+      } catch {}
+
+      films[slug] = {
+        tmdbId: movie.id,
+        posterPath: movie.poster_path || null,
+        year: movie.release_date ? parseInt(movie.release_date.slice(0, 4)) : null,
+        director,
+        overview: movie.overview ? movie.overview.slice(0, 200) : '',
+        rating: movie.vote_average || 0,
+        runtime,
+      }
+      enriched++
+    } catch {
+      // Skip failed lookups silently
+    }
+  }
+
+  console.log(`  Enriched ${enriched} of ${uniqueTitles.size} films`)
+  return films
+}
+
 // ── Main ──
 
 async function main() {
@@ -603,16 +711,27 @@ async function main() {
     process.exit(1)
   }
 
+  // TMDB enrichment (optional, requires TMDB_API_KEY)
+  const films = await enrichWithTMDB(outputTheaters)
+
   const result = {
     lastUpdated: new Date().toISOString(),
     source: 'revivalhouses.com + theater websites',
     theaters: outputTheaters,
   }
 
+  // Only add films object if we got enrichment data
+  if (Object.keys(films).length > 0) {
+    result.films = films
+  }
+
   writeFileSync(OUTPUT_PATH, JSON.stringify(result, null, 2))
 
   console.log('')
   console.log(`Done! ${totalScreenings} real screenings across ${outputTheaters.length} theaters.`)
+  if (Object.keys(films).length > 0) {
+    console.log(`  + ${Object.keys(films).length} films enriched via TMDB`)
+  }
   console.log(`Output: ${OUTPUT_PATH}`)
 
   // Send Liza an SMS if The Godfather is screening
