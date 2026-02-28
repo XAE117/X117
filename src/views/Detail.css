@@ -1,7 +1,7 @@
 /* ── Detail Page ── */
 
 .detail-page {
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
   padding-top: 1rem;
 }
@@ -86,6 +86,36 @@
 .detail-corner.br::before { bottom: 0; right: 0; }
 .detail-corner.br::after { bottom: 0; right: 0; }
 
+/* ── Content Layout with Poster ── */
+
+.detail-content-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-content-layout.has-poster {
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.detail-poster {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.detail-poster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid var(--gold-dim);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.detail-content-main {
+  flex: 1;
+  min-width: 0;
+}
+
 /* ── Detail Content ── */
 
 .detail-title {
@@ -96,6 +126,43 @@
   line-height: 1.2;
   margin-bottom: 0.75rem;
   margin-top: 0.5rem;
+}
+
+/* ── TMDB Film Meta ── */
+
+.detail-film-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.detail-director {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--cream);
+  font-style: italic;
+}
+
+.detail-year {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.detail-rating-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  background: var(--gold-dim);
+  color: var(--bg-dark);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
 }
 
 .detail-meta {
@@ -188,7 +255,28 @@
   line-height: 1.5;
 }
 
-/* ── Ticket Button ── */
+/* ── Synopsis (TMDB) ── */
+
+.detail-synopsis {
+  margin-bottom: 1.5rem;
+}
+
+.detail-synopsis-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Action Buttons ── */
+
+.detail-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
 
 .ticket-btn {
   display: inline-flex;
@@ -211,6 +299,28 @@
 .ticket-btn:hover {
   background: transparent;
   color: var(--gold);
+}
+
+.calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendar-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
 }
 
 /* ── Not Found ── */
@@ -239,7 +349,25 @@
     padding: 2rem 1.25rem;
   }
 
+  .detail-content-layout.has-poster {
+    flex-direction: column;
+  }
+
+  .detail-poster {
+    width: 140px;
+    margin: 0 auto 1rem;
+  }
+
   .detail-info-grid {
     gap: 1rem;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+  }
+
+  .ticket-btn,
+  .calendar-btn {
+    justify-content: center;
   }
 }
