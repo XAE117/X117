@@ -1,4 +1,6 @@
+import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import WatchlistButton from '../components/WatchlistButton.jsx'
 import './ByDay.css'
 
 function FormatBadge({ format }) {
@@ -7,6 +9,9 @@ function FormatBadge({ format }) {
 }
 
 function ByDay({ data }) {
+  const [, setTick] = useState(0)
+  const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
   }
@@ -51,23 +56,30 @@ function ByDay({ data }) {
     <div className="day-view">
       {dayEntries.map(([dateKey, day]) => (
         <div key={dateKey} className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
-          <h2 className="day-block-header">{day.label}</h2>
+          <h2 className="day-block-header">
+            {day.label}
+            <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                <rect x="2" y="3" width="20" height="18" rx="2" />
+                <circle cx="12" cy="13" r="4" />
+                <path d="M8 3V1" /><path d="M16 3V1" />
+              </svg>
+            </Link>
+          </h2>
           <ul className="day-block-list">
             {day.screenings.map(s => (
               <li key={s.id} className="day-block-item">
-                <span
-                  className="theater-tag"
-                  style={{ color: s.theaterColor }}
-                >
+                <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+                <span className="day-item-theater" style={{ color: s.theaterColor }}>
                   {s.theaterName}
                 </span>
-                <Link to={`/screening/${s.id}`} className="day-film-link">
-                  {s.title}
-                </Link>
-                <FormatBadge format={s.format} />
-                {s.time && (
-                  <span className="day-time">{s.time}</span>
-                )}
+                <span className="day-item-title-row">
+                  <Link to={`/screening/${s.id}`} className="day-film-link">
+                    {s.title}
+                  </Link>
+                  <FormatBadge format={s.format} />
+                </span>
+                <span className="day-time">{s.time || ''}</span>
               </li>
             ))}
           </ul>

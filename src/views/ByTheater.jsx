@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import WatchlistButton from '../components/WatchlistButton.jsx'
 import './ByTheater.css'
 
 function FormatBadge({ format }) {
@@ -9,6 +10,8 @@ function FormatBadge({ format }) {
 
 function ByTheater({ data }) {
   const [expandedId, setExpandedId] = useState(null)
+  const [, setTick] = useState(0)
+  const forceUpdate = useCallback(() => setTick(t => t + 1), [])
 
   const toggle = (id) => {
     setExpandedId(prev => prev === id ? null : id)
@@ -76,6 +79,7 @@ function ByTheater({ data }) {
                     <ul className="screening-list">
                       {screenings.map(s => (
                         <li key={s.id} className="screening-item" style={{ borderLeftColor: theater.color }}>
+                          <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
                           <span className="screening-date-badge">{formatDate(s.date)}</span>
                           <Link to={`/screening/${s.id}`} className="screening-title-link">
                             {s.title}

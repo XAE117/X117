@@ -1,0 +1,227 @@
+/* ── Tonight View ── */
+
+.tonight-page {
+  padding-top: 1rem;
+}
+
+.tonight-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.tonight-header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tonight-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: tonightPulse 2s ease-in-out infinite;
+}
+
+@keyframes tonightPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(201, 168, 76, 0); }
+}
+
+.tonight-count {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tonight-date-label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Screening List ── */
+
+.tonight-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tonight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+.tonight-item:hover {
+  border-color: var(--gold-dim);
+}
+
+.tonight-item.now-showing {
+  border-color: var(--gold-dim);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+/* ── Time Column ── */
+
+.tonight-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 80px;
+  flex-shrink: 0;
+  gap: 0.2rem;
+}
+
+.tonight-time {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.tonight-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.tonight-relative.is-now {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ── Info Column ── */
+
+.tonight-info-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tonight-title-link {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tonight-title-link:hover {
+  color: var(--gold);
+}
+
+.tonight-sub {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tonight-theater {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tonight-format-badge {
+  font-family: var(--font-mono, var(--font-body));
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tonight-ticket-link {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+  transition: color 0.2s ease;
+}
+
+.tonight-ticket-link:hover {
+  color: var(--gold);
+}
+
+/* ── Empty State ── */
+
+.tonight-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.tonight-empty p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.tonight-empty-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tonight-empty-link:hover {
+  color: var(--cream);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .tonight-item {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .tonight-time-col {
+    min-width: 65px;
+  }
+
+  .tonight-time {
+    font-size: 0.95rem;
+  }
+}

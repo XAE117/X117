@@ -1,0 +1,23 @@
+export const THEATER_COORDS = {
+  'new-beverly': { lat: 34.0755, lng: -118.3619 },
+  'vista-theatre': { lat: 34.1063, lng: -118.2824 },
+  'academy-museum': { lat: 34.0583, lng: -118.3553 },
+  'alamo-dtla': { lat: 34.0451, lng: -118.2551 },
+  'egyptian': { lat: 34.1018, lng: -118.3417 },
+  'aero': { lat: 34.0308, lng: -118.4917 },
+  'vidiots': { lat: 34.1357, lng: -118.2192 },
+  'brain-dead': { lat: 34.0770, lng: -118.3610 },
+  'billy-wilder': { lat: 34.0689, lng: -118.4452 },
+  'redcat': { lat: 34.0563, lng: -118.2498 },
+  'laemmle-nuart': { lat: 34.0417, lng: -118.4502 },
+  'laemmle-noho': { lat: 34.1670, lng: -118.3791 },
+  'los-feliz-3': { lat: 34.1075, lng: -118.2872 },
+  'laemmle-royal': { lat: 34.0394, lng: -118.4483 },
+  // Expanded theaters
+  'secret-movie-club': { lat: 34.0907, lng: -118.2946 },
+  'cinespia': { lat: 34.0907, lng: -118.3197 },
+  '2220-arts': { lat: 34.0764, lng: -118.2752 },
+  'whammy-analog': { lat: 34.0838, lng: -118.3440 },
+  'glendale-theatre': { lat: 34.1461, lng: -118.2551 },
+  'lumiere-music-hall': { lat: 34.0687, lng: -118.3801 },
+}

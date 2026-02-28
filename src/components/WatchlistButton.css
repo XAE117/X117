@@ -1,0 +1,84 @@
+/* ── Watchlist Button ── */
+
+.watchlist-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.watchlist-btn:hover {
+  color: var(--gold);
+  transform: scale(1.15);
+}
+
+.watchlist-btn.saved {
+  color: var(--burgundy-light);
+}
+
+.watchlist-btn.both {
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+}
+
+/* ── User Picker Modal ── */
+
+.user-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 11, 10, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.user-picker {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  position: relative;
+}
+
+.user-picker h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.user-picker-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.user-picker-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-picker-btn:hover {
+  background: var(--gold);
+  color: var(--bg-dark);
+  border-color: var(--gold);
+}

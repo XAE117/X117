@@ -155,6 +155,61 @@ const THEATERS = [
     url: 'https://www.laemmle.com',
     color: '#6A5B8E',
   },
+  // ── Expanded theaters ──
+  {
+    dataT: '70',
+    id: 'secret-movie-club',
+    name: 'Secret Movie Club',
+    shortName: 'Secret MC',
+    neighborhood: 'Various',
+    url: 'https://www.secretmovieclub.com',
+    color: '#E07C24',
+  },
+  {
+    dataT: '62',
+    id: 'cinespia',
+    name: 'Cinespia',
+    shortName: 'Cinespia',
+    neighborhood: 'Hollywood Forever',
+    url: 'https://cinespia.org',
+    color: '#3A7CA5',
+  },
+  {
+    dataT: '65',
+    id: '2220-arts',
+    name: '2220 Arts + Archives',
+    shortName: '2220 Arts',
+    neighborhood: 'Historic Filipinotown',
+    url: 'https://2220arts.com',
+    color: '#C75C8A',
+  },
+  {
+    dataT: '68',
+    id: 'whammy-analog',
+    name: 'WHAMMY! Analog Media',
+    shortName: 'WHAMMY!',
+    neighborhood: 'Various',
+    url: 'https://whammyanalog.com',
+    color: '#D4573B',
+  },
+  {
+    dataT: '71',
+    id: 'glendale-theatre',
+    name: 'Glendale Theatre',
+    shortName: 'Glendale',
+    neighborhood: 'Glendale',
+    url: 'https://www.regencymovies.com/theatres/glendale-theatre',
+    color: '#7B9E6B',
+  },
+  {
+    dataT: '72',
+    id: 'lumiere-music-hall',
+    name: 'Lumiere Music Hall',
+    shortName: 'Lumiere',
+    neighborhood: 'Beverly Hills',
+    url: 'https://lumieremusichall.com',
+    color: '#B8860B',
+  },
 ]
 
 // Build a lookup: data-t value → theater config
@@ -527,6 +582,103 @@ async function scrapeVidiots(cutoffDate) {
   return scrapeFilmbotSite('vidiots', 'https://vidiotsfoundation.org', cutoffDate)
 }
 
+// ── Supplemental: Cinespia ──
+// Scrapes cinespia.org for outdoor screenings at Hollywood Forever Cemetery
+
+async function scrapeCinespia(cutoffDate) {
+  console.log('  Fetching cinespia.org...')
+  try {
+    const html = fetchPage('https://cinespia.org')
+    const $ = cheerio.load(html)
+    const screenings = []
+    const currentYear = new Date().getFullYear().toString()
+
+    // Cinespia typically lists events on their main page
+    $('article, .event-item, .screening-item').each((_, el) => {
+      const $el = $(el)
+      const title = $el.find('h2, h3, .event-title').first().text().trim()
+      if (!title) return
+
+      const dateText = $el.find('time, .event-date, .date').first().text().trim()
+      if (!dateText) return
+
+      // Try to parse the date
+      const dateMatch = dateText.match(/(\w+)\s+(\d{1,2})/)
+      if (!dateMatch) return
+
+      const date = parseMonthDay(dateMatch[1], dateMatch[2], currentYear)
+      if (!date || date <= cutoffDate) return
+
+      const link = $el.find('a').first().attr('href') || 'https://cinespia.org'
+      const fullLink = link.startsWith('http') ? link : `https://cinespia.org${link}`
+
+      screenings.push({
+        id: generateId('cinespia', title, date),
+        title,
+        date,
+        time: '8:00 PM',
+        format: 'digital',
+        notes: 'Outdoor screening at Hollywood Forever Cemetery',
+        link: fullLink,
+      })
+    })
+
+    console.log(`    → ${screenings.length} screenings beyond cutoff`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
+// ── Supplemental: 2220 Arts + Archives ──
+
+async function scrape2220Arts(cutoffDate) {
+  console.log('  Fetching 2220arts.com...')
+  try {
+    const html = fetchPage('https://2220arts.com')
+    const $ = cheerio.load(html)
+    const screenings = []
+    const currentYear = new Date().getFullYear().toString()
+
+    // 2220 Arts lists events, look for film-related entries
+    $('.event, .event-item, article').each((_, el) => {
+      const $el = $(el)
+      const title = $el.find('h2, h3, .event-title').first().text().trim()
+      if (!title) return
+
+      const dateText = $el.find('time, .event-date, .date').first().text().trim()
+      if (!dateText) return
+
+      const dateMatch = dateText.match(/(\w+)\s+(\d{1,2})/)
+      if (!dateMatch) return
+
+      const date = parseMonthDay(dateMatch[1], dateMatch[2], currentYear)
+      if (!date || date <= cutoffDate) return
+
+      const link = $el.find('a').first().attr('href') || 'https://2220arts.com'
+      const fullLink = link.startsWith('http') ? link : `https://2220arts.com${link}`
+      const format = detectFormat(title)
+
+      screenings.push({
+        id: generateId('2220-arts', title, date),
+        title: title.replace(/\s*\((?:70mm|35mm|16mm|IMAX|nitrate)\)\s*/gi, '').trim(),
+        date,
+        time: '',
+        format,
+        notes: '',
+        link: fullLink,
+      })
+    })
+
+    console.log(`    → ${screenings.length} screenings beyond cutoff`)
+    return screenings
+  } catch (err) {
+    console.log(`    → Failed: ${err.message}`)
+    return []
+  }
+}
+
 // ── Run all supplemental scrapers ──
 // Only adds screenings with dates after the revivalhouses.com cutoff
 
@@ -545,18 +697,130 @@ async function scrapeSupplemental(screeningsByTheater) {
     scrapeVista(maxDate),
     scrapeBrainDead(maxDate),
     scrapeVidiots(maxDate),
+    scrapeCinespia(maxDate),
+    scrape2220Arts(maxDate),
   ])
 
-  const [newBev, vista, brainDead, vidiots] = supplementalResults
+  const [newBev, vista, brainDead, vidiots, cinespia, arts2220] = supplementalResults
 
   // Merge supplemental screenings (only dates beyond the cutoff, so no dedup needed)
   screeningsByTheater['new-beverly'].push(...newBev)
   screeningsByTheater['vista-theatre'].push(...vista)
   screeningsByTheater['brain-dead'].push(...brainDead)
   screeningsByTheater['vidiots'].push(...vidiots)
+  screeningsByTheater['cinespia'].push(...cinespia)
+  screeningsByTheater['2220-arts'].push(...arts2220)
 
-  const totalSupplemental = newBev.length + vista.length + brainDead.length + vidiots.length
+  const totalSupplemental = newBev.length + vista.length + brainDead.length + vidiots.length + cinespia.length + arts2220.length
   return totalSupplemental
+}
+
+// ── TMDB Enrichment ──
+// Fetches poster, director, year, overview, rating, and runtime for each unique film title.
+// Requires TMDB_API_KEY env var. Gracefully skips if unavailable.
+
+function slugifyTitle(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
+async function tmdbSearch(title, apiKey) {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(title)}&api_key=${apiKey}`
+  const html = execSync(
+    `curl -s --max-time 10 '${url}'`,
+    { encoding: 'utf-8' },
+  )
+  return JSON.parse(html)
+}
+
+async function tmdbCredits(movieId, apiKey) {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
+  const html = execSync(
+    `curl -s --max-time 10 '${url}'`,
+    { encoding: 'utf-8' },
+  )
+  return JSON.parse(html)
+}
+
+async function tmdbMovieDetails(movieId, apiKey) {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+  const html = execSync(
+    `curl -s --max-time 10 '${url}'`,
+    { encoding: 'utf-8' },
+  )
+  return JSON.parse(html)
+}
+
+async function enrichWithTMDB(outputTheaters) {
+  const apiKey = process.env.TMDB_API_KEY
+  if (!apiKey) {
+    console.log('  TMDB_API_KEY not set — skipping enrichment.')
+    return {}
+  }
+
+  console.log('')
+  console.log('TMDB enrichment...')
+
+  // Collect unique film titles
+  const uniqueTitles = new Set()
+  for (const theater of outputTheaters) {
+    for (const s of theater.screenings) {
+      uniqueTitles.add(s.title)
+    }
+  }
+
+  console.log(`  ${uniqueTitles.size} unique titles to look up`)
+
+  const films = {}
+  let enriched = 0
+  let batch = 0
+
+  for (const title of uniqueTitles) {
+    const slug = slugifyTitle(title)
+    if (films[slug]) continue
+
+    try {
+      // Rate limiting: pause every 35 requests
+      batch++
+      if (batch > 0 && batch % 35 === 0) {
+        await new Promise(r => setTimeout(r, 10000))
+      }
+
+      const searchResult = await tmdbSearch(title, apiKey)
+      const movie = searchResult.results?.[0]
+      if (!movie) continue
+
+      // Get credits for director
+      let director = ''
+      try {
+        const credits = await tmdbCredits(movie.id, apiKey)
+        const directorEntry = credits.crew?.find(c => c.job === 'Director')
+        director = directorEntry?.name || ''
+      } catch {}
+
+      // Get runtime from movie details
+      let runtime = null
+      try {
+        const details = await tmdbMovieDetails(movie.id, apiKey)
+        runtime = details.runtime || null
+      } catch {}
+
+      films[slug] = {
+        tmdbId: movie.id,
+        posterPath: movie.poster_path || null,
+        year: movie.release_date ? parseInt(movie.release_date.slice(0, 4)) : null,
+        director,
+        overview: movie.overview ? movie.overview.slice(0, 200) : '',
+        rating: movie.vote_average || 0,
+        runtime,
+      }
+      enriched++
+    } catch {
+      // Skip failed lookups silently
+    }
+  }
+
+  console.log(`  Enriched ${enriched} of ${uniqueTitles.size} films`)
+  return films
 }
 
 // ── Main ──
@@ -603,16 +867,27 @@ async function main() {
     process.exit(1)
   }
 
+  // TMDB enrichment (optional, requires TMDB_API_KEY)
+  const films = await enrichWithTMDB(outputTheaters)
+
   const result = {
     lastUpdated: new Date().toISOString(),
     source: 'revivalhouses.com + theater websites',
     theaters: outputTheaters,
   }
 
+  // Only add films object if we got enrichment data
+  if (Object.keys(films).length > 0) {
+    result.films = films
+  }
+
   writeFileSync(OUTPUT_PATH, JSON.stringify(result, null, 2))
 
   console.log('')
   console.log(`Done! ${totalScreenings} real screenings across ${outputTheaters.length} theaters.`)
+  if (Object.keys(films).length > 0) {
+    console.log(`  + ${Object.keys(films).length} films enriched via TMDB`)
+  }
   console.log(`Output: ${OUTPUT_PATH}`)
 
   // Send Liza an SMS if The Godfather is screening
