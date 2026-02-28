@@ -1,4 +1,6 @@
+import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import WatchlistButton from '../components/WatchlistButton.jsx'
 import './ByDay.css'
 
 function FormatBadge({ format }) {
@@ -7,6 +9,9 @@ function FormatBadge({ format }) {
 }
 
 function ByDay({ data }) {
+  const [, setTick] = useState(0)
+  const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
   }
@@ -55,6 +60,7 @@ function ByDay({ data }) {
           <ul className="day-block-list">
             {day.screenings.map(s => (
               <li key={s.id} className="day-block-item">
+                <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
                 <span
                   className="theater-tag"
                   style={{ color: s.theaterColor }}

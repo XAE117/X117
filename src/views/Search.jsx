@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import WatchlistButton from '../components/WatchlistButton.jsx'
 import './Search.css'
 
 function FormatBadge({ format }) {
@@ -9,6 +10,8 @@ function FormatBadge({ format }) {
 
 function Search({ data }) {
   const [query, setQuery] = useState('')
+  const [, setTick] = useState(0)
+  const forceUpdate = useCallback(() => setTick(t => t + 1), [])
 
   if (!data) return null
 
@@ -77,6 +80,7 @@ function Search({ data }) {
         <ul className="search-results">
           {results.map(s => (
             <li key={s.id} className="search-result-item">
+              <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
               <span className="search-result-date">{formatDate(s.date)}</span>
               <span
                 className="search-result-theater"

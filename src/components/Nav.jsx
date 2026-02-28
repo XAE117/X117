@@ -20,6 +20,14 @@ function Nav({ hasTonightScreenings }) {
       <NavLink to="/search" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
         Search
       </NavLink>
+      <span className="nav-diamond">&#9670;</span>
+      <NavLink to="/watchlist" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+        {'\u2665'}
+      </NavLink>
+      <span className="nav-diamond">&#9670;</span>
+      <NavLink to="/map" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+        Map
+      </NavLink>
     </nav>
   )
 }
