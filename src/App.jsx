@@ -3,11 +3,11 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
-import SearchBar from './components/SearchBar.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import GodfatherAlert from './components/GodfatherAlert.jsx'
 import ByTheater from './views/ByTheater.jsx'
-import ByMonth from './views/ByMonth.jsx'
+import ByDay from './views/ByDay.jsx'
+import Search from './views/Search.jsx'
 import Detail from './views/Detail.jsx'
 import './App.css'
 
@@ -15,7 +15,6 @@ function App() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
   const [thisWeekOnly, setThisWeekOnly] = useState(false)
 
   const fetchData = (isRefresh = false) => {
@@ -52,13 +51,6 @@ function App() {
         return d >= today
       })
 
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase()
-        screenings = screenings.filter(s =>
-          s.title.toLowerCase().includes(q)
-        )
-      }
-
       if (thisWeekOnly) {
         const weekLater = new Date(today)
         weekLater.setDate(weekLater.getDate() + 7)
@@ -70,10 +62,6 @@ function App() {
 
       return { ...theater, screenings }
     })
-
-    if (searchQuery.trim()) {
-      theaters = theaters.filter(t => t.screenings.length > 0)
-    }
 
     return { ...data, theaters }
   }
@@ -94,16 +82,9 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Nav />
+      <Nav thisWeekOnly={thisWeekOnly} onToggleThisWeek={() => setThisWeekOnly(!thisWeekOnly)} />
       <GodfatherAlert data={data} />
       <div className="controls">
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
-        <button
-          className={`week-filter ${thisWeekOnly ? 'active' : ''}`}
-          onClick={() => setThisWeekOnly(!thisWeekOnly)}
-        >
-          This Week
-        </button>
         <button
           className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
           onClick={() => fetchData(true)}
@@ -121,7 +102,8 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<ByTheater data={filteredData} />} />
-          <Route path="/by-month" element={<ByMonth data={filteredData} />} />
+          <Route path="/by-day" element={<ByDay data={filteredData} />} />
+          <Route path="/search" element={<Search data={data} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
         </Routes>
       </main>

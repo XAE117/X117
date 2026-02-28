@@ -1,0 +1,129 @@
+/* ── By Day View ── */
+
+.day-view {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.day-block {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.day-block:last-child {
+  border-bottom: none;
+}
+
+.day-block-header {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.day-block-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.day-block.weekend .day-block-header {
+  color: var(--gold);
+}
+
+.day-block.weekend .day-block-header::after {
+  background: var(--gold-dim);
+}
+
+.day-block-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.day-block-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.25rem 0;
+}
+
+.theater-tag {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.day-film-link {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.day-film-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.day-film-link:hover {
+  color: var(--gold);
+}
+
+.day-film-link:hover::after {
+  width: 100%;
+}
+
+.day-format-badge {
+  font-family: var(--font-mono, var(--font-body));
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.day-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .day-block-item {
+    flex-wrap: wrap;
+  }
+}

@@ -20,37 +20,11 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 1rem 1.5rem 0.5rem;
+  padding: 0.5rem 1.5rem 0.25rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.week-filter {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.5rem 1.2rem;
-  border: 1px solid var(--gold-dim);
-  background: transparent;
-  color: var(--gold);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.week-filter:hover {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: var(--gold);
-}
-
-.week-filter.active {
-  background: var(--gold);
-  color: var(--bg-dark);
-  border-color: var(--gold);
 }
 
 .refresh-btn {

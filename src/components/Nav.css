@@ -48,6 +48,12 @@
   width: 100%;
 }
 
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .nav-diamond {
   color: var(--gold-dim);
   font-size: 0.5rem;
