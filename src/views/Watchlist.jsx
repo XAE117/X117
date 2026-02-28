@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { getCurrentUser, getOtherUser, getWatchlistIds, toggleWatchlist } from '../components/WatchlistButton.jsx'
+import { getCurrentUser, getOtherUser, getWatchlistIds, toggleWatchlist } from '../utils/watchlist.js'
 import './Watchlist.css'
 
 function UserPicker({ onPick }) {
