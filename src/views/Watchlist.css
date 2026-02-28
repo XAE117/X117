@@ -130,6 +130,15 @@
   color: var(--gold);
 }
 
+.watchlist-film-meta {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .watchlist-time {
   font-family: var(--font-body);
   font-weight: 300;

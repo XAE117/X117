@@ -17,11 +17,20 @@ function UserPicker({ onPick }) {
   )
 }
 
-function WatchlistItem({ screening, theater, isBoth, onRemove }) {
+function WatchlistItem({ screening, theater, isBoth, onRemove, films }) {
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + 'T00:00:00')
     return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
   }
+
+  const meta = (() => {
+    if (!films) return null
+    const slug = screening.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    const f = films[slug]
+    if (!f) return null
+    const parts = [f.director, f.year].filter(Boolean)
+    return parts.length > 0 ? parts.join(' · ') : null
+  })()
 
   return (
     <li className={`watchlist-item ${isBoth ? 'watchlist-both' : ''}`}>
@@ -33,6 +42,7 @@ function WatchlistItem({ screening, theater, isBoth, onRemove }) {
       <Link to={`/screening/${screening.id}`} className="watchlist-title">
         {screening.title}
       </Link>
+      {meta && <span className="watchlist-film-meta">{meta}</span>}
       {screening.time && <span className="watchlist-time">{screening.time}</span>}
       <button className="watchlist-remove" onClick={() => onRemove(screening.id)} title="Remove">
         &times;
@@ -123,6 +133,7 @@ function Watchlist({ data }) {
                 theater={theater}
                 isBoth={true}
                 onRemove={handleRemove}
+                films={data.films}
               />
             ))}
           </ul>
@@ -140,6 +151,7 @@ function Watchlist({ data }) {
                 theater={theater}
                 isBoth={false}
                 onRemove={handleRemove}
+                films={data.films}
               />
             ))}
           </ul>
@@ -157,6 +169,7 @@ function Watchlist({ data }) {
                 theater={theater}
                 isBoth={false}
                 onRemove={() => {}}
+                films={data.films}
               />
             ))}
           </ul>

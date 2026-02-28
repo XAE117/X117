@@ -8,6 +8,15 @@ function FormatBadge({ format }) {
   return <span className="day-format-badge">{format}</span>
 }
 
+function filmMeta(title, films) {
+  if (!films) return null
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const f = films[slug]
+  if (!f) return null
+  const parts = [f.director, f.year].filter(Boolean)
+  return parts.length > 0 ? parts.join(' · ') : null
+}
+
 function ByDay({ data }) {
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
@@ -79,6 +88,9 @@ function ByDay({ data }) {
                   <Link to={`/screening/${s.id}`} className="day-film-link">
                     {s.title}
                   </Link>
+                  {filmMeta(s.title, data.films) && (
+                    <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
+                  )}
                   <FormatBadge format={s.format} />
                 </span>
                 <span className="day-time">{s.time || ''}</span>
