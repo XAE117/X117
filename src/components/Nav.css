@@ -104,10 +104,8 @@
 
 @media (max-width: 640px) {
   .palace-nav {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    justify-content: center;
-    gap: 0.4rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
   }
 
   .nav-diamond {
