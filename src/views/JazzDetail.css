@@ -95,40 +95,21 @@
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(1.5rem, 5vw, 2.2rem);
-  color: #F0EAD6;
+  color: var(--text);
   letter-spacing: 0.03em;
   line-height: 1.2;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(
-    90deg,
-    #F0EAD6 0%,
-    #F0EAD6 40%,
-    var(--jazz-accent) 50%,
-    #F0EAD6 60%,
-    #F0EAD6 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: jazzTitleShimmer 2.5s ease-in-out 0.4s 1 forwards, jazzTitleGlow 4s ease-in-out 3s infinite;
-}
-
-@keyframes jazzTitleShimmer {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
+  animation: jazzTitleGlow 4s ease-in-out infinite;
 }
 
 @keyframes jazzTitleGlow {
   0%, 100% {
-    text-shadow: 0 0 6px rgba(212, 165, 116, 0.15), 0 0 20px rgba(212, 165, 116, 0);
-    filter: drop-shadow(0 0 4px rgba(212, 165, 116, 0.1));
+    text-shadow: 0 0 8px rgba(212, 165, 116, 0.12), 0 0 24px rgba(212, 165, 116, 0);
   }
   50% {
-    text-shadow: 0 0 10px rgba(212, 165, 116, 0.35), 0 0 30px rgba(212, 165, 116, 0.12);
-    filter: drop-shadow(0 0 8px rgba(212, 165, 116, 0.2));
+    text-shadow: 0 0 12px rgba(212, 165, 116, 0.3), 0 0 36px rgba(212, 165, 116, 0.1);
   }
 }
 
