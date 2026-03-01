@@ -1093,13 +1093,13 @@ const data = JSON.parse(readFileSync(DATA_PATH, 'utf-8'))
 const titles = new Set()
 data.theaters.forEach(t => t.screenings.forEach(s => titles.add(s.title)))
 
-const films = {}
+const films = data.films || {}
 let matched = 0
 
 for (const title of titles) {
   const slug = slugify(title)
   if (KNOWN_FILMS[slug]) {
-    films[slug] = { ...KNOWN_FILMS[slug], ...(FILM_METRICS[slug] || {}) }
+    films[slug] = { ...(films[slug] || {}), ...KNOWN_FILMS[slug], ...(FILM_METRICS[slug] || {}) }
     matched++
   }
 }

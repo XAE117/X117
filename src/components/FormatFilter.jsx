@@ -3,10 +3,6 @@ import './FormatFilter.css'
 const FILTERS = [
   { key: 'all', label: 'All' },
   { key: 'film', label: 'Film' },
-  { key: '35mm', label: '35mm' },
-  { key: '70mm', label: '70mm' },
-  { key: '16mm', label: '16mm' },
-  { key: 'nitrate', label: 'Nitrate' },
   { key: 'IMAX', label: 'IMAX' },
 ]
 

@@ -79,6 +79,24 @@ export function getRelativeLabel(dateStr, timeStr, now) {
 }
 
 /**
+ * Check if a screening has already ended (started more than 2.5h ago).
+ * For screenings without a time, checks if the date is before today.
+ */
+export function isScreeningPast(dateStr, timeStr, now) {
+  const parsed = parseTime(timeStr)
+  if (parsed != null) {
+    const [y, mo, da] = dateStr.split('-').map(Number)
+    const screeningDate = new Date(y, mo - 1, da, Math.floor(parsed / 60), parsed % 60)
+    const elapsed = (now - screeningDate) / 60000
+    return elapsed > 150
+  }
+  // No time — consider past if date is before today
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const d = new Date(dateStr + 'T00:00:00')
+  return d < today
+}
+
+/**
  * Get film slug from title.
  */
 export function slugify(title) {

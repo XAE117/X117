@@ -330,6 +330,14 @@
   border: 1px solid rgba(201, 168, 76, 0.3);
 }
 
+.theater-past-section {
+  margin-bottom: 0.5rem;
+}
+
+.theater-past-section .screening-list {
+  margin-top: 0.35rem;
+}
+
 .external-link {
   color: var(--text-muted);
   display: flex;

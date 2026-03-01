@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
-import { useNow, getRelativeLabel, filmMeta, getFilmData } from '../utils/timeUtils.js'
+import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData } from '../utils/timeUtils.js'
 import './ByTheater.css'
 
 function FormatBadge({ format }) {
@@ -16,6 +16,90 @@ function MetricsBadges({ film }) {
   if (film.rottenTomatoes) badges.push(<span key="rt" className="screening-metric-badge rt">{film.rottenTomatoes}% RT</span>)
   if (badges.length === 0) return null
   return <>{badges}</>
+}
+
+function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate }) {
+  const relative = getRelativeLabel(s.date, s.time, now)
+  const film = getFilmData(s.title, data.films)
+  return (
+    <li className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }}>
+      <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+      <span className="screening-date-badge">{formatDate(s.date)}</span>
+      <Link to={`/screening/${s.id}`} className="screening-title-link">
+        {s.title}
+      </Link>
+      {filmMeta(s.title, data.films) && (
+        <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
+      )}
+      <MetricsBadges film={film} />
+      <FormatBadge format={s.format} />
+      {(s.time || relative) && (
+        <span className="screening-time-col">
+          {s.time && <span className="screening-time">{s.time}</span>}
+          {relative && (
+            <span className={`screening-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+          )}
+        </span>
+      )}
+      {s.link && (
+        <a
+          href={s.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="external-link"
+          title="View on theater site"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15,3 21,3 21,9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+      )}
+    </li>
+  )
+}
+
+function MonthGroup({ month, screenings, theater, now, data, forceUpdate, formatDate }) {
+  const [showPast, setShowPast] = useState(false)
+
+  const past = []
+  const upcoming = []
+  screenings.forEach(s => {
+    if (isScreeningPast(s.date, s.time, now)) {
+      past.push(s)
+    } else {
+      upcoming.push(s)
+    }
+  })
+
+  return (
+    <div className="month-group">
+      <h3 className="month-header">{month}</h3>
+      {past.length > 0 && (
+        <div className="theater-past-section">
+          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)}>
+            {past.length} past screening{past.length !== 1 ? 's' : ''}
+            <span className="past-toggle-arrow">&#9662;</span>
+          </button>
+          {showPast && (
+            <ul className="screening-list past-screenings-list">
+              {past.map(s => (
+                <ScreeningRow key={s.id} s={s} theater={theater} now={now} data={data} forceUpdate={forceUpdate} formatDate={formatDate} />
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+      {upcoming.length > 0 && (
+        <ul className="screening-list">
+          {upcoming.map(s => (
+            <ScreeningRow key={s.id} s={s} theater={theater} now={now} data={data} forceUpdate={forceUpdate} formatDate={formatDate} />
+          ))}
+        </ul>
+      )}
+    </div>
+  )
 }
 
 function ByTheater({ data }) {
@@ -85,52 +169,16 @@ function ByTheater({ data }) {
             {isExpanded && (
               <div className="theater-screenings">
                 {Object.entries(monthGroups).map(([month, screenings]) => (
-                  <div key={month} className="month-group">
-                    <h3 className="month-header">{month}</h3>
-                    <ul className="screening-list">
-                      {screenings.map(s => {
-                        const relative = getRelativeLabel(s.date, s.time, now)
-                        const film = getFilmData(s.title, data.films)
-                        return (
-                          <li key={s.id} className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }}>
-                            <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-                            <span className="screening-date-badge">{formatDate(s.date)}</span>
-                            <Link to={`/screening/${s.id}`} className="screening-title-link">
-                              {s.title}
-                            </Link>
-                            {filmMeta(s.title, data.films) && (
-                              <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
-                            )}
-                            <MetricsBadges film={film} />
-                            <FormatBadge format={s.format} />
-                            {(s.time || relative) && (
-                              <span className="screening-time-col">
-                                {s.time && <span className="screening-time">{s.time}</span>}
-                                {relative && (
-                                  <span className={`screening-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
-                                )}
-                              </span>
-                            )}
-                            {s.link && (
-                              <a
-                                href={s.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="external-link"
-                                title="View on theater site"
-                              >
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                  <polyline points="15,3 21,3 21,9" />
-                                  <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg>
-                              </a>
-                            )}
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </div>
+                  <MonthGroup
+                    key={month}
+                    month={month}
+                    screenings={screenings}
+                    theater={theater}
+                    now={now}
+                    data={data}
+                    forceUpdate={forceUpdate}
+                    formatDate={formatDate}
+                  />
                 ))}
               </div>
             )}
