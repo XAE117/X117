@@ -2,32 +2,32 @@
 
 .palace-header {
   text-align: center;
-  padding: 2.5rem 1rem 1rem;
+  padding: 1.25rem 1rem 0.5rem;
 }
 
 .palace-title {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-family: 'Poiret One', var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
   color: var(--gold);
-  letter-spacing: 0.3em;
-  margin: 0.75rem 0 0.4rem;
-  text-shadow: 0 0 40px rgba(201, 168, 76, 0.2);
+  letter-spacing: 0.35em;
+  margin: 0.4rem 0 0.2rem;
+  text-shadow: 0 0 30px rgba(201, 168, 76, 0.15);
 }
 
 .palace-subtitle {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: clamp(0.7rem, 2vw, 0.95rem);
+  font-size: clamp(0.55rem, 1.5vw, 0.7rem);
   color: var(--cream);
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .header-deco-line {
   height: 1px;
-  max-width: 700px;
+  max-width: 400px;
   margin: 0 auto;
   background: linear-gradient(
     90deg,
@@ -46,9 +46,9 @@
 .header-deco-line::after {
   content: '';
   position: absolute;
-  top: -3px;
-  width: 7px;
-  height: 7px;
+  top: -2px;
+  width: 5px;
+  height: 5px;
   background: var(--gold);
   transform: rotate(45deg);
 }
