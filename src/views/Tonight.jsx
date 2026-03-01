@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNow, parseTime, filmMeta } from '../utils/timeUtils.js'
 import './Tonight.css'
@@ -24,8 +24,49 @@ function getRelativeTime(screeningMinutes, nowMinutes) {
   return `Started ${mins}m ago`
 }
 
+function ScreeningItem({ s, isNow, relative, data }) {
+  return (
+    <li className={`tonight-item ${isNow ? 'now-showing' : ''}`}>
+      <div className="tonight-time-col">
+        <span className="tonight-time">{s.time || 'TBA'}</span>
+        {relative && <span className={`tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
+      </div>
+      <div className="tonight-info-col">
+        <Link to={`/screening/${s.id}`} className="tonight-title-link">
+          {s.title}
+        </Link>
+        {filmMeta(s.title, data.films) && (
+          <span className="tonight-film-meta">{filmMeta(s.title, data.films)}</span>
+        )}
+        <div className="tonight-sub">
+          <span className="tonight-theater" style={{ color: s.theaterColor }}>
+            {s.theaterName}
+          </span>
+          <FormatBadge format={s.format} />
+        </div>
+      </div>
+      {s.link && (
+        <a
+          href={s.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="tonight-ticket-link"
+          title="Get Tickets"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15,3 21,3 21,9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+      )}
+    </li>
+  )
+}
+
 function Tonight({ data }) {
   const now = useNow()
+  const [showPast, setShowPast] = useState(false)
 
   const todayStr = useMemo(() => {
     const y = now.getFullYear()
@@ -80,6 +121,20 @@ function Tonight({ data }) {
     return elapsed >= 0 && elapsed <= 150
   })
 
+  // Separate past vs upcoming screenings
+  const past = []
+  const upcoming = []
+  tonightScreenings.forEach(s => {
+    if (s.parsedMinutes != null) {
+      const elapsed = nowMinutes - s.parsedMinutes
+      if (elapsed > 150) {
+        past.push(s)
+        return
+      }
+    }
+    upcoming.push(s)
+  })
+
   return (
     <div className="tonight-page">
       <div className="tonight-header-row">
@@ -91,48 +146,29 @@ function Tonight({ data }) {
       </div>
       <p className="tonight-date-label">{dayLabel}</p>
 
+      {past.length > 0 && (
+        <div className="tonight-past-section">
+          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)}>
+            {past.length} past screening{past.length !== 1 ? 's' : ''}
+            <span className="past-toggle-arrow">&#9662;</span>
+          </button>
+          {showPast && (
+            <ul className="tonight-list past-screenings-list">
+              {past.map(s => {
+                const isNow = false
+                const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
+                return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} />
+              })}
+            </ul>
+          )}
+        </div>
+      )}
+
       <ul className="tonight-list">
-        {tonightScreenings.map(s => {
+        {upcoming.map(s => {
           const isNow = s.parsedMinutes != null && (nowMinutes - s.parsedMinutes) >= 0 && (nowMinutes - s.parsedMinutes) <= 150
           const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
-
-          return (
-            <li key={s.id} className={`tonight-item ${isNow ? 'now-showing' : ''}`}>
-              <div className="tonight-time-col">
-                <span className="tonight-time">{s.time || 'TBA'}</span>
-                {relative && <span className={`tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
-              </div>
-              <div className="tonight-info-col">
-                <Link to={`/screening/${s.id}`} className="tonight-title-link">
-                  {s.title}
-                </Link>
-                {filmMeta(s.title, data.films) && (
-                  <span className="tonight-film-meta">{filmMeta(s.title, data.films)}</span>
-                )}
-                <div className="tonight-sub">
-                  <span className="tonight-theater" style={{ color: s.theaterColor }}>
-                    {s.theaterName}
-                  </span>
-                  <FormatBadge format={s.format} />
-                </div>
-              </div>
-              {s.link && (
-                <a
-                  href={s.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="tonight-ticket-link"
-                  title="Get Tickets"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15,3 21,3 21,9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                </a>
-              )}
-            </li>
-          )
+          return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} />
         })}
       </ul>
     </div>

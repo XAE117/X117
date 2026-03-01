@@ -205,6 +205,14 @@
   color: var(--burgundy-light);
 }
 
+.watchlist-past-section {
+  margin-bottom: 0.5rem;
+}
+
+.watchlist-past-section .watchlist-list {
+  margin-top: 0.35rem;
+}
+
 /* ── Empty State ── */
 
 .watchlist-empty {

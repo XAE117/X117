@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { getCurrentUser, getOtherUser, getWatchlistIds, toggleWatchlist } from '../utils/watchlist.js'
-import { useNow, getRelativeLabel, getFilmData } from '../utils/timeUtils.js'
+import { useNow, getRelativeLabel, isScreeningPast, getFilmData } from '../utils/timeUtils.js'
 import './Watchlist.css'
 
 function UserPicker({ onPick }) {
@@ -58,6 +58,66 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
         &times;
       </button>
     </li>
+  )
+}
+
+function WatchlistSection({ title, items, isBoth, onRemove, films, now, className }) {
+  const [showPast, setShowPast] = useState(false)
+
+  const past = []
+  const upcoming = []
+  items.forEach(({ screening, theater }) => {
+    if (isScreeningPast(screening.date, screening.time, now)) {
+      past.push({ screening, theater })
+    } else {
+      upcoming.push({ screening, theater })
+    }
+  })
+
+  if (items.length === 0) return null
+
+  return (
+    <section className="watchlist-section">
+      <h3 className={`watchlist-section-header ${className || ''}`}>{title}</h3>
+      {past.length > 0 && (
+        <div className="watchlist-past-section">
+          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)}>
+            {past.length} past screening{past.length !== 1 ? 's' : ''}
+            <span className="past-toggle-arrow">&#9662;</span>
+          </button>
+          {showPast && (
+            <ul className="watchlist-list past-screenings-list">
+              {past.map(({ screening, theater }) => (
+                <WatchlistItem
+                  key={screening.id}
+                  screening={screening}
+                  theater={theater}
+                  isBoth={isBoth}
+                  onRemove={onRemove}
+                  films={films}
+                  now={now}
+                />
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+      {upcoming.length > 0 && (
+        <ul className="watchlist-list">
+          {upcoming.map(({ screening, theater }) => (
+            <WatchlistItem
+              key={screening.id}
+              screening={screening}
+              theater={theater}
+              isBoth={isBoth}
+              onRemove={onRemove}
+              films={films}
+              now={now}
+            />
+          ))}
+        </ul>
+      )}
+    </section>
   )
 }
 
@@ -133,62 +193,33 @@ function Watchlist({ data }) {
         </div>
       )}
 
-      {bothItems.length > 0 && (
-        <section className="watchlist-section">
-          <h3 className="watchlist-section-header watchlist-section-both">Both want to see</h3>
-          <ul className="watchlist-list">
-            {bothItems.map(({ screening, theater }) => (
-              <WatchlistItem
-                key={screening.id}
-                screening={screening}
-                theater={theater}
-                isBoth={true}
-                onRemove={handleRemove}
-                films={data.films}
-                now={now}
-              />
-            ))}
-          </ul>
-        </section>
-      )}
+      <WatchlistSection
+        title="Both want to see"
+        items={bothItems}
+        isBoth={true}
+        onRemove={handleRemove}
+        films={data.films}
+        now={now}
+        className="watchlist-section-both"
+      />
 
-      {myItems.length > 0 && (
-        <section className="watchlist-section">
-          <h3 className="watchlist-section-header">{user} wants to see</h3>
-          <ul className="watchlist-list">
-            {myItems.map(({ screening, theater }) => (
-              <WatchlistItem
-                key={screening.id}
-                screening={screening}
-                theater={theater}
-                isBoth={false}
-                onRemove={handleRemove}
-                films={data.films}
-                now={now}
-              />
-            ))}
-          </ul>
-        </section>
-      )}
+      <WatchlistSection
+        title={`${user} wants to see`}
+        items={myItems}
+        isBoth={false}
+        onRemove={handleRemove}
+        films={data.films}
+        now={now}
+      />
 
-      {otherItems.length > 0 && (
-        <section className="watchlist-section">
-          <h3 className="watchlist-section-header">{otherUser} wants to see</h3>
-          <ul className="watchlist-list">
-            {otherItems.map(({ screening, theater }) => (
-              <WatchlistItem
-                key={screening.id}
-                screening={screening}
-                theater={theater}
-                isBoth={false}
-                onRemove={() => {}}
-                films={data.films}
-                now={now}
-              />
-            ))}
-          </ul>
-        </section>
-      )}
+      <WatchlistSection
+        title={`${otherUser} wants to see`}
+        items={otherItems}
+        isBoth={false}
+        onRemove={() => {}}
+        films={data.films}
+        now={now}
+      />
     </div>
   )
 }

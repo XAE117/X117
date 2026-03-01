@@ -217,6 +217,8 @@ function Detail({ data }) {
                 src={`https://image.tmdb.org/t/p/w342${film.posterPath}`}
                 alt={`${screening.title} poster`}
                 className="detail-poster-img"
+                loading="lazy"
+                onError={(e) => { e.target.style.display = 'none' }}
               />
             </div>
           )}

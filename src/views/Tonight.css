@@ -70,6 +70,7 @@
   padding: 1rem 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
+  border-radius: 12px;
   transition: border-color 0.2s ease;
 }
 
@@ -184,6 +185,16 @@
 
 .tonight-ticket-link:hover {
   color: var(--gold);
+}
+
+/* ── Past Section ── */
+
+.tonight-past-section {
+  margin-bottom: 0.75rem;
+}
+
+.tonight-past-section .tonight-list {
+  margin-top: 0.5rem;
 }
 
 /* ── Empty State ── */
