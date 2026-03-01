@@ -60,3 +60,28 @@
 .header-deco-line::after {
   right: 15%;
 }
+
+/* ── Jazz Mode ── */
+
+.jazz-mode .palace-title {
+  color: var(--jazz-accent);
+  text-shadow: 0 0 40px rgba(212, 165, 116, 0.2);
+}
+
+.jazz-mode .header-deco-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--jazz-accent-dim) 15%,
+    var(--jazz-accent) 35%,
+    var(--jazz-accent) 50%,
+    var(--jazz-accent) 65%,
+    var(--jazz-accent-dim) 85%,
+    transparent 100%
+  );
+}
+
+.jazz-mode .header-deco-line::before,
+.jazz-mode .header-deco-line::after {
+  background: var(--jazz-accent);
+}

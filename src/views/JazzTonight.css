@@ -1,0 +1,317 @@
+/* ── Jazz Tonight ── */
+
+.jazz-tonight-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.jazz-tonight-header-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.jazz-tonight-header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--jazz-accent);
+  letter-spacing: 0.1em;
+}
+
+.jazz-tonight-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--jazz-hot);
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  animation: jazzPulse 2s ease-in-out infinite;
+}
+
+@keyframes jazzPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--jazz-hot); }
+  50% { opacity: 0.4; box-shadow: none; }
+}
+
+.jazz-tonight-count {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.jazz-tonight-date {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Past Section ── */
+
+.jazz-tonight-past-section {
+  margin-bottom: 0.5rem;
+}
+
+.jazz-past-toggle {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.jazz-past-toggle:hover {
+  border-color: var(--jazz-accent-dim);
+  color: var(--text-dim);
+}
+
+.jazz-past-toggle.open .past-toggle-arrow {
+  transform: rotate(180deg);
+}
+
+.past-shows-list {
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}
+
+/* ── Show List ── */
+
+.jazz-tonight-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jazz-tonight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.jazz-tonight-item:hover {
+  border-color: var(--jazz-accent-dim);
+}
+
+.jazz-tonight-item.now-playing {
+  border-color: var(--jazz-hot);
+  background: var(--jazz-hot-glow);
+}
+
+.jazz-tonight-item.is-hot {
+  border-left: 3px solid var(--jazz-hot);
+}
+
+/* ── Time Column ── */
+
+.jazz-tonight-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 4.5rem;
+  flex-shrink: 0;
+}
+
+.jazz-tonight-time {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.jazz-tonight-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.jazz-tonight-relative.is-now {
+  color: var(--jazz-hot);
+  font-weight: 600;
+}
+
+/* ── Info Column ── */
+
+.jazz-tonight-info-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.jazz-tonight-artist-link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.jazz-tonight-artist-link:hover {
+  color: var(--jazz-accent);
+}
+
+.jazz-tonight-sub {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.jazz-tonight-venue {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.jazz-tonight-notes {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* ── Ticket Link ── */
+
+.jazz-tonight-ticket-link {
+  color: var(--jazz-accent-dim);
+  flex-shrink: 0;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.jazz-tonight-ticket-link:hover {
+  color: var(--jazz-accent);
+}
+
+/* ── Hot Badge ── */
+
+.jazz-hot-badge {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* ── Tier Badge ── */
+
+.jazz-tier-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  background: var(--border);
+  color: var(--text-muted);
+}
+
+.tier-indie_scene {
+  background: rgba(232, 93, 58, 0.12);
+  color: var(--jazz-hot);
+  border: 1px solid rgba(232, 93, 58, 0.25);
+}
+
+.tier-dedicated {
+  background: rgba(212, 165, 116, 0.12);
+  color: var(--jazz-accent);
+}
+
+.tier-concert_hall {
+  background: rgba(189, 195, 199, 0.12);
+  color: #BDC3C7;
+}
+
+/* ── Empty State ── */
+
+.jazz-tonight-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-dim);
+}
+
+.jazz-tonight-empty p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.jazz-tonight-empty-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--jazz-accent);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+/* ── Footnote ── */
+
+.jazz-tonight-footnote {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.jazz-tonight-footnote a {
+  color: var(--jazz-accent-dim);
+  text-decoration: none;
+}
+
+.jazz-tonight-footnote a:hover {
+  color: var(--jazz-accent);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .jazz-tonight-item {
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .jazz-tonight-time-col {
+    min-width: 3.5rem;
+  }
+
+  .jazz-tonight-artist-link {
+    font-size: 0.95rem;
+  }
+}

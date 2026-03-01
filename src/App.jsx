@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
+import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import GodfatherAlert from './components/GodfatherAlert.jsx'
@@ -14,29 +15,41 @@ import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
 import DayScreenshot from './views/DayScreenshot.jsx'
+import JazzTonight from './views/JazzTonight.jsx'
+import JazzByVenue from './views/JazzByVenue.jsx'
+import JazzByDay from './views/JazzByDay.jsx'
+import JazzDetail from './views/JazzDetail.jsx'
 import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
 
 function App() {
   const [data, setData] = useState(null)
+  const [jazzData, setJazzData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('all')
   const location = useLocation()
 
+  const isJazzMode = location.pathname.startsWith('/jazz')
+
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
-    const url = import.meta.env.BASE_URL + 'theaters.json?t=' + Date.now()
-    fetch(url)
-      .then(res => res.json())
-      .then(d => {
-        setData(d)
+    const base = import.meta.env.BASE_URL
+    const t = Date.now()
+
+    Promise.all([
+      fetch(base + 'theaters.json?t=' + t).then(res => res.json()),
+      fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
+    ])
+      .then(([cinemaData, jazz]) => {
+        setData(cinemaData)
+        if (jazz) setJazzData(jazz)
         setLoading(false)
         setRefreshing(false)
       })
       .catch(err => {
-        console.error('Failed to load theater data:', err)
+        console.error('Failed to load data:', err)
         setLoading(false)
         setRefreshing(false)
       })
@@ -82,7 +95,15 @@ function App() {
     return data.theaters.some(t => t.screenings.some(s => s.date === todayStr))
   }, [data])
 
-  // Show format filter on ByTheater and ByDay views
+  // Check if there are jazz shows today
+  const hasTonightJazzShows = useMemo(() => {
+    if (!jazzData) return false
+    const now = new Date()
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
+    return jazzData.venues.some(v => v.shows.some(s => s.date === todayStr))
+  }, [jazzData])
+
+  // Show format filter on ByTheater and ByDay views (cinema only)
   const showFormatFilter = ['/', '/by-day'].includes(location.pathname)
 
   if (loading) return <LoadingSpinner />
@@ -90,7 +111,7 @@ function App() {
   if (!data) {
     return (
       <div className="error-state">
-        <h2>Unable to load screening data</h2>
+        <h2>Unable to load data</h2>
         <p>Please try refreshing the page.</p>
       </div>
     )
@@ -107,11 +128,17 @@ function App() {
     )
   }
 
+  const mode = isJazzMode ? 'jazz' : 'cinema'
+
   return (
-    <div className="app">
-      <Header />
-      <Nav hasTonightScreenings={hasTonightScreenings} />
-      <GodfatherAlert data={data} />
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
+      <Header mode={mode} />
+      <ModeSwitcher />
+      <Nav
+        hasTonightScreenings={isJazzMode ? hasTonightJazzShows : hasTonightScreenings}
+        mode={mode}
+      />
+      {!isJazzMode && <GodfatherAlert data={data} />}
       {showFormatFilter && (
         <div className="controls-row">
           <FormatFilter current={formatFilter} onChange={setFormatFilter} />
@@ -147,6 +174,7 @@ function App() {
       )}
       <main className="main-content">
         <Routes>
+          {/* Cinema routes */}
           <Route path="/" element={<ByTheater data={filteredData} />} />
           <Route path="/by-day" element={<ByDay data={filteredData} />} />
           <Route path="/tonight" element={<Tonight data={data} />} />
@@ -154,9 +182,18 @@ function App() {
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />
           <Route path="/map" element={<MapView data={filteredData} />} />
+
+          {/* Jazz routes */}
+          <Route path="/jazz" element={<JazzTonight data={jazzData} />} />
+          <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
+          <Route path="/jazz/by-day" element={<JazzByDay data={jazzData} />} />
+          <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
         </Routes>
       </main>
-      <Footer lastUpdated={data.lastUpdated} theaters={data.theaters} />
+      <Footer
+        lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : data.lastUpdated}
+        theaters={isJazzMode && jazzData ? jazzData.venues : data.theaters}
+      />
     </div>
   )
 }

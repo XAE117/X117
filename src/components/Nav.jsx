@@ -1,7 +1,26 @@
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
-function Nav({ hasTonightScreenings }) {
+function Nav({ hasTonightScreenings, mode }) {
+  if (mode === 'jazz') {
+    return (
+      <nav className="palace-nav jazz-nav">
+        <NavLink to="/jazz" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''} ${hasTonightScreenings ? 'tonight-active' : ''}`}>
+          Tonight
+          {hasTonightScreenings && <span className="nav-tonight-dot jazz-dot" />}
+        </NavLink>
+        <span className="nav-diamond jazz-diamond">&#9670;</span>
+        <NavLink to="/jazz/by-venue" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          By Venue
+        </NavLink>
+        <span className="nav-diamond jazz-diamond">&#9670;</span>
+        <NavLink to="/jazz/by-day" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          By Day
+        </NavLink>
+      </nav>
+    )
+  }
+
   return (
     <nav className="palace-nav">
       <NavLink to="/tonight" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''} ${hasTonightScreenings ? 'tonight-active' : ''}`}>

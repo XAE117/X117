@@ -1,0 +1,365 @@
+{
+  "lastUpdated": "2026-03-01T12:00:00Z",
+  "source": "lajazz.com + minaretrecords.com + venue sites",
+  "venues": [
+    {
+      "id": "blue-note-la",
+      "name": "Blue Note Los Angeles",
+      "shortName": "Blue Note",
+      "neighborhood": "Hollywood",
+      "url": "https://www.bluenotejazz.com/la/",
+      "color": "#1A5276",
+      "tier": "dedicated",
+      "shows": [
+        {
+          "id": "bn-001",
+          "artist": "Robert Glasper",
+          "date": "2026-03-07",
+          "time": "8:00 PM",
+          "notes": "Two sets — 8pm & 10:30pm",
+          "link": "https://www.bluenotejazz.com/la/shows/",
+          "hot": true
+        },
+        {
+          "id": "bn-002",
+          "artist": "Lakecia Benjamin",
+          "date": "2026-03-08",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.bluenotejazz.com/la/shows/",
+          "hot": true
+        },
+        {
+          "id": "bn-003",
+          "artist": "Cory Henry & The Funk Apostles",
+          "date": "2026-03-14",
+          "time": "8:00 PM",
+          "notes": "Two sets",
+          "link": "https://www.bluenotejazz.com/la/shows/",
+          "hot": true
+        },
+        {
+          "id": "bn-004",
+          "artist": "Joe Lovano Trio Tapestry",
+          "date": "2026-03-15",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.bluenotejazz.com/la/shows/",
+          "hot": true
+        },
+        {
+          "id": "bn-005",
+          "artist": "Ambrose Akinmusire Quartet",
+          "date": "2026-03-21",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.bluenotejazz.com/la/shows/",
+          "hot": true
+        }
+      ]
+    },
+    {
+      "id": "baked-potato",
+      "name": "The Baked Potato",
+      "shortName": "Baked Potato",
+      "neighborhood": "Studio City",
+      "url": "https://www.thebakedpotato.com/",
+      "color": "#8B4513",
+      "tier": "dedicated",
+      "shows": [
+        {
+          "id": "bp-001",
+          "artist": "Don Randi & Quest",
+          "date": "2026-03-01",
+          "time": "9:30 PM",
+          "notes": "Weekly residency",
+          "link": "https://www.thebakedpotato.com/",
+          "hot": false
+        },
+        {
+          "id": "bp-002",
+          "artist": "Billy Mohler Trio",
+          "date": "2026-03-05",
+          "time": "9:30 PM",
+          "notes": "",
+          "link": "https://www.thebakedpotato.com/",
+          "hot": true
+        },
+        {
+          "id": "bp-003",
+          "artist": "Nate Wood — fOUR",
+          "date": "2026-03-12",
+          "time": "9:30 PM",
+          "notes": "One-man-band set",
+          "link": "https://www.thebakedpotato.com/",
+          "hot": true
+        },
+        {
+          "id": "bp-004",
+          "artist": "Jeff Parker Trio",
+          "date": "2026-03-19",
+          "time": "9:30 PM",
+          "notes": "",
+          "link": "https://www.thebakedpotato.com/",
+          "hot": true
+        }
+      ]
+    },
+    {
+      "id": "catalina-jazz",
+      "name": "Catalina Jazz Club",
+      "shortName": "Catalina",
+      "neighborhood": "Hollywood",
+      "url": "https://catalinajazzclub.com/",
+      "color": "#C0392B",
+      "tier": "dedicated",
+      "shows": [
+        {
+          "id": "cj-001",
+          "artist": "Connie Han Trio",
+          "date": "2026-03-06",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/calendar/",
+          "hot": true
+        },
+        {
+          "id": "cj-002",
+          "artist": "John Beasley's MONK'estra",
+          "date": "2026-03-13",
+          "time": "8:30 PM",
+          "notes": "Big band",
+          "link": "https://catalinajazzclub.com/calendar/",
+          "hot": false
+        },
+        {
+          "id": "cj-003",
+          "artist": "Kamasi Washington",
+          "date": "2026-03-20",
+          "time": "8:00 PM",
+          "notes": "Special engagement",
+          "link": "https://catalinajazzclub.com/calendar/",
+          "hot": true
+        }
+      ]
+    },
+    {
+      "id": "sam-first",
+      "name": "Sam First",
+      "shortName": "Sam First",
+      "neighborhood": "Westchester",
+      "url": "https://www.samfirstbar.com/",
+      "color": "#2E86C1",
+      "tier": "dedicated",
+      "shows": [
+        {
+          "id": "sf-001",
+          "artist": "Nicole McCabe Quintet",
+          "date": "2026-03-04",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.samfirstbar.com/",
+          "hot": true
+        },
+        {
+          "id": "sf-002",
+          "artist": "Devin Daniels Quartet",
+          "date": "2026-03-11",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.samfirstbar.com/",
+          "hot": true
+        },
+        {
+          "id": "sf-003",
+          "artist": "Henry Solomon Group",
+          "date": "2026-03-18",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.samfirstbar.com/",
+          "hot": true
+        }
+      ]
+    },
+    {
+      "id": "lodge-room",
+      "name": "Lodge Room",
+      "shortName": "Lodge Room",
+      "neighborhood": "Highland Park",
+      "url": "https://www.lodgeroomhlp.com/",
+      "color": "#D4A574",
+      "tier": "indie_scene",
+      "shows": [
+        {
+          "id": "lr-001",
+          "artist": "Sam Wilkes",
+          "date": "2026-03-09",
+          "time": "8:00 PM",
+          "notes": "All ages",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records"
+        },
+        {
+          "id": "lr-002",
+          "artist": "Fievel is Glauque",
+          "date": "2026-03-16",
+          "time": "8:00 PM",
+          "notes": "All ages · w/ special guests",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records"
+        },
+        {
+          "id": "lr-003",
+          "artist": "Kassa Overall",
+          "date": "2026-03-22",
+          "time": "9:00 PM",
+          "notes": "All ages",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records"
+        }
+      ]
+    },
+    {
+      "id": "the-high-low",
+      "name": "The High Low",
+      "shortName": "High Low",
+      "neighborhood": "Atwater Village",
+      "url": "https://www.thehighlow.com/",
+      "color": "#27AE60",
+      "tier": "regular",
+      "shows": [
+        {
+          "id": "hl-001",
+          "artist": "Monday Jazz Night — TBA",
+          "date": "2026-03-02",
+          "time": "8:00 PM",
+          "notes": "Weekly series",
+          "link": "https://www.thehighlow.com/",
+          "hot": false
+        },
+        {
+          "id": "hl-002",
+          "artist": "Monday Jazz Night — Dan Rosenboom",
+          "date": "2026-03-09",
+          "time": "8:00 PM",
+          "notes": "Weekly series",
+          "link": "https://www.thehighlow.com/",
+          "hot": true
+        },
+        {
+          "id": "hl-003",
+          "artist": "Monday Jazz Night — TBA",
+          "date": "2026-03-16",
+          "time": "8:00 PM",
+          "notes": "Weekly series",
+          "link": "https://www.thehighlow.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "id": "st-barnabas",
+      "name": "St. Barnabas Church",
+      "shortName": "St. Barnabas",
+      "neighborhood": "Eagle Rock",
+      "url": "https://www.minaretrecords.com/shows",
+      "color": "#8E44AD",
+      "tier": "indie_scene",
+      "shows": [
+        {
+          "id": "sb-001",
+          "artist": "Sam Gendel solo",
+          "date": "2026-03-10",
+          "time": "7:30 PM",
+          "notes": "All ages · Donation-based",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records"
+        },
+        {
+          "id": "sb-002",
+          "artist": "Steve Lehman & Sélébéyone",
+          "date": "2026-03-23",
+          "time": "7:30 PM",
+          "notes": "All ages · Donation-based",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records"
+        }
+      ]
+    },
+    {
+      "id": "disney-hall",
+      "name": "Walt Disney Concert Hall",
+      "shortName": "Disney Hall",
+      "neighborhood": "Downtown",
+      "url": "https://www.laphil.com/events/",
+      "color": "#BDC3C7",
+      "tier": "concert_hall",
+      "shows": [
+        {
+          "id": "dh-001",
+          "artist": "Vijay Iyer Trio",
+          "date": "2026-03-28",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.laphil.com/events/",
+          "hot": true
+        }
+      ]
+    },
+    {
+      "id": "the-mint",
+      "name": "The Mint",
+      "shortName": "The Mint",
+      "neighborhood": "Mid-Wilshire",
+      "url": "https://www.themintla.com/",
+      "color": "#16A085",
+      "tier": "regular",
+      "shows": [
+        {
+          "id": "tm-001",
+          "artist": "Sunday Jazz Session — Kevin Kanner",
+          "date": "2026-03-01",
+          "time": "7:00 PM",
+          "notes": "Open jam session",
+          "link": "https://www.themintla.com/",
+          "hot": false
+        },
+        {
+          "id": "tm-002",
+          "artist": "Sunday Jazz Session — Kevin Kanner",
+          "date": "2026-03-08",
+          "time": "7:00 PM",
+          "notes": "Open jam session",
+          "link": "https://www.themintla.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "id": "psstudio",
+      "name": "PSSTUDIO",
+      "shortName": "PSSTUDIO",
+      "neighborhood": "DTLA",
+      "url": "https://www.minaretrecords.com/shows",
+      "color": "#E67E22",
+      "tier": "indie_scene",
+      "shows": [
+        {
+          "id": "ps-001",
+          "artist": "Slauson Malone 1 + Nicole McCabe",
+          "date": "2026-03-14",
+          "time": "8:00 PM",
+          "notes": "All ages · $15",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records"
+        }
+      ]
+    }
+  ]
+}
