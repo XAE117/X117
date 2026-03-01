@@ -116,7 +116,6 @@
 .day-item-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
 }
 
@@ -128,13 +127,6 @@
   flex-wrap: wrap;
 }
 
-.day-item-bottom-right {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex-shrink: 0;
-}
-
 .day-item-theater {
   font-family: var(--font-body);
   font-weight: 600;
@@ -142,6 +134,8 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .day-film-link {
@@ -190,6 +184,7 @@
   align-items: flex-end;
   gap: 0.15rem;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .day-time {
