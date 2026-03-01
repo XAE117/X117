@@ -13,7 +13,7 @@ function ModeSwitcher() {
         </Link>
         <span className="mode-divider" />
         <Link to="/jazz" className="mode-icon">
-          <span className={`mode-emoji ${isJazz ? '' : 'dimmed'}`}>🎶</span>
+          <span className={`mode-emoji ${isJazz ? '' : 'dimmed'}`}>🎺</span>
         </Link>
       </div>
     </div>
