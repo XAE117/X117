@@ -164,13 +164,68 @@
   flex-shrink: 0;
 }
 
+.search-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
 .search-result-time {
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 0.7rem;
   color: var(--text-muted);
-  margin-left: auto;
   white-space: nowrap;
+}
+
+.search-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.search-relative.is-now {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ── Metrics Badges ── */
+
+.search-metric-badge {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.08rem 0.4rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search-metric-badge.rt {
+  background: rgba(250, 50, 10, 0.15);
+  color: #ff6347;
+  border: 1px solid rgba(250, 50, 10, 0.3);
+}
+
+.search-metric-badge.afi {
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.search-metric-badge.ss {
+  background: rgba(100, 149, 237, 0.12);
+  color: #6495ed;
+  border: 1px solid rgba(100, 149, 237, 0.3);
 }
 
 .search-empty {

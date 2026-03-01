@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom'
+import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import './Detail.css'
 
 function generateICS(screening, theater) {
@@ -56,9 +57,101 @@ function generateICS(screening, theater) {
   URL.revokeObjectURL(url)
 }
 
+function CinephileMetrics({ film }) {
+  if (!film) return null
+  const hasMetrics = film.afi100 || film.rottenTomatoes || film.sightAndSound || film.letterboxd
+  if (!hasMetrics) return null
+
+  return (
+    <div className="detail-cinephile-metrics">
+      <span className="detail-label">Cinephile Metrics</span>
+      <div className="detail-metrics-grid">
+        {film.afi100 && (
+          <div className="detail-metric-card afi">
+            <span className="detail-metric-value">#{film.afi100}</span>
+            <span className="detail-metric-source">AFI Top 100</span>
+          </div>
+        )}
+        {film.rottenTomatoes && (
+          <div className="detail-metric-card rt">
+            <span className="detail-metric-value">{film.rottenTomatoes}%</span>
+            <span className="detail-metric-source">Rotten Tomatoes</span>
+          </div>
+        )}
+        {film.sightAndSound && (
+          <div className="detail-metric-card ss">
+            <span className="detail-metric-value">#{film.sightAndSound}</span>
+            <span className="detail-metric-source">Sight & Sound 2022</span>
+          </div>
+        )}
+        {film.letterboxd && (
+          <div className="detail-metric-card lb">
+            <span className="detail-metric-value">{film.letterboxd.toFixed(1)}</span>
+            <span className="detail-metric-source">Letterboxd /5</span>
+          </div>
+        )}
+        {film.rating > 0 && (
+          <div className="detail-metric-card tmdb">
+            <span className="detail-metric-value">{film.rating.toFixed(1)}</span>
+            <span className="detail-metric-source">TMDB /10</span>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function CriticReviews({ film }) {
+  if (!film?.reviews?.length) return null
+
+  return (
+    <div className="detail-reviews-section">
+      <span className="detail-label">Why to Watch</span>
+      <div className="detail-reviews-list">
+        {film.reviews.map((review, i) => (
+          <blockquote key={i} className="detail-review">
+            <p className="detail-review-quote">&ldquo;{review.quote}&rdquo;</p>
+            <cite className="detail-review-cite">
+              <span className="detail-review-critic">{review.critic}</span>
+              <span className="detail-review-publication">{review.publication}</span>
+            </cite>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function PodcastLinks({ film }) {
+  if (!film?.podcasts?.length) return null
+
+  return (
+    <div className="detail-podcasts-section">
+      <span className="detail-label">Listen</span>
+      <ul className="detail-podcasts-list">
+        {film.podcasts.map((pod, i) => (
+          <li key={i} className="detail-podcast-item">
+            <svg className="detail-podcast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg>
+            <div className="detail-podcast-info">
+              <span className="detail-podcast-name">{pod.name}</span>
+              {pod.episode && <span className="detail-podcast-episode">{pod.episode}</span>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function Detail({ data }) {
   const { screeningId } = useParams()
   const navigate = useNavigate()
+  const now = useNow()
 
   // Find the screening and its theater
   let screening = null
@@ -101,6 +194,7 @@ function Detail({ data }) {
   const slugify = (title) => title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
   const filmKey = slugify(screening.title)
   const film = data.films?.[filmKey] || null
+  const relative = getRelativeLabel(screening.date, screening.time, now)
 
   return (
     <div className="detail-page">
@@ -134,8 +228,14 @@ function Detail({ data }) {
               <div className="detail-film-meta">
                 {film.director && <span className="detail-director">Directed by {film.director}</span>}
                 {film.year && <span className="detail-year">{film.year}</span>}
-                {film.rating > 0 && (
-                  <span className="detail-rating-badge">{film.rating.toFixed(1)}</span>
+                {film.rottenTomatoes && (
+                  <span className="detail-rt-badge">{film.rottenTomatoes}% RT</span>
+                )}
+                {film.afi100 && (
+                  <span className="detail-afi-badge">#{film.afi100} AFI</span>
+                )}
+                {film.sightAndSound && (
+                  <span className="detail-ss-badge">S&S #{film.sightAndSound}</span>
                 )}
               </div>
             )}
@@ -161,6 +261,9 @@ function Detail({ data }) {
               <div className="detail-info-item">
                 <span className="detail-label">Time</span>
                 <span className="detail-value">{screening.time}</span>
+                {relative && (
+                  <span className={`detail-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+                )}
               </div>
               {screening.format && (
                 <div className="detail-info-item">
@@ -188,6 +291,10 @@ function Detail({ data }) {
                 <p className="detail-synopsis-text">{film.overview}</p>
               </div>
             )}
+
+            <CinephileMetrics film={film} />
+            <CriticReviews film={film} />
+            <PodcastLinks film={film} />
 
             <div className="detail-actions">
               {screening.link && (

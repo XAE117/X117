@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
+import { useNow, getRelativeLabel, filmMeta, getFilmData } from '../utils/timeUtils.js'
 import './Search.css'
 
 function FormatBadge({ format }) {
@@ -8,19 +9,21 @@ function FormatBadge({ format }) {
   return <span className="search-format-badge">{format}</span>
 }
 
-function filmMeta(title, films) {
-  if (!films) return null
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  const f = films[slug]
-  if (!f) return null
-  const parts = [f.director, f.year].filter(Boolean)
-  return parts.length > 0 ? parts.join(' · ') : null
+function MetricsBadges({ film }) {
+  if (!film) return null
+  const badges = []
+  if (film.afi100) badges.push(<span key="afi" className="search-metric-badge afi">#{film.afi100} AFI</span>)
+  if (film.rottenTomatoes) badges.push(<span key="rt" className="search-metric-badge rt">{film.rottenTomatoes}% RT</span>)
+  if (film.sightAndSound) badges.push(<span key="ss" className="search-metric-badge ss">S&S #{film.sightAndSound}</span>)
+  if (badges.length === 0) return null
+  return <>{badges}</>
 }
 
 function Search({ data }) {
   const [query, setQuery] = useState('')
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+  const now = useNow()
 
   if (!data) return null
 
@@ -38,8 +41,7 @@ function Search({ data }) {
         if (d < today) return
         const titleMatch = s.title.toLowerCase().includes(q)
         // Also search by director name from TMDB data
-        const slug = s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-        const film = data.films?.[slug]
+        const film = getFilmData(s.title, data.films)
         const directorMatch = film?.director?.toLowerCase().includes(q)
         if (titleMatch || directorMatch) {
           results.push({
@@ -93,28 +95,36 @@ function Search({ data }) {
 
       {results.length > 0 && (
         <ul className="search-results">
-          {results.map(s => (
-            <li key={s.id} className="search-result-item">
-              <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-              <span className="search-result-date">{formatDate(s.date)}</span>
-              <span
-                className="search-result-theater"
-                style={{ color: s.theaterColor }}
-              >
-                {s.theaterName}
-              </span>
-              <Link to={`/screening/${s.id}`} className="search-result-title">
-                {s.title}
-              </Link>
-              {filmMeta(s.title, data.films) && (
-                <span className="search-film-meta">{filmMeta(s.title, data.films)}</span>
-              )}
-              <FormatBadge format={s.format} />
-              {s.time && (
-                <span className="search-result-time">{s.time}</span>
-              )}
-            </li>
-          ))}
+          {results.map(s => {
+            const relative = getRelativeLabel(s.date, s.time, now)
+            const film = getFilmData(s.title, data.films)
+            return (
+              <li key={s.id} className="search-result-item">
+                <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+                <span className="search-result-date">{formatDate(s.date)}</span>
+                <span
+                  className="search-result-theater"
+                  style={{ color: s.theaterColor }}
+                >
+                  {s.theaterName}
+                </span>
+                <Link to={`/screening/${s.id}`} className="search-result-title">
+                  {s.title}
+                </Link>
+                {filmMeta(s.title, data.films) && (
+                  <span className="search-film-meta">{filmMeta(s.title, data.films)}</span>
+                )}
+                <MetricsBadges film={film} />
+                <FormatBadge format={s.format} />
+                <span className="search-time-col">
+                  {s.time && <span className="search-result-time">{s.time}</span>}
+                  {relative && (
+                    <span className={`search-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+                  )}
+                </span>
+              </li>
+            )
+          })}
         </ul>
       )}
 

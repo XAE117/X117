@@ -255,6 +255,60 @@
   line-height: 1.5;
 }
 
+/* ── Relative Time in Detail ── */
+
+.detail-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.detail-relative.is-now {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ── Metrics Badges in Film Meta ── */
+
+.detail-rt-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  background: rgba(250, 50, 10, 0.15);
+  color: #ff6347;
+  border: 1px solid rgba(250, 50, 10, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.detail-afi-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.detail-ss-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  background: rgba(100, 149, 237, 0.12);
+  color: #6495ed;
+  border: 1px solid rgba(100, 149, 237, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
 /* ── Synopsis (TMDB) ── */
 
 .detail-synopsis {
@@ -268,6 +322,184 @@
   color: var(--text-dim);
   line-height: 1.6;
   font-style: italic;
+}
+
+/* ── Cinephile Metrics ── */
+
+.detail-cinephile-metrics {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-metrics-grid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.detail-metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  min-width: 80px;
+}
+
+.detail-metric-card.afi {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.detail-metric-card.rt {
+  border-color: rgba(250, 50, 10, 0.3);
+}
+
+.detail-metric-card.ss {
+  border-color: rgba(100, 149, 237, 0.3);
+}
+
+.detail-metric-card.lb {
+  border-color: rgba(0, 210, 106, 0.3);
+}
+
+.detail-metric-card.tmdb {
+  border-color: rgba(1, 180, 228, 0.3);
+}
+
+.detail-metric-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  line-height: 1;
+}
+
+.detail-metric-card.afi .detail-metric-value { color: var(--gold); }
+.detail-metric-card.rt .detail-metric-value { color: #ff6347; }
+.detail-metric-card.ss .detail-metric-value { color: #6495ed; }
+.detail-metric-card.lb .detail-metric-value { color: #00d26a; }
+.detail-metric-card.tmdb .detail-metric-value { color: #01b4e4; }
+
+.detail-metric-source {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Critic Reviews ── */
+
+.detail-reviews-section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-review {
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--gold-dim);
+  background: rgba(201, 168, 76, 0.03);
+}
+
+.detail-review-quote {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--cream);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.detail-review-cite {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-style: normal;
+}
+
+.detail-review-critic {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.detail-review-publication {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* ── Podcast Links ── */
+
+.detail-podcasts-section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-podcasts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-podcast-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+.detail-podcast-item:hover {
+  border-color: var(--gold-dim);
+}
+
+.detail-podcast-icon {
+  color: var(--gold-dim);
+  flex-shrink: 0;
+}
+
+.detail-podcast-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.detail-podcast-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.detail-podcast-episode {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
 }
 
 /* ── Action Buttons ── */

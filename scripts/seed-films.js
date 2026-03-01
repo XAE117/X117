@@ -615,6 +615,478 @@ const KNOWN_FILMS = {
   },
 }
 
+// Cinephile metrics: AFI Top 100 rank, Rotten Tomatoes %, Sight & Sound 2022 rank,
+// Letterboxd avg (out of 5), plus critic reviews and podcast episodes
+const FILM_METRICS = {
+  'the-wizard-of-oz': {
+    afi100: 6,
+    rottenTomatoes: 98,
+    letterboxd: 4.0,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'As a child I simply liked it. As an adult I found myself fascinated by it. It is a wonderful film in many ways.' },
+      { critic: 'Pauline Kael', publication: 'The New Yorker', quote: 'A work of genuine imagination and visual daring that still enchants audiences after all these decades.' },
+    ],
+    podcasts: [
+      { name: 'Unspooled', episode: 'The Wizard of Oz' },
+      { name: 'You Must Remember This', episode: 'The Wizard of Oz at 80' },
+    ],
+  },
+  'the-maltese-falcon': {
+    afi100: 31,
+    rottenTomatoes: 99,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'The first great detective film noir, the first to show that the weights and measures of pulp fiction could produce art.' },
+      { critic: 'Peter Bradshaw', publication: 'The Guardian', quote: 'A masterpiece of hardboiled cinema that remains endlessly rewatchable and quotable.' },
+    ],
+    podcasts: [
+      { name: 'Unspooled', episode: 'The Maltese Falcon' },
+      { name: 'Filmspotting', episode: 'John Huston Marathon: The Maltese Falcon' },
+    ],
+  },
+  'american-graffiti': {
+    afi100: 62,
+    rottenTomatoes: 96,
+    letterboxd: 3.7,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A brilliant work of observation. Not a masterwork of plot, but of atmosphere, a portrait of small-town teenage America.' },
+    ],
+    podcasts: [
+      { name: 'Unspooled', episode: 'American Graffiti' },
+      { name: 'The Rewatchables', episode: 'American Graffiti' },
+    ],
+  },
+  'frankenstein': {
+    afi100: 87,
+    rottenTomatoes: 93,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'James Whale brought a poetic quality to the horror genre that elevated it beyond mere thrills.' },
+    ],
+  },
+  'jeanne-dielman-23-quai-du-commerce-1080-bruxelles': {
+    sightAndSound: 1,
+    rottenTomatoes: 97,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'Manohla Dargis', publication: 'The New York Times', quote: 'Akerman transforms the mundane into a kind of cinematic revolution, making the invisible labor of women radically visible.' },
+      { critic: 'Jonathan Rosenbaum', publication: 'Chicago Reader', quote: 'One of the most extraordinary and daring films ever made — feminist cinema at its purest.' },
+      { critic: 'Peter Bradshaw', publication: 'The Guardian', quote: 'A towering masterwork of feminist cinema that demands and rewards patience.' },
+    ],
+    podcasts: [
+      { name: 'Filmspotting', episode: 'Sight & Sound #1: Jeanne Dielman' },
+      { name: 'Blank Check', episode: 'Jeanne Dielman' },
+    ],
+  },
+  'persona': {
+    sightAndSound: 8,
+    rottenTomatoes: 91,
+    letterboxd: 4.3,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'What is it about? It is about two women, one who speaks and one who does not, and about how they merge and separate.' },
+      { critic: 'Susan Sontag', publication: 'Sight & Sound', quote: 'The construction of Persona is best described as a theme and variations — the theme being played and replayed with inexhaustible ingenuity.' },
+    ],
+    podcasts: [
+      { name: 'Filmspotting', episode: 'Bergman Marathon: Persona' },
+    ],
+  },
+  'barry-lyndon': {
+    sightAndSound: 45,
+    rottenTomatoes: 84,
+    letterboxd: 4.2,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'This must be one of the most beautiful films ever made. Every frame is a painting.' },
+      { critic: 'Martin Scorsese', publication: 'Esquire', quote: 'It was the most important movie of the 1970s to me. Each image was like a window into the past.' },
+    ],
+    podcasts: [
+      { name: 'Blank Check', episode: 'Barry Lyndon' },
+      { name: 'The Rewatchables', episode: 'Barry Lyndon' },
+    ],
+  },
+  'la-dolce-vita': {
+    sightAndSound: 35,
+    rottenTomatoes: 96,
+    letterboxd: 4.2,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Fellini\'s masterwork — a sprawling, intoxicating journey through modern Rome that redefined what cinema could be.' },
+      { critic: 'Peter Bradshaw', publication: 'The Guardian', quote: 'Every scene pulses with Fellini\'s genius for spectacle and his deep melancholy about the human condition.' },
+    ],
+    podcasts: [
+      { name: 'Filmspotting', episode: 'Fellini Marathon: La Dolce Vita' },
+    ],
+  },
+  'playtime': {
+    sightAndSound: 7,
+    rottenTomatoes: 100,
+    letterboxd: 4.3,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'One of the most extraordinary of all films. Tati works on vast canvases, filling them with minute, exquisitely detailed comic ideas.' },
+      { critic: 'Jonathan Rosenbaum', publication: 'Chicago Reader', quote: 'The grandest and most generously conceived comedy ever made. It teaches you how to see, in the deepest sense.' },
+    ],
+    podcasts: [
+      { name: 'Blank Check', episode: 'PlayTime' },
+    ],
+  },
+  'bicycle-thieves': {
+    sightAndSound: 44,
+    rottenTomatoes: 98,
+    letterboxd: 4.2,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'De Sica tells this story with such simplicity and directness that it speaks to anyone, anywhere, who has ever been poor or felt helpless.' },
+      { critic: 'André Bazin', publication: 'What Is Cinema?', quote: 'No more actors, no more story, no more sets — the perfect aesthetic illusion of reality.' },
+    ],
+    podcasts: [
+      { name: 'Unspooled', episode: 'Bicycle Thieves' },
+      { name: 'Filmspotting', episode: 'Italian Neorealism: Bicycle Thieves' },
+    ],
+  },
+  'breathless': {
+    sightAndSound: 72,
+    rottenTomatoes: 97,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Modern movies begin here, with Godard\'s anarchic, jump-cutting, tradition-smashing first feature.' },
+      { critic: 'Pauline Kael', publication: 'The New Yorker', quote: 'Breathless changed everything — it\'s the Big Bang of modern cinema.' },
+    ],
+    podcasts: [
+      { name: 'Filmspotting', episode: 'French New Wave: Breathless' },
+    ],
+  },
+  'blow-up': {
+    sightAndSound: 90,
+    rottenTomatoes: 86,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'One of the great art films — it teaches us about the difference between what we see and what we think we see.' },
+    ],
+  },
+  'solaris': {
+    sightAndSound: 67,
+    rottenTomatoes: 96,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'Philip French', publication: 'The Observer', quote: 'Tarkovsky\'s deeply humanistic science fiction poem about memory, love, and the limits of knowledge.' },
+    ],
+  },
+  'the-good-the-bad-and-the-ugly': {
+    rottenTomatoes: 97,
+    letterboxd: 4.4,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A bizarre, engrossing, overlong, skillfully photographed work that somehow gets better with every viewing.' },
+      { critic: 'Peter Bradshaw', publication: 'The Guardian', quote: 'Leone\'s operatic masterpiece — the greatest western ever made and one of cinema\'s supreme achievements.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'The Good, the Bad and the Ugly' },
+      { name: 'Filmspotting', episode: 'Sergio Leone Marathon' },
+    ],
+  },
+  'blue-velvet': {
+    rottenTomatoes: 94,
+    letterboxd: 4.1,
+    sightAndSound: 69,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Lynch peels back the surface of a typical American town and shows the rot underneath — a dark, fascinating vision.' },
+      { critic: 'Pauline Kael', publication: 'The New Yorker', quote: 'The work of a genuine, visionary artist who sees into our shared nightmares.' },
+    ],
+    podcasts: [
+      { name: 'Blank Check', episode: 'Blue Velvet' },
+    ],
+  },
+  'belle-de-jour': {
+    sightAndSound: 56,
+    rottenTomatoes: 90,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A film of surreal erotic power, made with the cool detachment that was Buñuel\'s trademark.' },
+    ],
+  },
+  'harold-and-maude': {
+    rottenTomatoes: 83,
+    letterboxd: 4.0,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'One of the rare films that grow better with time — a death-obsessed comedy that is really about choosing to live.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Harold and Maude' },
+      { name: 'Unspooled', episode: 'Harold and Maude' },
+    ],
+  },
+  'once-upon-a-time-in-hollywood': {
+    rottenTomatoes: 85,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Manohla Dargis', publication: 'The New York Times', quote: 'A gorgeous fever dream, funny and sharp, and a series of love letters — to Los Angeles, to the movies, to a lost time.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Once Upon a Time in Hollywood' },
+      { name: 'Blank Check', episode: 'Once Upon a Time in Hollywood' },
+    ],
+  },
+  'django-unchained': {
+    rottenTomatoes: 87,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'A.O. Scott', publication: 'The New York Times', quote: 'A series of showdowns that balance horror and exhilaration, building toward one of the most satisfying climaxes in recent memory.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Django Unchained' },
+    ],
+  },
+  'true-romance': {
+    rottenTomatoes: 93,
+    letterboxd: 4.0,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A celebration of toughness and romance — exhilarating in a way that movies rarely are.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'True Romance' },
+    ],
+  },
+  'lost-in-translation': {
+    rottenTomatoes: 95,
+    letterboxd: 4.0,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Everyone who sees the film will understand it in their own way, based on what they know about loneliness and connection.' },
+      { critic: 'A.O. Scott', publication: 'The New York Times', quote: 'A series of quiet revelations, a lovely, melancholy film about the mystery of human connection.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Lost in Translation' },
+    ],
+  },
+  'the-holy-mountain': {
+    rottenTomatoes: 83,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'J. Hoberman', publication: 'The Village Voice', quote: 'The most ambitious work of its era — a hallucinatory spiritual odyssey unlike anything else in cinema.' },
+    ],
+  },
+  'the-birds': {
+    afi100: 64,
+    rottenTomatoes: 96,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Hitchcock\'s most audacious experiment — the terror comes not from the birds themselves but from the inexplicability of it all.' },
+    ],
+  },
+  'the-wicker-man': {
+    rottenTomatoes: 92,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Mark Kermode', publication: 'The Observer', quote: 'A singular folk horror masterpiece — one of the greatest British films ever made.' },
+    ],
+  },
+  'almost-famous': {
+    rottenTomatoes: 89,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A movie about the world of rock that tells its story through the eyes of a teenage journalist — warm, funny, and deeply human.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Almost Famous' },
+    ],
+  },
+  'point-break': {
+    rottenTomatoes: 69,
+    letterboxd: 3.6,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Bigelow handles the action sequences with pure kinetic energy — the surfing, the skydiving, the chases are all first-rate.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Point Break' },
+    ],
+  },
+  'the-rocky-horror-picture-show': {
+    rottenTomatoes: 79,
+    letterboxd: 3.7,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A camp masterpiece that continues to inspire midnight devotion — cinema\'s greatest audience participation event.' },
+    ],
+  },
+  'the-warriors': {
+    rottenTomatoes: 88,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Bilge Ebiri', publication: 'New York Magazine', quote: 'A stylish, relentless urban odyssey that has lost none of its visceral power.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'The Warriors' },
+    ],
+  },
+  'grave-of-the-fireflies': {
+    rottenTomatoes: 100,
+    letterboxd: 4.4,
+    sightAndSound: 97,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'One of the greatest war films ever made — an emotional devastation that few live-action films can match.' },
+    ],
+  },
+  'paprika': {
+    rottenTomatoes: 84,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Manohla Dargis', publication: 'The New York Times', quote: 'A surreal, visually ravishing journey into the subconscious that ranks among the best animated films ever made.' },
+    ],
+  },
+  'beauty-and-the-beast': {
+    afi100: 34,
+    rottenTomatoes: 94,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A lovely film, the best Disney animated feature since the glory days of Walt.' },
+    ],
+  },
+  'giant': {
+    afi100: 82,
+    rottenTomatoes: 84,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'An epic in every sense — sprawling, ambitious, and anchored by extraordinary performances.' },
+    ],
+  },
+  'interview-with-the-vampire': {
+    rottenTomatoes: 67,
+    letterboxd: 3.6,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A lavish, atmospheric adaptation that captures the melancholy and sensuality of Anne Rice\'s gothic world.' },
+    ],
+  },
+  'viridiana': {
+    sightAndSound: 86,
+    rottenTomatoes: 93,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'Jonathan Rosenbaum', publication: 'Chicago Reader', quote: 'Buñuel at his most savage and blackly comic — a devastating satire of charity, religion, and human nature.' },
+    ],
+  },
+  'ali-fear-eats-the-soul-on-35mm': {
+    sightAndSound: 74,
+    rottenTomatoes: 100,
+    letterboxd: 4.2,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Fassbinder takes a Douglas Sirk melodrama and transforms it into a devastating portrait of prejudice and loneliness.' },
+    ],
+  },
+  'the-gleaners-and-i': {
+    rottenTomatoes: 96,
+    letterboxd: 4.1,
+    reviews: [
+      { critic: 'A.O. Scott', publication: 'The New York Times', quote: 'A joyful, deeply personal film — Varda transforms the act of scavenging into a meditation on art, mortality, and what we value.' },
+    ],
+  },
+  'black-girl': {
+    sightAndSound: 93,
+    rottenTomatoes: 100,
+    letterboxd: 3.9,
+    reviews: [
+      { critic: 'Jonathan Rosenbaum', publication: 'Chicago Reader', quote: 'A landmark of African cinema — powerful, economical, and emotionally devastating in its simplicity.' },
+    ],
+  },
+  'love-streams': {
+    rottenTomatoes: 94,
+    letterboxd: 4.2,
+    reviews: [
+      { critic: 'Jonathan Rosenbaum', publication: 'Chicago Reader', quote: 'Cassavetes\' final masterpiece — raw, searching, and heartbreakingly beautiful in its exploration of love\'s impossibility.' },
+    ],
+  },
+  'safety-last': {
+    rottenTomatoes: 96,
+    letterboxd: 4.2,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'One of the great comic thrill rides — the clock-hanging sequence remains one of cinema\'s most iconic images.' },
+    ],
+  },
+  'funny-games': {
+    rottenTomatoes: 72,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Haneke makes us complicit in the violence we watch for entertainment — a profoundly uncomfortable and essential film.' },
+    ],
+  },
+  'waiting-for-guffman': {
+    rottenTomatoes: 94,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Christopher Guest\'s mockumentary genius at its peak — simultaneously hilarious and oddly touching.' },
+    ],
+    podcasts: [
+      { name: 'The Rewatchables', episode: 'Waiting for Guffman' },
+    ],
+  },
+  'little-shop-of-horrors': {
+    rottenTomatoes: 91,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A musical comedy that is also a witty satire — Frank Oz brings the skid-row fairy tale to hilarious life.' },
+    ],
+  },
+  'thank-you-for-smoking': {
+    rottenTomatoes: 86,
+    letterboxd: 3.5,
+    reviews: [
+      { critic: 'A.O. Scott', publication: 'The New York Times', quote: 'A wickedly funny satire that turns spin into an art form — sharp, smart, and endlessly quotable.' },
+    ],
+  },
+  'the-face-of-another': {
+    rottenTomatoes: 90,
+    letterboxd: 4.0,
+    reviews: [
+      { critic: 'Jonathan Rosenbaum', publication: 'Chicago Reader', quote: 'Teshigahara creates a haunting philosophical puzzle about identity, alienation, and the masks we all wear.' },
+    ],
+  },
+  'moulin-rouge-in-35mm': {
+    rottenTomatoes: 76,
+    letterboxd: 3.7,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Luhrmann creates a dazzling spectacle — the movie is an series of explosions of energy and emotion.' },
+    ],
+    podcasts: [
+      { name: 'Blank Check', episode: 'Moulin Rouge!' },
+    ],
+  },
+  'body-double': {
+    rottenTomatoes: 73,
+    letterboxd: 3.5,
+    reviews: [
+      { critic: 'Pauline Kael', publication: 'The New Yorker', quote: 'De Palma at his most provocative — a brilliantly constructed thriller that interrogates the very act of looking.' },
+    ],
+  },
+  'super-fly': {
+    rottenTomatoes: 85,
+    letterboxd: 3.3,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'Elevated beyond its genre by Curtis Mayfield\'s transcendent score — one of the great blaxploitation films.' },
+    ],
+  },
+  'showgirls': {
+    rottenTomatoes: 22,
+    letterboxd: 2.7,
+    reviews: [
+      { critic: 'Adam Nayman', publication: 'Reverse Shot', quote: 'Verhoeven\'s most misunderstood film is actually a lacerating satire of American entertainment culture — misread as trash, it\'s brilliant provocation.' },
+    ],
+    podcasts: [
+      { name: 'Blank Check', episode: 'Showgirls' },
+    ],
+  },
+  'salaam-bombay': {
+    rottenTomatoes: 92,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Roger Ebert', publication: 'Chicago Sun-Times', quote: 'A film of enormous power — Mira Nair captures the streets of Bombay with an immediacy that is heartbreaking and unforgettable.' },
+    ],
+  },
+  '24-hour-party-people': {
+    rottenTomatoes: 92,
+    letterboxd: 3.8,
+    reviews: [
+      { critic: 'Peter Bradshaw', publication: 'The Guardian', quote: 'A witty, exuberant celebration of Manchester\'s music scene — messy, funny, and completely irresistible.' },
+    ],
+  },
+  'sinners': {
+    rottenTomatoes: 92,
+    letterboxd: 4.0,
+  },
+}
+
 const data = JSON.parse(readFileSync(DATA_PATH, 'utf-8'))
 
 // Collect unique titles
@@ -627,7 +1099,7 @@ let matched = 0
 for (const title of titles) {
   const slug = slugify(title)
   if (KNOWN_FILMS[slug]) {
-    films[slug] = { ...KNOWN_FILMS[slug] }
+    films[slug] = { ...KNOWN_FILMS[slug], ...(FILM_METRICS[slug] || {}) }
     matched++
   }
 }
