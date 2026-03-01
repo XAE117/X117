@@ -92,14 +92,6 @@
   background: var(--bg-card);
   border-radius: 6px;
   transition: background 0.15s ease;
-  position: relative;
-  padding-left: 2rem;
-}
-
-.day-block-item > .watchlist-btn {
-  position: absolute;
-  left: 0.5rem;
-  top: 0.55rem;
 }
 
 .day-block-item:hover {
