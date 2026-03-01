@@ -51,3 +51,24 @@
   margin: 0 0.25rem;
   font-size: 0.6rem;
 }
+
+.footer-jazz-note {
+  max-width: 1200px;
+  margin: 0.5rem auto 0;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.footer-jazz-note a {
+  color: var(--jazz-accent-dim, var(--gold-dim));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-jazz-note a:hover {
+  color: var(--jazz-accent, var(--gold));
+}

@@ -147,6 +147,7 @@ function JazzDetail({ data }) {
               {venue.name}
             </a>
             <span className="jazz-detail-hood">{venue.neighborhood}</span>
+            {venue.region === 'OC' && <span className="jazz-oc-badge-detail">OC</span>}
             <span className={`jazz-tier-badge tier-${venue.tier}`}>{TIER_LABELS[venue.tier]}</span>
           </div>
 

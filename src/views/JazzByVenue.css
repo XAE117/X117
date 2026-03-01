@@ -20,6 +20,44 @@
   gap: 0.75rem;
 }
 
+/* ── OC Section ── */
+
+.jbv-oc-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0 0.25rem;
+}
+
+.jbv-oc-divider::before,
+.jbv-oc-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gold-dim);
+}
+
+.jbv-oc-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+
+.jazz-oc-badge {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  padding: 0.05rem 0.25rem;
+  border-radius: 2px;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-dim);
+}
+
 /* ── Venue Card ── */
 
 .jbv-card {

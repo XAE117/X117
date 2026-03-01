@@ -193,6 +193,7 @@ function App() {
       <Footer
         lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : data.lastUpdated}
         theaters={isJazzMode && jazzData ? jazzData.venues : data.theaters}
+        isJazz={isJazzMode}
       />
     </div>
   )

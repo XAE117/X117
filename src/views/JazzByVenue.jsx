@@ -52,6 +52,7 @@ function VenueCard({ venue, now }) {
           <h3 className="jbv-card-name">{venue.name}</h3>
           <div className="jbv-card-meta">
             <span className="jbv-card-hood">{venue.neighborhood}</span>
+            {venue.region === 'OC' && <span className="jazz-oc-badge">OC</span>}
             <span className={`jazz-tier-badge tier-${venue.tier}`}>{TIER_LABELS[venue.tier]}</span>
             {hotCount > 0 && <span className="jbv-hot-count">🔥 {hotCount}</span>}
           </div>
@@ -89,21 +90,36 @@ function JazzByVenue({ data }) {
 
   // Sort: dedicated first, then by number of shows descending
   const tierOrder = { dedicated: 0, regular: 1, indie_scene: 2, concert_hall: 3 }
-  const sortedVenues = [...data.venues].sort((a, b) => {
+  const sortFn = (a, b) => {
     const ta = tierOrder[a.tier] ?? 99
     const tb = tierOrder[b.tier] ?? 99
     if (ta !== tb) return ta - tb
     return b.shows.length - a.shows.length
-  })
+  }
+
+  const laVenues = data.venues.filter(v => v.region !== 'OC').sort(sortFn)
+  const ocVenues = data.venues.filter(v => v.region === 'OC').sort(sortFn)
 
   return (
     <div className="jbv-page">
       <h2 className="jbv-title">By Venue</h2>
       <div className="jbv-grid">
-        {sortedVenues.map(venue => (
+        {laVenues.map(venue => (
           <VenueCard key={venue.id} venue={venue} now={now} />
         ))}
       </div>
+      {ocVenues.length > 0 && (
+        <>
+          <div className="jbv-oc-divider">
+            <span className="jbv-oc-label">Orange County</span>
+          </div>
+          <div className="jbv-grid">
+            {ocVenues.map(venue => (
+              <VenueCard key={venue.id} venue={venue} now={now} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   )
 }

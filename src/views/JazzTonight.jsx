@@ -18,6 +18,11 @@ function TierBadge({ tier }) {
   return <span className={`jazz-tier-badge tier-${tier}`}>{labels[tier] || tier}</span>
 }
 
+function OCBadge({ venue }) {
+  if (venue.region !== 'OC') return null
+  return <span className="jazz-oc-badge">OC</span>
+}
+
 function getRelativeTime(screeningMinutes, nowMinutes) {
   const diff = screeningMinutes - nowMinutes
   if (diff > 0) {
@@ -31,9 +36,22 @@ function getRelativeTime(screeningMinutes, nowMinutes) {
   return null
 }
 
-function ShowItem({ show, venue, isNow, relative, jazzData }) {
+function getTimeSlot(minutes) {
+  if (minutes == null) return 'late'
+  if (minutes < 19 * 60) return 'early'   // Before 7pm
+  if (minutes < 22 * 60) return 'late'    // 7pm–10pm
+  return 'latenight'                       // 10pm+
+}
+
+const SLOT_LABELS = {
+  early: 'Early Show',
+  late: 'Evening',
+  latenight: 'Late Night',
+}
+
+function ShowItem({ show, venue, isNow, relative }) {
   return (
-    <li className={`jazz-tonight-item ${isNow ? 'now-playing' : ''} ${show.hot ? 'is-hot' : ''}`}>
+    <li className={`jazz-tonight-item ${isNow ? 'now-playing' : ''} ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}>
       <div className="jazz-tonight-time-col">
         <span className="jazz-tonight-time">{show.time || 'TBA'}</span>
         {relative && <span className={`jazz-tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
@@ -47,6 +65,7 @@ function ShowItem({ show, venue, isNow, relative, jazzData }) {
           <span className="jazz-tonight-venue" style={{ color: venue.color }}>
             {venue.shortName}
           </span>
+          <OCBadge venue={venue} />
           <TierBadge tier={venue.tier} />
           {show.price && <span className="jazz-tonight-price">{show.price}</span>}
           {show.notes && <span className="jazz-tonight-notes">{show.notes}</span>}
@@ -113,7 +132,7 @@ function JazzTonight({ data }) {
         <p className="jazz-tonight-date">{dayLabel}</p>
         <div className="jazz-tonight-empty">
           <p>No shows tonight — check back tomorrow</p>
-          <Link to="/jazz/by-day" className="jazz-tonight-empty-link">Browse upcoming shows &rarr;</Link>
+          <Link to="/jazz" className="jazz-tonight-empty-link">Browse upcoming shows &rarr;</Link>
         </div>
       </div>
     )
@@ -137,6 +156,17 @@ function JazzTonight({ data }) {
     }
     upcoming.push(s)
   })
+
+  // Group upcoming shows by time slot
+  const slotGroups = {}
+  upcoming.forEach(s => {
+    const slot = getTimeSlot(s.parsedMinutes)
+    if (!slotGroups[slot]) slotGroups[slot] = []
+    slotGroups[slot].push(s)
+  })
+
+  const slotOrder = ['early', 'late', 'latenight']
+  const activeSlots = slotOrder.filter(s => slotGroups[s]?.length > 0)
 
   return (
     <div className="jazz-tonight-page">
@@ -165,13 +195,20 @@ function JazzTonight({ data }) {
         </div>
       )}
 
-      <ul className="jazz-tonight-list">
-        {upcoming.map(s => {
-          const isNow = s.parsedMinutes != null && (nowMinutes - s.parsedMinutes) >= 0 && (nowMinutes - s.parsedMinutes) <= 180
-          const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
-          return <ShowItem key={s.id} show={s} venue={s.venue} isNow={isNow} relative={relative} />
-        })}
-      </ul>
+      {activeSlots.map(slot => (
+        <div key={slot} className="jazz-tonight-slot">
+          {activeSlots.length > 1 && (
+            <h3 className="jazz-tonight-slot-label">{SLOT_LABELS[slot]}</h3>
+          )}
+          <ul className="jazz-tonight-list">
+            {slotGroups[slot].map(s => {
+              const isNow = s.parsedMinutes != null && (nowMinutes - s.parsedMinutes) >= 0 && (nowMinutes - s.parsedMinutes) <= 180
+              const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
+              return <ShowItem key={s.id} show={s} venue={s.venue} isNow={isNow} relative={relative} />
+            })}
+          </ul>
+        </div>
+      ))}
 
       <p className="jazz-tonight-footnote">
         Underground shows update frequently. Follow <a href="https://www.instagram.com/minaretrecords/" target="_blank" rel="noopener noreferrer">@minaretrecords</a> for the latest.

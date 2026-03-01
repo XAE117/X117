@@ -10,6 +10,7 @@
       "url": "https://www.bluenotejazz.com/la/",
       "color": "#1A5276",
       "tier": "dedicated",
+      "region": "LA",
       "shows": [
         {
           "id": "bn-001",
@@ -76,6 +77,7 @@
       "url": "https://www.thebakedpotato.com/",
       "color": "#8B4513",
       "tier": "dedicated",
+      "region": "LA",
       "shows": [
         {
           "id": "bp-001",
@@ -131,6 +133,7 @@
       "url": "https://catalinajazzclub.com/",
       "color": "#C0392B",
       "tier": "dedicated",
+      "region": "LA",
       "shows": [
         {
           "id": "cj-001",
@@ -175,6 +178,7 @@
       "url": "https://www.samfirstbar.com/",
       "color": "#2E86C1",
       "tier": "dedicated",
+      "region": "LA",
       "shows": [
         {
           "id": "sf-001",
@@ -212,6 +216,119 @@
       ]
     },
     {
+      "id": "vibrato",
+      "name": "Vibrato Grill Jazz",
+      "shortName": "Vibrato",
+      "neighborhood": "Bel Air",
+      "url": "https://www.vibratogrilljazz.com/",
+      "color": "#7D3C98",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "vb-001",
+          "artist": "Rickey Woodard Quartet",
+          "date": "2026-03-06",
+          "time": "7:30 PM",
+          "notes": "Dinner reservations recommended",
+          "link": "https://www.vibratogrilljazz.com/",
+          "hot": false,
+          "price": "$25",
+          "description": "Veteran tenor saxophonist with a warm, swinging style. Woodard is an LA straight-ahead jazz staple — come for the music, stay for the upscale vibe at Herb Alpert's supper club."
+        },
+        {
+          "id": "vb-002",
+          "artist": "Tierney Sutton Band",
+          "date": "2026-03-13",
+          "time": "7:30 PM",
+          "notes": "Two sets",
+          "link": "https://www.vibratogrilljazz.com/",
+          "hot": false,
+          "price": "$25",
+          "description": "Grammy-nominated vocalist with a crystalline tone and a gift for reinventing standards. The Tierney Sutton Band has been a working unit for 20+ years — polished, intimate, and sophisticated."
+        },
+        {
+          "id": "vb-003",
+          "artist": "Larry Goldings Trio",
+          "date": "2026-03-20",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/",
+          "hot": false,
+          "price": "$25",
+          "description": "Organ/piano trio with one of the most melodic Hammond B3 players around. Goldings, Peter Bernstein, and Bill Stewart play soulful, accessible jazz that swings effortlessly."
+        }
+      ]
+    },
+    {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "ws-001",
+          "artist": "Sunday Jazz Concert Series",
+          "date": "2026-03-01",
+          "time": "3:00 PM",
+          "notes": "3pm set + 4pm jam session · Donation-based",
+          "link": "https://www.theworldstage.org/",
+          "hot": false,
+          "price": "Donation",
+          "description": "Monthly Sunday jazz concert at the legendary Leimert Park venue founded by drummer Billy Higgins. A cornerstone of Black LA jazz culture — the set is followed by an open jam session."
+        },
+        {
+          "id": "ws-002",
+          "artist": "Dwight Trible & Cosmic Band",
+          "date": "2026-03-15",
+          "time": "8:00 PM",
+          "notes": "Special event",
+          "link": "https://www.theworldstage.org/",
+          "hot": true,
+          "price": "$20",
+          "description": "LA's own spiritual jazz vocalist. Trible's performances are transcendent — part concert, part ceremony. His band draws from the cosmic jazz tradition of Sun Ra and Pharoah Sanders."
+        }
+      ]
+    },
+    {
+      "id": "lighthouse-cafe",
+      "name": "Lighthouse Cafe",
+      "shortName": "Lighthouse",
+      "neighborhood": "Hermosa Beach",
+      "url": "https://www.thelighthousecafe.net/",
+      "color": "#3498DB",
+      "tier": "regular",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "lh-001",
+          "artist": "Lighthouse All-Stars",
+          "date": "2026-03-07",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.thelighthousecafe.net/",
+          "hot": false,
+          "price": "$15",
+          "description": "The Lighthouse has hosted jazz since the 1940s — it's where West Coast cool jazz was born. The All-Stars carry on that legacy with breezy, swinging sets steps from the beach."
+        },
+        {
+          "id": "lh-002",
+          "artist": "Saturday Jazz Brunch",
+          "date": "2026-03-08",
+          "time": "11:00 AM",
+          "notes": "Brunch service",
+          "link": "https://www.thelighthousecafe.net/",
+          "hot": false,
+          "price": "Free",
+          "description": "Live jazz with brunch at the historic Hermosa Beach venue. Relaxed weekend vibes with rotating local musicians — the kind of easy Saturday that makes you grateful for LA."
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -219,6 +336,7 @@
       "url": "https://www.lodgeroomhlp.com/",
       "color": "#D4A574",
       "tier": "indie_scene",
+      "region": "LA",
       "shows": [
         {
           "id": "lr-001",
@@ -266,6 +384,7 @@
       "url": "https://www.thehighlow.com/",
       "color": "#27AE60",
       "tier": "regular",
+      "region": "LA",
       "shows": [
         {
           "id": "hl-001",
@@ -310,6 +429,7 @@
       "url": "https://www.minaretrecords.com/shows",
       "color": "#8E44AD",
       "tier": "indie_scene",
+      "region": "LA",
       "shows": [
         {
           "id": "sb-001",
@@ -345,6 +465,7 @@
       "url": "https://www.laphil.com/events/",
       "color": "#BDC3C7",
       "tier": "concert_hall",
+      "region": "LA",
       "shows": [
         {
           "id": "dh-001",
@@ -360,6 +481,52 @@
       ]
     },
     {
+      "id": "broad-stage",
+      "name": "The Broad Stage",
+      "shortName": "Broad Stage",
+      "neighborhood": "Santa Monica",
+      "url": "https://thebroadstage.org/",
+      "color": "#E74C3C",
+      "tier": "concert_hall",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "bs-001",
+          "artist": "Christian McBride Big Band",
+          "date": "2026-03-29",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://thebroadstage.org/",
+          "hot": true,
+          "price": "$55–$95",
+          "description": "Six-time Grammy-winning bassist leading one of the premier big bands in jazz. McBride's orchestra is a powerhouse — swinging, grooving, and full of joy. A rare chance to hear a full big band in an intimate hall."
+        }
+      ]
+    },
+    {
+      "id": "alvas-showroom",
+      "name": "Alva's Showroom",
+      "shortName": "Alva's",
+      "neighborhood": "San Pedro",
+      "url": "https://www.alvasshowroom.com/",
+      "color": "#9B59B6",
+      "tier": "concert_hall",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "av-001",
+          "artist": "Otmaro Ruiz Trio",
+          "date": "2026-03-22",
+          "time": "8:00 PM",
+          "notes": "99-seat venue · Two Steinways",
+          "link": "https://www.alvasshowroom.com/",
+          "hot": false,
+          "price": "$30",
+          "description": "Venezuelan pianist with deep roots in Latin jazz and fusion. Alva's Showroom is a hidden gem — a 99-seat concert hall with two grand pianos, world-class acoustics, and a worth-the-trip-to-San-Pedro energy."
+        }
+      ]
+    },
+    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -367,6 +534,7 @@
       "url": "https://www.themintla.com/",
       "color": "#16A085",
       "tier": "regular",
+      "region": "LA",
       "shows": [
         {
           "id": "tm-001",
@@ -400,6 +568,7 @@
       "url": "https://www.minaretrecords.com/shows",
       "color": "#E67E22",
       "tier": "indie_scene",
+      "region": "LA",
       "shows": [
         {
           "id": "ps-001",
@@ -412,6 +581,121 @@
           "promoter": "Minaret Records",
           "price": "$15",
           "description": "Slauson Malone 1 is the project of Jasper Marsalis (son of Wynton), making deconstructed art-music that pulls from jazz, noise, and hip-hop. Paired with trumpeter Nicole McCabe for an experimental double bill."
+        }
+      ]
+    },
+    {
+      "id": "mcyc",
+      "name": "Mid City Yacht Club",
+      "shortName": "MCYC",
+      "neighborhood": "Mid City",
+      "url": "https://www.minaretrecords.com/shows",
+      "color": "#2ECC71",
+      "tier": "indie_scene",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "mc-001",
+          "artist": "Salami Rose Joe Louis",
+          "date": "2026-03-11",
+          "time": "9:00 PM",
+          "notes": "All ages · $10",
+          "link": "https://www.minaretrecords.com/shows",
+          "hot": true,
+          "promoter": "Minaret Records",
+          "price": "$10",
+          "description": "Multi-instrumentalist and producer who makes psychedelic, genre-blurring music on the border of jazz, soul, and electronic. Her Brainfeeder releases are trippy and beautiful — always a vibe live."
+        }
+      ]
+    },
+    {
+      "id": "campus-jax",
+      "name": "Campus JAX",
+      "shortName": "Campus JAX",
+      "neighborhood": "Newport Beach",
+      "url": "https://www.campusjax.com/entertainment/",
+      "color": "#F39C12",
+      "tier": "dedicated",
+      "region": "OC",
+      "shows": [
+        {
+          "id": "cjx-001",
+          "artist": "Steamers Jazz at JAX — Tony Guerrero",
+          "date": "2026-03-05",
+          "time": "7:00 PM",
+          "notes": "Thursday jazz night",
+          "link": "https://www.campusjax.com/entertainment/",
+          "hot": false,
+          "price": "$15",
+          "description": "Continuation of the legendary Steamers Jazz Club tradition (Fullerton, closed 2015). Tony Guerrero curates OC's premier jazz programming — Thursday and Sunday nights with top regional players."
+        },
+        {
+          "id": "cjx-002",
+          "artist": "Steamers Jazz at JAX — Terence Love Quartet",
+          "date": "2026-03-08",
+          "time": "6:00 PM",
+          "notes": "Sunday jazz",
+          "link": "https://www.campusjax.com/entertainment/",
+          "hot": false,
+          "price": "$15",
+          "description": "Vocalist and guitarist Terence Love leads a swinging quartet through jazz standards and originals. The Sunday jazz slot at Campus JAX is the heart of OC's jazz community."
+        }
+      ]
+    },
+    {
+      "id": "club-616",
+      "name": "Club 616",
+      "shortName": "Club 616",
+      "neighborhood": "Santa Ana",
+      "url": "https://www.616sa.com/events",
+      "color": "#7F8C8D",
+      "tier": "regular",
+      "region": "OC",
+      "shows": [
+        {
+          "id": "c6-001",
+          "artist": "Modern Time Trio — Wednesday Jazz",
+          "date": "2026-03-04",
+          "time": "8:00 PM",
+          "notes": "No cover · Weekly",
+          "link": "https://www.616sa.com/events",
+          "hot": false,
+          "price": "Free",
+          "description": "Organ/drums/bass trio in OC's oldest bar (est. 1928, a former Prohibition speakeasy). No cover, great drinks, and a weekly jazz tradition in the heart of Santa Ana's art district."
+        },
+        {
+          "id": "c6-002",
+          "artist": "Sunday Jazz Session",
+          "date": "2026-03-01",
+          "time": "3:00 PM",
+          "notes": "No cover",
+          "link": "https://www.616sa.com/events",
+          "hot": false,
+          "price": "Free",
+          "description": "Free Sunday afternoon jazz in a speakeasy setting. Great cocktails, a mellow crowd, and rotating local players. One of the best free jazz hangs south of LA."
+        }
+      ]
+    },
+    {
+      "id": "segerstrom",
+      "name": "Segerstrom Center — Samueli Theater",
+      "shortName": "Segerstrom",
+      "neighborhood": "Costa Mesa",
+      "url": "https://www.scfta.org/shows-events/jazz-landing",
+      "color": "#2C3E50",
+      "tier": "concert_hall",
+      "region": "OC",
+      "shows": [
+        {
+          "id": "sg-001",
+          "artist": "Branford Marsalis Quartet",
+          "date": "2026-03-21",
+          "time": "8:00 PM",
+          "notes": "350-seat Samueli Theater",
+          "link": "https://www.scfta.org/shows-events/jazz-landing",
+          "hot": true,
+          "price": "$69–$119",
+          "description": "Soprano and tenor sax master with one of the longest-running quartets in jazz. Marsalis at the intimate Samueli Theater (350 seats) is a special experience — world-class artist in a world-class room."
         }
       ]
     }
