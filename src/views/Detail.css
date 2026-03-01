@@ -447,6 +447,15 @@
   color: var(--text-muted);
 }
 
+.detail-review-link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.detail-review-link:hover {
+  color: var(--gold);
+}
+
 /* ── Podcast Links ── */
 
 .detail-podcasts-section {
@@ -464,16 +473,25 @@
 }
 
 .detail-podcast-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
   transition: border-color 0.2s ease;
 }
 
 .detail-podcast-item:hover {
   border-color: var(--gold-dim);
+}
+
+.detail-podcast-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail-podcast-link:hover {
+  color: inherit;
 }
 
 .detail-podcast-icon {
