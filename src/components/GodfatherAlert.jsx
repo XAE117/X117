@@ -86,7 +86,7 @@ function GodfatherAlert({ data }) {
       <div className="godfather-alert-inner">
         <button className="godfather-dismiss" onClick={handleDismiss} aria-label="Dismiss">&times;</button>
         <div className="godfather-alert-header">
-          <span className="godfather-icon">&#127903;</span>
+          <span className="godfather-icon">&#127837;</span>
           <span className="godfather-headline">Leave the gun, bring the cannoli &mdash; The Godfather is screening!</span>
         </div>
         <ul className="godfather-screenings">
@@ -94,13 +94,13 @@ function GodfatherAlert({ data }) {
             <li key={s.id} className="godfather-screening-row">
               <span className="godfather-date">{formatDate(s.date)}</span>
               <a href={s.link} target="_blank" rel="noopener noreferrer" className="godfather-title-link">{s.title}</a>
+              <a href={s.link} target="_blank" rel="noopener noreferrer" className="godfather-tickets" aria-label="Tickets">&#127903;</a>
               <span className="godfather-at">at</span>
               <span className="godfather-theater" style={{ color: s.theaterColor }}>{s.theaterName}</span>
               <span className="godfather-time">{s.time}</span>
               {s.format && s.format !== 'digital' && (
                 <span className="godfather-format">{s.format}</span>
               )}
-              <a href={s.link} target="_blank" rel="noopener noreferrer" className="godfather-tickets" aria-label="Tickets">&#127903;</a>
             </li>
           ))}
         </ul>
