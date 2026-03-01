@@ -723,6 +723,35 @@ function slugifyTitle(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 }
 
+/**
+ * Normalize a screening title for TMDB lookup:
+ * - Strip format suffixes: "on 35mm", "in 70mm", "in 16mm", etc.
+ * - Strip "(Adults Only)", "(Sold Out)", "en Español"
+ * - Strip "Presented by X", "Presents:", "Mezzanine Presents:"
+ * - Handle year suffixes like "(1976)" by keeping them for disambiguation
+ * - For double features "A / B", return just the first film
+ */
+function normalizeTitleForSearch(title) {
+  let t = title
+  // Strip format suffixes
+  t = t.replace(/\s+(on|in)\s+(35mm|70mm|16mm|nitrate)\b/i, '')
+  // Strip "– 70mm Early Access" etc.
+  t = t.replace(/\s*[–—-]\s*\d+mm\s*\w*\s*$/i, '')
+  // Strip "(Adults Only)", "(Sold Out)"
+  t = t.replace(/\s*\((?:Adults Only|Sold Out)\)/gi, '')
+  // Strip "en Español"
+  t = t.replace(/\s+en\s+Espa[ñn]ol\b/i, '')
+  // Strip presenter prefixes
+  t = t.replace(/^(?:Cinematic Void Presents\s+|PHANTASMAGORIA presents\s+|Mezzanine Presents:\s*|Vidiots Presents:\s*)/i, '')
+  // Handle double features: "Film A / Film B" → "Film A"
+  if (t.includes(' / ')) {
+    t = t.split(' / ')[0].trim()
+  }
+  // Strip "Extended Edition" etc. for matching, but keep for slug
+  t = t.replace(/:\s*Extended Edition\b/i, '')
+  return t.trim()
+}
+
 async function tmdbSearch(title, apiKey) {
   const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(title)}&api_key=${apiKey}`
   const html = execSync(
@@ -807,7 +836,8 @@ async function enrichWithTMDB(outputTheaters) {
         await new Promise(r => setTimeout(r, 10000))
       }
 
-      const searchResult = await tmdbSearch(title, apiKey)
+      const searchTitle = normalizeTitleForSearch(title)
+      const searchResult = await tmdbSearch(searchTitle, apiKey)
       const movie = searchResult.results?.[0]
       if (!movie) {
         // No TMDB match but preserve existing data if any
@@ -858,6 +888,28 @@ async function enrichWithTMDB(outputTheaters) {
       films[slug] = data
     }
   }
+
+  // Merge hand-curated enrichments from film-enrichments.json
+  // This file contains RT scores, Letterboxd ratings, reviews, and podcasts
+  // that are maintained separately from TMDB data
+  try {
+    const enrichmentsPath = join(__dirname, '..', 'public', 'film-enrichments.json')
+    if (existsSync(enrichmentsPath)) {
+      const curated = JSON.parse(readFileSync(enrichmentsPath, 'utf8'))
+      let curatedCount = 0
+      for (const [slug, data] of Object.entries(curated)) {
+        if (films[slug]) {
+          // Merge: curated fields override, but don't remove existing TMDB fields
+          films[slug] = { ...films[slug], ...data }
+        } else {
+          // Film not found by TMDB — add curated data as-is
+          films[slug] = data
+        }
+        curatedCount++
+      }
+      console.log(`  + ${curatedCount} films enriched from film-enrichments.json`)
+    }
+  } catch {}
 
   console.log(`  Enriched ${enriched} of ${uniqueTitles.size} films (${Object.keys(existingFilms).length} existing preserved)`)
   return films

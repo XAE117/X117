@@ -40,6 +40,19 @@
   padding: 1.25rem 2rem 2.5rem;
   position: relative;
   overflow: hidden;
+  animation: curtainReveal 0.5s ease-out both;
+  animation-delay: 0.1s;
+}
+
+@keyframes curtainReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .detail-accent-bar {
@@ -120,6 +133,51 @@
   min-width: 0;
 }
 
+/* ── Staggered content cascade ── */
+
+.detail-content-main > * {
+  animation: contentFadeIn 0.35s ease-out both;
+}
+
+.detail-content-main > *:nth-child(1) { animation-delay: 0.15s; }
+.detail-content-main > *:nth-child(2) { animation-delay: 0.22s; }
+.detail-content-main > *:nth-child(3) { animation-delay: 0.29s; }
+.detail-content-main > *:nth-child(4) { animation-delay: 0.36s; }
+.detail-content-main > *:nth-child(5) { animation-delay: 0.43s; }
+.detail-content-main > *:nth-child(6) { animation-delay: 0.50s; }
+.detail-content-main > *:nth-child(7) { animation-delay: 0.57s; }
+.detail-content-main > *:nth-child(8) { animation-delay: 0.64s; }
+.detail-content-main > *:nth-child(n+9) { animation-delay: 0.71s; }
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Poster fade-in ── */
+
+.detail-poster {
+  animation: posterReveal 0.6s ease-out both;
+  animation-delay: 0.2s;
+}
+
+@keyframes posterReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* ── Detail Content ── */
 
 .detail-title {
@@ -130,6 +188,24 @@
   line-height: 1.2;
   margin-bottom: 0.75rem;
   margin-top: 0.25rem;
+  background: linear-gradient(
+    90deg,
+    var(--text) 0%,
+    var(--text) 40%,
+    var(--gold) 50%,
+    var(--text) 60%,
+    var(--text) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleShimmer 2.5s ease-in-out 0.6s 1 both;
+}
+
+@keyframes titleShimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 /* ── TMDB Film Meta ── */

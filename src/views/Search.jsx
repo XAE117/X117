@@ -30,7 +30,7 @@ function SearchResultItem({ s, relative, film, data, forceUpdate, formatDate }) 
       void itemRef.current.offsetWidth
       itemRef.current.classList.add('glow-pulse')
     }
-    navigate(`/screening/${s.id}`)
+    setTimeout(() => navigate(`/screening/${s.id}`), 300)
   }
 
   return (

@@ -35,7 +35,7 @@ function ScreeningItem({ s, isNow, relative, data }) {
       void itemRef.current.offsetWidth
       itemRef.current.classList.add('glow-pulse')
     }
-    navigate(`/screening/${s.id}`)
+    setTimeout(() => navigate(`/screening/${s.id}`), 300)
   }
 
   return (

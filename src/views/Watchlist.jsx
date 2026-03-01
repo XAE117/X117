@@ -46,7 +46,7 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
       void itemRef.current.offsetWidth
       itemRef.current.classList.add('glow-pulse')
     }
-    navigate(`/screening/${screening.id}`)
+    setTimeout(() => navigate(`/screening/${screening.id}`), 300)
   }
 
   return (

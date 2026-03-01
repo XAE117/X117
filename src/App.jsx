@@ -43,6 +43,11 @@ function App() {
 
   const isJazzMode = location.pathname.startsWith('/jazz')
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
     const base = import.meta.env.BASE_URL

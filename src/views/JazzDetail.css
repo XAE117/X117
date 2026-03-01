@@ -36,6 +36,19 @@
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  animation: jazzCurtainReveal 0.5s ease-out both;
+  animation-delay: 0.1s;
+}
+
+@keyframes jazzCurtainReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .jazz-detail-accent {
@@ -50,6 +63,32 @@
   gap: 1rem;
 }
 
+/* ── Staggered content cascade ── */
+
+.jazz-detail-content > * {
+  animation: jazzContentFadeIn 0.35s ease-out both;
+}
+
+.jazz-detail-content > *:nth-child(1) { animation-delay: 0.15s; }
+.jazz-detail-content > *:nth-child(2) { animation-delay: 0.22s; }
+.jazz-detail-content > *:nth-child(3) { animation-delay: 0.29s; }
+.jazz-detail-content > *:nth-child(4) { animation-delay: 0.36s; }
+.jazz-detail-content > *:nth-child(5) { animation-delay: 0.43s; }
+.jazz-detail-content > *:nth-child(6) { animation-delay: 0.50s; }
+.jazz-detail-content > *:nth-child(7) { animation-delay: 0.57s; }
+.jazz-detail-content > *:nth-child(n+8) { animation-delay: 0.64s; }
+
+@keyframes jazzContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ── Artist Name ── */
 
 .jazz-detail-artist {
@@ -62,6 +101,24 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--text) 0%,
+    var(--text) 40%,
+    var(--jazz-accent) 50%,
+    var(--text) 60%,
+    var(--text) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: jazzTitleShimmer 2.5s ease-in-out 0.6s 1 both;
+}
+
+@keyframes jazzTitleShimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .jazz-hot-badge-lg {

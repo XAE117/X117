@@ -25,7 +25,7 @@ function ShowRow({ show, venue, now }) {
       void itemRef.current.offsetWidth
       itemRef.current.classList.add('glow-pulse')
     }
-    navigate(`/jazz/show/${show.id}`)
+    setTimeout(() => navigate(`/jazz/show/${show.id}`), 300)
   }
 
   return (
