@@ -20,6 +20,7 @@ function ShowRow({ show, venue, now }) {
         {show.artist}
         <HotBadge show={show} />
       </Link>
+      {show.price && <span className="jbd-show-price">{show.price}</span>}
       <span className="jbd-show-time">{show.time || 'TBA'}</span>
       {relative && (
         <span className={`jbd-show-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>

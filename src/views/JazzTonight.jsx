@@ -48,6 +48,7 @@ function ShowItem({ show, venue, isNow, relative, jazzData }) {
             {venue.shortName}
           </span>
           <TierBadge tier={venue.tier} />
+          {show.price && <span className="jazz-tonight-price">{show.price}</span>}
           {show.notes && <span className="jazz-tonight-notes">{show.notes}</span>}
         </div>
       </div>

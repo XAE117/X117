@@ -67,7 +67,7 @@ function DayBlock({ dateKey, day, data, now, forceUpdate }) {
         {day.label}
         <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
           <span className="day-screenshot-label">SCREENSHOT</span>
-          <span className="day-screenshot-icon">🎞️</span>
+          <span className="day-screenshot-icon">📸</span>
         </Link>
       </h2>
       {past.length > 0 && (

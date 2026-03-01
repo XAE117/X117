@@ -3,7 +3,6 @@ import './FormatFilter.css'
 const FILTERS = [
   { key: 'all', label: 'All' },
   { key: 'film', label: 'Film' },
-  { key: 'IMAX', label: 'IMAX' },
 ]
 
 function FormatFilter({ current, onChange }) {

@@ -5,17 +5,17 @@ function Nav({ hasTonightScreenings, mode }) {
   if (mode === 'jazz') {
     return (
       <nav className="palace-nav jazz-nav">
-        <NavLink to="/jazz" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''} ${hasTonightScreenings ? 'tonight-active' : ''}`}>
+        <NavLink to="/jazz/tonight" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''} ${hasTonightScreenings ? 'tonight-active' : ''}`}>
           Tonight
           {hasTonightScreenings && <span className="nav-tonight-dot jazz-dot" />}
         </NavLink>
         <span className="nav-diamond jazz-diamond">&#9670;</span>
-        <NavLink to="/jazz/by-venue" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-          By Venue
+        <NavLink to="/jazz" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          By Day
         </NavLink>
         <span className="nav-diamond jazz-diamond">&#9670;</span>
-        <NavLink to="/jazz/by-day" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-          By Day
+        <NavLink to="/jazz/by-venue" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          By Venue
         </NavLink>
       </nav>
     )
@@ -29,11 +29,11 @@ function Nav({ hasTonightScreenings, mode }) {
       </NavLink>
       <span className="nav-diamond">&#9670;</span>
       <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-        By Theater
+        By Day
       </NavLink>
       <span className="nav-diamond">&#9670;</span>
-      <NavLink to="/by-day" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-        By Day
+      <NavLink to="/by-theater" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+        By Theater
       </NavLink>
       <span className="nav-diamond">&#9670;</span>
       <NavLink to="/search" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>

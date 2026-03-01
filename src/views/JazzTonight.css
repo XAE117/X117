@@ -198,6 +198,14 @@
   text-transform: uppercase;
 }
 
+.jazz-tonight-price {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.65rem;
+  color: var(--jazz-accent);
+  white-space: nowrap;
+}
+
 .jazz-tonight-notes {
   font-family: var(--font-body);
   font-weight: 300;
