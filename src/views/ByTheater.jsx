@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
+import { useNow, getRelativeLabel, filmMeta, getFilmData } from '../utils/timeUtils.js'
 import './ByTheater.css'
 
 function FormatBadge({ format }) {
@@ -8,19 +9,20 @@ function FormatBadge({ format }) {
   return <span className="format-badge">{format}</span>
 }
 
-function filmMeta(title, films) {
-  if (!films) return null
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  const f = films[slug]
-  if (!f) return null
-  const parts = [f.director, f.year].filter(Boolean)
-  return parts.length > 0 ? parts.join(' · ') : null
+function MetricsBadges({ film }) {
+  if (!film) return null
+  const badges = []
+  if (film.afi100) badges.push(<span key="afi" className="screening-metric-badge afi">#{film.afi100} AFI</span>)
+  if (film.rottenTomatoes) badges.push(<span key="rt" className="screening-metric-badge rt">{film.rottenTomatoes}% RT</span>)
+  if (badges.length === 0) return null
+  return <>{badges}</>
 }
 
 function ByTheater({ data }) {
   const [expandedId, setExpandedId] = useState(null)
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+  const now = useNow()
 
   const toggle = (id) => {
     setExpandedId(prev => prev === id ? null : id)
@@ -86,34 +88,47 @@ function ByTheater({ data }) {
                   <div key={month} className="month-group">
                     <h3 className="month-header">{month}</h3>
                     <ul className="screening-list">
-                      {screenings.map(s => (
-                        <li key={s.id} className="screening-item" style={{ borderLeftColor: theater.color }}>
-                          <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-                          <span className="screening-date-badge">{formatDate(s.date)}</span>
-                          <Link to={`/screening/${s.id}`} className="screening-title-link">
-                            {s.title}
-                          </Link>
-                          {filmMeta(s.title, data.films) && (
-                            <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
-                          )}
-                          <FormatBadge format={s.format} />
-                          {s.link && (
-                            <a
-                              href={s.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="external-link"
-                              title="View on theater site"
-                            >
-                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15,3 21,3 21,9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                              </svg>
-                            </a>
-                          )}
-                        </li>
-                      ))}
+                      {screenings.map(s => {
+                        const relative = getRelativeLabel(s.date, s.time, now)
+                        const film = getFilmData(s.title, data.films)
+                        return (
+                          <li key={s.id} className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }}>
+                            <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+                            <span className="screening-date-badge">{formatDate(s.date)}</span>
+                            <Link to={`/screening/${s.id}`} className="screening-title-link">
+                              {s.title}
+                            </Link>
+                            {filmMeta(s.title, data.films) && (
+                              <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
+                            )}
+                            <MetricsBadges film={film} />
+                            <FormatBadge format={s.format} />
+                            {(s.time || relative) && (
+                              <span className="screening-time-col">
+                                {s.time && <span className="screening-time">{s.time}</span>}
+                                {relative && (
+                                  <span className={`screening-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+                                )}
+                              </span>
+                            )}
+                            {s.link && (
+                              <a
+                                href={s.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="external-link"
+                                title="View on theater site"
+                              >
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                  <polyline points="15,3 21,3 21,9" />
+                                  <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                              </a>
+                            )}
+                          </li>
+                        )
+                      })}
                     </ul>
                   </div>
                 ))}

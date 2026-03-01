@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { getCurrentUser, getOtherUser, getWatchlistIds, toggleWatchlist } from '../utils/watchlist.js'
+import { useNow, getRelativeLabel, getFilmData } from '../utils/timeUtils.js'
 import './Watchlist.css'
 
 function UserPicker({ onPick }) {
@@ -17,7 +18,7 @@ function UserPicker({ onPick }) {
   )
 }
 
-function WatchlistItem({ screening, theater, isBoth, onRemove, films }) {
+function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + 'T00:00:00')
     return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
@@ -32,6 +33,9 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films }) {
     return parts.length > 0 ? parts.join(' · ') : null
   })()
 
+  const relative = getRelativeLabel(screening.date, screening.time, now)
+  const film = getFilmData(screening.title, films)
+
   return (
     <li className={`watchlist-item ${isBoth ? 'watchlist-both' : ''}`}>
       {isBoth && <span className="watchlist-both-badge">{'\u2665\u2665'}</span>}
@@ -43,7 +47,13 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films }) {
         {screening.title}
       </Link>
       {meta && <span className="watchlist-film-meta">{meta}</span>}
-      {screening.time && <span className="watchlist-time">{screening.time}</span>}
+      {film?.rottenTomatoes && <span className="watchlist-metric-badge rt">{film.rottenTomatoes}% RT</span>}
+      <span className="watchlist-time-col">
+        {screening.time && <span className="watchlist-time">{screening.time}</span>}
+        {relative && (
+          <span className={`watchlist-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+        )}
+      </span>
       <button className="watchlist-remove" onClick={() => onRemove(screening.id)} title="Remove">
         &times;
       </button>
@@ -55,6 +65,7 @@ function Watchlist({ data }) {
   const [user, setUser] = useState(() => getCurrentUser())
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+  const now = useNow()
 
   if (!user) {
     return (
@@ -134,6 +145,7 @@ function Watchlist({ data }) {
                 isBoth={true}
                 onRemove={handleRemove}
                 films={data.films}
+                now={now}
               />
             ))}
           </ul>
@@ -152,6 +164,7 @@ function Watchlist({ data }) {
                 isBoth={false}
                 onRemove={handleRemove}
                 films={data.films}
+                now={now}
               />
             ))}
           </ul>
@@ -170,6 +183,7 @@ function Watchlist({ data }) {
                 isBoth={false}
                 onRemove={() => {}}
                 films={data.films}
+                now={now}
               />
             ))}
           </ul>

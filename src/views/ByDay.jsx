@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
+import { useNow, getRelativeLabel, filmMeta, getFilmData } from '../utils/timeUtils.js'
 import './ByDay.css'
 
 function FormatBadge({ format }) {
@@ -8,18 +9,20 @@ function FormatBadge({ format }) {
   return <span className="day-format-badge">{format}</span>
 }
 
-function filmMeta(title, films) {
-  if (!films) return null
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  const f = films[slug]
-  if (!f) return null
-  const parts = [f.director, f.year].filter(Boolean)
-  return parts.length > 0 ? parts.join(' · ') : null
+function MetricsBadges({ film }) {
+  if (!film) return null
+  const badges = []
+  if (film.afi100) badges.push(<span key="afi" className="day-metric-badge afi">#{film.afi100} AFI</span>)
+  if (film.rottenTomatoes) badges.push(<span key="rt" className="day-metric-badge rt">{film.rottenTomatoes}% RT</span>)
+  if (film.sightAndSound) badges.push(<span key="ss" className="day-metric-badge ss">S&S #{film.sightAndSound}</span>)
+  if (badges.length === 0) return null
+  return <>{badges}</>
 }
 
 function ByDay({ data }) {
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+  const now = useNow()
 
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
@@ -78,24 +81,34 @@ function ByDay({ data }) {
             </Link>
           </h2>
           <ul className="day-block-list">
-            {day.screenings.map(s => (
-              <li key={s.id} className="day-block-item">
-                <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-                <span className="day-item-theater" style={{ color: s.theaterColor }}>
-                  {s.theaterName}
-                </span>
-                <span className="day-item-title-row">
-                  <Link to={`/screening/${s.id}`} className="day-film-link">
-                    {s.title}
-                  </Link>
-                  {filmMeta(s.title, data.films) && (
-                    <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
-                  )}
-                  <FormatBadge format={s.format} />
-                </span>
-                <span className="day-time">{s.time || ''}</span>
-              </li>
-            ))}
+            {day.screenings.map(s => {
+              const relative = getRelativeLabel(s.date, s.time, now)
+              const film = getFilmData(s.title, data.films)
+              return (
+                <li key={s.id} className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}>
+                  <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+                  <span className="day-item-theater" style={{ color: s.theaterColor }}>
+                    {s.theaterName}
+                  </span>
+                  <span className="day-item-title-row">
+                    <Link to={`/screening/${s.id}`} className="day-film-link">
+                      {s.title}
+                    </Link>
+                    {filmMeta(s.title, data.films) && (
+                      <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
+                    )}
+                    <MetricsBadges film={film} />
+                    <FormatBadge format={s.format} />
+                  </span>
+                  <span className="day-time-col">
+                    <span className="day-time">{s.time || ''}</span>
+                    {relative && (
+                      <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+                    )}
+                  </span>
+                </li>
+              )
+            })}
           </ul>
         </div>
       ))}

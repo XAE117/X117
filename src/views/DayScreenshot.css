@@ -193,13 +193,110 @@
   flex-shrink: 0;
 }
 
+.ss-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
 .ss-time {
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 0.65rem;
   color: var(--text-muted);
-  margin-left: auto;
   white-space: nowrap;
+}
+
+.ss-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.ss-relative.is-now {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ── Download Actions ── */
+
+.ss-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ss-download-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg-dark);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ss-download-btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.ss-download-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.ss-image-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+.ss-generated-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--gold-dim);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ss-download-hint {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.ss-save-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid var(--gold-dim);
+  padding: 0.5rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.ss-save-link:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
 }
 
 .ss-empty {

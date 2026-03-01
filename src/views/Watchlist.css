@@ -139,13 +139,54 @@
   flex-shrink: 0;
 }
 
+.watchlist-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
 .watchlist-time {
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 0.7rem;
   color: var(--text-muted);
-  margin-left: auto;
   white-space: nowrap;
+}
+
+.watchlist-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.watchlist-relative.is-now {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.watchlist-metric-badge {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.08rem 0.4rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.watchlist-metric-badge.rt {
+  background: rgba(250, 50, 10, 0.15);
+  color: #ff6347;
+  border: 1px solid rgba(250, 50, 10, 0.3);
 }
 
 .watchlist-remove {

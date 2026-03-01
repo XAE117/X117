@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { useNow, parseTime, filmMeta } from '../utils/timeUtils.js'
 import './Tonight.css'
 
 function FormatBadge({ format }) {
@@ -7,30 +8,13 @@ function FormatBadge({ format }) {
   return <span className="tonight-format-badge">{format}</span>
 }
 
-function parseTime(timeStr) {
-  if (!timeStr) return null
-  // Take first time if multiple (e.g. "7:00 pm / 8:30 pm")
-  const first = timeStr.split('/')[0].trim()
-  const match = first.match(/^(\d{1,2}):(\d{2})\s*(am|pm)?$/i)
-  if (!match) return null
-  let [, h, m, period] = match
-  h = parseInt(h, 10)
-  m = parseInt(m, 10)
-  if (period) {
-    period = period.toLowerCase()
-    if (period === 'pm' && h !== 12) h += 12
-    if (period === 'am' && h === 12) h = 0
-  }
-  return h * 60 + m
-}
-
 function getRelativeTime(screeningMinutes, nowMinutes) {
   const diff = screeningMinutes - nowMinutes
   if (diff > 0) {
     const hours = Math.floor(diff / 60)
     const mins = diff % 60
-    if (hours > 0) return `In ${hours}h ${mins}m`
-    return `In ${mins}m`
+    if (hours > 0) return `in ${hours}h ${mins}m`
+    return `in ${mins}m`
   }
   const elapsed = -diff
   if (elapsed <= 150) return 'Now showing'
@@ -40,22 +24,8 @@ function getRelativeTime(screeningMinutes, nowMinutes) {
   return `Started ${mins}m ago`
 }
 
-function filmMeta(title, films) {
-  if (!films) return null
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  const f = films[slug]
-  if (!f) return null
-  const parts = [f.director, f.year].filter(Boolean)
-  return parts.length > 0 ? parts.join(' · ') : null
-}
-
 function Tonight({ data }) {
-  const [now, setNow] = useState(new Date())
-
-  useEffect(() => {
-    const interval = setInterval(() => setNow(new Date()), 60000)
-    return () => clearInterval(interval)
-  }, [])
+  const now = useNow()
 
   const todayStr = useMemo(() => {
     const y = now.getFullYear()
