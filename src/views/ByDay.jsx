@@ -145,6 +145,7 @@ function ByDay({ data }) {
   const now = useNow()
   const scrollTargetRef = useRef(null)
   const hasScrolled = useRef(false)
+  const [searchQuery, setSearchQuery] = useState('')
 
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
@@ -173,9 +174,15 @@ function ByDay({ data }) {
     return aMin - bMin
   })
 
+  // Apply search filter
+  const query = searchQuery.trim().toLowerCase()
+  const filteredScreenings = query
+    ? allScreenings.filter(s => s.title.toLowerCase().includes(query))
+    : allScreenings
+
   // Group by date only (flat day-by-day)
   const days = {}
-  allScreenings.forEach(s => {
+  filteredScreenings.forEach(s => {
     if (!days[s.date]) {
       const d = new Date(s.date + 'T00:00:00')
       days[s.date] = {
@@ -194,9 +201,9 @@ function ByDay({ data }) {
     day.screenings.some(s => !isScreeningPast(s.date, s.time, now))
   )?.[0]
 
-  // Auto-scroll to first upcoming day on initial load
+  // Auto-scroll to first upcoming day on initial load (skip if searching)
   useEffect(() => {
-    if (hasScrolled.current || !scrollTargetRef.current) return
+    if (hasScrolled.current || !scrollTargetRef.current || query) return
     hasScrolled.current = true
     const timer = setTimeout(() => {
       scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -204,10 +211,31 @@ function ByDay({ data }) {
       setTimeout(() => window.scrollBy({ top: -80, behavior: 'smooth' }), 400)
     }, 100)
     return () => clearTimeout(timer)
-  }, [firstUpcomingDate])
+  }, [firstUpcomingDate, query])
+
+  const matchCount = query ? filteredScreenings.length : 0
 
   return (
     <div className="day-view">
+      <div className="day-search-bar">
+        <input
+          type="text"
+          className="day-search-input"
+          placeholder="Search films..."
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+        />
+        {searchQuery && (
+          <button className="day-search-clear" onClick={() => setSearchQuery('')}>
+            &times;
+          </button>
+        )}
+        {query && (
+          <span className="day-search-count">
+            {matchCount} screening{matchCount !== 1 ? 's' : ''}{matchCount > 0 ? ` matching \u201c${searchQuery.trim()}\u201d` : ' found'}
+          </span>
+        )}
+      </div>
       {dayEntries.map(([dateKey, day]) => (
         <DayBlock
           key={dateKey}
@@ -219,6 +247,9 @@ function ByDay({ data }) {
           scrollRef={dateKey === firstUpcomingDate ? scrollTargetRef : undefined}
         />
       ))}
+      {query && dayEntries.length === 0 && (
+        <p className="day-all-past-hint">No screenings match your search</p>
+      )}
     </div>
   )
 }
