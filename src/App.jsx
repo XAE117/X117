@@ -9,8 +9,6 @@ import GodfatherAlert from './components/GodfatherAlert.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
-import Tonight from './views/Tonight.jsx'
-import Search from './views/Search.jsx'
 import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
@@ -103,14 +101,6 @@ function App() {
     return { ...data, theaters }
   }
 
-  // Check if there are screenings today (for Nav indicator)
-  const hasTonightScreenings = useMemo(() => {
-    if (!data) return false
-    const now = new Date()
-    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
-    return data.theaters.some(t => t.screenings.some(s => s.date === todayStr))
-  }, [data])
-
   // Check if there are jazz shows today
   const hasTonightJazzShows = useMemo(() => {
     if (!jazzData) return false
@@ -151,7 +141,7 @@ function App() {
       <Header mode={mode} />
       <ModeSwitcher />
       <Nav
-        hasTonightScreenings={isJazzMode ? hasTonightJazzShows : hasTonightScreenings}
+        hasTonightScreenings={isJazzMode ? hasTonightJazzShows : false}
         mode={mode}
       />
       {!isJazzMode && <GodfatherAlert data={data} />}
@@ -193,8 +183,6 @@ function App() {
           {/* Cinema routes */}
           <Route path="/" element={<ByDay data={filteredData} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
-          <Route path="/tonight" element={<Tonight data={data} />} />
-          <Route path="/search" element={<Search data={data} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />
           <Route path="/map" element={<MapView data={filteredData} />} />
