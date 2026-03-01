@@ -247,7 +247,7 @@ function Detail({ data }) {
   return (
     <div className="detail-page">
       <button className="back-btn" onClick={() => navigate(-1)}>
-        Back &rarr;
+        &larr; back
       </button>
 
       <div className="detail-card">
@@ -401,7 +401,7 @@ function Detail({ data }) {
       </div>
 
       <button className="back-btn" onClick={() => navigate(-1)}>
-        Back &rarr;
+        &larr; back
       </button>
     </div>
   )

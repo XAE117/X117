@@ -131,7 +131,7 @@ function JazzDetail({ data }) {
   return (
     <div className="jazz-detail-page">
       <button className="jazz-detail-back" onClick={() => navigate(-1)}>
-        Back &rarr;
+        &larr; back
       </button>
 
       <div className="jazz-detail-card">
@@ -250,7 +250,7 @@ function JazzDetail({ data }) {
       </div>
 
       <button className="jazz-detail-back" onClick={() => navigate(-1)}>
-        Back &rarr;
+        &larr; back
       </button>
     </div>
   )
