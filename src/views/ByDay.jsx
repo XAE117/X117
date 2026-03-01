@@ -25,7 +25,6 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
   const film = getFilmData(s.title, data.films)
   return (
     <li className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}>
-      <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
       <div className="day-row-title">
         <span className="day-title-truncate">
           <Link to={`/screening/${s.id}`} className="day-film-link">
@@ -44,6 +43,7 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
       </div>
       <div className="day-row-badges">
         <span className="day-badges-left">
+          <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
           <MetricsBadges film={film} />
           <FormatBadge format={s.format} />
         </span>
