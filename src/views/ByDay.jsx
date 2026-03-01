@@ -26,21 +26,17 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
   return (
     <li className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}>
       <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-      <div className="day-item-top">
+      <div className="day-row-title">
         <Link to={`/screening/${s.id}`} className="day-film-link">
           {s.title}
         </Link>
         {filmMeta(s.title, data.films) && (
           <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
         )}
+      </div>
+      <div className="day-row-info">
         <span className="day-item-theater" style={{ color: s.theaterColor }}>
           {s.theaterName}
-        </span>
-      </div>
-      <div className="day-item-bottom">
-        <span className="day-item-bottom-left">
-          <MetricsBadges film={film} />
-          <FormatBadge format={s.format} />
         </span>
         <span className="day-time-col">
           <span className="day-time">{s.time || ''}</span>
@@ -48,6 +44,10 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
             <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
           )}
         </span>
+      </div>
+      <div className="day-row-badges">
+        <MetricsBadges film={film} />
+        <FormatBadge format={s.format} />
       </div>
     </li>
   )
