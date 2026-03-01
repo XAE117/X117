@@ -14,10 +14,7 @@ function Footer({ lastUpdated, theaters }) {
     <footer className="palace-footer">
       <div className="footer-inner">
         <span className="footer-updated">
-          Updated {formatDate(lastUpdated)} &middot; Data from{' '}
-          <a href="https://www.revivalhouses.com" target="_blank" rel="noopener noreferrer" className="footer-theater-link">
-            Revival Houses
-          </a>
+          Updated {formatDate(lastUpdated)}
         </span>
         <div className="footer-theaters">
           {theaters.map((t, i) => (
