@@ -111,7 +111,7 @@
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
-  flex-wrap: wrap;
+  min-width: 0;
 }
 
 /* Row 2: Theater + Time */
@@ -147,7 +147,10 @@
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s ease;
-  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .day-film-link:hover {
@@ -276,7 +279,6 @@
 
 @media (max-width: 640px) {
   .day-film-link {
-    max-width: 65%;
     font-size: 0.9rem;
   }
 }
