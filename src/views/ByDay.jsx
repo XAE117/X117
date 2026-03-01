@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useCallback, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData } from '../utils/timeUtils.js'
 import './ByDay.css'
@@ -23,13 +23,29 @@ function MetricsBadges({ film }) {
 function ScreeningRow({ s, now, data, forceUpdate }) {
   const relative = getRelativeLabel(s.date, s.time, now)
   const film = getFilmData(s.title, data.films)
+  const navigate = useNavigate()
+  const itemRef = useRef(null)
+
+  const handleClick = (e) => {
+    // Don't navigate if clicking interactive elements
+    if (e.target.closest('.watchlist-btn') || e.target.closest('a')) return
+    if (itemRef.current) {
+      itemRef.current.classList.remove('glow-pulse')
+      void itemRef.current.offsetWidth
+      itemRef.current.classList.add('glow-pulse')
+    }
+    navigate(`/screening/${s.id}`)
+  }
+
   return (
-    <li className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}>
+    <li
+      ref={itemRef}
+      className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}
+      onClick={handleClick}
+    >
       <div className="day-row-title">
         <span className="day-title-truncate">
-          <Link to={`/screening/${s.id}`} className="day-film-link">
-            {s.title}
-          </Link>
+          <span className="day-film-link">{s.title}</span>
           {filmMeta(s.title, data.films) && (
             <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
           )}

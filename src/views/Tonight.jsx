@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useMemo, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useNow, parseTime, filmMeta } from '../utils/timeUtils.js'
 import './Tonight.css'
 
@@ -25,16 +25,27 @@ function getRelativeTime(screeningMinutes, nowMinutes) {
 }
 
 function ScreeningItem({ s, isNow, relative, data }) {
+  const navigate = useNavigate()
+  const itemRef = useRef(null)
+
+  const handleClick = (e) => {
+    if (e.target.closest('a')) return
+    if (itemRef.current) {
+      itemRef.current.classList.remove('glow-pulse')
+      void itemRef.current.offsetWidth
+      itemRef.current.classList.add('glow-pulse')
+    }
+    navigate(`/screening/${s.id}`)
+  }
+
   return (
-    <li className={`tonight-item ${isNow ? 'now-showing' : ''}`}>
+    <li ref={itemRef} className={`tonight-item ${isNow ? 'now-showing' : ''}`} onClick={handleClick}>
       <div className="tonight-time-col">
         <span className="tonight-time">{s.time || 'TBA'}</span>
         {relative && <span className={`tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
       </div>
       <div className="tonight-info-col">
-        <Link to={`/screening/${s.id}`} className="tonight-title-link">
-          {s.title}
-        </Link>
+        <span className="tonight-title-link">{s.title}</span>
         {filmMeta(s.title, data.films) && (
           <span className="tonight-film-meta">{filmMeta(s.title, data.films)}</span>
         )}

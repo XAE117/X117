@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useNow, getRelativeLabel, isScreeningPast } from '../utils/timeUtils.js'
 import './JazzByVenue.css'
 
@@ -20,14 +20,30 @@ function ShowRow({ show, now }) {
   const dateLabel = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
   const relative = getRelativeLabel(show.date, show.time, now)
   const past = isScreeningPast(show.date, show.time, now)
+  const navigate = useNavigate()
+  const itemRef = useRef(null)
+
+  const handleClick = (e) => {
+    if (e.target.closest('a')) return
+    if (itemRef.current) {
+      itemRef.current.classList.remove('glow-pulse')
+      void itemRef.current.offsetWidth
+      itemRef.current.classList.add('glow-pulse')
+    }
+    navigate(`/jazz/show/${show.id}`)
+  }
 
   return (
-    <li className={`jbv-show-row ${past ? 'is-past' : ''} ${show.hot ? 'is-hot' : ''}`}>
+    <li
+      ref={itemRef}
+      className={`jbv-show-row ${past ? 'is-past' : ''} ${show.hot ? 'is-hot' : ''}`}
+      onClick={handleClick}
+    >
       <span className="jbv-show-date">{dateLabel}</span>
-      <Link to={`/jazz/show/${show.id}`} className="jbv-show-artist">
+      <span className="jbv-show-artist">
         {show.artist}
         <HotBadge show={show} />
-      </Link>
+      </span>
       {show.price && <span className="jbv-show-price">{show.price}</span>}
       <span className="jbv-show-time">{show.time || 'TBA'}</span>
       {relative && (

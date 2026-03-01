@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useMemo, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useNow, getRelativeLabel, isScreeningPast } from '../utils/timeUtils.js'
 import './JazzByDay.css'
 
@@ -15,17 +15,33 @@ function OCBadge({ venue }) {
 
 function ShowRow({ show, venue, now }) {
   const relative = getRelativeLabel(show.date, show.time, now)
+  const navigate = useNavigate()
+  const itemRef = useRef(null)
+
+  const handleClick = (e) => {
+    if (e.target.closest('a')) return
+    if (itemRef.current) {
+      itemRef.current.classList.remove('glow-pulse')
+      void itemRef.current.offsetWidth
+      itemRef.current.classList.add('glow-pulse')
+    }
+    navigate(`/jazz/show/${show.id}`)
+  }
 
   return (
-    <li className={`jbd-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}>
+    <li
+      ref={itemRef}
+      className={`jbd-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}
+      onClick={handleClick}
+    >
       <span className="jbd-show-venue" style={{ color: venue.color }}>
         {venue.shortName}
         {venue.region === 'OC' && <OCBadge venue={venue} />}
       </span>
-      <Link to={`/jazz/show/${show.id}`} className="jbd-show-artist">
+      <span className="jbd-show-artist">
         {show.artist}
         <HotBadge show={show} />
-      </Link>
+      </span>
       {show.price && <span className="jbd-show-price">{show.price}</span>}
       <span className="jbd-show-time">{show.time || 'TBA'}</span>
       {relative && (

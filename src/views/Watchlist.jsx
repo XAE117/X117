@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useCallback, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { getCurrentUser, getOtherUser, getWatchlistIds, toggleWatchlist } from '../utils/watchlist.js'
 import { useNow, getRelativeLabel, isScreeningPast, getFilmData } from '../utils/timeUtils.js'
 import './Watchlist.css'
@@ -19,6 +19,9 @@ function UserPicker({ onPick }) {
 }
 
 function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
+  const navigate = useNavigate()
+  const itemRef = useRef(null)
+
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + 'T00:00:00')
     return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
@@ -36,16 +39,24 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
   const relative = getRelativeLabel(screening.date, screening.time, now)
   const film = getFilmData(screening.title, films)
 
+  const handleClick = (e) => {
+    if (e.target.closest('.watchlist-remove') || e.target.closest('a')) return
+    if (itemRef.current) {
+      itemRef.current.classList.remove('glow-pulse')
+      void itemRef.current.offsetWidth
+      itemRef.current.classList.add('glow-pulse')
+    }
+    navigate(`/screening/${screening.id}`)
+  }
+
   return (
-    <li className={`watchlist-item ${isBoth ? 'watchlist-both' : ''}`}>
+    <li ref={itemRef} className={`watchlist-item ${isBoth ? 'watchlist-both' : ''}`} onClick={handleClick}>
       {isBoth && <span className="watchlist-both-badge">{'\u2665\u2665'}</span>}
       <span className="watchlist-date">{formatDate(screening.date)}</span>
       <span className="watchlist-theater" style={{ color: theater.color }}>
         {theater.shortName}
       </span>
-      <Link to={`/screening/${screening.id}`} className="watchlist-title">
-        {screening.title}
-      </Link>
+      <span className="watchlist-title">{screening.title}</span>
       {meta && <span className="watchlist-film-meta">{meta}</span>}
       {film?.rottenTomatoes && <span className="watchlist-metric-badge rt">{film.rottenTomatoes}% RT</span>}
       <span className="watchlist-time-col">
