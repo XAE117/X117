@@ -351,14 +351,38 @@
 
 /* ── Metrics Badges in Film Meta ── */
 
+.detail-lb-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  background: rgba(137, 207, 240, 0.12);
+  color: #89CFF0;
+  border: 1px solid rgba(137, 207, 240, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
 .detail-rt-badge {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.65rem;
   letter-spacing: 0.05em;
-  background: rgba(250, 50, 10, 0.15);
-  color: #ff6347;
-  border: 1px solid rgba(250, 50, 10, 0.3);
+  background: rgba(232, 138, 130, 0.12);
+  color: #E88A82;
+  border: 1px solid rgba(232, 138, 130, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.detail-ss-badge {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  background: rgba(130, 200, 160, 0.12);
+  color: #82C8A0;
+  border: 1px solid rgba(130, 200, 160, 0.3);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
 }
@@ -371,18 +395,6 @@
   background: rgba(201, 168, 76, 0.12);
   color: var(--gold);
   border: 1px solid rgba(201, 168, 76, 0.3);
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-}
-
-.detail-ss-badge {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
-  background: rgba(100, 149, 237, 0.12);
-  color: #6495ed;
-  border: 1px solid rgba(100, 149, 237, 0.3);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
 }
@@ -433,15 +445,15 @@
 }
 
 .detail-metric-card.rt {
-  border-color: rgba(250, 50, 10, 0.3);
+  border-color: rgba(232, 138, 130, 0.3);
 }
 
 .detail-metric-card.ss {
-  border-color: rgba(100, 149, 237, 0.3);
+  border-color: rgba(130, 200, 160, 0.3);
 }
 
 .detail-metric-card.lb {
-  border-color: rgba(0, 210, 106, 0.3);
+  border-color: rgba(137, 207, 240, 0.3);
 }
 
 .detail-metric-card.tmdb {
@@ -457,9 +469,9 @@
 }
 
 .detail-metric-card.afi .detail-metric-value { color: var(--gold); }
-.detail-metric-card.rt .detail-metric-value { color: #ff6347; }
-.detail-metric-card.ss .detail-metric-value { color: #6495ed; }
-.detail-metric-card.lb .detail-metric-value { color: #00d26a; }
+.detail-metric-card.rt .detail-metric-value { color: #E88A82; }
+.detail-metric-card.ss .detail-metric-value { color: #82C8A0; }
+.detail-metric-card.lb .detail-metric-value { color: #89CFF0; }
 .detail-metric-card.tmdb .detail-metric-value { color: #01b4e4; }
 
 .detail-metric-source {

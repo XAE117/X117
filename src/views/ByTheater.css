@@ -342,9 +342,9 @@
 }
 
 .screening-metric-badge.rt {
-  background: rgba(250, 50, 10, 0.15);
-  color: #ff6347;
-  border: 1px solid rgba(250, 50, 10, 0.3);
+  background: rgba(232, 138, 130, 0.12);
+  color: #E88A82;
+  border: 1px solid rgba(232, 138, 130, 0.3);
 }
 
 .screening-metric-badge.afi {
@@ -353,10 +353,16 @@
   border: 1px solid rgba(201, 168, 76, 0.3);
 }
 
+.screening-metric-badge.ss {
+  background: rgba(130, 200, 160, 0.12);
+  color: #82C8A0;
+  border: 1px solid rgba(130, 200, 160, 0.3);
+}
+
 .screening-metric-badge.lb {
-  background: rgba(0, 224, 84, 0.1);
-  color: #00e054;
-  border: 1px solid rgba(0, 224, 84, 0.25);
+  background: rgba(137, 207, 240, 0.12);
+  color: #89CFF0;
+  border: 1px solid rgba(137, 207, 240, 0.3);
 }
 
 .theater-past-section {

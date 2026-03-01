@@ -66,10 +66,10 @@ function CinephileMetrics({ film }) {
     <div className="detail-cinephile-metrics">
       <span className="detail-label">Cinephile Metrics</span>
       <div className="detail-metrics-grid">
-        {film.afi100 && (
-          <div className="detail-metric-card afi">
-            <span className="detail-metric-value">#{film.afi100}</span>
-            <span className="detail-metric-source">AFI Top 100</span>
+        {film.letterboxd && (
+          <div className="detail-metric-card lb">
+            <span className="detail-metric-value">{film.letterboxd.toFixed(1)}</span>
+            <span className="detail-metric-source">Letterboxd /5</span>
           </div>
         )}
         {film.rottenTomatoes && (
@@ -84,10 +84,10 @@ function CinephileMetrics({ film }) {
             <span className="detail-metric-source">Sight & Sound 2022</span>
           </div>
         )}
-        {film.letterboxd && (
-          <div className="detail-metric-card lb">
-            <span className="detail-metric-value">{film.letterboxd.toFixed(1)}</span>
-            <span className="detail-metric-source">Letterboxd /5</span>
+        {film.afi100 && (
+          <div className="detail-metric-card afi">
+            <span className="detail-metric-value">#{film.afi100}</span>
+            <span className="detail-metric-source">AFI Top 100</span>
           </div>
         )}
         {film.rating > 0 && (
@@ -266,14 +266,17 @@ function Detail({ data }) {
               <div className="detail-film-meta">
                 {film.director && <span className="detail-director">Directed by {film.director}</span>}
                 {film.year && <span className="detail-year">{film.year}</span>}
+                {film.letterboxd && (
+                  <span className="detail-lb-badge">★ {film.letterboxd.toFixed(1)}</span>
+                )}
                 {film.rottenTomatoes && (
                   <span className="detail-rt-badge">{film.rottenTomatoes}% RT</span>
                 )}
-                {film.afi100 && (
-                  <span className="detail-afi-badge">#{film.afi100} AFI</span>
-                )}
                 {film.sightAndSound && (
                   <span className="detail-ss-badge">S&S #{film.sightAndSound}</span>
+                )}
+                {film.afi100 && (
+                  <span className="detail-afi-badge">#{film.afi100} AFI</span>
                 )}
               </div>
             )}

@@ -36,7 +36,7 @@ const THEATERS = [
     shortName: 'New Bev',
     neighborhood: 'Fairfax',
     url: 'https://thenewbev.com/schedule/',
-    color: '#C9A84C',
+    color: '#D98A87',
   },
   {
     dataT: '22',
@@ -45,7 +45,7 @@ const THEATERS = [
     shortName: 'Vista',
     neighborhood: 'Los Feliz',
     url: 'https://www.vistatheaterhollywood.com',
-    color: '#8B4513',
+    color: '#B89AD4',
   },
   {
     dataT: '28',
@@ -54,7 +54,7 @@ const THEATERS = [
     shortName: 'Academy',
     neighborhood: 'Miracle Mile',
     url: 'https://www.academymuseum.org/en/programs',
-    color: '#6B2737',
+    color: '#C98A8E',
   },
   {
     dataT: '30',
@@ -63,7 +63,7 @@ const THEATERS = [
     shortName: 'Alamo',
     neighborhood: 'Downtown',
     url: 'https://drafthouse.com/los-angeles',
-    color: '#CC3333',
+    color: '#D4C07A',
   },
   {
     dataT: '2',
@@ -72,7 +72,7 @@ const THEATERS = [
     shortName: 'Egyptian',
     neighborhood: 'Hollywood',
     url: 'https://www.americancinematheque.com/now-showing/',
-    color: '#D4A84B',
+    color: '#D9A878',
   },
   {
     dataT: '1',
@@ -81,7 +81,7 @@ const THEATERS = [
     shortName: 'Aero',
     neighborhood: 'Santa Monica',
     url: 'https://www.americancinematheque.com/now-showing/',
-    color: '#4A90A4',
+    color: '#7ABFC0',
   },
   {
     dataT: '57',
@@ -90,7 +90,7 @@ const THEATERS = [
     shortName: 'Vidiots',
     neighborhood: 'Eagle Rock',
     url: 'https://vidiotsfoundation.org/calendar',
-    color: '#5B8C5A',
+    color: '#D4A0B8',
   },
   {
     dataT: '33',
@@ -99,7 +99,7 @@ const THEATERS = [
     shortName: 'Brain Dead',
     neighborhood: 'Fairfax',
     url: 'https://studios.wearebraindead.com',
-    color: '#4A7C59',
+    color: '#8EBF8E',
   },
   {
     dataT: '5',
@@ -108,7 +108,7 @@ const THEATERS = [
     shortName: 'Hammer',
     neighborhood: 'Westwood',
     url: 'https://hammer.ucla.edu/programs-events',
-    color: '#2E5090',
+    color: '#8EA0CF',
   },
   {
     dataT: '67',
@@ -117,7 +117,7 @@ const THEATERS = [
     shortName: 'REDCAT',
     neighborhood: 'Downtown',
     url: 'https://www.redcat.org',
-    color: '#D94F30',
+    color: '#D9907A',
   },
   {
     dataT: '34',
@@ -126,7 +126,7 @@ const THEATERS = [
     shortName: 'Nuart',
     neighborhood: 'West LA',
     url: 'https://www.laemmle.com',
-    color: '#7B68AE',
+    color: '#B4A0D4',
   },
   {
     dataT: '9',
@@ -135,7 +135,7 @@ const THEATERS = [
     shortName: 'NoHo 7',
     neighborhood: 'North Hollywood',
     url: 'https://www.laemmle.com',
-    color: '#9B7EC8',
+    color: '#C8A8D9',
   },
   {
     dataT: '29',
@@ -144,7 +144,7 @@ const THEATERS = [
     shortName: 'Los Feliz 3',
     neighborhood: 'Los Feliz',
     url: 'https://www.vintagecinemas.com/losfeliz',
-    color: '#A88BC4',
+    color: '#CCA8C8',
   },
   {
     dataT: '7',
@@ -153,7 +153,7 @@ const THEATERS = [
     shortName: 'Royal',
     neighborhood: 'West LA',
     url: 'https://www.laemmle.com',
-    color: '#6A5B8E',
+    color: '#7AAED4',
   },
   // ── Expanded theaters ──
   {
@@ -163,7 +163,7 @@ const THEATERS = [
     shortName: 'Secret MC',
     neighborhood: 'Various',
     url: 'https://www.secretmovieclub.com',
-    color: '#E07C24',
+    color: '#B89878',
   },
   {
     dataT: '62',
@@ -172,7 +172,7 @@ const THEATERS = [
     shortName: 'Cinespia',
     neighborhood: 'Hollywood Forever',
     url: 'https://cinespia.org',
-    color: '#3A7CA5',
+    color: '#8EBFD4',
   },
   {
     dataT: '65',
@@ -181,7 +181,7 @@ const THEATERS = [
     shortName: '2220 Arts',
     neighborhood: 'Historic Filipinotown',
     url: 'https://2220arts.com',
-    color: '#C75C8A',
+    color: '#D4A0C4',
   },
   {
     dataT: '68',
@@ -190,7 +190,7 @@ const THEATERS = [
     shortName: 'WHAMMY!',
     neighborhood: 'Various',
     url: 'https://whammyanalog.com',
-    color: '#D4573B',
+    color: '#D9A090',
   },
   {
     dataT: '71',
@@ -199,7 +199,7 @@ const THEATERS = [
     shortName: 'Glendale',
     neighborhood: 'Glendale',
     url: 'https://www.regencymovies.com/theatres/glendale-theatre',
-    color: '#7B9E6B',
+    color: '#A0CFB4',
   },
   {
     dataT: '72',
@@ -208,7 +208,7 @@ const THEATERS = [
     shortName: 'Lumiere',
     neighborhood: 'Beverly Hills',
     url: 'https://lumieremusichall.com',
-    color: '#B8860B',
+    color: '#D4C890',
   },
 ]
 

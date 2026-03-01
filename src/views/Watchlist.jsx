@@ -58,6 +58,7 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
       </span>
       <span className="watchlist-title">{screening.title}</span>
       {meta && <span className="watchlist-film-meta">{meta}</span>}
+      {film?.letterboxd && <span className="watchlist-metric-badge lb">★ {film.letterboxd.toFixed(1)}</span>}
       {film?.rottenTomatoes && <span className="watchlist-metric-badge rt">{film.rottenTomatoes}% RT</span>}
       <span className="watchlist-time-col">
         {screening.time && <span className="watchlist-time">{screening.time}</span>}
