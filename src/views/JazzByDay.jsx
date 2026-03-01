@@ -8,13 +8,19 @@ function HotBadge({ show }) {
   return <span className="jazz-hot-badge" title="LA modern jazz scene">🔥</span>
 }
 
+function OCBadge({ venue }) {
+  if (venue.region !== 'OC') return null
+  return <span className="jazz-oc-badge">OC</span>
+}
+
 function ShowRow({ show, venue, now }) {
   const relative = getRelativeLabel(show.date, show.time, now)
 
   return (
-    <li className={`jbd-show-row ${show.hot ? 'is-hot' : ''}`}>
+    <li className={`jbd-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}>
       <span className="jbd-show-venue" style={{ color: venue.color }}>
         {venue.shortName}
+        {venue.region === 'OC' && <OCBadge venue={venue} />}
       </span>
       <Link to={`/jazz/show/${show.id}`} className="jbd-show-artist">
         {show.artist}

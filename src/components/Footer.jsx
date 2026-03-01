@@ -1,6 +1,6 @@
 import './Footer.css'
 
-function Footer({ lastUpdated, theaters }) {
+function Footer({ lastUpdated, theaters, isJazz }) {
   const formatDate = (dateStr) => {
     const d = new Date(dateStr)
     return d.toLocaleDateString('en-US', {
@@ -27,6 +27,15 @@ function Footer({ lastUpdated, theaters }) {
           ))}
         </div>
       </div>
+      {isJazz && (
+        <div className="footer-jazz-note">
+          Underground shows update frequently. Follow{' '}
+          <a href="https://www.instagram.com/minaretrecords/" target="_blank" rel="noopener noreferrer">
+            @minaretrecords
+          </a>{' '}
+          on Instagram for the latest.
+        </div>
+      )}
     </footer>
   )
 }

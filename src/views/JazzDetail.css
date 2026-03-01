@@ -107,6 +107,17 @@
   text-transform: uppercase;
 }
 
+.jazz-oc-badge-detail {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-dim);
+}
+
 .jazz-detail-description {
   font-family: var(--font-body);
   font-weight: 300;

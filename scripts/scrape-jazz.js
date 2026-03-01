@@ -25,168 +25,32 @@ const HOT_ARTISTS_PATH = join(__dirname, '..', 'public', 'hot-artists.json')
 // ── Venue Definitions ──
 
 const VENUES = {
-  'blue-note-la': {
-    id: 'blue-note-la',
-    name: 'Blue Note Los Angeles',
-    shortName: 'Blue Note',
-    neighborhood: 'Hollywood',
-    url: 'https://www.bluenotejazz.com/la/',
-    color: '#1A5276',
-    tier: 'dedicated',
-  },
-  'baked-potato': {
-    id: 'baked-potato',
-    name: 'The Baked Potato',
-    shortName: 'Baked Potato',
-    neighborhood: 'Studio City',
-    url: 'https://www.thebakedpotato.com/',
-    color: '#8B4513',
-    tier: 'dedicated',
-  },
-  'catalina-jazz': {
-    id: 'catalina-jazz',
-    name: 'Catalina Jazz Club',
-    shortName: 'Catalina',
-    neighborhood: 'Hollywood',
-    url: 'https://catalinajazzclub.com/',
-    color: '#C0392B',
-    tier: 'dedicated',
-  },
-  'sam-first': {
-    id: 'sam-first',
-    name: 'Sam First',
-    shortName: 'Sam First',
-    neighborhood: 'Westchester',
-    url: 'https://www.samfirstbar.com/',
-    color: '#2E86C1',
-    tier: 'dedicated',
-  },
-  'vibrato': {
-    id: 'vibrato',
-    name: 'Vibrato Grill Jazz',
-    shortName: 'Vibrato',
-    neighborhood: 'Bel Air',
-    url: 'https://www.vibratogrilljazz.com/',
-    color: '#7D3C98',
-    tier: 'dedicated',
-  },
-  'world-stage': {
-    id: 'world-stage',
-    name: 'The World Stage',
-    shortName: 'World Stage',
-    neighborhood: 'Leimert Park',
-    url: 'https://www.theworldstage.org/',
-    color: '#D4AC0D',
-    tier: 'dedicated',
-  },
-  'lodge-room': {
-    id: 'lodge-room',
-    name: 'Lodge Room',
-    shortName: 'Lodge Room',
-    neighborhood: 'Highland Park',
-    url: 'https://www.lodgeroomhlp.com/',
-    color: '#D4A574',
-    tier: 'indie_scene',
-  },
-  'scribble': {
-    id: 'scribble',
-    name: 'Scribble',
-    shortName: 'Scribble',
-    neighborhood: 'Highland Park',
-    url: 'https://www.minaretrecords.com/shows',
-    color: '#E74C3C',
-    tier: 'indie_scene',
-  },
-  'st-barnabas': {
-    id: 'st-barnabas',
-    name: 'St. Barnabas Church',
-    shortName: 'St. Barnabas',
-    neighborhood: 'Eagle Rock',
-    url: 'https://www.minaretrecords.com/shows',
-    color: '#8E44AD',
-    tier: 'indie_scene',
-  },
-  'psstudio': {
-    id: 'psstudio',
-    name: 'PSSTUDIO',
-    shortName: 'PSSTUDIO',
-    neighborhood: 'DTLA',
-    url: 'https://www.minaretrecords.com/shows',
-    color: '#E67E22',
-    tier: 'indie_scene',
-  },
-  'mcyc': {
-    id: 'mcyc',
-    name: 'Mid City Yacht Club',
-    shortName: 'MCYC',
-    neighborhood: 'Mid City',
-    url: 'https://www.minaretrecords.com/shows',
-    color: '#2ECC71',
-    tier: 'indie_scene',
-  },
-  'the-high-low': {
-    id: 'the-high-low',
-    name: 'The High Low',
-    shortName: 'High Low',
-    neighborhood: 'Atwater Village',
-    url: 'https://www.thehighlow.com/',
-    color: '#27AE60',
-    tier: 'regular',
-  },
-  'the-mint': {
-    id: 'the-mint',
-    name: 'The Mint',
-    shortName: 'The Mint',
-    neighborhood: 'Mid-Wilshire',
-    url: 'https://www.themintla.com/',
-    color: '#16A085',
-    tier: 'regular',
-  },
-  'lighthouse-cafe': {
-    id: 'lighthouse-cafe',
-    name: 'Lighthouse Cafe',
-    shortName: 'Lighthouse',
-    neighborhood: 'Hermosa Beach',
-    url: 'https://www.thelighthousecafe.net/',
-    color: '#3498DB',
-    tier: 'regular',
-  },
-  'disney-hall': {
-    id: 'disney-hall',
-    name: 'Walt Disney Concert Hall',
-    shortName: 'Disney Hall',
-    neighborhood: 'Downtown',
-    url: 'https://www.laphil.com/events/',
-    color: '#BDC3C7',
-    tier: 'concert_hall',
-  },
-  'hollywood-bowl': {
-    id: 'hollywood-bowl',
-    name: 'Hollywood Bowl',
-    shortName: 'Hollywood Bowl',
-    neighborhood: 'Hollywood Hills',
-    url: 'https://www.hollywoodbowl.com/',
-    color: '#F1C40F',
-    tier: 'concert_hall',
-  },
-  'broad-stage': {
-    id: 'broad-stage',
-    name: 'The Broad Stage',
-    shortName: 'Broad Stage',
-    neighborhood: 'Santa Monica',
-    url: 'https://thebroadstage.org/',
-    color: '#E74C3C',
-    tier: 'concert_hall',
-  },
-  'alvas-showroom': {
-    id: 'alvas-showroom',
-    name: "Alva's Showroom",
-    shortName: "Alva's",
-    neighborhood: 'San Pedro',
-    url: 'https://www.alvasshowroom.com/',
-    color: '#9B59B6',
-    tier: 'concert_hall',
-  },
+  // ── LA: Dedicated Jazz Clubs ──
+  'blue-note-la': { id: 'blue-note-la', name: 'Blue Note Los Angeles', shortName: 'Blue Note', neighborhood: 'Hollywood', url: 'https://www.bluenotejazz.com/la/', color: '#1A5276', tier: 'dedicated', region: 'LA' },
+  'baked-potato': { id: 'baked-potato', name: 'The Baked Potato', shortName: 'Baked Potato', neighborhood: 'Studio City', url: 'https://www.thebakedpotato.com/', color: '#8B4513', tier: 'dedicated', region: 'LA' },
+  'catalina-jazz': { id: 'catalina-jazz', name: 'Catalina Jazz Club', shortName: 'Catalina', neighborhood: 'Hollywood', url: 'https://catalinajazzclub.com/', color: '#C0392B', tier: 'dedicated', region: 'LA' },
+  'sam-first': { id: 'sam-first', name: 'Sam First', shortName: 'Sam First', neighborhood: 'Westchester', url: 'https://www.samfirstbar.com/', color: '#2E86C1', tier: 'dedicated', region: 'LA' },
+  'vibrato': { id: 'vibrato', name: 'Vibrato Grill Jazz', shortName: 'Vibrato', neighborhood: 'Bel Air', url: 'https://www.vibratogrilljazz.com/', color: '#7D3C98', tier: 'dedicated', region: 'LA' },
+  'world-stage': { id: 'world-stage', name: 'The World Stage', shortName: 'World Stage', neighborhood: 'Leimert Park', url: 'https://www.theworldstage.org/', color: '#D4AC0D', tier: 'dedicated', region: 'LA' },
+  // ── LA: Indie Scene ──
+  'lodge-room': { id: 'lodge-room', name: 'Lodge Room', shortName: 'Lodge Room', neighborhood: 'Highland Park', url: 'https://www.lodgeroomhlp.com/', color: '#D4A574', tier: 'indie_scene', region: 'LA' },
+  'scribble': { id: 'scribble', name: 'Scribble', shortName: 'Scribble', neighborhood: 'Highland Park', url: 'https://www.minaretrecords.com/shows', color: '#E74C3C', tier: 'indie_scene', region: 'LA' },
+  'st-barnabas': { id: 'st-barnabas', name: 'St. Barnabas Church', shortName: 'St. Barnabas', neighborhood: 'Eagle Rock', url: 'https://www.minaretrecords.com/shows', color: '#8E44AD', tier: 'indie_scene', region: 'LA' },
+  'psstudio': { id: 'psstudio', name: 'PSSTUDIO', shortName: 'PSSTUDIO', neighborhood: 'DTLA', url: 'https://www.minaretrecords.com/shows', color: '#E67E22', tier: 'indie_scene', region: 'LA' },
+  'mcyc': { id: 'mcyc', name: 'Mid City Yacht Club', shortName: 'MCYC', neighborhood: 'Mid City', url: 'https://www.minaretrecords.com/shows', color: '#2ECC71', tier: 'indie_scene', region: 'LA' },
+  // ── LA: Regular ──
+  'the-high-low': { id: 'the-high-low', name: 'The High Low', shortName: 'High Low', neighborhood: 'Atwater Village', url: 'https://www.thehighlow.com/', color: '#27AE60', tier: 'regular', region: 'LA' },
+  'the-mint': { id: 'the-mint', name: 'The Mint', shortName: 'The Mint', neighborhood: 'Mid-Wilshire', url: 'https://www.themintla.com/', color: '#16A085', tier: 'regular', region: 'LA' },
+  'lighthouse-cafe': { id: 'lighthouse-cafe', name: 'Lighthouse Cafe', shortName: 'Lighthouse', neighborhood: 'Hermosa Beach', url: 'https://www.thelighthousecafe.net/', color: '#3498DB', tier: 'regular', region: 'LA' },
+  // ── LA: Concert Halls ──
+  'disney-hall': { id: 'disney-hall', name: 'Walt Disney Concert Hall', shortName: 'Disney Hall', neighborhood: 'Downtown', url: 'https://www.laphil.com/events/', color: '#BDC3C7', tier: 'concert_hall', region: 'LA' },
+  'hollywood-bowl': { id: 'hollywood-bowl', name: 'Hollywood Bowl', shortName: 'Hollywood Bowl', neighborhood: 'Hollywood Hills', url: 'https://www.hollywoodbowl.com/', color: '#F1C40F', tier: 'concert_hall', region: 'LA' },
+  'broad-stage': { id: 'broad-stage', name: 'The Broad Stage', shortName: 'Broad Stage', neighborhood: 'Santa Monica', url: 'https://thebroadstage.org/', color: '#E74C3C', tier: 'concert_hall', region: 'LA' },
+  'alvas-showroom': { id: 'alvas-showroom', name: "Alva's Showroom", shortName: "Alva's", neighborhood: 'San Pedro', url: 'https://www.alvasshowroom.com/', color: '#9B59B6', tier: 'concert_hall', region: 'LA' },
+  // ── Orange County ──
+  'campus-jax': { id: 'campus-jax', name: 'Campus JAX', shortName: 'Campus JAX', neighborhood: 'Newport Beach', url: 'https://www.campusjax.com/entertainment/', color: '#F39C12', tier: 'dedicated', region: 'OC' },
+  'club-616': { id: 'club-616', name: 'Club 616', shortName: 'Club 616', neighborhood: 'Santa Ana', url: 'https://www.616sa.com/events', color: '#7F8C8D', tier: 'regular', region: 'OC' },
+  'segerstrom': { id: 'segerstrom', name: 'Segerstrom Center — Samueli Theater', shortName: 'Segerstrom', neighborhood: 'Costa Mesa', url: 'https://www.scfta.org/shows-events/jazz-landing', color: '#2C3E50', tier: 'concert_hall', region: 'OC' },
 }
 
 // ── Helpers ──
@@ -342,6 +206,7 @@ async function scrapeLAJazz() {
     'https://www.lajazz.com/hollywood---west-side---santa-monica.html',
     'https://www.lajazz.com/san-fernando-valley---santa-clarita-valley.html',
     'https://www.lajazz.com/south-l.a.---south-bay.html',
+    'https://www.lajazz.com/orange-county---san-diego.html',
   ]
 
   for (const pageUrl of pages) {
@@ -376,6 +241,46 @@ async function scrapeLAJazz() {
   }
 
   console.log(`    Found ${shows.length} raw listings from lajazz.com`)
+  return shows
+}
+
+// ── Scrape: metaljazz.com ──
+
+async function scrapeMetalJazz() {
+  console.log('  Scraping metaljazz.com...')
+  const shows = []
+
+  try {
+    const html = await fetchPage('https://www.metaljazz.com/')
+    const $ = cheerio.load(html)
+
+    // Greg Burk's blog — parse "Links: LA performances" posts
+    // These are plain text with venue names and artist listings
+    $('.post-body, .entry-content, .post').each((_, el) => {
+      const text = $(el).text()
+      if (!text.toLowerCase().includes('performances') && !text.toLowerCase().includes('jazz')) return
+
+      // Look for known venue names in each paragraph
+      const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
+      for (const line of lines) {
+        for (const [vid, vdef] of Object.entries(VENUES)) {
+          if (line.toLowerCase().includes(vdef.shortName.toLowerCase())) {
+            shows.push({
+              rawText: line,
+              venueId: vid,
+              source: 'metaljazz.com',
+            })
+            break
+          }
+        }
+      }
+    })
+
+    console.log(`    Found ${shows.length} raw listings from metaljazz.com`)
+  } catch (err) {
+    console.log(`    ERROR scraping metaljazz.com: ${err.message}`)
+  }
+
   return shows
 }
 
@@ -602,6 +507,14 @@ async function main() {
     lajazzShows = await scrapeLAJazz()
   } catch (err) {
     scrapeErrors.push({ source: 'lajazz.com', error: err.message })
+  }
+
+  // metaljazz.com (Greg Burk's blog — comprehensive LA jazz listings)
+  let metaljazzShows = []
+  try {
+    metaljazzShows = await scrapeMetalJazz()
+  } catch (err) {
+    scrapeErrors.push({ source: 'metaljazz.com', error: err.message })
   }
 
   // Direct venue scrapes
