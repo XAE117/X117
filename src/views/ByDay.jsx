@@ -27,17 +27,19 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
     <li className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}>
       <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
       <div className="day-row-title">
-        <Link to={`/screening/${s.id}`} className="day-film-link">
-          {s.title}
-        </Link>
-        {filmMeta(s.title, data.films) && (
-          <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
-        )}
-      </div>
-      <div className="day-row-info">
+        <span className="day-title-truncate">
+          <Link to={`/screening/${s.id}`} className="day-film-link">
+            {s.title}
+          </Link>
+          {filmMeta(s.title, data.films) && (
+            <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
+          )}
+        </span>
         <span className="day-item-theater" style={{ color: s.theaterColor }}>
           {s.theaterName}
         </span>
+      </div>
+      <div className="day-row-info">
         <span className="day-time-col">
           <span className="day-time">{s.time || ''}</span>
           {relative && (

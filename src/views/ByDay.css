@@ -106,19 +106,26 @@
   background: var(--bg-card-hover);
 }
 
-/* Row 1: Title */
+/* Row 1: Title + Theater */
 .day-row-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.day-title-truncate {
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
   min-width: 0;
+  overflow: hidden;
 }
 
-/* Row 2: Theater + Time */
+/* Row 2: Time */
 .day-row-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
 }
 
@@ -138,6 +145,8 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .day-film-link {
@@ -183,10 +192,9 @@
 .day-time-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 0.15rem;
   flex-shrink: 0;
-  margin-left: auto;
 }
 
 .day-time {
