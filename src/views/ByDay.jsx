@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
-import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData } from '../utils/timeUtils.js'
+import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData, parseTime } from '../utils/timeUtils.js'
 import './ByDay.css'
 
 function FormatBadge({ format }) {
@@ -140,11 +140,13 @@ function ByDay({ data }) {
     })
   })
 
-  // Sort by date then time
+  // Sort by date then time (numeric parse for correct chronological order)
   allScreenings.sort((a, b) => {
     const dateComp = a.date.localeCompare(b.date)
     if (dateComp !== 0) return dateComp
-    return (a.time || '').localeCompare(b.time || '')
+    const aMin = parseTime(a.time) ?? 9999
+    const bMin = parseTime(b.time) ?? 9999
+    return aMin - bMin
   })
 
   // Group by date only (flat day-by-day)
