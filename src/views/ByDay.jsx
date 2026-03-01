@@ -50,12 +50,33 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
             <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
           )}
         </span>
-        <span className="day-item-theater" style={{ color: s.theaterColor }}>
+        <a
+          href={s.theaterUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="day-item-theater"
+          style={{ color: s.theaterColor }}
+        >
           {s.theaterName}
-        </span>
+        </a>
       </div>
       <div className="day-row-time">
         <span className="day-time">{s.time || ''}</span>
+        {s.link && (
+          <a
+            href={s.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="day-ticket-link"
+            title="Get Tickets"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15,3 21,3 21,9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        )}
       </div>
       <div className="day-row-badges">
         <span className="day-badges-left">
@@ -138,6 +159,7 @@ function ByDay({ data }) {
         theaterName: theater.shortName,
         theaterColor: theater.color,
         theaterId: theater.id,
+        theaterUrl: theater.url,
       })
     })
   })
