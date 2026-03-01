@@ -40,16 +40,16 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
         </span>
       </div>
       <div className="day-row-info">
+        <span className="day-row-badges">
+          <MetricsBadges film={film} />
+          <FormatBadge format={s.format} />
+        </span>
         <span className="day-time-col">
           <span className="day-time">{s.time || ''}</span>
           {relative && (
             <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
           )}
         </span>
-      </div>
-      <div className="day-row-badges">
-        <MetricsBadges film={film} />
-        <FormatBadge format={s.format} />
       </div>
     </li>
   )
