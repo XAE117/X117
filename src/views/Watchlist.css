@@ -75,11 +75,13 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border-radius: 6px;
   transition: background 0.15s ease;
 }
 
 .watchlist-item:hover {
-  background: rgba(201, 168, 76, 0.04);
+  background: var(--bg-card-hover);
 }
 
 .watchlist-item.watchlist-both {

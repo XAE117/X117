@@ -198,13 +198,15 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0.75rem;
+  background: var(--bg-card);
   border-left: 3px solid transparent;
+  border-radius: 6px;
   transition: background 0.15s ease;
   flex-wrap: wrap;
 }
 
 .screening-item:hover {
-  background: rgba(201, 168, 76, 0.04);
+  background: var(--bg-card-hover);
 }
 
 .screening-date-badge {

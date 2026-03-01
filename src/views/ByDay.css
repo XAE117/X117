@@ -90,7 +90,14 @@
   grid-template-columns: auto auto 1fr auto;
   align-items: baseline;
   column-gap: 0.6rem;
-  padding: 0.25rem 0;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.day-block-item:hover {
+  background: var(--bg-card-hover);
 }
 
 .day-item-theater {

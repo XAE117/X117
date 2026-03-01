@@ -573,6 +573,29 @@
   border-color: var(--gold);
 }
 
+.letterboxd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.letterboxd-btn:hover {
+  border-color: #40BCF4;
+  color: var(--text);
+}
+
 /* ── Not Found ── */
 
 .detail-not-found {
