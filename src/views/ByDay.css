@@ -272,6 +272,14 @@
   border: 1px solid rgba(0, 224, 84, 0.25);
 }
 
+/* ── Watchlist in badges row ── */
+
+.day-row-badges .watchlist-btn {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 0;
+}
+
 /* ── Mobile ── */
 
 @media (max-width: 640px) {
