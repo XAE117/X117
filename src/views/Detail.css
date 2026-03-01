@@ -193,10 +193,16 @@
 
 @keyframes titleGlow {
   0%, 100% {
-    text-shadow: 0 0 8px rgba(201, 168, 76, 0.12), 0 0 24px rgba(201, 168, 76, 0);
+    text-shadow:
+      0 0 10px rgba(201, 168, 76, 0.2),
+      0 0 30px rgba(201, 168, 76, 0.08),
+      0 0 50px rgba(201, 168, 76, 0.03);
   }
   50% {
-    text-shadow: 0 0 12px rgba(201, 168, 76, 0.3), 0 0 36px rgba(201, 168, 76, 0.1);
+    text-shadow:
+      0 0 15px rgba(201, 168, 76, 0.45),
+      0 0 40px rgba(201, 168, 76, 0.2),
+      0 0 70px rgba(201, 168, 76, 0.08);
   }
 }
 
