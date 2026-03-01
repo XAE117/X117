@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData, parseTime } from '../utils/timeUtils.js'
@@ -92,7 +92,7 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
   )
 }
 
-function DayBlock({ dateKey, day, data, now, forceUpdate, scrollRef }) {
+function DayBlock({ dateKey, day, data, now, forceUpdate }) {
   const [showPast, setShowPast] = useState(false)
 
   const past = []
@@ -106,7 +106,7 @@ function DayBlock({ dateKey, day, data, now, forceUpdate, scrollRef }) {
   })
 
   return (
-    <div ref={upcoming.length > 0 ? scrollRef : undefined} className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
+    <div className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
       <h2 className="day-block-header">
         {day.label}
         <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
@@ -143,8 +143,6 @@ function ByDay({ data }) {
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
   const now = useNow()
-  const scrollTargetRef = useRef(null)
-  const hasScrolled = useRef(false)
   const [searchQuery, setSearchQuery] = useState('')
 
   if (!data || data.theaters.length === 0) {
@@ -196,23 +194,6 @@ function ByDay({ data }) {
 
   const dayEntries = Object.entries(days).sort(([a], [b]) => a.localeCompare(b))
 
-  // Find the first day that has upcoming screenings (for auto-scroll target)
-  const firstUpcomingDate = dayEntries.find(([, day]) =>
-    day.screenings.some(s => !isScreeningPast(s.date, s.time, now))
-  )?.[0]
-
-  // Auto-scroll to first upcoming day on initial load (skip if searching)
-  useEffect(() => {
-    if (hasScrolled.current || !scrollTargetRef.current || query) return
-    hasScrolled.current = true
-    const timer = setTimeout(() => {
-      scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      // Offset 80px above so the header isn't pinned to top
-      setTimeout(() => window.scrollBy({ top: -80, behavior: 'smooth' }), 400)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [firstUpcomingDate, query])
-
   const matchCount = query ? filteredScreenings.length : 0
 
   return (
@@ -244,7 +225,7 @@ function ByDay({ data }) {
           data={data}
           now={now}
           forceUpdate={forceUpdate}
-          scrollRef={dateKey === firstUpcomingDate ? scrollTargetRef : undefined}
+
         />
       ))}
       {query && dayEntries.length === 0 && (

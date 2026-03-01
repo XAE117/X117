@@ -138,6 +138,7 @@
   text-transform: uppercase;
   min-width: 60px;
   flex-shrink: 0;
+  text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
 }
 
 .watchlist-title {
@@ -210,18 +211,21 @@
   background: rgba(232, 138, 130, 0.12);
   color: #E88A82;
   border: 1px solid rgba(232, 138, 130, 0.3);
+  box-shadow: 0 0 3px rgba(232, 138, 130, 0.2), 0 0 7px rgba(232, 138, 130, 0.08);
 }
 
 .watchlist-metric-badge.lb {
   background: rgba(137, 207, 240, 0.12);
   color: #89CFF0;
   border: 1px solid rgba(137, 207, 240, 0.3);
+  box-shadow: 0 0 3px rgba(137, 207, 240, 0.2), 0 0 7px rgba(137, 207, 240, 0.08);
 }
 
 .watchlist-metric-badge.ss {
   background: rgba(130, 200, 160, 0.12);
   color: #82C8A0;
   border: 1px solid rgba(130, 200, 160, 0.3);
+  box-shadow: 0 0 3px rgba(130, 200, 160, 0.2), 0 0 7px rgba(130, 200, 160, 0.08);
 }
 
 .watchlist-remove {

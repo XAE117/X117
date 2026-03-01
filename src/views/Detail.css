@@ -257,6 +257,7 @@
   letter-spacing: 0.05em;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
 }
 
 .detail-theater-name:hover {
@@ -361,6 +362,7 @@
   border: 1px solid rgba(137, 207, 240, 0.3);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
+  box-shadow: 0 0 3px rgba(137, 207, 240, 0.2), 0 0 7px rgba(137, 207, 240, 0.08);
 }
 
 .detail-rt-badge {
@@ -373,6 +375,7 @@
   border: 1px solid rgba(232, 138, 130, 0.3);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
+  box-shadow: 0 0 3px rgba(232, 138, 130, 0.2), 0 0 7px rgba(232, 138, 130, 0.08);
 }
 
 .detail-ss-badge {
@@ -385,6 +388,7 @@
   border: 1px solid rgba(130, 200, 160, 0.3);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
+  box-shadow: 0 0 3px rgba(130, 200, 160, 0.2), 0 0 7px rgba(130, 200, 160, 0.08);
 }
 
 .detail-afi-badge {
@@ -397,6 +401,7 @@
   border: 1px solid rgba(201, 168, 76, 0.3);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
+  box-shadow: 0 0 3px rgba(201, 168, 76, 0.2), 0 0 7px rgba(201, 168, 76, 0.08);
 }
 
 /* ── Synopsis (TMDB) ── */
@@ -442,22 +447,27 @@
 
 .detail-metric-card.afi {
   border-color: rgba(201, 168, 76, 0.3);
+  box-shadow: 0 0 4px rgba(201, 168, 76, 0.15), 0 0 10px rgba(201, 168, 76, 0.06);
 }
 
 .detail-metric-card.rt {
   border-color: rgba(232, 138, 130, 0.3);
+  box-shadow: 0 0 4px rgba(232, 138, 130, 0.15), 0 0 10px rgba(232, 138, 130, 0.06);
 }
 
 .detail-metric-card.ss {
   border-color: rgba(130, 200, 160, 0.3);
+  box-shadow: 0 0 4px rgba(130, 200, 160, 0.15), 0 0 10px rgba(130, 200, 160, 0.06);
 }
 
 .detail-metric-card.lb {
   border-color: rgba(137, 207, 240, 0.3);
+  box-shadow: 0 0 4px rgba(137, 207, 240, 0.15), 0 0 10px rgba(137, 207, 240, 0.06);
 }
 
 .detail-metric-card.tmdb {
   border-color: rgba(1, 180, 228, 0.3);
+  box-shadow: 0 0 4px rgba(1, 180, 228, 0.15), 0 0 10px rgba(1, 180, 228, 0.06);
 }
 
 .detail-metric-value {

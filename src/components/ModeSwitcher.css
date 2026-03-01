@@ -45,11 +45,37 @@
   font-size: 1.6rem;
   line-height: 1;
   transition: opacity 0.2s ease, filter 0.2s ease;
+  border-radius: 50%;
 }
 
 .mode-emoji.dimmed {
   opacity: 0.35;
   filter: grayscale(0.6);
+}
+
+/* Noisy golden glow pulse on click */
+.mode-emoji.mode-glow-pulse {
+  animation: modeGlowPulse 1.5s ease-out forwards;
+}
+
+@keyframes modeGlowPulse {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.8))
+            drop-shadow(0 0 14px rgba(201, 168, 76, 0.5))
+            drop-shadow(0 0 25px rgba(201, 168, 76, 0.2));
+  }
+  30% {
+    filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.6))
+            drop-shadow(0 0 20px rgba(201, 168, 76, 0.3))
+            drop-shadow(0 0 35px rgba(201, 168, 76, 0.12));
+  }
+  60% {
+    filter: drop-shadow(0 0 5px rgba(201, 168, 76, 0.35))
+            drop-shadow(0 0 12px rgba(201, 168, 76, 0.15));
+  }
+  100% {
+    filter: none;
+  }
 }
 
 .mode-divider {
