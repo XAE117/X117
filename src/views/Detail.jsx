@@ -259,18 +259,6 @@ function Detail({ data }) {
         <div className="detail-accent-bar" style={{ background: theater.color }} />
 
         <div className={`detail-content-layout ${film?.posterPath ? 'has-poster' : ''}`}>
-          {film?.posterPath && (
-            <div className="detail-poster">
-              <img
-                src={`https://image.tmdb.org/t/p/w342${film.posterPath}`}
-                alt={`${screening.title} poster`}
-                className="detail-poster-img"
-                loading="lazy"
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
-            </div>
-          )}
-
           <div className="detail-content-main">
             <h1 className="detail-title">{screening.title}</h1>
 
@@ -397,6 +385,18 @@ function Detail({ data }) {
               </button>
             </div>
           </div>
+
+          {film?.posterPath && (
+            <div className="detail-poster">
+              <img
+                src={`https://image.tmdb.org/t/p/w342${film.posterPath}`}
+                alt={`${screening.title} poster`}
+                className="detail-poster-img"
+                loading="lazy"
+                onError={(e) => { e.target.style.display = 'none' }}
+              />
+            </div>
+          )}
         </div>
       </div>
 

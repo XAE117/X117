@@ -12,16 +12,43 @@
   color: var(--gold);
   letter-spacing: 0.3em;
   margin: 0.4rem 0 0.2rem;
+  position: relative;
   animation: palaceGlow 4s ease-in-out infinite;
+}
+
+.palace-title::after {
+  content: '';
+  position: absolute;
+  inset: -4px -8px;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: palaceSparkle 6s ease-in-out infinite;
 }
 
 @keyframes palaceGlow {
   0%, 100% {
-    text-shadow: 0 0 8px rgba(201, 168, 76, 0.15), 0 0 30px rgba(201, 168, 76, 0.05);
+    text-shadow:
+      0 0 10px rgba(201, 168, 76, 0.25),
+      0 0 30px rgba(201, 168, 76, 0.1),
+      0 0 60px rgba(201, 168, 76, 0.04);
   }
   50% {
-    text-shadow: 0 0 14px rgba(201, 168, 76, 0.35), 0 0 40px rgba(201, 168, 76, 0.12);
+    text-shadow:
+      0 0 16px rgba(201, 168, 76, 0.5),
+      0 0 40px rgba(201, 168, 76, 0.2),
+      0 0 80px rgba(201, 168, 76, 0.06);
   }
+}
+
+@keyframes palaceSparkle {
+  0%, 100% { opacity: 0.4; filter: blur(8px); }
+  25% { opacity: 0.8; filter: blur(6px); }
+  50% { opacity: 0.3; filter: blur(10px); }
+  75% { opacity: 0.7; filter: blur(5px); }
 }
 
 .palace-subtitle {
@@ -77,12 +104,26 @@
   animation: palaceGlowJazz 4s ease-in-out infinite;
 }
 
+.jazz-mode .palace-title::after {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(212, 165, 116, 0.06) 0%,
+    transparent 70%
+  );
+}
+
 @keyframes palaceGlowJazz {
   0%, 100% {
-    text-shadow: 0 0 8px rgba(212, 165, 116, 0.15), 0 0 30px rgba(212, 165, 116, 0.05);
+    text-shadow:
+      0 0 10px rgba(212, 165, 116, 0.25),
+      0 0 30px rgba(212, 165, 116, 0.1),
+      0 0 60px rgba(212, 165, 116, 0.04);
   }
   50% {
-    text-shadow: 0 0 14px rgba(212, 165, 116, 0.35), 0 0 40px rgba(212, 165, 116, 0.12);
+    text-shadow:
+      0 0 16px rgba(212, 165, 116, 0.5),
+      0 0 40px rgba(212, 165, 116, 0.2),
+      0 0 80px rgba(212, 165, 116, 0.06);
   }
 }
 

@@ -729,6 +729,7 @@
   .detail-poster {
     width: 140px;
     margin: 0 auto 1rem;
+    order: -1;
   }
 
   .detail-info-grid {
