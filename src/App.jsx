@@ -13,6 +13,7 @@ import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
 import DayScreenshot from './views/DayScreenshot.jsx'
+import Tonight from './views/Tonight.jsx'
 import JazzTonight from './views/JazzTonight.jsx'
 import JazzByVenue from './views/JazzByVenue.jsx'
 import JazzByDay from './views/JazzByDay.jsx'
@@ -114,8 +115,16 @@ function App() {
     return jazzData.venues.some(v => v.shows.some(s => s.date === todayStr))
   }, [jazzData])
 
-  // Show format filter on ByDay (default) and ByTheater views (cinema only)
-  const showFormatFilter = ['/', '/by-theater'].includes(location.pathname)
+  // Check if there are cinema screenings today
+  const hasTonightCinemaShows = useMemo(() => {
+    if (!data) return false
+    const now = new Date()
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
+    return data.theaters.some(t => t.screenings.some(s => s.date === todayStr))
+  }, [data])
+
+  // Show format filter on cinema list views
+  const showFormatFilter = ['/', '/tonight', '/by-theater'].includes(location.pathname)
 
   if (loading) return <LoadingSpinner />
 
@@ -151,7 +160,7 @@ function App() {
           <Header mode={mode} />
           <ModeSwitcher />
           <Nav
-            hasTonightScreenings={isJazzMode ? hasTonightJazzShows : false}
+            hasTonightScreenings={isJazzMode ? hasTonightJazzShows : hasTonightCinemaShows}
             mode={mode}
           />
           {!isJazzMode && <GodfatherAlert data={data} />}
@@ -194,6 +203,7 @@ function App() {
         <Routes>
           {/* Cinema routes */}
           <Route path="/" element={<ByDay data={filteredData} />} />
+          <Route path="/tonight" element={<Tonight data={filteredData} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />

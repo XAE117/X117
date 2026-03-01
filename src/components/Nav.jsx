@@ -23,6 +23,15 @@ function Nav({ hasTonightScreenings, mode }) {
 
   return (
     <nav className="palace-nav">
+      {hasTonightScreenings && (
+        <>
+          <NavLink to="/tonight" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''} tonight-active`}>
+            Tonight
+            <span className="nav-tonight-dot" />
+          </NavLink>
+          <span className="nav-diamond">&#9670;</span>
+        </>
+      )}
       <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
         By Day
       </NavLink>
