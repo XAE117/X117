@@ -122,19 +122,21 @@
   overflow: hidden;
 }
 
-/* Row 2: Time + Badges */
+/* Row 2: Time */
 .day-row-info {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
 }
 
-/* Row 3: Badges */
+/* Row 3: Badges (always present for uniform height) */
 .day-row-badges {
   display: flex;
   align-items: center;
   gap: 0.35rem;
   flex-wrap: wrap;
+  min-height: 1.1rem;
 }
 
 .day-item-theater {
