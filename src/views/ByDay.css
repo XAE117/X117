@@ -87,8 +87,8 @@
 .day-block-item {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.5rem 0.75rem;
+  gap: 0.15rem;
+  padding: 0.45rem 0.75rem;
   background: var(--bg-card);
   border-radius: 6px;
   transition: background 0.15s ease;
@@ -106,25 +106,29 @@
   background: var(--bg-card-hover);
 }
 
-.day-item-top {
+/* Row 1: Title */
+.day-row-title {
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
-  min-width: 0;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
-.day-item-bottom {
+/* Row 2: Theater + Time */
+.day-row-info {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 
-.day-item-bottom-left {
+/* Row 3: Badges */
+.day-row-badges {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  min-width: 0;
   flex-wrap: wrap;
+  min-height: 1.1rem;
 }
 
 .day-item-theater {
@@ -134,8 +138,6 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
-  margin-left: auto;
-  flex-shrink: 0;
 }
 
 .day-film-link {
@@ -145,10 +147,7 @@
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
+  max-width: 70%;
 }
 
 .day-film-link:hover {
@@ -277,13 +276,7 @@
 
 @media (max-width: 640px) {
   .day-film-link {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
+    max-width: 65%;
     font-size: 0.9rem;
-  }
-
-  .day-item-bottom {
-    flex-wrap: wrap;
   }
 }
