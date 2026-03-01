@@ -94,7 +94,6 @@ function GodfatherAlert({ data }) {
             <li key={s.id} className="godfather-screening-row">
               <span className="godfather-date">{formatDate(s.date)}</span>
               <a href={s.link} target="_blank" rel="noopener noreferrer" className="godfather-title-link">{s.title}</a>
-              <a href={s.link} target="_blank" rel="noopener noreferrer" className="godfather-tickets" aria-label="Tickets">&#127903;</a>
               <span className="godfather-at">at</span>
               <span className="godfather-theater" style={{ color: s.theaterColor }}>{s.theaterName}</span>
               <span className="godfather-time">{s.time}</span>
