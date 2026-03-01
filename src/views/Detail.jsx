@@ -101,8 +101,13 @@ function CinephileMetrics({ film }) {
   )
 }
 
-function CriticReviews({ film }) {
+function CriticReviews({ film, title }) {
   if (!film?.reviews?.length) return null
+
+  const searchUrl = (critic, publication) => {
+    const q = encodeURIComponent(`${critic} ${publication} "${title}" review`)
+    return `https://www.google.com/search?q=${q}`
+  }
 
   return (
     <div className="detail-reviews-section">
@@ -113,7 +118,14 @@ function CriticReviews({ film }) {
             <p className="detail-review-quote">&ldquo;{review.quote}&rdquo;</p>
             <cite className="detail-review-cite">
               <span className="detail-review-critic">{review.critic}</span>
-              <span className="detail-review-publication">{review.publication}</span>
+              <a
+                href={searchUrl(review.critic, review.publication)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="detail-review-publication detail-review-link"
+              >
+                {review.publication} &rsaquo;
+              </a>
             </cite>
           </blockquote>
         ))}
@@ -122,8 +134,22 @@ function CriticReviews({ film }) {
   )
 }
 
+const PODCAST_URLS = {
+  'The Rewatchables': 'https://open.spotify.com/search/',
+  'Unspooled': 'https://open.spotify.com/search/',
+  'Blank Check': 'https://open.spotify.com/search/',
+  'Filmspotting': 'https://open.spotify.com/search/',
+  'You Must Remember This': 'https://open.spotify.com/search/',
+}
+
 function PodcastLinks({ film }) {
   if (!film?.podcasts?.length) return null
+
+  const podcastUrl = (pod) => {
+    const base = PODCAST_URLS[pod.name] || 'https://open.spotify.com/search/'
+    const q = encodeURIComponent(`${pod.name} ${pod.episode || ''}`.trim())
+    return `${base}${q}`
+  }
 
   return (
     <div className="detail-podcasts-section">
@@ -131,16 +157,23 @@ function PodcastLinks({ film }) {
       <ul className="detail-podcasts-list">
         {film.podcasts.map((pod, i) => (
           <li key={i} className="detail-podcast-item">
-            <svg className="detail-podcast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-              <line x1="12" y1="19" x2="12" y2="23" />
-              <line x1="8" y1="23" x2="16" y2="23" />
-            </svg>
-            <div className="detail-podcast-info">
-              <span className="detail-podcast-name">{pod.name}</span>
-              {pod.episode && <span className="detail-podcast-episode">{pod.episode}</span>}
-            </div>
+            <a
+              href={podcastUrl(pod)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="detail-podcast-link"
+            >
+              <svg className="detail-podcast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="23" />
+                <line x1="8" y1="23" x2="16" y2="23" />
+              </svg>
+              <div className="detail-podcast-info">
+                <span className="detail-podcast-name">{pod.name}</span>
+                {pod.episode && <span className="detail-podcast-episode">{pod.episode}</span>}
+              </div>
+            </a>
           </li>
         ))}
       </ul>
@@ -295,7 +328,7 @@ function Detail({ data }) {
             )}
 
             <CinephileMetrics film={film} />
-            <CriticReviews film={film} />
+            <CriticReviews film={film} title={screening.title} />
             <PodcastLinks film={film} />
 
             <div className="detail-actions">
