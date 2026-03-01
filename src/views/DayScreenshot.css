@@ -8,7 +8,23 @@
   gap: 1.5rem;
 }
 
-/* ── Outer Frame ── */
+/* ── Hidden Frame (offscreen, used by html2canvas) ── */
+
+.ss-frame-hidden {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  background: var(--bg-dark);
+  border: 2px solid var(--gold);
+  padding: 6px;
+  width: 480px;
+  box-shadow:
+    0 0 0 1px var(--bg-dark),
+    0 0 0 3px var(--gold-dim),
+    0 0 30px rgba(201, 168, 76, 0.08);
+}
+
+/* ── Outer Frame (legacy, keep for structure) ── */
 
 .ss-frame {
   position: relative;
@@ -307,7 +323,8 @@
 /* ── Responsive ── */
 
 @media (max-width: 640px) {
-  .ss-frame {
+  .ss-frame,
+  .ss-frame-hidden {
     max-width: 100%;
   }
 

@@ -11,12 +11,11 @@ function DayScreenshot({ data }) {
   const { date } = useParams()
   const frameRef = useRef(null)
   const [imageUrl, setImageUrl] = useState(null)
-  const [generating, setGenerating] = useState(false)
+  const [generating, setGenerating] = useState(true)
   const hasGenerated = useRef(false)
 
   const generateImage = useCallback(async () => {
-    if (!frameRef.current || generating) return
-    setGenerating(true)
+    if (!frameRef.current) return
     try {
       const { default: html2canvas } = await import('html2canvas')
       const canvas = await html2canvas(frameRef.current, {
@@ -30,13 +29,12 @@ function DayScreenshot({ data }) {
       setImageUrl(null)
     }
     setGenerating(false)
-  }, [generating])
+  }, [])
 
   // Auto-generate the still image on mount
   useEffect(() => {
     if (data && !hasGenerated.current) {
       hasGenerated.current = true
-      // Small delay to let the frame render first
       const timer = setTimeout(() => generateImage(), 300)
       return () => clearTimeout(timer)
     }
@@ -65,16 +63,15 @@ function DayScreenshot({ data }) {
 
   return (
     <div className="ss-page">
-      <div className="ss-frame" ref={frameRef}>
-        {/* Decorative corner ornaments */}
+      {/* Hidden frame — only used to generate the image */}
+      <div className="ss-frame-hidden" ref={frameRef}>
         <div className="ss-corner ss-tl" />
         <div className="ss-corner ss-tr" />
         <div className="ss-corner ss-bl" />
         <div className="ss-corner ss-br" />
 
-        {/* Inner decorative border */}
         <div className="ss-inner-frame">
-          <div className="ss-hint">🎞️</div>
+          <div className="ss-hint">📸</div>
 
           <div className="ss-divider-top">
             <span className="ss-diamond">&#9670;</span>
@@ -120,6 +117,9 @@ function DayScreenshot({ data }) {
         </div>
       </div>
 
+      {/* What the user actually sees */}
+      <Link to="/" className="ss-back-link">&larr; Back</Link>
+
       {generating && <p className="ss-generating-text">Generating image...</p>}
 
       {imageUrl && (
@@ -129,7 +129,7 @@ function DayScreenshot({ data }) {
         </div>
       )}
 
-      <Link to="/by-day" className="ss-back-link">&larr; Back to By Day</Link>
+      <Link to="/" className="ss-back-link">&larr; Back</Link>
     </div>
   )
 }

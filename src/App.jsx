@@ -103,8 +103,8 @@ function App() {
     return jazzData.venues.some(v => v.shows.some(s => s.date === todayStr))
   }, [jazzData])
 
-  // Show format filter on ByTheater and ByDay views (cinema only)
-  const showFormatFilter = ['/', '/by-day'].includes(location.pathname)
+  // Show format filter on ByDay (default) and ByTheater views (cinema only)
+  const showFormatFilter = ['/', '/by-theater'].includes(location.pathname)
 
   if (loading) return <LoadingSpinner />
 
@@ -175,8 +175,8 @@ function App() {
       <main className="main-content">
         <Routes>
           {/* Cinema routes */}
-          <Route path="/" element={<ByTheater data={filteredData} />} />
-          <Route path="/by-day" element={<ByDay data={filteredData} />} />
+          <Route path="/" element={<ByDay data={filteredData} />} />
+          <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/tonight" element={<Tonight data={data} />} />
           <Route path="/search" element={<Search data={data} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
@@ -184,9 +184,9 @@ function App() {
           <Route path="/map" element={<MapView data={filteredData} />} />
 
           {/* Jazz routes */}
-          <Route path="/jazz" element={<JazzTonight data={jazzData} />} />
+          <Route path="/jazz" element={<JazzByDay data={jazzData} />} />
+          <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} />} />
           <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
-          <Route path="/jazz/by-day" element={<JazzByDay data={jazzData} />} />
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
         </Routes>
       </main>

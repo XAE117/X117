@@ -161,7 +161,7 @@
 
 .jbv-show-row {
   display: grid;
-  grid-template-columns: 6rem 1fr auto auto;
+  grid-template-columns: 6rem 1fr auto auto auto;
   align-items: baseline;
   column-gap: 0.6rem;
   padding: 0.4rem 0.75rem;
@@ -210,6 +210,14 @@
   color: var(--jazz-accent);
 }
 
+.jbv-show-price {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.65rem;
+  color: var(--jazz-accent);
+  white-space: nowrap;
+}
+
 .jbv-show-time {
   font-family: var(--font-body);
   font-weight: 300;
@@ -235,7 +243,7 @@
 
 @media (max-width: 640px) {
   .jbv-show-row {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
   }
 
   .jbv-show-relative {
