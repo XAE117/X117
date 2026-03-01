@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData, parseTime } from '../utils/timeUtils.js'
@@ -71,7 +71,7 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
   )
 }
 
-function DayBlock({ dateKey, day, data, now, forceUpdate }) {
+function DayBlock({ dateKey, day, data, now, forceUpdate, scrollRef }) {
   const [showPast, setShowPast] = useState(false)
 
   const past = []
@@ -85,7 +85,7 @@ function DayBlock({ dateKey, day, data, now, forceUpdate }) {
   })
 
   return (
-    <div className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
+    <div ref={upcoming.length > 0 ? scrollRef : undefined} className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
       <h2 className="day-block-header">
         {day.label}
         <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
@@ -122,6 +122,8 @@ function ByDay({ data }) {
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
   const now = useNow()
+  const scrollTargetRef = useRef(null)
+  const hasScrolled = useRef(false)
 
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
@@ -165,10 +167,35 @@ function ByDay({ data }) {
 
   const dayEntries = Object.entries(days).sort(([a], [b]) => a.localeCompare(b))
 
+  // Find the first day that has upcoming screenings (for auto-scroll target)
+  const firstUpcomingDate = dayEntries.find(([, day]) =>
+    day.screenings.some(s => !isScreeningPast(s.date, s.time, now))
+  )?.[0]
+
+  // Auto-scroll to first upcoming day on initial load
+  useEffect(() => {
+    if (hasScrolled.current || !scrollTargetRef.current) return
+    hasScrolled.current = true
+    const timer = setTimeout(() => {
+      scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      // Offset 80px above so the header isn't pinned to top
+      setTimeout(() => window.scrollBy({ top: -80, behavior: 'smooth' }), 400)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [firstUpcomingDate])
+
   return (
     <div className="day-view">
       {dayEntries.map(([dateKey, day]) => (
-        <DayBlock key={dateKey} dateKey={dateKey} day={day} data={data} now={now} forceUpdate={forceUpdate} />
+        <DayBlock
+          key={dateKey}
+          dateKey={dateKey}
+          day={day}
+          data={data}
+          now={now}
+          forceUpdate={forceUpdate}
+          scrollRef={dateKey === firstUpcomingDate ? scrollTargetRef : undefined}
+        />
       ))}
     </div>
   )
