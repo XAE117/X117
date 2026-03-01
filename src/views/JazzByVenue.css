@@ -1,0 +1,244 @@
+/* ── Jazz By Venue ── */
+
+.jbv-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.jbv-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--jazz-accent);
+  letter-spacing: 0.1em;
+}
+
+.jbv-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Venue Card ── */
+
+.jbv-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.jbv-card:hover {
+  border-color: var(--jazz-accent-dim);
+}
+
+.jbv-card.expanded {
+  border-color: var(--jazz-accent-dim);
+}
+
+.jbv-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.jbv-card-header:hover {
+  background: var(--bg-card-hover);
+}
+
+.jbv-card-accent {
+  width: 4px;
+  height: 2.5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.jbv-card-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.jbv-card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.jbv-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.jbv-card-hood {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.jbv-hot-count {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--jazz-hot);
+}
+
+.jbv-card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.jbv-card-count {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.jbv-card-arrow {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.jbv-card-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* ── Card Body ── */
+
+.jbv-card-body {
+  padding: 0 1.25rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.jbv-past-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.jbv-empty {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* ── Show List ── */
+
+.jbv-show-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.5rem;
+}
+
+.jbv-show-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr auto auto;
+  align-items: baseline;
+  column-gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.jbv-show-row:hover {
+  background: var(--bg-card-hover);
+}
+
+.jbv-show-row.is-past {
+  opacity: 0.4;
+}
+
+.jbv-show-row.is-hot {
+  border-left: 2px solid var(--jazz-hot);
+}
+
+.jbv-show-date {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--jazz-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.jbv-show-artist {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.jbv-show-artist:hover {
+  color: var(--jazz-accent);
+}
+
+.jbv-show-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.jbv-show-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.jbv-show-relative.is-now {
+  color: var(--jazz-hot);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .jbv-show-row {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .jbv-show-relative {
+    display: none;
+  }
+}

@@ -1,0 +1,44 @@
+/* ── Mode Switcher ── */
+
+.mode-switcher {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 0;
+}
+
+.mode-switcher-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mode-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.4rem;
+  transition: transform 0.2s ease;
+}
+
+.mode-icon:hover {
+  transform: scale(1.15);
+}
+
+.mode-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.mode-emoji.dimmed {
+  opacity: 0.35;
+  filter: grayscale(0.6);
+}
+
+.mode-divider {
+  width: 1px;
+  height: 1.4rem;
+  background: var(--gold-dim);
+  opacity: 0.5;
+}

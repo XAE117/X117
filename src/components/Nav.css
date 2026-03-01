@@ -74,6 +74,32 @@
   color: var(--cream);
 }
 
+/* ── Jazz Mode Nav ── */
+
+.jazz-nav .nav-link:hover {
+  color: var(--jazz-accent, #D4A574);
+}
+
+.jazz-nav .nav-link:hover::after {
+  background: var(--jazz-accent, #D4A574);
+}
+
+.jazz-nav .nav-link.active {
+  color: var(--jazz-accent, #D4A574);
+}
+
+.jazz-nav .nav-link.active::after {
+  background: var(--jazz-accent, #D4A574);
+}
+
+.jazz-diamond {
+  color: var(--jazz-accent-dim, #B8895A);
+}
+
+.jazz-dot {
+  background: var(--jazz-accent, #D4A574);
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 640px) {

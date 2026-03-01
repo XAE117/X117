@@ -1,0 +1,155 @@
+/* ── Jazz By Day ── */
+
+.jbd-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.jbd-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--jazz-accent);
+  letter-spacing: 0.1em;
+}
+
+.jbd-days {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.jbd-empty {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* ── Day Block ── */
+
+.jbd-day-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jbd-day-header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.jbd-day-block.weekend .jbd-day-header {
+  color: var(--jazz-accent);
+}
+
+.jbd-hot-count {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--jazz-hot);
+}
+
+/* ── Past Section ── */
+
+.jbd-past-section {
+  margin-bottom: 0.25rem;
+}
+
+/* ── Show List ── */
+
+.jbd-show-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.jbd-show-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  column-gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.jbd-show-row:hover {
+  background: var(--bg-card-hover);
+}
+
+.jbd-show-row.is-hot {
+  border-left: 2px solid var(--jazz-hot);
+}
+
+.jbd-show-venue {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.jbd-show-artist {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.jbd-show-artist:hover {
+  color: var(--jazz-accent);
+}
+
+.jbd-show-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.jbd-show-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.jbd-show-relative.is-now {
+  color: var(--jazz-hot);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .jbd-show-row {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .jbd-show-relative {
+    display: none;
+  }
+}
