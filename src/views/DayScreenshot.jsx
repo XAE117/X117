@@ -1,6 +1,5 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import './DayScreenshot.css'
 
 function FormatBadge({ format }) {
@@ -10,10 +9,10 @@ function FormatBadge({ format }) {
 
 function DayScreenshot({ data }) {
   const { date } = useParams()
-  const now = useNow()
   const frameRef = useRef(null)
   const [imageUrl, setImageUrl] = useState(null)
   const [generating, setGenerating] = useState(false)
+  const hasGenerated = useRef(false)
 
   const generateImage = useCallback(async () => {
     if (!frameRef.current || generating) return
@@ -28,11 +27,20 @@ function DayScreenshot({ data }) {
       const url = canvas.toDataURL('image/png')
       setImageUrl(url)
     } catch {
-      // Fallback: just let them screenshot manually
       setImageUrl(null)
     }
     setGenerating(false)
   }, [generating])
+
+  // Auto-generate the still image on mount
+  useEffect(() => {
+    if (data && !hasGenerated.current) {
+      hasGenerated.current = true
+      // Small delay to let the frame render first
+      const timer = setTimeout(() => generateImage(), 300)
+      return () => clearTimeout(timer)
+    }
+  }, [data, generateImage])
 
   if (!data) return null
 
@@ -66,7 +74,7 @@ function DayScreenshot({ data }) {
 
         {/* Inner decorative border */}
         <div className="ss-inner-frame">
-          <div className="ss-hint">&#128248;</div>
+          <div className="ss-hint">🎞️</div>
 
           <div className="ss-divider-top">
             <span className="ss-diamond">&#9670;</span>
@@ -87,9 +95,7 @@ function DayScreenshot({ data }) {
             <p className="ss-empty">No screenings this day</p>
           ) : (
             <ul className="ss-list">
-              {screenings.map(s => {
-                const relative = getRelativeLabel(s.date, s.time, now)
-                return (
+              {screenings.map(s => (
                   <li key={s.id} className="ss-item">
                     <span className="ss-theater" style={{ color: s.theaterColor }}>
                       {s.theaterName}
@@ -98,13 +104,9 @@ function DayScreenshot({ data }) {
                     <FormatBadge format={s.format} />
                     <span className="ss-time-col">
                       {s.time && <span className="ss-time">{s.time}</span>}
-                      {relative && (
-                        <span className={`ss-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
-                      )}
                     </span>
                   </li>
-                )
-              })}
+              ))}
             </ul>
           )}
 
@@ -118,19 +120,12 @@ function DayScreenshot({ data }) {
         </div>
       </div>
 
-      <div className="ss-actions">
-        <button className="ss-download-btn" onClick={generateImage} disabled={generating}>
-          {generating ? 'Generating...' : 'Generate Downloadable Image'}
-        </button>
-      </div>
+      {generating && <p className="ss-generating-text">Generating image...</p>}
 
       {imageUrl && (
         <div className="ss-image-preview">
           <img src={imageUrl} alt={`${dayLabel} screenings`} className="ss-generated-image" />
-          <p className="ss-download-hint">tap + hold to download</p>
-          <a href={imageUrl} download={`palace-${date}.png`} className="ss-save-link">
-            Save Image
-          </a>
+          <p className="ss-download-hint">tap + hold to save</p>
         </div>
       )}
 

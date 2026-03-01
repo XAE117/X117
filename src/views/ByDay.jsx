@@ -67,12 +67,7 @@ function DayBlock({ dateKey, day, data, now, forceUpdate }) {
         {day.label}
         <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
           <span className="day-screenshot-label">SCREENSHOT</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
-            <rect x="2" y="3" width="20" height="18" rx="2" />
-            <circle cx="12" cy="13" r="4" />
-            <path d="M8 3V1" /><path d="M16 3V1" />
-          </svg>
-          <span className="day-screenshot-arrow">&rsaquo;</span>
+          <span className="day-screenshot-icon">🎞️</span>
         </Link>
       </h2>
       {past.length > 0 && (
