@@ -123,20 +123,24 @@
 }
 
 /* Row 2: Time */
-.day-row-info {
+.day-row-time {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
 }
 
-/* Row 3: Badges (always present for uniform height) */
+/* Row 3: Badges + Relative time */
 .day-row-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 1.1rem;
+}
+
+.day-badges-left {
   display: flex;
   align-items: center;
   gap: 0.35rem;
   flex-wrap: wrap;
-  min-height: 1.1rem;
 }
 
 .day-item-theater {
@@ -188,15 +192,6 @@
   border-radius: 999px;
   white-space: nowrap;
   flex-shrink: 0;
-}
-
-.day-time-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.15rem;
-  flex-shrink: 0;
-  margin-left: auto;
 }
 
 .day-time {

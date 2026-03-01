@@ -39,17 +39,17 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
           {s.theaterName}
         </span>
       </div>
-      <div className="day-row-info">
-        <span className="day-time-col">
-          <span className="day-time">{s.time || ''}</span>
-          {relative && (
-            <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
-          )}
-        </span>
+      <div className="day-row-time">
+        <span className="day-time">{s.time || ''}</span>
       </div>
       <div className="day-row-badges">
-        <MetricsBadges film={film} />
-        <FormatBadge format={s.format} />
+        <span className="day-badges-left">
+          <MetricsBadges film={film} />
+          <FormatBadge format={s.format} />
+        </span>
+        {relative && (
+          <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+        )}
       </div>
     </li>
   )
