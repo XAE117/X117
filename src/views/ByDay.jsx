@@ -33,22 +33,20 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
         {filmMeta(s.title, data.films) && (
           <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
         )}
+        <span className="day-item-theater" style={{ color: s.theaterColor }}>
+          {s.theaterName}
+        </span>
       </div>
       <div className="day-item-bottom">
         <span className="day-item-bottom-left">
           <MetricsBadges film={film} />
           <FormatBadge format={s.format} />
         </span>
-        <span className="day-item-bottom-right">
-          <span className="day-item-theater" style={{ color: s.theaterColor }}>
-            {s.theaterName}
-          </span>
-          <span className="day-time-col">
-            <span className="day-time">{s.time || ''}</span>
-            {relative && (
-              <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
-            )}
-          </span>
+        <span className="day-time-col">
+          <span className="day-time">{s.time || ''}</span>
+          {relative && (
+            <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
+          )}
         </span>
       </div>
     </li>
