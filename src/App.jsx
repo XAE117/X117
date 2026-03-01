@@ -32,6 +32,7 @@ const NON_FAVORITE_THEATERS = [
   'laemmle-noho',
   'los-feliz-3',
   'laemmle-royal',
+  'vidiots',
 ]
 
 function App() {
