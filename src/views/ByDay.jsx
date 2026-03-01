@@ -12,6 +12,7 @@ function FormatBadge({ format }) {
 function MetricsBadges({ film }) {
   if (!film) return null
   const badges = []
+  if (film.letterboxd) badges.push(<span key="lb" className="day-metric-badge lb">★ {film.letterboxd.toFixed(1)}</span>)
   if (film.afi100) badges.push(<span key="afi" className="day-metric-badge afi">#{film.afi100} AFI</span>)
   if (film.rottenTomatoes) badges.push(<span key="rt" className="day-metric-badge rt">{film.rottenTomatoes}% RT</span>)
   if (film.sightAndSound) badges.push(<span key="ss" className="day-metric-badge ss">S&S #{film.sightAndSound}</span>)

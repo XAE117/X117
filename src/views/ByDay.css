@@ -244,6 +244,12 @@
   border: 1px solid rgba(100, 149, 237, 0.3);
 }
 
+.day-metric-badge.lb {
+  background: rgba(0, 224, 84, 0.1);
+  color: #00e054;
+  border: 1px solid rgba(0, 224, 84, 0.25);
+}
+
 /* ── Mobile: two-row layout ── */
 
 @media (max-width: 640px) {
