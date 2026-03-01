@@ -359,6 +359,19 @@ function Detail({ data }) {
                 </svg>
                 Add to Calendar
               </button>
+              <a
+                href={`https://letterboxd.com/film/${filmKey}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="letterboxd-btn"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <circle cx="8" cy="12" r="5" opacity="0.8" fill="#00E054" />
+                  <circle cx="16" cy="12" r="5" opacity="0.8" fill="#40BCF4" />
+                  <circle cx="12" cy="12" r="5" opacity="0.8" fill="#FF8000" />
+                </svg>
+                Letterboxd
+              </a>
             </div>
           </div>
         </div>
