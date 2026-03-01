@@ -8,12 +8,14 @@ function ModeSwitcher() {
   return (
     <div className="mode-switcher">
       <div className="mode-switcher-inner">
-        <Link to="/" className="mode-icon">
-          <span className={`mode-emoji ${isJazz ? 'dimmed' : ''}`}>🎞️</span>
+        <Link to="/" className="mode-icon" aria-label="Switch to film listings">
+          <span className={`mode-emoji ${isJazz ? 'dimmed' : ''}`} aria-hidden="true">🎞️</span>
+          <span className={`mode-label ${isJazz ? 'dimmed' : ''}`}>Film</span>
         </Link>
-        <span className="mode-divider" />
-        <Link to="/jazz" className="mode-icon">
-          <span className={`mode-emoji ${isJazz ? '' : 'dimmed'}`}>🎺</span>
+        <span className="mode-divider" aria-hidden="true" />
+        <Link to="/jazz" className="mode-icon" aria-label="Switch to jazz listings">
+          <span className={`mode-emoji ${isJazz ? '' : 'dimmed'}`} aria-hidden="true">🎺</span>
+          <span className={`mode-label ${isJazz ? '' : 'dimmed'}`}>Jazz</span>
         </Link>
       </div>
     </div>

@@ -36,6 +36,11 @@
   background: var(--border);
 }
 
+.day-block.weekend {
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 0.75rem;
+}
+
 .day-block.weekend .day-block-header {
   color: var(--gold);
 }
@@ -57,11 +62,31 @@
   transition: opacity 0.2s ease, color 0.2s ease;
   order: 1;
   text-decoration: none;
+  position: relative;
 }
 
 .day-screenshot-btn:hover {
   color: var(--gold);
   opacity: 1;
+}
+
+.day-screenshot-btn:hover::before {
+  content: 'Capture as shareable image';
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .day-screenshot-label {

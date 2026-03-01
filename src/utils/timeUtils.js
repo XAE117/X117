@@ -55,10 +55,22 @@ export function getRelativeLabel(dateStr, timeStr, now) {
     const days = Math.floor(diffMin / 1440)
     const hours = Math.floor((diffMin % 1440) / 60)
     const mins = diffMin % 60
-    if (days > 0) {
-      if (hours > 0) return { label: `in ${days}d ${hours}h`, isNow: false }
-      return { label: `in ${days}d`, isNow: false }
+
+    // 7+ days: show date
+    if (days >= 7) {
+      const d = new Date(y, mo - 1, da)
+      return { label: d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), isNow: false }
     }
+    // 2-6 days: show day name
+    if (days >= 2) {
+      const d = new Date(y, mo - 1, da)
+      return { label: d.toLocaleDateString('en-US', { weekday: 'long' }), isNow: false }
+    }
+    // Tomorrow
+    if (days === 1) {
+      return { label: 'Tomorrow', isNow: false }
+    }
+    // Today: show countdown
     if (hours > 0) return { label: `in ${hours}h ${mins}m`, isNow: false }
     return { label: `in ${mins}m`, isNow: false }
   }
