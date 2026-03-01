@@ -1,6 +1,7 @@
 import './FormatFilter.css'
 
 const FILTERS = [
+  { key: 'favorites', label: 'Favorites' },
   { key: 'all', label: 'All' },
   { key: 'film', label: 'Film' },
 ]

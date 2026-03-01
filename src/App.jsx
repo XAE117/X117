@@ -23,12 +23,23 @@ import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
 
+// Theaters excluded from the Favorites filter
+const NON_FAVORITE_THEATERS = [
+  'brain-dead',
+  'billy-wilder',
+  'redcat',
+  'laemmle-nuart',
+  'laemmle-noho',
+  'los-feliz-3',
+  'laemmle-royal',
+]
+
 function App() {
   const [data, setData] = useState(null)
   const [jazzData, setJazzData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
-  const [formatFilter, setFormatFilter] = useState('all')
+  const [formatFilter, setFormatFilter] = useState('favorites')
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
@@ -65,19 +76,23 @@ function App() {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
-    const theaters = data.theaters.map(theater => {
+    let theaterList = data.theaters
+
+    // Favorites filter: exclude non-favorite theaters entirely
+    if (formatFilter === 'favorites') {
+      theaterList = theaterList.filter(t => !NON_FAVORITE_THEATERS.includes(t.id))
+    }
+
+    const theaters = theaterList.map(theater => {
       let screenings = theater.screenings.filter(s => {
         const d = new Date(s.date + 'T00:00:00')
         return d >= today
       })
 
-      // Apply format filter
-      if (formatFilter !== 'all') {
+      // Apply format filter (film only)
+      if (formatFilter === 'film') {
         screenings = screenings.filter(s => {
-          if (formatFilter === 'film') {
-            return FILM_FORMATS.includes(s.format?.toLowerCase())
-          }
-          return s.format?.toLowerCase() === formatFilter.toLowerCase()
+          return FILM_FORMATS.includes(s.format?.toLowerCase())
         })
       }
 
