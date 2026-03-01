@@ -86,7 +86,7 @@ function GodfatherAlert({ data }) {
       <div className="godfather-alert-inner">
         <button className="godfather-dismiss" onClick={handleDismiss} aria-label="Dismiss">&times;</button>
         <div className="godfather-alert-header">
-          <span className="godfather-icon">&#127902;</span>
+          <span className="godfather-icon">&#127903;</span>
           <span className="godfather-headline">Leave the gun, bring the cannoli &mdash; The Godfather is screening!</span>
         </div>
         <ul className="godfather-screenings">
