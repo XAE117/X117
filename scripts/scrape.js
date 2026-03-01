@@ -17,7 +17,7 @@
 
 import * as cheerio from 'cheerio'
 import { execSync } from 'child_process'
-import { writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { sendGodfatherSMS } from './notify.js'
@@ -752,9 +752,18 @@ async function tmdbMovieDetails(movieId, apiKey) {
 
 async function enrichWithTMDB(outputTheaters) {
   const apiKey = process.env.TMDB_API_KEY
+  // Load existing film data to preserve even without TMDB API key
+  let existingFilmsForFallback = {}
+  try {
+    if (existsSync(OUTPUT_PATH)) {
+      const existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf8'))
+      existingFilmsForFallback = existing.films || {}
+    }
+  } catch {}
+
   if (!apiKey) {
-    console.log('  TMDB_API_KEY not set — skipping enrichment.')
-    return {}
+    console.log('  TMDB_API_KEY not set — preserving existing film data.')
+    return existingFilmsForFallback
   }
 
   console.log('')
@@ -770,6 +779,16 @@ async function enrichWithTMDB(outputTheaters) {
 
   console.log(`  ${uniqueTitles.size} unique titles to look up`)
 
+  // Load existing film data to preserve hand-curated enrichments
+  // (rottenTomatoes, letterboxd, afi100, sightAndSound, reviews, podcasts)
+  let existingFilms = {}
+  try {
+    if (existsSync(OUTPUT_PATH)) {
+      const existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf8'))
+      existingFilms = existing.films || {}
+    }
+  } catch {}
+
   const films = {}
   let enriched = 0
   let batch = 0
@@ -777,6 +796,9 @@ async function enrichWithTMDB(outputTheaters) {
   for (const title of uniqueTitles) {
     const slug = slugifyTitle(title)
     if (films[slug]) continue
+
+    // Start with existing enrichments (reviews, podcasts, scores, etc.)
+    const existing = existingFilms[slug] || {}
 
     try {
       // Rate limiting: pause every 35 requests
@@ -787,7 +809,13 @@ async function enrichWithTMDB(outputTheaters) {
 
       const searchResult = await tmdbSearch(title, apiKey)
       const movie = searchResult.results?.[0]
-      if (!movie) continue
+      if (!movie) {
+        // No TMDB match but preserve existing data if any
+        if (Object.keys(existing).length > 0) {
+          films[slug] = existing
+        }
+        continue
+      }
 
       // Get credits for director
       let director = ''
@@ -804,22 +832,34 @@ async function enrichWithTMDB(outputTheaters) {
         runtime = details.runtime || null
       } catch {}
 
+      // Merge: TMDB fields update, but preserve hand-curated enrichments
       films[slug] = {
-        tmdbId: movie.id,
-        posterPath: movie.poster_path || null,
-        year: movie.release_date ? parseInt(movie.release_date.slice(0, 4)) : null,
+        ...existing,
         director,
-        overview: movie.overview ? movie.overview.slice(0, 200) : '',
-        rating: movie.vote_average || 0,
-        runtime,
+        year: movie.release_date ? parseInt(movie.release_date.slice(0, 4)) : (existing.year || null),
+        runtime: runtime || existing.runtime || null,
+        posterPath: movie.poster_path || existing.posterPath || null,
+        overview: movie.overview ? movie.overview.slice(0, 200) : (existing.overview || ''),
+        rating: movie.vote_average || existing.rating || 0,
       }
       enriched++
     } catch {
-      // Skip failed lookups silently
+      // Failed TMDB lookup — preserve existing data
+      if (Object.keys(existing).length > 0) {
+        films[slug] = existing
+      }
     }
   }
 
-  console.log(`  Enriched ${enriched} of ${uniqueTitles.size} films`)
+  // Also preserve film data for titles no longer in screenings
+  // (so manually added enrichments aren't lost when screenings rotate)
+  for (const [slug, data] of Object.entries(existingFilms)) {
+    if (!films[slug]) {
+      films[slug] = data
+    }
+  }
+
+  console.log(`  Enriched ${enriched} of ${uniqueTitles.size} films (${Object.keys(existingFilms).length} existing preserved)`)
   return films
 }
 
