@@ -229,10 +229,25 @@ function Detail({ data }) {
   const film = data.films?.[filmKey] || null
   const relative = getRelativeLabel(screening.date, screening.time, now)
 
+  const shareScreening = async () => {
+    const d = new Date(screening.date + 'T00:00:00')
+    const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+    const text = `${screening.title} @ ${theater.name} — ${dateStr}, ${screening.time}${screening.format && screening.format !== 'digital' ? ` (${screening.format})` : ''}`
+    const url = window.location.href
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: screening.title, text, url })
+      } catch {}
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${url}`)
+    }
+  }
+
   return (
     <div className="detail-page">
       <button className="back-btn" onClick={() => navigate(-1)}>
-        &larr; Back
+        Back &rarr;
       </button>
 
       <div className="detail-card">
@@ -372,10 +387,22 @@ function Detail({ data }) {
                 </svg>
                 Letterboxd
               </a>
+              <button className="share-btn" onClick={shareScreening}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                  <polyline points="16,6 12,2 8,6" />
+                  <line x1="12" y1="2" x2="12" y2="15" />
+                </svg>
+                Share
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        Back &rarr;
+      </button>
     </div>
   )
 }

@@ -113,10 +113,25 @@ function JazzDetail({ data }) {
 
   const relative = getRelativeLabel(show.date, show.time, now)
 
+  const shareShow = async () => {
+    const d = new Date(show.date + 'T00:00:00')
+    const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+    const text = `${show.artist} @ ${venue.name} — ${dateStr}, ${show.time || 'TBA'}${show.price ? ` — ${show.price}` : ''}`
+    const url = window.location.href
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: show.artist, text, url })
+      } catch {}
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${url}`)
+    }
+  }
+
   return (
     <div className="jazz-detail-page">
       <button className="jazz-detail-back" onClick={() => navigate(-1)}>
-        &larr; Back
+        Back &rarr;
       </button>
 
       <div className="jazz-detail-card">
@@ -222,9 +237,21 @@ function JazzDetail({ data }) {
             >
               View Venue Site
             </a>
+            <button className="jazz-share-btn" onClick={shareShow}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                <polyline points="16,6 12,2 8,6" />
+                <line x1="12" y1="2" x2="12" y2="15" />
+              </svg>
+              Share
+            </button>
           </div>
         </div>
       </div>
+
+      <button className="jazz-detail-back" onClick={() => navigate(-1)}>
+        Back &rarr;
+      </button>
     </div>
   )
 }

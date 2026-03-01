@@ -1,6 +1,8 @@
 /* ── Detail Page ── */
 
 .detail-page {
+  display: flex;
+  flex-direction: column;
   max-width: 720px;
   margin: 0 auto;
   padding-top: 1rem;
@@ -22,6 +24,7 @@
   align-items: center;
   gap: 0.3rem;
   transition: color 0.2s ease;
+  align-self: flex-end;
 }
 
 .back-btn:hover {
@@ -596,6 +599,28 @@
   color: var(--text);
 }
 
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+}
+
 /* ── Not Found ── */
 
 .detail-not-found {
@@ -641,7 +666,8 @@
 
   .ticket-btn,
   .calendar-btn,
-  .letterboxd-btn {
+  .letterboxd-btn,
+  .share-btn {
     justify-content: center;
   }
 }
