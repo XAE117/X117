@@ -257,7 +257,7 @@
   letter-spacing: 0.05em;
   text-decoration: none;
   transition: opacity 0.2s ease;
-  text-shadow: 0 0 2px currentColor, 0 0 4px currentColor;
+  text-shadow: 0 0 1px currentColor, 0 0 2px currentColor;
 }
 
 .detail-theater-name:hover {

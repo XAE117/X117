@@ -138,7 +138,7 @@
   text-transform: uppercase;
   min-width: 60px;
   flex-shrink: 0;
-  text-shadow: 0 0 2px currentColor, 0 0 4px currentColor;
+  text-shadow: 0 0 1px currentColor, 0 0 2px currentColor;
 }
 
 .watchlist-title {
