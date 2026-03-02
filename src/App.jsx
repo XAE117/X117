@@ -143,29 +143,42 @@ function App() {
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
-          {showFormatFilter && (
-            <div className="filter-notch">
-              <FormatFilter current={formatFilter} onChange={setFormatFilter} />
+          <div className="filter-notch">
+            {!filtersExpanded && (
               <button
-                className={`format-chip expand-chip ${filtersExpanded ? 'active' : ''}`}
-                onClick={() => setFiltersExpanded(v => !v)}
-                title={filtersExpanded ? 'Collapse filters' : 'More filters'}
+                className="notch-toggle"
+                onClick={() => setFiltersExpanded(true)}
+                aria-label="Open filters"
               >
-                <span className={`expand-icon ${filtersExpanded ? 'open' : ''}`}>+</span>
+                <span className="notch-plus">+</span>
               </button>
-              <button
-                className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
-                onClick={() => fetchData(true)}
-                disabled={refreshing}
-                title="Refresh listings"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-                  <path d="M23 4v6h-6" />
-                  <path d="M1 20v-6h6" />
-                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                </svg>
-              </button>
-              {filtersExpanded && (
+            )}
+            {filtersExpanded && (
+              <div className="filter-notch-expanded">
+                <button
+                  className="notch-toggle"
+                  onClick={() => setFiltersExpanded(false)}
+                  aria-label="Close filters"
+                >
+                  <span className="notch-plus open">+</span>
+                </button>
+                {showFormatFilter && (
+                  <>
+                    <FormatFilter current={formatFilter} onChange={setFormatFilter} />
+                    <button
+                      className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+                      onClick={() => fetchData(true)}
+                      disabled={refreshing}
+                      title="Refresh listings"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                        <path d="M23 4v6h-6" />
+                        <path d="M1 20v-6h6" />
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                      </svg>
+                    </button>
+                  </>
+                )}
                 <div className="filter-notch-search">
                   <input
                     type="text"
@@ -180,9 +193,9 @@ function App() {
                     </button>
                   )}
                 </div>
-              )}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
           <ModeSwitcher />
         </div>
       )}
