@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from 'react'
-import { Routes, Route, useLocation, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
@@ -110,24 +110,8 @@ function App() {
     return { ...data, theaters }
   }
 
-  // Check if there are jazz shows today
-  const hasTonightJazzShows = useMemo(() => {
-    if (!jazzData) return false
-    const now = new Date()
-    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
-    return jazzData.venues.some(v => v.shows.some(s => s.date === todayStr))
-  }, [jazzData])
-
-  // Check if there are cinema screenings today
-  const hasTonightCinemaShows = useMemo(() => {
-    if (!data) return false
-    const now = new Date()
-    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
-    return data.theaters.some(t => t.screenings.some(s => s.date === todayStr))
-  }, [data])
-
   // Show format filter on cinema list views
-  const showFormatFilter = ['/', '/tonight', '/by-theater'].includes(location.pathname)
+  const showFormatFilter = ['/', '/by-theater'].includes(location.pathname)
 
   if (loading) return <LoadingSpinner />
 
@@ -160,12 +144,10 @@ function App() {
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
       {!isDetailPage && (
         <>
-          <Header mode={mode} />
-          <ModeSwitcher />
-          <Nav
-            hasTonightScreenings={isJazzMode ? hasTonightJazzShows : hasTonightCinemaShows}
-            mode={mode}
-          />
+          <div className="top-bar">
+            <Header mode={mode} />
+            <ModeSwitcher />
+          </div>
           {showFormatFilter && (
             <div className="controls-row">
               <FormatFilter current={formatFilter} onChange={setFormatFilter} />
@@ -206,14 +188,6 @@ function App() {
                   </button>
                 )}
               </div>
-              <Link to="/map" className="format-chip expanded-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-                  <polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" />
-                  <line x1="8" y1="2" x2="8" y2="18" />
-                  <line x1="16" y1="6" x2="16" y2="22" />
-                </svg>
-                Map
-              </Link>
             </div>
           )}
           {!showFormatFilter && (
@@ -258,6 +232,7 @@ function App() {
         theaters={isJazzMode && jazzData ? jazzData.venues : data.theaters}
         isJazz={isJazzMode}
       />
+      {!isDetailPage && <Nav mode={mode} />}
     </div>
   )
 }

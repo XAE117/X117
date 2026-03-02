@@ -1,144 +1,59 @@
-/* ── Navigation ── */
+/* ── Bottom Tab Bar ── */
 
-.palace-nav {
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1rem 0 0.5rem;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  padding: 0.4rem 0 calc(0.4rem + env(safe-area-inset-bottom, 0px));
 }
 
-.nav-link {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-dim);
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
   text-decoration: none;
-  padding: 0.4rem 0;
-  position: relative;
+  padding: 0.35rem 0.75rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab-icon {
+  width: 22px;
+  height: 22px;
   transition: color 0.2s ease;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s ease;
+.tab-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.nav-link:hover {
+.tab.active {
   color: var(--gold);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.tab:hover:not(.active) {
+  color: var(--text-dim);
 }
 
-.nav-link.active {
-  color: var(--gold);
-}
+/* ── Jazz bar accent ── */
 
-.nav-link.active::after {
-  width: 100%;
-}
-
-.nav-diamond {
-  color: var(--gold-dim);
-  font-size: 0.5rem;
-}
-
-/* Tonight dot indicator */
-.nav-tonight-dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: var(--gold);
-  border-radius: 50%;
-  margin-left: 0.25rem;
-  vertical-align: super;
-  animation: navDotPulse 2s ease-in-out infinite;
-}
-
-@keyframes navDotPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.nav-link.tonight-active {
-  color: var(--cream);
-}
-
-/* ── Jazz Mode Nav ── */
-
-.jazz-nav .nav-link:hover {
+.jazz-bar .tab.active {
   color: var(--jazz-accent, #D4A574);
 }
 
-.jazz-nav .nav-link:hover::after {
-  background: var(--jazz-accent, #D4A574);
-}
-
-.jazz-nav .nav-link.active {
-  color: var(--jazz-accent, #D4A574);
-}
-
-.jazz-nav .nav-link.active::after {
-  background: var(--jazz-accent, #D4A574);
-}
-
-.jazz-diamond {
-  color: var(--jazz-accent-dim, #B8895A);
-}
-
-.jazz-dot {
-  background: var(--jazz-accent, #D4A574);
-}
-
-/* ── Jazz nav — tighten for extra item ── */
-
-.jazz-nav {
-  gap: 1rem;
-}
-
-.jazz-nav .nav-link {
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-}
-
-/* ── Responsive ── */
-
-@media (max-width: 640px) {
-  .palace-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.2rem 1.2rem;
-    padding: 0.75rem 0.5rem 0.4rem;
-  }
-
-  .nav-diamond {
-    display: none;
-  }
-
-  .nav-link {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-align: center;
-    padding: 0.35rem 0;
-  }
-
-  /* Jazz nav has more items — give them room to breathe in two rows */
-  .jazz-nav {
-    gap: 0.15rem 1rem;
-  }
-
-  .jazz-nav .nav-link {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-  }
+.jazz-bar .tab:hover:not(.active) {
+  color: var(--text-dim);
 }

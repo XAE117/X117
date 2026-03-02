@@ -1,62 +1,46 @@
-/* ── Mode Switcher ── */
+/* ── Mode Notch (top-right pill) ── */
 
-.mode-switcher {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 0 0;
-}
-
-.mode-switcher-inner {
+.mode-notch {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.15rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.35rem;
+  z-index: 10;
 }
 
-.mode-icon {
+.mode-notch-btn {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 0.4rem;
-  gap: 0.15rem;
-  transition: transform 0.2s ease;
+  padding: 0.15rem 0.25rem;
+  border-radius: 999px;
+  transition: background 0.2s ease;
 }
 
-.mode-label {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.55rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--cream);
-  transition: opacity 1s ease;
+.mode-notch-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.mode-label.dimmed {
-  opacity: 0.35;
-}
-
-.mode-icon:hover {
-  transform: scale(1.15);
-}
-
-.mode-emoji {
-  font-size: 1.6rem;
+.mode-notch-emoji {
+  font-size: 1.2rem;
   line-height: 1;
-  /* Quick un-dim when becoming active */
   transition: opacity 0.15s ease, filter 0.15s ease;
 }
 
-.mode-emoji.dimmed {
-  opacity: 0.35;
-  filter: grayscale(0.6);
-  /* Slow fade when becoming dimmed */
-  transition: opacity 1s ease, filter 1s ease;
+.mode-notch-emoji.dimmed {
+  opacity: 0.3;
+  filter: grayscale(0.7);
+  transition: opacity 0.8s ease, filter 0.8s ease;
 }
 
-/* Noisy golden glow pulse on click — 0.2s fade-in, 1.5s fade-out */
-.mode-emoji.mode-glow-pulse {
+.mode-notch-emoji.mode-glow-pulse {
   animation: modeGlowPulse 1.7s ease-out forwards;
 }
 
@@ -64,25 +48,11 @@
   0% {
     filter: drop-shadow(0 0 0px rgba(201, 168, 76, 0));
   }
-  /* ~12% = 0.2s of 1.7s total — peak glow */
   12% {
     filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.9))
-            drop-shadow(0 0 16px rgba(201, 168, 76, 0.5))
-            drop-shadow(0 0 28px rgba(201, 168, 76, 0.25));
-  }
-  35% {
-    filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.6))
-            drop-shadow(0 0 20px rgba(201, 168, 76, 0.3))
-            drop-shadow(0 0 35px rgba(201, 168, 76, 0.12));
+            drop-shadow(0 0 16px rgba(201, 168, 76, 0.5));
   }
   100% {
     filter: drop-shadow(0 0 0px rgba(201, 168, 76, 0));
   }
-}
-
-.mode-divider {
-  width: 1px;
-  height: 1.4rem;
-  background: var(--gold-dim);
-  opacity: 0.5;
 }
