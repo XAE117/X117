@@ -15,14 +15,14 @@
   padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
 }
 
-/* Black out any visible area below the bar (iOS home indicator gap) */
+/* Black out any visible area below the bar (iOS overscroll / home indicator) */
 .bottom-bar::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 100px;
   background: var(--bg-dark);
 }
 

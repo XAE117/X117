@@ -9,10 +9,19 @@
 /* ── Top bar ── */
 
 .top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: 48px;
+  pointer-events: none;
+}
+
+.top-bar > * {
+  pointer-events: auto;
 }
 
 /* ── Filter notch (top-left) ── */
@@ -75,7 +84,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem calc(3rem + 64px); /* extra space for fixed bottom bar */
+  padding: 3.2rem 1.5rem calc(3rem + 64px); /* top space for fixed top bar + bottom for fixed bottom bar */
 }
 
 .refresh-btn {
