@@ -6,12 +6,18 @@
   min-height: 100vh;
 }
 
+/* ── Top bar (header + mode notch) ── */
+
+.top-bar {
+  position: relative;
+}
+
 .main-content {
   flex: 1;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem 3rem;
+  padding: 0 1.5rem calc(3rem + 64px); /* extra space for fixed bottom bar */
 }
 
 /* ── Controls bar ── */

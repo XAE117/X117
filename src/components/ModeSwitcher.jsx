@@ -12,7 +12,6 @@ function ModeSwitcher() {
     requestAnimationFrame(() => setGlowTarget(target))
   }
 
-  // Clear glow state after animation finishes (0.2s in + 1.5s out = 1.7s)
   useEffect(() => {
     if (glowTarget) {
       const timer = setTimeout(() => setGlowTarget(null), 1800)
@@ -21,18 +20,13 @@ function ModeSwitcher() {
   }, [glowTarget])
 
   return (
-    <div className="mode-switcher">
-      <div className="mode-switcher-inner">
-        <Link to="/" className="mode-icon" aria-label="Switch to film listings" onClick={() => triggerGlow('film')}>
-          <span className={`mode-emoji ${isJazz ? 'dimmed' : ''} ${glowTarget === 'film' ? 'mode-glow-pulse' : ''}`} aria-hidden="true">🎞️</span>
-          <span className={`mode-label ${isJazz ? 'dimmed' : ''}`}>Film</span>
-        </Link>
-        <span className="mode-divider" aria-hidden="true" />
-        <Link to="/jazz" className="mode-icon" aria-label="Switch to jazz listings" onClick={() => triggerGlow('jazz')}>
-          <span className={`mode-emoji ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse' : ''}`} aria-hidden="true">🎺</span>
-          <span className={`mode-label ${isJazz ? '' : 'dimmed'}`}>Jazz</span>
-        </Link>
-      </div>
+    <div className="mode-notch">
+      <Link to="/" className="mode-notch-btn" aria-label="Film listings" onClick={() => triggerGlow('film')}>
+        <span className={`mode-notch-emoji ${isJazz ? 'dimmed' : ''} ${glowTarget === 'film' ? 'mode-glow-pulse' : ''}`}>🎞️</span>
+      </Link>
+      <Link to="/jazz" className="mode-notch-btn" aria-label="Jazz listings" onClick={() => triggerGlow('jazz')}>
+        <span className={`mode-notch-emoji ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse' : ''}`}>🎺</span>
+      </Link>
     </div>
   )
 }
