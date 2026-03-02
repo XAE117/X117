@@ -23,18 +23,8 @@
   padding: 0.25rem 1.5rem 0.5rem;
   display: flex;
   align-items: center;
-  position: relative;
-}
-
-.controls-row .format-filter-bar {
-  flex: 1;
-  display: flex;
   justify-content: center;
-}
-
-.controls-row .refresh-btn {
-  position: absolute;
-  right: 1.5rem;
+  gap: 0.5rem;
 }
 
 .controls {
