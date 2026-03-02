@@ -18,6 +18,10 @@ function Nav({ hasTonightScreenings, mode }) {
           By Venue
         </NavLink>
         <span className="nav-diamond jazz-diamond">&#9670;</span>
+        <NavLink to="/jazz/proximity" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          Louis Cole ℃
+        </NavLink>
+        <span className="nav-diamond jazz-diamond">&#9670;</span>
         <NavLink to="/jazz/map" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
           Map
         </NavLink>

@@ -1,0 +1,215 @@
+/* ── Jazz By Proximity ── */
+
+.jbp-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.jbp-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--jazz-accent);
+  letter-spacing: 0.1em;
+}
+
+.jbp-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+}
+
+.jbp-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Tier Block ── */
+
+.jbp-tier-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jbp-tier-header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.jbp-tier-emoji {
+  font-size: 1rem;
+}
+
+.jbp-tier-count {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.jbp-tier-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-top: -0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Inner circle gets a warm glow */
+.jbp-tier-inner_circle .jbp-tier-header {
+  color: var(--jazz-accent);
+  border-bottom-color: rgba(212, 165, 116, 0.3);
+}
+
+/* The bubble gets a cool tint */
+.jbp-tier-the_bubble .jbp-tier-header {
+  color: rgba(180, 200, 220, 0.9);
+  border-bottom-color: rgba(180, 200, 220, 0.2);
+}
+
+.jbp-empty {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* ── Show List ── */
+
+.jbp-show-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.jbp-show-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto auto auto auto;
+  align-items: baseline;
+  column-gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.jbp-show-row.glow-pulse {
+  animation: jazzGlowPulse 2s ease-out forwards;
+}
+
+.jbp-show-row:hover {
+  background: var(--bg-card-hover);
+}
+
+.jbp-show-row.is-hot {
+  border-left: 2px solid var(--jazz-hot);
+}
+
+.jbp-show-row.is-underground {
+  border-style: dashed;
+  background: rgba(232, 93, 58, 0.04);
+}
+
+/* Inner circle shows get a subtle warm background */
+.jbp-tier-inner_circle .jbp-show-row {
+  background: rgba(212, 165, 116, 0.06);
+}
+
+.jbp-tier-inner_circle .jbp-show-row:hover {
+  background: rgba(212, 165, 116, 0.12);
+}
+
+.jbp-show-date {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.jbp-show-artist {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.jbp-show-row:hover .jbp-show-artist {
+  color: var(--jazz-accent);
+}
+
+.jbp-show-venue {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.jbp-show-price {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.65rem;
+  color: var(--jazz-accent);
+  white-space: nowrap;
+}
+
+.jbp-show-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.jbp-show-relative {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.jbp-show-relative.is-now {
+  color: var(--jazz-hot);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .jbp-show-row {
+    grid-template-columns: 5rem 1fr auto auto;
+  }
+
+  .jbp-show-relative,
+  .jbp-show-venue {
+    display: none;
+  }
+}
