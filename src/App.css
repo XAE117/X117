@@ -18,16 +18,49 @@
 /* ── Filter notch (top-left) ── */
 
 .filter-notch {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
   background: var(--bg-card);
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  border-radius: 0 0 12px 0;
-  padding: 0.5rem 0.65rem;
+  border-radius: 0 0 14px 0;
+  padding: 0.55rem 0.65rem;
   z-index: 10;
+}
+
+.notch-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.notch-plus {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--gold-dim);
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.notch-plus:hover {
+  color: var(--gold);
+}
+
+.notch-plus.open {
+  transform: rotate(45deg);
+  color: var(--gold);
+}
+
+.filter-notch-expanded {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  animation: expandIn 0.2s ease-out both;
 }
 
 .filter-notch-search {
@@ -35,7 +68,6 @@
   display: flex;
   align-items: center;
   width: 100%;
-  animation: expandIn 0.2s ease-out both;
 }
 
 .main-content {
@@ -82,30 +114,6 @@
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-/* ── Expand (+) chip ── */
-
-.expand-chip {
-  position: relative;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.expand-icon {
-  display: inline-block;
-  font-size: 1rem;
-  line-height: 1;
-  transition: transform 0.25s ease;
-}
-
-.expand-icon.open {
-  transform: rotate(45deg);
 }
 
 @keyframes expandIn {
