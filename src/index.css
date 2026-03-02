@@ -152,3 +152,80 @@ a:hover {
 .past-screening {
   opacity: 0.5;
 }
+
+/* ── Fire Emoji Glow & Sparks ── */
+
+.jazz-hot-badge {
+  font-size: 0.85rem;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  animation: fireGlow 2s ease-in-out infinite;
+}
+
+.jazz-hot-badge-lg {
+  font-size: 1.5rem;
+  display: inline-block;
+  position: relative;
+  animation: fireGlow 2s ease-in-out infinite;
+}
+
+.jazz-hot-badge::before,
+.jazz-hot-badge::after,
+.jazz-hot-badge-lg::before,
+.jazz-hot-badge-lg::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--jazz-hot);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.jazz-hot-badge::before,
+.jazz-hot-badge-lg::before {
+  left: 40%;
+  bottom: 60%;
+  animation: spark 2.4s 0.5s ease-out infinite;
+  box-shadow: 0 0 2px var(--jazz-hot);
+}
+
+.jazz-hot-badge::after,
+.jazz-hot-badge-lg::after {
+  left: 60%;
+  bottom: 55%;
+  animation: spark 2.8s 1.2s ease-out infinite;
+  box-shadow: 0 0 2px rgba(255, 180, 80, 0.8);
+  background: rgba(255, 180, 80, 0.9);
+}
+
+@keyframes fireGlow {
+  0%, 100% {
+    filter: drop-shadow(0 -2px 3px rgba(232, 93, 58, 0.25));
+  }
+  30% {
+    filter: drop-shadow(0 -3px 5px rgba(232, 93, 58, 0.5));
+  }
+  60% {
+    filter: drop-shadow(0 -2px 4px rgba(255, 140, 50, 0.35));
+  }
+  80% {
+    filter: drop-shadow(0 -3px 6px rgba(232, 93, 58, 0.45));
+  }
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(1px, -10px) scale(0.3);
+  }
+}
