@@ -408,4 +408,8 @@
   .jazz-detail-content {
     padding: 1.5rem;
   }
+
+  .jazz-detail-actions {
+    justify-content: flex-end;
+  }
 }
