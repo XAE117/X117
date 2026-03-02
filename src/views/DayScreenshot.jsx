@@ -124,6 +124,7 @@ function DayScreenshot({ data }) {
 
       {imageUrl && (
         <div className="ss-image-preview">
+          <p className="ss-download-hint">tap + hold to save</p>
           <img src={imageUrl} alt={`${dayLabel} screenings`} className="ss-generated-image" />
           <p className="ss-download-hint">tap + hold to save</p>
         </div>
