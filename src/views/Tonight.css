@@ -195,6 +195,7 @@
 }
 
 .tonight-format-badge {
+  position: relative;
   font-family: var(--font-mono, var(--font-body));
   font-size: 0.6rem;
   font-weight: 600;
@@ -202,10 +203,28 @@
   text-transform: uppercase;
   border: 1px solid var(--gold-dim);
   color: var(--gold);
-  padding: 0.1rem 0.5rem;
-  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
   white-space: nowrap;
+  background: rgba(201, 168, 76, 0.04);
 }
+
+.tonight-format-badge::before,
+.tonight-format-badge::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 1.5px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0.45) 0px 2px,
+    transparent 2px 5px
+  );
+}
+
+.tonight-format-badge::before { top: 1px; }
+.tonight-format-badge::after { bottom: 1px; }
 
 .tonight-ticket-link {
   color: var(--text-muted);

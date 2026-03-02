@@ -17,6 +17,10 @@ function Nav({ hasTonightScreenings, mode }) {
         <NavLink to="/jazz/by-venue" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
           By Venue
         </NavLink>
+        <span className="nav-diamond jazz-diamond">&#9670;</span>
+        <NavLink to="/jazz/map" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          Map
+        </NavLink>
       </nav>
     )
   }

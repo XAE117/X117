@@ -257,7 +257,7 @@
   letter-spacing: 0.05em;
   text-decoration: none;
   transition: opacity 0.2s ease;
-  text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  text-shadow: 0 0 2px currentColor, 0 0 4px currentColor;
 }
 
 .detail-theater-name:hover {
@@ -306,6 +306,7 @@
 }
 
 .detail-format-badge {
+  position: relative;
   font-family: var(--font-mono, var(--font-body));
   font-size: 0.75rem;
   font-weight: 600;
@@ -313,11 +314,29 @@
   text-transform: uppercase;
   border: 1px solid var(--gold);
   color: var(--gold);
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
   display: inline-block;
   width: fit-content;
+  background: rgba(201, 168, 76, 0.04);
 }
+
+.detail-format-badge::before,
+.detail-format-badge::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0.45) 0px 2.5px,
+    transparent 2.5px 6px
+  );
+}
+
+.detail-format-badge::before { top: 2px; }
+.detail-format-badge::after { bottom: 2px; }
 
 .detail-notes {
   margin-bottom: 1.5rem;

@@ -18,6 +18,7 @@ import JazzTonight from './views/JazzTonight.jsx'
 import JazzByVenue from './views/JazzByVenue.jsx'
 import JazzByDay from './views/JazzByDay.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
+import JazzMapView from './views/JazzMapView.jsx'
 import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
@@ -214,6 +215,7 @@ function App() {
           <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} />} />
           <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
+          <Route path="/jazz/map" element={<JazzMapView data={jazzData} />} />
         </Routes>
       </main>
       <Footer
