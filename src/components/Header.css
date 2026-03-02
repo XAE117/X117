@@ -6,8 +6,8 @@
 }
 
 .palace-title {
-  font-family: 'Cinzel', var(--font-display);
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 800;
   font-size: clamp(1.4rem, 5vw, 2.2rem);
   color: var(--gold);
   letter-spacing: 0.3em;
