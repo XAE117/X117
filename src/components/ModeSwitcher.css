@@ -1,16 +1,14 @@
 /* ── Mode Notch (top-right pill) ── */
 
 .mode-notch {
-  position: absolute;
-  top: 0.75rem;
-  right: 1rem;
   display: flex;
   align-items: center;
   gap: 0.15rem;
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.25rem 0.35rem;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0 0 0 12px;
+  padding: 0.4rem 0.5rem;
   z-index: 10;
 }
 
