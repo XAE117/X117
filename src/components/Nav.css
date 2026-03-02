@@ -10,7 +10,8 @@
   justify-content: space-around;
   align-items: center;
   background: var(--bg-dark);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--gold-dim);
+  border-bottom: 1px solid var(--gold-dim);
   padding: 0.5rem 0;
   padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
 }
