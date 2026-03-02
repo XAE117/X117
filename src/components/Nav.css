@@ -100,12 +100,25 @@
   background: var(--jazz-accent, #D4A574);
 }
 
+/* ── Jazz nav — tighten for extra item ── */
+
+.jazz-nav {
+  gap: 1rem;
+}
+
+.jazz-nav .nav-link {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 640px) {
   .palace-nav {
     flex-wrap: wrap;
-    gap: 0.3rem 1rem;
+    justify-content: center;
+    gap: 0.2rem 1.2rem;
+    padding: 0.75rem 0.5rem 0.4rem;
   }
 
   .nav-diamond {
@@ -113,8 +126,19 @@
   }
 
   .nav-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
     text-align: center;
+    padding: 0.35rem 0;
+  }
+
+  /* Jazz nav has more items — give them room to breathe in two rows */
+  .jazz-nav {
+    gap: 0.15rem 1rem;
+  }
+
+  .jazz-nav .nav-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
   }
 }
