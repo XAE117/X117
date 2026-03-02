@@ -1,5 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
+import ModeSwitcher from '../components/ModeSwitcher.jsx'
 import './Detail.css'
 
 function generateICS(screening, theater) {
@@ -183,7 +184,6 @@ function PodcastLinks({ film }) {
 
 function Detail({ data }) {
   const { screeningId } = useParams()
-  const navigate = useNavigate()
   const now = useNow()
 
   // Find the screening and its theater
@@ -206,9 +206,9 @@ function Detail({ data }) {
       <div className="detail-not-found">
         <h2>Screening Not Found</h2>
         <p>This screening may no longer be available.</p>
-        <button className="back-btn" onClick={() => navigate(-1)}>
+        <Link to="/" className="back-btn">
           &larr; Go Back
-        </button>
+        </Link>
       </div>
     )
   }
@@ -246,9 +246,10 @@ function Detail({ data }) {
 
   return (
     <div className="detail-page">
-      <button className="back-btn" onClick={() => navigate(-1)}>
+      <ModeSwitcher />
+      <Link to="/" className="back-btn">
         &larr; back
-      </button>
+      </Link>
 
       <div className="detail-card">
         <div className="detail-corner tl" />
@@ -403,9 +404,9 @@ function Detail({ data }) {
         </div>
       </div>
 
-      <button className="back-btn" onClick={() => navigate(-1)}>
+      <Link to="/" className="back-btn">
         &larr; back
-      </button>
+      </Link>
     </div>
   )
 }

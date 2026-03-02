@@ -1,5 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
+import ModeSwitcher from '../components/ModeSwitcher.jsx'
 import './JazzDetail.css'
 
 const TIER_LABELS = {
@@ -72,7 +73,6 @@ function generateICS(show, venue) {
 
 function JazzDetail({ data }) {
   const { showId } = useParams()
-  const navigate = useNavigate()
   const now = useNow()
 
   if (!data) return null
@@ -95,9 +95,9 @@ function JazzDetail({ data }) {
         <div className="jazz-detail-not-found">
           <h2>Show not found</h2>
           <p>This show may no longer be listed.</p>
-          <button className="jazz-detail-back" onClick={() => navigate(-1)}>
+          <Link to="/jazz" className="jazz-detail-back">
             &larr; Go Back
-          </button>
+          </Link>
         </div>
       </div>
     )
@@ -130,9 +130,10 @@ function JazzDetail({ data }) {
 
   return (
     <div className="jazz-detail-page">
-      <button className="jazz-detail-back" onClick={() => navigate(-1)}>
+      <ModeSwitcher />
+      <Link to="/jazz" className="jazz-detail-back">
         &larr; back
-      </button>
+      </Link>
 
       <div className="jazz-detail-card">
         <div className="jazz-detail-accent" style={{ background: venue.color }} />
@@ -249,9 +250,9 @@ function JazzDetail({ data }) {
         </div>
       </div>
 
-      <button className="jazz-detail-back" onClick={() => navigate(-1)}>
+      <Link to="/jazz" className="jazz-detail-back">
         &larr; back
-      </button>
+      </Link>
     </div>
   )
 }
