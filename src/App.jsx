@@ -1,11 +1,10 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Link } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
-import GodfatherAlert from './components/GodfatherAlert.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
@@ -42,6 +41,8 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('favorites')
+  const [filtersExpanded, setFiltersExpanded] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
@@ -165,10 +166,16 @@ function App() {
             hasTonightScreenings={isJazzMode ? hasTonightJazzShows : hasTonightCinemaShows}
             mode={mode}
           />
-          {!isJazzMode && <GodfatherAlert data={data} />}
           {showFormatFilter && (
             <div className="controls-row">
               <FormatFilter current={formatFilter} onChange={setFormatFilter} />
+              <button
+                className={`format-chip expand-chip ${filtersExpanded ? 'active' : ''}`}
+                onClick={() => setFiltersExpanded(v => !v)}
+                title={filtersExpanded ? 'Collapse filters' : 'More filters'}
+              >
+                <span className={`expand-icon ${filtersExpanded ? 'open' : ''}`}>+</span>
+              </button>
               <button
                 className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
                 onClick={() => fetchData(true)}
@@ -181,6 +188,32 @@ function App() {
                   <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
                 </svg>
               </button>
+            </div>
+          )}
+          {showFormatFilter && filtersExpanded && (
+            <div className="controls-expanded-row">
+              <div className="expanded-search">
+                <input
+                  type="text"
+                  className="expanded-search-input"
+                  placeholder="Search films..."
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                />
+                {searchQuery && (
+                  <button className="expanded-search-clear" onClick={() => setSearchQuery('')}>
+                    &times;
+                  </button>
+                )}
+              </div>
+              <Link to="/map" className="format-chip expanded-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                  <polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" />
+                  <line x1="8" y1="2" x2="8" y2="18" />
+                  <line x1="16" y1="6" x2="16" y2="22" />
+                </svg>
+                Map
+              </Link>
             </div>
           )}
           {!showFormatFilter && (
@@ -204,7 +237,7 @@ function App() {
       <main className="main-content">
         <Routes>
           {/* Cinema routes */}
-          <Route path="/" element={<ByDay data={filteredData} />} />
+          <Route path="/" element={<ByDay data={filteredData} searchQuery={searchQuery} />} />
           <Route path="/tonight" element={<Tonight data={filteredData} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />

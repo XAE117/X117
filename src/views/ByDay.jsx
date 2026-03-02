@@ -139,11 +139,10 @@ function DayBlock({ dateKey, day, data, now, forceUpdate }) {
   )
 }
 
-function ByDay({ data }) {
+function ByDay({ data, searchQuery = '' }) {
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(t => t + 1), [])
   const now = useNow()
-  const [searchQuery, setSearchQuery] = useState('')
 
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
@@ -198,25 +197,11 @@ function ByDay({ data }) {
 
   return (
     <div className="day-view">
-      <div className="day-search-bar">
-        <input
-          type="text"
-          className="day-search-input"
-          placeholder="Search films..."
-          value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
-        />
-        {searchQuery && (
-          <button className="day-search-clear" onClick={() => setSearchQuery('')}>
-            &times;
-          </button>
-        )}
-        {query && (
-          <span className="day-search-count">
-            {matchCount} screening{matchCount !== 1 ? 's' : ''}{matchCount > 0 ? ` matching \u201c${searchQuery.trim()}\u201d` : ' found'}
-          </span>
-        )}
-      </div>
+      {query && (
+        <div className="day-search-count">
+          {matchCount} screening{matchCount !== 1 ? 's' : ''}{matchCount > 0 ? ` matching \u201c${searchQuery.trim()}\u201d` : ' found'}
+        </div>
+      )}
       {dayEntries.map(([dateKey, day]) => (
         <DayBlock
           key={dateKey}

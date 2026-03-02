@@ -85,6 +85,108 @@
   to { transform: rotate(360deg); }
 }
 
+/* ── Expand (+) chip ── */
+
+.expand-chip {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.expand-icon {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.expand-icon.open {
+  transform: rotate(45deg);
+}
+
+/* ── Expanded filter row ── */
+
+.controls-expanded-row {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  animation: expandIn 0.2s ease-out both;
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expanded-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.expanded-search-input {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  padding: 0.3rem 1.8rem 0.3rem 0.8rem;
+  width: 180px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.expanded-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.expanded-search-input:focus {
+  border-color: var(--gold);
+}
+
+.expanded-search-clear {
+  position: absolute;
+  right: 0.4rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.expanded-search-clear:hover {
+  color: var(--gold);
+}
+
+.expanded-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
 /* ── Error state ── */
 
 .error-state {
