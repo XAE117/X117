@@ -4,7 +4,7 @@ import './FormatFilter.css'
 const FILTERS = [
   { key: 'film', emoji: '📽️', label: 'FILM' },
   { key: 'all', emoji: '🪩', label: 'ALL' },
-  { key: 'favorites', emoji: '✨', label: 'FAVORITES' },
+  { key: 'favorites', emoji: '✨', label: 'FAVES' },
 ]
 
 function FormatFilter({ current, onChange, expanded }) {
