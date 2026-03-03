@@ -51,6 +51,11 @@ function App() {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
+  // Auto-collapse filter notch when switching between film/jazz
+  useEffect(() => {
+    setFiltersExpanded(false)
+  }, [isJazzMode])
+
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
     const base = import.meta.env.BASE_URL
@@ -141,8 +146,8 @@ function App() {
 
   return (
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
-      {!isDetailPage && (
-        <div className="top-bar">
+      <div className="top-bar">
+        {!isDetailPage && (
           <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
             {!filtersExpanded && (
               <div className="filter-notch-collapsed">
@@ -201,9 +206,9 @@ function App() {
               </div>
             )}
           </div>
-          <ModeSwitcher />
-        </div>
-      )}
+        )}
+        <ModeSwitcher />
+      </div>
       <main className="main-content">
         <Routes>
           {/* Cinema routes */}

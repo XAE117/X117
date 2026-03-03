@@ -8,7 +8,7 @@
   background: var(--bg-card);
   border: 1px solid var(--gold-dim);
   border-radius: 14px;
-  padding: 0.55rem 0.65rem 0.55rem 0.75rem;
+  padding: 0.55rem 0.65rem;
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: visible;
@@ -71,6 +71,13 @@
   100% {
     opacity: 0;
   }
+}
+
+.mode-notch-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mode-notch-btn:hover {

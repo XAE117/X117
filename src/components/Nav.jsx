@@ -12,7 +12,7 @@ const TABS = [
 const JAZZ_TABS = [
   { to: '/jazz', end: true, emoji: '📍', label: 'By Day' },
   { to: '/jazz/by-venue', emoji: '🏛️', label: 'Venues' },
-  { to: '/jazz/proximity', emoji: '📡', label: 'LC ℃' },
+  { to: '/jazz/proximity', emoji: '📡', label: '°LC' },
   { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
 ]
 

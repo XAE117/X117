@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './ModeSwitcher.css'
 
 function ModeSwitcher() {
   const location = useLocation()
+  const navigate = useNavigate()
   const isJazz = location.pathname.startsWith('/jazz')
   const [glowTarget, setGlowTarget] = useState(null)
   const [labelTarget, setLabelTarget] = useState(null)
@@ -38,9 +39,13 @@ function ModeSwitcher() {
         {labelTarget === 'film' && <span className="mode-notch-tooltip">FILM</span>}
       </Link>
       <Link to="/jazz" className="mode-notch-btn" aria-label="Jazz listings" onClick={() => triggerGlow('jazz')}>
-        <span className={`mode-notch-emoji ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse' : ''}`}>🎺</span>
+        <span className={`mode-notch-emoji ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse' : ''}`}>🥁</span>
         {labelTarget === 'jazz' && <span className="mode-notch-tooltip">JAZZ</span>}
       </Link>
+      <button className="mode-notch-btn mode-notch-back" aria-label="Go back" onClick={() => { triggerGlow('back'); navigate(-1) }}>
+        <span className={`mode-notch-emoji ${glowTarget === 'back' ? 'mode-glow-pulse' : ''}`}>🔙</span>
+        {labelTarget === 'back' && <span className="mode-notch-tooltip">BACK</span>}
+      </button>
     </div>
   )
 }
