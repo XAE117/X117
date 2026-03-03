@@ -40,6 +40,23 @@ function FilmReel() {
   )
 }
 
+// Scorpius constellation (upper-right quadrant)
+const SCORPIUS = [
+  { x: 62, y: 16, size: 2.0 },   // δ Dschubba (left claw)
+  { x: 67, y: 13, size: 2.2 },   // β Acrab (head)
+  { x: 72, y: 16, size: 2.0 },   // π (right claw)
+  { x: 68, y: 21, size: 1.8 },   // σ (upper body)
+  { x: 70, y: 27, size: 3.2 },   // α Antares (heart — brightest)
+  { x: 73, y: 33, size: 1.8 },   // τ (body)
+  { x: 76, y: 40, size: 2.0 },   // ε (body curve)
+  { x: 78, y: 47, size: 1.6 },   // μ (lower body)
+  { x: 77, y: 53, size: 1.8 },   // ζ (tail start)
+  { x: 74, y: 58, size: 2.2 },   // θ Sargas (tail)
+  { x: 70, y: 62, size: 1.6 },   // ι (tail curve)
+  { x: 67, y: 65, size: 2.5 },   // λ Shaula (stinger)
+  { x: 68.5, y: 63.5, size: 2.0 }, // υ Lesath (stinger)
+]
+
 function SplashScreen({ title, subtitle, onDone }) {
   const [fading, setFading] = useState(false)
 
@@ -52,15 +69,15 @@ function SplashScreen({ title, subtitle, onDone }) {
         y: Math.random() * 100,
         size,
         delay: Math.random() * 2,
-        duration: 0.8 + Math.random() * 1.5,
+        duration: 2.0 + Math.random() * 3.0,
         bright: size > 1.8,
       }
     }), []
   )
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), 1800)
-    const doneTimer = setTimeout(() => onDone(), 2500)
+    const fadeTimer = setTimeout(() => setFading(true), 2800)
+    const doneTimer = setTimeout(() => onDone(), 4500)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(doneTimer)
@@ -83,6 +100,37 @@ function SplashScreen({ title, subtitle, onDone }) {
           }}
         />
       ))}
+
+      {/* Scorpius constellation */}
+      <svg className="splash-constellation" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {/* Constellation lines */}
+        <polyline
+          points="62,16 67,13 72,16"
+          fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.12"
+        />
+        <polyline
+          points="67,13 68,21 70,27 73,33 76,40 78,47 77,53 74,58 70,62 67,65"
+          fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.12"
+        />
+        <line x1="67" y1="65" x2="68.5" y2="63.5"
+          stroke="rgba(255,255,255,0.1)" strokeWidth="0.12"
+        />
+      </svg>
+      {SCORPIUS.map((s, i) => (
+        <div
+          key={`sc-${i}`}
+          className={`splash-star ${s.size >= 2.5 ? 'splash-star-bright' : 'splash-star-constellation'}`}
+          style={{
+            left: `${s.x}%`,
+            top: `${s.y}%`,
+            width: `${s.size}px`,
+            height: `${s.size}px`,
+            animationDelay: `${i * 0.15}s`,
+            animationDuration: `${3 + Math.random() * 2}s`,
+          }}
+        />
+      ))}
+
       <h1 className="splash-title">{title}</h1>
       <p className="splash-subtitle">{subtitle}</p>
       <FilmReel />
