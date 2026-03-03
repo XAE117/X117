@@ -143,15 +143,20 @@ function App() {
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
-          <div className="filter-notch">
+          <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
             {!filtersExpanded && (
-              <button
-                className="notch-toggle"
-                onClick={() => setFiltersExpanded(true)}
-                aria-label="Open filters"
-              >
-                <span className="notch-plus">+</span>
-              </button>
+              <div className="filter-notch-collapsed">
+                <button
+                  className="notch-toggle"
+                  onClick={() => setFiltersExpanded(true)}
+                  aria-label="Open filters"
+                >
+                  <span className="notch-plus">+</span>
+                </button>
+                {showFormatFilter && (
+                  <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
+                )}
+              </div>
             )}
             {filtersExpanded && (
               <div className="filter-notch-expanded">
@@ -164,7 +169,7 @@ function App() {
                 </button>
                 {showFormatFilter && (
                   <>
-                    <FormatFilter current={formatFilter} onChange={setFormatFilter} />
+                    <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
                     <button
                       className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
                       onClick={() => fetchData(true)}
