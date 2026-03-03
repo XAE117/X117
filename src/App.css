@@ -37,8 +37,8 @@
   overflow: visible;
   max-width: calc(100vw - 130px);
   margin-left: 6px;
-  margin-top: 6px;
-  transition: all 0.5s ease, opacity 1.5s ease;
+  margin-top: 4px;
+  transition: all 0.5s ease, opacity 2.5s ease;
 }
 
 /* Expanded notch can be less rounded */

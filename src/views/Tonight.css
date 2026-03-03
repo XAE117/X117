@@ -1,7 +1,7 @@
 /* ── Tonight View ── */
 
 .tonight-page {
-  padding-top: 1rem;
+  padding-top: calc(1rem + 10px);
 }
 
 .tonight-header-row {

@@ -11,12 +11,10 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: calc(0.4rem + 3px) 0.25rem 0.1rem;
+  padding: 0.15rem 0.25rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
   -webkit-tap-highlight-color: transparent;
   overflow: visible;
 }
@@ -26,7 +24,7 @@
   align-items: center;
   justify-content: center;
   color: var(--gold);
-  transition: opacity 0.15s ease, filter 0.15s ease;
+  transition: opacity 0.3s ease;
   overflow: visible;
 }
 
@@ -37,11 +35,9 @@
 
 .filter-icon.dimmed {
   opacity: 0.3;
-  transition: opacity 0.8s ease;
 }
 
-/* Label inside pill, below icon — absolutely positioned to avoid
-   widening the button beyond icon size */
+/* Label inside pill, below icon — absolutely positioned */
 .filter-tooltip {
   position: absolute;
   bottom: -0.45rem;

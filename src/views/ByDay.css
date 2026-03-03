@@ -1,7 +1,7 @@
 /* ── By Day View ── */
 
 .day-view {
-  padding-top: 1rem;
+  padding-top: calc(1rem + 10px);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -127,7 +127,7 @@
   gap: 0.15rem;
   padding: 0.45rem 0.75rem;
   background: var(--bg-card);
-  border-radius: 6px;
+  border-radius: 10px;
   transition: background 0.15s ease;
   cursor: pointer;
   position: relative;
