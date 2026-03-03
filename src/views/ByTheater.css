@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.5rem;
-  padding-top: 1rem;
+  padding-top: calc(1rem + 10px);
 }
 
 .empty-state {
@@ -21,6 +21,7 @@
 .theater-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
+  border-radius: 12px;
   position: relative;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -33,67 +34,6 @@
 .theater-card.expanded {
   grid-column: 1 / -1;
   border-color: var(--gold-dim);
-}
-
-/* ── Corner Ornaments ── */
-
-.corner-ornament {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.corner-ornament::before,
-.corner-ornament::after {
-  content: '';
-  position: absolute;
-  background: var(--gold-dim);
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-
-.theater-card:hover .corner-ornament::before,
-.theater-card:hover .corner-ornament::after {
-  opacity: 0.7;
-}
-
-.corner-ornament.top-left { top: 6px; left: 6px; }
-.corner-ornament.top-right { top: 6px; right: 6px; }
-.corner-ornament.bottom-left { bottom: 6px; left: 6px; }
-.corner-ornament.bottom-right { bottom: 6px; right: 6px; }
-
-.corner-ornament.top-left::before,
-.corner-ornament.top-right::before,
-.corner-ornament.bottom-left::before,
-.corner-ornament.bottom-right::before {
-  width: 12px;
-  height: 1px;
-}
-
-.corner-ornament.top-left::after,
-.corner-ornament.top-right::after,
-.corner-ornament.bottom-left::after,
-.corner-ornament.bottom-right::after {
-  width: 1px;
-  height: 12px;
-}
-
-.corner-ornament.top-left::before,
-.corner-ornament.top-left::after { top: 0; left: 0; }
-.corner-ornament.top-right::before { top: 0; right: 0; }
-.corner-ornament.top-right::after { top: 0; right: 0; }
-.corner-ornament.bottom-left::before { bottom: 0; left: 0; }
-.corner-ornament.bottom-left::after { bottom: 0; left: 0; }
-.corner-ornament.bottom-right::before { bottom: 0; right: 0; }
-.corner-ornament.bottom-right::after { bottom: 0; right: 0; }
-
-/* Fan motif on hover */
-.theater-card.expanded .corner-ornament.top-left::before,
-.theater-card.expanded .corner-ornament.top-right::before {
-  width: 16px;
-  opacity: 0.6;
 }
 
 /* ── Card Header ── */
@@ -200,7 +140,7 @@
   padding: 0.5rem 0.75rem;
   background: var(--bg-card);
   border-left: 3px solid transparent;
-  border-radius: 6px;
+  border-radius: 10px;
   transition: background 0.15s ease;
   flex-wrap: wrap;
   cursor: pointer;

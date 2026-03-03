@@ -45,7 +45,6 @@ function App() {
   const [formatFilter, setFormatFilter] = useState('favorites')
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [showSplash, setShowSplash] = useState(true)
   const [jazzSplashShown, setJazzSplashShown] = useState(
     () => sessionStorage.getItem('jazzSplashShown') === 'true'
   )
@@ -66,7 +65,7 @@ function App() {
     const handleScroll = () => {
       setIsScrolling(true)
       clearTimeout(scrollTimer)
-      scrollTimer = setTimeout(() => setIsScrolling(false), 1200)
+      scrollTimer = setTimeout(() => setIsScrolling(false), 200)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
@@ -115,7 +114,6 @@ function App() {
     fetchData()
   }, [])
 
-  const handleSplashDone = useCallback(() => setShowSplash(false), [])
   const handleJazzSplashDone = useCallback(() => setShowJazzSplash(false), [])
 
   const getFilteredData = () => {
@@ -187,17 +185,10 @@ function App() {
 
   return (
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
-      {showSplash && (
-        <SplashScreen
-          title="LIZA'S PALACE"
-          subtitle="Los Angeles Repertory & Arthouse Cinema"
-          onDone={handleSplashDone}
-        />
-      )}
       {showJazzSplash && (
         <SplashScreen
           title="LIZA'S JAZZ"
-          subtitle="Los Angeles Jazz & Live Music"
+          subtitle="Los Angeles live jazz shows"
           onDone={handleJazzSplashDone}
           isJazz
         />
@@ -287,7 +278,6 @@ function App() {
       </main>
       <Footer
         lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : data.lastUpdated}
-        theaters={isJazzMode && jazzData ? jazzData.venues : data.theaters}
         isJazz={isJazzMode}
       />
       {!isDetailPage && <Nav mode={mode} />}

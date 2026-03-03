@@ -158,12 +158,6 @@ function ByTheater({ data }) {
             key={theater.id}
             className={`theater-card ${isExpanded ? 'expanded' : ''}`}
           >
-            {/* Corner ornaments */}
-            <div className="corner-ornament top-left" />
-            <div className="corner-ornament top-right" />
-            <div className="corner-ornament bottom-left" />
-            <div className="corner-ornament bottom-right" />
-
             <div
               className="theater-card-header"
               onClick={() => toggle(theater.id)}

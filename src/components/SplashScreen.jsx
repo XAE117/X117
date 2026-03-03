@@ -60,8 +60,8 @@ function SplashScreen({ title, subtitle, onDone, isJazz }) {
   )
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), 2300)
-    const doneTimer = setTimeout(() => onDone(), 4000)
+    const fadeTimer = setTimeout(() => setFading(true), 1800)
+    const doneTimer = setTimeout(() => onDone(), 3500)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(doneTimer)

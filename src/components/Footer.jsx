@@ -1,6 +1,6 @@
 import './Footer.css'
 
-function Footer({ lastUpdated, theaters, isJazz }) {
+function Footer({ lastUpdated, isJazz }) {
   const formatDate = (dateStr) => {
     const d = new Date(dateStr)
     return d.toLocaleDateString('en-US', {
@@ -16,16 +16,6 @@ function Footer({ lastUpdated, theaters, isJazz }) {
         <span className="footer-updated">
           Updated {formatDate(lastUpdated)}
         </span>
-        <div className="footer-theaters">
-          {theaters.map((t, i) => (
-            <span key={t.id}>
-              <a href={t.url} target="_blank" rel="noopener noreferrer" className="footer-theater-link">
-                {t.shortName}
-              </a>
-              {i < theaters.length - 1 && <span className="footer-sep">&middot;</span>}
-            </span>
-          ))}
-        </div>
       </div>
       {isJazz && (
         <div className="footer-jazz-note">
