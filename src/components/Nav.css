@@ -126,8 +126,13 @@
   100% { filter: drop-shadow(0 0 0px rgba(201, 168, 76, 0)); }
 }
 
-/* Label: hidden, flashes on tap */
+/* Label: hidden, flashes on tap — absolutely positioned so longer
+   text (e.g. "THEATERS") doesn't widen the tab beyond icon size */
 .tab-label {
+  position: absolute;
+  bottom: -0.45rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-body);
   font-size: 0.45rem;
   font-weight: 700;
@@ -136,8 +141,6 @@
   color: var(--gold);
   white-space: nowrap;
   line-height: 1;
-  min-height: 0.45rem;
-  margin-top: 3px;
   opacity: 0;
   pointer-events: none;
 }

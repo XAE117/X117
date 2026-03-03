@@ -40,8 +40,13 @@
   transition: opacity 0.8s ease;
 }
 
-/* Label inside pill, below icon */
+/* Label inside pill, below icon — absolutely positioned to avoid
+   widening the button beyond icon size */
 .filter-tooltip {
+  position: absolute;
+  bottom: -0.45rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-body);
   font-size: 0.45rem;
   font-weight: 700;
@@ -50,8 +55,6 @@
   white-space: nowrap;
   pointer-events: none;
   line-height: 1;
-  min-height: 0.45rem;
-  margin-top: 3px;
   opacity: 0;
 }
 
