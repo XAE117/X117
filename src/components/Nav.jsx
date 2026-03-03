@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { CalendarIcon, ColumnsIcon, HeartIcon, MapIcon } from './Icons'
+import { CalendarIcon, ColumnsIcon, HeartIcon, MapIcon, SignalIcon } from './Icons'
 import './Nav.css'
 
 const TABS = [
@@ -13,6 +13,7 @@ const TABS = [
 const JAZZ_TABS = [
   { to: '/jazz', end: true, icon: CalendarIcon, label: 'By Day' },
   { to: '/jazz/by-venue', icon: ColumnsIcon, label: 'Venues' },
+  { to: '/jazz/proximity', icon: SignalIcon, label: '°LC' },
   { to: '/jazz/map', icon: MapIcon, label: 'Map' },
 ]
 
@@ -33,8 +34,8 @@ function Nav({ mode }) {
   }, [glowTarget])
 
   const tabs = mode === 'jazz' ? JAZZ_TABS : TABS
-  const mainTabs = tabs.slice(0, 2)
-  const extraTabs = tabs.slice(2)
+  const mainTabs = tabs.slice(0, 3)
+  const extraTabs = tabs.slice(3)
 
   return (
     <nav className={`bottom-bar ${mode === 'jazz' ? 'jazz-bar' : ''} ${expanded ? 'bottom-bar--open' : ''}`}>
