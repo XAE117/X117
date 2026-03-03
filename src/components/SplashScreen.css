@@ -51,11 +51,6 @@
   }
 }
 
-/* Constellation stars — steady warm glow */
-.splash-star-constellation {
-  background: rgba(255, 248, 230, 0.95);
-  box-shadow: 0 0 3px 1px rgba(201, 168, 76, 0.25);
-}
 
 .splash-title {
   font-family: var(--font-display);
