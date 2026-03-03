@@ -199,6 +199,7 @@ function App() {
           title="LIZA'S JAZZ"
           subtitle="Los Angeles Jazz & Live Music"
           onDone={handleJazzSplashDone}
+          isJazz
         />
       )}
 
