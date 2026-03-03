@@ -39,7 +39,7 @@
   justify-content: center;
   gap: 0.1rem;
   text-decoration: none;
-  padding: 0.4rem 0.25rem 0.1rem;
+  padding: calc(0.4rem + 3px) 0.25rem 0.1rem;
   background: transparent;
   transition: none;
   overflow: visible;
