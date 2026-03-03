@@ -11,8 +11,8 @@
   background: rgba(26, 23, 21, 0.9);
   border: none;
   border-radius: 999px;
-  padding: 0.5rem 0.65rem;
-  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  padding: 0.55rem 0.65rem;
+  padding-bottom: calc(0.55rem + env(safe-area-inset-bottom, 0px));
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: visible;
   transition: opacity 1.5s ease, border-radius 0.3s ease;
@@ -40,14 +40,14 @@
 .bar-main-row {
   display: flex;
   align-items: center;
-  gap: 0.1rem;
+  gap: 0.15rem;
 }
 
 .bar-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0 0.2rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@
 .bar-plus, .bar-minus {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 1;
   color: var(--gold-dim);
   transition: color 0.2s ease;
@@ -71,7 +71,7 @@
   width: 1px;
   height: 1.2rem;
   background: var(--gold-dim);
-  margin: 0 0.25rem;
+  margin: 0 0.15rem;
   flex-shrink: 0;
 }
 
@@ -85,7 +85,7 @@
   justify-content: center;
   gap: 0.1rem;
   text-decoration: none;
-  padding: 0.4rem 0.6rem 0.1rem;
+  padding: 0.4rem 0.25rem 0.1rem;
   color: var(--text-muted);
   transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;

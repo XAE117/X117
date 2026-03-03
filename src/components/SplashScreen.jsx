@@ -57,7 +57,7 @@ const SCORPIUS = [
   { x: 68.5, y: 63.5, size: 2.0 }, // υ Lesath (stinger)
 ]
 
-function SplashScreen({ title, subtitle, onDone }) {
+function SplashScreen({ title, subtitle, onDone, isJazz }) {
   const [fading, setFading] = useState(false)
 
   const stars = useMemo(() =>
@@ -133,7 +133,14 @@ function SplashScreen({ title, subtitle, onDone }) {
 
       <h1 className="splash-title">{title}</h1>
       <p className="splash-subtitle">{subtitle}</p>
-      <FilmReel />
+      {isJazz ? (
+        <div className="splash-reels-duo">
+          <FilmReel />
+          <FilmReel />
+        </div>
+      ) : (
+        <FilmReel />
+      )}
     </div>
   )
 }
