@@ -5,6 +5,7 @@ import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
+import JazzQuickNav from './components/JazzQuickNav.jsx'
 import SplashScreen from './components/SplashScreen.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
@@ -192,7 +193,9 @@ function App() {
                   <span className="notch-plus">+</span>
                 </button>
                 {showFormatFilter && (
-                  <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
+                  isJazzMode
+                    ? <JazzQuickNav expanded={false} />
+                    : <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
                 )}
               </div>
             )}
@@ -207,7 +210,10 @@ function App() {
                 </button>
                 {showFormatFilter && (
                   <>
-                    <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
+                    {isJazzMode
+                      ? <JazzQuickNav expanded={true} />
+                      : <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
+                    }
                     <button
                       className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
                       onClick={() => fetchData(true)}

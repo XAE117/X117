@@ -7,7 +7,7 @@
   gap: 0.25rem;
   background: var(--bg-card);
   border: 1px solid var(--gold-dim);
-  border-radius: 14px;
+  border-radius: 999px;
   padding: 0.55rem 0.65rem;
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
@@ -47,33 +47,25 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-body);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
   z-index: 9999;
-  animation: modeTooltipFlash 1.4s ease-in-out forwards;
+  opacity: 0;
+}
+
+.mode-notch-tooltip.label-flash {
+  animation: modeTooltipFlash 2s ease-out forwards;
 }
 
 @keyframes modeTooltipFlash {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(4px);
-  }
-  20% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  70% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-2px);
-  }
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .mode-notch-back {
@@ -87,21 +79,28 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-.mode-notch-emoji {
-  font-size: 1.4rem;
-  line-height: 1.2;
+.mode-notch-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
   transition: opacity 0.15s ease, filter 0.15s ease;
   overflow: visible;
 }
 
-.mode-notch-emoji.dimmed {
-  opacity: 0.3;
-  filter: grayscale(0.7);
-  transition: opacity 0.8s ease, filter 0.8s ease;
+.mode-notch-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
-.mode-notch-emoji.mode-glow-pulse {
-  animation: modeGlowPulse 1.7s ease-out forwards;
+.mode-notch-icon.dimmed {
+  opacity: 0.3;
+  transition: opacity 0.8s ease;
+}
+
+/* No forwards — prevents persistent filter artifact after animation */
+.mode-notch-icon.mode-glow-pulse {
+  animation: modeGlowPulse 1.7s ease-out;
 }
 
 @keyframes modeGlowPulse {

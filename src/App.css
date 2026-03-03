@@ -30,7 +30,7 @@
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--gold-dim);
-  border-radius: 14px;
+  border-radius: 999px;
   padding: 0.55rem 0.65rem;
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
@@ -39,6 +39,11 @@
   margin-left: 6px;
   margin-top: 6px;
   transition: all 0.5s ease;
+}
+
+/* Expanded notch can be less rounded */
+.filter-notch--open {
+  border-radius: 18px;
 }
 
 /* Grainy golden inner glow */
@@ -83,11 +88,18 @@
   color: var(--gold);
 }
 
-/* Collapsed: + button followed by emoji row */
+/* Collapsed: + button | emoji row */
 .filter-notch-collapsed {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+/* Vertical separator between + and filter icons */
+.filter-notch-collapsed .notch-toggle {
+  border-right: 1px solid var(--gold-dim);
+  padding-right: 0.45rem;
+  margin-right: 0.05rem;
 }
 
 .filter-notch-expanded {

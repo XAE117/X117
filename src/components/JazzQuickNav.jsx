@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { MoonIcon, ColumnsIcon, SignalIcon } from './Icons'
 import './FormatFilter.css'
 
 const JAZZ_NAV = [
-  { to: '/jazz', end: true, emoji: '🌙', label: 'TONIGHT' },
-  { to: '/jazz/by-venue', emoji: '🏛️', label: 'VENUES' },
-  { to: '/jazz/proximity', emoji: '📡', label: '°LC' },
+  { to: '/jazz', end: true, icon: MoonIcon, label: 'TONIGHT' },
+  { to: '/jazz/by-venue', icon: ColumnsIcon, label: 'VENUES' },
+  { to: '/jazz/proximity', icon: SignalIcon, label: '°LC' },
 ]
 
 function JazzQuickNav({ expanded }) {
@@ -15,25 +16,26 @@ function JazzQuickNav({ expanded }) {
 
   const triggerGlow = (key) => {
     setGlowTarget(null)
-    requestAnimationFrame(() => setGlowTarget(key))
+    setLabelTarget(null)
+    requestAnimationFrame(() => {
+      setGlowTarget(key)
+      setLabelTarget(key)
+    })
   }
 
   useEffect(() => {
     if (glowTarget) {
-      const timer = setTimeout(() => setGlowTarget(null), 1800)
+      const timer = setTimeout(() => setGlowTarget(null), 2200)
       return () => clearTimeout(timer)
     }
   }, [glowTarget])
 
-  const triggerLabel = (key) => {
-    setLabelTarget(key)
-    setTimeout(() => setLabelTarget(null), 1200)
-  }
-
-  const handleClick = (to) => {
-    triggerGlow(to)
-    if (!expanded) triggerLabel(to)
-  }
+  useEffect(() => {
+    if (labelTarget) {
+      const timer = setTimeout(() => setLabelTarget(null), 2200)
+      return () => clearTimeout(timer)
+    }
+  }, [labelTarget])
 
   if (expanded) {
     return (
@@ -42,17 +44,18 @@ function JazzQuickNav({ expanded }) {
           const isActive = item.end
             ? location.pathname === item.to
             : location.pathname.startsWith(item.to)
+          const Icon = item.icon
           return (
             <NavLink
               key={item.to}
               to={item.to}
               end={item.end}
               className={`filter-emoji-row ${isActive ? 'active' : ''}`}
-              onClick={() => handleClick(item.to)}
+              onClick={() => triggerGlow(item.to)}
               style={{ animationDelay: `${i * 0.06}s` }}
             >
-              <span className={`filter-emoji ${glowTarget === item.to ? 'filter-glow-pulse' : ''} ${isActive ? '' : 'dimmed'}`}>
-                {item.emoji}
+              <span className={`filter-icon ${glowTarget === item.to ? 'filter-glow-pulse' : ''} ${isActive ? '' : 'dimmed'}`}>
+                <Icon />
               </span>
               <span className="filter-emoji-label">{item.label}</span>
             </NavLink>
@@ -68,20 +71,19 @@ function JazzQuickNav({ expanded }) {
         const isActive = item.end
           ? location.pathname === item.to
           : location.pathname.startsWith(item.to)
+        const Icon = item.icon
         return (
           <NavLink
             key={item.to}
             to={item.to}
             end={item.end}
             className="filter-emoji-btn"
-            onClick={() => handleClick(item.to)}
+            onClick={() => triggerGlow(item.to)}
           >
-            <span className={`filter-emoji ${glowTarget === item.to ? 'filter-glow-pulse' : ''} ${isActive ? '' : 'dimmed'}`}>
-              {item.emoji}
+            <span className={`filter-icon ${glowTarget === item.to ? 'filter-glow-pulse' : ''} ${isActive ? '' : 'dimmed'}`}>
+              <Icon />
             </span>
-            {labelTarget === item.to && (
-              <span className="filter-emoji-tooltip">{item.label}</span>
-            )}
+            <span className={`filter-tooltip ${labelTarget === item.to ? 'label-flash' : ''}`}>{item.label}</span>
           </NavLink>
         )
       })}

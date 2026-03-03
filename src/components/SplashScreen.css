@@ -4,17 +4,51 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #0D0B0A;
+  background: #030308;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .splash-fading {
   opacity: 0;
   pointer-events: none;
+}
+
+/* Flickering stars */
+.splash-star {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  animation: twinkle ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.1; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Shooting star */
+.shooting-star {
+  position: absolute;
+  top: 18%;
+  left: -15%;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9) 40%, rgba(201, 168, 76, 0.6) 70%, transparent);
+  border-radius: 999px;
+  animation: shoot 1s ease-out 0.2s forwards;
+  transform: rotate(-12deg);
+  opacity: 0;
+}
+
+@keyframes shoot {
+  0% { left: -15%; opacity: 0; }
+  10% { opacity: 1; }
+  100% { left: 115%; opacity: 0; }
 }
 
 .splash-title {
@@ -24,6 +58,8 @@
   letter-spacing: 0.15em;
   text-align: center;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .splash-subtitle {
@@ -35,6 +71,8 @@
   color: var(--text-dim);
   margin-top: 0.5rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .splash-reel {
@@ -43,6 +81,8 @@
   margin-top: 2.5rem;
   color: var(--gold);
   animation: spinReel 3s linear infinite;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes spinReel {

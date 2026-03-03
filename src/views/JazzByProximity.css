@@ -50,8 +50,14 @@
   padding-bottom: 0.4rem;
 }
 
-.jbp-tier-emoji {
-  font-size: 1rem;
+.jbp-tier-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.jbp-tier-icon svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .jbp-tier-count {
