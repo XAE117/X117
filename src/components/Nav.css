@@ -17,16 +17,6 @@
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
 }
 
-/* Black out any visible area below the bar (iOS overscroll / home indicator) */
-.bottom-bar::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: var(--bg-dark);
-}
 
 .tab {
   display: flex;
