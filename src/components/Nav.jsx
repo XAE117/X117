@@ -66,24 +66,25 @@ function Nav({ mode }) {
             {expanded ? '\u2212' : '+'}
           </span>
         </button>
-        <div className="bar-divider" />
-        {mainTabs.map(tab => {
-          const Icon = tab.icon
-          return (
-            <NavLink
-              key={tab.to}
-              to={tab.to}
-              end={tab.end}
-              className={({ isActive }) => `tab ${isActive ? 'active' : ''}`}
-              onClick={() => triggerGlow(tab.to)}
-            >
-              <span className={`tab-icon ${glowTarget === tab.to ? 'tab-glow-pulse' : ''}`}>
-                <Icon />
-              </span>
-              <span className={`tab-label ${glowTarget === tab.to ? 'label-flash' : ''}`}>{tab.label}</span>
-            </NavLink>
-          )
-        })}
+        <div className="bar-tabs">
+          {mainTabs.map(tab => {
+            const Icon = tab.icon
+            return (
+              <NavLink
+                key={tab.to}
+                to={tab.to}
+                end={tab.end}
+                className={({ isActive }) => `tab ${isActive ? 'active' : ''}`}
+                onClick={() => triggerGlow(tab.to)}
+              >
+                <span className={`tab-icon ${glowTarget === tab.to ? 'tab-glow-pulse' : ''}`}>
+                  <Icon />
+                </span>
+                <span className={`tab-label ${glowTarget === tab.to ? 'label-flash' : ''}`}>{tab.label}</span>
+              </NavLink>
+            )
+          })}
+        </div>
       </div>
     </nav>
   )
