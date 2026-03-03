@@ -79,6 +79,20 @@ export function FilmStripIcon(props) {
   )
 }
 
+export function FilmReelIcon(props) {
+  return (
+    <S {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="18.5" cy="12" r="2" />
+      <circle cx="14" cy="18.2" r="2" />
+      <circle cx="6.7" cy="15.8" r="2" />
+      <circle cx="6.7" cy="8.2" r="2" />
+      <circle cx="14" cy="5.8" r="2" />
+    </S>
+  )
+}
+
 export function TrumpetIcon(props) {
   return (
     <S {...props} strokeWidth="2">

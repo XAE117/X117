@@ -49,6 +49,7 @@ function App() {
     () => sessionStorage.getItem('jazzSplashShown') === 'true'
   )
   const [showJazzSplash, setShowJazzSplash] = useState(false)
+  const [isScrolling, setIsScrolling] = useState(false)
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
@@ -57,6 +58,21 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  // Scroll detection: fade pills out when scrolling, back in after 2s idle
+  useEffect(() => {
+    let scrollTimer
+    const handleScroll = () => {
+      setIsScrolling(true)
+      clearTimeout(scrollTimer)
+      scrollTimer = setTimeout(() => setIsScrolling(false), 2000)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollTimer)
+    }
+  }, [])
 
   // Auto-collapse filter notch when switching between film/jazz
   useEffect(() => {
@@ -130,7 +146,12 @@ function App() {
       return { ...theater, screenings }
     })
 
-    return { ...data, theaters }
+    // Remove theaters with no matching screenings when film format filter is active
+    const filtered = formatFilter === 'film'
+      ? theaters.filter(t => t.screenings.length > 0)
+      : theaters
+
+    return { ...data, theaters: filtered }
   }
 
   // Show format filter on all list views (not detail pages)
@@ -164,7 +185,7 @@ function App() {
   const isDetailPage = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
 
   return (
-    <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {showSplash && (
         <SplashScreen
           title="LIZA'S PALACE"
@@ -199,29 +220,29 @@ function App() {
             )}
             {filtersExpanded && (
               <div className="filter-notch-expanded">
-                <button
-                  className="notch-toggle"
-                  onClick={() => setFiltersExpanded(false)}
-                  aria-label="Close filters"
-                >
-                  <span className="notch-plus open">+</span>
-                </button>
-                {showFormatFilter && (
-                  <>
-                    {!isJazzMode && <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />}
-                    <button
-                      className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
-                      onClick={() => fetchData(true)}
-                      disabled={refreshing}
-                      title="Refresh listings"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                        <path d="M23 4v6h-6" />
-                        <path d="M1 20v-6h6" />
-                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                      </svg>
-                    </button>
-                  </>
+                <div className="notch-top-row">
+                  <button
+                    className="notch-toggle"
+                    onClick={() => setFiltersExpanded(false)}
+                    aria-label="Close filters"
+                  >
+                    <span className="notch-minus">&minus;</span>
+                  </button>
+                  <button
+                    className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+                    onClick={() => fetchData(true)}
+                    disabled={refreshing}
+                    title="Refresh listings"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                      <path d="M23 4v6h-6" />
+                      <path d="M1 20v-6h6" />
+                      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                    </svg>
+                  </button>
+                </div>
+                {showFormatFilter && !isJazzMode && (
+                  <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
                 )}
                 <div className="filter-notch-search">
                   <input

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { FilmStripIcon, TrumpetIcon, ArrowLeftIcon } from './Icons'
+import { FilmReelIcon, MusicNoteIcon, ArrowLeftIcon } from './Icons'
 import './ModeSwitcher.css'
 
 function ModeSwitcher() {
@@ -38,13 +38,13 @@ function ModeSwitcher() {
     <div className="mode-notch">
       <Link to="/" className="mode-notch-btn" aria-label="Film listings" onClick={() => triggerGlow('film')}>
         <span className={`mode-notch-icon ${isJazz ? 'dimmed' : ''} ${glowTarget === 'film' ? 'mode-glow-pulse' : ''}`}>
-          <FilmStripIcon />
+          <FilmReelIcon />
         </span>
         <span className={`mode-notch-tooltip ${labelTarget === 'film' ? 'label-flash' : ''}`}>FILM</span>
       </Link>
       <Link to="/jazz" className="mode-notch-btn" aria-label="Jazz listings" onClick={() => triggerGlow('jazz')}>
         <span className={`mode-notch-icon ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse' : ''}`}>
-          <TrumpetIcon />
+          <MusicNoteIcon />
         </span>
         <span className={`mode-notch-tooltip ${labelTarget === 'jazz' ? 'label-flash' : ''}`}>JAZZ</span>
       </Link>
