@@ -1,7 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import { getArtistLink } from '../data/artistLinks.js'
-import ModeSwitcher from '../components/ModeSwitcher.jsx'
 import './JazzDetail.css'
 
 const TIER_LABELS = {
@@ -132,11 +131,6 @@ function JazzDetail({ data }) {
 
   return (
     <div className="jazz-detail-page">
-      <ModeSwitcher />
-      <Link to="/jazz" className="jazz-detail-back">
-        &larr; back
-      </Link>
-
       <div className="jazz-detail-card">
         <div className="jazz-detail-accent" style={{ background: venue.color }} />
 

@@ -12,9 +12,10 @@
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: visible;
+  margin-left: auto;
   margin-right: 6px;
   margin-top: 6px;
-  transition: opacity 0.6s ease;
+  transition: opacity 1.5s ease, padding 0.3s ease;
 }
 
 /* Grainy golden inner glow */
@@ -72,6 +73,12 @@
 .mode-notch-back {
   border: none;
   cursor: pointer;
+  animation: backFadeIn 0.35s ease-out;
+}
+
+@keyframes backFadeIn {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .mode-notch-icon {

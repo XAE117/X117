@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, NavLink } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
 import JazzQuickNav from './components/JazzQuickNav.jsx'
+import { SignalIcon } from './components/Icons'
 import SplashScreen from './components/SplashScreen.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
@@ -65,7 +66,7 @@ function App() {
     const handleScroll = () => {
       setIsScrolling(true)
       clearTimeout(scrollTimer)
-      scrollTimer = setTimeout(() => setIsScrolling(false), 2000)
+      scrollTimer = setTimeout(() => setIsScrolling(false), 1200)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
@@ -215,6 +216,11 @@ function App() {
                 </button>
                 {showFormatFilter && !isJazzMode && (
                   <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
+                )}
+                {isJazzMode && (
+                  <NavLink to="/jazz/proximity" className={({isActive}) => `notch-lc-link ${isActive ? 'active' : ''}`}>
+                    <SignalIcon />
+                  </NavLink>
                 )}
               </div>
             )}
