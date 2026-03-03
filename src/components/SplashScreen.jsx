@@ -6,7 +6,7 @@ function SplashScreen({ title, subtitle, onDone }) {
 
   useEffect(() => {
     const fadeTimer = setTimeout(() => setFading(true), 1500)
-    const doneTimer = setTimeout(() => onDone(), 2000)
+    const doneTimer = setTimeout(() => onDone(), 2500)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(doneTimer)

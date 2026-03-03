@@ -35,14 +35,15 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 0.2rem 0.3rem;
+  padding: 0.2rem 0.25rem;
   border-radius: 999px;
   transition: background 0.2s ease;
+  overflow: visible;
 }
 
 .mode-notch-tooltip {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.35rem);
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-body);
@@ -52,24 +53,26 @@
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
-  z-index: 999;
-  animation: modeTooltipFlash 1.2s ease-out forwards;
+  z-index: 9999;
+  animation: modeTooltipFlash 1.4s ease-in-out forwards;
 }
 
 @keyframes modeTooltipFlash {
   0% {
     opacity: 0;
-    transform: translateX(-50%) translateY(2px);
+    transform: translateX(-50%) translateY(4px);
   }
-  15% {
+  20% {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
   70% {
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
   100% {
     opacity: 0;
+    transform: translateX(-50%) translateY(-2px);
   }
 }
 
@@ -85,9 +88,10 @@
 }
 
 .mode-notch-emoji {
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.4rem;
+  line-height: 1.2;
   transition: opacity 0.15s ease, filter 0.15s ease;
+  overflow: visible;
 }
 
 .mode-notch-emoji.dimmed {

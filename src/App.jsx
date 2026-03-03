@@ -5,7 +5,6 @@ import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
-import JazzQuickNav from './components/JazzQuickNav.jsx'
 import SplashScreen from './components/SplashScreen.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
@@ -133,10 +132,8 @@ function App() {
     return { ...data, theaters }
   }
 
-  // Show format filter on cinema list views
-  const showFormatFilter = ['/', '/by-theater'].includes(location.pathname)
-  // Show jazz quick nav on jazz list views
-  const showJazzNav = isJazzMode && !location.pathname.startsWith('/jazz/show/')
+  // Show format filter on all list views (not detail pages)
+  const showFormatFilter = !location.pathname.startsWith('/screening/') && !location.pathname.startsWith('/jazz/show/')
 
   if (loading) return <LoadingSpinner />
 
@@ -197,9 +194,6 @@ function App() {
                 {showFormatFilter && (
                   <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
                 )}
-                {showJazzNav && (
-                  <JazzQuickNav expanded={false} />
-                )}
               </div>
             )}
             {filtersExpanded && (
@@ -214,23 +208,6 @@ function App() {
                 {showFormatFilter && (
                   <>
                     <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
-                    <button
-                      className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
-                      onClick={() => fetchData(true)}
-                      disabled={refreshing}
-                      title="Refresh listings"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                        <path d="M23 4v6h-6" />
-                        <path d="M1 20v-6h6" />
-                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                      </svg>
-                    </button>
-                  </>
-                )}
-                {showJazzNav && (
-                  <>
-                    <JazzQuickNav expanded={true} />
                     <button
                       className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
                       onClick={() => fetchData(true)}

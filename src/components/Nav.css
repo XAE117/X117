@@ -16,6 +16,7 @@
   padding-bottom: calc(0.7rem + env(safe-area-inset-bottom, 0px));
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   transition: padding 0.5s ease;
+  overflow: visible;
 }
 
 .tab {
@@ -29,12 +30,14 @@
   color: var(--text-muted);
   transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  overflow: visible;
 }
 
 .tab-emoji {
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.4rem;
+  line-height: 1.2;
   transition: filter 0.15s ease;
+  overflow: visible;
 }
 
 .tab:not(.active) .tab-emoji {
@@ -68,7 +71,7 @@
 /* Label tooltip that flashes on tap */
 .tab-tooltip {
   position: absolute;
-  top: 100%;
+  bottom: calc(100% + 0.3rem);
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-body);
@@ -79,24 +82,26 @@
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
-  z-index: 999;
-  animation: tabTooltipFlash 1.2s ease-out forwards;
+  z-index: 9999;
+  animation: tabTooltipFlash 1.4s ease-in-out forwards;
 }
 
 @keyframes tabTooltipFlash {
   0% {
     opacity: 0;
-    transform: translateX(-50%) translateY(2px);
+    transform: translateX(-50%) translateY(-4px);
   }
-  15% {
+  20% {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
   70% {
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
   100% {
     opacity: 0;
+    transform: translateX(-50%) translateY(2px);
   }
 }
 
