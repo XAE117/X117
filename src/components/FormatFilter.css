@@ -11,10 +11,12 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.2rem 0.25rem;
+  padding: 0.1rem 0.25rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.1rem;
   -webkit-tap-highlight-color: transparent;
   overflow: visible;
 }
@@ -38,20 +40,17 @@
   transition: opacity 0.8s ease;
 }
 
-/* Tooltip flash below button */
+/* Label inside pill, below icon */
 .filter-tooltip {
-  position: absolute;
-  top: calc(100% + 0.35rem);
-  left: 50%;
-  transform: translateX(-50%);
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 0.45rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
-  z-index: 9999;
+  line-height: 1;
+  min-height: 0.45rem;
   opacity: 0;
 }
 

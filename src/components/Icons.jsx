@@ -79,12 +79,13 @@ export function FilmStripIcon(props) {
   )
 }
 
-export function SaxIcon(props) {
+export function TrumpetIcon(props) {
   return (
-    <S {...props}>
-      <path d="M16 3l-2 1" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M14 4c-.5 2-1 4-2.5 6-1.5 2-2.5 4-2.5 7" strokeWidth="2" />
-      <circle cx="9" cy="19" r="3" />
+    <S {...props} strokeWidth="1.5">
+      <path d="M1 12h4" strokeWidth="2.5" strokeLinecap="round" />
+      <rect x="5" y="10" width="9" height="4" rx="0.5" />
+      <path d="M8 10V7M10.5 10V7M13 10V7" strokeLinecap="round" />
+      <path d="M14 10c1.5-3 4-5 8-5v14c-4 0-6.5-2-8-5" />
     </S>
   )
 }

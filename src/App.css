@@ -31,7 +31,7 @@
   background: var(--bg-card);
   border: 1px solid var(--gold-dim);
   border-radius: 999px;
-  padding: 0.55rem 0.65rem;
+  padding: 0.35rem 0.65rem;
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: visible;
@@ -95,8 +95,8 @@
   gap: 0.3rem;
 }
 
-/* Vertical separator between + and filter icons */
-.filter-notch-collapsed .notch-toggle {
+/* Vertical separator between + and filter icons (only when icons follow) */
+.filter-notch-collapsed .notch-toggle:not(:last-child) {
   border-right: 1px solid var(--gold-dim);
   padding-right: 0.45rem;
   margin-right: 0.05rem;

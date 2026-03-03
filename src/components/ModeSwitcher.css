@@ -8,7 +8,7 @@
   background: var(--bg-card);
   border: 1px solid var(--gold-dim);
   border-radius: 999px;
-  padding: 0.55rem 0.65rem;
+  padding: 0.35rem 0.65rem;
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: visible;
@@ -32,28 +32,27 @@
 .mode-notch-btn {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.1rem;
   text-decoration: none;
-  padding: 0.2rem 0.25rem;
+  padding: 0.1rem 0.25rem;
   border-radius: 999px;
   transition: background 0.2s ease;
   overflow: visible;
 }
 
 .mode-notch-tooltip {
-  position: absolute;
-  top: calc(100% + 0.35rem);
-  left: 50%;
-  transform: translateX(-50%);
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 0.45rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
-  z-index: 9999;
+  line-height: 1;
+  min-height: 0.45rem;
   opacity: 0;
 }
 

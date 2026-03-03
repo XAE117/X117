@@ -192,10 +192,8 @@ function App() {
                 >
                   <span className="notch-plus">+</span>
                 </button>
-                {showFormatFilter && (
-                  isJazzMode
-                    ? <JazzQuickNav expanded={false} />
-                    : <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
+                {showFormatFilter && !isJazzMode && (
+                  <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
                 )}
               </div>
             )}
@@ -210,10 +208,7 @@ function App() {
                 </button>
                 {showFormatFilter && (
                   <>
-                    {isJazzMode
-                      ? <JazzQuickNav expanded={true} />
-                      : <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
-                    }
+                    {!isJazzMode && <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />}
                     <button
                       className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
                       onClick={() => fetchData(true)}
