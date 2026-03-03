@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
-import ModeSwitcher from '../components/ModeSwitcher.jsx'
 import './Detail.css'
 
 function generateICS(screening, theater) {
@@ -246,11 +245,6 @@ function Detail({ data }) {
 
   return (
     <div className="detail-page">
-      <ModeSwitcher />
-      <Link to="/" className="back-btn">
-        &larr; back
-      </Link>
-
       <div className="detail-card">
         <div className="detail-corner tl" />
         <div className="detail-corner tr" />
