@@ -22,13 +22,33 @@
 .splash-star {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   animation: twinkle ease-in-out infinite alternate;
 }
 
 @keyframes twinkle {
-  0% { opacity: 0.1; transform: scale(0.6); }
-  100% { opacity: 1; transform: scale(1.3); }
+  0% { opacity: 0.05; transform: scale(0.4); }
+  100% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Bright stars with grainy pulsing glow */
+.splash-star-bright {
+  background: rgba(255, 255, 240, 1);
+  animation: twinkleBright ease-in-out infinite alternate;
+}
+
+@keyframes twinkleBright {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.7);
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.6);
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.7),
+                0 0 14px 4px rgba(201, 168, 76, 0.35);
+  }
 }
 
 
@@ -57,11 +77,11 @@
 }
 
 .splash-reel {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   margin-top: 2.5rem;
   color: var(--gold);
-  animation: spinReel 3s linear infinite;
+  animation: spinReel 8s linear infinite;
   position: relative;
   z-index: 1;
 }

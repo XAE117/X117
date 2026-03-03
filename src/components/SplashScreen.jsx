@@ -44,19 +44,23 @@ function SplashScreen({ title, subtitle, onDone }) {
   const [fading, setFading] = useState(false)
 
   const stars = useMemo(() =>
-    Array.from({ length: 50 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 2 + 0.5,
-      delay: Math.random() * 3,
-      duration: 1.5 + Math.random() * 2,
-    })), []
+    Array.from({ length: 60 }, (_, i) => {
+      const size = Math.random() * 2.5 + 0.5
+      return {
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size,
+        delay: Math.random() * 2,
+        duration: 0.8 + Math.random() * 1.5,
+        bright: size > 1.8,
+      }
+    }), []
   )
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), 750)
-    const doneTimer = setTimeout(() => onDone(), 1250)
+    const fadeTimer = setTimeout(() => setFading(true), 1800)
+    const doneTimer = setTimeout(() => onDone(), 2500)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(doneTimer)
@@ -68,7 +72,7 @@ function SplashScreen({ title, subtitle, onDone }) {
       {stars.map(s => (
         <div
           key={s.id}
-          className="splash-star"
+          className={`splash-star ${s.bright ? 'splash-star-bright' : ''}`}
           style={{
             left: `${s.x}%`,
             top: `${s.y}%`,

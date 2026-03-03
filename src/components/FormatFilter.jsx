@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { ClapboardIcon, DiscoBallIcon, StarIcon } from './Icons'
+import { FilmStripIcon, DiscoBallIcon, StarIcon } from './Icons'
 import './FormatFilter.css'
 
 const FILTERS = [
-  { key: 'film', icon: ClapboardIcon, label: 'FILM' },
+  { key: 'film', icon: FilmStripIcon, label: 'FILM' },
   { key: 'all', icon: DiscoBallIcon, label: 'ALL' },
   { key: 'favorites', icon: StarIcon, label: 'FAVES' },
 ]
