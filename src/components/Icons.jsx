@@ -81,11 +81,12 @@ export function FilmStripIcon(props) {
 
 export function TrumpetIcon(props) {
   return (
-    <S {...props} strokeWidth="1.5">
-      <path d="M1 12h4" strokeWidth="2.5" strokeLinecap="round" />
-      <rect x="5" y="10" width="9" height="4" rx="0.5" />
-      <path d="M8 10V7M10.5 10V7M13 10V7" strokeLinecap="round" />
-      <path d="M14 10c1.5-3 4-5 8-5v14c-4 0-6.5-2-8-5" />
+    <S {...props} strokeWidth="2">
+      <path d="M2 12h5" strokeWidth="3" strokeLinecap="round" />
+      <rect x="7" y="9" width="7" height="6" rx="1" />
+      <path d="M14 9c2-2 4-4 8-4v14c-4 0-6-2-8-4z" fill="currentColor" strokeWidth="0" />
+      <line x1="9.5" y1="9" x2="9.5" y2="6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="12" y1="9" x2="12" y2="6" strokeWidth="2" strokeLinecap="round" />
     </S>
   )
 }

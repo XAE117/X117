@@ -31,25 +31,6 @@
   100% { opacity: 1; transform: scale(1.3); }
 }
 
-/* Shooting star */
-.shooting-star {
-  position: absolute;
-  top: 18%;
-  left: -15%;
-  width: 100px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9) 40%, rgba(201, 168, 76, 0.6) 70%, transparent);
-  border-radius: 999px;
-  animation: shoot 1s ease-out 0.2s forwards;
-  transform: rotate(-12deg);
-  opacity: 0;
-}
-
-@keyframes shoot {
-  0% { left: -15%; opacity: 0; }
-  10% { opacity: 1; }
-  100% { left: 115%; opacity: 0; }
-}
 
 .splash-title {
   font-family: var(--font-display);

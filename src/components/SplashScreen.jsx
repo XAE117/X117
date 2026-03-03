@@ -79,7 +79,6 @@ function SplashScreen({ title, subtitle, onDone }) {
           }}
         />
       ))}
-      <div className="shooting-star" />
       <h1 className="splash-title">{title}</h1>
       <p className="splash-subtitle">{subtitle}</p>
       <FilmReel />
