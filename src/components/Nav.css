@@ -68,41 +68,20 @@
   }
 }
 
-/* Label tooltip that flashes on tap */
-.tab-tooltip {
-  position: absolute;
-  bottom: calc(100% + 0.3rem);
-  left: 50%;
-  transform: translateX(-50%);
+/* Persistent label under emoji */
+.tab-label {
   font-family: var(--font-body);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--text-muted);
   white-space: nowrap;
-  pointer-events: none;
-  z-index: 9999;
-  animation: tabTooltipFlash 1.4s ease-in-out forwards;
+  line-height: 1;
 }
 
-@keyframes tabTooltipFlash {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-4px);
-  }
-  20% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  70% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(2px);
-  }
+.tab.active .tab-label {
+  color: var(--gold);
 }
 
 .tab.active {
@@ -123,7 +102,7 @@
   color: var(--text-dim);
 }
 
-.jazz-bar .tab-tooltip {
+.jazz-bar .tab.active .tab-label {
   color: var(--jazz-accent, #D4A574);
 }
 

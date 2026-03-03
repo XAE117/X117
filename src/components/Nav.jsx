@@ -18,15 +18,10 @@ const JAZZ_TABS = [
 
 function Nav({ mode }) {
   const [glowTarget, setGlowTarget] = useState(null)
-  const [labelTarget, setLabelTarget] = useState(null)
 
   const triggerGlow = (key) => {
     setGlowTarget(null)
-    setLabelTarget(null)
-    requestAnimationFrame(() => {
-      setGlowTarget(key)
-      setLabelTarget(key)
-    })
+    requestAnimationFrame(() => setGlowTarget(key))
   }
 
   useEffect(() => {
@@ -35,13 +30,6 @@ function Nav({ mode }) {
       return () => clearTimeout(timer)
     }
   }, [glowTarget])
-
-  useEffect(() => {
-    if (labelTarget) {
-      const timer = setTimeout(() => setLabelTarget(null), 1200)
-      return () => clearTimeout(timer)
-    }
-  }, [labelTarget])
 
   const tabs = mode === 'jazz' ? JAZZ_TABS : TABS
 
@@ -58,7 +46,7 @@ function Nav({ mode }) {
           <span className={`tab-emoji ${glowTarget === tab.to ? 'tab-glow-pulse' : ''}`}>
             {tab.emoji}
           </span>
-          {labelTarget === tab.to && <span className="tab-tooltip">{tab.label}</span>}
+          <span className="tab-label">{tab.label}</span>
         </NavLink>
       ))}
     </nav>
