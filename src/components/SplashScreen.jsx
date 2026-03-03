@@ -76,8 +76,8 @@ function SplashScreen({ title, subtitle, onDone, isJazz }) {
   )
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), 2800)
-    const doneTimer = setTimeout(() => onDone(), 4500)
+    const fadeTimer = setTimeout(() => setFading(true), 2300)
+    const doneTimer = setTimeout(() => onDone(), 4000)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(doneTimer)
@@ -101,21 +101,7 @@ function SplashScreen({ title, subtitle, onDone, isJazz }) {
         />
       ))}
 
-      {/* Scorpius constellation */}
-      <svg className="splash-constellation" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {/* Constellation lines */}
-        <polyline
-          points="62,16 67,13 72,16"
-          fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.12"
-        />
-        <polyline
-          points="67,13 68,21 70,27 73,33 76,40 78,47 77,53 74,58 70,62 67,65"
-          fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.12"
-        />
-        <line x1="67" y1="65" x2="68.5" y2="63.5"
-          stroke="rgba(255,255,255,0.1)" strokeWidth="0.12"
-        />
-      </svg>
+      {/* Scorpius constellation — stars only */}
       {SCORPIUS.map((s, i) => (
         <div
           key={`sc-${i}`}

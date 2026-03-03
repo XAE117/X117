@@ -71,7 +71,7 @@
   width: 1px;
   height: 1.2rem;
   background: var(--gold-dim);
-  margin: 0 0.15rem;
+  margin: 0 0.25rem;
   flex-shrink: 0;
 }
 
@@ -85,7 +85,7 @@
   justify-content: center;
   gap: 0.1rem;
   text-decoration: none;
-  padding: 0.4rem 0.25rem 0.1rem;
+  padding: calc(0.4rem + 3px) 0.25rem 0.1rem;
   color: var(--text-muted);
   transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
