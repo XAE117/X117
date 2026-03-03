@@ -38,6 +38,11 @@
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: hidden;
+  max-width: calc(100vw - 100px);
+}
+
+.filter-notch--open {
+  border-radius: 0 14px 14px 0;
 }
 
 /* Grainy golden inner glow */
@@ -82,12 +87,19 @@
   color: var(--gold);
 }
 
+/* Collapsed: + button followed by emoji row */
+.filter-notch-collapsed {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .filter-notch-expanded {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-  animation: expandIn 0.2s ease-out both;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  animation: expandIn 0.25s ease-out both;
 }
 
 .filter-notch-search {
