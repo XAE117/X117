@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
+import JazzQuickNav from './components/JazzQuickNav.jsx'
+import SplashScreen from './components/SplashScreen.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
 import Detail from './views/Detail.jsx'
@@ -42,6 +44,11 @@ function App() {
   const [formatFilter, setFormatFilter] = useState('favorites')
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [showSplash, setShowSplash] = useState(true)
+  const [jazzSplashShown, setJazzSplashShown] = useState(
+    () => sessionStorage.getItem('jazzSplashShown') === 'true'
+  )
+  const [showJazzSplash, setShowJazzSplash] = useState(false)
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
@@ -55,6 +62,15 @@ function App() {
   useEffect(() => {
     setFiltersExpanded(false)
   }, [isJazzMode])
+
+  // Show jazz splash on first visit to jazz section
+  useEffect(() => {
+    if (isJazzMode && !jazzSplashShown) {
+      setShowJazzSplash(true)
+      setJazzSplashShown(true)
+      sessionStorage.setItem('jazzSplashShown', 'true')
+    }
+  }, [isJazzMode, jazzSplashShown])
 
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
@@ -81,6 +97,9 @@ function App() {
   useEffect(() => {
     fetchData()
   }, [])
+
+  const handleSplashDone = useCallback(() => setShowSplash(false), [])
+  const handleJazzSplashDone = useCallback(() => setShowJazzSplash(false), [])
 
   const getFilteredData = () => {
     if (!data) return null
@@ -116,6 +135,8 @@ function App() {
 
   // Show format filter on cinema list views
   const showFormatFilter = ['/', '/by-theater'].includes(location.pathname)
+  // Show jazz quick nav on jazz list views
+  const showJazzNav = isJazzMode && !location.pathname.startsWith('/jazz/show/')
 
   if (loading) return <LoadingSpinner />
 
@@ -146,6 +167,21 @@ function App() {
 
   return (
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
+      {showSplash && (
+        <SplashScreen
+          title="LIZA'S PALACE"
+          subtitle="Los Angeles Repertory & Arthouse Cinema"
+          onDone={handleSplashDone}
+        />
+      )}
+      {showJazzSplash && (
+        <SplashScreen
+          title="LIZA'S JAZZ"
+          subtitle="Los Angeles Jazz & Live Music"
+          onDone={handleJazzSplashDone}
+        />
+      )}
+
       <div className="top-bar">
         {!isDetailPage && (
           <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
@@ -160,6 +196,9 @@ function App() {
                 </button>
                 {showFormatFilter && (
                   <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
+                )}
+                {showJazzNav && (
+                  <JazzQuickNav expanded={false} />
                 )}
               </div>
             )}
@@ -189,11 +228,28 @@ function App() {
                     </button>
                   </>
                 )}
+                {showJazzNav && (
+                  <>
+                    <JazzQuickNav expanded={true} />
+                    <button
+                      className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+                      onClick={() => fetchData(true)}
+                      disabled={refreshing}
+                      title="Refresh listings"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+                        <path d="M23 4v6h-6" />
+                        <path d="M1 20v-6h6" />
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                      </svg>
+                    </button>
+                  </>
+                )}
                 <div className="filter-notch-search">
                   <input
                     type="text"
                     className="expanded-search-input"
-                    placeholder="Search films..."
+                    placeholder={isJazzMode ? 'Search shows...' : 'Search films...'}
                     value={searchQuery}
                     onChange={e => setSearchQuery(e.target.value)}
                   />

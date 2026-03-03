@@ -1,7 +1,7 @@
 name: Merge and Deploy
 on:
   push:
-    branches: ['claude/liza-palace-features-fCkan']
+    branches: ['claude/liza-palace-features-fCkan', 'claude/palace-cinema-app-OW90m']
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
       - name: Merge into main
         run: |
           git checkout main
-          git merge origin/claude/liza-palace-features-fCkan --no-edit
+          git merge origin/${{ github.ref_name }} --no-edit
           git push origin main
 
       - name: Trigger deploy
