@@ -43,6 +43,7 @@
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
+  z-index: 999;
   animation: tooltipFlash 1.2s ease-out forwards;
 }
 
