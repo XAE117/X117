@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "scrape": "node scripts/scrape.js",
     "scrape:jazz": "node scripts/scrape-jazz.js",
-    "scrape:all": "node scripts/scrape.js && node scripts/scrape-jazz.js",
+    "scrape:eats": "node scripts/scrape-restaurants.js",
+    "scrape:eats:hot": "node scripts/scrape-restaurants.js --hot",
+    "scrape:all": "node scripts/scrape.js && node scripts/scrape-jazz.js && node scripts/scrape-restaurants.js",
     "notify": "node scripts/notify.js",
     "lint": "eslint ."
   },

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { CalendarIcon, ColumnsIcon, HeartIcon, MapIcon, SignalIcon } from './Icons'
+import { CalendarIcon, ColumnsIcon, HeartIcon, MapIcon, SignalIcon, FlameIcon, StarIcon } from './Icons'
 import './Nav.css'
 
 const TABS = [
@@ -15,6 +15,12 @@ const JAZZ_TABS = [
   { to: '/jazz/by-venue', icon: ColumnsIcon, label: 'Venues' },
   { to: '/jazz/proximity', icon: SignalIcon, label: '°LC' },
   { to: '/jazz/map', icon: MapIcon, label: 'Map' },
+]
+
+const EATS_TABS = [
+  { to: '/eats', end: true, icon: FlameIcon, label: 'Hot' },
+  { to: '/eats/new', icon: StarIcon, label: 'New' },
+  { to: '/eats/map', icon: MapIcon, label: 'Map' },
 ]
 
 function Nav({ mode }) {
@@ -33,12 +39,12 @@ function Nav({ mode }) {
     }
   }, [glowTarget])
 
-  const tabs = mode === 'jazz' ? JAZZ_TABS : TABS
+  const tabs = mode === 'jazz' ? JAZZ_TABS : mode === 'eats' ? EATS_TABS : TABS
   const mainTabs = tabs.slice(0, 3)
   const extraTabs = tabs.slice(3)
 
   return (
-    <nav className={`bottom-bar ${mode === 'jazz' ? 'jazz-bar' : ''} ${expanded ? 'bottom-bar--open' : ''}`}>
+    <nav className={`bottom-bar ${mode === 'jazz' ? 'jazz-bar' : mode === 'eats' ? 'eats-bar' : ''} ${expanded ? 'bottom-bar--open' : ''}`}>
       {expanded && extraTabs.length > 0 && (
         <div className="bar-expand-stack">
           {extraTabs.map(tab => {
