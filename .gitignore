@@ -13,6 +13,11 @@ dist-ssr
 .vite
 *.local
 
+# Environment variables (API keys)
+.env
+.env.local
+.env.production
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

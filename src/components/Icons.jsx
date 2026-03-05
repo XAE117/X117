@@ -167,6 +167,14 @@ export function BubblesIcon(props) {
   )
 }
 
+export function FlameIcon(props) {
+  return (
+    <S {...props}>
+      <path d="M12 22c-4.97 0-8-3.58-8-8 0-3.5 2.5-6.5 4-8 .35 2.1 2.2 3.5 3.5 2.5C10.2 7.5 11 5 12 2c1.5 3 3 5 3.5 7.5.3 1.5-.5 2.8-1.5 3.5 1.5 0 3-1.5 3.5-3 1.5 2 2.5 4 2.5 6 0 4.42-3.03 8-8 8z" fill="currentColor" stroke="none" />
+    </S>
+  )
+}
+
 export function MusicNoteIcon(props) {
   return (
     <S {...props}>

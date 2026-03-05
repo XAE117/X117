@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { FilmReelIcon, MusicNoteIcon, ArrowLeftIcon } from './Icons'
+import { FilmReelIcon, MusicNoteIcon, FlameIcon, ArrowLeftIcon } from './Icons'
 import './ModeSwitcher.css'
 
 function ModeSwitcher() {
   const location = useLocation()
   const navigate = useNavigate()
   const isJazz = location.pathname.startsWith('/jazz')
-  const isDetailPage = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
+  const isEats = location.pathname.startsWith('/eats')
+  const isDetailPage = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/') || location.pathname.startsWith('/eats/spot/')
   const [glowTarget, setGlowTarget] = useState(null)
   const [labelTarget, setLabelTarget] = useState(null)
 
@@ -37,7 +38,7 @@ function ModeSwitcher() {
   return (
     <div className="mode-notch">
       <Link to="/" className="mode-notch-btn" aria-label="Film listings" onClick={() => triggerGlow('film')}>
-        <span className={`mode-notch-icon ${isJazz ? 'dimmed' : ''} ${glowTarget === 'film' ? 'mode-glow-pulse' : ''}`}>
+        <span className={`mode-notch-icon ${isJazz || isEats ? 'dimmed' : ''} ${glowTarget === 'film' ? 'mode-glow-pulse' : ''}`}>
           <FilmReelIcon />
         </span>
         <span className={`mode-notch-tooltip ${labelTarget === 'film' ? 'label-flash' : ''}`}>FILM</span>
@@ -47,6 +48,12 @@ function ModeSwitcher() {
           <MusicNoteIcon />
         </span>
         <span className={`mode-notch-tooltip ${labelTarget === 'jazz' ? 'label-flash' : ''}`}>JAZZ</span>
+      </Link>
+      <Link to="/eats" className="mode-notch-btn" aria-label="Restaurant guide" onClick={() => triggerGlow('eats')}>
+        <span className={`mode-notch-icon ${isEats ? '' : 'dimmed'} ${glowTarget === 'eats' ? 'mode-glow-pulse eats-glow' : ''}`}>
+          <FlameIcon />
+        </span>
+        <span className={`mode-notch-tooltip ${labelTarget === 'eats' ? 'label-flash' : ''}`}>EATS</span>
       </Link>
       {isDetailPage && (
         <button className="mode-notch-btn mode-notch-back" aria-label="Go back" onClick={() => { triggerGlow('back'); navigate(-1) }}>

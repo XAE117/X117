@@ -1,0 +1,300 @@
+#!/usr/bin/env node
+
+/**
+ * Restaurant scraper orchestrator for Liza's Palace EATS mode.
+ * Scrapes from multiple LA food media sources, deduplicates, scores by consensus,
+ * classifies into tiers, and outputs public/restaurants.json.
+ *
+ * Run: node scripts/scrape-restaurants.js [--full | --hot]
+ *   --full: Scrape all sources (default)
+ *   --hot:  Scrape only hot sources (Eater Heatmap + Infatuation Hit List)
+ *
+ * Environment variables:
+ *   GOOGLE_PLACES_API_KEY — For address/hours/rating enrichment
+ */
+
+import { readFileSync, writeFileSync } from 'fs'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { scrapeEaterHeatmap } from './sources/eater-heatmap.js'
+import { scrapeEaterEssential } from './sources/eater-essential.js'
+import { scrapeInfatuationHitList } from './sources/infatuation-hitlist.js'
+import { scrapeResyHitList } from './sources/resy-hitlist.js'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const OUTPUT_PATH = join(__dirname, '..', 'public', 'restaurants.json')
+const MANUAL_PATH = join(__dirname, '..', 'public', 'restaurants-manual.json')
+const MICHELIN_PATH = join(__dirname, '..', 'public', 'michelin-seed.json')
+const ALIASES_PATH = join(__dirname, '..', 'public', 'restaurant-aliases.json')
+const LOG_PATH = join(__dirname, '..', 'public', 'scrape-log.json')
+
+// ── Source weights for heat scoring ──
+const SOURCE_WEIGHTS = {
+  'Eater Heatmap': 3,
+  'The Infatuation Hit List': 3,
+  'Resy Hit List': 2,
+  'Michelin': 2,
+  'Michelin 1 Star': 2,
+  'Michelin 2 Stars': 3,
+  'Michelin 3 Stars': 3,
+  'Michelin Bib Gourmand': 2,
+  'Eater Essential 38': 2,
+  'Time Out Top 40': 1,
+  'LA Times 101': 2,
+  'LA Magazine': 1,
+  'The Infatuation': 1,
+  'Google': 1,
+}
+
+// ── Name normalization for deduplication ──
+function normalizeName(name) {
+  return name
+    .toLowerCase()
+    .replace(/^(the|sushi|cafe|restaurant|ristorante)\s+/i, '')
+    .replace(/[''`]/g, '')
+    .replace(/[^a-z0-9]/g, '')
+}
+
+function slugify(name, neighborhood) {
+  const slug = (name + '-' + neighborhood)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
+  return slug
+}
+
+// ── Tier classification ──
+function classifyTier(restaurant) {
+  if (restaurant.pricePp && restaurant.pricePp <= 20) return 'street'
+  if (restaurant.pricePp && restaurant.pricePp <= 120) return 'feast'
+  if (restaurant.pricePp && restaurant.pricePp > 120) return 'whale'
+
+  // Keyword fallbacks
+  const tags = restaurant.tags || []
+  if (tags.includes('tasting-menu') || tags.includes('omakase')) return 'whale'
+  if (tags.includes('pop-up') || tags.includes('food-stall') || tags.includes('truck')) return 'street'
+
+  return 'feast' // default
+}
+
+// ── Heat score calculation ──
+function calculateHeatScore(sources) {
+  let score = 0
+  for (const source of sources) {
+    // Match source name to weight keys
+    for (const [key, weight] of Object.entries(SOURCE_WEIGHTS)) {
+      if (source.name.includes(key) || key.includes(source.name)) {
+        score += weight
+        break
+      }
+    }
+    // Infatuation rating bonus
+    if (source.rating && source.rating >= 9.0) score += 1
+  }
+  return score
+}
+
+// ── Deduplication: merge restaurants from multiple sources ──
+function deduplicateRestaurants(allRestaurants) {
+  const merged = new Map() // normKey -> restaurant
+
+  for (const r of allRestaurants) {
+    const normKey = normalizeName(r.name)
+
+    if (merged.has(normKey)) {
+      const existing = merged.get(normKey)
+      // Merge sources (deduplicate by source name)
+      const existingSourceNames = new Set(existing.sources.map(s => s.name))
+      for (const source of r.sources || []) {
+        if (!existingSourceNames.has(source.name)) {
+          existing.sources.push(source)
+        }
+      }
+      // Take richer data
+      if (!existing.description && r.description) existing.description = r.description
+      if (!existing.address && r.address) existing.address = r.address
+      if (!existing.reservationUrl && r.reservationUrl) existing.reservationUrl = r.reservationUrl
+      if (!existing.pricePp && r.pricePp) existing.pricePp = r.pricePp
+      if (!existing.priceRange && r.priceRange) existing.priceRange = r.priceRange
+    } else {
+      merged.set(normKey, { ...r })
+    }
+  }
+
+  return Array.from(merged.values())
+}
+
+// ── Main orchestrator ──
+async function main() {
+  const isHotOnly = process.argv.includes('--hot')
+  console.log(`\n🍽️  Scraping restaurants (${isHotOnly ? 'hot sources only' : 'full scrape'})...\n`)
+
+  // Load existing data
+  let existing = { restaurants: [], newThisMonth: [] }
+  try {
+    existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf8'))
+    console.log(`  Loaded ${existing.restaurants.length} existing restaurants`)
+  } catch {
+    console.log('  No existing restaurants.json found, starting fresh')
+  }
+
+  // Load manual additions
+  let manualRestaurants = []
+  try {
+    const manual = JSON.parse(readFileSync(MANUAL_PATH, 'utf8'))
+    manualRestaurants = manual.restaurants || []
+    console.log(`  Loaded ${manualRestaurants.length} manual restaurants`)
+  } catch {
+    console.log('  No restaurants-manual.json found')
+  }
+
+  // ── Scrape sources ──
+  const scraped = []
+
+  // Hot sources (always scraped)
+  try {
+    console.log('\n  Scraping Eater LA Heatmap...')
+    const eaterHot = await scrapeEaterHeatmap()
+    scraped.push(...eaterHot)
+    console.log(`    → ${eaterHot.length} restaurants`)
+  } catch (err) {
+    console.error('    ✗ Eater Heatmap failed:', err.message)
+  }
+
+  try {
+    console.log('  Scraping Infatuation Hit List...')
+    const infatuation = await scrapeInfatuationHitList()
+    scraped.push(...infatuation)
+    console.log(`    → ${infatuation.length} restaurants`)
+  } catch (err) {
+    console.error('    ✗ Infatuation Hit List failed:', err.message)
+  }
+
+  // Full scrape sources
+  if (!isHotOnly) {
+    try {
+      console.log('  Scraping Eater Essential 38...')
+      const eaterEssential = await scrapeEaterEssential()
+      scraped.push(...eaterEssential)
+      console.log(`    → ${eaterEssential.length} restaurants`)
+    } catch (err) {
+      console.error('    ✗ Eater Essential 38 failed:', err.message)
+    }
+
+    try {
+      console.log('  Scraping Resy Hit List...')
+      const resy = await scrapeResyHitList()
+      scraped.push(...resy)
+      console.log(`    → ${resy.length} restaurants`)
+    } catch (err) {
+      console.error('    ✗ Resy Hit List failed:', err.message)
+    }
+  }
+
+  // ── Load Michelin seed data and merge as source ──
+  try {
+    const michelin = JSON.parse(readFileSync(MICHELIN_PATH, 'utf8'))
+    const michelinEntries = []
+    for (const s of michelin.starred || []) {
+      michelinEntries.push({
+        name: s.name,
+        neighborhood: s.neighborhood,
+        cuisine: s.cuisine,
+        pricePp: s.pricePp,
+        michelinStatus: s.stars === 3 ? 'three-star' : s.stars === 2 ? 'two-star' : 'one-star',
+        sources: [{ name: `Michelin ${s.stars} Star${s.stars > 1 ? 's' : ''}`, url: 'https://guide.michelin.com/us/en/california/los-angeles/restaurants' }],
+        tags: ['reservations-required', 'tasting-menu'],
+      })
+    }
+    for (const b of michelin.bibGourmand || []) {
+      michelinEntries.push({
+        name: b.name,
+        neighborhood: b.neighborhood,
+        cuisine: b.cuisine,
+        pricePp: b.pricePp,
+        michelinStatus: 'bib-gourmand',
+        sources: [{ name: 'Michelin Bib Gourmand', url: 'https://guide.michelin.com/us/en/california/los-angeles/restaurants' }],
+        tags: ['bib-gourmand'],
+      })
+    }
+    scraped.push(...michelinEntries)
+    console.log(`  Merged ${michelinEntries.length} Michelin seed entries`)
+  } catch {
+    console.log('  No michelin-seed.json found')
+  }
+
+  // ── Merge: existing + scraped + manual ──
+  console.log(`\n  Deduplicating ${existing.restaurants.length + scraped.length + manualRestaurants.length} total entries...`)
+  const allRestaurants = [...existing.restaurants, ...scraped, ...manualRestaurants]
+  const deduplicated = deduplicateRestaurants(allRestaurants)
+  console.log(`    → ${deduplicated.length} unique restaurants after dedup`)
+
+  // ── Classify tiers and calculate heat scores ──
+  for (const r of deduplicated) {
+    r.tier = r.tier || classifyTier(r)
+    r.sourceCount = r.sources?.length || 0
+    r.heatScore = calculateHeatScore(r.sources || [])
+    r.id = r.id || slugify(r.name, r.neighborhood)
+  }
+
+  // ── Scrape diff: detect added/removed, preserve addedDate ──
+  const previousIds = new Set(existing.restaurants.map(r => r.id))
+  const currentIds = new Set(deduplicated.map(r => r.id))
+  const added = deduplicated.filter(r => !previousIds.has(r.id))
+  const removed = [...previousIds].filter(id => !currentIds.has(id))
+
+  // Set addedDate on new entries
+  const today = new Date().toISOString().split('T')[0]
+  for (const r of added) {
+    if (!r.addedDate) r.addedDate = today
+  }
+
+  // Preserve addedDate from previous data
+  for (const r of deduplicated) {
+    const prev = existing.restaurants.find(p => p.id === r.id)
+    if (prev?.addedDate && !r.addedDate) r.addedDate = prev.addedDate
+  }
+
+  // ── Determine "new this month" ──
+  const thirtyDaysAgo = new Date()
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+  const newThisMonth = deduplicated
+    .filter(r => r.isNew || (r.addedDate && new Date(r.addedDate) >= thirtyDaysAgo))
+    .map(r => r.id)
+
+  // ── Tier stats ──
+  const tiers = { street: 0, feast: 0, whale: 0 }
+  for (const r of deduplicated) tiers[r.tier]++
+  console.log(`\n  Tiers: ${tiers.street} street, ${tiers.feast} feast, ${tiers.whale} whale`)
+  console.log(`  New this month: ${newThisMonth.length}`)
+  if (added.length > 0) console.log(`  Added: ${added.map(r => r.name).join(', ')}`)
+  if (removed.length > 0) console.log(`  Removed: ${removed.join(', ')}`)
+
+  // ── Write scrape log ──
+  const log = {
+    timestamp: new Date().toISOString(),
+    mode: isHotOnly ? 'hot' : 'full',
+    sourcesScraped: scraped.length,
+    totalRestaurants: deduplicated.length,
+    added: added.map(r => r.name),
+    removed,
+    tiers,
+  }
+  writeFileSync(LOG_PATH, JSON.stringify(log, null, 2))
+
+  // ── Write output ──
+  const output = {
+    lastUpdated: new Date().toISOString(),
+    lastFullScrape: isHotOnly ? existing.lastFullScrape : new Date().toISOString(),
+    newThisMonth,
+    restaurants: deduplicated,
+  }
+
+  writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2))
+  console.log(`\n  ✓ Wrote ${deduplicated.length} restaurants to ${OUTPUT_PATH}\n`)
+}
+
+main().catch(err => {
+  console.error('Fatal error:', err)
+  process.exit(1)
+})

@@ -1,0 +1,681 @@
+/* ── Eats Mode Styles ── */
+
+.eats-page {
+  padding: 0.5rem 0.75rem;
+  padding-bottom: 5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.eats-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  color: var(--text-muted);
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.eats-empty h2 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+/* ── Tier Filter Pills ── */
+
+.eats-filter-row {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0;
+}
+
+.eats-filter-pill {
+  background: rgba(26, 23, 21, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.eats-filter-pill.active {
+  color: var(--eats-accent);
+  border-color: var(--eats-accent);
+  background: rgba(232, 117, 58, 0.08);
+}
+
+.eats-filter-pill.tier-pill-street.active {
+  color: var(--eats-street);
+  border-color: var(--eats-street);
+  background: rgba(255, 107, 53, 0.08);
+}
+
+.eats-filter-pill.tier-pill-feast.active {
+  color: var(--eats-feast);
+  border-color: var(--eats-feast);
+  background: rgba(212, 165, 116, 0.08);
+}
+
+.eats-filter-pill.tier-pill-whale.active {
+  color: var(--eats-whale);
+  border-color: var(--eats-whale);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+/* ── Tier Sections ── */
+
+.eats-tier-section {
+  margin-bottom: 1.5rem;
+}
+
+.eats-tier-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.eats-tier-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tier-street .eats-tier-label { color: var(--eats-street); }
+.tier-feast .eats-tier-label { color: var(--eats-feast); }
+.tier-whale .eats-tier-label { color: var(--eats-whale); }
+
+.eats-tier-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.eats-tier-count {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.eats-tier-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ── Restaurant Cards ── */
+
+.eats-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.3s ease;
+  border-left: 3px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.eats-card:hover {
+  background: var(--bg-card-hover);
+}
+
+.eats-card.tier-street { border-left-color: var(--eats-street); }
+.eats-card.tier-feast { border-left-color: var(--eats-feast); }
+.eats-card.tier-whale { border-left-color: var(--eats-whale); }
+
+.eats-card.is-new {
+  box-shadow: inset 0 0 0 1px rgba(232, 117, 58, 0.15);
+}
+
+.eats-card.eats-glow-pulse {
+  animation: eatsCardGlow 0.6s ease-out;
+}
+
+@keyframes eatsCardGlow {
+  0% { box-shadow: 0 0 0 0 rgba(232, 117, 58, 0); }
+  30% { box-shadow: 0 0 12px rgba(232, 117, 58, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 117, 58, 0); }
+}
+
+.eats-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.eats-card-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.eats-card-name {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.eats-card-neighborhood {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.eats-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.eats-card-cuisine {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+
+.eats-card-price {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+}
+
+/* ── Heat Indicator ── */
+
+.eats-heat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 0.5rem;
+  line-height: 1;
+}
+
+.eats-flame {
+  font-size: 0.6rem;
+}
+
+/* ── NEW badge ── */
+
+.eats-new-badge {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--eats-accent);
+  background: rgba(232, 117, 58, 0.12);
+  border: 1px solid rgba(232, 117, 58, 0.3);
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+  text-transform: uppercase;
+}
+
+/* ── Michelin Badge ── */
+
+.eats-michelin-badge {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.michelin-three-star {
+  background: rgba(201, 168, 76, 0.2);
+  border-color: var(--gold);
+}
+
+/* ── Card Body (expanded) ── */
+
+.eats-card-body {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  animation: eatsExpandIn 0.25s ease-out;
+}
+
+@keyframes eatsExpandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eats-card-description {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+}
+
+.eats-card-whyhot {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: var(--eats-accent);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--eats-accent-dim);
+}
+
+/* ── Source Badges ── */
+
+.eats-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.eats-source-badge {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.eats-source-badge:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.eats-source-rating {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--eats-accent);
+}
+
+/* ── Card Actions ── */
+
+.eats-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.eats-action-btn {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.eats-reserve-btn {
+  background: var(--eats-accent);
+  color: var(--bg-dark);
+}
+
+.eats-reserve-btn:hover {
+  background: #f08045;
+}
+
+.eats-maps-btn {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+
+.eats-maps-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.eats-card-hours {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+}
+
+/* ── Tags ── */
+
+.eats-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin-top: 0.35rem;
+}
+
+.eats-tag {
+  font-family: var(--font-body);
+  font-size: 0.45rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+}
+
+/* ── Tier inline pill (used in EatsNew) ── */
+
+.eats-tier-pill {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.eats-tier-pill.tier-street { color: var(--eats-street); background: rgba(255, 107, 53, 0.1); }
+.eats-tier-pill.tier-feast { color: var(--eats-feast); background: rgba(212, 165, 116, 0.1); }
+.eats-tier-pill.tier-whale { color: var(--eats-whale); background: rgba(201, 168, 76, 0.1); }
+
+/* ── EatsNew header ── */
+
+.eats-new-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.eats-new-title {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: var(--eats-accent);
+  margin-bottom: 0.15rem;
+}
+
+.eats-new-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.eats-new-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.eats-empty-text {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 2rem 0;
+}
+
+/* ── EatsMapView (neighborhood list) ── */
+
+.eats-map-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.eats-map-title {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: var(--eats-accent);
+  margin-bottom: 0.15rem;
+}
+
+.eats-map-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.eats-map-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eats-map-neighborhood {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.eats-map-hood-name {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.eats-map-hood-count {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+}
+
+.eats-map-hood-spots {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.eats-map-spot-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: opacity 0.15s ease;
+}
+
+.eats-map-spot-link:hover {
+  opacity: 0.8;
+}
+
+.eats-map-spot-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.eats-map-spot-name {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.eats-map-spot-cuisine {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+}
+
+.eats-map-spot-price {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ── EatsDetail ── */
+
+.eats-detail-page {
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.eats-detail-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border-top: 3px solid transparent;
+  margin-bottom: 1rem;
+}
+
+.eats-detail-card.tier-street { border-top-color: var(--eats-street); }
+.eats-detail-card.tier-feast { border-top-color: var(--eats-feast); }
+.eats-detail-card.tier-whale { border-top-color: var(--eats-whale); }
+
+.eats-detail-header {
+  margin-bottom: 0.75rem;
+}
+
+.eats-detail-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.eats-detail-neighborhood {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-right: 0.75rem;
+}
+
+.eats-detail-tier {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eats-detail-tier.tier-street { color: var(--eats-street); }
+.eats-detail-tier.tier-feast { color: var(--eats-feast); }
+.eats-detail-tier.tier-whale { color: var(--eats-whale); }
+
+.eats-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.eats-detail-cuisine {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.eats-detail-price {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.eats-detail-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+
+.eats-detail-whyhot {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(232, 117, 58, 0.06);
+  border-left: 3px solid var(--eats-accent);
+  border-radius: 0 6px 6px 0;
+}
+
+.eats-detail-whyhot p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--eats-accent);
+  font-style: italic;
+}
+
+.eats-detail-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.eats-detail-sources {
+  margin-bottom: 0.75rem;
+}
+
+.eats-detail-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.eats-detail-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.eats-detail-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.eats-detail-actions .eats-action-btn {
+  font-size: 0.65rem;
+  padding: 0.4rem 0.8rem;
+}

@@ -41,7 +41,22 @@ function FilmReel() {
 }
 
 
-function SplashScreen({ title, subtitle, onDone, isJazz }) {
+function EatsSplashIcon() {
+  return (
+    <svg className="splash-reel eats-splash-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M50 8c-18 0-30 14-30 32 0 16 12 26 18 32 3 3 6 7 8 12 1 3 2 5 4 5s3-2 4-5c2-5 5-9 8-12 6-6 18-16 18-32 0-18-12-32-30-32z"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+      />
+      <circle cx="50" cy="38" r="8" stroke="currentColor" strokeWidth="2.5" />
+      <path d="M44 50c0 0 3 6 6 6s6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function SplashScreen({ title, subtitle, onDone, isJazz, isEats }) {
   const [fading, setFading] = useState(false)
 
   const stars = useMemo(() =>
@@ -88,7 +103,9 @@ function SplashScreen({ title, subtitle, onDone, isJazz }) {
 
       <h1 className="splash-title">{title}</h1>
       <p className="splash-subtitle">{subtitle}</p>
-      {isJazz ? (
+      {isEats ? (
+        <EatsSplashIcon />
+      ) : isJazz ? (
         <div className="splash-reels-duo">
           <FilmReel />
           <FilmReel />

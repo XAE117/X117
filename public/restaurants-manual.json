@@ -1,0 +1,49 @@
+{
+  "restaurants": [
+    {
+      "id": "tacos-el-chato-olympic",
+      "name": "Tacos El Chato",
+      "neighborhood": "Olympic/La Brea",
+      "cuisine": "Tacos",
+      "tier": "street",
+      "priceRange": "$6–12/pp",
+      "pricePp": 8,
+      "description": "Late-night taco stand. Al pastor and suadero are the move. The kind of spot you tell people about in whispers.",
+      "whyHot": "The most iconic late-night taco stand in central LA. Go after midnight.",
+      "sources": [],
+      "sourceCount": 0,
+      "heatScore": 0,
+      "tags": ["late-night", "cash-only", "outdoor", "no-reservations", "tacos"],
+      "isNew": false,
+      "address": "Olympic Blvd & La Brea Ave, Los Angeles, CA",
+      "lat": 34.0532,
+      "lng": -118.3442,
+      "googleMapsUrl": "https://maps.google.com/?q=Tacos+El+Chato+Olympic+La+Brea+Los+Angeles",
+      "hours": "Thu-Sun 9pm-3am",
+      "instagramHandle": "tacoselchato_la",
+      "manualPick": true
+    },
+    {
+      "id": "leo-taqueria-eagle-rock",
+      "name": "Leo's Tacos",
+      "neighborhood": "Eagle Rock",
+      "cuisine": "Tacos",
+      "tier": "street",
+      "priceRange": "$5–10/pp",
+      "pricePp": 7,
+      "description": "The most famous al pastor in LA. The spinning trompo is mesmerizing, the tacos are $1.50, and the multiple locations make this the city's most reliable late-night taco option.",
+      "whyHot": "Multiple locations but the truck is the OG experience. Cash only.",
+      "sources": [],
+      "sourceCount": 0,
+      "heatScore": 0,
+      "tags": ["late-night", "cash-only", "truck", "tacos", "al-pastor"],
+      "isNew": false,
+      "address": "1515 N La Brea Ave, Los Angeles, CA 90028",
+      "lat": 34.0960,
+      "lng": -118.3442,
+      "googleMapsUrl": "https://maps.google.com/?q=Leos+Tacos+La+Brea+Los+Angeles",
+      "hours": "Daily 9am-3am",
+      "manualPick": true
+    }
+  ]
+}

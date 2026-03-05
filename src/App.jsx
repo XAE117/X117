@@ -21,6 +21,10 @@ import JazzByDay from './views/JazzByDay.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
 import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
+import EatsByTier from './views/EatsByTier.jsx'
+import EatsNew from './views/EatsNew.jsx'
+import EatsMapView from './views/EatsMapView.jsx'
+import EatsDetail from './views/EatsDetail.jsx'
 import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
@@ -40,6 +44,7 @@ const NON_FAVORITE_THEATERS = [
 function App() {
   const [data, setData] = useState(null)
   const [jazzData, setJazzData] = useState(null)
+  const [eatsData, setEatsData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('favorites')
@@ -49,10 +54,15 @@ function App() {
     () => sessionStorage.getItem('jazzSplashShown') === 'true'
   )
   const [showJazzSplash, setShowJazzSplash] = useState(false)
+  const [eatsSplashShown, setEatsSplashShown] = useState(
+    () => sessionStorage.getItem('eatsSplashShown') === 'true'
+  )
+  const [showEatsSplash, setShowEatsSplash] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
+  const isEatsMode = location.pathname.startsWith('/eats')
 
   // Scroll to top on route change
   useEffect(() => {
@@ -74,10 +84,10 @@ function App() {
     }
   }, [])
 
-  // Auto-collapse filter notch when switching between film/jazz
+  // Auto-collapse filter notch when switching between modes
   useEffect(() => {
     setFiltersExpanded(false)
-  }, [isJazzMode])
+  }, [isJazzMode, isEatsMode])
 
   // Show jazz splash on first visit to jazz section
   useEffect(() => {
@@ -88,6 +98,15 @@ function App() {
     }
   }, [isJazzMode, jazzSplashShown])
 
+  // Show eats splash on first visit to eats section
+  useEffect(() => {
+    if (isEatsMode && !eatsSplashShown) {
+      setShowEatsSplash(true)
+      setEatsSplashShown(true)
+      sessionStorage.setItem('eatsSplashShown', 'true')
+    }
+  }, [isEatsMode, eatsSplashShown])
+
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
     const base = import.meta.env.BASE_URL
@@ -96,10 +115,12 @@ function App() {
     Promise.all([
       fetch(base + 'theaters.json?t=' + t).then(res => res.json()),
       fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
+      fetch(base + 'restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
     ])
-      .then(([cinemaData, jazz]) => {
+      .then(([cinemaData, jazz, eats]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
+        if (eats) setEatsData(eats)
         setLoading(false)
         setRefreshing(false)
       })
@@ -115,6 +136,7 @@ function App() {
   }, [])
 
   const handleJazzSplashDone = useCallback(() => setShowJazzSplash(false), [])
+  const handleEatsSplashDone = useCallback(() => setShowEatsSplash(false), [])
 
   const getFilteredData = () => {
     if (!data) return null
@@ -154,7 +176,7 @@ function App() {
   }
 
   // Show format filter on all list views (not detail pages)
-  const showFormatFilter = !location.pathname.startsWith('/screening/') && !location.pathname.startsWith('/jazz/show/')
+  const showFormatFilter = !location.pathname.startsWith('/screening/') && !location.pathname.startsWith('/jazz/show/') && !location.pathname.startsWith('/eats/spot/')
 
   if (loading) return <LoadingSpinner />
 
@@ -178,13 +200,13 @@ function App() {
     )
   }
 
-  const mode = isJazzMode ? 'jazz' : 'cinema'
+  const mode = isEatsMode ? 'eats' : isJazzMode ? 'jazz' : 'cinema'
 
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
-  const isDetailPage = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
+  const isDetailPage = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/') || location.pathname.startsWith('/eats/spot/')
 
   return (
-    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isEatsMode ? 'eats-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {showJazzSplash && (
         <SplashScreen
           title="LIZA'S JAZZ"
@@ -193,9 +215,17 @@ function App() {
           isJazz
         />
       )}
+      {showEatsSplash && (
+        <SplashScreen
+          title="LIZA'S EATS"
+          subtitle="Los Angeles hot restaurants"
+          onDone={handleEatsSplashDone}
+          isEats
+        />
+      )}
 
       <div className="top-bar">
-        {!isDetailPage && !isJazzMode && (
+        {!isDetailPage && !isJazzMode && !isEatsMode && (
           <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
             {!filtersExpanded && (
               <div className="filter-notch-collapsed">
@@ -274,10 +304,16 @@ function App() {
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
           <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />
           <Route path="/jazz/map" element={<JazzMapView data={jazzData} />} />
+
+          {/* Eats routes */}
+          <Route path="/eats" element={<EatsByTier data={eatsData} />} />
+          <Route path="/eats/new" element={<EatsNew data={eatsData} />} />
+          <Route path="/eats/map" element={<EatsMapView data={eatsData} />} />
+          <Route path="/eats/spot/:spotId" element={<EatsDetail data={eatsData} />} />
         </Routes>
       </main>
       <Footer
-        lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : data.lastUpdated}
+        lastUpdated={isEatsMode && eatsData ? eatsData.lastUpdated : isJazzMode && jazzData ? jazzData.lastUpdated : data.lastUpdated}
         isJazz={isJazzMode}
       />
       {!isDetailPage && <Nav mode={mode} />}
