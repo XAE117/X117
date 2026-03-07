@@ -136,6 +136,32 @@ function isHotShow(show, venueId, source) {
   return false
 }
 
+// ── Junk Artist Filter ──
+
+const JUNK_ARTISTS = new Set([
+  'home', 'menu', 'about', 'contact', 'list', 'calendar', 'events',
+  'membership', 'donate', 'subscribe', 'recording', 'gift cards', 'bar menu',
+  'play video', 'more', 'visit', 'tickets', 'buy tickets', 'see all shows',
+  'privacy policy', 'instagram', 'youtube', 'facebook', 'twitter',
+  'upcoming shows', 'live music', 'sam first records',
+])
+
+function isJunkArtist(name) {
+  if (!name || name.length < 2) return true
+  const lower = name.toLowerCase().trim()
+  if (JUNK_ARTISTS.has(lower)) return true
+  if (/@/.test(name)) return true // email address
+  if (/\.(com|org|net|edu)/.test(lower)) return true // URL fragment
+  if (/\d{4,}\s+\w+\s+(blvd|st|ave|rd|dr|ln)/i.test(name)) return true // street address
+  if (/^(sun|mon|tue|wed|thu|fri|sat)\w*\s+\d/i.test(name)) return true // "Sunday 3/8..."
+  if (lower.includes('click here') || lower.includes('inquire about')) return true
+  if (lower.includes('mailing list') || lower.includes('weekly updates')) return true
+  if (lower.includes('thank you for') || lower.includes('jazz club and cocktail')) return true
+  // All-caps marketing phrases (>15 chars, all caps, no digits = not an artist)
+  if (name.length > 15 && name === name.toUpperCase() && !/[0-9]/.test(name)) return true
+  return false
+}
+
 // ── Date Parsing ──
 
 const MONTH_MAP = {
@@ -207,104 +233,68 @@ async function scrapeBlueNote() {
     const $ = cheerio.load(html)
 
     const currentYear = TODAY.getFullYear()
+    const calendarMonth = TODAY.getMonth()
 
-    // Detect which month the calendar shows
-    let calendarMonth = TODAY.getMonth()
-    const fullText = $('body').text().toLowerCase()
-    for (const [name, num] of Object.entries(MONTH_MAP)) {
-      if (name.length >= 3 && fullText.includes(name)) {
-        calendarMonth = num
-        break
-      }
-    }
-
-    // Strategy 1: Find all /tm-event/ links and extract dates from surrounding text
-    // The calendar has day numbers near each event link
+    // Build a map of artist name (lowercase) → ticket link from /tm-event/ URLs
+    const ticketLinks = {}
     $('a[href*="/tm-event/"]').each((_, el) => {
-      try {
-        const $a = $(el)
-        const href = $a.attr('href') || ''
-        const artist = ($a.find('h3, h2').first().text().trim() || $a.text().trim())
-          .replace(/\s+/g, ' ')
+      const $a = $(el)
+      const href = $a.attr('href') || ''
+      const text = $a.text().trim().replace(/\s+/g, ' ')
+      if (text && text.length > 2) {
+        const key = text.toLowerCase()
+        ticketLinks[key] = href.startsWith('http') ? href : `https://www.bluenotejazz.com${href}`
+      }
+    })
 
-        // Skip navigation links
-        if (!artist || artist.length < 2) return
-        const lowerArtist = artist.toLowerCase()
-        if (lowerArtist === 'tickets' || lowerArtist === 'see all shows' || lowerArtist === 'buy tickets') return
-        // Skip time strings, venue names, day names
-        if (/^\d{1,2}:\d{2}\s*(am|pm)\s*(&|$)/i.test(artist)) return
-        if (lowerArtist === 'blue note los angeles' || lowerArtist.startsWith('7:00') || lowerArtist.startsWith('9:30')) return
+    // Parse calendar text sequentially: day numbers followed by artist names
+    const bodyText = $('body').text()
+    const lines = bodyText.split('\n').map(l => l.trim()).filter(Boolean)
 
-        // Walk up the DOM to find a day number
-        let dateISO = null
-        let current = $a
-        for (let depth = 0; depth < 8; depth++) {
-          current = current.parent()
-          if (!current.length) break
-          const cellText = current.clone().children().remove().end().text().trim()
-          const dayMatch = cellText.match(/^(\d{1,2})$/)
-          if (dayMatch) {
-            const day = parseInt(dayMatch[1])
-            if (day >= 1 && day <= 31) {
-              const d = new Date(currentYear, calendarMonth, day)
-              dateISO = d.toISOString().slice(0, 10)
-              break
-            }
-          }
-          // Also check for "Mar 7" style text
-          const textMatch = current.text().match(/\b(\d{1,2})\b/)
-          if (textMatch && !dateISO) {
-            const day = parseInt(textMatch[1])
-            if (day >= 1 && day <= 31) {
-              const d = new Date(currentYear, calendarMonth, day)
-              dateISO = d.toISOString().slice(0, 10)
-            }
-          }
+    const SKIP_LINES = new Set([
+      'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat',
+      'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday',
+      'blue note los angeles', '7:00 pm & 9:30 pm', 'see all shows',
+      'tickets', 'buy tickets', 'march', 'march 2026', 'april', 'april 2026',
+    ])
+
+    let lastDay = null
+
+    for (const line of lines) {
+      const lower = line.toLowerCase()
+
+      // Check if this line is a standalone day number (1-31) — before length filter
+      const dayMatch = line.match(/^(\d{1,2})$/)
+
+      // Skip known junk
+      if (!dayMatch && SKIP_LINES.has(lower)) continue
+      if (!dayMatch && /^\d{1,2}:\d{2}\s*(am|pm)/i.test(line)) continue
+      if (!dayMatch && (line.length < 3 || line.length > 150)) continue
+      if (dayMatch) {
+        const day = parseInt(dayMatch[1])
+        if (day >= 1 && day <= 31) {
+          lastDay = day
         }
+        continue
+      }
 
-        const link = href.startsWith('http') ? href : `https://www.bluenotejazz.com${href}`
+      // If we have a pending day and this looks like an artist name
+      if (lastDay && /[a-zA-Z]/.test(line)) {
+        const d = new Date(currentYear, calendarMonth, lastDay)
+        const dateISO = d.toISOString().slice(0, 10)
+
+        // Look up ticket link by artist name
+        const link = ticketLinks[lower] || 'https://www.bluenotejazz.com/la/shows/'
 
         shows.push({
-          artist,
+          artist: line,
           date: dateISO,
           time: '7:00 PM',
           venueId: 'blue-note-la',
           link,
           source: 'bluenotejazz.com',
         })
-      } catch {}
-    })
-
-    // Strategy 2: Parse the full page text for "day artist" patterns
-    if (shows.length === 0) {
-      const bodyText = $('body').text()
-      const lines = bodyText.split('\n').map(l => l.trim()).filter(Boolean)
-      let lastDay = null
-
-      for (const line of lines) {
-        // Look for day numbers (1-31) on their own or followed by artist names
-        const dayMatch = line.match(/^(\d{1,2})$/)
-        if (dayMatch) {
-          lastDay = parseInt(dayMatch[1])
-          continue
-        }
-        // If we have a day and the next line is an artist name (has letters, not too long)
-        if (lastDay && line.length > 2 && line.length < 100 && /[a-zA-Z]/.test(line)) {
-          const d = new Date(currentYear, calendarMonth, lastDay)
-          const dateISO = d.toISOString().slice(0, 10)
-          if (!['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Blue Note Los Angeles',
-            '7:00 PM & 9:30 PM', 'SEE ALL SHOWS'].includes(line.trim())) {
-            shows.push({
-              artist: line.trim(),
-              date: dateISO,
-              time: '7:00 PM',
-              venueId: 'blue-note-la',
-              link: `https://www.bluenotejazz.com/la/shows/`,
-              source: 'bluenotejazz.com',
-            })
-          }
-          lastDay = null
-        }
+        lastDay = null
       }
     }
 
@@ -627,15 +617,18 @@ async function scrapeCatalina() {
           const link = $el.find('a').first().attr('href')
           const dateText = $el.find('time, .date, [datetime]').first().text().trim()
 
-          if (title && title.length > 3 && title.length < 150) {
-            shows.push({
-              artist: title,
-              dateText,
-              venueId: 'catalina-jazz',
-              link: link || 'https://catalinajazzclub.com/calendar/',
-              source: 'catalinajazzclub.com',
-            })
-          }
+          if (!title || title.length < 3 || title.length > 150) return
+          const titleLow = title.toLowerCase()
+          if (['list', 'calendar', 'events', 'home', 'about', 'contact', 'menu'].includes(titleLow)) return
+          if (titleLow.includes('provides a warm') || titleLow.includes('environment')) return
+
+          shows.push({
+            artist: title,
+            dateText,
+            venueId: 'catalina-jazz',
+            link: link || 'https://catalinajazzclub.com/calendar/',
+            source: 'catalinajazzclub.com',
+          })
         } catch {}
       })
     }
@@ -791,138 +784,22 @@ async function scrapeMetalJazz() {
   return shows
 }
 
-// ── Scrape: Baked Potato (Puppeteer — WordPress/Divi, JS-rendered) ──
+// ── Scrape: Baked Potato ──
+// Baked Potato is JS-rendered (WordPress/Divi) and Puppeteer produces garbage
+// (grabs "Menu", page chrome, etc.). Shows come from lajazz.com instead.
 
 async function scrapeBakedPotato() {
-  console.log('  Scraping thebakedpotato.com (Puppeteer)...')
-  const shows = []
-
-  try {
-    const puppeteer = await importPuppeteer()
-    if (!puppeteer) {
-      console.log('    SKIP: Puppeteer not available')
-      return shows
-    }
-
-    const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] })
-    const page = await browser.newPage()
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
-
-    await page.goto('https://www.thebakedpotato.com/', { waitUntil: 'networkidle2', timeout: 30000 })
-    await delay(3000) // Wait for dynamic content
-
-    // Extract events from the rendered page
-    const events = await page.evaluate(() => {
-      const results = []
-      // Look for any elements containing show/event/schedule info
-      const elements = document.querySelectorAll('[class*="event"], [class*="show"], [class*="schedule"], [class*="lineup"], .et_pb_text_inner, .et_pb_module')
-
-      for (const el of elements) {
-        const text = el.textContent.trim()
-        // Look for text blocks with artist names, dates, times
-        if (text.length > 10 && text.length < 500 && /\d/.test(text)) {
-          results.push({ text, html: el.innerHTML })
-        }
-      }
-      return results
-    })
-
-    for (const evt of events) {
-      const dateISO = parseShowDate(evt.text)
-      const time = parseShowTime(evt.text) || '9:30 PM'
-      // Try to extract artist name (usually the main text before date/time)
-      let artist = evt.text.split(/\n/)[0].trim()
-      if (artist.length > 3 && artist.length < 100) {
-        shows.push({
-          artist,
-          date: dateISO,
-          time,
-          venueId: 'baked-potato',
-          link: 'https://www.thebakedpotato.com/',
-          source: 'thebakedpotato.com',
-        })
-      }
-    }
-
-    await browser.close()
-    console.log(`    Found ${shows.length} listings from Baked Potato`)
-  } catch (err) {
-    console.log(`    ERROR scraping Baked Potato: ${err.message}`)
-  }
-
-  return shows
+  console.log('  Scraping Baked Potato... (via lajazz.com only)')
+  return []
 }
 
-// ── Scrape: Sam First (Puppeteer — Wix, JS-rendered) ──
+// ── Scrape: Sam First ──
+// Sam First is Wix (JS-rendered) and Puppeteer produces garbage
+// (grabs nav, footer, social links, etc.). Shows come from lajazz.com instead.
 
 async function scrapeSamFirst() {
-  console.log('  Scraping samfirstbar.com (Puppeteer)...')
-  const shows = []
-
-  try {
-    const puppeteer = await importPuppeteer()
-    if (!puppeteer) {
-      console.log('    SKIP: Puppeteer not available')
-      return shows
-    }
-
-    const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] })
-    const page = await browser.newPage()
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
-
-    await page.goto('https://www.samfirstbar.com/', { waitUntil: 'networkidle2', timeout: 30000 })
-    await delay(5000) // Wix takes longer to render
-
-    const events = await page.evaluate(() => {
-      const results = []
-      // Wix renders events in various containers
-      const elements = document.querySelectorAll('[data-testid*="event"], [class*="event"], [class*="calendar"], [class*="schedule"]')
-
-      for (const el of elements) {
-        const text = el.textContent.trim()
-        if (text.length > 5 && text.length < 500) {
-          const link = el.querySelector('a')?.href || ''
-          results.push({ text, link })
-        }
-      }
-
-      // Fallback: scan all visible text for show-like patterns
-      if (results.length === 0) {
-        const allText = document.querySelectorAll('h2, h3, h4, p, [class*="title"]')
-        for (const el of allText) {
-          const text = el.textContent.trim()
-          if (text.length > 3 && text.length < 200) {
-            results.push({ text, link: '' })
-          }
-        }
-      }
-
-      return results
-    })
-
-    for (const evt of events) {
-      const dateISO = parseShowDate(evt.text)
-      const time = parseShowTime(evt.text) || '8:00 PM'
-      let artist = evt.text.split(/\n/)[0].trim()
-      if (artist.length > 3 && artist.length < 100) {
-        shows.push({
-          artist,
-          date: dateISO,
-          time,
-          venueId: 'sam-first',
-          link: evt.link || 'https://www.samfirstbar.com/',
-          source: 'samfirstbar.com',
-        })
-      }
-    }
-
-    await browser.close()
-    console.log(`    Found ${shows.length} listings from Sam First`)
-  } catch (err) {
-    console.log(`    ERROR scraping Sam First: ${err.message}`)
-  }
-
-  return shows
+  console.log('  Scraping Sam First... (via lajazz.com only)')
+  return []
 }
 
 // ── Puppeteer Import Helper ──
@@ -1138,9 +1015,13 @@ async function main() {
     })
   }
 
-  // Lodge Room shows
+  // Lodge Room shows — only include jazz-relevant (must match a hot artist)
+  // Lodge Room books mostly indie rock/comedy; jazz shows come via Minaret scraper
   for (const raw of lodgeRoomShows) {
     if (raw.date && !isFutureDate(raw.date)) continue
+    // Only include if artist matches hot artists list
+    const testShow = { artist: raw.artist }
+    if (!isHotShow(testShow, 'lodge-room', raw.source)) continue
     allShows.push({
       artist: raw.artist,
       date: raw.date || TODAY_ISO,
@@ -1193,9 +1074,9 @@ async function main() {
     })
   }
 
-  // ── 3. Filter past shows ──
-  const futureShows = allShows.filter(s => isFutureDate(s.date))
-  console.log(`\n  Future shows: ${futureShows.length} (filtered ${allShows.length - futureShows.length} past)`)
+  // ── 3. Filter past shows and junk entries ──
+  const futureShows = allShows.filter(s => isFutureDate(s.date) && !isJunkArtist(s.artist))
+  console.log(`\n  Future shows: ${futureShows.length} (filtered ${allShows.length - futureShows.length} past/junk)`)
 
   // ── 4. Deduplicate ──
   const dedupedShows = deduplicateShows(futureShows)
