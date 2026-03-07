@@ -31,15 +31,21 @@ function ModeSwitcher() {
     }
   }, [labelTarget])
 
+  const isFood = location.pathname.startsWith('/food')
+
   return (
     <div className="mode-notch">
       <Link to="/" className="mode-notch-btn" aria-label="Film listings" onClick={() => triggerGlow('film')}>
-        <span className={`mode-notch-emoji ${isJazz ? 'dimmed' : ''} ${glowTarget === 'film' ? 'mode-glow-pulse' : ''}`}>🎞️</span>
+        <span className={`mode-notch-emoji ${!isJazz && !isFood ? '' : 'dimmed'} ${glowTarget === 'film' ? 'mode-glow-pulse glow-blue' : ''}`}>🎞️</span>
         {labelTarget === 'film' && <span className="mode-notch-tooltip">FILM</span>}
       </Link>
       <Link to="/jazz" className="mode-notch-btn" aria-label="Jazz listings" onClick={() => triggerGlow('jazz')}>
-        <span className={`mode-notch-emoji ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse' : ''}`}>🎺</span>
+        <span className={`mode-notch-emoji ${isJazz ? '' : 'dimmed'} ${glowTarget === 'jazz' ? 'mode-glow-pulse glow-green' : ''}`}>🎺</span>
         {labelTarget === 'jazz' && <span className="mode-notch-tooltip">JAZZ</span>}
+      </Link>
+      <Link to="/food" className="mode-notch-btn" aria-label="Food listings" onClick={() => triggerGlow('food')}>
+        <span className={`mode-notch-emoji ${isFood ? '' : 'dimmed'} ${glowTarget === 'food' ? 'mode-glow-pulse glow-red' : ''}`}>🍕</span>
+        {labelTarget === 'food' && <span className="mode-notch-tooltip">FOOD</span>}
       </Link>
     </div>
   )

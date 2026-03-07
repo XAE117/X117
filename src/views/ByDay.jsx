@@ -9,6 +9,15 @@ function FormatBadge({ format }) {
   return <span className="day-format-badge">{format}</span>
 }
 
+function NewReleaseBadge({ film }) {
+  if (!film || !film.year) return null
+  const currentYear = new Date().getFullYear()
+  if (film.year >= currentYear - 1) {
+    return <span className="day-metric-badge new-release">NEW</span>
+  }
+  return null
+}
+
 function MetricsBadges({ film }) {
   if (!film) return null
   const badges = []
@@ -81,6 +90,7 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
       <div className="day-row-badges">
         <span className="day-badges-left">
           <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+          <NewReleaseBadge film={film} />
           <MetricsBadges film={film} />
           <FormatBadge format={s.format} />
         </span>
