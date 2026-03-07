@@ -9,6 +9,15 @@ function FormatBadge({ format }) {
   return <span className="search-format-badge">{format}</span>
 }
 
+function NewReleaseBadge({ film }) {
+  if (!film || !film.year) return null
+  const currentYear = new Date().getFullYear()
+  if (film.year >= currentYear - 1) {
+    return <span className="search-metric-badge new-release">NEW</span>
+  }
+  return null
+}
+
 function MetricsBadges({ film }) {
   if (!film) return null
   const badges = []
@@ -44,6 +53,7 @@ function SearchResultItem({ s, relative, film, data, forceUpdate, formatDate }) 
       {filmMeta(s.title, data.films) && (
         <span className="search-film-meta">{filmMeta(s.title, data.films)}</span>
       )}
+      <NewReleaseBadge film={film} />
       <MetricsBadges film={film} />
       <FormatBadge format={s.format} />
       <span className="search-time-col">

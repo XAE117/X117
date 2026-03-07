@@ -274,6 +274,19 @@
   border: 1px solid rgba(100, 149, 237, 0.3);
 }
 
+.search-metric-badge.new-release {
+  background: rgba(76, 201, 130, 0.15);
+  color: #4CC982;
+  border: 1px solid rgba(76, 201, 130, 0.4);
+  box-shadow: 0 0 4px rgba(76, 201, 130, 0.3), 0 0 8px rgba(76, 201, 130, 0.1);
+  animation: searchNewReleasePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes searchNewReleasePulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(76, 201, 130, 0.3), 0 0 8px rgba(76, 201, 130, 0.1); }
+  50% { box-shadow: 0 0 8px rgba(76, 201, 130, 0.5), 0 0 16px rgba(76, 201, 130, 0.2); }
+}
+
 .search-empty {
   text-align: center;
   padding: 3rem;

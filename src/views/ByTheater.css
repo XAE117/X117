@@ -388,6 +388,19 @@
   box-shadow: 0 0 3px rgba(137, 207, 240, 0.2), 0 0 7px rgba(137, 207, 240, 0.08);
 }
 
+.screening-metric-badge.new-release {
+  background: rgba(76, 201, 130, 0.15);
+  color: #4CC982;
+  border: 1px solid rgba(76, 201, 130, 0.4);
+  box-shadow: 0 0 4px rgba(76, 201, 130, 0.3), 0 0 8px rgba(76, 201, 130, 0.1);
+  animation: screeningNewReleasePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes screeningNewReleasePulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(76, 201, 130, 0.3), 0 0 8px rgba(76, 201, 130, 0.1); }
+  50% { box-shadow: 0 0 8px rgba(76, 201, 130, 0.5), 0 0 16px rgba(76, 201, 130, 0.2); }
+}
+
 .theater-past-section {
   margin-bottom: 0.5rem;
 }

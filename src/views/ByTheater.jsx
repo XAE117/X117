@@ -9,6 +9,15 @@ function FormatBadge({ format }) {
   return <span className="format-badge">{format}</span>
 }
 
+function NewReleaseBadge({ film }) {
+  if (!film || !film.year) return null
+  const currentYear = new Date().getFullYear()
+  if (film.year >= currentYear - 1) {
+    return <span className="screening-metric-badge new-release">NEW</span>
+  }
+  return null
+}
+
 function MetricsBadges({ film }) {
   if (!film) return null
   const badges = []
@@ -44,6 +53,7 @@ function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate }) {
       {filmMeta(s.title, data.films) && (
         <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
       )}
+      <NewReleaseBadge film={film} />
       <MetricsBadges film={film} />
       <FormatBadge format={s.format} />
       {(s.time || relative) && (
