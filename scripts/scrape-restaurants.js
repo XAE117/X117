@@ -20,6 +20,9 @@ import { scrapeEaterHeatmap } from './sources/eater-heatmap.js'
 import { scrapeEaterEssential } from './sources/eater-essential.js'
 import { scrapeInfatuationHitList } from './sources/infatuation-hitlist.js'
 import { scrapeResyHitList } from './sources/resy-hitlist.js'
+import { scrapeLatimes101 } from './sources/latimes-101.js'
+import { scrapeTimeoutLA } from './sources/timeout-la.js'
+import { enrichRestaurants } from './enrichment/google-places.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'restaurants.json')
@@ -47,20 +50,65 @@ const SOURCE_WEIGHTS = {
 }
 
 // ── Name normalization for deduplication ──
+// Per spec:
+//  1. Lowercase
+//  2. Strip leading "The " and common cuisine prefixes
+//  3. Strip trailing cuisine/type words
+//  4. Remove non-alphanumeric except spaces
+//  5. Collapse multiple spaces
 function normalizeName(name) {
   return name
     .toLowerCase()
-    .replace(/^(the|sushi|cafe|restaurant|ristorante)\s+/i, '')
+    .replace(/^(the\s+|sushi\s+|osteria\s+|trattoria\s+|brasserie\s+|cafe\s+|ristorante\s+)/i, '')
+    .replace(/\s+(restaurant|kitchen|bar|bistro|cafe|omakase|grill|house)\s*$/i, '')
     .replace(/[''`]/g, '')
-    .replace(/[^a-z0-9]/g, '')
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+// ── Levenshtein distance for fuzzy name matching ──
+function levenshtein(a, b) {
+  const m = a.length
+  const n = b.length
+  const dp = Array.from({ length: m + 1 }, (_, i) =>
+    Array.from({ length: n + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+  )
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (a[i - 1] === b[j - 1]) dp[i][j] = dp[i - 1][j - 1]
+      else dp[i][j] = 1 + Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1])
+    }
+  }
+  return dp[m][n]
+}
+
+// ── Load alias map from restaurant-aliases.json ──
+// Returns: { variantNorm -> canonicalNorm }
+function loadAliasMap() {
+  try {
+    const { aliases = [], distinct = [] } = JSON.parse(readFileSync(ALIASES_PATH, 'utf8'))
+    const map = new Map()
+    for (const entry of aliases) {
+      const canonNorm = normalizeName(entry.canonical)
+      for (const variant of entry.variants) {
+        map.set(normalizeName(variant), canonNorm)
+      }
+    }
+    // distinct entries are treated as independent — no extra mapping needed,
+    // they'll naturally separate because their normalized names differ
+    void distinct
+    return map
+  } catch {
+    return new Map()
+  }
 }
 
 function slugify(name, neighborhood) {
-  const slug = (name + '-' + neighborhood)
+  return (name + '-' + neighborhood)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '')
-  return slug
 }
 
 // ── Tier classification ──
@@ -69,65 +117,100 @@ function classifyTier(restaurant) {
   if (restaurant.pricePp && restaurant.pricePp <= 120) return 'feast'
   if (restaurant.pricePp && restaurant.pricePp > 120) return 'whale'
 
-  // Keyword fallbacks
   const tags = restaurant.tags || []
   if (tags.includes('tasting-menu') || tags.includes('omakase')) return 'whale'
   if (tags.includes('pop-up') || tags.includes('food-stall') || tags.includes('truck')) return 'street'
 
-  return 'feast' // default
+  return 'feast'
 }
 
 // ── Heat score calculation ──
 function calculateHeatScore(sources) {
   let score = 0
   for (const source of sources) {
-    // Match source name to weight keys
     for (const [key, weight] of Object.entries(SOURCE_WEIGHTS)) {
       if (source.name.includes(key) || key.includes(source.name)) {
         score += weight
         break
       }
     }
-    // Infatuation rating bonus
     if (source.rating && source.rating >= 9.0) score += 1
   }
   return score
 }
 
 // ── Deduplication: merge restaurants from multiple sources ──
-function deduplicateRestaurants(allRestaurants) {
-  const merged = new Map() // normKey -> restaurant
+// Uses:
+//  1. Exact normalized name match
+//  2. Alias map lookup
+//  3. Levenshtein distance ≤ 3 with same neighborhood (fuzzy match)
+function deduplicateRestaurants(allRestaurants, aliasMap) {
+  // Map from merge key -> restaurant
+  const merged = new Map()
+  // Track normalized keys of merged entries for Levenshtein lookup
+  const normKeys = []
 
   for (const r of allRestaurants) {
-    const normKey = normalizeName(r.name)
+    const rawNorm = normalizeName(r.name)
+    // Resolve via alias map (e.g. "kaneyoshi" -> "sushi kaneyoshi")
+    const norm = aliasMap.get(rawNorm) ?? rawNorm
 
-    if (merged.has(normKey)) {
-      const existing = merged.get(normKey)
-      // Merge sources (deduplicate by source name)
-      const existingSourceNames = new Set(existing.sources.map(s => s.name))
-      for (const source of r.sources || []) {
-        if (!existingSourceNames.has(source.name)) {
-          existing.sources.push(source)
+    if (merged.has(norm)) {
+      // Exact or alias match — merge into existing entry
+      mergeInto(merged.get(norm), r)
+    } else {
+      // Fuzzy match: find existing entry within Levenshtein distance ≤ 3
+      // that also shares the same neighborhood (or one of them has no neighborhood)
+      let fuzzyKey = null
+      for (const existingNorm of normKeys) {
+        if (levenshtein(norm, existingNorm) <= 3) {
+          const existing = merged.get(existingNorm)
+          const sameHood =
+            !r.neighborhood ||
+            !existing.neighborhood ||
+            r.neighborhood.toLowerCase() === existing.neighborhood.toLowerCase()
+          if (sameHood) {
+            fuzzyKey = existingNorm
+            break
+          }
         }
       }
-      // Take richer data
-      if (!existing.description && r.description) existing.description = r.description
-      if (!existing.address && r.address) existing.address = r.address
-      if (!existing.reservationUrl && r.reservationUrl) existing.reservationUrl = r.reservationUrl
-      if (!existing.pricePp && r.pricePp) existing.pricePp = r.pricePp
-      if (!existing.priceRange && r.priceRange) existing.priceRange = r.priceRange
-    } else {
-      merged.set(normKey, { ...r })
+
+      if (fuzzyKey) {
+        mergeInto(merged.get(fuzzyKey), r)
+      } else {
+        // New unique entry
+        merged.set(norm, { ...r })
+        normKeys.push(norm)
+      }
     }
   }
 
   return Array.from(merged.values())
 }
 
+function mergeInto(existing, incoming) {
+  // Merge sources (deduplicate by source name)
+  const existingSourceNames = new Set(existing.sources.map(s => s.name))
+  for (const source of incoming.sources || []) {
+    if (!existingSourceNames.has(source.name)) {
+      existing.sources.push(source)
+    }
+  }
+  // Take richer data from incoming if existing is empty
+  if (!existing.description && incoming.description) existing.description = incoming.description
+  if (!existing.address && incoming.address) existing.address = incoming.address
+  if (!existing.reservationUrl && incoming.reservationUrl) existing.reservationUrl = incoming.reservationUrl
+  if (!existing.pricePp && incoming.pricePp) existing.pricePp = incoming.pricePp
+  if (!existing.priceRange && incoming.priceRange) existing.priceRange = incoming.priceRange
+  if (!existing.michelinStatus && incoming.michelinStatus) existing.michelinStatus = incoming.michelinStatus
+  if (!existing.googlePlaceId && incoming.googlePlaceId) existing.googlePlaceId = incoming.googlePlaceId
+}
+
 // ── Main orchestrator ──
 async function main() {
   const isHotOnly = process.argv.includes('--hot')
-  console.log(`\n🍽️  Scraping restaurants (${isHotOnly ? 'hot sources only' : 'full scrape'})...\n`)
+  console.log(`\n  Scraping restaurants (${isHotOnly ? 'hot sources only' : 'full scrape'})...\n`)
 
   // Load existing data
   let existing = { restaurants: [], newThisMonth: [] }
@@ -148,46 +231,35 @@ async function main() {
     console.log('  No restaurants-manual.json found')
   }
 
-  // ── Scrape sources ──
+  // Load alias map for deduplication
+  const aliasMap = loadAliasMap()
+
+  // ── Define sources with error isolation ──
+  // Each source fails independently — one broken source never blocks the others.
+  const hotSources = [
+    { name: 'Eater Heatmap', fn: scrapeEaterHeatmap },
+    { name: 'Infatuation Hit List', fn: scrapeInfatuationHitList },
+  ]
+  const fullSources = [
+    { name: 'Eater Essential 38', fn: scrapeEaterEssential },
+    { name: 'Resy Hit List', fn: scrapeResyHitList },
+    { name: 'LA Times 101', fn: scrapeLatimes101 },
+    { name: 'Time Out LA', fn: scrapeTimeoutLA },
+  ]
+
+  const activeSources = isHotOnly ? hotSources : [...hotSources, ...fullSources]
   const scraped = []
+  const sourceResults = []
 
-  // Hot sources (always scraped)
-  try {
-    console.log('\n  Scraping Eater LA Heatmap...')
-    const eaterHot = await scrapeEaterHeatmap()
-    scraped.push(...eaterHot)
-    console.log(`    → ${eaterHot.length} restaurants`)
-  } catch (err) {
-    console.error('    ✗ Eater Heatmap failed:', err.message)
-  }
-
-  try {
-    console.log('  Scraping Infatuation Hit List...')
-    const infatuation = await scrapeInfatuationHitList()
-    scraped.push(...infatuation)
-    console.log(`    → ${infatuation.length} restaurants`)
-  } catch (err) {
-    console.error('    ✗ Infatuation Hit List failed:', err.message)
-  }
-
-  // Full scrape sources
-  if (!isHotOnly) {
+  for (const source of activeSources) {
     try {
-      console.log('  Scraping Eater Essential 38...')
-      const eaterEssential = await scrapeEaterEssential()
-      scraped.push(...eaterEssential)
-      console.log(`    → ${eaterEssential.length} restaurants`)
+      const restaurants = await source.fn()
+      scraped.push(...restaurants)
+      sourceResults.push({ source: source.name, count: restaurants.length, error: null })
+      console.log(`  ✓ ${source.name}: ${restaurants.length} restaurants`)
     } catch (err) {
-      console.error('    ✗ Eater Essential 38 failed:', err.message)
-    }
-
-    try {
-      console.log('  Scraping Resy Hit List...')
-      const resy = await scrapeResyHitList()
-      scraped.push(...resy)
-      console.log(`    → ${resy.length} restaurants`)
-    } catch (err) {
-      console.error('    ✗ Resy Hit List failed:', err.message)
+      sourceResults.push({ source: source.name, count: 0, error: err.message })
+      console.error(`  ✗ ${source.name}: ${err.message}`)
     }
   }
 
@@ -224,9 +296,10 @@ async function main() {
   }
 
   // ── Merge: existing + scraped + manual ──
-  console.log(`\n  Deduplicating ${existing.restaurants.length + scraped.length + manualRestaurants.length} total entries...`)
+  const totalBefore = existing.restaurants.length + scraped.length + manualRestaurants.length
+  console.log(`\n  Deduplicating ${totalBefore} total entries...`)
   const allRestaurants = [...existing.restaurants, ...scraped, ...manualRestaurants]
-  const deduplicated = deduplicateRestaurants(allRestaurants)
+  const deduplicated = deduplicateRestaurants(allRestaurants, aliasMap)
   console.log(`    → ${deduplicated.length} unique restaurants after dedup`)
 
   // ── Classify tiers and calculate heat scores ──
@@ -237,19 +310,22 @@ async function main() {
     r.id = r.id || slugify(r.name, r.neighborhood)
   }
 
+  // ── Google Places enrichment pass ──
+  // Runs after dedup so we only enrich unique restaurants.
+  // Only targets entries missing address or coordinates.
+  // googlePlaceId is preserved in JSON so subsequent runs skip Text Search.
+  await enrichRestaurants(deduplicated)
+
   // ── Scrape diff: detect added/removed, preserve addedDate ──
   const previousIds = new Set(existing.restaurants.map(r => r.id))
   const currentIds = new Set(deduplicated.map(r => r.id))
   const added = deduplicated.filter(r => !previousIds.has(r.id))
   const removed = [...previousIds].filter(id => !currentIds.has(id))
 
-  // Set addedDate on new entries
   const today = new Date().toISOString().split('T')[0]
   for (const r of added) {
     if (!r.addedDate) r.addedDate = today
   }
-
-  // Preserve addedDate from previous data
   for (const r of deduplicated) {
     const prev = existing.restaurants.find(p => p.id === r.id)
     if (prev?.addedDate && !r.addedDate) r.addedDate = prev.addedDate
@@ -264,7 +340,9 @@ async function main() {
 
   // ── Tier stats ──
   const tiers = { street: 0, feast: 0, whale: 0 }
-  for (const r of deduplicated) tiers[r.tier]++
+  for (const r of deduplicated) {
+    if (tiers[r.tier] !== undefined) tiers[r.tier]++
+  }
   console.log(`\n  Tiers: ${tiers.street} street, ${tiers.feast} feast, ${tiers.whale} whale`)
   console.log(`  New this month: ${newThisMonth.length}`)
   if (added.length > 0) console.log(`  Added: ${added.map(r => r.name).join(', ')}`)
@@ -274,7 +352,7 @@ async function main() {
   const log = {
     timestamp: new Date().toISOString(),
     mode: isHotOnly ? 'hot' : 'full',
-    sourcesScraped: scraped.length,
+    sources: sourceResults,
     totalRestaurants: deduplicated.length,
     added: added.map(r => r.name),
     removed,
