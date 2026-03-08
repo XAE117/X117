@@ -11,8 +11,7 @@ function FormatBadge({ format }) {
 
 function NewReleaseBadge({ film }) {
   if (!film || !film.year) return null
-  const currentYear = new Date().getFullYear()
-  if (film.year >= currentYear - 1) {
+  if (film.year >= 2010) {
     return <span className="day-metric-badge new-release">NEW</span>
   }
   return null
