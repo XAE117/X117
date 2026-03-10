@@ -3,6 +3,7 @@ import './FormatFilter.css'
 
 const FILTERS = [
   { key: 'film', emoji: '📽️', label: 'FILM' },
+  { key: 'new', emoji: '🆕', label: 'NEW' },
   { key: 'all', emoji: '🪩', label: 'ALL' },
   { key: 'favorites', emoji: '✨', label: 'FAVES' },
 ]

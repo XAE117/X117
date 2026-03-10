@@ -21,6 +21,7 @@ import JazzByProximity from './views/JazzByProximity.jsx'
 import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
+const NEW_RELEASE_MIN_YEAR = 2024
 
 // Theaters excluded from the Favorites filter
 const NON_FAVORITE_THEATERS = [
@@ -100,6 +101,17 @@ function App() {
       if (formatFilter === 'film') {
         screenings = screenings.filter(s => {
           return FILM_FORMATS.includes(s.format?.toLowerCase())
+        })
+      }
+
+      // Apply new release filter
+      if (formatFilter === 'new') {
+        const films = data.films || {}
+        const slugify = t => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+        screenings = screenings.filter(s => {
+          const slug = slugify(s.title)
+          const film = films[slug]
+          return film && film.year >= NEW_RELEASE_MIN_YEAR
         })
       }
 

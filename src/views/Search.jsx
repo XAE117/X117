@@ -11,7 +11,7 @@ function FormatBadge({ format }) {
 
 function NewReleaseBadge({ film }) {
   if (!film || !film.year) return null
-  if (film.year >= 2010) {
+  if (film.year >= 2024) {
     return <span className="search-metric-badge new-release">NEW</span>
   }
   return null
