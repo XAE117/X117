@@ -28,16 +28,22 @@
 
 .filter-notch {
   position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--gold-dim);
-  border-radius: 14px;
-  padding: 0.55rem 0.75rem 0.55rem 0.65rem;
+  background: rgba(26, 23, 21, 0.9);
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 0.65rem;
   z-index: 10;
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   overflow: visible;
-  max-width: calc(100vw - 100px);
+  max-width: calc(100vw - 130px);
   margin-left: 6px;
-  margin-top: 6px;
+  margin-top: 4px;
+  transition: all 0.5s ease, opacity 2.5s ease;
+}
+
+/* Expanded notch can be less rounded */
+.filter-notch--open {
+  border-radius: 18px;
 }
 
 /* Grainy golden inner glow */
@@ -82,11 +88,61 @@
   color: var(--gold);
 }
 
-/* Collapsed: + button followed by emoji row */
+.notch-minus {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.notch-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Scroll-based pill fade — quick fade-out, slow fade-back-in */
+.app.ui-scrolling .filter-notch,
+.app.ui-scrolling .mode-notch,
+.app.ui-scrolling .bottom-bar {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Collapsed: + button | emoji row */
 .filter-notch-collapsed {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+/* Vertical separator between + and following icons */
+.filter-notch-collapsed .notch-toggle:not(:last-child) {
+  border-right: 1px solid var(--gold-dim);
+  padding-right: 0.45rem;
+  margin-right: 0.05rem;
+}
+
+/* LC proximity link in jazz filter notch */
+.notch-lc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.15rem;
+  color: var(--jazz-accent, #D4A574);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.notch-lc-link svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.notch-lc-link:not(.active) {
+  opacity: 0.4;
 }
 
 .filter-notch-expanded {
@@ -94,7 +150,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.3rem;
-  animation: expandIn 0.25s ease-out both;
+  animation: expandIn 0.5s ease-out both;
 }
 
 .filter-notch-search {
@@ -109,7 +165,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 3.2rem 1.5rem calc(3rem + 64px); /* top space for fixed top bar + bottom for fixed bottom bar */
+  padding: 3.2rem 1.5rem calc(3rem + 80px); /* top space for fixed top bar + bottom for fixed bottom bar */
 }
 
 .refresh-btn {

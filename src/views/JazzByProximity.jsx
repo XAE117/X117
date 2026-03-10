@@ -2,7 +2,14 @@ import { useMemo, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import { TIERS, getProximityTier } from '../data/louisColeProximity.js'
+import { TargetIcon, BubblesIcon, MusicNoteIcon } from '../components/Icons'
 import './JazzByProximity.css'
+
+const TIER_ICONS = {
+  inner_circle: TargetIcon,
+  the_bubble: BubblesIcon,
+  everyone_else: MusicNoteIcon,
+}
 
 function OCBadge({ venue }) {
   if (venue.region !== 'OC') return null
@@ -92,7 +99,7 @@ function JazzByProximity({ data }) {
         {tiers.map(tier => (
           <div key={tier.key} className={`jbp-tier-block jbp-tier-${tier.key}`}>
             <h3 className="jbp-tier-header">
-              <span className="jbp-tier-emoji">{tier.emoji}</span>
+              <span className="jbp-tier-icon">{(() => { const Icon = TIER_ICONS[tier.key]; return Icon ? <Icon /> : null })()}</span>
               <span className="jbp-tier-label">{tier.label}</span>
               <span className="jbp-tier-count">{tier.shows.length}</span>
             </h3>

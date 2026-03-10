@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding-top: 10px;
 }
 
 .jbp-title {
@@ -50,8 +51,14 @@
   padding-bottom: 0.4rem;
 }
 
-.jbp-tier-emoji {
-  font-size: 1rem;
+.jbp-tier-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.jbp-tier-icon svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .jbp-tier-count {
@@ -108,7 +115,7 @@
   column-gap: 0.6rem;
   padding: 0.4rem 0.75rem;
   background: var(--bg-card);
-  border-radius: 6px;
+  border-radius: 10px;
   transition: background 0.15s ease;
   cursor: pointer;
   position: relative;
