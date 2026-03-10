@@ -210,6 +210,52 @@ const THEATERS = [
     url: 'https://lumieremusichall.com',
     color: '#D4C890',
   },
+  // ── AMC Theatres (via AMC API) ──
+  {
+    id: 'amc-century-city',
+    name: 'AMC Century City 15',
+    shortName: 'AMC Century City',
+    neighborhood: 'Century City',
+    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-century-city-15',
+    color: '#E31937',
+    amcSlug: 'amc-century-city-15',
+  },
+  {
+    id: 'amc-grove',
+    name: 'AMC The Grove 14',
+    shortName: 'AMC Grove',
+    neighborhood: 'Fairfax',
+    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-the-grove-14',
+    color: '#C41230',
+    amcSlug: 'amc-the-grove-14',
+  },
+  {
+    id: 'amc-burbank',
+    name: 'AMC Burbank 16',
+    shortName: 'AMC Burbank',
+    neighborhood: 'Burbank',
+    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-burbank-16',
+    color: '#B50D28',
+    amcSlug: 'amc-burbank-16',
+  },
+  {
+    id: 'amc-santa-monica',
+    name: 'AMC Santa Monica 7',
+    shortName: 'AMC Santa Monica',
+    neighborhood: 'Santa Monica',
+    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-broadway-4-santa-monica',
+    color: '#D42039',
+    amcSlug: 'amc-broadway-4-santa-monica',
+  },
+  {
+    id: 'amc-dine-in-marina',
+    name: 'AMC DINE-IN Marina 6',
+    shortName: 'AMC Marina',
+    neighborhood: 'Marina del Rey',
+    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-dine-in-marina-del-rey-6',
+    color: '#A8102A',
+    amcSlug: 'amc-dine-in-marina-del-rey-6',
+  },
 ]
 
 // Build a lookup: data-t value → theater config
@@ -679,6 +725,132 @@ async function scrape2220Arts(cutoffDate) {
   }
 }
 
+// ── AMC Theatres API Integration ──
+// Uses AMC Developer API v2 to fetch showtimes for LA-area AMC theaters.
+// Requires AMC_API_KEY env var (X-AMC-Vendor-Key header).
+// API docs: https://developers.amctheatres.com/Showtimes
+
+const AMC_THEATERS = THEATERS.filter(t => t.amcSlug)
+
+async function fetchAMCApi(path) {
+  const apiKey = process.env.AMC_API_KEY || '33407B35-31D1-48C9-8BA1-3DBB829F3F61'
+  if (!apiKey) return null
+  const url = `https://api.amctheatres.com${path}`
+  const result = execSync(
+    `curl -s --max-time 15 -H 'X-AMC-Vendor-Key: ${apiKey}' -H 'Accept: application/json' '${url}'`,
+    { encoding: 'utf-8', maxBuffer: 5 * 1024 * 1024 },
+  )
+  return JSON.parse(result)
+}
+
+async function scrapeAMCShowtimes() {
+  const apiKey = process.env.AMC_API_KEY || '33407B35-31D1-48C9-8BA1-3DBB829F3F61'
+  if (!apiKey) {
+    console.log('  AMC_API_KEY not set — skipping AMC theaters.')
+    return {}
+  }
+
+  console.log('  Fetching AMC showtimes via API...')
+  const results = {}
+  for (const theater of AMC_THEATERS) {
+    results[theater.id] = []
+  }
+
+  // First, discover theater numeric IDs via the locations endpoint
+  // GET /v2/locations?latitude=34.0522&longitude=-118.2437&page-size=25
+  let theaterIdMap = {} // amcSlug → numeric theatreId
+  try {
+    const locData = await fetchAMCApi('/v2/locations?latitude=34.0522&longitude=-118.2437&page-size=25')
+    if (locData && locData._embedded && locData._embedded.locations) {
+      for (const loc of locData._embedded.locations) {
+        const theatre = loc._embedded?.theatre
+        if (theatre) {
+          theaterIdMap[theatre.slug] = theatre.id
+        }
+      }
+    }
+    if (Object.keys(theaterIdMap).length > 0) {
+      console.log(`    Discovered ${Object.keys(theaterIdMap).length} nearby AMC theaters`)
+    } else {
+      console.log('    WARNING: AMC API returned 0 theaters — key may be unauthorized or pending activation.')
+      console.log('    AMC keys can take ~10 days to activate after registration.')
+      console.log('    Verify at: https://developers.amctheatres.com/')
+      return results
+    }
+  } catch (err) {
+    const msg = err.message || ''
+    if (msg.includes('Unauthorized') || msg.includes('12005')) {
+      console.log('    AMC API key is unauthorized. Keys take ~10 days to activate.')
+      console.log('    Verify at: https://developers.amctheatres.com/')
+    } else {
+      console.log(`    AMC locations endpoint failed: ${msg}`)
+    }
+    return results
+  }
+
+  // Fetch showtimes for each theater for the next 7 days
+  const today = new Date()
+  for (const theater of AMC_THEATERS) {
+    const theatreId = theaterIdMap[theater.amcSlug]
+    if (!theatreId) {
+      console.log(`    ${theater.shortName}: not found in nearby results`)
+      continue
+    }
+
+    try {
+      for (let dayOffset = 0; dayOffset < 7; dayOffset++) {
+        const date = new Date(today)
+        date.setDate(date.getDate() + dayOffset)
+        const dateStr = `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`
+        const dateISO = date.toISOString().slice(0, 10)
+
+        const data = await fetchAMCApi(`/v2/theatres/${theatreId}/showtimes/${dateStr}?page-size=50`)
+        if (!data || !data._embedded || !data._embedded.showtimes) continue
+
+        for (const st of data._embedded.showtimes) {
+          if (st.isCanceled) continue
+
+          const localTime = st.showDateTimeLocal
+          let time = ''
+          if (localTime) {
+            const d = new Date(localTime)
+            const hours = d.getHours()
+            const mins = d.getMinutes().toString().padStart(2, '0')
+            const ampm = hours >= 12 ? 'PM' : 'AM'
+            const h12 = hours % 12 || 12
+            time = `${h12}:${mins} ${ampm}`
+          }
+
+          const movieName = st.movieName || ''
+          const format = st.premiumFormat || 'digital'
+          const formatLabel = typeof format === 'string'
+            ? (format.toLowerCase().includes('imax') ? 'IMAX'
+              : format.toLowerCase().includes('dolby') ? 'Dolby'
+              : 'digital')
+            : 'digital'
+
+          results[theater.id].push({
+            id: generateId(theater.id, movieName, dateISO) + `-${time.replace(/\s+/g, '')}`,
+            title: movieName,
+            date: dateISO,
+            time,
+            format: formatLabel,
+            notes: st.mpaaRating || '',
+            link: st.purchaseUrl || theater.url,
+          })
+        }
+      }
+      console.log(`    ${theater.shortName}: ${results[theater.id].length} showtimes`)
+    } catch (err) {
+      console.log(`    ${theater.shortName}: failed — ${err.message}`)
+    }
+  }
+
+  const totalAMC = Object.values(results).reduce((sum, arr) => sum + arr.length, 0)
+  console.log(`    Total AMC showtimes: ${totalAMC}`)
+  return results
+}
+
 // ── Run all supplemental scrapers ──
 // Only adds screenings with dates after the revivalhouses.com cutoff
 
@@ -712,7 +884,18 @@ async function scrapeSupplemental(screeningsByTheater) {
   screeningsByTheater['2220-arts'].push(...arts2220)
 
   const totalSupplemental = newBev.length + vista.length + brainDead.length + vidiots.length + cinespia.length + arts2220.length
-  return totalSupplemental
+
+  // AMC theaters (API-based, independent of revivalhouses cutoff)
+  const amcResults = await scrapeAMCShowtimes()
+  let totalAMC = 0
+  for (const [theaterId, showtimes] of Object.entries(amcResults)) {
+    if (screeningsByTheater[theaterId]) {
+      screeningsByTheater[theaterId].push(...showtimes)
+      totalAMC += showtimes.length
+    }
+  }
+
+  return totalSupplemental + totalAMC
 }
 
 // ── TMDB Enrichment ──
@@ -964,7 +1147,7 @@ async function main() {
 
   const result = {
     lastUpdated: new Date().toISOString(),
-    source: 'revivalhouses.com + theater websites',
+    source: 'revivalhouses.com + theater websites + AMC API',
     theaters: outputTheaters,
   }
 

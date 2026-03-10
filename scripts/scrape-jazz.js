@@ -561,83 +561,116 @@ async function scrapeCatalina() {
   console.log('  Scraping catalinajazzclub.com...')
   const shows = []
 
-  try {
-    const html = await fetchPage('https://catalinajazzclub.com/calendar/')
-    const $ = cheerio.load(html)
+  // Try multiple page paths — calendar page may use fullcalendar JS,
+  // but /events/ or list view may have server-rendered content
+  const urls = [
+    'https://catalinajazzclub.com/events/',
+    'https://catalinajazzclub.com/calendar/',
+    'https://catalinajazzclub.com/events/list/',
+    'https://catalinajazzclub.com/',
+  ]
 
-    // Catalina uses Tribe Events plugin with Ticketmaster integration
-    // Key selectors: .type-tribe_events, .ticketmaster-event-list-wrapper
-    const eventSelectors = [
-      '.type-tribe_events',
-      '.ticketmaster-event-list-wrapper',
-      '.tribe-events-loop article',
-      '[class*="tribe-events"] article',
-    ]
+  for (const url of urls) {
+    if (shows.length > 0) break
+    try {
+      const html = await fetchPage(url)
+      const $ = cheerio.load(html)
 
-    $(eventSelectors.join(', ')).each((_, el) => {
-      try {
-        const $el = $(el)
+      // Strategy 1: Tribe Events plugin selectors
+      const eventSelectors = [
+        '.type-tribe_events',
+        '.ticketmaster-event-list-wrapper',
+        '.tribe-events-loop article',
+        '[class*="tribe-events"] article',
+        '.tribe-common-g-row',
+      ]
 
-        // Title: h3.tribe-events-list-event-title > a
-        const titleEl = $el.find('h3 a, h2 a, .tribe-events-list-event-title a, .tribe-event-url').first()
-        const title = titleEl.text().trim() || $el.find('h3, h2').first().text().trim()
-        const link = titleEl.attr('href') || $el.find('a').first().attr('href')
-
-        // Date: .ticketmaster-event-times, .tribe-event-schedule-details, <time>
-        const dateText = $el.find('.ticketmaster-event-times, .tribe-event-schedule-details, time').first().text().trim()
-          || $el.find('[datetime]').first().attr('datetime')
-
-        // Price: .tribe-events-event-cost
-        const price = $el.find('.tribe-events-event-cost span').first().text().trim()
-
-        // Skip descriptions, venue info text, and navigation
-        if (!title || title.length < 3 || title.length > 150) return
-        const titleLow = title.toLowerCase()
-        if (titleLow.includes('provides a warm') || titleLow.includes('environment')) return
-        if (titleLow.includes('6725 west sunset') || titleLow.includes('hollywood 90028')) return
-        if (['list', 'calendar', 'events', 'home', 'about', 'contact', 'menu'].includes(titleLow)) return
-
-        shows.push({
-          artist: title,
-          dateText,
-          venueId: 'catalina-jazz',
-          link: link || 'https://catalinajazzclub.com/calendar/',
-          price,
-          source: 'catalinajazzclub.com',
-        })
-      } catch {}
-    })
-
-    // Fallback: try generic event patterns if Tribe selectors returned nothing
-    if (shows.length === 0) {
-      $('article, .event, [class*="event-item"]').each((_, el) => {
+      $(eventSelectors.join(', ')).each((_, el) => {
         try {
           const $el = $(el)
-          const title = $el.find('h2, h3, a').first().text().trim()
-          const link = $el.find('a').first().attr('href')
-          const dateText = $el.find('time, .date, [datetime]').first().text().trim()
+          const titleEl = $el.find('h3 a, h2 a, .tribe-events-list-event-title a, .tribe-event-url, .tribe-events-calendar-list__event-title a').first()
+          const title = titleEl.text().trim() || $el.find('h3, h2').first().text().trim()
+          const link = titleEl.attr('href') || $el.find('a').first().attr('href')
+          const dateText = $el.find('.ticketmaster-event-times, .tribe-event-schedule-details, time, .tribe-events-calendar-list__event-datetime').first().text().trim()
+            || $el.find('[datetime]').first().attr('datetime')
 
           if (!title || title.length < 3 || title.length > 150) return
           const titleLow = title.toLowerCase()
-          if (['list', 'calendar', 'events', 'home', 'about', 'contact', 'menu'].includes(titleLow)) return
           if (titleLow.includes('provides a warm') || titleLow.includes('environment')) return
+          if (titleLow.includes('6725 west sunset') || titleLow.includes('hollywood 90028')) return
+          if (['list', 'calendar', 'events', 'home', 'about', 'contact', 'menu'].includes(titleLow)) return
 
           shows.push({
             artist: title,
             dateText,
             venueId: 'catalina-jazz',
-            link: link || 'https://catalinajazzclub.com/calendar/',
+            link: link || 'https://catalinajazzclub.com/',
             source: 'catalinajazzclub.com',
           })
         } catch {}
       })
-    }
 
-    console.log(`    Found ${shows.length} listings from Catalina`)
-  } catch (err) {
-    console.log(`    ERROR scraping Catalina: ${err.message}`)
+      // Strategy 2: Parse any event-like structured content
+      if (shows.length === 0) {
+        $('article, .event, [class*="event-item"], .entry-content .event').each((_, el) => {
+          try {
+            const $el = $(el)
+            const title = $el.find('h2, h3').first().text().trim()
+            const link = $el.find('a').first().attr('href')
+            const dateText = $el.find('time, .date, [datetime]').first().text().trim()
+
+            if (!title || title.length < 3 || title.length > 150) return
+            const titleLow = title.toLowerCase()
+            if (['list', 'calendar', 'events', 'home', 'about', 'contact', 'menu'].includes(titleLow)) return
+            if (titleLow.includes('provides a warm') || titleLow.includes('environment')) return
+
+            shows.push({
+              artist: title,
+              dateText,
+              venueId: 'catalina-jazz',
+              link: link || 'https://catalinajazzclub.com/',
+              source: 'catalinajazzclub.com',
+            })
+          } catch {}
+        })
+      }
+
+      // Strategy 3: Parse Ticketmaster widget JSON data if embedded
+      if (shows.length === 0) {
+        $('script').each((_, el) => {
+          try {
+            const text = $(el).html() || ''
+            // Look for TM event data or JSON-LD
+            if (text.includes('"@type":"Event"') || text.includes('"@type":"MusicEvent"')) {
+              const jsonMatch = text.match(/\{[^{}]*"@type"\s*:\s*"(?:Music)?Event"[^{}]*\}/g)
+              if (jsonMatch) {
+                for (const match of jsonMatch) {
+                  try {
+                    const event = JSON.parse(match)
+                    if (event.name) {
+                      shows.push({
+                        artist: event.name,
+                        dateText: event.startDate || '',
+                        venueId: 'catalina-jazz',
+                        link: event.url || 'https://catalinajazzclub.com/',
+                        source: 'catalinajazzclub.com/jsonld',
+                      })
+                    }
+                  } catch {}
+                }
+              }
+            }
+          } catch {}
+        })
+      }
+
+      await delay(1000)
+    } catch (err) {
+      console.log(`    Warning: ${url} failed: ${err.message}`)
+    }
   }
 
+  console.log(`    Found ${shows.length} listings from Catalina`)
   return shows
 }
 
@@ -785,12 +818,60 @@ async function scrapeMetalJazz() {
 }
 
 // ── Scrape: Baked Potato ──
-// Baked Potato is JS-rendered (WordPress/Divi) and Puppeteer produces garbage
-// (grabs "Menu", page chrome, etc.). Shows come from lajazz.com instead.
+// Baked Potato uses WordPress Events Manager — server-rendered HTML.
+// Structure: .em-event .em-item with h1 (artist), h2 (date/time), h4 (price)
 
 async function scrapeBakedPotato() {
-  console.log('  Scraping Baked Potato... (via lajazz.com only)')
-  return []
+  console.log('  Scraping thebakedpotato.com...')
+  const shows = []
+
+  try {
+    const html = await fetchPage('https://www.thebakedpotato.com/events/')
+    const $ = cheerio.load(html)
+
+    $('.em-event, .em-item').each((_, el) => {
+      try {
+        const $el = $(el)
+        const artist = $el.find('h1').first().text().trim()
+        if (!artist || isJunkArtist(artist)) return
+
+        // Date/time in h2: "Tuesday Night, March 10, 2026 @ 8pm & 10pm PST."
+        const dateTimeText = $el.find('h2').first().text().trim()
+        const dateMatch = dateTimeText.match(/(\w+)\s+(\d{1,2}),?\s*(\d{4})/)
+        let dateISO = null
+        if (dateMatch) {
+          dateISO = parseShowDate(`${dateMatch[1]} ${dateMatch[2]}, ${dateMatch[3]}`)
+        }
+
+        const timeMatch = dateTimeText.match(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))/i)
+        const time = timeMatch ? timeMatch[1].toUpperCase().replace(/(\d)(AM|PM)/, '$1 $2') : '9:30 PM'
+
+        // Price from h4
+        const price = $el.find('h4').first().text().trim()
+
+        // Link from .em-item-read-more or first anchor
+        const link = $el.find('.em-item-read-more').attr('href')
+          || $el.find('a').first().attr('href')
+          || 'https://www.thebakedpotato.com/events/'
+
+        shows.push({
+          artist,
+          date: dateISO,
+          time,
+          venueId: 'baked-potato',
+          link: link.startsWith('http') ? link : `https://www.thebakedpotato.com${link}`,
+          price: price || '',
+          source: 'thebakedpotato.com',
+        })
+      } catch {}
+    })
+
+    console.log(`    Found ${shows.length} shows from Baked Potato`)
+  } catch (err) {
+    console.log(`    ERROR scraping Baked Potato: ${err.message}`)
+  }
+
+  return shows
 }
 
 // ── Scrape: Sam First ──
@@ -811,6 +892,73 @@ async function importPuppeteer() {
   } catch {
     return null
   }
+}
+
+// ── Scrape: Campus JAX ──
+// Campus JAX uses server-rendered HTML with .eventWrapper containers.
+// Structure: .eventTitle > p (artist), .eventDate (date), .eventTime (time)
+
+async function scrapeCampusJax() {
+  console.log('  Scraping campusjax.com/entertainment/...')
+  const shows = []
+
+  try {
+    const html = await fetchPage('https://www.campusjax.com/entertainment/')
+    const $ = cheerio.load(html)
+
+    $('.eventWrapper, .outerWrapper').each((_, el) => {
+      try {
+        const $el = $(el)
+        const artist = $el.find('.eventTitle p, .eventTitle').first().text().trim()
+        if (!artist || isJunkArtist(artist)) return
+
+        // Date: "Tue, Mar 17" — needs year appended
+        const dateText = $el.find('.eventDate').first().text().trim()
+        let dateISO = null
+        if (dateText) {
+          // Parse "Tue, Mar 17" or "Wed, Mar 18" format
+          const match = dateText.match(/\w+,?\s*(\w+)\s+(\d{1,2})/)
+          if (match) {
+            const monthStr = match[1].toLowerCase()
+            const day = match[2]
+            const monthNum = MONTH_MAP[monthStr]
+            if (monthNum !== undefined) {
+              const year = TODAY.getFullYear()
+              const d = new Date(year, monthNum, parseInt(day))
+              // If the date is in the past, it's probably next year
+              if (d < TODAY) d.setFullYear(year + 1)
+              dateISO = d.toISOString().slice(0, 10)
+            }
+          }
+        }
+
+        // Time: "6:30 PM - 8:00 PM\nDoors at 5:00 PM"
+        const timeText = $el.find('.eventTime').first().text().trim()
+        const time = parseShowTime(timeText) || '7:00 PM'
+
+        // Link from event detail page
+        const link = $el.find('a[href*="/events/event/"]').attr('href')
+          || $el.find('a').first().attr('href')
+          || 'https://www.campusjax.com/entertainment/'
+        const fullLink = link.startsWith('http') ? link : `https://www.campusjax.com${link}`
+
+        shows.push({
+          artist,
+          date: dateISO,
+          time,
+          venueId: 'campus-jax',
+          link: fullLink,
+          source: 'campusjax.com',
+        })
+      } catch {}
+    })
+
+    console.log(`    Found ${shows.length} shows from Campus JAX`)
+  } catch (err) {
+    console.log(`    ERROR scraping Campus JAX: ${err.message}`)
+  }
+
+  return shows
 }
 
 // ── Venue Matching Helper ──
@@ -952,6 +1100,14 @@ async function main() {
     scrapeErrors.push({ source: 'samfirstbar.com', error: err.message })
   }
 
+  // Campus JAX (server-rendered)
+  let campusJaxShows = []
+  try {
+    campusJaxShows = await scrapeCampusJax()
+  } catch (err) {
+    scrapeErrors.push({ source: 'campusjax.com', error: err.message })
+  }
+
   // ── 2. Normalize all scraped data into structured shows ──
   const allShows = []
 
@@ -1058,6 +1214,20 @@ async function main() {
       link: raw.link,
       notes: '',
       source: 'samfirstbar.com',
+    })
+  }
+
+  // Campus JAX shows
+  for (const raw of campusJaxShows) {
+    if (raw.date && !isFutureDate(raw.date)) continue
+    allShows.push({
+      artist: raw.artist,
+      date: raw.date || TODAY_ISO,
+      time: raw.time || '7:00 PM',
+      venueId: 'campus-jax',
+      link: raw.link,
+      notes: '',
+      source: 'campusjax.com',
     })
   }
 
