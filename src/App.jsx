@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
@@ -18,6 +18,9 @@ import JazzByDay from './views/JazzByDay.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
 import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
+import FoodByCategory from './views/FoodByCategory.jsx'
+import FoodStarred from './views/FoodStarred.jsx'
+import Splash from './views/Splash.jsx'
 import './App.css'
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
@@ -38,6 +41,7 @@ const NON_FAVORITE_THEATERS = [
 function App() {
   const [data, setData] = useState(null)
   const [jazzData, setJazzData] = useState(null)
+  const [foodData, setFoodData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('favorites')
@@ -46,6 +50,7 @@ function App() {
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
+  const isFoodMode = location.pathname.startsWith('/food')
 
   // Scroll to top on route change
   useEffect(() => {
@@ -60,10 +65,12 @@ function App() {
     Promise.all([
       fetch(base + 'theaters.json?t=' + t).then(res => res.json()),
       fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
+      fetch(base + 'restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
     ])
-      .then(([cinemaData, jazz]) => {
+      .then(([cinemaData, jazz, food]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
+        if (food) setFoodData(food)
         setLoading(false)
         setRefreshing(false)
       })
@@ -146,13 +153,14 @@ function App() {
     )
   }
 
-  const mode = isJazzMode ? 'jazz' : 'cinema'
+  const mode = isFoodMode ? 'food' : isJazzMode ? 'jazz' : 'cinema'
 
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
-  const isDetailPage = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
+  const isSplashPage = location.pathname === '/welcome'
+  const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
 
   return (
-    <div className={`app ${isJazzMode ? 'jazz-mode' : ''}`}>
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
           <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
@@ -218,8 +226,15 @@ function App() {
       )}
       <main className="main-content">
         <Routes>
+          {/* Splash */}
+          <Route path="/welcome" element={<Splash />} />
+
           {/* Cinema routes */}
-          <Route path="/" element={<ByDay data={filteredData} searchQuery={searchQuery} />} />
+          <Route path="/" element={
+            !sessionStorage.getItem('palace-splash-seen')
+              ? <Navigate to="/welcome" replace />
+              : <ByDay data={filteredData} searchQuery={searchQuery} />
+          } />
           <Route path="/tonight" element={<Tonight data={filteredData} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
@@ -233,6 +248,10 @@ function App() {
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
           <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />
           <Route path="/jazz/map" element={<JazzMapView data={jazzData} />} />
+
+          {/* Food routes */}
+          <Route path="/food" element={<FoodByCategory data={foodData} />} />
+          <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
         </Routes>
       </main>
       <Footer

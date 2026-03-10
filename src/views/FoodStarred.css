@@ -1,0 +1,95 @@
+/* ── Food Starred Page ── */
+
+.food-starred-page {
+  padding-top: 0.5rem;
+}
+
+.food-starred-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.food-starred-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.food-starred-hint {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.food-starred-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.starred-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+
+.starred-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.starred-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.starred-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.starred-card-hood {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.starred-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.starred-card-cuisine {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.starred-card-price {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.starred-card-desc {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+.starred-card-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}

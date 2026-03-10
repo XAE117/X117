@@ -16,6 +16,11 @@ const JAZZ_TABS = [
   { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
 ]
 
+const FOOD_TABS = [
+  { to: '/food', end: true, emoji: '🍕', label: 'All' },
+  { to: '/food/starred', emoji: '⭐', label: 'Starred' },
+]
+
 function Nav({ mode }) {
   const [glowTarget, setGlowTarget] = useState(null)
   const [labelTarget, setLabelTarget] = useState(null)
@@ -43,10 +48,10 @@ function Nav({ mode }) {
     }
   }, [labelTarget])
 
-  const tabs = mode === 'jazz' ? JAZZ_TABS : TABS
+  const tabs = mode === 'food' ? FOOD_TABS : mode === 'jazz' ? JAZZ_TABS : TABS
 
   return (
-    <nav className={`bottom-bar ${mode === 'jazz' ? 'jazz-bar' : ''}`}>
+    <nav className={`bottom-bar ${mode === 'jazz' ? 'jazz-bar' : ''} ${mode === 'food' ? 'food-bar' : ''}`}>
       {tabs.map((tab) => (
         <NavLink
           key={tab.to}
