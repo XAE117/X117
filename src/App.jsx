@@ -47,6 +47,7 @@ function App() {
   const [formatFilter, setFormatFilter] = useState('favorites')
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [isScrolling, setIsScrolling] = useState(false)
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
@@ -56,6 +57,26 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  // Scroll detection: fade pills out when scrolling, back in after idle
+  useEffect(() => {
+    let scrollTimer
+    const handleScroll = () => {
+      setIsScrolling(true)
+      clearTimeout(scrollTimer)
+      scrollTimer = setTimeout(() => setIsScrolling(false), 200)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(scrollTimer)
+    }
+  }, [])
+
+  // Auto-collapse filter notch when switching between modes
+  useEffect(() => {
+    setFiltersExpanded(false)
+  }, [isJazzMode, isFoodMode])
 
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
@@ -160,7 +181,7 @@ function App() {
   const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
 
   return (
-    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''}`}>
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
           <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>

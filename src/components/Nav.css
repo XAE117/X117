@@ -6,8 +6,9 @@
   left: 6px;
   z-index: 100;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.15rem;
   background: rgba(26, 23, 21, 0.9);
   border: none;
   border-radius: 999px;
@@ -113,8 +114,52 @@
   opacity: 1;
 }
 
+/* Emoji tabs */
+.tab-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+  overflow: visible;
+}
+
+.tab:not(.active) .tab-emoji {
+  opacity: 0.35;
+  filter: grayscale(0.7);
+}
+
+.tab.active .tab-emoji {
+  opacity: 1;
+}
+
+/* Tooltip flash on tap */
+.tab-tooltip {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 999;
+  animation: tabTooltipFlash 1.2s ease-out forwards;
+}
+
+@keyframes tabTooltipFlash {
+  0% { opacity: 0; transform: translateX(-50%) translateY(2px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 /* Golden glow pulse on tap */
-.tab-icon.tab-glow-pulse {
+.tab-icon.tab-glow-pulse,
+.tab-emoji.tab-glow-pulse {
   animation: tabGlowPulse 1.7s ease-out;
 }
 
@@ -255,12 +300,21 @@
   color: var(--food-accent, #E85D3A);
 }
 
+.food-bar .tab.active .tab-emoji {
+  opacity: 1;
+  filter: none;
+}
+
 .food-bar .tab:hover:not(.active) {
   color: var(--text-dim);
 }
 
 .food-bar .tab-tooltip {
   color: var(--food-accent, #E85D3A);
+}
+
+.jazz-bar .tab-tooltip {
+  color: var(--jazz-accent, #D4A574);
 }
 
 .food-bar .tab-emoji.tab-glow-pulse {
