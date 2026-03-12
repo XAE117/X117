@@ -327,79 +327,68 @@ async function scrapeMinaret() {
     const html = await fetchPage('https://www.minaretrecords.com/shows')
     const $ = cheerio.load(html)
 
-    // Squarespace eventlist structure:
-    //   .eventlist--upcoming contains future events
-    //   Each event: h3 > a for title/link, <time> or <ul><li> for date
-    //   Description in <p>, ticket link to /shop/p/
+    // Squarespace structure (confirmed 2026-03):
+    //   Events are in fe-block-* divs (Squarespace feature blocks)
+    //   Each event: <a href="/shows/slug"><h2>Title</h2></a>
+    //   Dates in adjacent <ul><li> elements
+    //   NO .eventlist-event or .summary-item classes exist on this site
 
-    // Strategy 1: Squarespace eventlist items (most specific)
-    const eventSelectors = [
-      '.eventlist-event',
-      '.eventlist--upcoming .summary-item',
-      '[data-block-type="summary-v2"] .summary-item',
-      '.sqs-block-summary-v2 .summary-item',
-    ]
+    // Strategy 1: Find all show links (most reliable for this Squarespace layout)
+    $('a[href*="/shows/"]').each((_, el) => {
+      try {
+        const $a = $(el)
+        const link = $a.attr('href') || ''
+        // Title is the h2 inside the link, or the link text itself
+        const title = $a.find('h2, h1, h3').first().text().trim() || $a.text().trim()
+        if (!title || title.length < 3) return
 
-    const eventElements = $(eventSelectors.join(', '))
-
-    if (eventElements.length > 0) {
-      eventElements.each((_, el) => {
-        try {
-          const $el = $(el)
-          const titleEl = $el.find('h1 a, h2 a, h3 a, .summary-title a, .eventlist-title a').first()
-          const title = titleEl.text().trim() || $el.find('h1, h2, h3').first().text().trim()
-          const link = titleEl.attr('href') || $el.find('a').first().attr('href') || ''
-
-          // Date: look for <time>, .summary-metadata-item--date, or <li> with date text
-          let dateText = $el.find('time').first().attr('datetime')
-            || $el.find('time').first().text().trim()
-            || $el.find('.summary-metadata-item--date, .eventlist-meta-date').first().text().trim()
-            || $el.find('li').first().text().trim()
-
-          // Description for venue detection
-          const desc = $el.find('.summary-excerpt, .eventlist-description, p').text().trim()
-
-          if (title) {
-            const venueId = matchVenueFromText(title + ' ' + desc)
-
-            shows.push({
-              artist: cleanArtistName(title, venueId),
-              dateText: dateText || '',
-              venueId: venueId || 'lodge-room',
-              link: link.startsWith('http') ? link : `https://www.minaretrecords.com${link}`,
-              promoter: 'Minaret Records',
-              source: 'minaretrecords.com',
-            })
+        // Date: look in the parent fe-block container for adjacent ul > li
+        const parent = $a.closest('div[class*="fe-block"], div, section')
+        const dateItems = parent.find('ul li')
+        let dateText = ''
+        dateItems.each((_, li) => {
+          const liText = $(li).text().trim()
+          // First li is typically the date (e.g., "Tuesday, March 10, 2026")
+          if (!dateText && /\d{4}|january|february|march|april|may|june|july|august|september|october|november|december/i.test(liText)) {
+            dateText = liText
           }
-        } catch {}
-      })
-    }
+        })
 
-    // Strategy 2: Fallback — scan all h3 > a links on the page
-    if (shows.length === 0) {
-      $('h3 a[href*="/shows/"]').each((_, el) => {
-        try {
-          const $a = $(el)
-          const title = $a.text().trim()
-          const link = $a.attr('href') || ''
-          const parent = $a.closest('div, article, section, li')
-          const dateText = parent.find('time, ul li, .date').first().text().trim()
-          const desc = parent.find('p').text().trim()
-
-          if (title) {
-            const venueId = matchVenueFromText(title + ' ' + desc)
-            shows.push({
-              artist: cleanArtistName(title, venueId),
-              dateText,
-              venueId: venueId || 'lodge-room',
-              link: link.startsWith('http') ? link : `https://www.minaretrecords.com${link}`,
-              promoter: 'Minaret Records',
-              source: 'minaretrecords.com',
-            })
+        // Also check for time in second li
+        let timeText = ''
+        dateItems.each((_, li) => {
+          const liText = $(li).text().trim()
+          if (/\d{1,2}:\d{2}\s*(AM|PM)/i.test(liText)) {
+            timeText = liText
           }
-        } catch {}
-      })
+        })
+
+        const desc = parent.find('p').text().trim()
+        const venueId = matchVenueFromText(title + ' ' + desc)
+
+        shows.push({
+          artist: cleanArtistName(title, venueId),
+          dateText: dateText || '',
+          time: timeText || '',
+          venueId: venueId || 'lodge-room',
+          link: link.startsWith('http') ? link : `https://www.minaretrecords.com${link}`,
+          promoter: 'Minaret Records',
+          source: 'minaretrecords.com',
+        })
+      } catch {}
+    })
+
+    // Deduplicate by link (same show link may appear in multiple fe-blocks)
+    const seen = new Set()
+    const deduped = []
+    for (const s of shows) {
+      if (!seen.has(s.link)) {
+        seen.add(s.link)
+        deduped.push(s)
+      }
     }
+    shows.length = 0
+    shows.push(...deduped)
 
     // Strategy 3: Look for TICKETS links and work backwards
     if (shows.length === 0) {
@@ -458,10 +447,10 @@ async function scrapeLAJazz() {
       // Format: "TIME – ARTIST – VENUE – LOCATION"
       // or sometimes: "ARTIST – VENUE – LOCATION – TIME"
 
-      // lajazz.com: listings are in <p> elements with format:
-      // "TIME – ARTIST – VENUE – CITY"
+      // lajazz.com (Weebly): listings are in .txt divs, <p>, or <span> elements
+      // Format: "TIME – ARTIST – VENUE – CITY"
       const lines = []
-      $('p, span').each((_, el) => {
+      $('p, span, .txt, div.txt, [class*="wsite-multicol-table"] td').each((_, el) => {
         const text = $(el).text().trim()
           .replace(/&nbsp;/g, ' ')
           .replace(/\s+/g, ' ')
@@ -576,22 +565,24 @@ async function scrapeCatalina() {
       const html = await fetchPage(url)
       const $ = cheerio.load(html)
 
-      // Strategy 1: Tribe Events plugin selectors
+      // Strategy 1: Tribe Events + Ticketmaster plugin selectors
       const eventSelectors = [
         '.type-tribe_events',
         '.ticketmaster-event-list-wrapper',
+        '.ticketmaster-list-single-content',
         '.tribe-events-loop article',
         '[class*="tribe-events"] article',
         '.tribe-common-g-row',
+        '.tribe-events-calendar-list__event',
       ]
 
       $(eventSelectors.join(', ')).each((_, el) => {
         try {
           const $el = $(el)
-          const titleEl = $el.find('h3 a, h2 a, .tribe-events-list-event-title a, .tribe-event-url, .tribe-events-calendar-list__event-title a').first()
-          const title = titleEl.text().trim() || $el.find('h3, h2').first().text().trim()
+          const titleEl = $el.find('h3 a, h2 a, .tribe-events-list-event-title a, .tribe-event-url, .tribe-events-calendar-list__event-title a, .tm-event-name a').first()
+          const title = titleEl.text().trim() || $el.find('h3, h2, .tm-event-name').first().text().trim()
           const link = titleEl.attr('href') || $el.find('a').first().attr('href')
-          const dateText = $el.find('.ticketmaster-event-times, .tribe-event-schedule-details, time, .tribe-events-calendar-list__event-datetime').first().text().trim()
+          const dateText = $el.find('.ticketmaster-event-times, .ticketmaster-event-day-time-slot-heading, .tribe-event-schedule-details, time, .tribe-events-calendar-list__event-datetime').first().text().trim()
             || $el.find('[datetime]').first().attr('datetime')
 
           if (!title || title.length < 3 || title.length > 150) return
@@ -667,6 +658,56 @@ async function scrapeCatalina() {
       await delay(1000)
     } catch (err) {
       console.log(`    Warning: ${url} failed: ${err.message}`)
+    }
+  }
+
+  // Strategy 4: Puppeteer fallback — events may be JS-rendered
+  if (shows.length === 0) {
+    console.log('    Static scraping found nothing, trying Puppeteer...')
+    const puppeteer = await importPuppeteer()
+    if (puppeteer) {
+      let browser
+      try {
+        browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] })
+        const page = await browser.newPage()
+        await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+        await page.goto('https://catalinajazzclub.com/', { waitUntil: 'networkidle2', timeout: 30000 })
+        await delay(3000) // Wait for JS event widgets to render
+
+        const events = await page.evaluate(() => {
+          const results = []
+          // Try tribe events selectors
+          const eventEls = document.querySelectorAll('.type-tribe_events, .ticketmaster-list-single-content, [class*="tribe-events"] article, .tribe-events-calendar-list__event')
+          eventEls.forEach(el => {
+            const titleEl = el.querySelector('h3 a, h2 a, .tribe-events-list-event-title a, .tm-event-name a')
+            const title = titleEl?.textContent?.trim() || el.querySelector('h3, h2')?.textContent?.trim()
+            const link = titleEl?.href || el.querySelector('a')?.href
+            const dateEl = el.querySelector('.ticketmaster-event-times, .ticketmaster-event-day-time-slot-heading, time, .tribe-event-schedule-details')
+            const dateText = dateEl?.textContent?.trim() || ''
+            if (title && title.length > 2 && title.length < 150) {
+              results.push({ title, dateText, link })
+            }
+          })
+          return results
+        })
+
+        for (const ev of events) {
+          const titleLow = ev.title.toLowerCase()
+          if (['list', 'calendar', 'events', 'home', 'about', 'contact', 'menu'].includes(titleLow)) continue
+          if (titleLow.includes('provides a warm') || titleLow.includes('environment')) continue
+          shows.push({
+            artist: ev.title,
+            dateText: ev.dateText,
+            venueId: 'catalina-jazz',
+            link: ev.link || 'https://catalinajazzclub.com/',
+            source: 'catalinajazzclub.com/puppeteer',
+          })
+        }
+      } catch (err) {
+        console.log(`    Puppeteer fallback failed: ${err.message}`)
+      } finally {
+        if (browser) await browser.close()
+      }
     }
   }
 
@@ -818,8 +859,9 @@ async function scrapeMetalJazz() {
 }
 
 // ── Scrape: Baked Potato ──
-// Baked Potato uses WordPress Events Manager — server-rendered HTML.
-// Structure: .em-event .em-item with h1 (artist), h2 (date/time), h4 (price)
+// Baked Potato uses WordPress Events Manager — events load via AJAX, not in static HTML.
+// Strategy 1: Try static Cheerio scraping (in case they add server-rendered events)
+// Strategy 2: Puppeteer fallback to render JS and extract from DOM
 
 async function scrapeBakedPotato() {
   console.log('  Scraping thebakedpotato.com...')
@@ -829,14 +871,15 @@ async function scrapeBakedPotato() {
     const html = await fetchPage('https://www.thebakedpotato.com/events/')
     const $ = cheerio.load(html)
 
-    $('.em-event, .em-item').each((_, el) => {
+    // Strategy 1: Static Cheerio scraping (Events Manager selectors)
+    $('.em-event, .em-item, .event-single, article.post').each((_, el) => {
       try {
         const $el = $(el)
-        const artist = $el.find('h1').first().text().trim()
+        const artist = $el.find('h1, h2.entry-title, .event-title').first().text().trim()
         if (!artist || isJunkArtist(artist)) return
 
-        // Date/time in h2: "Tuesday Night, March 10, 2026 @ 8pm & 10pm PST."
-        const dateTimeText = $el.find('h2').first().text().trim()
+        // Date/time in h2 or .event-date: "Tuesday Night, March 10, 2026 @ 8pm & 10pm PST."
+        const dateTimeText = $el.find('h2, .event-date, .em-event-date, time').first().text().trim()
         const dateMatch = dateTimeText.match(/(\w+)\s+(\d{1,2}),?\s*(\d{4})/)
         let dateISO = null
         if (dateMatch) {
@@ -846,11 +889,9 @@ async function scrapeBakedPotato() {
         const timeMatch = dateTimeText.match(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))/i)
         const time = timeMatch ? timeMatch[1].toUpperCase().replace(/(\d)(AM|PM)/, '$1 $2') : '9:30 PM'
 
-        // Price from h4
-        const price = $el.find('h4').first().text().trim()
+        const price = $el.find('h4, .event-price, .ticket-price').first().text().trim()
 
-        // Link from .em-item-read-more or first anchor
-        const link = $el.find('.em-item-read-more').attr('href')
+        const link = $el.find('.em-item-read-more, a.event-link').attr('href')
           || $el.find('a').first().attr('href')
           || 'https://www.thebakedpotato.com/events/'
 
@@ -865,6 +906,96 @@ async function scrapeBakedPotato() {
         })
       } catch {}
     })
+
+    // Strategy 2: Puppeteer fallback — Events Manager loads via AJAX
+    if (shows.length === 0) {
+      console.log('    Static scraping found nothing, trying Puppeteer...')
+      const puppeteer = await importPuppeteer()
+      if (puppeteer) {
+        let browser
+        try {
+          browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+          const page = await browser.newPage()
+          await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36')
+          await page.goto('https://www.thebakedpotato.com/events/', {
+            waitUntil: 'networkidle2',
+            timeout: 30000,
+          })
+          // Wait for Events Manager AJAX to load
+          await delay(4000)
+
+          const events = await page.evaluate(() => {
+            const results = []
+            // Events Manager selectors after AJAX render
+            const eventEls = document.querySelectorAll(
+              '.em-event, .em-item, .event-single, article[class*="event"], .em-calendar-event, .em-search-event'
+            )
+            eventEls.forEach(el => {
+              const artist = (
+                el.querySelector('h1, h2, .event-title, .em-event-title')?.textContent?.trim()
+              )
+              const dateEl = el.querySelector('h2, .event-date, .em-event-date, time, .em-event-dates')
+              const dateText = dateEl?.textContent?.trim() || ''
+              const link = el.querySelector('a')?.href || ''
+              const price = el.querySelector('h4, .event-price, .ticket-price')?.textContent?.trim() || ''
+              if (artist && artist.length > 2 && artist.length < 150) {
+                results.push({ artist, dateText, link, price })
+              }
+            })
+
+            // Fallback: grab any text blocks that look like event listings
+            if (results.length === 0) {
+              const allText = document.querySelectorAll('h1, h2, h3, .entry-content p, .page-content p')
+              allText.forEach(el => {
+                const text = el.textContent?.trim()
+                if (text && text.length > 5 && text.length < 200) {
+                  // Look for patterns like "Artist Name" followed by date-like text
+                  const hasDate = /\b(january|february|march|april|may|june|july|august|september|october|november|december|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/i.test(text)
+                  const hasTime = /\d{1,2}(:\d{2})?\s*(am|pm)/i.test(text)
+                  if (hasDate || hasTime) {
+                    results.push({ artist: text, dateText: text, link: '', price: '' })
+                  }
+                }
+              })
+            }
+
+            return results
+          })
+
+          const skipWords = ['menu', 'about', 'contact', 'home', 'baked potato', 'navigation', 'search', 'copyright']
+          for (const ev of events) {
+            if (!ev.artist || skipWords.some(w => ev.artist.toLowerCase().includes(w))) continue
+            if (isJunkArtist(ev.artist)) continue
+
+            const dateMatch = ev.dateText.match(/(\w+)\s+(\d{1,2}),?\s*(\d{4})/)
+            let dateISO = null
+            if (dateMatch) {
+              dateISO = parseShowDate(`${dateMatch[1]} ${dateMatch[2]}, ${dateMatch[3]}`)
+            }
+            const timeMatch = ev.dateText.match(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))/i)
+            const time = timeMatch ? timeMatch[1].toUpperCase().replace(/(\d)(AM|PM)/, '$1 $2') : '9:30 PM'
+
+            shows.push({
+              artist: cleanArtistName(ev.artist, 'baked-potato'),
+              date: dateISO,
+              time,
+              venueId: 'baked-potato',
+              link: ev.link || 'https://www.thebakedpotato.com/events/',
+              price: ev.price || '',
+              source: 'thebakedpotato.com',
+            })
+          }
+
+          console.log(`    Puppeteer found ${shows.length} shows from Baked Potato`)
+        } catch (err) {
+          console.log(`    Puppeteer fallback failed: ${err.message}`)
+        } finally {
+          if (browser) await browser.close()
+        }
+      } else {
+        console.log('    Puppeteer not available — cannot scrape JS-rendered events')
+      }
+    }
 
     console.log(`    Found ${shows.length} shows from Baked Potato`)
   } catch (err) {
