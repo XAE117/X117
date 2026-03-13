@@ -20,6 +20,10 @@ import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
 import FoodByCategory from './views/FoodByCategory.jsx'
 import FoodStarred from './views/FoodStarred.jsx'
+import EatsDetail from './views/EatsDetail.jsx'
+import EatsNew from './views/EatsNew.jsx'
+import EatsMapView from './views/EatsMapView.jsx'
+import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
 import './App.css'
 
@@ -261,6 +265,7 @@ function App() {
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />
           <Route path="/map" element={<MapView data={filteredData} />} />
+          <Route path="/search" element={<Search data={filteredData} />} />
 
           {/* Jazz routes */}
           <Route path="/jazz" element={<JazzByDay data={jazzData} />} />
@@ -273,6 +278,9 @@ function App() {
           {/* Food routes */}
           <Route path="/food" element={<FoodByCategory data={foodData} />} />
           <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
+          <Route path="/food/new" element={<EatsNew data={foodData} />} />
+          <Route path="/food/map" element={<EatsMapView data={foodData} />} />
+          <Route path="/food/spot/:spotId" element={<EatsDetail data={foodData} />} />
         </Routes>
       </main>
       <Footer
