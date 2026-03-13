@@ -4,6 +4,7 @@ import './Nav.css'
 
 const TABS = [
   { to: '/', end: true, emoji: '📍', label: 'By Day' },
+  { to: '/tonight', emoji: '🌙', label: 'Tonight' },
   { to: '/by-theater', emoji: '🏛️', label: 'Theaters' },
   { to: '/watchlist', emoji: '💛', label: 'Watchlist' },
   { to: '/map', emoji: '🗺️', label: 'Map' },
@@ -11,6 +12,7 @@ const TABS = [
 
 const JAZZ_TABS = [
   { to: '/jazz', end: true, emoji: '📍', label: 'By Day' },
+  { to: '/jazz/tonight', emoji: '🌙', label: 'Tonight' },
   { to: '/jazz/by-venue', emoji: '🏛️', label: 'Venues' },
   { to: '/jazz/proximity', emoji: '📡', label: 'LC ℃' },
   { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
@@ -18,7 +20,9 @@ const JAZZ_TABS = [
 
 const FOOD_TABS = [
   { to: '/food', end: true, emoji: '🍕', label: 'All' },
+  { to: '/food/new', emoji: '🔥', label: 'Hot' },
   { to: '/food/starred', emoji: '⭐', label: 'Starred' },
+  { to: '/food/map', emoji: '🗺️', label: 'Map' },
 ]
 
 function Nav({ mode }) {
