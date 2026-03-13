@@ -237,3 +237,12 @@ a:hover {
     transform: translate(1px, -10px) scale(0.3);
   }
 }
+
+/* Accessibility: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

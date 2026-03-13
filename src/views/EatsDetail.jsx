@@ -11,7 +11,7 @@ function EatsDetail({ data }) {
       <div className="eats-empty">
         <h2>Restaurant Not Found</h2>
         <p>This restaurant may no longer be listed.</p>
-        <Link to="/eats" className="back-btn">&larr; Back to Eats</Link>
+        <Link to="/food" className="back-btn">&larr; Back to Eats</Link>
       </div>
     )
   }
@@ -111,7 +111,7 @@ function EatsDetail({ data }) {
         )}
       </div>
 
-      <Link to="/eats" className="back-btn">&larr; back</Link>
+      <Link to="/food" className="back-btn">&larr; back</Link>
     </div>
   )
 }
