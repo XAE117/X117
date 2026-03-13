@@ -5,6 +5,7 @@ import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
+import GodfatherAlert from './components/GodfatherAlert.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
 import Detail from './views/Detail.jsx'
@@ -249,6 +250,7 @@ function App() {
           <ModeSwitcher />
         </div>
       )}
+      {!isDetailPage && !isJazzMode && !isFoodMode && <GodfatherAlert data={data} />}
       <main className="main-content">
         <Routes>
           {/* Splash */}
