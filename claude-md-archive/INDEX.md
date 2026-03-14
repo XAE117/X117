@@ -1,7 +1,7 @@
 # Claude.md Archive — Notion Mirror
 **Last full crawl:** 2026-03-14
-**Total pages mirrored:** 32
-**Total archive size:** ~1.9MB
+**Total pages mirrored:** 42
+**Total archive size:** ~2.6MB
 **Purpose:** Redundant local backup of all critical Notion content.
 **Sync method:** Claude Code full crawl via Notion API
 
@@ -108,6 +108,29 @@ Stored in multiple locations for easy retrieval:
 | File | Notion ID | Description | Last Synced |
 |------|-----------|-------------|-------------|
 | `daily-brief-generator.md` | `30cc051d-73d2-81c6-9574-e5a01695b54a` | Claude Code Prompt — Daily Brief Generator | 2026-03-14 |
+
+### Discovery Pass — Additional Pages
+
+| File | Notion ID | Description | Last Synced |
+|------|-----------|-------------|-------------|
+| `bird-pleroma.md` | `2fbc051d-73d2-816c-876e-e9590374f2c3` | BiRD/Pleroma mythology project (25KB) | 2026-03-14 |
+| `time-intelligence.md` | `306c051d-73d2-81fc-9037-cb24ec4d430d` | Time Intelligence — Toggl analysis (150KB) | 2026-03-14 |
+| `time-and-money.md` | `31ec051d-73d2-815e-8eb2-c0e8ce971609` | Time & Money tracking (155KB) | 2026-03-14 |
+| `liza-transcript-directory.md` | `2fec051d-73d2-81e7-aa7f-c66537ad064d` | Liza Transcript Directory (455KB) | 2026-03-14 |
+| `louis-cole-biography.md` | `31ac051d-73d2-80e8-b117-f7c7639aae98` | Louis Cole Biography (stub) | 2026-03-14 |
+| `oregon-day-liza-analysis.md` | `318c051d-73d2-8174-8aa7-ed1f4fe25e8a` | Mar 3 Oregon Day / Liza Thread Analysis | 2026-03-14 |
+| `bird-writers-workbench.md` | `323c051d-73d2-819d-bf95-ded40a09a45a` | BiRD Writer's Workbench | 2026-03-14 |
+| `job-search-intel-march-2026.md` | `31ec051d-73d2-81f0-9d6d-d86958f02033` | Job Search Intel — March 2026 | 2026-03-14 |
+| `intelligence-and-reference.md` | `31ec051d-73d2-811d-a95f-e9ba99c445fb` | Intelligence & Reference | 2026-03-14 |
+| `openclaw-lifeos-playbook.md` | `30cc051d-73d2-8193-9e6b-c264e31bd067` | OpenClaw LifeOS Playbook (stub) | 2026-03-14 |
+| `openclaw-research.md` | `30cc051d-73d2-81f5-a852-c62ab99b6d2d` | OpenClaw Integration Research (stub) | 2026-03-14 |
+| `atmom-production-research.md` | `30cc051d-73d2-81c8-89c3-ced1777d83d1` | ATMOM Production Research Bible (stub) | 2026-03-14 |
+| `to-kill-a-bird.md` | `311c051d-73d2-81f1-8d55-f845d8f0fc74` | To Kill a Bird | 2026-03-14 |
+| `the-album.md` | `31fc051d-73d2-8123-8f44-e32f04aa5799` | The Album (stub) | 2026-03-14 |
+| `ancient-paths-press.md` | `320c051d-73d2-81fb-b0d1-f35940b60a84` | Ancient Paths Press (stub) | 2026-03-14 |
+| `music-life-area.md` | `31ac051d-73d2-817f-a965-d3a2c7ed0808` | Music Life Area | 2026-03-14 |
+| `weekly-review.md` | `30dc051d-73d2-81e6-b764-df1aa25697ad` | Weekly Review | 2026-03-14 |
+| `album-concept-development.md` | `31cc051d-73d2-81cc-b4c8-f2d1bf9a0127` | The Album — Concept Development | 2026-03-14 |
 
 ---
 
