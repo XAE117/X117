@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-13T10:33:23.641Z",
+  "lastUpdated": "2026-03-14T02:12:46.796Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,15 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-showgirls-2026-03-12",
-          "title": "Showgirls",
-          "date": "2026-03-12",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4499?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-true-romance-2026-03-13",
           "title": "True Romance",
@@ -96,9 +87,9 @@
           "title": "Fellini’s Casanova",
           "date": "2026-03-19",
           "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/march-19-fellinis-casanova/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4513?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-true-romance-2026-03-20",
@@ -318,33 +309,6 @@
       "color": "#B89AD4",
       "screenings": [
         {
-          "id": "vista-theatre-django-unchained-2026-03-12",
-          "title": "Django Unchained",
-          "date": "2026-03-12",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3325?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-django-unchained-2026-03-12",
-          "title": "Django Unchained",
-          "date": "2026-03-12",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3332?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-dragnet-girl-the-only-son-2026-03-12",
-          "title": "Dragnet Girl / The Only Son",
-          "date": "2026-03-12",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3363?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
           "id": "vista-theatre-the-warriors-2026-03-13",
           "title": "The Warriors",
           "date": "2026-03-13",
@@ -426,6 +390,15 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3256?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
+          "id": "vista-theatre-porgy-and-bess-2026-03-16",
+          "title": "Porgy and Bess",
+          "date": "2026-03-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3386?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
           "id": "vista-theatre-leprechaun-3-2026-03-17",
           "title": "Leprechaun 3",
           "date": "2026-03-17",
@@ -433,6 +406,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3368?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-porgy-and-bess-2026-03-17",
+          "title": "Porgy and Bess",
+          "date": "2026-03-17",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3387?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
           "id": "vista-theatre-his-kind-of-woman-2026-03-18",
@@ -444,13 +426,31 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3369?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-porgy-and-bess-2026-03-19-7:00pm",
+          "id": "vista-theatre-porgy-and-bess-2026-03-18",
+          "title": "Porgy and Bess",
+          "date": "2026-03-18",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3388?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-porgy-and-bess-2026-03-19",
           "title": "Porgy and Bess",
           "date": "2026-03-19",
           "time": "7:00 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3389?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-phantom-of-liberty-discreet-charm-of-the-bourgeois-2026-03-19",
+          "title": "Phantom of Liberty / Discreet Charm of the Bourgeois",
+          "date": "2026-03-19",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3370?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
           "id": "vista-theatre-project-hail-mary-2026-03-20-10:00am",
@@ -911,6 +911,15 @@
           "format": "35mm",
           "notes": "At the David Geffen Theater. In person: Academy Governor Hannah Minghella and actor/filmmaker Max Minghella.",
           "link": "https://www.academymuseum.org/en/programs/detail/the-english-patient-019be20b-746a-32bd-9d5b-5c8fcad4ee48"
+        },
+        {
+          "id": "academy-museum-98th-oscars-documentary-feature-winner-2026-03-19",
+          "title": "98th Oscars Documentary Feature Winner",
+          "date": "2026-03-19",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "At the David Geffen Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/98th-oscars-documentary-feature-winner-019b0aab-2e79-494b-7ddb-a6981e3b9d9b"
         }
       ]
     },
@@ -922,42 +931,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-the-lord-of-the-rings-the-fellowship-of-the-ring-extended-edition-202",
-          "title": "The Lord of the Rings: The Fellowship of the Ring: Extended Edition",
-          "date": "2026-03-12",
-          "time": "1:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/the-lord-of-the-rings-the-fellowship-of-the-ring-extended-edition#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-jurassic-park-2026-03-12",
-          "title": "Jurassic Park",
-          "date": "2026-03-12",
-          "time": "11:30 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/jurassic-park#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-twin-peaks-the-return-2026-03-12",
-          "title": "Twin Peaks: The Return",
-          "date": "2026-03-12",
-          "time": "2:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-7-9#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-bad-santa-2026-03-12",
-          "title": "Bad Santa",
-          "date": "2026-03-12",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Guest Selects” series.",
-          "link": "https://drafthouse.com/los-angeles/event/guest-selects-bad-santa#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-the-lost-world-jurassic-park-2026-03-13",
           "title": "The Lost World: Jurassic Park",
@@ -1140,42 +1113,6 @@
       "color": "#D9A878",
       "screenings": [
         {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-12",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-12",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2324/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-12",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-12",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2327/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-12",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-12",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2325/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-12",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-12",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2326/seats"
-        },
-        {
           "id": "egyptian-the-deer-hunter-2026-03-13",
           "title": "The Deer Hunter",
           "date": "2026-03-13",
@@ -1312,15 +1249,6 @@
       "color": "#7ABFC0",
       "screenings": [
         {
-          "id": "aero-i-live-here-now-2026-03-12",
-          "title": "I Live Here Now",
-          "date": "2026-03-12",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Julie Pacino and actor Sheryl Lee. Advance Screening.",
-          "link": "https://www.americancinematheque.com/now-showing/i-live-here-now-3-12-26/"
-        },
-        {
           "id": "aero-slap-shot-2026-03-13",
           "title": "Slap Shot",
           "date": "2026-03-13",
@@ -1364,6 +1292,15 @@
           "format": "digital",
           "notes": "80th Anniversary.",
           "link": "https://www.americancinematheque.com/now-showing/the-big-sleep-3-18-26/"
+        },
+        {
+          "id": "aero-hiroshima-mon-amour-2026-03-19",
+          "title": "Hiroshima Mon Amour",
+          "date": "2026-03-19",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/hiroshima-mon-amour-3-19-26/"
         }
       ]
     },
@@ -1375,24 +1312,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-nirvanna-the-band-the-show-the-movie-2026-03-12",
-          "title": "Nirvanna the Band the Show the Movie",
-          "date": "2026-03-12",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3802928/"
-        },
-        {
-          "id": "vidiots-the-gleaners-and-i-2026-03-12",
-          "title": "The Gleaners and I",
-          "date": "2026-03-12",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3774280/"
-        },
         {
           "id": "vidiots-grave-of-the-fireflies-2026-03-13",
           "title": "Grave of the Fireflies",
@@ -1565,12 +1484,12 @@
           "link": "https://vidiotsfoundation.org/purchase/3785466/"
         },
         {
-          "id": "vidiots-new-jack-city-2026-03-19-7:30pm",
+          "id": "vidiots-new-jack-city-2026-03-19",
           "title": "New Jack City",
           "date": "2026-03-19",
           "time": "7:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle. Special guests will be at the screening.",
           "link": "https://vidiotsfoundation.org/purchase/3782347/"
         },
         {
@@ -1581,15 +1500,6 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3831570/"
-        },
-        {
-          "id": "vidiots-a-useful-ghost-2026-03-20-3:45pm",
-          "title": "A Useful Ghost",
-          "date": "2026-03-20",
-          "time": "3:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://vidiotsfoundation.org/purchase/3831603/"
         },
         {
           "id": "vidiots-a-useful-ghost-2026-03-20-7:15pm",
@@ -1925,6 +1835,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3860154/"
         },
         {
+          "id": "vidiots-booksmart-2026-04-02-1:00pm",
+          "title": "Booksmart",
+          "date": "2026-04-02",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3832149/"
+        },
+        {
           "id": "vidiots-where-the-wild-things-are-2026-04-02-4:30pm",
           "title": "Where the Wild Things Are",
           "date": "2026-04-02",
@@ -1959,6 +1878,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3840888/"
+        },
+        {
+          "id": "vidiots-the-blade-2026-04-03-9:45pm",
+          "title": "The Blade",
+          "date": "2026-04-03",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3867501/"
         },
         {
           "id": "vidiots-james-and-the-giant-peach-2026-04-04-1:00pm",
@@ -1997,6 +1925,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3833919/"
         },
         {
+          "id": "vidiots-time-masters-2026-04-04-9:45pm",
+          "title": "Time Masters",
+          "date": "2026-04-04",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3833923/"
+        },
+        {
           "id": "vidiots-mary-poppins-sing-along-2026-04-05-12:15pm",
           "title": "Mary Poppins Sing-Along",
           "date": "2026-04-05",
@@ -2033,9 +1970,9 @@
           "link": "https://vidiotsfoundation.org/purchase/3841046/"
         },
         {
-          "id": "vidiots-daughters-of-the-dust-2026-04-08-7:30pm",
+          "id": "vidiots-daughters-of-the-dust-2026-04-07-7:30pm",
           "title": "Daughters of the Dust",
-          "date": "2026-04-08",
+          "date": "2026-04-07",
           "time": "7:30 pm",
           "format": "digital",
           "notes": "",
@@ -2049,6 +1986,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3857728/"
+        },
+        {
+          "id": "vidiots-kramer-vs-kramer-2026-04-11-7:00pm",
+          "title": "Kramer vs. Kramer",
+          "date": "2026-04-11",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3857735/"
+        },
+        {
+          "id": "vidiots-female-trouble-2026-04-11-9:45pm",
+          "title": "Female Trouble",
+          "date": "2026-04-11",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3867470/"
+        },
+        {
+          "id": "vidiots-who-s-afraid-of-virginia-woolf-2026-04-12-3:00pm",
+          "title": "Who's Afraid of Virginia Woolf?",
+          "date": "2026-04-12",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3867469/"
         },
         {
           "id": "vidiots-outerlands-2026-04-15-7:00pm",
@@ -2078,6 +2042,24 @@
           "link": "https://vidiotsfoundation.org/purchase/3860606/"
         },
         {
+          "id": "vidiots-the-apostle-2026-04-19-3:30pm",
+          "title": "The Apostle",
+          "date": "2026-04-19",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3860607/"
+        },
+        {
+          "id": "vidiots-physical-media-mind-melters-2026-04-20-7:30pm",
+          "title": "Physical Media Mind-Melters",
+          "date": "2026-04-20",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3867704/"
+        },
+        {
           "id": "vidiots-our-land-nuestra-tierra-2026-04-22-6:30pm",
           "title": "Our Land (Nuestra Tierra)",
           "date": "2026-04-22",
@@ -2105,6 +2087,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3840920/"
         },
         {
+          "id": "vidiots-shaolin-soccer-2026-04-24-9:45pm",
+          "title": "Shaolin Soccer",
+          "date": "2026-04-24",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3867505/"
+        },
+        {
           "id": "vidiots-breakin-2026-04-25-9:45pm",
           "title": "Breakin'",
           "date": "2026-04-25",
@@ -2112,6 +2103,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3865605/"
+        },
+        {
+          "id": "vidiots-the-young-girls-of-rochefort-2026-04-29-7:30pm",
+          "title": "The Young Girls of Rochefort",
+          "date": "2026-04-29",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3867517/"
         }
       ]
     },
@@ -2123,15 +2123,6 @@
       "url": "https://studios.wearebraindead.com",
       "color": "#8EBF8E",
       "screenings": [
-        {
-          "id": "brain-dead-waiting-for-guffman-2026-03-12",
-          "title": "Waiting for Guffman",
-          "date": "2026-03-12",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://studios.wearebraindead.com/purchase/1249918/"
-        },
         {
           "id": "brain-dead-paprika-2026-03-13",
           "title": "Paprika",
@@ -2351,24 +2342,6 @@
       "color": "#B4A0D4",
       "screenings": [
         {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-12",
-          "title": "2026 Oscar-Nominated Short Films: Animated",
-          "date": "2026-03-12",
-          "time": "2:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/93caecf8-1f6b-589c-900a-70fdad8ff7cf"
-        },
-        {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-live-action-2026-03-12",
-          "title": "2026 Oscar-Nominated Short Films: Live Action",
-          "date": "2026-03-12",
-          "time": "4:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/f4c006a8-7ebb-552d-addc-1a7214e0ff18"
-        },
-        {
           "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-13",
           "title": "2026 Oscar-Nominated Short Films: Animated",
           "date": "2026-03-13",
@@ -2565,6 +2538,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://booking.landmarktheatres.com/launch/ticketing/e72bda99-ded1-50a7-8f3c-b0bde3b7c1b6"
+        },
+        {
+          "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-19",
+          "title": "2026 Oscar-Nominated Short Films: Animated",
+          "date": "2026-03-19",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/b37c86a8-e837-5d06-bee3-688a77889e70"
+        },
+        {
+          "id": "laemmle-nuart-2026-oscar-nominated-short-films-live-action-2026-03-19",
+          "title": "2026 Oscar-Nominated Short Films: Live Action",
+          "date": "2026-03-19",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/319c09ac-be4a-5996-8e7b-4de0ec8c079d"
         }
       ]
     },
@@ -2576,42 +2567,6 @@
       "url": "https://www.laemmle.com",
       "color": "#C8A8D9",
       "screenings": [
-        {
-          "id": "laemmle-noho-heel-2026-03-12",
-          "title": "Heel",
-          "date": "2026-03-12",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139265"
-        },
-        {
-          "id": "laemmle-noho-heel-2026-03-12",
-          "title": "Heel",
-          "date": "2026-03-12",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139266"
-        },
-        {
-          "id": "laemmle-noho-heel-2026-03-12",
-          "title": "Heel",
-          "date": "2026-03-12",
-          "time": "7:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139267"
-        },
-        {
-          "id": "laemmle-noho-you-got-gold-a-celebration-of-john-prine-2026-03-12",
-          "title": "You Got Gold: A Celebration of John Prine",
-          "date": "2026-03-12",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "CANCELLED: You Got Gold: A Celebration of John Prine Q&As with Fiona Prine following the 7:30 pm show on Wednesday, 3/11 at the Royal and on Thursday, 3/12 at the Noho 7.",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139108"
-        },
         {
           "id": "laemmle-noho-slanted-2026-03-13",
           "title": "Slanted",
@@ -2773,6 +2728,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/139499"
+        },
+        {
+          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-19",
+          "title": "Dhurandhar: The Revenge",
+          "date": "2026-03-19",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139384"
+        },
+        {
+          "id": "laemmle-noho-slanted-2026-03-19",
+          "title": "Slanted",
+          "date": "2026-03-19",
+          "time": "1:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139526"
+        },
+        {
+          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-19",
+          "title": "Dhurandhar: The Revenge",
+          "date": "2026-03-19",
+          "time": "6:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139385"
+        },
+        {
+          "id": "laemmle-noho-slanted-2026-03-19",
+          "title": "Slanted",
+          "date": "2026-03-19",
+          "time": "7:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139516"
         }
       ]
     },
@@ -2784,24 +2775,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-what-does-that-nature-say-to-you-2026-03-12",
-          "title": "What Does That Nature Say to You",
-          "date": "2026-03-12",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.americancinematheque.com/now-showing/what-does-that-nature-say-to-you-3-12-26/"
-        },
-        {
-          "id": "los-feliz-3-bright-star-2026-03-12",
-          "title": "Bright Star",
-          "date": "2026-03-12",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Poetry in Motion” series.",
-          "link": "https://www.americancinematheque.com/now-showing/bright-star-3-12-26/"
-        },
         {
           "id": "los-feliz-3-perfect-blue-2026-03-13",
           "title": "Perfect Blue",
@@ -2972,6 +2945,24 @@
           "format": "digital",
           "notes": "Q&A with filmmaker Megan Seely. Part of the “Women Wednesday 2026” series.",
           "link": "https://www.americancinematheque.com/now-showing/puddysticks-3-18-26/"
+        },
+        {
+          "id": "los-feliz-3-twin-peaks-season-2-ep-2-3-2026-03-19",
+          "title": "Twin Peaks: Season 2, Ep. 2 & 3",
+          "date": "2026-03-19",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "Coma” and The Man Behind The Glass.” Part of the “TWIN PEAKS: The Complete Series” series.",
+          "link": "https://www.americancinematheque.com/now-showing/twin-peaks-season-2-ep-2-3-3-19-26/"
+        },
+        {
+          "id": "los-feliz-3-my-father-s-shadow-2026-03-19",
+          "title": "My Father’s Shadow",
+          "date": "2026-03-19",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/my-fathers-shadow-3-19-26/"
         }
       ]
     },
@@ -2991,6 +2982,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/62118"
+        },
+        {
+          "id": "laemmle-royal-golden-2026-03-19",
+          "title": "Golden",
+          "date": "2026-03-19",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62562"
         }
       ]
     },
@@ -3002,24 +3002,6 @@
       "url": "https://www.secretmovieclub.com",
       "color": "#B89878",
       "screenings": [
-        {
-          "id": "secret-movie-club-sinners-2026-03-12",
-          "title": "Sinners",
-          "date": "2026-03-12",
-          "time": "10:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20806-sinners/"
-        },
-        {
-          "id": "secret-movie-club-troop-beverly-hills-2026-03-12",
-          "title": "Troop Beverly Hills",
-          "date": "2026-03-12",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/19972-troop-beverly-hills/"
-        },
         {
           "id": "secret-movie-club-friday-the-13th-1980-2026-03-13",
           "title": "Friday the 13th (1980)",
@@ -3109,6 +3091,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20128-twilight/"
+        },
+        {
+          "id": "secret-movie-club-friday-2026-03-19",
+          "title": "Friday",
+          "date": "2026-03-19",
+          "time": "11:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20131-friday/"
+        },
+        {
+          "id": "secret-movie-club-one-battle-after-another-2026-03-19",
+          "title": "One Battle After Another",
+          "date": "2026-03-19",
+          "time": "7:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20130-one-battle-after-another/"
         }
       ]
     },
