@@ -158,6 +158,15 @@ Stored in multiple locations for easy retrieval:
 
 ---
 
+## Synthesized Documents (Generated from Archive)
+
+| File | Description | Generated |
+|------|-------------|-----------|
+| `KNOWLEDGE-MAP.md` | Comprehensive map of all domains, projects, relationships, and systems covered across Claude sessions | 2026-03-15 |
+| `PSYCH-PROFILE-AND-GROWTH-ROADMAP.md` | Thorough psychological analysis + growth roadmap across all categories with Claude operating manual | 2026-03-15 |
+
+---
+
 ## Archive Maintenance
 
 - **Ongoing rule:** Every Claude session that creates/updates a Notion page should update the corresponding `.md` file
