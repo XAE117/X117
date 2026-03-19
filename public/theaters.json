@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-18T10:49:01.973Z",
+  "lastUpdated": "2026-03-19T10:36:46.140Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,15 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-a-woman-in-flames-belle-de-jour-2026-03-17",
-          "title": "A Woman in Flames / Belle de Jour",
-          "date": "2026-03-17",
-          "time": "7:30 pm / 9:45 pm",
-          "format": "35mm",
-          "notes": "In 16mm and English-subtitled 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4509?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-a-woman-in-flames-belle-de-jour-2026-03-18",
           "title": "A Woman in Flames / Belle de Jour",
@@ -96,9 +87,9 @@
           "title": "Henry & June",
           "date": "2026-03-24",
           "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/march-24-henry-june/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4523?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-henry-june-2026-03-25",
@@ -227,24 +218,6 @@
       "url": "https://www.vistatheaterhollywood.com",
       "color": "#B89AD4",
       "screenings": [
-        {
-          "id": "vista-theatre-leprechaun-3-2026-03-17",
-          "title": "Leprechaun 3",
-          "date": "2026-03-17",
-          "time": "2:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3368?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-porgy-and-bess-2026-03-17",
-          "title": "Porgy and Bess",
-          "date": "2026-03-17",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3387?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
         {
           "id": "vista-theatre-his-kind-of-woman-2026-03-18",
           "title": "His Kind of Woman",
@@ -435,8 +408,8 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3267?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-03-24-11:00am",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-03-24",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-03-24",
           "time": "11:00 am",
           "format": "70mm",
@@ -444,8 +417,17 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3259?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-03-24-3:15pm",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-brute-force-criss-cross-2026-03-24",
+          "title": "Brute Force / Criss-Cross",
+          "date": "2026-03-24",
+          "time": "2:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3376?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-project-hail-mary-70mm-2026-03-24",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-03-24",
           "time": "3:15 pm",
           "format": "70mm",
@@ -453,8 +435,8 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3268?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-03-24-7:30pm",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-03-24",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-03-24",
           "time": "7:30 pm",
           "format": "70mm",
@@ -778,8 +760,8 @@
           "link": "https://www.academymuseum.org/en/programs/detail/98th-oscars-screenplay-winner-019b0aa9-96ba-85c0-76cb-4cac263d97ba"
         },
         {
-          "id": "academy-museum-98th-oscars-animated-feature-film-winner-kpop-demon-hunters-2026-",
-          "title": "98th Oscars Animated Feature Film Winner: KPop Demon Hunters",
+          "id": "academy-museum-98th-oscars-animated-feature-film-winner-kpop-demon-hunters-singa",
+          "title": "98th Oscars Animated Feature Film Winner: KPop Demon Hunters Singalong",
           "date": "2026-03-21",
           "time": "11:00 am",
           "format": "digital",
@@ -796,8 +778,8 @@
           "link": "https://www.academymuseum.org/en/programs/detail/98th-oscars-best-picture-winner-019b0aa3-bf4b-a22c-7946-e68960ffe58a"
         },
         {
-          "id": "academy-museum-98th-oscars-wild-card-winner-weapons-in-dolbyvision-actress-in-a-",
-          "title": "98th Oscars Wild Card Winner: Weapons in DolbyVision (Actress in a Supporting Role)",
+          "id": "academy-museum-98th-oscars-wild-card-winner-weapons-in-dolby-vision-actress-in-a",
+          "title": "98th Oscars Wild Card Winner: Weapons in Dolby Vision (Actress in a Supporting Role)",
           "date": "2026-03-22",
           "time": "6:30 pm",
           "format": "digital",
@@ -823,33 +805,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-jurassic-park-iii-2026-03-17",
-          "title": "Jurassic Park III",
-          "date": "2026-03-17",
-          "time": "1:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/jurassic-park-iii#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-sleepaway-camp-2026-03-17",
-          "title": "Sleepaway Camp",
-          "date": "2026-03-17",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Terror Tuesday” series.",
-          "link": "https://drafthouse.com/los-angeles/event/terror-tuesday-sleepaway-camp#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-the-lost-world-jurassic-park-2026-03-17",
-          "title": "The Lost World: Jurassic Park",
-          "date": "2026-03-17",
-          "time": "7:20 pm",
-          "format": "digital",
-          "notes": "Part of the “Movie Parties” series.",
-          "link": "https://drafthouse.com/los-angeles/event/movie-party-the-lost-world-jurassic-park#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-the-lord-of-the-rings-the-two-towers-extended-edition-2026-03-18",
           "title": "The Lord of the Rings: The Two Towers: Extended Edition",
@@ -1047,6 +1002,42 @@
           "format": "digital",
           "notes": "Part of the “Sad Girl Cinema Club” series.",
           "link": "https://drafthouse.com/los-angeles/event/sad-girl-cinema-club-melancholia#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-daisies-2026-03-24",
+          "title": "Daisies",
+          "date": "2026-03-24",
+          "time": "10:20 pm",
+          "format": "digital",
+          "notes": "Part of the “Queer Film Theory 101” series.",
+          "link": "https://drafthouse.com/los-angeles/event/queer-film-theory-101-daisies#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-melancholia-2026-03-24",
+          "title": "Melancholia",
+          "date": "2026-03-24",
+          "time": "11:30 am",
+          "format": "digital",
+          "notes": "Part of the “Sad Girl Cinema Club” series.",
+          "link": "https://drafthouse.com/los-angeles/event/sad-girl-cinema-club-melancholia#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-mystery-voyage-2026-03-24",
+          "title": "Mystery Voyage",
+          "date": "2026-03-24",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Part of the “AGFADROME” series.",
+          "link": "https://drafthouse.com/los-angeles/show/mystery-voyage#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-twin-peaks-the-return-2026-03-24",
+          "title": "Twin Peaks: The Return",
+          "date": "2026-03-24",
+          "time": "9:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-13-15#js-showtimescomponent"
         }
       ]
     },
@@ -1058,42 +1049,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-17",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-17",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2368/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-17",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-17",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2371/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-17",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-17",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2369/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-17",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-17",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2370/seats"
-        },
         {
           "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-18",
           "title": "Peaky Blinders: The Immortal Man",
@@ -1192,6 +1147,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2332/seats"
+        },
+        {
+          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-24",
+          "title": "Peaky Blinders: The Immortal Man",
+          "date": "2026-03-24",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2360/seats"
+        },
+        {
+          "id": "egyptian-possession-2026-03-24",
+          "title": "Possession",
+          "date": "2026-03-24",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2335/seats"
+        },
+        {
+          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-24",
+          "title": "Peaky Blinders: The Immortal Man",
+          "date": "2026-03-24",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2361/seats"
+        },
+        {
+          "id": "egyptian-possession-2026-03-24",
+          "title": "Possession",
+          "date": "2026-03-24",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2334/seats"
         }
       ]
     },
@@ -1274,6 +1265,15 @@
           "format": "digital",
           "notes": "Q&A with filmmaker Sergei Loznitsa. Advance Screening.",
           "link": "https://www.americancinematheque.com/now-showing/two-prosecutors-3-23-26/"
+        },
+        {
+          "id": "aero-mike-nick-nick-alice-2026-03-24",
+          "title": "Mike & Nick & Nick & Alice",
+          "date": "2026-03-24",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Q&A with writer/director BenDavid Grabinski, actors Vince Vaughn, James Marsden, Eiza González and More. L.A. Premiere. Co-presented by Beyond Fest.",
+          "link": "https://www.americancinematheque.com/now-showing/mike-nick-nick-alice-3-24-26/"
         }
       ]
     },
@@ -1285,24 +1285,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-leprechaun-in-the-hood-2026-03-17",
-          "title": "Leprechaun in the Hood",
-          "date": "2026-03-17",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3857632/"
-        },
-        {
-          "id": "vidiots-seven-beauties-2026-03-17",
-          "title": "Seven Beauties",
-          "date": "2026-03-17",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3778538/"
-        },
         {
           "id": "vidiots-dreams-2026-03-18",
           "title": "Dreams",
@@ -1934,6 +1916,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3867470/"
         },
         {
+          "id": "vidiots-finding-nemo-2026-04-12-12:00pm",
+          "title": "Finding Nemo",
+          "date": "2026-04-12",
+          "time": "12:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3888767/"
+        },
+        {
           "id": "vidiots-who-s-afraid-of-virginia-woolf-2026-04-12-3:00pm",
           "title": "Who's Afraid of Virginia Woolf?",
           "date": "2026-04-12",
@@ -1943,6 +1934,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3867469/"
         },
         {
+          "id": "vidiots-sweet-16mm-mid-century-social-guidance-classics-2026-04-14-7:00pm",
+          "title": "Sweet 16mm: Mid-Century Social Guidance Classics",
+          "date": "2026-04-14",
+          "time": "7:00 pm",
+          "format": "16mm",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3882989/"
+        },
+        {
           "id": "vidiots-outerlands-2026-04-15-7:00pm",
           "title": "Outerlands",
           "date": "2026-04-15",
@@ -1950,6 +1950,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3860597/"
+        },
+        {
+          "id": "vidiots-a-poem-is-a-naked-person-2026-04-18-4:00pm",
+          "title": "A Poem Is a Naked Person",
+          "date": "2026-04-18",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3860669/"
         },
         {
           "id": "vidiots-other-music-2026-04-18-4:30pm",
@@ -2051,15 +2060,6 @@
       "url": "https://studios.wearebraindead.com",
       "color": "#8EBF8E",
       "screenings": [
-        {
-          "id": "brain-dead-mutate-or-die-2026-03-17",
-          "title": "Mutate or Die",
-          "date": "2026-03-17",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://dice.fm/event/l89gql-mutate-or-die-screening-17th-mar-brain-dead-studios-los-angeles-tickets"
-        },
         {
           "id": "brain-dead-infinite-space-the-architecture-of-john-lautner-2026-03-21",
           "title": "Infinite Space: The Architecture of John Lautner",
@@ -2234,33 +2234,6 @@
       "color": "#B4A0D4",
       "screenings": [
         {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-17",
-          "title": "2026 Oscar-Nominated Short Films: Animated",
-          "date": "2026-03-17",
-          "time": "3:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/f947e156-7d2c-520d-86ca-b212dbed66ac"
-        },
-        {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-live-action-2026-03-17",
-          "title": "2026 Oscar-Nominated Short Films: Live Action",
-          "date": "2026-03-17",
-          "time": "5:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/58f1fa24-6821-579d-95ef-fccd5974fc88"
-        },
-        {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-17",
-          "title": "2026 Oscar-Nominated Short Films: Animated",
-          "date": "2026-03-17",
-          "time": "7:50 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/3598920b-b516-5f51-8eb4-9976d296bba9"
-        },
-        {
           "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-18",
           "title": "2026 Oscar-Nominated Short Films: Animated",
           "date": "2026-03-18",
@@ -2358,6 +2331,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://booking.landmarktheatres.com/launch/ticketing/90f12ad9-ac7d-575b-a1fd-cd6d555515c1"
+        },
+        {
+          "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-24",
+          "title": "2026 Oscar-Nominated Short Films: Animated",
+          "date": "2026-03-24",
+          "time": "5:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/18704868-00f8-5214-a0b1-05f6a9e4290f"
         }
       ]
     },
@@ -2369,33 +2351,6 @@
       "url": "https://www.laemmle.com",
       "color": "#C8A8D9",
       "screenings": [
-        {
-          "id": "laemmle-noho-slanted-2026-03-17",
-          "title": "Slanted",
-          "date": "2026-03-17",
-          "time": "1:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139479"
-        },
-        {
-          "id": "laemmle-noho-slanted-2026-03-17",
-          "title": "Slanted",
-          "date": "2026-03-17",
-          "time": "4:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139480"
-        },
-        {
-          "id": "laemmle-noho-slanted-2026-03-17",
-          "title": "Slanted",
-          "date": "2026-03-17",
-          "time": "7:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139481"
-        },
         {
           "id": "laemmle-noho-slanted-2026-03-18",
           "title": "Slanted",
@@ -2530,6 +2485,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/139392"
+        },
+        {
+          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-24",
+          "title": "Dhurandhar: The Revenge",
+          "date": "2026-03-24",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139394"
+        },
+        {
+          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-24",
+          "title": "Dhurandhar: The Revenge",
+          "date": "2026-03-24",
+          "time": "6:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139395"
+        },
+        {
+          "id": "laemmle-noho-baseball-beyond-belief-2026-03-24",
+          "title": "Baseball: Beyond Belief",
+          "date": "2026-03-24",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Baseball: Beyond Belief filmmaker John Scheinfeld will appear for a post screening Q&A at the Royal on 3/23 and the NoHo on 3/24. Executive Producer Mike Sullivan and Producer Dave Harding will be in attendance for the Town Center screening on 3/25 and the Newhall screening on 3/26.",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139575"
         }
       ]
     },
@@ -2541,33 +2523,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-harold-and-maude-2026-03-17",
-          "title": "Harold and Maude",
-          "date": "2026-03-17",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "Part of the “Starring Bud Cort” series.",
-          "link": "https://www.americancinematheque.com/now-showing/harold-and-maude-3-17-26/"
-        },
-        {
-          "id": "los-feliz-3-twin-peaks-season-2-ep-2-3-2026-03-17",
-          "title": "Twin Peaks: Season 2, Ep. 2 & 3",
-          "date": "2026-03-17",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "Coma” and The Man Behind The Glass.” Part of the “TWIN PEAKS: The Complete Series” series.",
-          "link": "https://www.americancinematheque.com/now-showing/twin-peaks-season-2-ep-2-3-3-17-26/"
-        },
-        {
-          "id": "los-feliz-3-dinner-for-schmucks-2026-03-17",
-          "title": "Dinner for Schmucks",
-          "date": "2026-03-17",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "Introduction by Kelly Goodner and Jim Hemphill. St. Patrick’s Day Screening!",
-          "link": "https://www.americancinematheque.com/now-showing/dinner-for-schmucks-3-17-26/"
-        },
         {
           "id": "los-feliz-3-reeling-2026-03-18",
           "title": "Reeling",
@@ -2729,6 +2684,24 @@
           "format": "digital",
           "notes": "Introduction by actor and fitness instructor Angie Shriner. 40th Anniversary.",
           "link": "https://www.americancinematheque.com/now-showing/cinematic-void-presents-little-shop-of-horrors-3-23-26/"
+        },
+        {
+          "id": "los-feliz-3-twin-peaks-season-2-ep-4-5-2026-03-24",
+          "title": "Twin Peaks: Season 2, Ep. 4 & 5",
+          "date": "2026-03-24",
+          "time": "6:00 pm",
+          "format": "digital",
+          "notes": "Laura’s Secret Diary” and The Orchids Curse.” Part of the “TWIN PEAKS: The Complete Series” series.",
+          "link": "https://www.americancinematheque.com/now-showing/twin-peaks-season-2-ep-4-5-3-24-26/"
+        },
+        {
+          "id": "los-feliz-3-the-trial-2026-03-24",
+          "title": "The Trial",
+          "date": "2026-03-24",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "Q&A with filmmaker Sergei Loznitsa. L.A. Premiere.",
+          "link": "https://www.americancinematheque.com/now-showing/the-trial-3-24-26/"
         }
       ]
     },
@@ -2750,6 +2723,105 @@
           "link": "https://tickets.laemmle.com/ticketing/90/62562"
         },
         {
+          "id": "laemmle-royal-sentimental-value-2026-03-20",
+          "title": "Sentimental Value",
+          "date": "2026-03-20",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62803"
+        },
+        {
+          "id": "laemmle-royal-golden-2026-03-20",
+          "title": "Golden",
+          "date": "2026-03-20",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62662"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-20",
+          "title": "Sentimental Value",
+          "date": "2026-03-20",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62804"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-21",
+          "title": "Sentimental Value",
+          "date": "2026-03-21",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62805"
+        },
+        {
+          "id": "laemmle-royal-golden-2026-03-21",
+          "title": "Golden",
+          "date": "2026-03-21",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62663"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-21",
+          "title": "Sentimental Value",
+          "date": "2026-03-21",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62806"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-22",
+          "title": "Sentimental Value",
+          "date": "2026-03-22",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62807"
+        },
+        {
+          "id": "laemmle-royal-golden-2026-03-22",
+          "title": "Golden",
+          "date": "2026-03-22",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62668"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-22",
+          "title": "Sentimental Value",
+          "date": "2026-03-22",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62808"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-23",
+          "title": "Sentimental Value",
+          "date": "2026-03-23",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62819"
+        },
+        {
+          "id": "laemmle-royal-golden-2026-03-23",
+          "title": "Golden",
+          "date": "2026-03-23",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62669"
+        },
+        {
           "id": "laemmle-royal-baseball-beyond-belief-2026-03-23",
           "title": "Baseball: Beyond Belief",
           "date": "2026-03-23",
@@ -2757,6 +2829,33 @@
           "format": "digital",
           "notes": "Baseball: Beyond Belief filmmaker John Scheinfeld will appear for a post screening Q&A at the Royal on 3/23 and the NoHo on 3/24. Executive Producer Mike Sullivan and Producer Dave Harding will be in attendance for the Town Center screening on 3/25 and the Newhall screening on 3/26.",
           "link": "https://tickets.laemmle.com/ticketing/90/62802"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-24",
+          "title": "Sentimental Value",
+          "date": "2026-03-24",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62811"
+        },
+        {
+          "id": "laemmle-royal-golden-2026-03-24",
+          "title": "Golden",
+          "date": "2026-03-24",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62674"
+        },
+        {
+          "id": "laemmle-royal-sentimental-value-2026-03-24",
+          "title": "Sentimental Value",
+          "date": "2026-03-24",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/62812"
         }
       ]
     },
@@ -2768,15 +2867,6 @@
       "url": "https://www.secretmovieclub.com",
       "color": "#B89878",
       "screenings": [
-        {
-          "id": "secret-movie-club-the-luck-of-the-irish-2026-03-17",
-          "title": "The Luck of the Irish",
-          "date": "2026-03-17",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/19974-the-luck-of-the-irish/"
-        },
         {
           "id": "secret-movie-club-jennifer-s-body-2026-03-18",
           "title": "Jennifer’s Body",
@@ -2884,6 +2974,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20138-10-things-i-hate-about-you/"
+        },
+        {
+          "id": "secret-movie-club-how-to-lose-a-guy-in-10-days-2026-03-24",
+          "title": "How to Lose a Guy in 10 Days",
+          "date": "2026-03-24",
+          "time": "10:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20141-how-to-lose-a-guy-in-10-days/"
+        },
+        {
+          "id": "secret-movie-club-love-jones-2026-03-24",
+          "title": "Love Jones",
+          "date": "2026-03-24",
+          "time": "7:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20140-love-jones/"
         }
       ]
     },
@@ -2976,6 +3084,24 @@
           "format": "digital",
           "notes": "At Norris Cinema Theatre at the Frank Sinatra Hall. Followed by a Q&A with SCA Alumnus Alex Litvak.",
           "link": "https://cinema.usc.edu/events/reservation.cfm?id=73084"
+        },
+        {
+          "id": "lumiere-music-hall-agfa-movie-hooky-club-imax-matinee-one-missed-call-2026-03-24",
+          "title": "AGFA Movie Hooky Club IMAX Matinee: One Missed Call",
+          "date": "2026-03-24",
+          "time": "3:00 pm",
+          "format": "IMAX",
+          "notes": "At The Michelle and Kevin Douglas IMAX Theatre.",
+          "link": "https://cinema.usc.edu/events/reservation.cfm?id=73078"
+        },
+        {
+          "id": "lumiere-music-hall-the-ai-doc-or-how-i-became-an-apocaloptimist-2026-03-24",
+          "title": "The AI Doc: Or How I Became an Apocaloptimist",
+          "date": "2026-03-24",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "At Norris Cinema Theatre at the Frank Sinatra Hall.",
+          "link": "https://cinema.usc.edu/events/reservation.cfm?id=73064"
         }
       ]
     },
