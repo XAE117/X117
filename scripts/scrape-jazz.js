@@ -44,15 +44,8 @@ const VENUES = {
   'the-high-low': { id: 'the-high-low', name: 'The High Low', shortName: 'High Low', neighborhood: 'Atwater Village', url: 'https://www.thehighlow.com/', color: '#27AE60', tier: 'regular', region: 'LA' },
   'the-mint': { id: 'the-mint', name: 'The Mint', shortName: 'The Mint', neighborhood: 'Mid-Wilshire', url: 'https://www.themintla.com/', color: '#16A085', tier: 'regular', region: 'LA' },
   'lighthouse-cafe': { id: 'lighthouse-cafe', name: 'Lighthouse Cafe', shortName: 'Lighthouse', neighborhood: 'Hermosa Beach', url: 'https://www.thelighthousecafe.net/', color: '#3498DB', tier: 'regular', region: 'LA' },
-  // ── LA: Concert Halls ──
-  'disney-hall': { id: 'disney-hall', name: 'Walt Disney Concert Hall', shortName: 'Disney Hall', neighborhood: 'Downtown', url: 'https://www.laphil.com/events/', color: '#BDC3C7', tier: 'concert_hall', region: 'LA' },
-  'hollywood-bowl': { id: 'hollywood-bowl', name: 'Hollywood Bowl', shortName: 'Hollywood Bowl', neighborhood: 'Hollywood Hills', url: 'https://www.hollywoodbowl.com/', color: '#F1C40F', tier: 'concert_hall', region: 'LA' },
-  'broad-stage': { id: 'broad-stage', name: 'The Broad Stage', shortName: 'Broad Stage', neighborhood: 'Santa Monica', url: 'https://thebroadstage.org/', color: '#E74C3C', tier: 'concert_hall', region: 'LA' },
-  'alvas-showroom': { id: 'alvas-showroom', name: "Alva's Showroom", shortName: "Alva's", neighborhood: 'San Pedro', url: 'https://www.alvasshowroom.com/', color: '#9B59B6', tier: 'concert_hall', region: 'LA' },
   // ── Orange County ──
   'campus-jax': { id: 'campus-jax', name: 'Campus JAX', shortName: 'Campus JAX', neighborhood: 'Newport Beach', url: 'https://www.campusjax.com/entertainment/', color: '#F39C12', tier: 'dedicated', region: 'OC' },
-  'club-616': { id: 'club-616', name: 'Club 616', shortName: 'Club 616', neighborhood: 'Santa Ana', url: 'https://www.616sa.com/events', color: '#7F8C8D', tier: 'regular', region: 'OC' },
-  'segerstrom': { id: 'segerstrom', name: 'Segerstrom Center — Samueli Theater', shortName: 'Segerstrom', neighborhood: 'Costa Mesa', url: 'https://www.scfta.org/shows-events/jazz-landing', color: '#2C3E50', tier: 'concert_hall', region: 'OC' },
 }
 
 // ── Helpers ──
@@ -1210,13 +1203,9 @@ async function main() {
     })
   }
 
-  // Lodge Room shows — only include jazz-relevant (must match a hot artist)
-  // Lodge Room books mostly indie rock/comedy; jazz shows come via Minaret scraper
+  // Lodge Room shows — include all (books jazz-adjacent acts frequently)
   for (const raw of lodgeRoomShows) {
     if (raw.date && !isFutureDate(raw.date)) continue
-    // Only include if artist matches hot artists list
-    const testShow = { artist: raw.artist }
-    if (!isHotShow(testShow, 'lodge-room', raw.source)) continue
     allShows.push({
       artist: raw.artist,
       date: raw.date || TODAY_ISO,

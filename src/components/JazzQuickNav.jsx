@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { MoonIcon, ColumnsIcon, SignalIcon } from './Icons'
+import { CalendarIcon, ColumnsIcon, SignalIcon } from './Icons'
 import './FormatFilter.css'
 
 const JAZZ_NAV = [
-  { to: '/jazz', end: true, icon: MoonIcon, label: 'TONIGHT' },
+  { to: '/jazz', end: true, icon: CalendarIcon, label: 'BY DAY' },
   { to: '/jazz/by-venue', icon: ColumnsIcon, label: 'VENUES' },
   { to: '/jazz/proximity', icon: SignalIcon, label: '°LC' },
 ]

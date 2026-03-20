@@ -21,8 +21,9 @@ import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
 import FoodByCategory from './views/FoodByCategory.jsx'
 import FoodStarred from './views/FoodStarred.jsx'
-import EatsDetail from './views/EatsDetail.jsx'
+import EatsByTier from './views/EatsByTier.jsx'
 import EatsNew from './views/EatsNew.jsx'
+import EatsDetail from './views/EatsDetail.jsx'
 import EatsMapView from './views/EatsMapView.jsx'
 import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
@@ -96,7 +97,15 @@ function App() {
       .then(([cinemaData, jazz, food]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
-        if (food) setFoodData(food)
+        if (food) {
+          // Normalize: ensure tier field exists (legacy data uses 'category')
+          if (food.restaurants) {
+            food.restaurants.forEach(r => {
+              if (!r.tier && r.category) r.tier = r.category
+            })
+          }
+          setFoodData(food)
+        }
         setLoading(false)
         setRefreshing(false)
       })
@@ -149,7 +158,7 @@ function App() {
       }
 
       return { ...theater, screenings }
-    })
+    }).filter(theater => theater.screenings.length > 0)
 
     return { ...data, theaters }
   }
@@ -279,10 +288,11 @@ function App() {
 
           {/* Food routes */}
           <Route path="/food" element={<FoodByCategory data={foodData} />} />
-          <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
+          <Route path="/food/tiers" element={<EatsByTier data={foodData} />} />
           <Route path="/food/new" element={<EatsNew data={foodData} />} />
-          <Route path="/food/map" element={<EatsMapView data={foodData} />} />
+          <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
           <Route path="/food/spot/:spotId" element={<EatsDetail data={foodData} />} />
+          <Route path="/food/map" element={<EatsMapView data={foodData} />} />
         </Routes>
       </main>
       <Footer

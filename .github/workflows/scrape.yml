@@ -26,6 +26,11 @@ jobs:
           TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run scrape
+      - name: Scrape jazz data
+        run: npm run scrape:jazz
+      - name: Scrape restaurant data (Fridays only)
+        if: github.event.schedule == '0 0 * * 6' || github.event_name == 'workflow_dispatch'
+        run: npm run scrape:eats
       - name: Send weekly digest (Fridays only)
         if: github.event.schedule == '0 0 * * 6'
         env:
@@ -37,6 +42,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/theaters.json
-          git diff --cached --quiet || git commit -m "Update screening data"
+          git add public/theaters.json public/jazz-venues.json public/restaurants.json public/scrape-log.json
+          git diff --cached --quiet || git commit -m "Update screening, jazz, and restaurant data"
           git push

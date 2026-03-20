@@ -1,10 +1,49 @@
 {
-  "lastUpdated": "2026-03-10",
-  "categories": [
-    { "key": "all", "label": "ALL" },
-    { "key": "street", "label": "STREET", "description": "Pop-ups & Stands · Under $20/pp" },
-    { "key": "feast", "label": "FEAST", "description": "Sit-down · $20–60/pp" },
-    { "key": "whale", "label": "WHALE", "description": "Splurge · $60+/pp" }
+  "lastUpdated": "2026-03-20T19:51:16.699Z",
+  "lastFullScrape": "2026-03-20T19:51:16.699Z",
+  "newThisMonth": [
+    "lielle",
+    "sonmari",
+    "cheesesteaks-by-mat",
+    "lapaba",
+    "sqirl",
+    "regalade",
+    "kar-son",
+    "holy-basil",
+    "little-fish",
+    "hermon-s",
+    "corridor-109",
+    "henrietta",
+    "chainsaw",
+    "hojokban",
+    "old-gold-tomato-pies",
+    "max-helen-s",
+    "the-mulberry",
+    "wilde-s",
+    "morihiro",
+    "sonny-s",
+    "la-s-new-restaurant-openings",
+    "somni-beverly-hills",
+    "providence-hollywood",
+    "n-naka-palms",
+    "melisse-santa-monica",
+    "vespertine-culver-city",
+    "anajak-thai-sherman-oaks",
+    "camphor-dtla",
+    "rustic-canyon-santa-monica",
+    "sushi-kaneyoshi-dtla",
+    "mori-sushi-west-la",
+    "hippo-highland-park",
+    "shibumi-dtla",
+    "manzke-los-feliz",
+    "orsa-winston-dtla",
+    "komal-dtla",
+    "rasarumah-mid-wilshire",
+    "vin-folk-highland-park",
+    "l-antica-pizzeria-da-michele-hollywood",
+    "chengdu-taste-alhambra",
+    "tacos-el-chato-olympic",
+    "leo-taqueria-eagle-rock"
   ],
   "restaurants": [
     {
@@ -17,11 +56,30 @@
       "fire": 3,
       "description": "Gilberto Cetina Jr.'s Yucatecan seafood stall inside Mercado La Paloma. The ceviche, octopus tacos, and Baja-style fish are transcendent — this is some of the best seafood in LA at any price point.",
       "quote": "Michelin Bib Gourmand. Consistently on every best-of list in LA. Go early — it gets packed by noon.",
-      "accolades": ["Michelin Bib Gourmand", "Eater Essential 38", "LA Times 101"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "Eater Essential 38",
+        "LA Times 101"
+      ],
       "hours": "Mon–Sat 10am–5pm",
-      "tags": ["LUNCH", "COUNTER SERVICE", "SEAFOOD", "BIB GOURMAND"],
+      "tags": [
+        "LUNCH",
+        "COUNTER SERVICE",
+        "SEAFOOD",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 14,
+      "tier": "street",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "burritos-la-palma",
@@ -32,11 +90,29 @@
       "category": "street",
       "fire": 3,
       "description": "Legendary flour tortillas made fresh to order, stuffed with perfectly seasoned meats. The birria burrito and chicharrón are essential. Worth the drive to OC.",
-      "accolades": ["Michelin Bib Gourmand", "Eater Essential 38"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "Eater Essential 38"
+      ],
       "hours": "Daily 8am–8pm",
-      "tags": ["LUNCH", "COUNTER SERVICE", "MEXICAN", "BIB GOURMAND"],
+      "tags": [
+        "LUNCH",
+        "COUNTER SERVICE",
+        "MEXICAN",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 11,
+      "tier": "street",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "mariscos-jalisco",
@@ -47,10 +123,20 @@
       "category": "street",
       "fire": 3,
       "description": "Raul Ortega's legendary truck. The tacos dorados de camarón are one of the great iconic LA dishes — crispy fried shrimp tacos with a spicy red salsa.",
-      "accolades": ["LA Times 101", "Eater Essential 38"],
+      "accolades": [
+        "LA Times 101",
+        "Eater Essential 38"
+      ],
       "hours": "Daily 9am–5pm",
-      "tags": ["LUNCH", "FOOD TRUCK", "SEAFOOD"],
-      "color": "#C96B3C"
+      "tags": [
+        "LUNCH",
+        "FOOD TRUCK",
+        "SEAFOOD"
+      ],
+      "color": "#C96B3C",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "sonoratown",
@@ -61,11 +147,22 @@
       "category": "street",
       "fire": 3,
       "description": "Hand-stretched Sonoran flour tortillas stuffed with carne asada, chivichanga, and caramelo. Every bite is an event. Downtown's best lunch.",
-      "accolades": ["Michelin Bib Gourmand", "LA Times 101"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "LA Times 101"
+      ],
       "hours": "Mon–Sat 10:30am–8pm",
-      "tags": ["LUNCH", "COUNTER SERVICE", "MEXICAN", "BIB GOURMAND"],
+      "tags": [
+        "LUNCH",
+        "COUNTER SERVICE",
+        "MEXICAN",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "howlin-rays",
@@ -76,10 +173,19 @@
       "category": "street",
       "fire": 2,
       "description": "Johnny Ray Zone's Nashville hot chicken, from Country to Howlin'. The line is the legend. Pasadena location is less painful than Chinatown was.",
-      "accolades": ["LA Times 101"],
+      "accolades": [
+        "LA Times 101"
+      ],
       "hours": "Tue–Sun 11am–9pm",
-      "tags": ["LUNCH", "DINNER", "CHICKEN"],
-      "color": "#D94B2B"
+      "tags": [
+        "LUNCH",
+        "DINNER",
+        "CHICKEN"
+      ],
+      "color": "#D94B2B",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "jitlada",
@@ -90,10 +196,21 @@
       "category": "street",
       "fire": 2,
       "description": "Jazz Singsanong's southern Thai powerhouse. The crying tiger, morning glory, and anything on the specials menu will destroy you in the best way.",
-      "accolades": ["LA Times 101", "Eater Essential 38"],
+      "accolades": [
+        "LA Times 101",
+        "Eater Essential 38"
+      ],
       "hours": "Tue–Sun 11am–3pm, 5pm–10pm",
-      "tags": ["LUNCH", "DINNER", "THAI", "SPICY"],
-      "color": "#E85D3A"
+      "tags": [
+        "LUNCH",
+        "DINNER",
+        "THAI",
+        "SPICY"
+      ],
+      "color": "#E85D3A",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "porridge-puffs",
@@ -104,11 +221,29 @@
       "category": "street",
       "fire": 2,
       "description": "Minh Phan's congee shop. Rich, soul-warming bowls with unexpected toppings. The puffs are ethereal. Perfect breakfast or lunch.",
-      "accolades": ["Michelin Bib Gourmand", "LA Times 101"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "LA Times 101"
+      ],
       "hours": "Wed–Mon 8am–3pm",
-      "tags": ["BREAKFAST", "LUNCH", "ASIAN", "BIB GOURMAND"],
+      "tags": [
+        "BREAKFAST",
+        "LUNCH",
+        "ASIAN",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 12,
+      "tier": "street",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "guerrilla-tacos",
@@ -119,10 +254,19 @@
       "category": "street",
       "fire": 2,
       "description": "Wes Avila's chef-driven taco shop. Sweet potato taco with feta and corn, Baja fish taco — elevated street food at its finest.",
-      "accolades": ["Eater Essential 38"],
+      "accolades": [
+        "Eater Essential 38"
+      ],
       "hours": "Daily 11am–10pm",
-      "tags": ["LUNCH", "DINNER", "TACOS"],
-      "color": "#C96B3C"
+      "tags": [
+        "LUNCH",
+        "DINNER",
+        "TACOS"
+      ],
+      "color": "#C96B3C",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "lasa",
@@ -133,11 +277,20 @@
       "category": "street",
       "fire": 2,
       "description": "Chad and Chase Valencia's modern Filipino spot. The kare-kare, sinigang, and ube desserts are deeply personal and beautifully executed.",
-      "accolades": ["Michelin Bib Gourmand"],
+      "accolades": [
+        "Michelin Bib Gourmand"
+      ],
       "hours": "Tue–Sun 5pm–10pm",
-      "tags": ["DINNER", "FILIPINO", "BIB GOURMAND"],
+      "tags": [
+        "DINNER",
+        "FILIPINO",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "sushi-ginza-onodera",
@@ -148,10 +301,27 @@
       "category": "whale",
       "fire": 3,
       "description": "Tokyo-level omakase. Fish flown in from Tsukiji, rice seasoned with aged vinegar. One of the finest sushi experiences in North America.",
-      "accolades": ["Michelin 1 Star"],
+      "accolades": [
+        "Michelin 1 Star"
+      ],
       "hours": "Tue–Sun seatings at 6pm & 8:30pm",
-      "tags": ["DINNER", "OMAKASE", "SUSHI", "MICHELIN STAR"],
-      "color": "#A88C5A"
+      "tags": [
+        "DINNER",
+        "OMAKASE",
+        "SUSHI",
+        "MICHELIN STAR"
+      ],
+      "color": "#A88C5A",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 350,
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "hayato",
@@ -162,10 +332,28 @@
       "category": "whale",
       "fire": 3,
       "description": "Brandon Hayato Go's kaiseki inside a former ROW DTLA warehouse. Zen precision, seasonal ingredients, meditative pacing. LA's most transcendent meal.",
-      "accolades": ["Michelin 2 Stars", "LA Times 101"],
+      "accolades": [
+        "Michelin 2 Stars",
+        "LA Times 101"
+      ],
       "hours": "Wed–Sun seatings at 5:30pm & 8pm",
-      "tags": ["DINNER", "KAISEKI", "MICHELIN STAR", "TASTING MENU"],
-      "color": "#A88C5A"
+      "tags": [
+        "DINNER",
+        "KAISEKI",
+        "MICHELIN STAR",
+        "TASTING MENU"
+      ],
+      "color": "#A88C5A",
+      "sources": [
+        {
+          "name": "Michelin 2 Stars",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 300,
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "dialogue",
@@ -176,10 +364,26 @@
       "category": "whale",
       "fire": 2,
       "description": "Dave Beran's intimate 18-seat counter. Hyper-seasonal tasting menus with California produce and global technique.",
-      "accolades": ["Michelin 1 Star"],
+      "accolades": [
+        "Michelin 1 Star"
+      ],
       "hours": "Wed–Sun 6pm & 8:30pm",
-      "tags": ["DINNER", "TASTING MENU", "MICHELIN STAR"],
-      "color": "#A88C5A"
+      "tags": [
+        "DINNER",
+        "TASTING MENU",
+        "MICHELIN STAR"
+      ],
+      "color": "#A88C5A",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 175,
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "kato",
@@ -190,10 +394,28 @@
       "category": "whale",
       "fire": 3,
       "description": "Jon Yao's modern Taiwanese tasting menu. Meticulous and inventive. The sea urchin fried rice is legendary.",
-      "accolades": ["Michelin 1 Star", "LA Times 101"],
+      "accolades": [
+        "Michelin 1 Star",
+        "LA Times 101"
+      ],
       "hours": "Tue–Sat 5:30pm & 8:30pm",
-      "tags": ["DINNER", "TASTING MENU", "MICHELIN STAR", "TAIWANESE"],
-      "color": "#A88C5A"
+      "tags": [
+        "DINNER",
+        "TASTING MENU",
+        "MICHELIN STAR",
+        "TAIWANESE"
+      ],
+      "color": "#A88C5A",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 98,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "republique",
@@ -204,11 +426,30 @@
       "category": "feast",
       "fire": 2,
       "description": "Walter and Margarita Manzke inside the historic Charlie Chaplin building. Pastries at brunch are world class. Dinner is polished but warm.",
-      "accolades": ["Michelin Bib Gourmand", "LA Times 101"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "LA Times 101"
+      ],
       "hours": "Daily 8am–10pm",
-      "tags": ["BRUNCH", "DINNER", "FRENCH", "PASTRIES", "BIB GOURMAND"],
+      "tags": [
+        "BRUNCH",
+        "DINNER",
+        "FRENCH",
+        "PASTRIES",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "pricePp": 58,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2
     },
     {
       "id": "bestia",
@@ -219,10 +460,21 @@
       "category": "feast",
       "fire": 3,
       "description": "Ori Menashe and Genevieve Gergis's Italian powerhouse. Handmade pasta, wood-fired pizzas, offal — bold and uncompromising.",
-      "accolades": ["LA Times 101", "Eater Essential 38"],
+      "accolades": [
+        "LA Times 101",
+        "Eater Essential 38"
+      ],
       "hours": "Sun–Thu 5pm–10pm, Fri–Sat 5pm–11pm",
-      "tags": ["DINNER", "ITALIAN", "PASTA", "DATE NIGHT"],
-      "color": "#C96B3C"
+      "tags": [
+        "DINNER",
+        "ITALIAN",
+        "PASTA",
+        "DATE NIGHT"
+      ],
+      "color": "#C96B3C",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "bavel",
@@ -233,10 +485,20 @@
       "category": "feast",
       "fire": 3,
       "description": "Same team as Bestia. The lamb neck shawarma, pita with black garlic hummus, and date cake are absolute legends. Gorgeous room.",
-      "accolades": ["LA Times 101", "Eater Essential 38"],
+      "accolades": [
+        "LA Times 101",
+        "Eater Essential 38"
+      ],
       "hours": "Sun–Thu 5pm–10pm, Fri–Sat 5pm–11pm",
-      "tags": ["DINNER", "MIDDLE EASTERN", "DATE NIGHT"],
-      "color": "#C96B3C"
+      "tags": [
+        "DINNER",
+        "MIDDLE EASTERN",
+        "DATE NIGHT"
+      ],
+      "color": "#C96B3C",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "guelaguetza",
@@ -247,10 +509,20 @@
       "category": "feast",
       "fire": 2,
       "description": "The Lopez family's Oaxacan institution since 1994. Mole negro, tlayudas, mezcal flights. A vital LA landmark.",
-      "accolades": ["LA Times 101"],
+      "accolades": [
+        "LA Times 101"
+      ],
       "hours": "Daily 9am–10pm",
-      "tags": ["LUNCH", "DINNER", "OAXACAN", "MOLE"],
-      "color": "#C96B3C"
+      "tags": [
+        "LUNCH",
+        "DINNER",
+        "OAXACAN",
+        "MOLE"
+      ],
+      "color": "#C96B3C",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "majordomo",
@@ -261,10 +533,19 @@
       "category": "feast",
       "fire": 2,
       "description": "David Chang's LA outpost. The bo ssäm for the table, bing bread, and cold noodles are the moves. Loud, energetic, fun.",
-      "accolades": ["Eater Essential 38"],
+      "accolades": [
+        "Eater Essential 38"
+      ],
       "hours": "Sun–Thu 5pm–10pm, Fri–Sat 5pm–11pm",
-      "tags": ["DINNER", "KOREAN", "GROUP DINING"],
-      "color": "#C96B3C"
+      "tags": [
+        "DINNER",
+        "KOREAN",
+        "GROUP DINING"
+      ],
+      "color": "#C96B3C",
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
     },
     {
       "id": "yangban",
@@ -275,11 +556,914 @@
       "category": "feast",
       "fire": 2,
       "description": "Katianna and John Hong's all-day Korean market/restaurant. The fried rice, sandwiches, and banchan are outstanding.",
-      "accolades": ["Michelin Bib Gourmand", "Eater Essential 38"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "Eater Essential 38"
+      ],
       "hours": "Daily 11am–9pm",
-      "tags": ["LUNCH", "DINNER", "KOREAN", "BIB GOURMAND"],
+      "tags": [
+        "LUNCH",
+        "DINNER",
+        "KOREAN",
+        "BIB GOURMAND"
+      ],
       "color": "#E8A838",
-      "bibGourmand": true
+      "bibGourmand": true,
+      "tier": "feast",
+      "sourceCount": 0,
+      "heatScore": 0
+    },
+    {
+      "name": "Lielle",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "lielle",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Sonmari",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sonmari",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Cheesesteaks By Matū",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "cheesesteaks-by-mat",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Lapaba",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "lapaba",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Sqirl",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sqirl",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Regalade",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "regalade",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Kar Son",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "kar-son",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Holy Basil",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "holy-basil",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Little Fish",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "little-fish",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Hermon's",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "hermon-s",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Corridor 109",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "corridor-109",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Henrietta",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "henrietta",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Chainsaw",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "chainsaw",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Hojokban",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "hojokban",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Old Gold Tomato Pies",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "old-gold-tomato-pies",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Max & Helen's",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "max-helen-s",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "The Mulberry",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "the-mulberry",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Wilde’s",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "wilde-s",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Morihiro",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "morihiro",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Sonny's",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sonny-s",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "LA’s New Restaurant Openings",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "la-s-new-restaurant-openings",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Somni",
+      "neighborhood": "Beverly Hills",
+      "cuisine": "Spanish Avant-Garde",
+      "pricePp": 400,
+      "michelinStatus": "three-star",
+      "sources": [
+        {
+          "name": "Michelin 3 Stars",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "somni-beverly-hills",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Providence",
+      "neighborhood": "Hollywood",
+      "cuisine": "Seafood Tasting Menu",
+      "pricePp": 300,
+      "michelinStatus": "two-star",
+      "sources": [
+        {
+          "name": "Michelin 2 Stars",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "providence-hollywood",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "n/naka",
+      "neighborhood": "Palms",
+      "cuisine": "Modern Kaiseki",
+      "pricePp": 300,
+      "michelinStatus": "two-star",
+      "sources": [
+        {
+          "name": "Michelin 2 Stars",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "n-naka-palms",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Melisse",
+      "neighborhood": "Santa Monica",
+      "cuisine": "French",
+      "pricePp": 325,
+      "michelinStatus": "two-star",
+      "sources": [
+        {
+          "name": "Michelin 2 Stars",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "melisse-santa-monica",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Vespertine",
+      "neighborhood": "Culver City",
+      "cuisine": "Avant-Garde",
+      "pricePp": 350,
+      "michelinStatus": "two-star",
+      "sources": [
+        {
+          "name": "Michelin 2 Stars",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "vespertine-culver-city",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Anajak Thai",
+      "neighborhood": "Sherman Oaks",
+      "cuisine": "Thai Seafood",
+      "pricePp": 42,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "anajak-thai-sherman-oaks",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Camphor",
+      "neighborhood": "DTLA",
+      "cuisine": "Modern French",
+      "pricePp": 200,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "camphor-dtla",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Rustic Canyon",
+      "neighborhood": "Santa Monica",
+      "cuisine": "Seasonal Californian",
+      "pricePp": 60,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "rustic-canyon-santa-monica",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Sushi Kaneyoshi",
+      "neighborhood": "DTLA",
+      "cuisine": "Omakase",
+      "pricePp": 350,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "sushi-kaneyoshi-dtla",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Mori Sushi",
+      "neighborhood": "West LA",
+      "cuisine": "Omakase",
+      "pricePp": 250,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "mori-sushi-west-la",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Hippo",
+      "neighborhood": "Highland Park",
+      "cuisine": "Vegetable-Forward",
+      "pricePp": 58,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "hippo-highland-park",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Shibumi",
+      "neighborhood": "DTLA",
+      "cuisine": "Japanese Kappo",
+      "pricePp": 200,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "shibumi-dtla",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Manzke",
+      "neighborhood": "Los Feliz",
+      "cuisine": "Filipino-French",
+      "pricePp": 200,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "manzke-los-feliz",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Orsa & Winston",
+      "neighborhood": "DTLA",
+      "cuisine": "Japanese-Italian",
+      "pricePp": 185,
+      "michelinStatus": "one-star",
+      "sources": [
+        {
+          "name": "Michelin 1 Star",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "reservations-required",
+        "tasting-menu"
+      ],
+      "tier": "whale",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "orsa-winston-dtla",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Komal",
+      "neighborhood": "DTLA",
+      "cuisine": "Oaxacan",
+      "pricePp": 15,
+      "michelinStatus": "bib-gourmand",
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "bib-gourmand"
+      ],
+      "tier": "street",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "komal-dtla",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Rasarumah",
+      "neighborhood": "Mid-Wilshire",
+      "cuisine": "Malaysian",
+      "pricePp": 20,
+      "michelinStatus": "bib-gourmand",
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "bib-gourmand"
+      ],
+      "tier": "street",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "rasarumah-mid-wilshire",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Vin Folk",
+      "neighborhood": "Highland Park",
+      "cuisine": "Wine Bar",
+      "pricePp": 30,
+      "michelinStatus": "bib-gourmand",
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "bib-gourmand"
+      ],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "vin-folk-highland-park",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "L'Antica Pizzeria da Michele",
+      "neighborhood": "Hollywood",
+      "cuisine": "Neapolitan Pizza",
+      "pricePp": 25,
+      "michelinStatus": "bib-gourmand",
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "bib-gourmand"
+      ],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "l-antica-pizzeria-da-michele-hollywood",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Chengdu Taste",
+      "neighborhood": "Alhambra",
+      "cuisine": "Sichuan",
+      "pricePp": 18,
+      "michelinStatus": "bib-gourmand",
+      "sources": [
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [
+        "bib-gourmand"
+      ],
+      "tier": "street",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "chengdu-taste-alhambra",
+      "addedDate": "2026-03-19"
+    },
+    {
+      "id": "tacos-el-chato-olympic",
+      "name": "Tacos El Chato",
+      "neighborhood": "Olympic/La Brea",
+      "cuisine": "Tacos",
+      "tier": "street",
+      "priceRange": "$6–12/pp",
+      "pricePp": 8,
+      "description": "Late-night taco stand. Al pastor and suadero are the move. The kind of spot you tell people about in whispers.",
+      "whyHot": "The most iconic late-night taco stand in central LA. Go after midnight.",
+      "sources": [],
+      "sourceCount": 0,
+      "heatScore": 0,
+      "tags": [
+        "late-night",
+        "cash-only",
+        "outdoor",
+        "no-reservations",
+        "tacos"
+      ],
+      "isNew": false,
+      "address": "Olympic Blvd & La Brea Ave, Los Angeles, CA",
+      "lat": 34.0532,
+      "lng": -118.3442,
+      "googleMapsUrl": "https://maps.google.com/?q=Tacos+El+Chato+Olympic+La+Brea+Los+Angeles",
+      "hours": "Thu-Sun 9pm-3am",
+      "instagramHandle": "tacoselchato_la",
+      "manualPick": true,
+      "addedDate": "2026-03-19"
+    },
+    {
+      "id": "leo-taqueria-eagle-rock",
+      "name": "Leo's Tacos",
+      "neighborhood": "Eagle Rock",
+      "cuisine": "Tacos",
+      "tier": "street",
+      "priceRange": "$5–10/pp",
+      "pricePp": 7,
+      "description": "The most famous al pastor in LA. The spinning trompo is mesmerizing, the tacos are $1.50, and the multiple locations make this the city's most reliable late-night taco option.",
+      "whyHot": "Multiple locations but the truck is the OG experience. Cash only.",
+      "sources": [],
+      "sourceCount": 0,
+      "heatScore": 0,
+      "tags": [
+        "late-night",
+        "cash-only",
+        "truck",
+        "tacos",
+        "al-pastor"
+      ],
+      "isNew": false,
+      "address": "1515 N La Brea Ave, Los Angeles, CA 90028",
+      "lat": 34.096,
+      "lng": -118.3442,
+      "googleMapsUrl": "https://maps.google.com/?q=Leos+Tacos+La+Brea+Los+Angeles",
+      "hours": "Daily 9am-3am",
+      "manualPick": true,
+      "addedDate": "2026-03-19"
     }
   ]
 }

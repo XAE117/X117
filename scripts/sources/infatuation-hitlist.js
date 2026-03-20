@@ -52,11 +52,12 @@ export async function scrapeInfatuationHitList() {
 
     // Fallback: try broader selectors if structured ones didn't work
     if (restaurants.length === 0) {
+      // Junk phrases to skip (page chrome, not restaurant names)
+      const JUNK = /hit list|best new|best restaurant|how to get into|suggested reading|where to eat|find places|our app|top \d+|written by|new restaurant open|we checked|the spots|los angeles/i
       $('h2, h3').each((_, el) => {
         const $el = $(el)
         const text = $el.text().trim()
-        // Skip non-restaurant headings
-        if (text.length > 3 && text.length < 80 && !text.includes('Hit List') && !text.includes('Best New')) {
+        if (text.length > 3 && text.length < 50 && !JUNK.test(text) && /^[A-Z]/.test(text)) {
           restaurants.push({
             name: text,
             neighborhood: '',

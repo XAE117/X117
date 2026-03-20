@@ -104,6 +104,7 @@ function deduplicateRestaurants(allRestaurants) {
     if (merged.has(normKey)) {
       const existing = merged.get(normKey)
       // Merge sources (deduplicate by source name)
+      if (!existing.sources) existing.sources = []
       const existingSourceNames = new Set(existing.sources.map(s => s.name))
       for (const source of r.sources || []) {
         if (!existingSourceNames.has(source.name)) {
@@ -229,8 +230,18 @@ async function main() {
   const deduplicated = deduplicateRestaurants(allRestaurants)
   console.log(`    → ${deduplicated.length} unique restaurants after dedup`)
 
+  // ── Filter junk entries (page chrome from scrapers) ──
+  const JUNK_NAMES = /^(los angeles|the spots|written by|suggested reading|find places|our app|how to get into|where to eat|top \d+|best restaurant|new restaurant|we checked|la's new)/i
+  const cleaned = deduplicated.filter(r => {
+    if (!r.name || r.name.length < 3 || r.name.length > 60) return false
+    if (JUNK_NAMES.test(r.name)) return false
+    if (r.name.includes('—') && r.name.length > 40) return false // sentence fragments
+    return true
+  })
+  console.log(`    → ${cleaned.length} after junk filter (removed ${deduplicated.length - cleaned.length})`)
+
   // ── Classify tiers and calculate heat scores ──
-  for (const r of deduplicated) {
+  for (const r of cleaned) {
     r.tier = r.tier || classifyTier(r)
     r.sourceCount = r.sources?.length || 0
     r.heatScore = calculateHeatScore(r.sources || [])
@@ -239,8 +250,8 @@ async function main() {
 
   // ── Scrape diff: detect added/removed, preserve addedDate ──
   const previousIds = new Set(existing.restaurants.map(r => r.id))
-  const currentIds = new Set(deduplicated.map(r => r.id))
-  const added = deduplicated.filter(r => !previousIds.has(r.id))
+  const currentIds = new Set(cleaned.map(r => r.id))
+  const added = cleaned.filter(r => !previousIds.has(r.id))
   const removed = [...previousIds].filter(id => !currentIds.has(id))
 
   // Set addedDate on new entries
@@ -250,7 +261,7 @@ async function main() {
   }
 
   // Preserve addedDate from previous data
-  for (const r of deduplicated) {
+  for (const r of cleaned) {
     const prev = existing.restaurants.find(p => p.id === r.id)
     if (prev?.addedDate && !r.addedDate) r.addedDate = prev.addedDate
   }
@@ -258,13 +269,13 @@ async function main() {
   // ── Determine "new this month" ──
   const thirtyDaysAgo = new Date()
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
-  const newThisMonth = deduplicated
+  const newThisMonth = cleaned
     .filter(r => r.isNew || (r.addedDate && new Date(r.addedDate) >= thirtyDaysAgo))
     .map(r => r.id)
 
   // ── Tier stats ──
   const tiers = { street: 0, feast: 0, whale: 0 }
-  for (const r of deduplicated) tiers[r.tier]++
+  for (const r of cleaned) tiers[r.tier]++
   console.log(`\n  Tiers: ${tiers.street} street, ${tiers.feast} feast, ${tiers.whale} whale`)
   console.log(`  New this month: ${newThisMonth.length}`)
   if (added.length > 0) console.log(`  Added: ${added.map(r => r.name).join(', ')}`)
@@ -275,7 +286,7 @@ async function main() {
     timestamp: new Date().toISOString(),
     mode: isHotOnly ? 'hot' : 'full',
     sourcesScraped: scraped.length,
-    totalRestaurants: deduplicated.length,
+    totalRestaurants: cleaned.length,
     added: added.map(r => r.name),
     removed,
     tiers,
@@ -287,11 +298,11 @@ async function main() {
     lastUpdated: new Date().toISOString(),
     lastFullScrape: isHotOnly ? existing.lastFullScrape : new Date().toISOString(),
     newThisMonth,
-    restaurants: deduplicated,
+    restaurants: cleaned,
   }
 
   writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2))
-  console.log(`\n  ✓ Wrote ${deduplicated.length} restaurants to ${OUTPUT_PATH}\n`)
+  console.log(`\n  ✓ Wrote ${cleaned.length} restaurants to ${OUTPUT_PATH}\n`)
 }
 
 main().catch(err => {

@@ -20,9 +20,9 @@ const JAZZ_TABS = [
 
 const FOOD_TABS = [
   { to: '/food', end: true, emoji: '🍕', label: 'All' },
-  { to: '/food/new', emoji: '🔥', label: 'Hot' },
+  { to: '/food/tiers', emoji: '🔥', label: 'Tiers' },
   { to: '/food/starred', emoji: '⭐', label: 'Starred' },
-  { to: '/food/map', emoji: '🗺️', label: 'Map' },
+  { to: '/food/map', emoji: '📍', label: 'Map' },
 ]
 
 function Nav({ mode }) {
