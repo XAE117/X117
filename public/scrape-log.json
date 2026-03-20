@@ -1,13 +1,17 @@
 {
-  "timestamp": "2026-03-20T19:51:16.699Z",
+  "timestamp": "2026-03-20T20:08:49.223Z",
   "mode": "full",
-  "sourcesScraped": 47,
-  "totalRestaurants": 61,
+  "sourcesScraped": 90,
+  "totalRestaurants": 92,
   "added": [],
-  "removed": [],
+  "removed": [
+    "holi-celebration",
+    "pizza-party",
+    "celebrate-the-launch"
+  ],
   "tiers": {
     "street": 8,
-    "feast": 39,
+    "feast": 70,
     "whale": 14
   }
 }

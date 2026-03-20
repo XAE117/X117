@@ -2,7 +2,8 @@
  * Resy LA Hit List scraper
  * URL: https://blog.resy.com/the-hit-list/la-restaurants/
  *
- * Cheerio-safe: Standard WordPress blog post, pure HTML, no JS rendering.
+ * Extracts numbered restaurant links (e.g., "1. Wilde's") that point to
+ * resy.com venue URLs. Cheerio-safe, no Puppeteer needed.
  */
 
 import axios from 'axios'
@@ -13,7 +14,7 @@ const RESY_URL = 'https://blog.resy.com/the-hit-list/la-restaurants/'
 export async function scrapeResyHitList() {
   const { data: html } = await axios.get(RESY_URL, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       'Accept': 'text/html,application/xhtml+xml',
     },
     timeout: 15000,
@@ -21,34 +22,50 @@ export async function scrapeResyHitList() {
 
   const $ = cheerio.load(html)
   const restaurants = []
+  const seen = new Set()
 
-  // Resy blog uses h2/h3 headings for restaurant names within the article body
-  // Restaurant entries are typically: heading + paragraph description
-  const articleBody = $('article, .entry-content, .post-content, main').first()
-  const headings = articleBody.find('h2, h3')
+  // Restaurant entries are numbered links like "1. Wilde's" pointing to resy.com venue pages
+  $('a[href*="resy.com/cities"]').each((_, el) => {
+    const $a = $(el)
+    const href = $a.attr('href') || ''
+    const text = $a.text().trim()
 
-  headings.each((_, el) => {
-    const $el = $(el)
-    const name = $el.text().trim()
+    // Skip image links, nav links, event links, and non-venue links
+    if (!href.includes('/venues/')) return
+    if (href.includes('/events/')) return
+    if (text.startsWith('<') || !text || text.length > 80) return
 
-    // Skip non-restaurant headings
-    if (!name || name.length > 100 || name.includes('Hit List') || name.includes('Best') || name.includes('Update')) {
-      return
-    }
+    // Strip leading number + period (e.g., "1. Wilde's" → "Wilde's")
+    const name = text.replace(/^\d+\.\s*/, '').trim()
+    if (!name || name.length < 2) return
 
-    // Try to get description from next paragraph(s)
-    const description = $el.next('p').text().trim()
+    // Skip descriptive phrases that aren't restaurant names
+    if (/^(special|staff|great|rooftop|vegan|nearby|global|climbing|top rated|new on)/i.test(name)) return
 
-    // Extract neighborhood from description if possible
+    const nameLower = name.toLowerCase()
+    if (seen.has(nameLower)) return
+    seen.add(nameLower)
+
+    // Extract neighborhood from venue URL slug (e.g., "venice-los-angeles-ca" → "Venice")
     let neighborhood = ''
-    const hoodMatch = description.match(/(?:in|located in|neighborhood:?)\s+([A-Z][a-zA-Z\s]+?)(?:\.|,|—)/i)
-    if (hoodMatch) neighborhood = hoodMatch[1].trim()
+    const cityMatch = href.match(/\/cities\/([^/]+)\/venues\//)
+    if (cityMatch) {
+      const city = cityMatch[1]
+        .replace(/-ca$/, '')
+        .replace(/los-angeles/, '')
+        .replace(/-/g, ' ')
+        .trim()
+      if (city && city !== 'los angeles') {
+        neighborhood = city.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+      }
+    }
 
     restaurants.push({
       name,
       neighborhood,
       cuisine: '',
-      description: description.slice(0, 300),
+      description: '',
+      reservationUrl: href,
       sources: [{ name: 'Resy Hit List', url: RESY_URL }],
       tags: [],
     })

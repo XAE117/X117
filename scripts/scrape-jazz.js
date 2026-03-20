@@ -126,6 +126,17 @@ function isHotShow(show, venueId, source) {
     }
   }
 
+  // Check hot venues
+  if (venueId) {
+    const venueDef = VENUES[venueId]
+    if (venueDef) {
+      const venueName = venueDef.name.toLowerCase()
+      for (const hv of hotVenuesList) {
+        if (venueName.includes(hv)) return true
+      }
+    }
+  }
+
   return false
 }
 

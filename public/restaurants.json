@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-20T19:51:16.699Z",
-  "lastFullScrape": "2026-03-20T19:51:16.699Z",
+  "lastUpdated": "2026-03-20T20:08:49.224Z",
+  "lastFullScrape": "2026-03-20T20:08:49.224Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -43,7 +43,38 @@
     "l-antica-pizzeria-da-michele-hollywood",
     "chengdu-taste-alhambra",
     "tacos-el-chato-olympic",
-    "leo-taqueria-eagle-rock"
+    "leo-taqueria-eagle-rock",
+    "bevel-coffee",
+    "mariscos-los-corchos",
+    "le-dr-q",
+    "paradise-dynasty",
+    "el-moro-echo-park",
+    "vandell",
+    "chainsaw-cafe",
+    "little-fish-melrose-hill",
+    "harun-coffee",
+    "the-night-we-met",
+    "fiorelli-pizza",
+    "toranj-manhattan-beach",
+    "liu-s-cafe-westwood",
+    "holy-basil-santa-monica",
+    "noma-la",
+    "holbox-tasting-menu",
+    "darling-by-sean-brock",
+    "baby-bistro",
+    "sora-craft-kitchen",
+    "only-the-wild-ones-venice",
+    "marvito",
+    "bess-arcadia",
+    "ine-bistro",
+    "lucia",
+    "caf-tondo",
+    "electric-bleu",
+    "cuevita-long-beach",
+    "force-of-nature",
+    "barra-santos",
+    "tomat",
+    "ahgassi-gopchang-la"
   ],
   "restaurants": [
     {
@@ -581,6 +612,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
         }
       ],
       "tags": [
@@ -588,8 +623,8 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 6,
       "id": "lielle",
       "addedDate": "2026-03-19"
     },
@@ -641,6 +676,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
         }
       ],
       "tags": [
@@ -648,8 +687,8 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 6,
       "id": "lapaba",
       "addedDate": "2026-03-19"
     },
@@ -661,6 +700,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -668,10 +711,11 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "sqirl",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sqirl_la?venueId=1640"
     },
     {
       "name": "Regalade",
@@ -761,6 +805,14 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -768,10 +820,11 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 3,
+      "heatScore": 8,
       "id": "hermon-s",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/hermons?venueId=93816"
     },
     {
       "name": "Corridor 109",
@@ -801,6 +854,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -808,10 +865,11 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "henrietta",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/henrietta-ca?venueId=93420"
     },
     {
       "name": "Chainsaw",
@@ -841,6 +899,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
         }
       ],
       "tags": [
@@ -848,8 +910,8 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 6,
       "id": "hojokban",
       "addedDate": "2026-03-19"
     },
@@ -901,6 +963,14 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -908,10 +978,11 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 3,
+      "heatScore": 8,
       "id": "the-mulberry",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-mulberry?venueId=93307"
     },
     {
       "name": "Wilde’s",
@@ -921,6 +992,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -928,10 +1003,11 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "wilde-s",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/wildes?venueId=92065"
     },
     {
       "name": "Morihiro",
@@ -1464,6 +1540,591 @@
       "hours": "Daily 9am-3am",
       "manualPick": true,
       "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Bevel Coffee",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "bevel-coffee",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Mariscos Los Corchos",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "mariscos-los-corchos",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Le Dräq",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "le-dr-q",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Paradise Dynasty",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "paradise-dynasty",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "El Moro Echo Park",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "el-moro-echo-park",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Vandell",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "vandell",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Chainsaw Cafe",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "chainsaw-cafe",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Little Fish Melrose Hill",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/little-fish-melrose-hill?venueId=84566",
+      "tier": "feast",
+      "sourceCount": 2,
+      "heatScore": 5,
+      "id": "little-fish-melrose-hill",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Harun Coffee",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "harun-coffee",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "The Night We Met",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-night-we-met?venueId=94017",
+      "tier": "feast",
+      "sourceCount": 2,
+      "heatScore": 5,
+      "id": "the-night-we-met",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Fiorelli Pizza",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "fiorelli-pizza",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Toranj Manhattan Beach",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "toranj-manhattan-beach",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Liu’s Cafe Westwood",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "liu-s-cafe-westwood",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Holy Basil Santa Monica",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "holy-basil-santa-monica",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Noma LA",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/noma-la?date=2026-02-18&seats=2",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "noma-la",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Holbox Tasting Menu",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/holbox?venueId=84197",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "holbox-tasting-menu",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Darling by Sean Brock",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/darling-ca?venueId=92551",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "darling-by-sean-brock",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "baby bistro",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/baby-bistro?venueId=85600",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "baby-bistro",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Sora Craft Kitchen",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sora-craft-kitchen?venueId=89495",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "sora-craft-kitchen",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Only The Wild Ones",
+      "neighborhood": "Venice",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/venice-los-angeles-ca/venues/only-the-wild-ones?venueId=57546",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "only-the-wild-ones-venice",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Marvito",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/marvito?venueId=91519",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "marvito",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Bess",
+      "neighborhood": "Arcadia",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/arcadia-ca/venues/bess?venueId=93138",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "bess-arcadia",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Ine Bistro",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/ine-bistro?venueId=92802",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "ine-bistro",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Lucia",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/lucia-ca?venueId=87329",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "lucia",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Café Tondo",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/cafe-tondo?venueId=92005",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "caf-tondo",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Electric Bleu",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/electric-bleu?venueId=91791",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "electric-bleu",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Cuevita",
+      "neighborhood": "Long Beach",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/long-beach-ca/venues/cuevita?venueId=93527",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "cuevita-long-beach",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Force of Nature",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/force-of-nature?venueId=91354&date=2025-09-24&seats=2",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "force-of-nature",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Barra Santos",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/barra-santos?venueId=69340",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "barra-santos",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Tomat",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/tomat?venueId=84725",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "tomat",
+      "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Ahgassi Gopchang - LA",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/ahgassi-gopchang-la?venueId=94018",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "ahgassi-gopchang-la",
+      "addedDate": "2026-03-20"
     }
   ]
 }

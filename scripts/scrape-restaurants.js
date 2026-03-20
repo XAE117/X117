@@ -230,12 +230,14 @@ async function main() {
   const deduplicated = deduplicateRestaurants(allRestaurants)
   console.log(`    → ${deduplicated.length} unique restaurants after dedup`)
 
-  // ── Filter junk entries (page chrome from scrapers) ──
-  const JUNK_NAMES = /^(los angeles|the spots|written by|suggested reading|find places|our app|how to get into|where to eat|top \d+|best restaurant|new restaurant|we checked|la's new)/i
+  // ── Filter junk entries (page chrome + event descriptions from scrapers) ──
+  const JUNK_NAMES = /^(los angeles|the spots|written by|suggested reading|find places|our app|how to get into|where to eat|top \d+|best restaurant|new restaurant|we checked|la's new|holi |pizza party|celebrate|special events)/i
   const cleaned = deduplicated.filter(r => {
     if (!r.name || r.name.length < 3 || r.name.length > 60) return false
     if (JUNK_NAMES.test(r.name)) return false
     if (r.name.includes('—') && r.name.length > 40) return false // sentence fragments
+    // Filter all-lowercase descriptive phrases (event descriptions, not restaurant names)
+    if (/^[a-z]/.test(r.name) && r.name.split(' ').length > 2) return false
     return true
   })
   console.log(`    → ${cleaned.length} after junk filter (removed ${deduplicated.length - cleaned.length})`)

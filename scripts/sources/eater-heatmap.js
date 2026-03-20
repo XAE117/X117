@@ -2,69 +2,69 @@
  * Eater LA Heatmap scraper
  * URL: https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap
  *
- * NOTE: Eater /maps/ URLs are Next.js with Mapbox — requires Puppeteer.
- * Cheerio returns empty restaurant containers. Use Puppeteer with stealth plugin.
+ * Extracts from schema.org ItemList (application/ld+json) + h2/h3 headings.
+ * No Puppeteer needed — data is in the static HTML.
  */
 
 import axios from 'axios'
+import * as cheerio from 'cheerio'
 
 const HEATMAP_URL = 'https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap'
 
-/**
- * Attempt to scrape Eater Heatmap.
- * Falls back to returning empty array if Puppeteer unavailable.
- * In production, use puppeteer-extra + stealth plugin.
- */
 export async function scrapeEaterHeatmap() {
-  // Try Puppeteer first (Eater maps are JS-rendered via Next.js + Mapbox)
-  try {
-    const puppeteer = await import('puppeteer-extra').then(m => m.default).catch(() => null)
-    if (!puppeteer) {
-      console.log('    (puppeteer-extra not available, skipping live scrape)')
-      return []
-    }
+  const { data: html } = await axios.get(HEATMAP_URL, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept': 'text/html,application/xhtml+xml',
+    },
+    timeout: 15000,
+  })
 
-    const StealthPlugin = await import('puppeteer-extra-plugin-stealth').then(m => m.default)
-    puppeteer.use(StealthPlugin())
+  const $ = cheerio.load(html)
+  const restaurants = []
+  const seen = new Set()
 
-    const browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  // Method 1: Schema.org ItemList (most reliable)
+  $('script[type="application/ld+json"]').each((_, el) => {
+    try {
+      const data = JSON.parse($(el).text())
+      if (data['@type'] === 'ItemList' && data.itemListElement) {
+        for (const item of data.itemListElement) {
+          const r = item.item
+          if (r && r.name && !seen.has(r.name.toLowerCase())) {
+            seen.add(r.name.toLowerCase())
+            restaurants.push({
+              name: r.name,
+              neighborhood: '',
+              cuisine: '',
+              description: '',
+              sources: [{ name: 'Eater Heatmap', url: HEATMAP_URL }],
+              tags: [],
+            })
+          }
+        }
+      }
+    } catch {}
+  })
+
+  // Method 2: If schema.org didn't work, fall back to h2/h3 headings
+  if (restaurants.length === 0) {
+    const skip = /more maps|see more|the latest|dining out|sign up|newsletter/i
+    $('h2, h3').each((_, el) => {
+      const name = $(el).text().trim()
+      if (name.length > 2 && name.length < 60 && !skip.test(name) && !seen.has(name.toLowerCase())) {
+        seen.add(name.toLowerCase())
+        restaurants.push({
+          name,
+          neighborhood: '',
+          cuisine: '',
+          description: '',
+          sources: [{ name: 'Eater Heatmap', url: HEATMAP_URL }],
+          tags: [],
+        })
+      }
     })
-
-    const page = await browser.newPage()
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
-    await page.goto(HEATMAP_URL, { waitUntil: 'networkidle2', timeout: 30000 })
-
-    // Wait for restaurant cards to render
-    await page.waitForSelector('[class*="venue-card"], [data-venue-card], .c-mapstack__card', { timeout: 15000 })
-      .catch(() => console.log('    (card selector timeout, trying alternative)'))
-
-    // Pace: wait 2s for any lazy-loaded content
-    await new Promise(r => setTimeout(r, 2000))
-
-    const restaurants = await page.evaluate(() => {
-      const cards = document.querySelectorAll('[class*="venue-card"], [data-venue-card], .c-mapstack__card')
-      return Array.from(cards).map(card => {
-        const name = card.querySelector('h2, h3, [class*="venue-name"]')?.textContent?.trim() || ''
-        const neighborhood = card.querySelector('[class*="venue-neighborhood"], [class*="venue-address"]')?.textContent?.trim() || ''
-        const description = card.querySelector('p, [class*="venue-description"]')?.textContent?.trim() || ''
-        return { name, neighborhood, description }
-      }).filter(r => r.name)
-    })
-
-    await browser.close()
-
-    return restaurants.map(r => ({
-      name: r.name,
-      neighborhood: r.neighborhood,
-      cuisine: '',
-      description: r.description,
-      sources: [{ name: 'Eater Heatmap', url: HEATMAP_URL }],
-      tags: [],
-    }))
-  } catch (err) {
-    console.log(`    (Puppeteer scrape failed: ${err.message})`)
-    return []
   }
+
+  return restaurants
 }
