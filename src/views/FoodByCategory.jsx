@@ -63,9 +63,9 @@ function RestaurantCard({ restaurant, starred, onToggleStar, expanded, onToggleE
         </div>
         <div className="food-card-meta-row">
           <span className="food-card-cuisine">{restaurant.cuisine}</span>
-          <span className="food-card-price">{restaurant.price}</span>
-          {restaurant.bibGourmand && <BibBadge />}
-          <FireBadge count={restaurant.fire} />
+          <span className="food-card-price">{restaurant.price || restaurant.priceRange}</span>
+          {(restaurant.bibGourmand || restaurant.michelinStatus === 'bib-gourmand') && <BibBadge />}
+          <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
           <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
         </div>
       </div>
@@ -79,6 +79,15 @@ function RestaurantCard({ restaurant, starred, onToggleStar, expanded, onToggleE
           {restaurant.accolades && restaurant.accolades.length > 0 && (
             <div className="food-card-accolades">
               {restaurant.accolades.map(a => <span key={a} className="food-accolade-chip">{a}</span>)}
+            </div>
+          )}
+          {restaurant.sources && restaurant.sources.length > 0 && !restaurant.accolades?.length && (
+            <div className="food-card-accolades">
+              {restaurant.sources.map(s => (
+                <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="food-accolade-chip food-source-link" onClick={e => e.stopPropagation()}>
+                  {s.name}
+                </a>
+              ))}
             </div>
           )}
           {restaurant.hours && (

@@ -98,11 +98,33 @@ function App() {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
         if (food) {
-          // Normalize: ensure tier field exists (legacy data uses 'category')
+          // Normalize restaurant data — bridge field gaps between manual entries and scraper-added
+          const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C' }
           if (food.restaurants) {
             food.restaurants.forEach(r => {
+              // tier ↔ category
               if (!r.tier && r.category) r.tier = r.category
+              if (!r.category) r.category = r.tier || 'feast'
+              // price ↔ priceRange
+              if (!r.priceRange && r.price) r.priceRange = r.price
+              if (!r.price && r.priceRange) r.price = r.priceRange
+              // bibGourmand → michelinStatus
+              if (!r.michelinStatus && r.bibGourmand) r.michelinStatus = 'bib-gourmand'
+              // defaults
+              if (r.heatScore === undefined) r.heatScore = r.fire || 0
+              if (!r.color) r.color = TIER_COLORS[r.tier] || TIER_COLORS.feast
+              if (!r.neighborhood) r.neighborhood = ''
+              if (!r.cuisine) r.cuisine = ''
             })
+          }
+          // Generate categories array for FoodByCategory view
+          if (!food.categories) {
+            food.categories = [
+              { key: 'all', label: 'All' },
+              { key: 'street', label: 'Street', description: 'Pop-ups & Stands · Under $20/pp' },
+              { key: 'feast', label: 'Feast', description: 'The Sweet Spot · $20–$120/pp' },
+              { key: 'whale', label: 'Whale', description: 'Fine Dining · $120+/pp' },
+            ]
           }
           setFoodData(food)
         }

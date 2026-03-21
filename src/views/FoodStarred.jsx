@@ -17,9 +17,9 @@ function StarredCard({ restaurant, onUnstar }) {
         </div>
         <div className="starred-card-meta">
           <span className="starred-card-cuisine">{restaurant.cuisine}</span>
-          <span className="starred-card-price">{restaurant.price}</span>
-          {restaurant.bibGourmand && <span className="food-bib-badge">Bib Gourmand</span>}
-          <FireBadge count={restaurant.fire} />
+          <span className="starred-card-price">{restaurant.price || restaurant.priceRange}</span>
+          {restaurant.michelinStatus === 'bib-gourmand' && <span className="food-bib-badge">Bib Gourmand</span>}
+          <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
           <button
             className="food-star-btn starred"
             onClick={() => onUnstar(restaurant.id)}

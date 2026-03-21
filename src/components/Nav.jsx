@@ -22,7 +22,7 @@ const FOOD_TABS = [
   { to: '/food', end: true, emoji: '🍕', label: 'All' },
   { to: '/food/tiers', emoji: '🔥', label: 'Tiers' },
   { to: '/food/starred', emoji: '⭐', label: 'Starred' },
-  { to: '/food/map', emoji: '📍', label: 'Map' },
+  { to: '/food/map', emoji: '📍', label: 'Hoods' },
 ]
 
 function Nav({ mode }) {
