@@ -19,6 +19,8 @@ import * as cheerio from 'cheerio'
 import { readFileSync, writeFileSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { scrapeSongkick } from './sources/songkick-jazz.js'
+import { scrapeDice } from './sources/dice-jazz.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'jazz-venues.json')
@@ -1149,6 +1151,26 @@ async function main() {
     scrapeErrors.push({ source: 'campusjax.com', error: err.message })
   }
 
+  // Songkick LA Jazz (aggregator — JSON-LD MusicEvent schemas)
+  let songkickShows = []
+  try {
+    console.log('  Scraping songkick.com/la/jazz...')
+    songkickShows = await scrapeSongkick()
+    console.log(`    Found ${songkickShows.length} shows from Songkick`)
+  } catch (err) {
+    scrapeErrors.push({ source: 'songkick.com', error: err.message })
+  }
+
+  // Dice.fm LA Jazz (__NEXT_DATA__ events)
+  let diceShows = []
+  try {
+    console.log('  Scraping dice.fm/la/jazz...')
+    diceShows = await scrapeDice()
+    console.log(`    Found ${diceShows.length} shows from Dice.fm`)
+  } catch (err) {
+    scrapeErrors.push({ source: 'dice.fm', error: err.message })
+  }
+
   // ── 2. Normalize all scraped data into structured shows ──
   const allShows = []
 
@@ -1280,6 +1302,55 @@ async function main() {
       link: 'https://www.metaljazz.com/',
       notes: '',
       source: 'metaljazz.com',
+    })
+  }
+
+  // Songkick + Dice shows (aggregators — venue names need mapping)
+  const VENUE_NAME_MAP = {
+    'blue note los angeles': 'blue-note-la',
+    'blue note la': 'blue-note-la',
+    'the baked potato': 'baked-potato',
+    'baked potato': 'baked-potato',
+    'catalina bar & grill': 'catalina-jazz',
+    'catalina jazz club': 'catalina-jazz',
+    'lodge room': 'lodge-room',
+    'lodge room highland park': 'lodge-room',
+    'sam first': 'sam-first',
+    'vibrato grill & jazz': 'vibrato',
+    'vibrato grill jazz': 'vibrato',
+    'vibrato': 'vibrato',
+    'the world stage': 'world-stage',
+    'campus jax': 'campus-jax',
+    'the high low': 'the-high-low',
+    'the mint': 'the-mint',
+    'the mint la': 'the-mint',
+    'lighthouse cafe': 'lighthouse-cafe',
+    'the lighthouse cafe': 'lighthouse-cafe',
+    'scribble': 'scribble',
+    'zebulon': 'zebulon',
+    'gold diggers': 'gold-diggers',
+    '2220 arts + archives': '2220-arts',
+    '2220 arts & archives': '2220-arts',
+  }
+
+  function mapVenueName(venueName) {
+    if (!venueName) return null
+    const lower = venueName.toLowerCase().trim()
+    return VENUE_NAME_MAP[lower] || null
+  }
+
+  for (const raw of [...songkickShows, ...diceShows]) {
+    if (!isFutureDate(raw.date)) continue
+    const venueId = mapVenueName(raw.venue)
+    if (!venueId) continue // skip venues we don't track
+    allShows.push({
+      artist: raw.artist,
+      date: raw.date,
+      time: raw.time || '8:00 PM',
+      venueId,
+      link: raw.link || '',
+      notes: '',
+      source: raw.source,
     })
   }
 

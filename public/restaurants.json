@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-21T02:10:49.808Z",
-  "lastFullScrape": "2026-03-21T02:10:49.808Z",
+  "lastUpdated": "2026-03-21T10:27:20.438Z",
+  "lastFullScrape": "2026-03-21T10:27:20.438Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -74,7 +74,64 @@
     "force-of-nature",
     "barra-santos",
     "tomat",
-    "ahgassi-gopchang-la"
+    "ahgassi-gopchang-la",
+    "bar-sinizki",
+    "taqueria-frontera",
+    "carnal",
+    "zizou",
+    "iii-mas",
+    "belle-s",
+    "butchr-bar",
+    "a-t",
+    "udatsu-sushi",
+    "bridgetown-roti",
+    "tendon-tempura-carlos-jr",
+    "authentic-xian-liangpi",
+    "asadero-chikali",
+    "restaurant-ki-los-angeles",
+    "seline-santa-monica",
+    "manuela-los-angeles",
+    "citrin-santa-monica",
+    "chifa-los-angeles",
+    "damian-los-angeles",
+    "found-oyster-los-angeles",
+    "chef-tony-arcadia",
+    "lephante-santa-monica",
+    "jeong-yuk-jeom-los-angeles",
+    "pasjoli-santa-monica",
+    "t-mbi-santa-monica",
+    "killer-noodle-los-angeles",
+    "luscious-dumplings-monrovia",
+    "sweet-rice-gardena",
+    "manhattan-beach-post-manhattan-beach",
+    "amor-y-tacos-cerritos",
+    "lunasia-dim-sum-house-alhambra",
+    "redbird-los-angeles",
+    "charcoal-venice-venice",
+    "sichuan-impression-alhambra",
+    "the-factory-kitchen-los-angeles",
+    "laoxi-noodle-house-arcadia",
+    "angelini-osteria-los-angeles",
+    "union-pasadena",
+    "quarters-bbq-los-angeles",
+    "rocio-s-mexican-kitchen-bell-gardens",
+    "r-publique-hollywood",
+    "langer-s-los-angeles",
+    "ronan-los-angeles",
+    "nozawa-bar-beverly-hills",
+    "pizzeria-mozza-los-angeles",
+    "jon-vinny-s-los-angeles",
+    "chosun-galbee-los-angeles",
+    "maccheroni-republic-los-angeles",
+    "yong-su-san-los-angeles",
+    "kismet-los-angeles",
+    "avra-beverly-hills",
+    "uka-los-angeles",
+    "manohar-s-delhi-palace-la-puente-2880159",
+    "la-shukran",
+    "caf-riggs",
+    "xiquet",
+    "family-ethiopian"
   ],
   "restaurants": [
     {
@@ -575,8 +632,14 @@
       ],
       "color": "#C96B3C",
       "tier": "feast",
-      "sourceCount": 0,
-      "heatScore": 0
+      "sourceCount": 1,
+      "heatScore": 2,
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/majordomo"
+        }
+      ]
     },
     {
       "id": "yangban",
@@ -785,6 +848,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/little-fish"
         }
       ],
       "tags": [
@@ -792,8 +859,8 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "little-fish",
       "addedDate": "2026-03-19"
     },
@@ -1101,6 +1168,10 @@
         {
           "name": "Michelin 2 Stars",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/hollywood/restaurant/providence"
         }
       ],
       "tags": [
@@ -1108,8 +1179,8 @@
         "tasting-menu"
       ],
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "providence-hollywood",
       "addedDate": "2026-03-19"
     },
@@ -1167,6 +1238,14 @@
         {
           "name": "Michelin 2 Stars",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/culver-city/restaurant/vespertine"
         }
       ],
       "tags": [
@@ -1174,8 +1253,8 @@
         "tasting-menu"
       ],
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 3,
+      "heatScore": 6,
       "id": "vespertine-culver-city",
       "addedDate": "2026-03-19"
     },
@@ -1189,6 +1268,10 @@
         {
           "name": "Michelin 1 Star",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/sherman-oaks/restaurant/anajak-thai"
         }
       ],
       "tags": [
@@ -1196,8 +1279,8 @@
         "tasting-menu"
       ],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "anajak-thai-sherman-oaks",
       "addedDate": "2026-03-19"
     },
@@ -1365,6 +1448,10 @@
         {
           "name": "Michelin 1 Star",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/orsa-winston"
         }
       ],
       "tags": [
@@ -1372,8 +1459,8 @@
         "tasting-menu"
       ],
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "orsa-winston-dtla",
       "addedDate": "2026-03-19"
     },
@@ -1387,14 +1474,22 @@
         {
           "name": "Michelin Bib Gourmand",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/komal"
         }
       ],
       "tags": [
         "bib-gourmand"
       ],
       "tier": "street",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 3,
+      "heatScore": 6,
       "id": "komal-dtla",
       "addedDate": "2026-03-19"
     },
@@ -1408,14 +1503,18 @@
         {
           "name": "Michelin Bib Gourmand",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/rasarumah"
         }
       ],
       "tags": [
         "bib-gourmand"
       ],
       "tier": "street",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "rasarumah-mid-wilshire",
       "addedDate": "2026-03-19"
     },
@@ -2125,6 +2224,1032 @@
       "heatScore": 2,
       "id": "ahgassi-gopchang-la",
       "addedDate": "2026-03-20"
+    },
+    {
+      "name": "Bar Sinizki",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "bar-sinizki",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Taqueria Frontera",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "taqueria-frontera",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Carnal",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "carnal",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Zizou",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "zizou",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "III Mas",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "iii-mas",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Belle’s",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "belle-s",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Butchr Bar",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "butchr-bar",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "A Tí",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "a-t",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Udatsu Sushi",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "udatsu-sushi",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Bridgetown Roti",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "bridgetown-roti",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Tendon Tempura Carlos Jr",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "tendon-tempura-carlos-jr",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Authentic Xian Liangpi",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "authentic-xian-liangpi",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Asadero Chikali",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "asadero-chikali",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Restaurant Ki",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/restaurant-ki"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "restaurant-ki-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Seline",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/santa-monica/restaurant/seline"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "seline-santa-monica",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Manuela",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/manuela"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "manuela-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Citrin",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/santa-monica/restaurant/citrin"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "citrin-santa-monica",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Chifa",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/chifa"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "chifa-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Damian",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/damian"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "damian-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Found Oyster",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/found-oyster"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "found-oyster-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Chef Tony",
+      "neighborhood": "Arcadia",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/arcadia/restaurant/chef-tony"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "chef-tony-arcadia",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Élephante",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/santa-monica/restaurant/elephante"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "lephante-santa-monica",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Jeong Yuk Jeom",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/jeong-yuk-jeom"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "jeong-yuk-jeom-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Pasjoli",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/santa-monica/restaurant/pasjoli"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "pasjoli-santa-monica",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Tūmbi",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/santa-monica/restaurant/tumbi"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "t-mbi-santa-monica",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Killer Noodle",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/killer-noodle"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "killer-noodle-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Luscious Dumplings",
+      "neighborhood": "Monrovia",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-monrovia/restaurant/luscious-dumplings"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "luscious-dumplings-monrovia",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Sweet Rice",
+      "neighborhood": "Gardena",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/gardena/restaurant/sweet-rice"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "sweet-rice-gardena",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Manhattan Beach Post",
+      "neighborhood": "Manhattan Beach",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/manhattan-beach/restaurant/manhattan-beach-post"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "manhattan-beach-post-manhattan-beach",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Amor y Tacos",
+      "neighborhood": "Cerritos",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/cerritos/restaurant/amor-y-tacos"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "amor-y-tacos-cerritos",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Lunasia Dim Sum House",
+      "neighborhood": "Alhambra",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/alhambra/restaurant/lunasia-dim-sum-house"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "lunasia-dim-sum-house-alhambra",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Redbird",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/redbird"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "redbird-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Charcoal Venice",
+      "neighborhood": "Venice",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/venice/restaurant/charcoal-venice"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "charcoal-venice-venice",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Sichuan Impression",
+      "neighborhood": "Alhambra",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/alhambra/restaurant/sichuan-impression"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "sichuan-impression-alhambra",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "The Factory Kitchen",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/the-factory-kitchen"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "the-factory-kitchen-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "LaoXi Noodle House",
+      "neighborhood": "Arcadia",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/arcadia/restaurant/laoxi-noodle-house"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "laoxi-noodle-house-arcadia",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Angelini Osteria",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/angelini-osteria"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "angelini-osteria-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Union",
+      "neighborhood": "Pasadena",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/pasadena/restaurant/union"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "union-pasadena",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Quarters BBQ",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/quarters-bbq"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "quarters-bbq-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Rocio's Mexican Kitchen",
+      "neighborhood": "Bell Gardens",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/bell-gardens/restaurant/rocio-s-mexican-kitchen"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "rocio-s-mexican-kitchen-bell-gardens",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "République",
+      "neighborhood": "Hollywood",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/hollywood/restaurant/republique"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "r-publique-hollywood",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Langer's",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/langer-s"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "langer-s-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Ronan",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/ronan"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "ronan-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Nozawa Bar",
+      "neighborhood": "Beverly Hills",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/beverly-hills/restaurant/nozawa-bar"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "nozawa-bar-beverly-hills",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Pizzeria Mozza",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pizzeria-mozza"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "pizzeria-mozza-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Jon & Vinny’s",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/jon-vinny%E2%80%99s"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "jon-vinny-s-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Chosun Galbee",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/chosun-galbee"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "chosun-galbee-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Maccheroni Republic",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/maccheroni-republic"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "maccheroni-republic-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Yong Su San",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/yong-su-san"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "yong-su-san-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Kismet",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/kismet"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "kismet-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Avra",
+      "neighborhood": "Beverly Hills",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/beverly-hills/restaurant/avra"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "avra-beverly-hills",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Uka",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/uka"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "uka-los-angeles",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Manohar’s Delhi Palace",
+      "neighborhood": "La Puente_2880159",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/la-puente_2880159/restaurant/manohar-s-delhi-palace"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "manohar-s-delhi-palace-la-puente-2880159",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "La'Shukran",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/la-shukran"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "la-shukran",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Café Riggs",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/cafe-riggs"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "caf-riggs",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Xiquet",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/xiquet"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "xiquet",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Family Ethiopian",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/family-ethiopian"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "family-ethiopian",
+      "addedDate": "2026-03-21"
     }
   ]
 }

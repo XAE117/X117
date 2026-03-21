@@ -20,6 +20,8 @@ import { scrapeEaterHeatmap } from './sources/eater-heatmap.js'
 import { scrapeEaterEssential } from './sources/eater-essential.js'
 import { scrapeInfatuationHitList } from './sources/infatuation-hitlist.js'
 import { scrapeResyHitList } from './sources/resy-hitlist.js'
+import { scrapeThrillistLA } from './sources/thrillist-la.js'
+import { scrapeMichelinGuide } from './sources/michelin-guide.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'restaurants.json')
@@ -33,6 +35,8 @@ const SOURCE_WEIGHTS = {
   'Eater Heatmap': 3,
   'The Infatuation Hit List': 3,
   'Resy Hit List': 2,
+  'Thrillist LA': 2,
+  'Michelin Guide': 2,
   'Michelin': 2,
   'Michelin 1 Star': 2,
   'Michelin 2 Stars': 3,
@@ -189,6 +193,24 @@ async function main() {
       console.log(`    → ${resy.length} restaurants`)
     } catch (err) {
       console.error('    ✗ Resy Hit List failed:', err.message)
+    }
+
+    try {
+      console.log('  Scraping Thrillist LA...')
+      const thrillist = await scrapeThrillistLA()
+      scraped.push(...thrillist)
+      console.log(`    → ${thrillist.length} restaurants`)
+    } catch (err) {
+      console.error('    ✗ Thrillist LA failed:', err.message)
+    }
+
+    try {
+      console.log('  Scraping Michelin Guide (live)...')
+      const michelinLive = await scrapeMichelinGuide()
+      scraped.push(...michelinLive)
+      console.log(`    → ${michelinLive.length} restaurants`)
+    } catch (err) {
+      console.error('    ✗ Michelin Guide failed:', err.message)
     }
   }
 
