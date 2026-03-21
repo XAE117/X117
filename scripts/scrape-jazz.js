@@ -21,6 +21,8 @@ import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { scrapeSongkick } from './sources/songkick-jazz.js'
 import { scrapeDice } from './sources/dice-jazz.js'
+import { scrapeVibrato as scrapeVibratoSite } from './sources/vibrato-jazz.js'
+import { scrapeEventbrite } from './sources/eventbrite-jazz.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'jazz-venues.json')
@@ -1171,6 +1173,26 @@ async function main() {
     scrapeErrors.push({ source: 'dice.fm', error: err.message })
   }
 
+  // Vibrato dedicated scraper (Squarespace event list)
+  let vibratoSiteShows = []
+  try {
+    console.log('  Scraping vibratogrilljazz.com/music...')
+    vibratoSiteShows = await scrapeVibratoSite()
+    console.log(`    Found ${vibratoSiteShows.length} shows from Vibrato`)
+  } catch (err) {
+    scrapeErrors.push({ source: 'vibratogrilljazz.com', error: err.message })
+  }
+
+  // Eventbrite LA Jazz (schema.org ItemList)
+  let eventbriteShows = []
+  try {
+    console.log('  Scraping eventbrite.com/la/jazz...')
+    eventbriteShows = await scrapeEventbrite()
+    console.log(`    Found ${eventbriteShows.length} shows from Eventbrite`)
+  } catch (err) {
+    scrapeErrors.push({ source: 'eventbrite.com', error: err.message })
+  }
+
   // ── 2. Normalize all scraped data into structured shows ──
   const allShows = []
 
@@ -1339,7 +1361,7 @@ async function main() {
     return VENUE_NAME_MAP[lower] || null
   }
 
-  for (const raw of [...songkickShows, ...diceShows]) {
+  for (const raw of [...songkickShows, ...diceShows, ...eventbriteShows]) {
     if (!isFutureDate(raw.date)) continue
     const venueId = mapVenueName(raw.venue)
     if (!venueId) continue // skip venues we don't track
@@ -1351,6 +1373,20 @@ async function main() {
       link: raw.link || '',
       notes: '',
       source: raw.source,
+    })
+  }
+
+  // Vibrato dedicated scraper (already mapped to venueId)
+  for (const raw of vibratoSiteShows) {
+    if (!isFutureDate(raw.date)) continue
+    allShows.push({
+      artist: raw.artist,
+      date: raw.date,
+      time: raw.time || '9:00 PM',
+      venueId: 'vibrato',
+      link: raw.link || '',
+      notes: '',
+      source: 'vibratogrilljazz.com',
     })
   }
 
