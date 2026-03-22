@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-21T10:23:04.915Z",
+  "lastUpdated": "2026-03-22T10:24:29.384Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,24 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-true-romance-2026-03-20",
-          "title": "True Romance",
-          "date": "2026-03-20",
-          "time": "11:59 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4515?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
-        {
-          "id": "new-beverly-fellini-s-casanova-2026-03-20",
-          "title": "Fellini’s Casanova",
-          "date": "2026-03-20",
-          "time": "7:00 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4514?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-nights-in-black-leather-adults-only-2026-03-21",
           "title": "Nights in Black Leather (Adults Only)",
@@ -96,27 +78,18 @@
           "title": "True Romance",
           "date": "2026-03-27",
           "time": "11:59 pm",
-          "format": "digital",
-          "notes": "Midnight",
-          "link": "https://thenewbev.com/program/march-27-true-romance-midnight-show/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4531?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
-          "id": "new-beverly-lady-frankenstein-2026-03-27",
-          "title": "Lady Frankenstein",
+          "id": "new-beverly-lady-frankenstein-slaughter-hotel-2026-03-27",
+          "title": "Lady Frankenstein / Slaughter Hotel",
           "date": "2026-03-27",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/march-27-lady-frankenstein-slaughter-hotel/"
-        },
-        {
-          "id": "new-beverly-slaughter-hotel-2026-03-27",
-          "title": "Slaughter Hotel",
-          "date": "2026-03-27",
-          "time": "8:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/march-27-lady-frankenstein-slaughter-hotel/"
+          "time": "6:30 pm / 8:25 pm",
+          "format": "35mm",
+          "notes": "In 16mm and 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4617?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-behind-the-green-door-adults-only-2026-03-28",
@@ -191,51 +164,6 @@
       "url": "https://www.vistatheaterhollywood.com",
       "color": "#B89AD4",
       "screenings": [
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-20",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-20",
-          "time": "10:00 am",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3257?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-20",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-20",
-          "time": "10:30 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3308?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-20",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-20",
-          "time": "2:15 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3264?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-20",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-20",
-          "time": "6:30 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3265?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-silent-movie-where-s-poppa-2026-03-20",
-          "title": "Silent Movie / Where’s Poppa",
-          "date": "2026-03-20",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3372?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
         {
           "id": "vista-theatre-project-hail-mary-70mm-2026-03-21",
           "title": "Project Hail Mary 70mm",
@@ -453,8 +381,8 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3273?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-03-27-11:00am",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-03-27",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-03-27",
           "time": "11:00 am",
           "format": "70mm",
@@ -462,17 +390,17 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3278?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-super-fly-2026-03-27-11:59pm",
+          "id": "vista-theatre-super-fly-2026-03-27",
           "title": "Super Fly",
           "date": "2026-03-27",
           "time": "11:59 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3341?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-03-27-3:15pm",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-03-27",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-03-27",
           "time": "3:15 pm",
           "format": "70mm",
@@ -480,13 +408,22 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3283?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-03-27-7:30pm",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-03-27",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-03-27",
           "time": "7:30 pm",
           "format": "70mm",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3284?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-rio-bravo-2026-03-27",
+          "title": "Rio Bravo",
+          "date": "2026-03-27",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3381?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
           "id": "vista-theatre-who-done-it-2026-03-28-10:00am",
@@ -1066,15 +1003,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-98th-oscars-writing-original-screenplay-winner-sinners-in-70mm-20",
-          "title": "98th Oscars Writing (Original Screenplay) Winner: Sinners in 70mm",
-          "date": "2026-03-20",
-          "time": "7:30 pm",
-          "format": "70mm",
-          "notes": "At the David Geffen Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/98th-oscars-screenplay-winner-019b0aa9-96ba-85c0-76cb-4cac263d97ba"
-        },
-        {
           "id": "academy-museum-98th-oscars-animated-feature-film-winner-kpop-demon-hunters-singa",
           "title": "98th Oscars Animated Feature Film Winner: KPop Demon Hunters Singalong",
           "date": "2026-03-21",
@@ -1127,6 +1055,24 @@
           "format": "digital",
           "notes": "At the Ted Mann Theater. In person: Locarno Film Festival Artistic Director Giona A. Nazzaro.",
           "link": "https://www.academymuseum.org/en/programs/detail/the-year-of-the-cannibals-i-cannibali-in-4-k-019be22d-ed44-b369-c41f-cb6b6909f693"
+        },
+        {
+          "id": "academy-museum-the-400-blows-in-4k-2026-03-27",
+          "title": "The 400 Blows in 4K",
+          "date": "2026-03-27",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/the-400-blows-019c0c70-691e-6ad6-dff2-61eadc676427"
+        },
+        {
+          "id": "academy-museum-gunvor-nelson-tribute-ii-moons-pool-2026-03-27",
+          "title": "Gunvor Nelson Tribute II: Moons Pool",
+          "date": "2026-03-27",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater. In person: Steve Anker.",
+          "link": "https://www.academymuseum.org/en/programs/detail/gunvor-nelson-tribute-ii-moons-pool-019be219-d804-b817-96ac-a119453fa67b"
         }
       ]
     },
@@ -1138,51 +1084,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-daisies-2026-03-20",
-          "title": "Daisies",
-          "date": "2026-03-20",
-          "time": "12:15 pm",
-          "format": "digital",
-          "notes": "Part of the “Queer Film Theory 101” series.",
-          "link": "https://drafthouse.com/los-angeles/event/queer-film-theory-101-daisies#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-twin-peaks-the-return-2026-03-20",
-          "title": "Twin Peaks: The Return",
-          "date": "2026-03-20",
-          "time": "2:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-13-15#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-melancholia-2026-03-20",
-          "title": "Melancholia",
-          "date": "2026-03-20",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Sad Girl Cinema Club” series.",
-          "link": "https://drafthouse.com/los-angeles/event/sad-girl-cinema-club-melancholia#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-andr-is-an-idiot-2026-03-20",
-          "title": "André Is an Idiot",
-          "date": "2026-03-20",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "Director Tony Benna Live in Person.",
-          "link": "https://drafthouse.com/los-angeles/event/live-q-a-andre-is-an-idiot#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-ready-or-not-2-here-i-come-2026-03-20",
-          "title": "Ready or Not 2: Here I Come",
-          "date": "2026-03-20",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Costume Screening” series.",
-          "link": "https://drafthouse.com/los-angeles/event/costume-screening-ready-or-not-2-here-i-come-bloody-wedding-dress-contest#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-twin-peaks-the-return-2026-03-21",
           "title": "Twin Peaks: The Return",
@@ -1380,6 +1281,51 @@
           "format": "digital",
           "notes": "Part of the “Guest Selects” series.",
           "link": "https://drafthouse.com/los-angeles/event/guest-selects-britannia-hospital#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-stand-by-me-2026-03-27",
+          "title": "Stand by Me",
+          "date": "2026-03-27",
+          "time": "11:45 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/stand-by-me-1986#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-twin-peaks-the-return-2026-03-27",
+          "title": "Twin Peaks: The Return",
+          "date": "2026-03-27",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-16-18#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-stand-by-me-2026-03-27",
+          "title": "Stand by Me",
+          "date": "2026-03-27",
+          "time": "6:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/stand-by-me-1986#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-mummy-returns-2026-03-27",
+          "title": "The Mummy Returns",
+          "date": "2026-03-27",
+          "time": "7:20 pm",
+          "format": "digital",
+          "notes": "Part of the “Movie Parties” series. 25th anniversary.",
+          "link": "https://drafthouse.com/los-angeles/event/movie-party-the-mummy-returns-25th-anniversary#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-they-will-kill-you-2026-03-27",
+          "title": "They Will Kill You",
+          "date": "2026-03-27",
+          "time": "7:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/event/fan-event-they-will-kill-you#js-showtimescomponent"
         }
       ]
     },
@@ -1391,15 +1337,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-there-will-be-blood-2026-03-20",
-          "title": "There Will Be Blood",
-          "date": "2026-03-20",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.americancinematheque.com/now-showing/there-will-be-blood-3-20-26/"
-        },
         {
           "id": "egyptian-spirited-away-2026-03-21",
           "title": "Spirited Away",
@@ -1561,6 +1498,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2339/seats"
+        },
+        {
+          "id": "egyptian-a-clockwork-orange-2026-03-27",
+          "title": "A Clockwork Orange",
+          "date": "2026-03-27",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/a-clockwork-orange-3-27-26/"
         }
       ]
     },
@@ -1572,15 +1518,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#7ABFC0",
       "screenings": [
-        {
-          "id": "aero-apocalypse-now-final-cut-2026-03-20",
-          "title": "Apocalypse Now: Final Cut",
-          "date": "2026-03-20",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Part of the “Starring Robert Duvall” series.",
-          "link": "https://www.americancinematheque.com/now-showing/apocalypse-now-final-cut-3-20-26/"
-        },
         {
           "id": "aero-true-grit-2026-03-21",
           "title": "True Grit",
@@ -1652,6 +1589,15 @@
           "format": "digital",
           "notes": "30th Anniversary of SLING BLADE. SLING BLADE print courtesy of the George Eastman Museum.",
           "link": "https://www.americancinematheque.com/now-showing/sling-blade-tomorrow-3-26-26/"
+        },
+        {
+          "id": "aero-dry-leaf-2026-03-27",
+          "title": "Dry Leaf",
+          "date": "2026-03-27",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Q&A with filmmaker Alexandre Koberidze and composer Giorgi Koberidze. L.A. Premiere.",
+          "link": "https://www.americancinematheque.com/now-showing/dry-leaf-3-27-26/"
         }
       ]
     },
@@ -1663,51 +1609,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-didn-t-die-2026-03-20",
-          "title": "Didn’t Die",
-          "date": "2026-03-20",
-          "time": "10:15 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3831570/"
-        },
-        {
-          "id": "vidiots-after-hours-2026-03-20",
-          "title": "After Hours",
-          "date": "2026-03-20",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3782322/"
-        },
-        {
-          "id": "vidiots-blue-velvet-2026-03-20",
-          "title": "Blue Velvet",
-          "date": "2026-03-20",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3774316/"
-        },
-        {
-          "id": "vidiots-a-useful-ghost-2026-03-20",
-          "title": "A Useful Ghost",
-          "date": "2026-03-20",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3831604/"
-        },
-        {
-          "id": "vidiots-zardoz-2026-03-20",
-          "title": "Zardoz",
-          "date": "2026-03-20",
-          "time": "9:45 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle. Welcoming Kumail Nanjiani and Emily V. Gordon for a screening of John Boorman’s speedo-clad sci-fi cult classic Zardoz.",
-          "link": "https://vidiotsfoundation.org/purchase/3774317/"
-        },
         {
           "id": "vidiots-kung-fu-panda-2-2026-03-21",
           "title": "Kung Fu Panda 2",
@@ -1835,48 +1736,57 @@
           "link": "https://5secondday-la-2026.eventbrite.com"
         },
         {
-          "id": "vidiots-pillion-2026-03-27-10:00pm",
+          "id": "vidiots-pillion-2026-03-27",
           "title": "Pillion",
           "date": "2026-03-27",
           "time": "10:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3749823/"
         },
         {
-          "id": "vidiots-a-mighty-wind-2026-03-27-4:00pm",
+          "id": "vidiots-a-mighty-wind-2026-03-27",
           "title": "A Mighty Wind",
           "date": "2026-03-27",
           "time": "4:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3806803/"
         },
         {
-          "id": "vidiots-pillion-2026-03-27-4:30pm",
+          "id": "vidiots-pillion-2026-03-27",
           "title": "Pillion",
           "date": "2026-03-27",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3749821/"
         },
         {
-          "id": "vidiots-defending-your-life-2026-03-27-7:00pm",
+          "id": "vidiots-defending-your-life-2026-03-27",
           "title": "Defending Your Life",
           "date": "2026-03-27",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3806804/"
         },
         {
-          "id": "vidiots-onibaba-2026-03-27-9:45pm",
+          "id": "vidiots-pillion-2026-03-27",
+          "title": "Pillion",
+          "date": "2026-03-27",
+          "time": "7:15 pm",
+          "format": "digital",
+          "notes": "Showing in the MUBI Microcinema.",
+          "link": "https://vidiotsfoundation.org/purchase/3749822/"
+        },
+        {
+          "id": "vidiots-onibaba-2026-03-27",
           "title": "Onibaba",
           "date": "2026-03-27",
           "time": "9:45 pm",
-          "format": "digital",
-          "notes": "",
+          "format": "35mm",
+          "notes": "Showing in the Eagle. Screening in 35mm.",
           "link": "https://vidiotsfoundation.org/purchase/3806818/"
         },
         {
@@ -2267,15 +2177,6 @@
           "link": "https://vidiotsfoundation.org/purchase/3863159/"
         },
         {
-          "id": "vidiots-rrr-2026-04-05-7:00pm",
-          "title": "RRR",
-          "date": "2026-04-05",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://vidiotsfoundation.org/purchase/3840891/"
-        },
-        {
           "id": "vidiots-dj-ahmet-2026-04-05-7:30pm",
           "title": "DJ Ahmet",
           "date": "2026-04-05",
@@ -2517,15 +2418,6 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3860669/"
-        },
-        {
-          "id": "vidiots-other-music-2026-04-18-4:30pm",
-          "title": "Other Music",
-          "date": "2026-04-18",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://vidiotsfoundation.org/purchase/3860679/"
         },
         {
           "id": "vidiots-the-land-before-time-2026-04-19-1:00pm",
@@ -2935,15 +2827,6 @@
       "color": "#8EA0CF",
       "screenings": [
         {
-          "id": "billy-wilder-a-face-in-the-crowd-2026-03-20",
-          "title": "A Face in the Crowd",
-          "date": "2026-03-20",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.cinema.ucla.edu/events/face-crowd-2026-03-20/"
-        },
-        {
           "id": "billy-wilder-the-dream-the-lie-2026-03-21",
           "title": "The Dream & The Lie",
           "date": "2026-03-21",
@@ -2978,6 +2861,15 @@
           "format": "digital",
           "notes": "At 2220 Arts + Archives. Introduction by filmmaker and curator Cherlyn Hsing-Hsin Liu and film historian and curator Steve Anker.",
           "link": "https://www.cinema.ucla.edu/events/off-site-gunvor-nelson-tribute-i-red-shift-2026-03-22/"
+        },
+        {
+          "id": "billy-wilder-off-site-gunvor-nelson-tribute-ii-moons-pool-2026-03-27",
+          "title": "Off-Site: Gunvor Nelson Tribute II: Moons Pool",
+          "date": "2026-03-27",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "At Academy Museum. Introduction by film historian and curator Steve Anker.",
+          "link": "https://www.cinema.ucla.edu/events/off-site-gunvor-nelson-tribute-ii-moons-pool-2026-03-27/"
         }
       ]
     },
@@ -2998,24 +2890,6 @@
       "url": "https://www.laemmle.com",
       "color": "#B4A0D4",
       "screenings": [
-        {
-          "id": "laemmle-nuart-lady-snowblood-love-song-of-vengeance-shura-yuki-hime-urami-renga-",
-          "title": "Lady Snowblood: Love Song of Vengeance (Shura-Yuki-Hime: Urami Renga)",
-          "date": "2026-03-20",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/18a7aa52-c52f-5d5d-9c35-0cb544c68ddf"
-        },
-        {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-20",
-          "title": "2026 Oscar-Nominated Short Films: Animated",
-          "date": "2026-03-20",
-          "time": "5:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/2a498773-5480-5a3c-8007-b6b26473ef8c"
-        },
         {
           "id": "laemmle-nuart-the-rocky-horror-picture-show-2026-03-21",
           "title": "The Rocky Horror Picture Show",
@@ -3078,6 +2952,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://booking.landmarktheatres.com/launch/ticketing/d7fc2093-84ac-5b89-87da-d8719a5745be"
+        },
+        {
+          "id": "laemmle-nuart-tokyo-story-tokyo-monogatari-2026-03-27",
+          "title": "Tokyo Story (Tokyo Monogatari)",
+          "date": "2026-03-27",
+          "time": "10:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/c24d3502-c060-5b40-94ce-b2d6035ccf87"
         }
       ]
     },
@@ -3089,24 +2972,6 @@
       "url": "https://www.laemmle.com",
       "color": "#C8A8D9",
       "screenings": [
-        {
-          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-20",
-          "title": "Dhurandhar: The Revenge",
-          "date": "2026-03-20",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139386"
-        },
-        {
-          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-20",
-          "title": "Dhurandhar: The Revenge",
-          "date": "2026-03-20",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139387"
-        },
         {
           "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-21",
           "title": "Dhurandhar: The Revenge",
@@ -3232,6 +3097,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/139399"
+        },
+        {
+          "id": "laemmle-noho-home-delivery-2026-03-27",
+          "title": "Home Delivery",
+          "date": "2026-03-27",
+          "time": "1:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139774"
+        },
+        {
+          "id": "laemmle-noho-home-delivery-2026-03-27",
+          "title": "Home Delivery",
+          "date": "2026-03-27",
+          "time": "7:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139775"
         }
       ]
     },
@@ -3243,42 +3126,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-pickpocket-2026-03-20",
-          "title": "Pickpocket",
-          "date": "2026-03-20",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "Get your ticket for just $6.84 at the box office! Part of the “Film by the Foot” series.",
-          "link": "https://www.americancinematheque.com/now-showing/pickpocket-3-20-26/"
-        },
-        {
-          "id": "los-feliz-3-the-stairway-to-the-distant-past-2026-03-20",
-          "title": "The Stairway to the Distant Past",
-          "date": "2026-03-20",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "West Coast Premiere of New 4K Restoration. The Maiku Hama Trilogy: Part 2.",
-          "link": "https://www.americancinematheque.com/now-showing/the-stairway-to-the-distant-past-3-20-26/"
-        },
-        {
-          "id": "los-feliz-3-the-maltese-falcon-2026-03-20",
-          "title": "The Maltese Falcon",
-          "date": "2026-03-20",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "85th Anniversary.",
-          "link": "https://www.americancinematheque.com/now-showing/the-maltese-falcon-3-20-26/"
-        },
-        {
-          "id": "los-feliz-3-poetic-justice-2026-03-20",
-          "title": "Poetic Justice",
-          "date": "2026-03-20",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Poetry in Motion” series.",
-          "link": "https://www.americancinematheque.com/now-showing/poetic-justice-3-20-26/"
-        },
         {
           "id": "los-feliz-3-the-thin-line-2026-03-21",
           "title": "The Thin Line",
@@ -3422,6 +3269,42 @@
           "format": "digital",
           "notes": "Introduction by author Daniel Kraus. Book signing with Daniel Kraus for his new book, Partially Devoured: How Night of the Living Dead Saved My Life and Changed the World, prior to the screening at 6:30pm at the Los Feliz 3, in partnership with the Larry Edmunds Bookshop.",
           "link": "https://www.americancinematheque.com/now-showing/night-of-the-living-dead-3-26-26/"
+        },
+        {
+          "id": "los-feliz-3-tender-mercies-2026-03-27",
+          "title": "Tender Mercies",
+          "date": "2026-03-27",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Starring Robert Duvall” series.",
+          "link": "https://www.americancinematheque.com/now-showing/tender-mercies-3-27-26/"
+        },
+        {
+          "id": "los-feliz-3-o-brother-where-art-thou-2026-03-27",
+          "title": "O Brother, Where Art Thou?",
+          "date": "2026-03-27",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Poetry in Motion” series.",
+          "link": "https://www.americancinematheque.com/now-showing/o-brother-where-art-thou-3-27-26/"
+        },
+        {
+          "id": "los-feliz-3-my-father-s-shadow-2026-03-27",
+          "title": "My Father’s Shadow",
+          "date": "2026-03-27",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/my-fathers-shadow-3-27-26/"
+        },
+        {
+          "id": "los-feliz-3-touch-me-2026-03-27",
+          "title": "Touch Me",
+          "date": "2026-03-27",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Q&A with filmmaker Addison Heimann and actors Olivia Taylor Dudley, Jordan Gavaris and Marlene Forte. L.A. Premiere.",
+          "link": "https://www.americancinematheque.com/now-showing/touch-me-3-27-26/"
         }
       ]
     },
@@ -3433,33 +3316,6 @@
       "url": "https://www.laemmle.com",
       "color": "#7AAED4",
       "screenings": [
-        {
-          "id": "laemmle-royal-sentimental-value-2026-03-20",
-          "title": "Sentimental Value",
-          "date": "2026-03-20",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/62803"
-        },
-        {
-          "id": "laemmle-royal-golden-2026-03-20",
-          "title": "Golden",
-          "date": "2026-03-20",
-          "time": "4:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/62662"
-        },
-        {
-          "id": "laemmle-royal-sentimental-value-2026-03-20",
-          "title": "Sentimental Value",
-          "date": "2026-03-20",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/62804"
-        },
         {
           "id": "laemmle-royal-sentimental-value-2026-03-21",
           "title": "Sentimental Value",
@@ -3624,24 +3480,6 @@
       "color": "#B89878",
       "screenings": [
         {
-          "id": "secret-movie-club-sinners-2026-03-20",
-          "title": "Sinners",
-          "date": "2026-03-20",
-          "time": "10:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20852-sinners/"
-        },
-        {
-          "id": "secret-movie-club-white-chicks-2026-03-20",
-          "title": "White Chicks",
-          "date": "2026-03-20",
-          "time": "7:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20132-white-chicks/"
-        },
-        {
           "id": "secret-movie-club-la-la-land-2026-03-21",
           "title": "La La Land",
           "date": "2026-03-21",
@@ -3739,6 +3577,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20143-la-la-land/"
+        },
+        {
+          "id": "secret-movie-club-kill-bill-vol-i-2026-03-27",
+          "title": "Kill Bill: Vol. I",
+          "date": "2026-03-27",
+          "time": "10:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20145-kill-bill-vol-i/"
         }
       ]
     },
@@ -3795,7 +3642,17 @@
       "neighborhood": "Various",
       "url": "https://whammyanalog.com",
       "color": "#D9A090",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "whammy-analog-ixcanul-2026-03-27",
+          "title": "Ixcanul",
+          "date": "2026-03-27",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Free screening.",
+          "link": "https://www.eventbrite.com/e/ixcanul-film-screening-tickets-1984654697626"
+        }
+      ]
     },
     {
       "id": "glendale-theatre",
@@ -3815,10 +3672,10 @@
       "color": "#D4C890",
       "screenings": [
         {
-          "id": "lumiere-music-hall-the-metropolitan-opera-tristan-und-isolde-2026-03-21",
-          "title": "The Metropolitan Opera: Tristan Und Isolde",
+          "id": "lumiere-music-hall-the-metropolitan-opera-tristan-und-isolde-2026-2026-03-21",
+          "title": "The Metropolitan Opera: Tristan Und Isolde (2026)",
           "date": "2026-03-21",
-          "time": "12:00 pm",
+          "time": "9:00 am",
           "format": "digital",
           "notes": "At Norris Cinema Theatre at the Frank Sinatra Hall.",
           "link": "https://cinema.usc.edu/events/reservation.cfm?id=73083"
