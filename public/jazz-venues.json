@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-22T10:24:52.076Z",
+  "lastUpdated": "2026-03-23T10:51:31.545Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-03-22-immanuel-wilkins",
-          "artist": "Immanuel Wilkins",
-          "date": "2026-03-22",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/immanuel-wilkins/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-03-23-lady-blackbird-residency",
           "artist": "Lady Blackbird Residency",
@@ -178,12 +169,12 @@
       "region": "LA",
       "shows": [
         {
-          "id": "catalina-jazz-2026-03-22-ron-carter",
-          "artist": "Ron Carter",
-          "date": "2026-03-22",
+          "id": "catalina-jazz-2026-04-12-gordon-goodwin-s-big-phat-band",
+          "artist": "Gordon Goodwin's Big Phat Band",
+          "date": "2026-04-12",
           "time": "7:30 PM",
           "notes": "",
-          "link": "https://www.songkick.com/concerts/42892926-ron-carter-at-catalina-bar-and-grill?utm_medium=organic&utm_source=microformat",
+          "link": "https://www.songkick.com/concerts/43116897-gordon-goodwins-big-phat-band-at-catalina-bar-and-grill?utm_medium=organic&utm_source=microformat",
           "hot": false
         },
         {
@@ -208,9 +199,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-03-22-jochen-rueckert",
+          "id": "sam-first-2026-03-23-jochen-rueckert",
           "artist": "Jochen Rueckert",
-          "date": "2026-03-22",
+          "date": "2026-03-23",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-03-23-tristan-cappel",
+          "artist": "Tristan Cappel",
+          "date": "2026-03-23",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -229,12 +229,12 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-03-22-harbor-party-yacht-rock",
-          "artist": "Harbor Party | Yacht Rock",
-          "date": "2026-03-22",
-          "time": "9:00 PM",
+          "id": "vibrato-2026-03-23-robin-simone-hollywood-orchest",
+          "artist": "Robin Simone Hollywood Orchestra",
+          "date": "2026-03-23",
+          "time": "7:30 PM",
           "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/harbor-party-yacht-rock-2",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -537,27 +537,6 @@
       ]
     },
     {
-      "id": "world-stage",
-      "name": "The World Stage",
-      "shortName": "World Stage",
-      "neighborhood": "Leimert Park",
-      "url": "https://www.theworldstage.org/",
-      "color": "#D4AC0D",
-      "tier": "dedicated",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "world-stage-2026-03-22-aubrey-situmorang",
-          "artist": "Aubrey Situmorang",
-          "date": "2026-03-22",
-          "time": "3:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -567,15 +546,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-03-22-circles-around-the-sun",
-          "artist": "Circles Around the Sun",
-          "date": "2026-03-22",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/circles-around-the-sun/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-03-23-out-of-the-inkwell-the-silent-",
           "artist": "Out of the Inkwell: The Silent Cartoons of Max Fleischer",
@@ -1384,9 +1354,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-high-low-2026-03-22-bob-sheppard",
+          "id": "the-high-low-2026-03-23-bob-sheppard",
           "artist": "Bob Sheppard",
-          "date": "2026-03-22",
+          "date": "2026-03-23",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1404,33 +1374,6 @@
       "tier": "regular",
       "region": "LA",
       "shows": [
-        {
-          "id": "the-mint-2026-03-22-will-brahm",
-          "artist": "Will Brahm",
-          "date": "2026-03-22",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-03-22-kevin-kanner-jazz-jam",
-          "artist": "Kevin Kanner Jazz Jam",
-          "date": "2026-03-22",
-          "time": "9:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-03-23-jazz-sunday-will-brahm-trio-ke",
-          "artist": "Jazz Sunday: Will Brahm Trio & Kevin Kanner Jazz",
-          "date": "2026-03-23",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/g563a6-jazz-sunday-will-brahm-trio-kevin-kanner-jazz-22nd-mar-the-mint-los-angeles-tickets",
-          "hot": false
-        },
         {
           "id": "the-mint-2026-03-26-tell-me-why-maxine-louise-andi",
           "artist": "Tell Me Why, Maxine Louise, Andie Mechanic, Zach Ryan",
@@ -1516,27 +1459,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "lighthouse-cafe-2026-03-22-jay-smith",
-          "artist": "Jay Smith",
-          "date": "2026-03-22",
-          "time": "10:00 AM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "lighthouse-cafe-2026-03-22--sunday-3-2210-00am-jay-smith",
-          "artist": "​​Sunday 3/2210:00AM Jay Smith",
-          "date": "2026-03-22",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "lighthouse-cafe-2026-03-22-jacques-lesure-jam-session",
+          "id": "lighthouse-cafe-2026-03-23-jacques-lesure-jam-session",
           "artist": "Jacques Lesure Jam Session",
-          "date": "2026-03-22",
+          "date": "2026-03-23",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1555,18 +1480,9 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-03-22-oc-uke-fest-presents-victoria-",
-          "artist": "OC Uke Fest presents Victoria Vox and Friends",
-          "date": "2026-03-22",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://ocukefest.com/campusjax2026",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-03-22-jazz-pass-april-2026",
+          "id": "campus-jax-2026-03-23-jazz-pass-april-2026",
           "artist": "Jazz Pass April 2026",
-          "date": "2026-03-22",
+          "date": "2026-03-23",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/1",
