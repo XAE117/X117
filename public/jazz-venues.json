@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-23T10:51:31.545Z",
+  "lastUpdated": "2026-03-24T10:49:42.884Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-03-23-lady-blackbird-residency",
-          "artist": "Lady Blackbird Residency",
-          "date": "2026-03-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/lady-blackbird-residency-7/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-03-24-jaydon",
           "artist": "JayDon",
@@ -199,18 +190,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-03-23-jochen-rueckert",
+          "id": "sam-first-2026-03-24-jochen-rueckert",
           "artist": "Jochen Rueckert",
-          "date": "2026-03-23",
+          "date": "2026-03-24",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-03-23-tristan-cappel",
+          "id": "sam-first-2026-03-24-tristan-cappel",
           "artist": "Tristan Cappel",
-          "date": "2026-03-23",
+          "date": "2026-03-24",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-03-24-ralph-alessi",
+          "artist": "Ralph Alessi",
+          "date": "2026-03-24",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -229,9 +229,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-03-23-robin-simone-hollywood-orchest",
+          "id": "vibrato-2026-03-24-robin-simone-hollywood-orchest",
           "artist": "Robin Simone Hollywood Orchestra",
-          "date": "2026-03-23",
+          "date": "2026-03-24",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -537,6 +537,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-03-24-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-03-24",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -546,15 +567,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-03-23-out-of-the-inkwell-the-silent-",
-          "artist": "Out of the Inkwell: The Silent Cartoons of Max Fleischer",
-          "date": "2026-03-23",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/out-of-the-inkwell-the-silent-cartoons-of-max-fleischer/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-03-25-skullcrusher",
           "artist": "Skullcrusher",
@@ -601,12 +613,12 @@
           "hot": true
         },
         {
-          "id": "lodge-room-2026-03-30-schoolgirl-byebye",
-          "artist": "Schoolgirl ByeBye",
+          "id": "lodge-room-2026-03-30-brad-stank",
+          "artist": "Brad Stank",
           "date": "2026-03-30",
           "time": "8:00 PM",
           "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/schoolgirl-byebye-and-brad-stank/",
+          "link": "https://www.lodgeroomhlp.com/shows/brad-stank/",
           "hot": true
         },
         {
@@ -1213,6 +1225,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-07-09-shinyribs",
+          "artist": "Shinyribs",
+          "date": "2026-07-09",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/shinyribs/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-07-24-natural-information-society-bi",
           "artist": "Natural Information Society & Bitchin Bajas",
           "date": "2026-07-24",
@@ -1354,9 +1375,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-high-low-2026-03-23-bob-sheppard",
-          "artist": "Bob Sheppard",
-          "date": "2026-03-23",
+          "id": "the-high-low-2026-03-24-david-binney-adam-ratner-quint",
+          "artist": "David Binney / Adam Ratner Quintet",
+          "date": "2026-03-24",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1445,26 +1466,14 @@
           "notes": "",
           "link": "https://dice.fm/event/k699eo-ingram-street-lady-coco-sergio-snow-9th-apr-the-mint-los-angeles-tickets",
           "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
+        },
         {
-          "id": "lighthouse-cafe-2026-03-23-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-03-23",
-          "time": "8:00 PM",
+          "id": "the-mint-2026-04-12-the-cecilias-berries-toast-she",
+          "artist": "The Cecilias, Berries & Toast, SHEEP, MAL",
+          "date": "2026-04-12",
+          "time": "2:15 AM",
           "notes": "",
-          "link": "https://www.lajazz.com/",
+          "link": "https://dice.fm/event/q29qlx-the-cecilias-berries-toast-sheep-mal-11th-apr-the-mint-los-angeles-tickets",
           "hot": false
         }
       ]
@@ -1480,21 +1489,21 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-03-23-jazz-pass-april-2026",
-          "artist": "Jazz Pass April 2026",
-          "date": "2026-03-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/1",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-03-24-jax-songstage-singer-songwrite",
           "artist": "JAX SongStage\nSinger-Songwriter Showcase\nft. Pete Hopkins, Kenny Kato, Will Wilfax, Scott Gronsky, Bree Wareh, Tim Ehrreich, Lejo",
           "date": "2026-03-24",
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/853",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-03-24-jazz-pass-april-2026",
+          "artist": "Jazz Pass April 2026",
+          "date": "2026-03-24",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/1",
           "hot": false
         },
         {
@@ -1966,6 +1975,15 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2026-06-05-ragdolls",
+          "artist": "RagDolls",
+          "date": "2026-06-05",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/957",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2026-06-06-billy-nation-billy-joel-tribut",
           "artist": "Billy Nation\nBilly Joel Tribute",
           "date": "2026-06-06",
@@ -2017,6 +2035,15 @@
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/881",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-18-alice-wallace",
+          "artist": "Alice Wallace",
+          "date": "2026-06-18",
+          "time": "6:00 PM",
+          "notes": "",
+          "link": "https://www.stellarshows.net/shows/364891",
           "hot": false
         },
         {
