@@ -5,6 +5,7 @@ import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
+import CinemaFilter from './components/CinemaFilter.jsx'
 import GodfatherAlert from './components/GodfatherAlert.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
@@ -13,6 +14,8 @@ import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
 import DayScreenshot from './views/DayScreenshot.jsx'
 import Tonight from './views/Tonight.jsx'
+import NowPlaying from './views/NowPlaying.jsx'
+import NowPlayingDetail from './views/NowPlayingDetail.jsx'
 import JazzTonight from './views/JazzTonight.jsx'
 import JazzByVenue from './views/JazzByVenue.jsx'
 import JazzByDay from './views/JazzByDay.jsx'
@@ -48,9 +51,11 @@ function App() {
   const [data, setData] = useState(null)
   const [jazzData, setJazzData] = useState(null)
   const [foodData, setFoodData] = useState(null)
+  const [nowPlayingData, setNowPlayingData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('favorites')
+  const [cinemaMode, setCinemaMode] = useState('repertory') // 'repertory' | 'now-playing' | 'all'
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isScrolling, setIsScrolling] = useState(false)
@@ -58,6 +63,7 @@ function App() {
 
   const isJazzMode = location.pathname.startsWith('/jazz')
   const isFoodMode = location.pathname.startsWith('/food')
+  const isNowPlayingMode = location.pathname.startsWith('/now-playing')
 
   // Scroll to top on route change
   useEffect(() => {
@@ -93,10 +99,12 @@ function App() {
       fetch(base + 'theaters.json?t=' + t).then(res => res.json()),
       fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
       fetch(base + 'restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
+      fetch(base + 'now-playing.json?t=' + t).then(res => res.json()).catch(() => null),
     ])
-      .then(([cinemaData, jazz, food]) => {
+      .then(([cinemaData, jazz, food, nowPlaying]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
+        if (nowPlaying) setNowPlayingData(nowPlaying)
         if (food) {
           // Normalize restaurant data — bridge field gaps between manual entries and scraper-added
           const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C' }
@@ -187,6 +195,7 @@ function App() {
 
   // Show format filter on cinema list views
   const showFormatFilter = ['/', '/by-theater'].includes(location.pathname)
+  const showCinemaFilter = ['/', '/by-theater', '/now-playing'].includes(location.pathname)
 
   if (loading) return <LoadingSpinner />
 
@@ -214,7 +223,7 @@ function App() {
 
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
   const isSplashPage = location.pathname === '/welcome'
-  const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
+  const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/') || (location.pathname.startsWith('/now-playing/') && location.pathname !== '/now-playing')
 
   return (
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
@@ -230,7 +239,10 @@ function App() {
                 >
                   <span className="notch-plus">+</span>
                 </button>
-                {showFormatFilter && (
+                {showCinemaFilter && (
+                  <CinemaFilter current={cinemaMode} onChange={setCinemaMode} expanded={false} />
+                )}
+                {showFormatFilter && cinemaMode !== 'now-playing' && (
                   <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
                 )}
               </div>
@@ -244,7 +256,10 @@ function App() {
                 >
                   <span className="notch-plus open">+</span>
                 </button>
-                {showFormatFilter && (
+                {showCinemaFilter && (
+                  <CinemaFilter current={cinemaMode} onChange={setCinemaMode} expanded={true} />
+                )}
+                {showFormatFilter && cinemaMode !== 'now-playing' && (
                   <>
                     <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
                     <button
@@ -291,10 +306,18 @@ function App() {
           <Route path="/" element={
             !sessionStorage.getItem('palace-splash-seen')
               ? <Navigate to="/welcome" replace />
-              : <ByDay data={filteredData} searchQuery={searchQuery} />
+              : cinemaMode === 'now-playing'
+                ? <NowPlaying nowPlayingData={nowPlayingData} />
+                : <ByDay data={filteredData} searchQuery={searchQuery} />
           } />
           <Route path="/tonight" element={<Tonight data={filteredData} />} />
-          <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
+          <Route path="/by-theater" element={
+            cinemaMode === 'now-playing'
+              ? <NowPlaying nowPlayingData={nowPlayingData} />
+              : <ByTheater data={filteredData} />
+          } />
+          <Route path="/now-playing" element={<NowPlaying nowPlayingData={nowPlayingData} />} />
+          <Route path="/now-playing/:filmSlug" element={<NowPlayingDetail nowPlayingData={nowPlayingData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />
           <Route path="/map" element={<MapView data={filteredData} />} />

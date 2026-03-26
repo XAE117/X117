@@ -1,0 +1,251 @@
+{
+  "lastUpdated": "2026-03-26T00:00:00.000Z",
+  "scrapeDate": "2026-03-26",
+  "dateRange": { "start": "2026-03-26", "end": "2026-04-01" },
+  "theaters": [
+    {
+      "id": "amc-4537",
+      "name": "AMC Century City 15",
+      "shortName": "AMC Century City",
+      "neighborhood": "Century City",
+      "color": "#E74C3C",
+      "lat": 34.0577,
+      "lng": -118.4178,
+      "nearbyJazzVenues": [],
+      "films": [
+        {
+          "title": "Sinners",
+          "slug": "sinners",
+          "mpaaRating": "R",
+          "runtime": 137,
+          "genre": "Horror/Thriller",
+          "amcSynopsis": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that the town is home to a far more sinister threat.",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "1:00 PM", "format": "IMAX", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "4:30 PM", "format": "Dolby Cinema", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "7:45 PM", "format": "IMAX", "isSoldOut": false },
+            { "date": "2026-03-27", "time": "2:00 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-27", "time": "7:00 PM", "format": "IMAX", "isSoldOut": false }
+          ]
+        },
+        {
+          "title": "A Minecraft Movie",
+          "slug": "a-minecraft-movie",
+          "mpaaRating": "PG",
+          "runtime": 101,
+          "genre": "Adventure/Comedy",
+          "amcSynopsis": "Four misfits are pulled through a portal into the Overworld, a bizarre and beautiful land of adventure.",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "11:30 AM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "3:00 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "6:15 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-27", "time": "12:00 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        },
+        {
+          "title": "Snow White",
+          "slug": "snow-white",
+          "mpaaRating": "PG",
+          "runtime": 108,
+          "genre": "Fantasy/Musical",
+          "amcSynopsis": "A live-action reimagining of the classic fairy tale.",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "1:30 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "7:00 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amc-8170",
+      "name": "AMC The Grove 14",
+      "shortName": "AMC The Grove",
+      "neighborhood": "Fairfax",
+      "color": "#E67E22",
+      "lat": 34.0722,
+      "lng": -118.3580,
+      "nearbyJazzVenues": [
+        { "name": "The Baked Potato", "distance": 2.1 },
+        { "name": "Catalina Jazz Club", "distance": 1.8 }
+      ],
+      "films": [
+        {
+          "title": "Sinners",
+          "slug": "sinners",
+          "mpaaRating": "R",
+          "runtime": 137,
+          "genre": "Horror/Thriller",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "2:00 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "5:15 PM", "format": "Dolby Cinema", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "8:30 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        },
+        {
+          "title": "Black Bag",
+          "slug": "black-bag",
+          "mpaaRating": "R",
+          "runtime": 93,
+          "genre": "Thriller",
+          "amcSynopsis": "A sophisticated spy thriller from Steven Soderbergh.",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "4:00 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "7:30 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-27", "time": "5:00 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        },
+        {
+          "title": "The Alto Knights",
+          "slug": "the-alto-knights",
+          "mpaaRating": "R",
+          "runtime": 123,
+          "genre": "Crime/Drama",
+          "amcSynopsis": "Robert De Niro plays dual roles as two of the most notorious figures in organized crime history.",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "3:30 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "6:45 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amc-4566",
+      "name": "AMC Burbank 16",
+      "shortName": "AMC Burbank",
+      "neighborhood": "Burbank",
+      "color": "#F39C12",
+      "lat": 34.1816,
+      "lng": -118.3254,
+      "nearbyJazzVenues": [],
+      "films": [
+        {
+          "title": "Sinners",
+          "slug": "sinners",
+          "mpaaRating": "R",
+          "runtime": 137,
+          "genre": "Horror/Thriller",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "1:00 PM", "format": "IMAX", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "4:15 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "7:30 PM", "format": "IMAX", "isSoldOut": false }
+          ]
+        },
+        {
+          "title": "A Minecraft Movie",
+          "slug": "a-minecraft-movie",
+          "mpaaRating": "PG",
+          "runtime": 101,
+          "genre": "Adventure/Comedy",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "12:30 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "3:30 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "6:00 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        },
+        {
+          "title": "Novocaine",
+          "slug": "novocaine",
+          "mpaaRating": "R",
+          "runtime": 110,
+          "genre": "Action/Thriller",
+          "amcSynopsis": "When the love of his life is kidnapped, a man who feels no pain must rescue her from a dangerous criminal underworld.",
+          "showtimes": [
+            { "date": "2026-03-26", "time": "5:00 PM", "format": "Digital", "isSoldOut": false },
+            { "date": "2026-03-26", "time": "8:00 PM", "format": "Digital", "isSoldOut": false }
+          ]
+        }
+      ]
+    }
+  ],
+  "films": {
+    "sinners": {
+      "tmdbId": 0,
+      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that the town is home to a far more sinister threat than the one they left behind.",
+      "posterPath": "/yKRzjMVgVwJGGpAOcZqr2oFPaRG.jpg",
+      "director": "Ryan Coogler",
+      "cast": ["Michael B. Jordan", "Hailee Steinfeld", "Jack O'Connell", "Wunmi Mosaku", "Delroy Lindo"],
+      "trailerUrl": "https://www.youtube.com/watch?v=sinners-trailer",
+      "runtime": 137,
+      "rating": 7.8,
+      "voteCount": 1200,
+      "genres": ["Horror", "Thriller", "Drama"],
+      "certification": "R",
+      "year": 2025
+    },
+    "black-bag": {
+      "tmdbId": 0,
+      "overview": "A sophisticated spy thriller following two married spies whose relationship is tested when one of them comes under suspicion.",
+      "posterPath": "/placeholder-black-bag.jpg",
+      "director": "Steven Soderbergh",
+      "cast": ["Cate Blanchett", "Michael Fassbender", "Regé-Jean Page", "Marisa Abela", "Tom Burke"],
+      "trailerUrl": null,
+      "runtime": 93,
+      "rating": 6.9,
+      "voteCount": 800,
+      "genres": ["Thriller", "Drama"],
+      "certification": "R",
+      "year": 2025
+    },
+    "the-alto-knights": {
+      "tmdbId": 0,
+      "overview": "Robert De Niro plays dual roles as two of the most notorious figures in organized crime history, whose rivalry shaped the American Mafia.",
+      "posterPath": "/placeholder-alto-knights.jpg",
+      "director": "Barry Levinson",
+      "cast": ["Robert De Niro", "Debra Messing", "Cosmo Jarvis", "Bobby Cannavale"],
+      "trailerUrl": null,
+      "runtime": 123,
+      "rating": 6.5,
+      "voteCount": 500,
+      "genres": ["Crime", "Drama"],
+      "certification": "R",
+      "year": 2025
+    },
+    "a-minecraft-movie": {
+      "tmdbId": 0,
+      "overview": "Four misfits are pulled through a mysterious portal into the Overworld — a bizarre, cubic wonderland that thrives on imagination.",
+      "posterPath": "/placeholder-minecraft.jpg",
+      "director": "Jared Hess",
+      "cast": ["Jason Momoa", "Jack Black", "Emma Myers", "Danielle Brooks"],
+      "trailerUrl": null,
+      "runtime": 101,
+      "rating": 5.8,
+      "voteCount": 2000,
+      "genres": ["Adventure", "Comedy", "Family"],
+      "certification": "PG",
+      "year": 2025
+    },
+    "snow-white": {
+      "tmdbId": 0,
+      "overview": "A live-action reimagining of the classic fairy tale about a princess who befriends seven dwarfs after her stepmother threatens her life.",
+      "posterPath": "/placeholder-snow-white.jpg",
+      "director": "Marc Webb",
+      "cast": ["Rachel Zegler", "Gal Gadot", "Andrew Burnap"],
+      "trailerUrl": null,
+      "runtime": 108,
+      "rating": 4.2,
+      "voteCount": 3500,
+      "genres": ["Fantasy", "Musical", "Family"],
+      "certification": "PG",
+      "year": 2025
+    },
+    "novocaine": {
+      "tmdbId": 0,
+      "overview": "When the love of his life is kidnapped, a man who feels no pain must rescue her from a dangerous criminal underworld, using his unique condition as an unlikely weapon.",
+      "posterPath": "/placeholder-novocaine.jpg",
+      "director": "Dan Berk",
+      "cast": ["Jack Quaid", "Amber Midthunder", "Ray Nicholson"],
+      "trailerUrl": null,
+      "runtime": 110,
+      "rating": 6.4,
+      "voteCount": 900,
+      "genres": ["Action", "Thriller"],
+      "certification": "R",
+      "year": 2025
+    }
+  },
+  "meta": {
+    "tmdbEnriched": false,
+    "theaterCount": 3,
+    "filmCount": 6
+  }
+}

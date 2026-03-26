@@ -6,6 +6,7 @@ const TABS = [
   { to: '/', end: true, emoji: '📍', label: 'By Day' },
   { to: '/tonight', emoji: '🌙', label: 'Tonight' },
   { to: '/by-theater', emoji: '🏛️', label: 'Theaters' },
+  { to: '/now-playing', emoji: '🍿', label: 'Now' },
   { to: '/watchlist', emoji: '💛', label: 'Watchlist' },
   { to: '/map', emoji: '🗺️', label: 'Map' },
 ]

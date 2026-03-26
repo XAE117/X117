@@ -1,0 +1,109 @@
+/* ── Cinema Mode Filter (Repertory / Now Playing / All) ── */
+
+.cinema-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.cinema-filter-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.15rem 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  overflow: visible;
+}
+
+.cinema-filter-emoji {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.cinema-filter-emoji.dimmed {
+  opacity: 0.3;
+  filter: grayscale(0.7);
+}
+
+.cinema-filter-tooltip {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 999;
+  animation: cinemaTooltipFlash 1.2s ease-out forwards;
+}
+
+@keyframes cinemaTooltipFlash {
+  0% { opacity: 0; transform: translateX(-50%) translateY(2px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.cinema-glow-pulse {
+  animation: cinemaGlowPulse 1.7s ease-out forwards;
+}
+
+@keyframes cinemaGlowPulse {
+  0% { filter: drop-shadow(0 0 0px rgba(201, 168, 76, 0)); }
+  12% { filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.9)) drop-shadow(0 0 16px rgba(201, 168, 76, 0.5)); }
+  100% { filter: drop-shadow(0 0 0px rgba(201, 168, 76, 0)); }
+}
+
+/* ── Expanded stack ── */
+
+.cinema-filter-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cinema-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.3rem;
+  -webkit-tap-highlight-color: transparent;
+  animation: expandIn 0.4s ease-out both;
+}
+
+@keyframes expandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cinema-filter-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.cinema-filter-row.active .cinema-filter-label {
+  color: var(--gold);
+}
+
+.cinema-filter-row:hover .cinema-filter-label {
+  color: var(--cream);
+}

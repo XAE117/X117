@@ -1,0 +1,498 @@
+/* ── Now Playing Detail Page ── */
+
+.npd-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+.npd-back {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.8rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: rgba(201, 168, 76, 0.45);
+  padding: 0.5rem 0;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+  align-self: flex-end;
+}
+
+.npd-back:hover {
+  color: rgba(201, 168, 76, 0.7);
+}
+
+/* ── Card ── */
+
+.npd-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.25rem 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: curtainReveal 0.5s ease-out both;
+  animation-delay: 0.1s;
+}
+
+@keyframes curtainReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.npd-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim));
+}
+
+/* ── Layout ── */
+
+.npd-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.npd-layout.has-poster {
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.npd-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.npd-main > * {
+  animation: contentFadeIn 0.35s ease-out both;
+}
+
+.npd-main > *:nth-child(1) { animation-delay: 0.15s; }
+.npd-main > *:nth-child(2) { animation-delay: 0.22s; }
+.npd-main > *:nth-child(3) { animation-delay: 0.29s; }
+.npd-main > *:nth-child(4) { animation-delay: 0.36s; }
+.npd-main > *:nth-child(5) { animation-delay: 0.43s; }
+.npd-main > *:nth-child(n+6) { animation-delay: 0.50s; }
+
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.npd-poster {
+  flex-shrink: 0;
+  width: 200px;
+  animation: posterReveal 0.6s ease-out both;
+  animation-delay: 0.2s;
+}
+
+@keyframes posterReveal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.npd-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid var(--gold-dim);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Title ── */
+
+.npd-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(201, 168, 76, 0.2),
+      0 0 30px rgba(201, 168, 76, 0.08);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(201, 168, 76, 0.45),
+      0 0 40px rgba(201, 168, 76, 0.2);
+  }
+}
+
+/* ── Meta Row ── */
+
+.npd-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.npd-director {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--cream);
+  font-style: italic;
+}
+
+.npd-year {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.npd-rating {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--bg-dark);
+  background: var(--gold);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+.npd-runtime {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── Genres ── */
+
+.npd-genres {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.npd-genre-tag {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ── Synopsis ── */
+
+.npd-synopsis {
+  margin-bottom: 1.5rem;
+}
+
+.npd-synopsis p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Cast ── */
+
+.npd-cast-section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.npd-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.npd-cast-names {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--cream);
+}
+
+/* ── Scores ── */
+
+.npd-scores {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.npd-score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  min-width: 80px;
+}
+
+.npd-score-card.tmdb {
+  border-color: rgba(1, 180, 228, 0.3);
+  box-shadow: 0 0 4px rgba(1, 180, 228, 0.15);
+}
+
+.npd-score-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #01b4e4;
+  line-height: 1;
+}
+
+.npd-score-source {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Showtimes Section ── */
+
+.npd-showtimes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.npd-theater-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border);
+}
+
+.npd-theater-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.npd-theater-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 1px currentColor;
+}
+
+.npd-neighborhood {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.npd-jazz-nearby {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--jazz-accent);
+  cursor: help;
+}
+
+.npd-showtime-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.npd-date-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.npd-date-label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.npd-time-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.npd-time-pill {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--cream);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.65rem;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.npd-time-pill:hover {
+  border-color: var(--gold-dim);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.npd-time-pill.premium {
+  border-color: rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.npd-time-pill.sold-out {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.npd-format-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── Actions ── */
+
+.npd-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.npd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.npd-btn.tickets {
+  color: var(--bg-dark);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.npd-btn.tickets:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.npd-btn.trailer {
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+}
+
+.npd-btn.trailer:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+}
+
+/* ── Not Found ── */
+
+.npd-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.npd-not-found h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.npd-not-found p {
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .npd-card {
+    padding: 1rem 1.25rem 2rem;
+  }
+
+  .npd-layout.has-poster {
+    flex-direction: column;
+  }
+
+  .npd-poster {
+    width: 150px;
+    margin: 0 auto 1rem;
+    order: -1;
+  }
+
+  .npd-date-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .npd-actions {
+    flex-direction: column;
+  }
+
+  .npd-btn {
+    justify-content: center;
+  }
+}
