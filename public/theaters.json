@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-26T10:50:51.444Z",
+  "lastUpdated": "2026-03-27T10:44:00.324Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,15 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-henry-june-2026-03-25",
-          "title": "Henry & June",
-          "date": "2026-03-25",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4525?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-lady-frankenstein-slaughter-hotel-2026-03-26",
           "title": "Lady Frankenstein / Slaughter Hotel",
@@ -101,42 +92,6 @@
       "url": "https://www.vistatheaterhollywood.com",
       "color": "#B89AD4",
       "screenings": [
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-25",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-25",
-          "time": "11:00 am",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3260?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-the-caine-mutiny-2026-03-25",
-          "title": "The Caine Mutiny",
-          "date": "2026-03-25",
-          "time": "2:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3378?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-25",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-25",
-          "time": "3:15 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3270?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-25",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-25",
-          "time": "7:30 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3271?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
         {
           "id": "vista-theatre-project-hail-mary-70mm-2026-03-26",
           "title": "Project Hail Mary 70mm",
@@ -363,8 +318,8 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3288?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-04-01-11:00am",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-04-01",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-04-01",
           "time": "11:00 am",
           "format": "70mm",
@@ -372,8 +327,8 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3281?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-04-01-3:15pm",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-04-01",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-04-01",
           "time": "3:15 pm",
           "format": "70mm",
@@ -381,8 +336,8 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3289?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-project-hail-mary-2026-04-01-7:30pm",
-          "title": "Project Hail Mary",
+          "id": "vista-theatre-project-hail-mary-70mm-2026-04-01",
+          "title": "Project Hail Mary 70mm",
           "date": "2026-04-01",
           "time": "7:30 pm",
           "format": "70mm",
@@ -805,15 +760,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-the-400-blows-in-4k-2026-03-25",
-          "title": "The 400 Blows in 4K",
-          "date": "2026-03-25",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/the-400-blows-019be235-7aea-fafc-9883-a9cdd03a93da"
-        },
-        {
           "id": "academy-museum-the-year-of-the-cannibals-i-cannibali-in-4k-2026-03-26",
           "title": "The Year of the Cannibals (I Cannibali) in 4K",
           "date": "2026-03-26",
@@ -902,6 +848,24 @@
           "format": "digital",
           "notes": "At the Ted Mann Theater.",
           "link": "https://www.academymuseum.org/en/programs/detail/welcome-ii-the-terrordome-with-ashley-clark-019be232-b8d5-82fb-2cc1-d5b4c041dab8"
+        },
+        {
+          "id": "academy-museum-psycho-2026-04-01",
+          "title": "Psycho",
+          "date": "2026-04-01",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/psycho-019be235-cf1e-0716-d392-c7fcfdb310bd"
+        },
+        {
+          "id": "academy-museum-my-fair-lady-in-4k-2026-04-01",
+          "title": "My Fair Lady in 4K",
+          "date": "2026-04-01",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "At the David Geffen Theater. In person: Academy Governor Gerry Quist.",
+          "link": "https://www.academymuseum.org/en/programs/detail/my-fair-lady-in-4-k-019be20e-8af2-702b-afe5-7e7845b8cb41"
         }
       ]
     },
@@ -913,51 +877,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-the-lord-of-the-rings-the-return-of-the-king-extended-edition-2026-03",
-          "title": "The Lord of the Rings: The Return of the King: Extended Edition",
-          "date": "2026-03-25",
-          "time": "1:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/the-lord-of-the-rings-the-return-of-the-king-extended-edition#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-the-visitor-2026-03-25",
-          "title": "The Visitor",
-          "date": "2026-03-25",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Weird Wednesday” series.",
-          "link": "https://drafthouse.com/los-angeles/event/weird-wednesday-the-visitor#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-twin-peaks-the-return-2026-03-25",
-          "title": "Twin Peaks: The Return",
-          "date": "2026-03-25",
-          "time": "12:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-13-15#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-daisies-2026-03-25",
-          "title": "Daisies",
-          "date": "2026-03-25",
-          "time": "4:25 pm",
-          "format": "digital",
-          "notes": "Part of the “Queer Film Theory 101” series.",
-          "link": "https://drafthouse.com/los-angeles/event/queer-film-theory-101-daisies#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-forbidden-fruits-2026-03-25",
-          "title": "Forbidden Fruits",
-          "date": "2026-03-25",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Part of the “Costume Screening” series.",
-          "link": "https://drafthouse.com/los-angeles/event/costume-screening-forbidden-fruits-early-access-witchy-screening#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-the-lord-of-the-rings-the-return-of-the-king-extended-edition-2026-03",
           "title": "The Lord of the Rings: The Return of the King: Extended Edition",
@@ -1164,6 +1083,15 @@
           "format": "digital",
           "notes": "Part of the “Terror Tuesday” series.",
           "link": "https://drafthouse.com/los-angeles/show/terror-tuesday-the-descent#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-nightcrawler-2026-04-01",
+          "title": "Nightcrawler",
+          "date": "2026-04-01",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Part of the “Weird Wednesday” series.",
+          "link": "https://drafthouse.com/los-angeles/event/weird-wednesday-nightcrawler#js-showtimescomponent"
         }
       ]
     },
@@ -1175,42 +1103,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-25",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-25",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2362/seats"
-        },
-        {
-          "id": "egyptian-who-s-afraid-of-virginia-woolf-2026-03-25",
-          "title": "Who’s Afraid of Virginia Woolf?",
-          "date": "2026-03-25",
-          "time": "10:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2337/seats"
-        },
-        {
-          "id": "egyptian-peaky-blinders-the-immortal-man-2026-03-25",
-          "title": "Peaky Blinders: The Immortal Man",
-          "date": "2026-03-25",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2363/seats"
-        },
-        {
-          "id": "egyptian-who-s-afraid-of-virginia-woolf-2026-03-25",
-          "title": "Who’s Afraid of Virginia Woolf?",
-          "date": "2026-03-25",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2336/seats"
-        },
         {
           "id": "egyptian-carrie-2026-03-26",
           "title": "Carrie",
@@ -1336,6 +1228,42 @@
           "format": "35mm",
           "notes": "35mm screening. Includes Q&A.",
           "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2378/seats"
+        },
+        {
+          "id": "egyptian-birth-2026-04-01",
+          "title": "Birth",
+          "date": "2026-04-01",
+          "time": "12:30 pm",
+          "format": "35mm",
+          "notes": "35mm screening.",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2346/seats"
+        },
+        {
+          "id": "egyptian-melancholia-2026-04-01",
+          "title": "Melancholia",
+          "date": "2026-04-01",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2348/seats"
+        },
+        {
+          "id": "egyptian-birth-2026-04-01",
+          "title": "Birth",
+          "date": "2026-04-01",
+          "time": "7:00 pm",
+          "format": "35mm",
+          "notes": "35mm screening.",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2347/seats"
+        },
+        {
+          "id": "egyptian-melancholia-2026-04-01",
+          "title": "Melancholia",
+          "date": "2026-04-01",
+          "time": "9:40 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2349/seats"
         }
       ]
     },
@@ -1347,15 +1275,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#7ABFC0",
       "screenings": [
-        {
-          "id": "aero-my-joy-donbass-2026-03-25",
-          "title": "My Joy / Donbass",
-          "date": "2026-03-25",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Sergei Loznitsa. Part of the “Sergei Loznitsa: An American Cinematheque Tribute” series.",
-          "link": "https://www.americancinematheque.com/now-showing/my-joy-donbass-3-25-26/"
-        },
         {
           "id": "aero-sling-blade-tomorrow-2026-03-26",
           "title": "Sling Blade / Tomorrow",
@@ -1420,24 +1339,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-mike-nick-nick-alice-2026-03-25",
-          "title": "Mike & Nick & Nick & Alice",
-          "date": "2026-03-25",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle. Vidiots and Walt Disney Studios invite you to a special preview screening of Mike and Nick and Nick and Alice followed by a conversation with writer/director BenDavid Grabinski.",
-          "link": "https://vidiotsfoundation.org/purchase/3816207/"
-        },
-        {
-          "id": "vidiots-a-useful-ghost-2026-03-25",
-          "title": "A Useful Ghost",
-          "date": "2026-03-25",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3831616/"
-        },
         {
           "id": "vidiots-titmouse-presents-5-second-day-night-2026-03-26",
           "title": "Titmouse Presents: 5 Second Day… Night!!!",
@@ -1547,11 +1448,11 @@
           "link": "https://vidiotsfoundation.org/purchase/3806794/"
         },
         {
-          "id": "vidiots-thank-you-for-smoking-2026-03-28",
-          "title": "Thank You for Smoking",
+          "id": "vidiots-thank-you-for-smoking-on-35mm-2026-03-28",
+          "title": "Thank You for Smoking on 35mm",
           "date": "2026-03-28",
           "time": "7:00 pm",
-          "format": "digital",
+          "format": "35mm",
           "notes": "Showing in the Eagle. Welcoming Jason Reitman for a special 20th Anniversary Screening of his addictive satire followed by a conversation with Reitman.",
           "link": "https://vidiotsfoundation.org/purchase/3781983/"
         },
@@ -1664,48 +1565,48 @@
           "link": "https://vidiotsfoundation.org/purchase/3785358/"
         },
         {
-          "id": "vidiots-a-goofy-movie-2026-04-01-1:00pm",
+          "id": "vidiots-a-goofy-movie-2026-04-01",
           "title": "A Goofy Movie",
           "date": "2026-04-01",
           "time": "1:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3832147/"
         },
         {
-          "id": "vidiots-arco-english-dubbed-2026-04-01-4:00pm",
+          "id": "vidiots-arco-english-dubbed-2026-04-01",
           "title": "Arco (English Dubbed)",
           "date": "2026-04-01",
           "time": "4:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema. Part of the “Films for Everyone” series.",
           "link": "https://vidiotsfoundation.org/purchase/3882679/"
         },
         {
-          "id": "vidiots-the-seventh-seal-2026-04-01-4:30pm",
+          "id": "vidiots-the-seventh-seal-2026-04-01",
           "title": "The Seventh Seal",
           "date": "2026-04-01",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3860153/"
         },
         {
-          "id": "vidiots-pillion-2026-04-01-7:00pm",
+          "id": "vidiots-pillion-2026-04-01",
           "title": "Pillion",
           "date": "2026-04-01",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3832148/"
         },
         {
-          "id": "vidiots-quiz-show-2026-04-01-7:30pm",
+          "id": "vidiots-quiz-show-2026-04-01",
           "title": "Quiz Show",
           "date": "2026-04-01",
           "time": "7:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3860154/"
         },
         {
@@ -1770,6 +1671,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3863147/"
+        },
+        {
+          "id": "vidiots-blue-velvet-2026-04-03-4:00pm",
+          "title": "Blue Velvet",
+          "date": "2026-04-03",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3840890/"
         },
         {
           "id": "vidiots-arco-english-dubbed-2026-04-03-4:30pm",
@@ -1943,6 +1853,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3889028/"
         },
         {
+          "id": "vidiots-lafm-opening-night-maddie-s-secret-2026-04-09-7:00pm",
+          "title": "LAFM Opening Night - Maddie's Secret",
+          "date": "2026-04-09",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lafestivalofmovies.org/maddie’s-secret"
+        },
+        {
           "id": "vidiots-the-moment-2026-04-09-7:30pm",
           "title": "The Moment",
           "date": "2026-04-09",
@@ -1988,10 +1907,19 @@
           "link": "https://vidiotsfoundation.org/purchase/3889035/"
         },
         {
-          "id": "vidiots-the-moment-2026-04-11-1:15pm",
+          "id": "vidiots-south-park-bigger-longer-uncut-2026-04-10-9:45pm",
+          "title": "South Park: Bigger, Longer & Uncut",
+          "date": "2026-04-10",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3920382/"
+        },
+        {
+          "id": "vidiots-the-moment-2026-04-11-1:45pm",
           "title": "The Moment",
           "date": "2026-04-11",
-          "time": "1:15 pm",
+          "time": "1:45 pm",
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3889037/"
@@ -2051,6 +1979,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3867470/"
         },
         {
+          "id": "vidiots-lafm-selegna-sol-2026-04-12-12:00pm",
+          "title": "LAFM - Selegna sol",
+          "date": "2026-04-12",
+          "time": "12:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lafestivalofmovies.org/selegna-sol"
+        },
+        {
           "id": "vidiots-finding-nemo-2026-04-12-12:00pm",
           "title": "Finding Nemo",
           "date": "2026-04-12",
@@ -2058,6 +1995,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3888767/"
+        },
+        {
+          "id": "vidiots-lafm-isaiah-s-phone-2026-04-12-2:30pm",
+          "title": "LAFM - isaiah's phone",
+          "date": "2026-04-12",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lafestivalofmovies.org/isaiah’s-phone-1"
         },
         {
           "id": "vidiots-who-s-afraid-of-virginia-woolf-2026-04-12-3:00pm",
@@ -2076,6 +2022,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3892399/"
+        },
+        {
+          "id": "vidiots-lafm-closing-night-blue-heron-2026-04-12-8:00pm",
+          "title": "LAFM Closing Night - Blue Heron",
+          "date": "2026-04-12",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lafestivalofmovies.org/blue-heron-1"
         },
         {
           "id": "vidiots-sweet-16mm-mid-century-social-guidance-classics-2026-04-14-7:00pm",
@@ -2130,6 +2085,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3889553/"
+        },
+        {
+          "id": "vidiots-the-color-of-money-2026-04-17-7:00pm",
+          "title": "The Color of Money",
+          "date": "2026-04-17",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3915345/"
         },
         {
           "id": "vidiots-super-mario-bros-2026-04-17-9:45pm",
@@ -2294,6 +2258,15 @@
           "link": "https://vidiotsfoundation.org/purchase/3892025/"
         },
         {
+          "id": "vidiots-the-height-of-the-coconut-trees-2026-04-25-4:30pm",
+          "title": "The Height of the Coconut Trees",
+          "date": "2026-04-25",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/3920179/"
+        },
+        {
           "id": "vidiots-bonnie-and-clyde-2026-04-25-7:00pm",
           "title": "Bonnie and Clyde",
           "date": "2026-04-25",
@@ -2367,7 +2340,7 @@
           "link": "https://studios.wearebraindead.com/purchase/1249925/"
         },
         {
-          "id": "brain-dead-clueless-2026-04-01-8:00pm",
+          "id": "brain-dead-clueless-2026-04-01",
           "title": "Clueless",
           "date": "2026-04-01",
           "time": "8:00 pm",
@@ -2598,7 +2571,7 @@
           "date": "2026-03-29",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "Q&A with filmmaker Charles Burnett and Ashley Clark, author of The World of Black Film: A Journey Through Cinematic Blackness in 100 Films(opens in a new tab). Clark will sign copies of the book before the screening.",
+          "notes": "Q&A with filmmaker Charles Burnett and Ashley Clark, author of The World of Black Film: A Journey Through Cinematic Blackness in 100 Films(opens in a new tab). Clark will sign copies of the book before the screening beginning at 6 pm.",
           "link": "https://www.cinema.ucla.edu/events/to-sleep-with-anger-2026-03-29/"
         }
       ]
@@ -2630,15 +2603,6 @@
       "url": "https://www.laemmle.com",
       "color": "#B4A0D4",
       "screenings": [
-        {
-          "id": "laemmle-nuart-2026-oscar-nominated-short-films-live-action-2026-03-25",
-          "title": "2026 Oscar-Nominated Short Films: Live Action",
-          "date": "2026-03-25",
-          "time": "5:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/6d9e5584-7995-573e-ae2e-2664a476f356"
-        },
         {
           "id": "laemmle-nuart-2026-oscar-nominated-short-films-animated-2026-03-26",
           "title": "2026 Oscar-Nominated Short Films: Animated",
@@ -2676,33 +2640,6 @@
       "url": "https://www.laemmle.com",
       "color": "#C8A8D9",
       "screenings": [
-        {
-          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-25",
-          "title": "Dhurandhar: The Revenge",
-          "date": "2026-03-25",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139397"
-        },
-        {
-          "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-25",
-          "title": "Dhurandhar: The Revenge",
-          "date": "2026-03-25",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139396"
-        },
-        {
-          "id": "laemmle-noho-harold-and-maude-2026-03-25",
-          "title": "Harold and Maude",
-          "date": "2026-03-25",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139735"
-        },
         {
           "id": "laemmle-noho-dhurandhar-the-revenge-2026-03-26",
           "title": "Dhurandhar: The Revenge",
@@ -2810,6 +2747,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/139783"
+        },
+        {
+          "id": "laemmle-noho-home-delivery-2026-04-01",
+          "title": "Home Delivery",
+          "date": "2026-04-01",
+          "time": "1:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139784"
+        },
+        {
+          "id": "laemmle-noho-home-delivery-2026-04-01",
+          "title": "Home Delivery",
+          "date": "2026-04-01",
+          "time": "7:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139785"
         }
       ]
     },
@@ -2821,24 +2776,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-bunnylovr-2026-03-25",
-          "title": "Bunnylovr",
-          "date": "2026-03-25",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker and actor Katarina Zhu. Part of the “Women Wednesday 2026” series.",
-          "link": "https://www.americancinematheque.com/now-showing/bunnylovr-3-25-26/"
-        },
-        {
-          "id": "los-feliz-3-women-wednesday-night-of-shorts-part-2-2026-03-25",
-          "title": "Women Wednesday Night of Shorts Part 2",
-          "date": "2026-03-25",
-          "time": "9:30 pm",
-          "format": "digital",
-          "notes": "‘Women Wednesday 2026’. Guests and full lineup to be announced!",
-          "link": "https://www.americancinematheque.com/now-showing/women-wednesday-night-of-shorts-part-2-3-25-26/"
-        },
         {
           "id": "los-feliz-3-moments-in-a-stolen-dream-2026-03-26",
           "title": "Moments in a Stolen Dream",
@@ -2991,6 +2928,15 @@
           "format": "digital",
           "notes": "Q&A with filmmaker Nadav Lapid. Part of the “Nadav Lapid: An American Cinematheque Retrospective” series.",
           "link": "https://www.americancinematheque.com/now-showing/the-kindergarten-teacher-3-31-26/"
+        },
+        {
+          "id": "los-feliz-3-rushmore-2026-04-01",
+          "title": "Rushmore",
+          "date": "2026-04-01",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Late Night, Late ’90s” series.",
+          "link": "https://www.americancinematheque.com/now-showing/rushmore-4-1-26/"
         }
       ]
     },
@@ -3002,33 +2948,6 @@
       "url": "https://www.laemmle.com",
       "color": "#7AAED4",
       "screenings": [
-        {
-          "id": "laemmle-royal-sentimental-value-2026-03-25",
-          "title": "Sentimental Value",
-          "date": "2026-03-25",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/62813"
-        },
-        {
-          "id": "laemmle-royal-golden-2026-03-25",
-          "title": "Golden",
-          "date": "2026-03-25",
-          "time": "4:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/62675"
-        },
-        {
-          "id": "laemmle-royal-sentimental-value-2026-03-25",
-          "title": "Sentimental Value",
-          "date": "2026-03-25",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/62814"
-        },
         {
           "id": "laemmle-royal-sentimental-value-2026-03-26",
           "title": "Sentimental Value",
@@ -3057,24 +2976,6 @@
       "url": "https://www.secretmovieclub.com",
       "color": "#B89878",
       "screenings": [
-        {
-          "id": "secret-movie-club-sinners-2026-03-25",
-          "title": "Sinners",
-          "date": "2026-03-25",
-          "time": "10:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20860-sinners/"
-        },
-        {
-          "id": "secret-movie-club-pride-prejudice-2026-03-25",
-          "title": "Pride & Prejudice",
-          "date": "2026-03-25",
-          "time": "7:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20142-pride-prejudice/"
-        },
         {
           "id": "secret-movie-club-the-big-lebowski-2026-03-26",
           "title": "The Big Lebowski",
@@ -3164,6 +3065,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20762-pushing-daisies-mini-marathon/"
+        },
+        {
+          "id": "secret-movie-club-love-jones-2026-04-01",
+          "title": "Love Jones",
+          "date": "2026-04-01",
+          "time": "7:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20151-love-jones/"
         }
       ]
     },
@@ -3183,35 +3093,7 @@
       "neighborhood": "Historic Filipinotown",
       "url": "https://2220arts.com",
       "color": "#D4A0C4",
-      "screenings": [
-        {
-          "id": "2220-arts-calle-m-laga-2026-03-25",
-          "title": "Calle Málaga",
-          "date": "2026-03-25",
-          "time": "6:55 pm",
-          "format": "digital",
-          "notes": "Official selection of Morocco for the 2026 Oscars. Followed by discussion with film critic Christy Lemire.",
-          "link": "https://southbayfilmsociety.yapsody.com/event/index/865181"
-        },
-        {
-          "id": "2220-arts-calle-m-laga-2026-03-25",
-          "title": "Calle Málaga",
-          "date": "2026-03-25",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Official selection of Morocco for the 2026 Oscars. Followed by discussion with film critic Christy Lemire.",
-          "link": "https://southbayfilmsociety.yapsody.com/event/index/865187"
-        },
-        {
-          "id": "2220-arts-calle-m-laga-2026-03-25",
-          "title": "Calle Málaga",
-          "date": "2026-03-25",
-          "time": "7:05 pm",
-          "format": "digital",
-          "notes": "Official selection of Morocco for the 2026 Oscars. Followed by discussion with film critic Christy Lemire.",
-          "link": "https://southbayfilmsociety.yapsody.com/event/index/865189"
-        }
-      ]
+      "screenings": []
     },
     {
       "id": "whammy-analog",
