@@ -1,6 +1,6 @@
 // Liza's Palace — Service Worker
-// Strategy: network-first for HTML/data/JS/CSS, cache as fallback only
-const CACHE_NAME = 'palace-v3'
+// Strategy: network-first for all requests, cache as offline fallback only
+const CACHE_NAME = 'palace-v4'
 const BASE = '/X117/'
 
 self.addEventListener('install', (e) => {
@@ -9,7 +9,7 @@ self.addEventListener('install', (e) => {
 })
 
 self.addEventListener('activate', (e) => {
-  // Purge all old caches
+  // Purge ALL old caches
   e.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
@@ -23,19 +23,25 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url)
 
-  // Only handle same-origin + fonts
+  // Only handle same-origin + Google Fonts
   if (url.origin !== self.location.origin &&
       url.hostname !== 'fonts.googleapis.com' &&
       url.hostname !== 'fonts.gstatic.com') {
     return
   }
 
-  // Network-first for everything — cache is only a fallback for offline
+  // Skip non-GET requests
+  if (e.request.method !== 'GET') return
+
+  // Network-first for everything
   e.respondWith(
     fetch(e.request)
       .then((res) => {
-        const clone = res.clone()
-        caches.open(CACHE_NAME).then((cache) => cache.put(e.request, clone))
+        // Only cache successful responses
+        if (res.ok) {
+          const clone = res.clone()
+          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, clone))
+        }
         return res
       })
       .catch(() => caches.match(e.request))

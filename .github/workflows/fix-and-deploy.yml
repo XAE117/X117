@@ -1,7 +1,7 @@
 name: Merge and Deploy
 on:
   push:
-    branches: ['claude/liza-palace-features-fCkan', 'claude/palace-cinema-app-OW90m']
+    branches: ['claude/liza-palace-features-fCkan', 'claude/palace-cinema-app-OW90m', 'claude/fix-website-functionality-7g2H7']
 
 permissions:
   contents: write

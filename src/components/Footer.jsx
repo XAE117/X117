@@ -2,7 +2,9 @@ import './Footer.css'
 
 function Footer({ lastUpdated, isJazz }) {
   const formatDate = (dateStr) => {
+    if (!dateStr) return 'recently'
     const d = new Date(dateStr)
+    if (isNaN(d)) return 'recently'
     return d.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',

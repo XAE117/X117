@@ -1,4 +1,4 @@
-import { useState, useEffect, Component } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
@@ -29,30 +29,6 @@ import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
 import './App.css'
 
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { error: null }
-  }
-  static getDerivedStateFromError(error) {
-    return { error }
-  }
-  render() {
-    if (this.state.error) {
-      return (
-        <div style={{ color: '#E88A82', padding: '2rem', textAlign: 'center', fontFamily: 'monospace' }}>
-          <h2>Something went wrong</h2>
-          <pre style={{ whiteSpace: 'pre-wrap', fontSize: '0.8rem', color: '#B8B0A0' }}>
-            {this.state.error.message}
-            {'\n'}
-            {this.state.error.stack}
-          </pre>
-        </div>
-      )
-    }
-    return this.props.children
-  }
-}
 
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
 const NEW_RELEASE_MIN_YEAR = 2024
@@ -79,6 +55,9 @@ function App() {
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isScrolling, setIsScrolling] = useState(false)
+  const [splashSeen, setSplashSeen] = useState(() => {
+    try { return sessionStorage.getItem('palace-splash-seen') === '1' } catch { return true }
+  })
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
@@ -308,14 +287,13 @@ function App() {
       )}
       {!isDetailPage && !isJazzMode && !isFoodMode && <GodfatherAlert data={data} />}
       <main className="main-content">
-        <ErrorBoundary>
         <Routes>
           {/* Splash */}
-          <Route path="/welcome" element={<Splash />} />
+          <Route path="/welcome" element={<Splash onEnter={() => setSplashSeen(true)} />} />
 
           {/* Cinema routes */}
           <Route path="/" element={
-            !sessionStorage.getItem('palace-splash-seen')
+            !splashSeen
               ? <Navigate to="/welcome" replace />
               : <ByDay data={filteredData} searchQuery={searchQuery} />
           } />
@@ -348,11 +326,10 @@ function App() {
             </div>
           } />
         </Routes>
-        </ErrorBoundary>
       </main>
       <Footer
-        lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : isFoodMode && foodData ? foodData.lastUpdated : data.lastUpdated}
-        theaters={isJazzMode && jazzData ? jazzData.venues : data.theaters}
+        lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : isFoodMode && foodData ? foodData.lastUpdated : data?.lastUpdated}
+        theaters={isJazzMode && jazzData ? jazzData.venues : data?.theaters}
         isJazz={isJazzMode}
       />
       {!isDetailPage && <Nav mode={mode} />}

@@ -6,7 +6,7 @@ function Star({ style }) {
   return <div className="splash-star" style={style} />
 }
 
-function Splash() {
+function Splash({ onEnter }) {
   const navigate = useNavigate()
   const [visible, setVisible] = useState(true)
   const [fading, setFading] = useState(false)
@@ -41,6 +41,8 @@ function Splash() {
 
   const handleEnter = () => {
     setFading(true)
+    sessionStorage.setItem('palace-splash-seen', '1')
+    if (onEnter) onEnter()
     setTimeout(() => {
       setVisible(false)
       navigate('/', { replace: true })
@@ -49,18 +51,19 @@ function Splash() {
 
   // Check if user has seen splash before this session
   useEffect(() => {
-    const seen = sessionStorage.getItem('palace-splash-seen')
-    if (seen) {
+    try {
+      const seen = sessionStorage.getItem('palace-splash-seen')
+      if (seen) {
+        setVisible(false)
+        navigate('/', { replace: true })
+      }
+    } catch {
+      // sessionStorage unavailable — skip splash
       setVisible(false)
       navigate('/', { replace: true })
     }
   }, [navigate])
 
-  useEffect(() => {
-    if (fading) {
-      sessionStorage.setItem('palace-splash-seen', '1')
-    }
-  }, [fading])
 
   if (!visible) return null
 

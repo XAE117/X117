@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/X117/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="LIZA'S PALACE — Los Angeles Repertory & Arthouse Cinema Calendar" />
     <meta name="theme-color" content="#0D0B0A" />
@@ -37,6 +37,10 @@
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/X117/sw.js', { scope: '/X117/' })
+            .then(reg => {
+              // Check for updates every 5 minutes
+              setInterval(() => reg.update(), 5 * 60 * 1000)
+            })
             .catch(() => {})
         })
       }
