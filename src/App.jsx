@@ -318,7 +318,7 @@ function App() {
         </Routes>
       </main>
       <Footer
-        lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : data.lastUpdated}
+        lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : isFoodMode && foodData ? foodData.lastUpdated : data.lastUpdated}
         theaters={isJazzMode && jazzData ? jazzData.venues : data.theaters}
         isJazz={isJazzMode}
       />

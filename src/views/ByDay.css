@@ -1,3 +1,14 @@
+/* ── Empty State ── */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
 /* ── By Day View ── */
 
 .day-view {
