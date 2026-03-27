@@ -11,7 +11,11 @@ function setWatchlist(user, ids) {
 }
 
 export function getCurrentUser() {
-  return localStorage.getItem('palace-user') || null
+  try {
+    return localStorage.getItem('palace-user') || null
+  } catch {
+    return null
+  }
 }
 
 export function getOtherUser() {

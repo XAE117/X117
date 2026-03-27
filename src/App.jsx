@@ -341,6 +341,12 @@ function App() {
           <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
           <Route path="/food/spot/:spotId" element={<EatsDetail data={foodData} />} />
           <Route path="/food/map" element={<EatsMapView data={foodData} />} />
+          <Route path="*" element={
+            <div style={{ color: '#E88A82', padding: '2rem', textAlign: 'center', fontFamily: 'monospace', fontSize: '0.8rem' }}>
+              <p>No route matched: {window.location.pathname}</p>
+              <p>basename: /X117</p>
+            </div>
+          } />
         </Routes>
         </ErrorBoundary>
       </main>
