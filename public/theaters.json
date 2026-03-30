@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T10:29:37.672Z",
+  "lastUpdated": "2026-03-30T10:59:09.915Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,24 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-behind-the-green-door-adults-only-2026-03-28",
-          "title": "Behind the Green Door (Adults Only)",
-          "date": "2026-03-28",
-          "time": "11:59 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4532?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
-        {
-          "id": "new-beverly-the-hot-box-terminal-island-2026-03-28",
-          "title": "The Hot Box / Terminal Island",
-          "date": "2026-03-28",
-          "time": "6:30 pm / 8:30 pm",
-          "format": "35mm",
-          "notes": "Both in 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4535?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-the-hot-box-terminal-island-2026-03-29",
           "title": "The Hot Box / Terminal Island",
@@ -56,31 +38,67 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/4534?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
+          "id": "new-beverly-the-exile-the-prisoner-of-zenda-1937-2026-04-01",
+          "title": "The Exile / The Prisoner of Zenda (1937)",
+          "date": "2026-04-01",
+          "time": "7:30 pm / 9:35 pm",
+          "format": "35mm",
+          "notes": "Both in 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4541?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
+        },
+        {
+          "id": "new-beverly-the-exile-the-prisoner-of-zenda-1937-2026-04-02",
+          "title": "The Exile / The Prisoner of Zenda (1937)",
+          "date": "2026-04-02",
+          "time": "7:30 pm / 9:35 pm",
+          "format": "35mm",
+          "notes": "Both in 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4543?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
+        },
+        {
+          "id": "new-beverly-reservoir-dogs-2026-04-03",
+          "title": "Reservoir Dogs",
+          "date": "2026-04-03",
+          "time": "11:59 pm",
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4548?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
+        },
+        {
+          "id": "new-beverly-kill-bill-the-whole-bloody-affair-2026-04-03",
+          "title": "Kill Bill: The Whole Bloody Affair",
+          "date": "2026-04-03",
+          "time": "5:30 pm",
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4545?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
+        },
+        {
           "id": "new-beverly-night-of-the-lepus-2026-04-04",
           "title": "Night of the Lepus",
           "date": "2026-04-04",
           "time": "11:59 pm",
-          "format": "digital",
-          "notes": "Midnight",
-          "link": "https://thenewbev.com/program/april-4-night-of-the-lepus-midnight-show/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4551?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-casablanca-2026-04-04",
           "title": "Casablanca",
           "date": "2026-04-04",
           "time": "2:00 pm",
-          "format": "digital",
-          "notes": "Kiddie Matinee",
-          "link": "https://thenewbev.com/program/april-4-casablanca-family-matinee/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4549?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-kill-bill-the-whole-bloody-affair-2026-04-04",
           "title": "Kill Bill: The Whole Bloody Affair",
           "date": "2026-04-04",
           "time": "5:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/april-4-kill-bill-the-whole-bloody-affair/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4546?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-casablanca-2026-04-05",
@@ -678,60 +696,6 @@
       "color": "#B89AD4",
       "screenings": [
         {
-          "id": "vista-theatre-who-done-it-2026-03-28",
-          "title": "Who Done It?",
-          "date": "2026-03-28",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3384?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-super-fly-2026-03-28",
-          "title": "Super Fly",
-          "date": "2026-03-28",
-          "time": "11:59 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3342?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-28",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-28",
-          "time": "12:30 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3293?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-28",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-28",
-          "time": "4:15 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3294?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-wizards-the-time-masters-2026-03-28",
-          "title": "Wizards / The Time Masters",
-          "date": "2026-03-28",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3382?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-project-hail-mary-70mm-2026-03-28",
-          "title": "Project Hail Mary 70mm",
-          "date": "2026-03-28",
-          "time": "8:00 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3295?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
           "id": "vista-theatre-who-done-it-2026-03-29",
           "title": "Who Done It?",
           "date": "2026-03-29",
@@ -939,38 +903,47 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3438?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-the-drama-2026-04-04-1:15pm",
+          "id": "vista-theatre-the-drama-2026-04-04",
           "title": "The Drama",
           "date": "2026-04-04",
           "time": "1:15 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3405?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-american-graffiti-2026-04-04-11:30pm",
+          "id": "vista-theatre-american-graffiti-2026-04-04",
           "title": "American Graffiti",
           "date": "2026-04-04",
           "time": "11:30 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3454?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+          "link": "https://ticketing.uswest.veezi.com/purchase/3453?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-the-drama-2026-04-04-4:15pm",
+          "id": "vista-theatre-the-drama-2026-04-04",
           "title": "The Drama",
           "date": "2026-04-04",
           "time": "4:15 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3407?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-the-drama-2026-04-04-8:00pm",
+          "id": "vista-theatre-duke-of-the-navy-desperate-cargo-2026-04-04",
+          "title": "Duke of the Navy / Desperate Cargo",
+          "date": "2026-04-04",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3440?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-the-drama-2026-04-04",
           "title": "The Drama",
           "date": "2026-04-04",
           "time": "8:00 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3408?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
@@ -1417,33 +1390,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-my-neighbor-totoro-2026-03-28",
-          "title": "My Neighbor Totoro",
-          "date": "2026-03-28",
-          "time": "11:00 am",
-          "format": "digital",
-          "notes": "At the David Geffen Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/my-neighbor-totoro-019be21e-0312-4603-5a01-899f52198f80"
-        },
-        {
-          "id": "academy-museum-from-russia-with-love-in-4k-2026-03-28",
-          "title": "From Russia with Love in 4K",
-          "date": "2026-03-28",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/from-russia-with-love-019be222-e3ce-d3b4-7a35-cf60d85d1a1d"
-        },
-        {
-          "id": "academy-museum-seven-samurai-shichinin-no-samura-in-35mm-2026-03-28",
-          "title": "Seven Samurai (Shichinin No Samura) in 35mm",
-          "date": "2026-03-28",
-          "time": "6:00 pm",
-          "format": "35mm",
-          "notes": "At the David Geffen Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/seven-samurai-shichinin-no-samurai-in-35-mm-019c0628-be60-dae6-060a-dd3d68c1942c"
-        },
-        {
           "id": "academy-museum-marty-in-35mm-2026-03-29",
           "title": "Marty in 35mm",
           "date": "2026-03-29",
@@ -1505,6 +1451,33 @@
           "format": "35mm",
           "notes": "At the Ted Mann Theater.",
           "link": "https://www.academymuseum.org/en/programs/detail/ikiru-to-live-in-35-mm-019c062a-f565-75f5-4be0-16278de57735"
+        },
+        {
+          "id": "academy-museum-lupin-the-3rd-the-castle-of-cagliostro-2026-04-04",
+          "title": "Lupin the 3rd: The Castle of Cagliostro",
+          "date": "2026-04-04",
+          "time": "11:00 am",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/lupin-the-3rd-the-castle-of-cagliostro-019be21e-9c42-b967-5e8b-23fcb32e8be6"
+        },
+        {
+          "id": "academy-museum-follow-that-bird-with-director-ken-kwapis-2026-04-04",
+          "title": "Follow That Bird with Director Ken Kwapis",
+          "date": "2026-04-04",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater. In person: director Ken Kwapis and Debra Spinney.",
+          "link": "https://www.academymuseum.org/en/programs/detail/follow-that-bird-019be230-8d08-76b5-4f40-740527381e8e"
+        },
+        {
+          "id": "academy-museum-throne-of-blood-kumonosu-jo-in-35mm-2026-04-04",
+          "title": "Throne of Blood (Kumonosu-Jo) in 35mm",
+          "date": "2026-04-04",
+          "time": "7:00 pm",
+          "format": "35mm",
+          "notes": "At the David Geffen Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/throne-of-blood-kumonosu-jo-in-35-mm-019c062c-d5da-4ef3-d46b-0de4f02a5d56"
         }
       ]
     },
@@ -1516,42 +1489,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-twin-peaks-the-return-2026-03-28",
-          "title": "Twin Peaks: The Return",
-          "date": "2026-03-28",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-16-18#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-twin-peaks-the-return-2026-03-28",
-          "title": "Twin Peaks: The Return",
-          "date": "2026-03-28",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/greetings-from-twin-peaks-twin-peaks-the-return-parts-16-18#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-touch-me-2026-03-28",
-          "title": "Touch Me",
-          "date": "2026-03-28",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "Director Addison Heimann Live in Person.",
-          "link": "https://drafthouse.com/los-angeles/event/live-q-a-touch-me#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-stand-by-me-2026-03-28",
-          "title": "Stand by Me",
-          "date": "2026-03-28",
-          "time": "7:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/stand-by-me-1986#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-twin-peaks-the-return-2026-03-29",
           "title": "Twin Peaks: The Return",
@@ -1650,6 +1587,33 @@
           "format": "digital",
           "notes": "Part of the “Fantastic Fest Presents” series. With director Alice Maio Mackay in attendance.",
           "link": "https://drafthouse.com/los-angeles/event/live-qa-the-serpents-skin#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-04",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-04",
+          "time": "11:00 am",
+          "format": "digital",
+          "notes": "Part of the “Family Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/family-party-the-super-mario-galaxy-movie#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-our-hero-balthazar-2026-04-04",
+          "title": "Our Hero, Balthazar",
+          "date": "2026-04-04",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Live Q&A with the cast and crew.",
+          "link": "https://drafthouse.com/los-angeles/event/live-q-a-our-hero-balthazar#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-our-hero-balthazar-2026-04-04",
+          "title": "Our Hero, Balthazar",
+          "date": "2026-04-04",
+          "time": "7:45 pm",
+          "format": "digital",
+          "notes": "Live Q&A with the cast and crew.",
+          "link": "https://drafthouse.com/los-angeles/event/live-q-a-our-hero-balthazar#js-showtimescomponent"
         }
       ]
     },
@@ -1661,24 +1625,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-after-hours-2026-03-28",
-          "title": "After Hours",
-          "date": "2026-03-28",
-          "time": "3:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Starring Catherine O’Hara” series.",
-          "link": "https://www.americancinematheque.com/now-showing/after-hours-3-28-26/"
-        },
-        {
-          "id": "egyptian-the-sparks-brothers-2026-03-28",
-          "title": "The Sparks Brothers",
-          "date": "2026-03-28",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Edgar Wright and Sparks (musicians Ron Mael and Russell Mael). Moderated by Fred Armisen. 5th Anniversary.",
-          "link": "https://www.americancinematheque.com/now-showing/the-sparks-brothers-3-28-26/"
-        },
         {
           "id": "egyptian-kiki-s-delivery-service-2026-03-29",
           "title": "Kiki’s Delivery Service",
@@ -1840,6 +1786,33 @@
           "format": "digital",
           "notes": "Live musical performance by singer Laura Ellis and the Nick Rossi Trio. Introductions by Eddie Muller, Alan K. Rode and Nick Rossi.",
           "link": "https://www.americancinematheque.com/now-showing/black-angel-blues-in-the-night-4-3-26/"
+        },
+        {
+          "id": "egyptian-hangover-square-2026-04-04",
+          "title": "Hangover Square",
+          "date": "2026-04-04",
+          "time": "12:00 pm",
+          "format": "digital",
+          "notes": "Live musical performance by pianist Chris Dawson. Introduction by Eddie Muller and author Steven C. Smith.",
+          "link": "https://www.americancinematheque.com/now-showing/hangover-square-4-4-26/"
+        },
+        {
+          "id": "egyptian-anatomy-of-a-murder-2026-04-04",
+          "title": "Anatomy of a Murder",
+          "date": "2026-04-04",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "Live musical performance by pianist Chris Dawson. Introduction by Alan K. Rode.",
+          "link": "https://www.americancinematheque.com/now-showing/anatomy-of-a-murder-4-4-26/"
+        },
+        {
+          "id": "egyptian-the-yellow-canary-the-crimson-canary-2026-04-04",
+          "title": "The Yellow Canary / The Crimson Canary",
+          "date": "2026-04-04",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Q&A with actor Pat Boone. Moderated by Eddie Muller. Live musical performance by the Nick Rossi Trio.",
+          "link": "https://www.americancinematheque.com/now-showing/the-yellow-canary-the-crimson-canary-4-4-26/"
         }
       ]
     },
@@ -1851,15 +1824,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#7ABFC0",
       "screenings": [
-        {
-          "id": "aero-the-godfather-the-godfather-part-ii-2026-03-28",
-          "title": "The Godfather / The Godfather Part II",
-          "date": "2026-03-28",
-          "time": "3:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Starring Robert Duvall” series.",
-          "link": "https://www.americancinematheque.com/now-showing/the-godfather-the-godfather-part-ii-3-28-26/"
-        },
         {
           "id": "aero-last-summer-2026-03-29",
           "title": "Last Summer",
@@ -1906,69 +1870,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-the-muppets-take-manhattan-2026-03-28",
-          "title": "The Muppets Take Manhattan",
-          "date": "2026-03-28",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle. Part of the “Films for Everyone” series.",
-          "link": "https://vidiotsfoundation.org/purchase/3781988/"
-        },
-        {
-          "id": "vidiots-nirvanna-the-band-the-show-the-movie-2026-03-28",
-          "title": "Nirvanna the Band the Show the Movie",
-          "date": "2026-03-28",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3806796/"
-        },
-        {
-          "id": "vidiots-salaam-bombay-2026-03-28",
-          "title": "Salaam Bombay!",
-          "date": "2026-03-28",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3781987/"
-        },
-        {
-          "id": "vidiots-somersault-2026-03-28",
-          "title": "Somersault",
-          "date": "2026-03-28",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3806794/"
-        },
-        {
-          "id": "vidiots-thank-you-for-smoking-on-35mm-2026-03-28",
-          "title": "Thank You for Smoking on 35mm",
-          "date": "2026-03-28",
-          "time": "7:00 pm",
-          "format": "35mm",
-          "notes": "Showing in the Eagle. Screening in 35mm. Welcoming Jason Reitman for a special 20th Anniversary Screening of his addictive satire followed by a conversation with Reitman.",
-          "link": "https://vidiotsfoundation.org/purchase/3781983/"
-        },
-        {
-          "id": "vidiots-pillion-2026-03-28",
-          "title": "Pillion",
-          "date": "2026-03-28",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3806795/"
-        },
-        {
-          "id": "vidiots-spring-breakers-2026-03-28",
-          "title": "Spring Breakers",
-          "date": "2026-03-28",
-          "time": "9:45 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3781982/"
-        },
         {
           "id": "vidiots-nirvanna-the-band-the-show-the-movie-2026-03-29",
           "title": "Nirvanna the Band the Show the Movie",
@@ -2213,57 +2114,66 @@
           "link": "https://vidiotsfoundation.org/purchase/3867501/"
         },
         {
-          "id": "vidiots-james-and-the-giant-peach-2026-04-04-1:00pm",
+          "id": "vidiots-james-and-the-giant-peach-2026-04-04",
           "title": "James and the Giant Peach",
           "date": "2026-04-04",
           "time": "1:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle. Part of the “Films for Everyone” series.",
           "link": "https://vidiotsfoundation.org/purchase/3833917/"
         },
         {
-          "id": "vidiots-the-serpent-s-skin-2026-04-04-10:00pm",
-          "title": "The Serpent's Skin",
+          "id": "vidiots-the-serpent-s-skin-2026-04-04",
+          "title": "The Serpent’s Skin",
           "date": "2026-04-04",
           "time": "10:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema. Filmmaker Alice Maio Mackay and Editor Vera Drew in person.",
           "link": "https://vidiotsfoundation.org/purchase/3833925/"
         },
         {
-          "id": "vidiots-dj-ahmet-2026-04-04-12:45pm",
+          "id": "vidiots-dj-ahmet-2026-04-04",
           "title": "DJ Ahmet",
           "date": "2026-04-04",
           "time": "12:45 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3833936/"
         },
         {
-          "id": "vidiots-shin-godzilla-2026-04-04-3:45pm",
+          "id": "vidiots-shin-godzilla-2026-04-04",
           "title": "Shin Godzilla",
           "date": "2026-04-04",
           "time": "3:45 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3833918/"
         },
         {
-          "id": "vidiots-pretty-woman-2026-04-04-7:00pm",
+          "id": "vidiots-pretty-woman-2026-04-04",
           "title": "Pretty Woman",
           "date": "2026-04-04",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3833919/"
         },
         {
-          "id": "vidiots-time-masters-2026-04-04-9:45pm",
+          "id": "vidiots-the-serpent-s-skin-2026-04-04",
+          "title": "The Serpent’s Skin",
+          "date": "2026-04-04",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Showing in the MUBI Microcinema. Filmmaker Alice Maio Mackay and Editor Vera Drew in person.",
+          "link": "https://vidiotsfoundation.org/purchase/3833924/"
+        },
+        {
+          "id": "vidiots-time-masters-2026-04-04",
           "title": "Time Masters",
           "date": "2026-04-04",
           "time": "9:45 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3833923/"
         },
         {
@@ -2826,15 +2736,6 @@
       "color": "#8EBF8E",
       "screenings": [
         {
-          "id": "brain-dead-red-spirit-lake-vick-tarstar-s-scarecrow-factory-2026-03-28",
-          "title": "Red Spirit Lake + Vick & Tarstar’s Scarecrow Factory",
-          "date": "2026-03-28",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://studios.wearebraindead.com/purchase/1239634/"
-        },
-        {
           "id": "brain-dead-the-fly-2026-03-29",
           "title": "The Fly",
           "date": "2026-03-29",
@@ -2880,7 +2781,7 @@
           "link": "https://studios.wearebraindead.com/purchase/1271576/"
         },
         {
-          "id": "brain-dead-the-day-of-the-dolphin-2026-04-04-5:15pm",
+          "id": "brain-dead-the-day-of-the-dolphin-2026-04-04",
           "title": "The Day of the Dolphin",
           "date": "2026-04-04",
           "time": "5:15 pm",
@@ -2889,7 +2790,7 @@
           "link": "https://studios.wearebraindead.com/purchase/1263898/"
         },
         {
-          "id": "brain-dead-john-lilly-and-the-earth-coincidence-control-office-2026-04-04-8:00pm",
+          "id": "brain-dead-john-lilly-and-the-earth-coincidence-control-office-2026-04-04",
           "title": "John Lilly and the Earth Coincidence Control Office",
           "date": "2026-04-04",
           "time": "8:00 pm",
@@ -3052,15 +2953,6 @@
       "color": "#8EA0CF",
       "screenings": [
         {
-          "id": "billy-wilder-gunvor-nelson-tribute-iii-light-years-expanding-2026-03-28",
-          "title": "Gunvor Nelson Tribute III: Light Years Expanding",
-          "date": "2026-03-28",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Introduction by film historian and curator Steve Anker.",
-          "link": "https://www.cinema.ucla.edu/events/gunvor-nelson-tribute-iii-light-years-expanding-2026-03-28/"
-        },
-        {
           "id": "billy-wilder-to-sleep-with-anger-2026-03-29",
           "title": "To Sleep with Anger",
           "date": "2026-03-29",
@@ -3087,17 +2979,7 @@
       "neighborhood": "Downtown",
       "url": "https://www.redcat.org",
       "color": "#D9907A",
-      "screenings": [
-        {
-          "id": "redcat-gibson-recoder-the-changeover-system-a-projection-performance-installatio",
-          "title": "Gibson + Recoder — The Changeover System: A Projection Performance Installation (2023–2025)",
-          "date": "2026-03-28",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "Los Angeles premiere.",
-          "link": "https://ci.ovationtix.com/34348/production/1258753"
-        }
-      ]
+      "screenings": []
     },
     {
       "id": "laemmle-nuart",
@@ -3108,15 +2990,6 @@
       "color": "#B4A0D4",
       "screenings": [
         {
-          "id": "laemmle-nuart-the-rocky-horror-picture-show-2026-03-28",
-          "title": "The Rocky Horror Picture Show",
-          "date": "2026-03-28",
-          "time": "11:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/9b886aad-b686-59fc-9b62-4d562eea0c0a"
-        },
-        {
           "id": "laemmle-nuart-the-french-connection-2026-04-03",
           "title": "The French Connection",
           "date": "2026-04-03",
@@ -3124,6 +2997,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://booking.landmarktheatres.com/launch/ticketing/ccd650e2-8f34-5673-96c5-78feff6f94e8"
+        },
+        {
+          "id": "laemmle-nuart-the-rocky-horror-picture-show-2026-04-04",
+          "title": "The Rocky Horror Picture Show",
+          "date": "2026-04-04",
+          "time": "11:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/ce96c21a-4719-57cc-b62f-8759f8afa384"
         }
       ]
     },
@@ -3135,24 +3017,6 @@
       "url": "https://www.laemmle.com",
       "color": "#C8A8D9",
       "screenings": [
-        {
-          "id": "laemmle-noho-home-delivery-2026-03-28",
-          "title": "Home Delivery",
-          "date": "2026-03-28",
-          "time": "1:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139776"
-        },
-        {
-          "id": "laemmle-noho-home-delivery-2026-03-28",
-          "title": "Home Delivery",
-          "date": "2026-03-28",
-          "time": "7:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139777"
-        },
         {
           "id": "laemmle-noho-home-delivery-2026-03-29",
           "title": "Home Delivery",
@@ -3263,33 +3127,6 @@
       "color": "#CCA8C8",
       "screenings": [
         {
-          "id": "los-feliz-3-a-wanderer-s-notebook-2026-03-28",
-          "title": "A Wanderer’s Notebook",
-          "date": "2026-03-28",
-          "time": "1:00 pm",
-          "format": "35mm",
-          "notes": "35mm print courtesy of National Film Archive of Japan. Series co-presented by The Japan Foundation, Los Angeles and The Yanai Initiative for Globalizing Japanese Humanities.",
-          "link": "https://www.americancinematheque.com/now-showing/a-wanderers-3-28-26/"
-        },
-        {
-          "id": "los-feliz-3-what-do-we-see-when-we-look-at-the-sky-2026-03-28",
-          "title": "What Do We See When We Look at the Sky?",
-          "date": "2026-03-28",
-          "time": "3:30 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Alexandre Koberidze and composer Giorgi Koberidze. ’Alexandre Koberidze: An American Cinematheque Tribute’.",
-          "link": "https://www.americancinematheque.com/now-showing/what-do-we-see-when-we-look-at-the-sky-3-28-26/"
-        },
-        {
-          "id": "los-feliz-3-let-the-summer-never-come-again-2026-03-28",
-          "title": "Let the Summer Never Come Again",
-          "date": "2026-03-28",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Introduction by filmmaker Alexandre Koberidze. Part of the “Alexandre Koberidze: An American Cinematheque Tribute” series.",
-          "link": "https://www.americancinematheque.com/now-showing/let-the-summer-never-come-again-3-28-26/"
-        },
-        {
           "id": "los-feliz-3-alexandre-koberidze-presents-the-day-he-arrives-2026-03-29",
           "title": "Alexandre Koberidze Presents The Day He Arrives",
           "date": "2026-03-29",
@@ -3396,6 +3233,33 @@
           "format": "digital",
           "notes": "“Demons” and “Lonely Souls.” Part of the “TWIN PEAKS: The Complete Series” series.",
           "link": "https://www.americancinematheque.com/now-showing/twin-peaks-season-2-ep-6-7-4-3-26/"
+        },
+        {
+          "id": "los-feliz-3-moment-of-terror-2026-04-04",
+          "title": "Moment of Terror",
+          "date": "2026-04-04",
+          "time": "1:00 pm",
+          "format": "35mm",
+          "notes": "35mm print courtesy of National Film Archive of Japan. Series co-presented by The Japan Foundation, Los Angeles and The Yanai Initiative for Globalizing Japanese Humanities.",
+          "link": "https://www.americancinematheque.com/now-showing/moment-of-terror-4-4-26/"
+        },
+        {
+          "id": "los-feliz-3-the-paper-2026-04-04",
+          "title": "The Paper",
+          "date": "2026-04-04",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Starring Robert Duvall” and “Starring Catherine O’Hara” series.",
+          "link": "https://www.americancinematheque.com/now-showing/the-paper-4-4-26/"
+        },
+        {
+          "id": "los-feliz-3-proof-2025-award-winners-showcase-2026-04-04",
+          "title": "Proof 2025 Award Winners Showcase",
+          "date": "2026-04-04",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Q&A with filmmakers following the screening. Join us to celebrate the PROOF 2025 Award Winners in a showcase of their work!",
+          "link": "https://www.americancinematheque.com/now-showing/proof-2025-award-winners-showcase-4-4-26/"
         }
       ]
     },
@@ -3416,24 +3280,6 @@
       "url": "https://www.secretmovieclub.com",
       "color": "#B89878",
       "screenings": [
-        {
-          "id": "secret-movie-club-twilight-2026-03-28",
-          "title": "Twilight",
-          "date": "2026-03-28",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20147-twilight/"
-        },
-        {
-          "id": "secret-movie-club-the-notebook-2026-03-28",
-          "title": "The Notebook",
-          "date": "2026-03-28",
-          "time": "7:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20146-the-notebook/"
-        },
         {
           "id": "secret-movie-club-500-days-of-summer-2026-03-29",
           "title": "500 Days of Summer",
@@ -3514,6 +3360,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20154-the-hunger-games/"
+        },
+        {
+          "id": "secret-movie-club-the-social-network-2026-04-04",
+          "title": "The Social Network",
+          "date": "2026-04-04",
+          "time": "10:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20157-the-social-network/"
+        },
+        {
+          "id": "secret-movie-club-how-to-lose-a-guy-in-10-days-2026-04-04",
+          "title": "How to Lose a Guy in 10 Days",
+          "date": "2026-04-04",
+          "time": "7:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20156-how-to-lose-a-guy-in-10-days/"
         }
       ]
     },

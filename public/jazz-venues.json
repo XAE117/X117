@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T10:29:57.770Z",
+  "lastUpdated": "2026-03-30T10:59:31.556Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-03-29-aj-mcqueen",
-          "artist": "AJ McQueen",
-          "date": "2026-03-29",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/aj-mcqueen/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-03-30-pj-morton",
           "artist": "PJ Morton",
@@ -101,15 +92,6 @@
           "notes": "",
           "link": "https://www.songkick.com/concerts/42985616-bilal-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
           "hot": false
-        },
-        {
-          "id": "blue-note-la-2026-05-13-lizz-wright",
-          "artist": "Lizz Wright",
-          "date": "2026-05-13",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.songkick.com/concerts/43066128-lizz-wright-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
-          "hot": false
         }
       ]
     },
@@ -130,6 +112,15 @@
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43116897-gordon-goodwins-big-phat-band-at-catalina-bar-and-grill?utm_medium=organic&utm_source=microformat",
+          "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-04-23-billy-higgins",
+          "artist": "Billy Higgins",
+          "date": "2026-04-23",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.songkick.com/concerts/43129416-billy-higgins-at-catalina-bar-and-grill?utm_medium=organic&utm_source=microformat",
           "hot": false
         },
         {
@@ -154,13 +145,13 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-03-29-allison-cardenas-nash",
-          "artist": "Allison, Cardenas & Nash",
-          "date": "2026-03-29",
+          "id": "sam-first-2026-03-30-devin-daniels-tuesday-happenin",
+          "artist": "Devin Daniels Tuesday Happenings Jam Session",
+          "date": "2026-03-30",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
-          "hot": false
+          "hot": true
         }
       ]
     },
@@ -175,30 +166,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-03-29-luke-carlsen-the-fresh-rhythm-",
-          "artist": "Luke Carlsen & The Fresh Rhythm Band",
-          "date": "2026-03-29",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-03-29-christena-rich",
+          "id": "vibrato-2026-03-30-christena-rich",
           "artist": "Christena Rich",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "vibrato-2026-03-29-christena-rich-featuring-laure",
-          "artist": "Christena Rich, Featuring Laurence Juber",
-          "date": "2026-03-29",
-          "time": "9:30 PM",
+          "id": "vibrato-2026-03-30-pat-senatore",
+          "artist": "Pat Senatore",
+          "date": "2026-03-30",
+          "time": "7:30 PM",
           "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/christena-rich-featuring-laurence-juber-1",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -456,27 +438,6 @@
       ]
     },
     {
-      "id": "world-stage",
-      "name": "The World Stage",
-      "shortName": "World Stage",
-      "neighborhood": "Leimert Park",
-      "url": "https://www.theworldstage.org/",
-      "color": "#D4AC0D",
-      "tier": "dedicated",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "world-stage-2026-03-29-eric-reed-workshop-reed-s-cree",
-          "artist": "Eric Reed Workshop Reed's Creeds",
-          "date": "2026-03-29",
-          "time": "1:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -486,15 +447,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-03-29-glen-hansard-don-t-settle",
-          "artist": "Glen Hansard-Don't Settle",
-          "date": "2026-03-29",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/glen-hansard-dont-settle/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-03-30-brad-stank",
           "artist": "Brad Stank",
@@ -1285,9 +1237,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-high-low-2026-03-29--8-00pm-michael-orenstein",
+          "id": "the-high-low-2026-03-30--8-00pm-michael-orenstein",
           "artist": "​8:00PM Michael Orenstein",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1306,39 +1258,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-03-29-ravi-campbell",
+          "id": "the-mint-2026-03-30-ravi-campbell",
           "artist": "Ravi Campbell",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "the-mint-2026-03-29-sbs",
-          "artist": "SBS",
-          "date": "2026-03-29",
-          "time": "9:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-03-29-kevin-kanner-jazz-jam",
+          "id": "the-mint-2026-03-30-kevin-kanner-jazz-jam",
           "artist": "Kevin Kanner Jazz Jam",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "9:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-03-30-jazz-sunday-ravi-campbell-quin",
-          "artist": "Jazz Sunday: Ravi Campbell Quintet & Kevin Kanner Jazz",
-          "date": "2026-03-30",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/bb8v9m-jazz-sunday-ravi-campbell-quintet-kevin-kanner-jazz-29th-mar-the-mint-los-angeles-tickets",
           "hot": false
         },
         {
@@ -1430,6 +1364,15 @@
           "notes": "",
           "link": "https://dice.fm/event/8e6r32-gorden-campbell-friends-21st-apr-the-mint-los-angeles-tickets",
           "hot": false
+        },
+        {
+          "id": "the-mint-2026-04-25--colonels-of-truth-hambone-rel",
+          "artist": " Colonels Of Truth, Hambone Relay, JENTL,  Sofía Élan",
+          "date": "2026-04-25",
+          "time": "2:00 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/7dmxbb--colonels-of-truth-hambone-relay-jentl-sofa-lan-24th-apr-the-mint-los-angeles-tickets",
+          "hot": false
         }
       ]
     },
@@ -1444,18 +1387,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "lighthouse-cafe-2026-03-29-matt-grief",
+          "id": "lighthouse-cafe-2026-03-30-matt-grief",
           "artist": "Matt Grief",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "10:00 AM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "lighthouse-cafe-2026-03-29-jacques-lesure-jam-session",
+          "id": "lighthouse-cafe-2026-03-30-jacques-lesure-jam-session",
           "artist": "Jacques Lesure Jam Session",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1474,18 +1417,9 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-03-29-jimmy-buffett-tributemark-wood",
-          "artist": "Jimmy Buffett TributeMark Wood and the Parrot Head Band",
-          "date": "2026-03-29",
-          "time": "5:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/726",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-03-29-jazz-pass-april-2026",
+          "id": "campus-jax-2026-03-30-jazz-pass-april-2026",
           "artist": "Jazz Pass April 2026",
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/1",
@@ -1762,8 +1696,8 @@
           "hot": false
         },
         {
-          "id": "campus-jax-2026-05-09-kenny-metcalf-elton-the-early-",
-          "artist": "Kenny Metcalf\nElton & the Early Years\nElton John Tribute",
+          "id": "campus-jax-2026-05-09-kenny-metcalfelton-the-early-y",
+          "artist": "Kenny MetcalfElton & the Early YearsElton John Tribute",
           "date": "2026-05-09",
           "time": "8:00 PM",
           "notes": "",
@@ -1990,7 +1924,7 @@
           "id": "campus-jax-2026-06-18-alice-wallace",
           "artist": "Alice Wallace",
           "date": "2026-06-18",
-          "time": "6:00 PM",
+          "time": "6:30 PM",
           "notes": "",
           "link": "https://www.stellarshows.net/shows/364891",
           "hot": false
