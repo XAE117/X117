@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30T10:59:31.556Z",
+  "lastUpdated": "2026-03-31T10:51:01.437Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-03-30-pj-morton",
-          "artist": "PJ Morton",
-          "date": "2026-03-30",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/pj-morton/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-03-31-pj-morton",
           "artist": "PJ Morton",
@@ -145,13 +136,31 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-03-30-devin-daniels-tuesday-happenin",
+          "id": "sam-first-2026-03-31-devin-daniels-tuesday-happenin",
           "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-03-30",
+          "date": "2026-03-31",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
+        },
+        {
+          "id": "sam-first-2026-03-31-usc-ucla-jazz-ensembles",
+          "artist": "USC/UCLA Jazz Ensembles",
+          "date": "2026-03-31",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-03-31-rachel-eckroth",
+          "artist": "Rachel Eckroth",
+          "date": "2026-03-31",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
         }
       ]
     },
@@ -166,18 +175,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-03-30-christena-rich",
-          "artist": "Christena Rich",
-          "date": "2026-03-30",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-03-30-pat-senatore",
+          "id": "vibrato-2026-03-31-pat-senatore",
           "artist": "Pat Senatore",
-          "date": "2026-03-30",
+          "date": "2026-03-31",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -247,8 +247,8 @@
           "hot": false
         },
         {
-          "id": "vibrato-2026-04-08-pete-escovedo-latin-jazz-orche",
-          "artist": "Pete Escovedo Latin Jazz Orchestra",
+          "id": "vibrato-2026-04-08-pete-escovedo-featuring-juan-p",
+          "artist": "Pete Escovedo featuring Juan & Peter Michael Escovedo",
           "date": "2026-04-08",
           "time": "10:30 PM",
           "notes": "",
@@ -265,8 +265,8 @@
           "hot": false
         },
         {
-          "id": "vibrato-2026-04-10--adam-aejaye-jackson-",
-          "artist": "\"Adam \"\"Aejaye\"\" Jackson \"",
+          "id": "vibrato-2026-04-10-adam-aejaye-jackson",
+          "artist": "Adam \"Aejaye\" Jackson",
           "date": "2026-04-10",
           "time": "11:00 PM",
           "notes": "",
@@ -438,6 +438,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-03-31-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-03-31",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -447,15 +468,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-03-30-brad-stank",
-          "artist": "Brad Stank",
-          "date": "2026-03-30",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/brad-stank/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-03-31-charlie-parr",
           "artist": "Charlie Parr",
@@ -1168,6 +1180,42 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-09-30-darkside",
+          "artist": "Darkside",
+          "date": "2026-09-30",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/darkside-5/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-10-01-darkside",
+          "artist": "Darkside",
+          "date": "2026-10-01",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/darkside-7/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-10-02-darkside",
+          "artist": "Darkside",
+          "date": "2026-10-02",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/darkside-9/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-10-03-darkside",
+          "artist": "Darkside",
+          "date": "2026-10-03",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/darkside-11/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-10-10-dua-saleh",
           "artist": "Dua Saleh",
           "date": "2026-10-10",
@@ -1227,27 +1275,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-03-30--8-00pm-michael-orenstein",
-          "artist": "​8:00PM Michael Orenstein",
-          "date": "2026-03-30",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1257,24 +1284,6 @@
       "tier": "regular",
       "region": "LA",
       "shows": [
-        {
-          "id": "the-mint-2026-03-30-ravi-campbell",
-          "artist": "Ravi Campbell",
-          "date": "2026-03-30",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-03-30-kevin-kanner-jazz-jam",
-          "artist": "Kevin Kanner Jazz Jam",
-          "date": "2026-03-30",
-          "time": "9:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
         {
           "id": "the-mint-2026-04-01-jem-renaud-mateo-arce-willow-c",
           "artist": "Jem Renaud , Mateo Arce & Willow Corrine, Noah Toprak",
@@ -1377,36 +1386,6 @@
       ]
     },
     {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-03-30-matt-grief",
-          "artist": "Matt Grief",
-          "date": "2026-03-30",
-          "time": "10:00 AM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "lighthouse-cafe-2026-03-30-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-03-30",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1417,21 +1396,30 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-03-30-jazz-pass-april-2026",
-          "artist": "Jazz Pass April 2026",
-          "date": "2026-03-30",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/1",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-03-31-jax-songstagesinger-songwriter",
           "artist": "JAX SongStageSinger-Songwriter Showcaseft. Masha, Wes North, Josh Solis, Katie B, Doug Schmude, Arielle Silver",
           "date": "2026-03-31",
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/958",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-03-31-jazz-pass-april-2026",
+          "artist": "Jazz Pass April 2026",
+          "date": "2026-03-31",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/1",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-03-31-jazz-pass-may-2026",
+          "artist": "Jazz Pass May 2026",
+          "date": "2026-03-31",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/2",
           "hot": false
         },
         {
@@ -1669,8 +1657,8 @@
           "hot": false
         },
         {
-          "id": "campus-jax-2026-05-03-tony-gil-paul-bollenback-w-the",
-          "artist": "Tony Gil & Paul Bollenback\nw/ the Tony Guerrero Quintet",
+          "id": "campus-jax-2026-05-03-tony-gil-paul-bollenbackw-the-",
+          "artist": "Tony Gil & Paul Bollenbackw/ the Tony Guerrero Quintet",
           "date": "2026-05-03",
           "time": "7:00 PM",
           "notes": "",
