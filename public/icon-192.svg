@@ -1,72 +1,112 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
   <defs>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur1"/>
-      <feFlood flood-color="#C9A84C" flood-opacity="0.5"/>
-      <feComposite in2="blur1" operator="in" result="outerGlow"/>
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur2"/>
-      <feFlood flood-color="#EEDFA0" flood-opacity="0.35"/>
-      <feComposite in2="blur2" operator="in" result="innerGlow"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="4" seed="7" result="noise"/>
-      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
-      <feBlend in="SourceGraphic" in2="mono" mode="overlay" result="grained"/>
-      <feMerge>
-        <feMergeNode in="outerGlow"/>
-        <feMergeNode in="innerGlow"/>
-        <feMergeNode in="grained"/>
-      </feMerge>
-    </filter>
     <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#EDE0B1"/>
-      <stop offset="35%" stop-color="#D4B55E"/>
-      <stop offset="65%" stop-color="#C9A84C"/>
-      <stop offset="100%" stop-color="#9A7B30"/>
+      <stop offset="0%" stop-color="#F0E4B8"/>
+      <stop offset="30%" stop-color="#D4B55E"/>
+      <stop offset="70%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#8C6E28"/>
     </linearGradient>
-    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#C9A84C" stop-opacity="0.5"/>
-      <stop offset="50%" stop-color="#E8D5A3" stop-opacity="0.6"/>
-      <stop offset="70%" stop-color="#C9A84C" stop-opacity="0.5"/>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.14"/>
+      <stop offset="55%" stop-color="#C9A84C" stop-opacity="0.05"/>
       <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
-    </linearGradient>
+    </radialGradient>
+    <pattern id="grain" width="19" height="19" patternUnits="userSpaceOnUse">
+      <rect x="3" y="2" width="1" height="1" fill="#000" opacity="0.15"/>
+      <rect x="14" y="5" width="1" height="1" fill="#fff" opacity="0.07"/>
+      <rect x="7" y="10" width="1" height="1" fill="#000" opacity="0.12"/>
+      <rect x="1" y="15" width="1" height="1" fill="#fff" opacity="0.05"/>
+      <rect x="17" y="1" width="1" height="1" fill="#000" opacity="0.1"/>
+      <rect x="10" y="8" width="1" height="1" fill="#000" opacity="0.13"/>
+      <rect x="5" y="17" width="1" height="1" fill="#fff" opacity="0.06"/>
+      <rect x="12" y="14" width="1" height="1" fill="#000" opacity="0.11"/>
+      <rect x="0" y="6" width="1" height="1" fill="#000" opacity="0.09"/>
+      <rect x="16" y="12" width="1" height="1" fill="#fff" opacity="0.05"/>
+      <rect x="8" y="0" width="1" height="1" fill="#000" opacity="0.14"/>
+      <rect x="4" y="13" width="1" height="1" fill="#000" opacity="0.08"/>
+      <rect x="18" y="9" width="1" height="1" fill="#fff" opacity="0.06"/>
+      <rect x="11" y="3" width="1" height="1" fill="#000" opacity="0.1"/>
+      <rect x="6" y="18" width="1" height="1" fill="#000" opacity="0.12"/>
+      <rect x="15" y="16" width="1" height="1" fill="#fff" opacity="0.04"/>
+      <rect x="2" y="7" width="1" height="1" fill="#000" opacity="0.11"/>
+      <rect x="13" y="11" width="1" height="1" fill="#000" opacity="0.09"/>
+      <rect x="9" y="4" width="1" height="1" fill="#fff" opacity="0.07"/>
+    </pattern>
+
+    <!-- Letter paths as reusable shapes -->
+    <path id="letterL" d="M 22,36 H 52 V 42 H 42 V 134 H 88 V 156 H 22 Z"/>
+    <path id="letterP" d="M 104,36 H 170 V 98 H 124 V 148 H 138 V 156 H 104 Z M 124,54 H 150 V 80 H 124 Z"/>
+
+    <clipPath id="letterClip">
+      <use href="#letterL"/>
+      <use href="#letterP"/>
+    </clipPath>
   </defs>
 
+  <!-- Dark background -->
   <rect width="192" height="192" fill="#0D0B0A"/>
 
-  <!-- Stepped corner brackets -->
-  <g fill="none" stroke="#C9A84C" opacity="0.5">
-    <polyline points="8,30 8,8 30,8" stroke-width="1.5"/>
-    <polyline points="14,24 14,14 24,14" stroke-width="0.75"/>
-    <polyline points="162,8 184,8 184,30" stroke-width="1.5"/>
-    <polyline points="168,14 178,14 178,24" stroke-width="0.75"/>
-    <polyline points="8,162 8,184 30,184" stroke-width="1.5"/>
-    <polyline points="14,168 14,178 24,178" stroke-width="0.75"/>
-    <polyline points="184,162 184,184 162,184" stroke-width="1.5"/>
-    <polyline points="178,168 178,178 168,178" stroke-width="0.75"/>
+  <!-- Warm background glow -->
+  <rect width="192" height="192" fill="url(#bgGlow)"/>
+
+  <!-- Outer glow halo (layer 3 - most diffuse) -->
+  <g opacity="0.04">
+    <path d="M 13,27 H 61 V 33 H 33 V 125 H 97 V 165 H 13 Z" fill="#D4B55E"/>
+    <path d="M 95,27 H 179 V 107 H 115 V 157 H 147 V 165 H 95 Z" fill="#D4B55E"/>
+  </g>
+  <!-- Glow halo (layer 2) -->
+  <g opacity="0.07">
+    <path d="M 16,30 H 58 V 36 H 36 V 128 H 94 V 162 H 16 Z" fill="#D4B55E"/>
+    <path d="M 98,30 H 176 V 104 H 118 V 154 H 144 V 162 H 98 Z" fill="#D4B55E"/>
+  </g>
+  <!-- Inner glow halo (layer 1 - tightest) -->
+  <g opacity="0.12">
+    <path d="M 19,33 H 55 V 39 H 39 V 131 H 91 V 159 H 19 Z" fill="#E8D5A3"/>
+    <path d="M 101,33 H 173 V 101 H 121 V 151 H 141 V 159 H 101 Z" fill="#E8D5A3"/>
   </g>
 
-  <!-- Decorative lines -->
-  <rect x="30" y="40" width="132" height="1" fill="url(#goldLine)"/>
-  <rect x="30" y="152" width="132" height="1" fill="url(#goldLine)"/>
+  <!-- Main LP letters -->
+  <use href="#letterL" fill="url(#gold)"/>
+  <use href="#letterP" fill="url(#gold)" fill-rule="evenodd"/>
 
-  <!-- Diamond accents -->
-  <polygon points="96,38 98,40 96,42 94,40" fill="#C9A84C" opacity="0.4"/>
-  <polygon points="96,150 98,152 96,154 94,152" fill="#C9A84C" opacity="0.4"/>
+  <!-- Grain texture overlay on letters -->
+  <rect width="192" height="192" fill="url(#grain)" clip-path="url(#letterClip)"/>
 
-  <!-- LP Letters -->
-  <g filter="url(#glow)">
-    <!-- L -->
-    <path d="M 42,50 H 57 V 131 H 93 V 146 H 42 Z" fill="url(#gold)"/>
-    <rect x="42" y="50" width="22" height="2.5" fill="url(#gold)"/>
-
-    <!-- P -->
-    <path d="M 101,50 H 150 V 102 H 116 V 146 H 101 Z M 116,65 H 135 V 88 H 116 Z" fill="url(#gold)" fill-rule="evenodd"/>
-    <rect x="101" y="143.5" width="22" height="2.5" fill="url(#gold)"/>
+  <!-- Art Deco inline details -->
+  <g opacity="0.18" fill="#0D0B0A">
+    <rect x="30" y="44" width="1.5" height="88"/>
+    <rect x="24" y="144" width="62" height="1.5"/>
+    <rect x="113" y="44" width="1.5" height="110"/>
+    <rect x="126" y="44" width="42" height="1.5"/>
+    <rect x="159" y="44" width="1.5" height="34"/>
+    <rect x="126" y="88" width="42" height="1.5"/>
   </g>
 
-  <!-- Stepped accent between letters -->
-  <g fill="#C9A84C" opacity="0.18">
-    <rect x="95" y="75" width="2" height="42"/>
-    <rect x="93" y="83" width="6" height="26"/>
+  <!-- Bright edge highlights on letters -->
+  <g opacity="0.25" fill="none" stroke="#F0E4B8" stroke-width="0.5">
+    <line x1="22" y1="36" x2="52" y2="36"/>
+    <line x1="22" y1="36" x2="22" y2="156"/>
+    <line x1="104" y1="36" x2="170" y2="36"/>
+    <line x1="104" y1="36" x2="104" y2="156"/>
   </g>
+
+  <!-- Art Deco stepped corner brackets -->
+  <g fill="none" stroke="#C9A84C" opacity="0.45">
+    <polyline points="8,26 8,8 26,8" stroke-width="1.5"/>
+    <polyline points="15,19 15,15 19,15" stroke-width="0.75"/>
+    <polyline points="166,8 184,8 184,26" stroke-width="1.5"/>
+    <polyline points="173,15 177,15 177,19" stroke-width="0.75"/>
+    <polyline points="8,166 8,184 26,184" stroke-width="1.5"/>
+    <polyline points="15,173 15,177 19,177" stroke-width="0.75"/>
+    <polyline points="184,166 184,184 166,184" stroke-width="1.5"/>
+    <polyline points="177,173 177,177 173,177" stroke-width="0.75"/>
+  </g>
+
+  <!-- Thin horizontal accent lines -->
+  <line x1="30" y1="24" x2="162" y2="24" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/>
+  <line x1="30" y1="168" x2="162" y2="168" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Small diamond accents -->
+  <polygon points="96,21 98.5,24 96,27 93.5,24" fill="#C9A84C" opacity="0.3"/>
+  <polygon points="96,165 98.5,168 96,171 93.5,168" fill="#C9A84C" opacity="0.3"/>
 </svg>
