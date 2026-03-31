@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate, Link } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
@@ -25,6 +25,7 @@ import EatsByTier from './views/EatsByTier.jsx'
 import EatsNew from './views/EatsNew.jsx'
 import EatsDetail from './views/EatsDetail.jsx'
 import EatsMapView from './views/EatsMapView.jsx'
+import PizzaGuide from './views/PizzaGuide.jsx'
 import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
 import './App.css'
@@ -128,7 +129,7 @@ function App() {
         if (jazz) setJazzData(jazz)
         if (food) {
           // Normalize restaurant data — bridge field gaps between manual entries and scraper-added
-          const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C' }
+          const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C', pizza: '#E84830' }
           if (food.restaurants) {
             food.restaurants.forEach(r => {
               // tier ↔ category
@@ -153,6 +154,7 @@ function App() {
               { key: 'street', label: 'Street', description: 'Pop-ups & Stands · Under $20/pp' },
               { key: 'feast', label: 'Feast', description: 'The Sweet Spot · $20–$120/pp' },
               { key: 'whale', label: 'Whale', description: 'Fine Dining · $120+/pp' },
+              { key: 'pizza', label: 'Pizza', description: 'LA\'s Best Pies · All Styles' },
             ]
           }
           setFoodData(food)
@@ -262,6 +264,13 @@ function App() {
                 {showFormatFilter && (
                   <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
                 )}
+                {isFoodMode && (
+                  <div className="notch-food-pills">
+                    <Link to="/food" className={`notch-food-pill ${location.pathname === '/food' ? 'active' : ''}`}>All</Link>
+                    <Link to="/food/tiers" className={`notch-food-pill ${location.pathname === '/food/tiers' ? 'active' : ''}`}>Tiers</Link>
+                    <Link to="/food/pizza" className={`notch-food-pill ${location.pathname === '/food/pizza' ? 'active' : ''}`}>Pizza</Link>
+                  </div>
+                )}
               </div>
             )}
             {filtersExpanded && (
@@ -339,6 +348,7 @@ function App() {
 
           {/* Food routes */}
           <Route path="/food" element={<FoodByCategory data={foodData} />} />
+          <Route path="/food/pizza" element={<PizzaGuide data={foodData} />} />
           <Route path="/food/tiers" element={<EatsByTier data={foodData} />} />
           <Route path="/food/new" element={<EatsNew data={foodData} />} />
           <Route path="/food/starred" element={<FoodStarred data={foodData} />} />

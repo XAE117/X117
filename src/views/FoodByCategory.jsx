@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './FoodByCategory.css'
 
 const STAR_KEY = 'palace-starred-restaurants'
@@ -160,18 +161,27 @@ function FoodByCategory({ data }) {
               {group.description && <span className="food-group-desc">{group.description}</span>}
               <span className="food-group-count">{group.items.length}</span>
             </div>
-            <div className="food-list">
-              {group.items.map(r => (
-                <RestaurantCard
-                  key={r.id}
-                  restaurant={r}
-                  starred={starredIds.includes(r.id)}
-                  onToggleStar={handleToggleStar}
-                  expanded={expandedId === r.id}
-                  onToggleExpand={(id) => setExpandedId(expandedId === id ? null : id)}
-                />
-              ))}
-            </div>
+            {group.key === 'pizza' ? (
+              <Link to="/food/pizza" className="food-pizza-guide-link">
+                <span className="food-pizza-guide-emoji">{'\uD83C\uDF55'}</span>
+                <span className="food-pizza-guide-text">View the Pizza Guide</span>
+                <span className="food-pizza-guide-count">{group.items.length} pizzerias</span>
+                <span className="food-pizza-guide-arrow">{'\u2192'}</span>
+              </Link>
+            ) : (
+              <div className="food-list">
+                {group.items.map(r => (
+                  <RestaurantCard
+                    key={r.id}
+                    restaurant={r}
+                    starred={starredIds.includes(r.id)}
+                    onToggleStar={handleToggleStar}
+                    expanded={expandedId === r.id}
+                    onToggleExpand={(id) => setExpandedId(expandedId === id ? null : id)}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         ))
       ) : (

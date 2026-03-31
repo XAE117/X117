@@ -160,8 +160,8 @@ function EatsByTier({ data }) {
   const [tierFilter, setTierFilter] = useState('all')
 
   const tiers = useMemo(() => {
-    if (!data?.restaurants) return { street: [], feast: [], whale: [] }
-    const groups = { street: [], feast: [], whale: [] }
+    if (!data?.restaurants) return { street: [], feast: [], whale: [], pizza: [] }
+    const groups = { street: [], feast: [], whale: [], pizza: [] }
     for (const r of data.restaurants) {
       if (groups[r.tier]) groups[r.tier].push(r)
     }
@@ -179,13 +179,13 @@ function EatsByTier({ data }) {
   return (
     <div className="eats-page">
       <div className="eats-filter-row">
-        {['all', 'street', 'feast', 'whale'].map(t => (
+        {['all', 'street', 'feast', 'whale', 'pizza'].map(t => (
           <button
             key={t}
             className={`eats-filter-pill ${tierFilter === t ? 'active' : ''} tier-pill-${t}`}
             onClick={() => setTierFilter(t)}
           >
-            {t === 'all' ? 'All' : t === 'street' ? 'Street' : t === 'feast' ? 'Feast' : 'Whale'}
+            {t === 'all' ? 'All' : t === 'street' ? 'Street' : t === 'feast' ? 'Feast' : t === 'whale' ? 'Whale' : 'Pizza'}
           </button>
         ))}
       </div>
@@ -215,6 +215,15 @@ function EatsByTier({ data }) {
           subtitle="Fine Dining \u00B7 $120+/pp"
           restaurants={tiers.whale}
           accentClass="tier-whale"
+        />
+      )}
+      {(tierFilter === 'all' || tierFilter === 'pizza') && (
+        <TierSection
+          tier="pizza"
+          label="PIZZA"
+          subtitle="LA\u2019s Best Pies \u00B7 All Styles"
+          restaurants={tiers.pizza}
+          accentClass="tier-pizza"
         />
       )}
     </div>

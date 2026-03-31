@@ -19,11 +19,11 @@ const JAZZ_TABS = [
 ]
 
 const FOOD_TABS = [
-  { to: '/food', end: true, emoji: '🍕', label: 'All' },
-  { to: '/food/new', emoji: '✨', label: 'New' },
-  { to: '/food/tiers', emoji: '🔥', label: 'Tiers' },
-  { to: '/food/starred', emoji: '⭐', label: 'Starred' },
-  { to: '/food/map', emoji: '📍', label: 'Hoods' },
+  { to: '/food', end: true, emoji: '\uD83C\uDF7D\uFE0F', label: 'All' },
+  { to: '/food/pizza', emoji: '\uD83C\uDF55', label: 'Pizza' },
+  { to: '/food/tiers', emoji: '\uD83D\uDD25', label: 'Tiers' },
+  { to: '/food/starred', emoji: '\u2B50', label: 'Starred' },
+  { to: '/food/map', emoji: '\uD83D\uDCCD', label: 'Hoods' },
 ]
 
 function Nav({ mode }) {

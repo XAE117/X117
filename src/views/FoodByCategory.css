@@ -297,3 +297,47 @@ a.food-source-link:hover {
   border-radius: 3px;
   padding: 0.2rem 0.45rem;
 }
+
+/* Pizza guide link card */
+.food-pizza-guide-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(232, 72, 48, 0.2);
+  border-left: 3px solid var(--eats-pizza, #E84830);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.food-pizza-guide-link:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(232, 72, 48, 0.4);
+}
+
+.food-pizza-guide-emoji {
+  font-size: 1.3rem;
+}
+
+.food-pizza-guide-text {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--eats-pizza, #E84830);
+}
+
+.food-pizza-guide-count {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.food-pizza-guide-arrow {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--eats-pizza, #E84830);
+  opacity: 0.6;
+}

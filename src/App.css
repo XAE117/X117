@@ -125,6 +125,38 @@
   margin-right: 0.05rem;
 }
 
+/* Food category pills in notch */
+.notch-food-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-left: 1px solid var(--gold-dim);
+  padding-left: 0.45rem;
+  margin-left: 0.05rem;
+}
+
+.notch-food-pill {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.15rem 0.35rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.notch-food-pill:hover {
+  color: var(--eats-accent);
+}
+
+.notch-food-pill.active {
+  color: var(--eats-accent);
+  background: rgba(232, 117, 58, 0.1);
+}
+
 /* LC proximity link in jazz filter notch */
 .notch-lc-link {
   display: flex;

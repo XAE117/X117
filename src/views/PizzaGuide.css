@@ -1,0 +1,341 @@
+/* ── Pizza Guide ── */
+
+.pizza-guide {
+  padding: 0.5rem 0;
+  padding-bottom: 5rem;
+}
+
+/* Header */
+.pizza-guide-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pizza-deco-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--eats-pizza) 20%,
+    var(--eats-pizza) 50%,
+    var(--eats-pizza) 80%,
+    transparent
+  );
+  margin: 0.6rem auto;
+  max-width: 200px;
+  opacity: 0.4;
+}
+
+.pizza-guide-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--eats-pizza);
+}
+
+.pizza-guide-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.pizza-guide-count {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+/* Section headers */
+.pizza-section {
+  margin-bottom: 2rem;
+}
+
+.pizza-section-header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.pizza-section-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eats-pizza);
+  margin-bottom: 0.35rem;
+}
+
+.pizza-section-intro {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-dim);
+  max-width: 540px;
+}
+
+.pizza-section-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+/* Card list */
+.pizza-section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Pizza cards */
+.pizza-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--eats-pizza);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pizza-card:hover {
+  background: var(--bg-card-hover);
+}
+
+.pizza-card.expanded {
+  border-color: rgba(232, 72, 48, 0.3);
+  border-left-color: var(--eats-pizza);
+}
+
+.pizza-card.pizza-glow-pulse {
+  animation: pizzaCardGlow 1.5s ease-out forwards;
+}
+
+@keyframes pizzaCardGlow {
+  0% { box-shadow: 0 0 0 rgba(232, 72, 48, 0); }
+  15% { box-shadow: 0 0 12px rgba(232, 72, 48, 0.3), inset 0 0 8px rgba(232, 72, 48, 0.05); }
+  100% { box-shadow: 0 0 0 rgba(232, 72, 48, 0); }
+}
+
+/* Card header */
+.pizza-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pizza-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.pizza-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pizza-card-hood {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.pizza-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pizza-card-price {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Style badges */
+.pizza-style-badge {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  color: var(--eats-pizza);
+  background: rgba(232, 72, 48, 0.1);
+  border: 1px solid rgba(232, 72, 48, 0.2);
+}
+
+.pizza-style-badge.style-tokyo-neapolitan {
+  color: #FF6B6B;
+  background: rgba(255, 107, 107, 0.1);
+  border-color: rgba(255, 107, 107, 0.2);
+}
+
+.pizza-style-badge.style-neo-neapolitan {
+  color: var(--eats-pizza);
+  background: rgba(232, 72, 48, 0.1);
+  border-color: rgba(232, 72, 48, 0.2);
+}
+
+.pizza-style-badge.style-sourdough {
+  color: #D4A574;
+  background: rgba(212, 165, 116, 0.1);
+  border-color: rgba(212, 165, 116, 0.2);
+}
+
+.pizza-style-badge.style-chicago {
+  color: #E8A838;
+  background: rgba(232, 168, 56, 0.1);
+  border-color: rgba(232, 168, 56, 0.2);
+}
+
+.pizza-style-badge.style-detroit-square {
+  color: #C9A84C;
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.2);
+}
+
+/* Fire */
+.pizza-fire {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* Star button */
+.pizza-star-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.15s ease;
+  padding: 0.1rem 0.2rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pizza-star-btn:hover {
+  color: var(--gold);
+  transform: scale(1.15);
+}
+
+.pizza-star-btn.starred {
+  color: var(--gold);
+  filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.5));
+}
+
+/* Expanded card body */
+.pizza-card-body {
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  animation: pizzaExpandIn 0.25s ease-out both;
+}
+
+@keyframes pizzaExpandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pizza-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+
+.pizza-card-whyhot {
+  font-style: italic;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--eats-pizza);
+  border-left: 2px solid var(--eats-pizza);
+  padding-left: 0.75rem;
+  margin: 0.6rem 0;
+  opacity: 0.9;
+}
+
+.pizza-card-accolades {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0;
+}
+
+.pizza-accolade-chip {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+
+.pizza-card-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.pizza-tag-chip {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+  padding: 0.2rem 0.45rem;
+}
+
+.pizza-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.pizza-action-btn {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pizza-detail-btn {
+  background: transparent;
+  color: var(--eats-pizza);
+  border: 1px solid rgba(232, 72, 48, 0.3);
+}
+
+.pizza-detail-btn:hover {
+  background: rgba(232, 72, 48, 0.08);
+  border-color: var(--eats-pizza);
+  color: var(--eats-pizza);
+}
