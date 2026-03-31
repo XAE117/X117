@@ -1,21 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20" result="blur1"/>
+      <feFlood flood-color="#C9A84C" flood-opacity="0.5"/>
+      <feComposite in2="blur1" operator="in" result="outerGlow"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur2"/>
+      <feFlood flood-color="#EEDFA0" flood-opacity="0.35"/>
+      <feComposite in2="blur2" operator="in" result="innerGlow"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="5" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feBlend in="SourceGraphic" in2="mono" mode="overlay" result="grained"/>
+      <feMerge>
+        <feMergeNode in="outerGlow"/>
+        <feMergeNode in="innerGlow"/>
+        <feMergeNode in="grained"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDE0B1"/>
+      <stop offset="35%" stop-color="#D4B55E"/>
+      <stop offset="65%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#9A7B30"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#C9A84C" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#E8D5A3" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#C9A84C" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
   <rect width="512" height="512" fill="#0D0B0A"/>
-  <rect x="32" y="32" width="448" height="448" stroke="#C9A84C" stroke-width="3" fill="none"/>
-  <rect x="48" y="48" width="416" height="416" stroke="#A8893A" stroke-width="1.5" fill="none"/>
-  <!-- L -->
-  <text x="128" y="320" font-family="Georgia, serif" font-weight="bold" font-size="200" fill="#C9A84C">L</text>
-  <!-- P -->
-  <text x="260" y="320" font-family="Georgia, serif" font-weight="bold" font-size="200" fill="#C9A84C">P</text>
-  <!-- Corner ornaments -->
-  <line x1="40" y1="40" x2="80" y2="40" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="40" y1="40" x2="40" y2="80" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="472" y1="40" x2="432" y2="40" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="472" y1="40" x2="472" y2="80" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="40" y1="472" x2="80" y2="472" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="40" y1="472" x2="40" y2="432" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="472" y1="472" x2="432" y2="472" stroke="#C9A84C" stroke-width="2"/>
-  <line x1="472" y1="472" x2="472" y2="432" stroke="#C9A84C" stroke-width="2"/>
-  <!-- Decorative line -->
-  <line x1="80" y1="340" x2="432" y2="340" stroke="#A8893A" stroke-width="1" opacity="0.5"/>
-  <text x="180" y="380" font-family="sans-serif" font-weight="300" font-size="28" fill="#E8D5A3" letter-spacing="8">LIZA'S PALACE</text>
+
+  <!-- Art Deco stepped corner ornaments -->
+  <g fill="none" stroke="#C9A84C" opacity="0.5">
+    <!-- Top-left stepped bracket -->
+    <polyline points="20,80 20,20 80,20" stroke-width="2.5"/>
+    <polyline points="36,64 36,36 64,36" stroke-width="1.5"/>
+    <polyline points="50,52 50,50 52,50" stroke-width="1"/>
+    <!-- Top-right -->
+    <polyline points="432,20 492,20 492,80" stroke-width="2.5"/>
+    <polyline points="448,36 476,36 476,64" stroke-width="1.5"/>
+    <polyline points="460,50 462,50 462,52" stroke-width="1"/>
+    <!-- Bottom-left -->
+    <polyline points="20,432 20,492 80,492" stroke-width="2.5"/>
+    <polyline points="36,448 36,476 64,476" stroke-width="1.5"/>
+    <polyline points="50,460 50,462 52,462" stroke-width="1"/>
+    <!-- Bottom-right -->
+    <polyline points="492,432 492,492 432,492" stroke-width="2.5"/>
+    <polyline points="476,448 476,476 448,476" stroke-width="1.5"/>
+    <polyline points="462,460 462,462 460,462" stroke-width="1"/>
+  </g>
+
+  <!-- Vertical accent lines flanking letters -->
+  <line x1="82" y1="110" x2="82" y2="402" stroke="#C9A84C" stroke-width="1" opacity="0.15"/>
+  <line x1="430" y1="110" x2="430" y2="402" stroke="#C9A84C" stroke-width="1" opacity="0.15"/>
+
+  <!-- Horizontal decorative lines -->
+  <rect x="80" y="108" width="352" height="1.5" fill="url(#goldLine)"/>
+  <rect x="80" y="402" width="352" height="1.5" fill="url(#goldLine)"/>
+  <!-- Inner thinner lines -->
+  <rect x="100" y="114" width="312" height="0.75" fill="url(#goldLine)" opacity="0.5"/>
+  <rect x="100" y="398" width="312" height="0.75" fill="url(#goldLine)" opacity="0.5"/>
+
+  <!-- Small diamond accents on horizontal lines -->
+  <polygon points="256,104 260,108 256,112 252,108" fill="#C9A84C" opacity="0.4"/>
+  <polygon points="256,398 260,402 256,406 252,402" fill="#C9A84C" opacity="0.4"/>
+
+  <!-- LP Letters with glow + grain -->
+  <g filter="url(#glow)">
+    <!-- L: geometric Art Deco form -->
+    <path d="M 112,134 H 152 V 346 H 248 V 386 H 112 Z" fill="url(#gold)"/>
+    <!-- Small serif cap on L -->
+    <rect x="112" y="134" width="56" height="6" fill="url(#gold)"/>
+
+    <!-- P: geometric rectangular bowl -->
+    <path d="M 268,134 H 400 V 272 H 308 V 386 H 268 Z M 308,172 H 362 V 236 H 308 Z" fill="url(#gold)" fill-rule="evenodd"/>
+    <!-- Small serif foot on P -->
+    <rect x="268" y="380" width="56" height="6" fill="url(#gold)"/>
+  </g>
+
+  <!-- Stepped horizontal accent between letters -->
+  <g fill="#C9A84C" opacity="0.2">
+    <rect x="253" y="200" width="4" height="112"/>
+    <rect x="249" y="220" width="12" height="72"/>
+  </g>
 </svg>

@@ -1,18 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur1"/>
+      <feFlood flood-color="#C9A84C" flood-opacity="0.5"/>
+      <feComposite in2="blur1" operator="in" result="outerGlow"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur2"/>
+      <feFlood flood-color="#EEDFA0" flood-opacity="0.35"/>
+      <feComposite in2="blur2" operator="in" result="innerGlow"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="4" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feBlend in="SourceGraphic" in2="mono" mode="overlay" result="grained"/>
+      <feMerge>
+        <feMergeNode in="outerGlow"/>
+        <feMergeNode in="innerGlow"/>
+        <feMergeNode in="grained"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDE0B1"/>
+      <stop offset="35%" stop-color="#D4B55E"/>
+      <stop offset="65%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#9A7B30"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A84C" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#C9A84C" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#E8D5A3" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#C9A84C" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
   <rect width="192" height="192" fill="#0D0B0A"/>
-  <rect x="16" y="16" width="160" height="160" stroke="#C9A84C" stroke-width="2" fill="none"/>
-  <rect x="24" y="24" width="144" height="144" stroke="#A8893A" stroke-width="1" fill="none"/>
-  <!-- L -->
-  <text x="52" y="118" font-family="Georgia, serif" font-weight="bold" font-size="72" fill="#C9A84C">L</text>
-  <!-- P -->
-  <text x="96" y="118" font-family="Georgia, serif" font-weight="bold" font-size="72" fill="#C9A84C">P</text>
-  <!-- Corner ornaments -->
-  <line x1="20" y1="20" x2="40" y2="20" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="20" y1="20" x2="20" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="20" x2="152" y2="20" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="20" x2="172" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="20" y1="172" x2="40" y2="172" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="20" y1="172" x2="20" y2="152" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="172" x2="152" y2="172" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="172" x2="172" y2="152" stroke="#C9A84C" stroke-width="1.5"/>
+
+  <!-- Stepped corner brackets -->
+  <g fill="none" stroke="#C9A84C" opacity="0.5">
+    <polyline points="8,30 8,8 30,8" stroke-width="1.5"/>
+    <polyline points="14,24 14,14 24,14" stroke-width="0.75"/>
+    <polyline points="162,8 184,8 184,30" stroke-width="1.5"/>
+    <polyline points="168,14 178,14 178,24" stroke-width="0.75"/>
+    <polyline points="8,162 8,184 30,184" stroke-width="1.5"/>
+    <polyline points="14,168 14,178 24,178" stroke-width="0.75"/>
+    <polyline points="184,162 184,184 162,184" stroke-width="1.5"/>
+    <polyline points="178,168 178,178 168,178" stroke-width="0.75"/>
+  </g>
+
+  <!-- Decorative lines -->
+  <rect x="30" y="40" width="132" height="1" fill="url(#goldLine)"/>
+  <rect x="30" y="152" width="132" height="1" fill="url(#goldLine)"/>
+
+  <!-- Diamond accents -->
+  <polygon points="96,38 98,40 96,42 94,40" fill="#C9A84C" opacity="0.4"/>
+  <polygon points="96,150 98,152 96,154 94,152" fill="#C9A84C" opacity="0.4"/>
+
+  <!-- LP Letters -->
+  <g filter="url(#glow)">
+    <!-- L -->
+    <path d="M 42,50 H 57 V 131 H 93 V 146 H 42 Z" fill="url(#gold)"/>
+    <rect x="42" y="50" width="22" height="2.5" fill="url(#gold)"/>
+
+    <!-- P -->
+    <path d="M 101,50 H 150 V 102 H 116 V 146 H 101 Z M 116,65 H 135 V 88 H 116 Z" fill="url(#gold)" fill-rule="evenodd"/>
+    <rect x="101" y="143.5" width="22" height="2.5" fill="url(#gold)"/>
+  </g>
+
+  <!-- Stepped accent between letters -->
+  <g fill="#C9A84C" opacity="0.18">
+    <rect x="95" y="75" width="2" height="42"/>
+    <rect x="93" y="83" width="6" height="26"/>
+  </g>
 </svg>
