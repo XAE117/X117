@@ -13,9 +13,10 @@
  *   GOOGLE_PLACES_API_KEY — For address/hours/rating enrichment
  */
 
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
+
 import { scrapeEaterHeatmap } from './sources/eater-heatmap.js'
 import { scrapeEaterEssential } from './sources/eater-essential.js'
 import { scrapeInfatuationHitList } from './sources/infatuation-hitlist.js'
@@ -24,11 +25,26 @@ import { scrapeThrillistLA } from './sources/thrillist-la.js'
 import { scrapeMichelinGuide } from './sources/michelin-guide.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// Load .env file if present (no dotenv dependency needed)
+try {
+  const envFile = readFileSync(join(__dirname, '..', '.env'), 'utf8')
+  for (const line of envFile.split('\n')) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith('#')) continue
+    const eqIdx = trimmed.indexOf('=')
+    if (eqIdx === -1) continue
+    const key = trimmed.slice(0, eqIdx).trim()
+    const val = trimmed.slice(eqIdx + 1).trim()
+    if (!process.env[key]) process.env[key] = val
+  }
+} catch { /* .env not found, use existing env vars */ }
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'restaurants.json')
 const MANUAL_PATH = join(__dirname, '..', 'public', 'restaurants-manual.json')
 const MICHELIN_PATH = join(__dirname, '..', 'public', 'michelin-seed.json')
 const ALIASES_PATH = join(__dirname, '..', 'public', 'restaurant-aliases.json')
 const LOG_PATH = join(__dirname, '..', 'public', 'scrape-log.json')
+const NEIGHBORHOOD_CACHE_PATH = join(__dirname, '..', 'public', 'neighborhood-cache.json')
 
 // ── Source weights for heat scoring ──
 const SOURCE_WEIGHTS = {
@@ -127,6 +143,117 @@ function deduplicateRestaurants(allRestaurants) {
   }
 
   return Array.from(merged.values())
+}
+
+// ── Google Places neighborhood enrichment ──
+async function enrichNeighborhoods(restaurants) {
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY
+  if (!apiKey) {
+    console.log('  ⚠ GOOGLE_PLACES_API_KEY not set, skipping neighborhood enrichment')
+    return
+  }
+
+  // Load cache
+  let cache = {}
+  try {
+    cache = JSON.parse(readFileSync(NEIGHBORHOOD_CACHE_PATH, 'utf8'))
+  } catch { /* no cache yet */ }
+
+  const needsEnrichment = restaurants.filter(r => !r.neighborhood || r.neighborhood.trim() === '')
+  if (needsEnrichment.length === 0) {
+    console.log('  All restaurants have neighborhoods, skipping enrichment')
+    return
+  }
+
+  console.log(`\n  Enriching ${needsEnrichment.length} restaurants missing neighborhoods...`)
+  let enriched = 0
+
+  for (const r of needsEnrichment) {
+    const normKey = r.name.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+    // Check cache first
+    if (cache[normKey]) {
+      if (cache[normKey].neighborhood) {
+        r.neighborhood = cache[normKey].neighborhood
+        if (cache[normKey].address && !r.address) r.address = cache[normKey].address
+        enriched++
+      }
+      continue
+    }
+
+    try {
+      // Step 1: Find the place to get place_id
+      const query = encodeURIComponent(r.name + ' restaurant Los Angeles')
+      const findUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${query}&inputtype=textquery&fields=place_id,formatted_address,name&key=${apiKey}`
+      const findRes = await fetch(findUrl)
+      const findData = await findRes.json()
+
+      if (findData.candidates && findData.candidates.length > 0) {
+        const candidate = findData.candidates[0]
+        const placeId = candidate.place_id
+        const address = candidate.formatted_address || ''
+
+        // Step 2: Use Place Details to get structured address_components
+        let neighborhood = ''
+        if (placeId) {
+          const detailUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=address_components&key=${apiKey}`
+          const detailRes = await fetch(detailUrl)
+          const detailData = await detailRes.json()
+
+          if (detailData.result?.address_components) {
+            const components = detailData.result.address_components
+            // Priority order: neighborhood > sublocality_level_1 > sublocality > locality
+            const hoodComp = components.find(c => c.types.includes('neighborhood'))
+              || components.find(c => c.types.includes('sublocality_level_1'))
+              || components.find(c => c.types.includes('sublocality'))
+            if (hoodComp) {
+              neighborhood = hoodComp.long_name
+            }
+            // Fallback: if no neighborhood but we have a locality that isn't "Los Angeles"
+            if (!neighborhood) {
+              const locality = components.find(c => c.types.includes('locality'))
+              if (locality && !/^los angeles$/i.test(locality.long_name)) {
+                neighborhood = locality.long_name
+              }
+            }
+          }
+        }
+
+        // Final fallback: parse from formatted address
+        if (!neighborhood && address) {
+          const parts = address.split(',').map(s => s.trim())
+          if (parts.length >= 4) {
+            const candidate = parts[1]
+            if (!/^(los angeles|ca|california|\d)$/i.test(candidate) && candidate.length > 2) {
+              neighborhood = candidate
+            }
+          }
+        }
+
+        if (neighborhood) {
+          r.neighborhood = neighborhood
+          if (!r.address) r.address = address
+          cache[normKey] = { neighborhood, address }
+          enriched++
+        } else {
+          // Cache the miss so we don't re-query
+          cache[normKey] = { neighborhood: '', address }
+        }
+      } else {
+        // Not found — cache the miss
+        cache[normKey] = { neighborhood: '', address: '' }
+      }
+
+      // Rate limit: 5 requests per second (2 calls per restaurant)
+      await new Promise(resolve => setTimeout(resolve, 200))
+    } catch (err) {
+      // Skip this restaurant, don't fail the whole scrape
+    }
+  }
+
+  // Save cache
+  writeFileSync(NEIGHBORHOOD_CACHE_PATH, JSON.stringify(cache, null, 2))
+  console.log(`    → Enriched ${enriched}/${needsEnrichment.length} restaurants`)
 }
 
 // ── Main orchestrator ──
@@ -271,6 +398,9 @@ async function main() {
     r.heatScore = calculateHeatScore(r.sources || [])
     r.id = r.id || slugify(r.name, r.neighborhood)
   }
+
+  // ── Enrich missing neighborhoods via Google Places ──
+  await enrichNeighborhoods(cleaned)
 
   // ── Scrape diff: detect added/removed, preserve addedDate ──
   const previousIds = new Set(existing.restaurants.map(r => r.id))

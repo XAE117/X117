@@ -31,3 +31,7 @@ dist-ssr
 
 # SMS notification tracking (local state)
 .notified-screenings.json
+
+# Scraper caches
+public/neighborhood-cache.json
+public/scrape-log.json

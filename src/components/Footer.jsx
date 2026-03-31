@@ -1,6 +1,6 @@
 import './Footer.css'
 
-function Footer({ lastUpdated, isJazz }) {
+function Footer({ lastUpdated, isJazz, isFood }) {
   const formatDate = (dateStr) => {
     if (!dateStr) return 'recently'
     const d = new Date(dateStr)
@@ -26,6 +26,11 @@ function Footer({ lastUpdated, isJazz }) {
             @minaretrecords
           </a>{' '}
           on Instagram for the latest.
+        </div>
+      )}
+      {isFood && (
+        <div className="footer-jazz-note">
+          Sourced from Eater LA, Infatuation, Michelin Guide, Resy, and Thrillist.
         </div>
       )}
     </footer>

@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-28T02:28:18.979Z",
-  "lastFullScrape": "2026-03-28T02:28:18.979Z",
+  "lastUpdated": "2026-03-29T09:41:48.988Z",
+  "lastFullScrape": "2026-03-29T09:41:48.988Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -131,7 +131,35 @@
     "la-shukran",
     "caf-riggs",
     "xiquet",
-    "family-ethiopian"
+    "family-ethiopian",
+    "badmaash-los-angeles",
+    "sushi-takeda-los-angeles",
+    "bar-sawa-los-angeles",
+    "marugame-monzo-los-angeles",
+    "san-laurel-los-angeles",
+    "715-los-angeles",
+    "baroo-los-angeles",
+    "yunomi-handroll-los-angeles",
+    "q-sushi-los-angeles",
+    "girl-the-goat-los-angeles-los-angeles",
+    "firstborn-los-angeles",
+    "pizzeria-bianco-los-angeles-los-angeles",
+    "dama-los-angeles",
+    "rossoblu-los-angeles",
+    "gr-los-angeles",
+    "kod-los-angeles",
+    "tsubaki-los-angeles",
+    "quarter-sheets-los-angeles",
+    "guisados-los-angeles",
+    "moo-s-craft-barbecue-los-angeles",
+    "carnes-asadas-pancho-lopez-los-angeles",
+    "parks-bbq-los-angeles",
+    "danbi-los-angeles",
+    "pine-crane-los-angeles",
+    "dha-rae-oak-los-angeles",
+    "yeobo-darling-menlo-park",
+    "naides-san-francisco",
+    "little-mountain-montecito"
   ],
   "restaurants": [
     {
@@ -162,12 +190,16 @@
         {
           "name": "Michelin Bib Gourmand",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/holbox"
         }
       ],
       "pricePp": 14,
       "tier": "street",
-      "sourceCount": 1,
-      "heatScore": 2
+      "sourceCount": 2,
+      "heatScore": 4
     },
     {
       "id": "burritos-la-palma",
@@ -436,12 +468,16 @@
         {
           "name": "Michelin 2 Stars",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/hayato"
         }
       ],
       "pricePp": 300,
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2
+      "sourceCount": 2,
+      "heatScore": 4
     },
     {
       "id": "dialogue",
@@ -498,12 +534,16 @@
         {
           "name": "Michelin 1 Star",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/kato"
         }
       ],
       "pricePp": 98,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2
+      "sourceCount": 2,
+      "heatScore": 4
     },
     {
       "id": "republique",
@@ -561,8 +601,14 @@
       ],
       "color": "#C96B3C",
       "tier": "feast",
-      "sourceCount": 0,
-      "heatScore": 0
+      "sourceCount": 1,
+      "heatScore": 2,
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/bestia"
+        }
+      ]
     },
     {
       "id": "bavel",
@@ -609,8 +655,14 @@
       ],
       "color": "#C96B3C",
       "tier": "feast",
-      "sourceCount": 0,
-      "heatScore": 0
+      "sourceCount": 1,
+      "heatScore": 2,
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/guelaguetza"
+        }
+      ]
     },
     {
       "id": "majordomo",
@@ -669,7 +721,7 @@
     },
     {
       "name": "Lielle",
-      "neighborhood": "",
+      "neighborhood": "Pico-Robertson",
       "cuisine": "",
       "sources": [
         {
@@ -689,11 +741,12 @@
       "sourceCount": 2,
       "heatScore": 6,
       "id": "lielle",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "9575 W Pico Blvd, Los Angeles, CA 90035, United States"
     },
     {
       "name": "Sonmari",
-      "neighborhood": "",
+      "neighborhood": "Silver Lake",
       "cuisine": "",
       "sources": [
         {
@@ -709,11 +762,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "sonmari",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "3503 Sunset Blvd, Los Angeles, CA 90026, United States"
     },
     {
       "name": "Cheesesteaks By Matū",
-      "neighborhood": "",
+      "neighborhood": "Pasadena",
       "cuisine": "",
       "sources": [
         {
@@ -729,11 +783,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "cheesesteaks-by-mat",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "625B E Colorado Blvd, Pasadena, CA 91101, United States"
     },
     {
       "name": "Lapaba",
-      "neighborhood": "",
+      "neighborhood": "Koreatown",
       "cuisine": "",
       "sources": [
         {
@@ -753,11 +808,12 @@
       "sourceCount": 2,
       "heatScore": 6,
       "id": "lapaba",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "558 S Western Ave, Los Angeles, CA 90020, United States"
     },
     {
       "name": "Sqirl",
-      "neighborhood": "",
+      "neighborhood": "East Hollywood",
       "cuisine": "",
       "sources": [
         {
@@ -778,11 +834,12 @@
       "heatScore": 5,
       "id": "sqirl",
       "addedDate": "2026-03-19",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sqirl_la?venueId=1640"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sqirl_la?venueId=1640",
+      "address": "720 Virgil Ave #4, Los Angeles, CA 90029, United States"
     },
     {
       "name": "Regalade",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -798,11 +855,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "regalade",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "8136 W 3rd St, Los Angeles, CA 90048, United States"
     },
     {
       "name": "Kar Son",
-      "neighborhood": "",
+      "neighborhood": "ROW M1 Suite 134",
       "cuisine": "",
       "sources": [
         {
@@ -818,11 +876,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "kar-son",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "777 S Alameda St, ROW M1 Suite 134, Los Angeles, CA 90021, United States"
     },
     {
       "name": "Holy Basil",
-      "neighborhood": "",
+      "neighborhood": "Downtown Los Angeles",
       "cuisine": "",
       "sources": [
         {
@@ -838,11 +897,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "holy-basil",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "718 S Los Angeles St space A, Los Angeles, CA 90014, United States"
     },
     {
       "name": "Little Fish",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -862,11 +922,12 @@
       "sourceCount": 2,
       "heatScore": 5,
       "id": "little-fish",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "5035 Melrose Ave, Los Angeles, CA 90038, United States"
     },
     {
       "name": "Hermon's",
-      "neighborhood": "",
+      "neighborhood": "Northeast Los Angeles",
       "cuisine": "",
       "sources": [
         {
@@ -891,16 +952,21 @@
       "heatScore": 8,
       "id": "hermon-s",
       "addedDate": "2026-03-19",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/hermons?venueId=93816"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/hermons?venueId=93816",
+      "address": "5800 Monterey Rd, Los Angeles, CA 90042, United States"
     },
     {
       "name": "Corridor 109",
-      "neighborhood": "",
+      "neighborhood": "Larchmont",
       "cuisine": "",
       "sources": [
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/corridor-109"
         }
       ],
       "tags": [
@@ -908,14 +974,15 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "corridor-109",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "641 N Western Ave Ste A, Los Angeles, CA 90004, United States"
     },
     {
       "name": "Henrietta",
-      "neighborhood": "",
+      "neighborhood": "Westlake",
       "cuisine": "",
       "sources": [
         {
@@ -936,11 +1003,12 @@
       "heatScore": 5,
       "id": "henrietta",
       "addedDate": "2026-03-19",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/henrietta-ca?venueId=93420"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/henrietta-ca?venueId=93420",
+      "address": "343 Glendale Blvd, Los Angeles, CA 90026, United States"
     },
     {
       "name": "Chainsaw",
-      "neighborhood": "",
+      "neighborhood": "Larchmont",
       "cuisine": "",
       "sources": [
         {
@@ -956,11 +1024,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "chainsaw",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "5022 Melrose Ave, Los Angeles, CA 90038, United States"
     },
     {
       "name": "Hojokban",
-      "neighborhood": "",
+      "neighborhood": "Downtown Los Angeles",
       "cuisine": "",
       "sources": [
         {
@@ -980,11 +1049,12 @@
       "sourceCount": 2,
       "heatScore": 6,
       "id": "hojokban",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "734 E 3rd St, Los Angeles, CA 90013, United States"
     },
     {
       "name": "Old Gold Tomato Pies",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -1000,11 +1070,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "old-gold-tomato-pies",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "4681 Hollywood Blvd, Los Angeles, CA 90027, United States"
     },
     {
       "name": "Max & Helen's",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -1020,11 +1091,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "max-helen-s",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "127 N Larchmont Blvd, Los Angeles, CA 90004, United States"
     },
     {
       "name": "The Mulberry",
-      "neighborhood": "",
+      "neighborhood": "Sawtelle",
       "cuisine": "",
       "sources": [
         {
@@ -1049,11 +1121,12 @@
       "heatScore": 8,
       "id": "the-mulberry",
       "addedDate": "2026-03-19",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-mulberry?venueId=93307"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-mulberry?venueId=93307",
+      "address": "1800 Sawtelle Blvd, Los Angeles, CA 90025, United States"
     },
     {
       "name": "Wilde’s",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -1074,16 +1147,21 @@
       "heatScore": 5,
       "id": "wilde-s",
       "addedDate": "2026-03-19",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/wildes?venueId=92065"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/wildes?venueId=92065",
+      "address": "1850 Hillhurst Ave, Los Angeles, CA 90027, United States"
     },
     {
       "name": "Morihiro",
-      "neighborhood": "",
+      "neighborhood": "Echo Park",
       "cuisine": "",
       "sources": [
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/morihiro"
         }
       ],
       "tags": [
@@ -1091,14 +1169,15 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "morihiro",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "1115 Sunset Blvd Ste 100, Los Angeles, CA 90012, United States"
     },
     {
       "name": "Sonny's",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -1114,11 +1193,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "sonny-s",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "7501 Sunset Blvd, Los Angeles, CA 90046, United States"
     },
     {
       "name": "LA’s New Restaurant Openings",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "sources": [
         {
@@ -1134,7 +1214,8 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "la-s-new-restaurant-openings",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "address": "127 N Larchmont Blvd, Los Angeles, CA 90004, United States"
     },
     {
       "name": "Somni",
@@ -1294,6 +1375,10 @@
         {
           "name": "Michelin 1 Star",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/camphor"
         }
       ],
       "tags": [
@@ -1301,8 +1386,8 @@
         "tasting-menu"
       ],
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "camphor-dtla",
       "addedDate": "2026-03-19"
     },
@@ -1338,6 +1423,10 @@
         {
           "name": "Michelin 1 Star",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/sushi-kaneyoshi"
         }
       ],
       "tags": [
@@ -1345,8 +1434,8 @@
         "tasting-menu"
       ],
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "sushi-kaneyoshi-dtla",
       "addedDate": "2026-03-19"
     },
@@ -1642,7 +1731,7 @@
     },
     {
       "name": "Bevel Coffee",
-      "neighborhood": "",
+      "neighborhood": "Pasadena",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1656,7 +1745,8 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "bevel-coffee",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1866 Allen Ave, Pasadena, CA 91104, United States"
     },
     {
       "name": "Mariscos Los Corchos",
@@ -1678,7 +1768,7 @@
     },
     {
       "name": "Le Dräq",
-      "neighborhood": "",
+      "neighborhood": "Downtown Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1692,11 +1782,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "le-dr-q",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "118 East 4th St, Los Angeles, CA 90013, United States"
     },
     {
       "name": "Paradise Dynasty",
-      "neighborhood": "",
+      "neighborhood": "Glendale",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1710,11 +1801,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "paradise-dynasty",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "177 Caruso Ave, Glendale, CA 91210, United States"
     },
     {
       "name": "El Moro Echo Park",
-      "neighborhood": "",
+      "neighborhood": "Echo Park",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1728,11 +1820,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "el-moro-echo-park",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1524 Sunset Blvd, Los Angeles, CA 90026, United States"
     },
     {
       "name": "Vandell",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1746,11 +1839,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "vandell",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1966 Hillhurst Ave, Los Angeles, CA 90027, United States"
     },
     {
       "name": "Chainsaw Cafe",
-      "neighborhood": "",
+      "neighborhood": "Larchmont",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1764,11 +1858,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "chainsaw-cafe",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "5022 Melrose Ave, Los Angeles, CA 90038, United States"
     },
     {
       "name": "Little Fish Melrose Hill",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1787,11 +1882,12 @@
       "sourceCount": 2,
       "heatScore": 5,
       "id": "little-fish-melrose-hill",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "5035 Melrose Ave, Los Angeles, CA 90038, United States"
     },
     {
       "name": "Harun Coffee",
-      "neighborhood": "",
+      "neighborhood": "South Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1805,11 +1901,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "harun-coffee",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "4336 Degnan Blvd, Los Angeles, CA 90008, United States"
     },
     {
       "name": "The Night We Met",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1828,11 +1925,12 @@
       "sourceCount": 2,
       "heatScore": 5,
       "id": "the-night-we-met",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "788 S La Brea Ave, Los Angeles, CA 90036, United States"
     },
     {
       "name": "Fiorelli Pizza",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1846,11 +1944,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "fiorelli-pizza",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "8236 W 3rd St, Los Angeles, CA 90048, United States"
     },
     {
       "name": "Toranj Manhattan Beach",
-      "neighborhood": "",
+      "neighborhood": "Manhattan Beach",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1864,11 +1963,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "toranj-manhattan-beach",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1019 Manhattan Beach Blvd, Manhattan Beach, CA 90266, United States"
     },
     {
       "name": "Liu’s Cafe Westwood",
-      "neighborhood": "",
+      "neighborhood": "Westwood",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1882,11 +1982,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "liu-s-cafe-westwood",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1108 Gayley Ave, Los Angeles, CA 90024, United States"
     },
     {
       "name": "Holy Basil Santa Monica",
-      "neighborhood": "",
+      "neighborhood": "Santa Monica",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -1900,11 +2001,12 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "holy-basil-santa-monica",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "2828 Santa Monica Blvd, Santa Monica, CA 90404, United States"
     },
     {
       "name": "Noma LA",
-      "neighborhood": "",
+      "neighborhood": "Santa Monica",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/noma-la?date=2026-02-18&seats=2",
@@ -1919,11 +2021,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "noma-la",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "2020 Wilshire Blvd, Santa Monica, CA 90403, United States"
     },
     {
       "name": "Holbox Tasting Menu",
-      "neighborhood": "",
+      "neighborhood": "South Los Angeles",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/holbox?venueId=84197",
@@ -1938,11 +2041,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "holbox-tasting-menu",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "3655 S Grand Ave c9, Los Angeles, CA 90007, United States"
     },
     {
       "name": "Darling by Sean Brock",
-      "neighborhood": "",
+      "neighborhood": "West Hollywood",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/darling-ca?venueId=92551",
@@ -1957,11 +2061,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "darling-by-sean-brock",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "631 N Robertson Blvd, West Hollywood, CA 90069, United States"
     },
     {
       "name": "baby bistro",
-      "neighborhood": "",
+      "neighborhood": "Chinatown",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/baby-bistro?venueId=85600",
@@ -1976,11 +2081,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "baby-bistro",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1027 Alpine St, Los Angeles, CA 90012, United States"
     },
     {
       "name": "Sora Craft Kitchen",
-      "neighborhood": "",
+      "neighborhood": "Downtown Los Angeles",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sora-craft-kitchen?venueId=89495",
@@ -1995,7 +2101,8 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "sora-craft-kitchen",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1109 E 12th St, Los Angeles, CA 90021, United States"
     },
     {
       "name": "Only The Wild Ones",
@@ -2018,7 +2125,7 @@
     },
     {
       "name": "Marvito",
-      "neighborhood": "",
+      "neighborhood": "West Hollywood",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/marvito?venueId=91519",
@@ -2033,7 +2140,8 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "marvito",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1113 N Harper Ave, West Hollywood, CA 90046, United States"
     },
     {
       "name": "Bess",
@@ -2056,7 +2164,7 @@
     },
     {
       "name": "Ine Bistro",
-      "neighborhood": "",
+      "neighborhood": "Highland Park",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/ine-bistro?venueId=92802",
@@ -2071,11 +2179,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "ine-bistro",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "4672 York Blvd, Los Angeles, CA 90041, United States"
     },
     {
       "name": "Lucia",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/lucia-ca?venueId=87329",
@@ -2090,11 +2199,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "lucia",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "351 N Fairfax Ave, Los Angeles, CA 90036, United States"
     },
     {
       "name": "Café Tondo",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/cafe-tondo?venueId=92005",
@@ -2109,11 +2219,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "caf-tondo",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1135 N Alameda St, Los Angeles, CA 90012, United States"
     },
     {
       "name": "Electric Bleu",
-      "neighborhood": "",
+      "neighborhood": "Mar Vista",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/electric-bleu?venueId=91791",
@@ -2128,7 +2239,8 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "electric-bleu",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "3523 S Centinela Ave, Los Angeles, CA 90066, United States"
     },
     {
       "name": "Cuevita",
@@ -2151,7 +2263,7 @@
     },
     {
       "name": "Force of Nature",
-      "neighborhood": "",
+      "neighborhood": "Venice",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/force-of-nature?venueId=91354&date=2025-09-24&seats=2",
@@ -2166,11 +2278,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "force-of-nature",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1031 Abbot Kinney Blvd, Venice, CA 90291, United States"
     },
     {
       "name": "Barra Santos",
-      "neighborhood": "",
+      "neighborhood": "Northeast Los Angeles",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/barra-santos?venueId=69340",
@@ -2178,18 +2291,23 @@
         {
           "name": "Resy Hit List",
           "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/barra-santos"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "barra-santos",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "1215 Cypress Ave, Los Angeles, CA 90065, United States"
     },
     {
       "name": "Tomat",
-      "neighborhood": "",
+      "neighborhood": "Westchester",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/tomat?venueId=84725",
@@ -2204,11 +2322,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "tomat",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "6261 W 87th St, Los Angeles, CA 90045, United States"
     },
     {
       "name": "Ahgassi Gopchang - LA",
-      "neighborhood": "",
+      "neighborhood": "Koreatown",
       "cuisine": "",
       "description": "",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/ahgassi-gopchang-la?venueId=94018",
@@ -2223,11 +2342,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "ahgassi-gopchang-la",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "address": "3744 W 6th St, Los Angeles, CA 90005, United States"
     },
     {
       "name": "Bar Sinizki",
-      "neighborhood": "",
+      "neighborhood": "Northeast Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2241,11 +2361,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "bar-sinizki",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "3147 Glendale Blvd, Los Angeles, CA 90039, United States"
     },
     {
       "name": "Taqueria Frontera",
-      "neighborhood": "",
+      "neighborhood": "Northeast Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2259,11 +2380,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "taqueria-frontera",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "700 Cypress Ave, Los Angeles, CA 90065, United States"
     },
     {
       "name": "Carnal",
-      "neighborhood": "",
+      "neighborhood": "Highland Park",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2277,11 +2399,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "carnal",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "5831 N Figueroa St, Los Angeles, CA 90042, United States"
     },
     {
       "name": "Zizou",
-      "neighborhood": "",
+      "neighborhood": "Lincoln Heights",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2295,11 +2418,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "zizou",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "2425 Daly St, Los Angeles, CA 90031, United States"
     },
     {
       "name": "III Mas",
-      "neighborhood": "",
+      "neighborhood": "Downtown Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2313,11 +2437,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "iii-mas",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "#312, Los Angeles, CA 90015, United States"
     },
     {
       "name": "Belle’s",
-      "neighborhood": "",
+      "neighborhood": "South Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2331,11 +2456,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "belle-s",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "2920 W Jefferson Blvd, Los Angeles, CA 90018, United States"
     },
     {
       "name": "Butchr Bar",
-      "neighborhood": "",
+      "neighborhood": "Westlake",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2349,11 +2475,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "butchr-bar",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "301 Glendale Blvd, Los Angeles, CA 90026, United States"
     },
     {
       "name": "A Tí",
-      "neighborhood": "",
+      "neighborhood": "Echo Park",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2367,11 +2494,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "a-t",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "1498 Sunset Blvd, Los Angeles, CA 90026, United States"
     },
     {
       "name": "Udatsu Sushi",
-      "neighborhood": "",
+      "neighborhood": "Central LA",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2385,11 +2513,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "udatsu-sushi",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "6634 Sunset Blvd 2nd Floor, Los Angeles, CA 90028, United States"
     },
     {
       "name": "Bridgetown Roti",
-      "neighborhood": "",
+      "neighborhood": "East Hollywood",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2403,11 +2532,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "bridgetown-roti",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "858 N Vermont Ave, Los Angeles, CA 90029, United States"
     },
     {
       "name": "Tendon Tempura Carlos Jr",
-      "neighborhood": "",
+      "neighborhood": "Torrance",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2421,11 +2551,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "tendon-tempura-carlos-jr",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "1510 Cabrillo Ave, Torrance, CA 90501, United States"
     },
     {
       "name": "Authentic Xian Liangpi",
-      "neighborhood": "",
+      "neighborhood": "Arcadia",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2439,11 +2570,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "authentic-xian-liangpi",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "56 E Duarte Rd unit 106, Arcadia, CA 91006, United States"
     },
     {
       "name": "Asadero Chikali",
-      "neighborhood": "",
+      "neighborhood": "Inglewood",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -2457,7 +2589,8 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "asadero-chikali",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "4233 W Century Blvd #7, Inglewood, CA 90304, United States"
     },
     {
       "name": "Restaurant Ki",
@@ -3181,7 +3314,7 @@
     },
     {
       "name": "La'Shukran",
-      "neighborhood": "",
+      "neighborhood": "417 Morse St NE 2nd Floor",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -3195,11 +3328,12 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "la-shukran",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "Alley Entrance, 417 Morse St NE 2nd Floor, Washington, DC 20002, United States"
     },
     {
       "name": "Café Riggs",
-      "neighborhood": "",
+      "neighborhood": "Downtown Los Angeles",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -3213,7 +3347,8 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "caf-riggs",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "939 S Figueroa St UNIT 300, Los Angeles, CA 90015, United States"
     },
     {
       "name": "Xiquet",
@@ -3235,7 +3370,7 @@
     },
     {
       "name": "Family Ethiopian",
-      "neighborhood": "",
+      "neighborhood": "Little Ethiopia",
       "cuisine": "",
       "description": "",
       "sources": [
@@ -3249,7 +3384,512 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "family-ethiopian",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "address": "1041 S Fairfax Ave, Los Angeles, CA 90019, United States"
+    },
+    {
+      "name": "Badmaash",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/badmaash"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "badmaash-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Sushi Takeda",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/sushi-takeda"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "sushi-takeda-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Bar Sawa",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/sawa"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "bar-sawa-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Marugame Monzo",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/marugame-monzo"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "marugame-monzo-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "San Laurel",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/san-laurel"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "san-laurel-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "715",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/715"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "715-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Baroo",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/baroo"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "baroo-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Yunomi Handroll",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/yunomi-handroll"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "yunomi-handroll-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Q Sushi",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/q-sushi"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "q-sushi-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Girl & the Goat Los Angeles",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/girl-the-goat-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "girl-the-goat-los-angeles-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Firstborn",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/firstborn"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "firstborn-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Pizzeria Bianco Los Angeles",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pizzeria-bianco"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "pizzeria-bianco-los-angeles-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Dama",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/dama"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "dama-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Rossoblu",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/rossoblu"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "rossoblu-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Grá",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/gra"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "gr-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "kodō",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/kodo"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "kod-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Tsubaki",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/tsubaki"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "tsubaki-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Quarter Sheets",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/quarter-sheets-pizza"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "quarter-sheets-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Guisados",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/guisados"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "guisados-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Moo's Craft Barbecue",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/moo-s-craft-barbecue"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "moo-s-craft-barbecue-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Carnes Asadas Pancho Lopez",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/carnes-asadas-pancho-lopez"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "carnes-asadas-pancho-lopez-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Parks BBQ",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/parks-bbq"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "parks-bbq-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Danbi",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/danbi"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "danbi-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Pine & Crane",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pine-crane"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "pine-crane-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Dha Rae Oak",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/dha-rae-oak"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "dha-rae-oak-los-angeles",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Yeobo, Darling",
+      "neighborhood": "Menlo Park",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/menlo-park/restaurant/yeobo-darling"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "yeobo-darling-menlo-park",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Naides",
+      "neighborhood": "San Francisco",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/san-francisco/restaurant/naides"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "naides-san-francisco",
+      "addedDate": "2026-03-29"
+    },
+    {
+      "name": "Little Mountain",
+      "neighborhood": "Montecito",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/montecito/restaurant/little-mountain"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "little-mountain-montecito",
+      "addedDate": "2026-03-29"
     }
   ]
 }

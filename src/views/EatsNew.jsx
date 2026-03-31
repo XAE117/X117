@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './EatsByTier.css'
 
 function HeatIndicator({ score }) {
@@ -75,6 +76,13 @@ function NewCard({ restaurant }) {
           )}
           <SourceBadges sources={restaurant.sources} />
           <div className="eats-card-actions">
+            <Link
+              to={`/food/spot/${restaurant.id}`}
+              className="eats-action-btn eats-detail-btn"
+              onClick={e => e.stopPropagation()}
+            >
+              View Details
+            </Link>
             {restaurant.reservationUrl && (
               <a
                 href={restaurant.reservationUrl}

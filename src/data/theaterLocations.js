@@ -1,4 +1,5 @@
 export const THEATER_COORDS = {
+  // ── Core repertory/revival houses ──
   'new-beverly': { lat: 34.0755, lng: -118.3619 },
   'vista-theatre': { lat: 34.1063, lng: -118.2824 },
   'academy-museum': { lat: 34.0583, lng: -118.3553 },
@@ -13,11 +14,29 @@ export const THEATER_COORDS = {
   'laemmle-noho': { lat: 34.1670, lng: -118.3791 },
   'los-feliz-3': { lat: 34.1075, lng: -118.2872 },
   'laemmle-royal': { lat: 34.0394, lng: -118.4483 },
-  // Expanded theaters
+  // ── Expanded theaters ──
   'secret-movie-club': { lat: 34.0907, lng: -118.2946 },
   'cinespia': { lat: 34.0907, lng: -118.3197 },
   '2220-arts': { lat: 34.0764, lng: -118.2752 },
   'whammy-analog': { lat: 34.0838, lng: -118.3440 },
-  'glendale-theatre': { lat: 34.1461, lng: -118.2551 },
-  'lumiere-music-hall': { lat: 34.0687, lng: -118.3801 },
+  'lumiere-cinema': { lat: 34.0687, lng: -118.3801 },
+  // ── Notable LA venues ──
+  'lacma': { lat: 34.0639, lng: -118.3592 },
+  'laemmle-town-center': { lat: 34.1561, lng: -118.5013 },
+  'landmark-westwood': { lat: 34.0597, lng: -118.4441 },
+  'art-theatre': { lat: 33.7701, lng: -118.1937 },
+  'fine-arts-bh': { lat: 34.0628, lng: -118.3976 },
+  'el-capitan': { lat: 34.1017, lng: -118.3389 },
+  'laemmle-glendale': { lat: 34.1461, lng: -118.2551 },
+  'laemmle-monica': { lat: 34.0175, lng: -118.4947 },
+  'rooftop-cinema': { lat: 34.0430, lng: -118.2350 },
+  'culver-theater': { lat: 34.0211, lng: -118.3965 },
+  'frida-cinema': { lat: 33.7455, lng: -117.8677 },
+  'landmark-sunset': { lat: 34.0983, lng: -118.3265 },
+  // ── AMC Theatres ──
+  'amc-century-city': { lat: 34.0571, lng: -118.4178 },
+  'amc-burbank': { lat: 34.1816, lng: -118.3268 },
+  'amc-rolling-hills': { lat: 33.8092, lng: -118.3523 },
+  'amc-americana': { lat: 34.1514, lng: -118.2592 },
+  'amc-citywalk': { lat: 34.1381, lng: -118.3534 },
 }

@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './EatsByTier.css'
 
 function HeatIndicator({ score }) {
@@ -47,7 +47,6 @@ function MichelinBadge({ status }) {
 
 function RestaurantCard({ restaurant }) {
   const [expanded, setExpanded] = useState(false)
-  const navigate = useNavigate()
   const cardRef = useRef(null)
 
   const handleClick = () => {
@@ -87,6 +86,13 @@ function RestaurantCard({ restaurant }) {
           )}
           <SourceBadges sources={restaurant.sources} />
           <div className="eats-card-actions">
+            <Link
+              to={`/food/spot/${restaurant.id}`}
+              className="eats-action-btn eats-detail-btn"
+              onClick={e => e.stopPropagation()}
+            >
+              View Details
+            </Link>
             {restaurant.reservationUrl && (
               <a
                 href={restaurant.reservationUrl}

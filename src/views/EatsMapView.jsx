@@ -18,16 +18,22 @@ function EatsMapView({ data }) {
     )
   }
 
-  // Group by neighborhood for a list-based "map" view (actual map integration requires API key on frontend)
-  const byNeighborhood = useMemo(() => {
+  // Group by neighborhood, separating unknowns
+  const { namedGroups, unknownRestaurants } = useMemo(() => {
     const groups = {}
+    const unknown = []
     for (const r of restaurants) {
-      const key = r.neighborhood
-      if (!groups[key]) groups[key] = []
-      groups[key].push(r)
+      if (!r.neighborhood || r.neighborhood.trim() === '') {
+        unknown.push(r)
+      } else {
+        const key = r.neighborhood
+        if (!groups[key]) groups[key] = []
+        groups[key].push(r)
+      }
     }
-    return Object.entries(groups)
-      .sort(([, a], [, b]) => b.length - a.length)
+    const sorted = Object.entries(groups)
+      .sort(([a], [b]) => a.localeCompare(b))
+    return { namedGroups: sorted, unknownRestaurants: unknown }
   }, [restaurants])
 
   return (
@@ -37,7 +43,7 @@ function EatsMapView({ data }) {
         <p className="eats-map-subtitle">{restaurants.length} restaurants across LA</p>
       </div>
       <div className="eats-map-list">
-        {byNeighborhood.map(([neighborhood, spots]) => (
+        {namedGroups.map(([neighborhood, spots]) => (
           <div key={neighborhood} className="eats-map-neighborhood">
             <h3 className="eats-map-hood-name">
               {neighborhood}
@@ -68,6 +74,37 @@ function EatsMapView({ data }) {
             </ul>
           </div>
         ))}
+        {unknownRestaurants.length > 0 && (
+          <div className="eats-map-neighborhood eats-map-unknown">
+            <h3 className="eats-map-hood-name">
+              Neighborhood Unknown
+              <span className="eats-map-hood-count">{unknownRestaurants.length}</span>
+            </h3>
+            <ul className="eats-map-hood-spots">
+              {unknownRestaurants
+                .sort((a, b) => b.heatScore - a.heatScore)
+                .map(r => (
+                  <li key={r.id} className="eats-map-spot">
+                    <a
+                      href={r.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="eats-map-spot-link"
+                    >
+                      <span
+                        className="eats-map-spot-dot"
+                        style={{ background: tierColors[r.tier] }}
+                      />
+                      <span className="eats-map-spot-name">{r.name}</span>
+                      <span className="eats-map-spot-cuisine">{r.cuisine}</span>
+                      <span className="eats-map-spot-price">{r.priceRange}</span>
+                      {r.isNew && <span className="eats-new-badge">NEW</span>}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   )
