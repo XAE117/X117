@@ -99,10 +99,23 @@ function VenueCard({ venue, now }) {
   )
 }
 
-function JazzByVenue({ data }) {
+function JazzByVenue({ data, searchQuery = '' }) {
   const now = useNow()
 
   if (!data) return null
+
+  const query = searchQuery.trim().toLowerCase()
+
+  // Filter venues/shows by search query
+  const filteredVenues = query
+    ? data.venues.map(v => {
+        const venueMatch = v.shortName.toLowerCase().includes(query)
+        if (venueMatch) return v
+        const matchedShows = v.shows.filter(s => s.artist.toLowerCase().includes(query))
+        if (matchedShows.length > 0) return { ...v, shows: matchedShows }
+        return null
+      }).filter(Boolean)
+    : data.venues
 
   // Sort: dedicated first, then by number of shows descending
   const tierOrder = { dedicated: 0, regular: 1, indie_scene: 2, concert_hall: 3 }
@@ -113,8 +126,8 @@ function JazzByVenue({ data }) {
     return b.shows.length - a.shows.length
   }
 
-  const laVenues = data.venues.filter(v => v.region !== 'OC').sort(sortFn)
-  const ocVenues = data.venues.filter(v => v.region === 'OC').sort(sortFn)
+  const laVenues = filteredVenues.filter(v => v.region !== 'OC').sort(sortFn)
+  const ocVenues = filteredVenues.filter(v => v.region === 'OC').sort(sortFn)
 
   return (
     <div className="jbv-page">

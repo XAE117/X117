@@ -156,17 +156,19 @@ function TierSection({ tier, label, subtitle, restaurants, accentClass }) {
   )
 }
 
-function EatsByTier({ data }) {
+function EatsByTier({ data, searchQuery = '' }) {
   const [tierFilter, setTierFilter] = useState('all')
 
   const tiers = useMemo(() => {
     if (!data?.restaurants) return { street: [], feast: [], whale: [] }
+    const query = searchQuery.trim().toLowerCase()
     const groups = { street: [], feast: [], whale: [] }
     for (const r of data.restaurants) {
+      if (query && !r.name.toLowerCase().includes(query) && !(r.cuisine && r.cuisine.toLowerCase().includes(query)) && !(r.neighborhood && r.neighborhood.toLowerCase().includes(query))) continue
       if (groups[r.tier]) groups[r.tier].push(r)
     }
     return groups
-  }, [data])
+  }, [data, searchQuery])
 
   if (!data) {
     return (

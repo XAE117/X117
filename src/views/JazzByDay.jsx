@@ -51,15 +51,18 @@ function ShowRow({ show, venue, now }) {
   )
 }
 
-function JazzByDay({ data }) {
+function JazzByDay({ data, searchQuery = '' }) {
   const now = useNow()
 
   const dayGroups = useMemo(() => {
     if (!data) return []
 
+    const query = searchQuery.trim().toLowerCase()
+
     const showsByDate = {}
     data.venues.forEach(venue => {
       venue.shows.forEach(show => {
+        if (query && !show.artist.toLowerCase().includes(query) && !venue.shortName.toLowerCase().includes(query)) return
         if (!showsByDate[show.date]) showsByDate[show.date] = []
         showsByDate[show.date].push({ ...show, venue })
       })
@@ -80,7 +83,7 @@ function JazzByDay({ data }) {
 
         return { date, label, weekday, shows, hotCount }
       })
-  }, [data])
+  }, [data, searchQuery])
 
   if (!data) return null
 

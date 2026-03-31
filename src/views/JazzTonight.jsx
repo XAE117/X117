@@ -107,7 +107,7 @@ function ShowItem({ show, venue, isNow, relative }) {
   )
 }
 
-function JazzTonight({ data }) {
+function JazzTonight({ data, searchQuery = '' }) {
   const now = useNow()
   const [showPast, setShowPast] = useState(false)
 
@@ -122,10 +122,12 @@ function JazzTonight({ data }) {
 
   const tonightShows = useMemo(() => {
     if (!data) return []
+    const query = searchQuery.trim().toLowerCase()
     const shows = []
     data.venues.forEach(venue => {
       venue.shows.forEach(show => {
         if (show.date === todayStr) {
+          if (query && !show.artist.toLowerCase().includes(query) && !venue.shortName.toLowerCase().includes(query)) return
           shows.push({
             ...show,
             venue,
@@ -136,7 +138,7 @@ function JazzTonight({ data }) {
     })
     shows.sort((a, b) => (a.parsedMinutes ?? 9999) - (b.parsedMinutes ?? 9999))
     return shows
-  }, [data, todayStr])
+  }, [data, todayStr, searchQuery])
 
   if (!data) return null
 

@@ -107,7 +107,7 @@ function RestaurantCard({ restaurant, starred, onToggleStar, expanded, onToggleE
   )
 }
 
-function FoodByCategory({ data }) {
+function FoodByCategory({ data, searchQuery = '' }) {
   const [activeCategory, setActiveCategory] = useState('all')
   const [starredIds, setStarredIds] = useState(() => getStarredIds())
   const [expandedId, setExpandedId] = useState(null)
@@ -118,7 +118,12 @@ function FoodByCategory({ data }) {
   }
 
   const categories = data?.categories || []
-  const restaurants = data?.restaurants || []
+  const allRestaurants = data?.restaurants || []
+
+  const query = searchQuery.trim().toLowerCase()
+  const restaurants = query
+    ? allRestaurants.filter(r => r.name.toLowerCase().includes(query) || (r.cuisine && r.cuisine.toLowerCase().includes(query)) || (r.neighborhood && r.neighborhood.toLowerCase().includes(query)))
+    : allRestaurants
 
   const filtered = useMemo(() => {
     if (activeCategory === 'all') return restaurants

@@ -294,7 +294,7 @@ function App() {
                   <input
                     type="text"
                     className="expanded-search-input"
-                    placeholder="Search films..."
+                    placeholder={isFoodMode ? 'Search restaurants...' : isJazzMode ? 'Search music...' : 'Search films...'}
                     value={searchQuery}
                     onChange={e => setSearchQuery(e.target.value)}
                   />
@@ -330,16 +330,16 @@ function App() {
           <Route path="/search" element={<Search data={filteredData} />} />
 
           {/* Jazz routes */}
-          <Route path="/jazz" element={<JazzByDay data={jazzData} />} />
-          <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} />} />
-          <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
+          <Route path="/jazz" element={<JazzByDay data={jazzData} searchQuery={searchQuery} />} />
+          <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} searchQuery={searchQuery} />} />
+          <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} searchQuery={searchQuery} />} />
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
           <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />
           <Route path="/jazz/map" element={<JazzMapView data={jazzData} />} />
 
           {/* Food routes */}
-          <Route path="/food" element={<FoodByCategory data={foodData} />} />
-          <Route path="/food/tiers" element={<EatsByTier data={foodData} />} />
+          <Route path="/food" element={<FoodByCategory data={foodData} searchQuery={searchQuery} />} />
+          <Route path="/food/tiers" element={<EatsByTier data={foodData} searchQuery={searchQuery} />} />
           <Route path="/food/new" element={<EatsNew data={foodData} />} />
           <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
           <Route path="/food/spot/:spotId" element={<EatsDetail data={foodData} />} />
