@@ -18,11 +18,17 @@ function DayScreenshot({ data }) {
     if (!frameRef.current) return
     try {
       const { default: html2canvas } = await import('html2canvas')
-      const canvas = await html2canvas(frameRef.current, {
-        backgroundColor: '#0D0B0A',
-        scale: 2,
-        useCORS: true,
-      })
+      // Race html2canvas against a timeout — it can hang on complex CSS/SVGs
+      const canvas = await Promise.race([
+        html2canvas(frameRef.current, {
+          backgroundColor: '#0D0B0A',
+          scale: 2,
+          useCORS: true,
+          removeContainer: true,
+          ignoreElements: (el) => el.tagName === 'BODY' && el !== frameRef.current,
+        }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 8000)),
+      ])
       const url = canvas.toDataURL('image/png')
       setImageUrl(url)
     } catch {
@@ -121,6 +127,15 @@ function DayScreenshot({ data }) {
       <Link to="/" className="ss-back-link">&larr; Back</Link>
 
       {generating && <p className="ss-generating-text">Generating image...</p>}
+
+      {!generating && !imageUrl && (
+        <div className="ss-generating-text">
+          <p>Image generation failed — try refreshing</p>
+          <button className="ss-retry-btn" onClick={() => { setGenerating(true); hasGenerated.current = false }}>
+            Retry
+          </button>
+        </div>
+      )}
 
       {imageUrl && (
         <div className="ss-image-preview">

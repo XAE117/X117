@@ -339,6 +339,28 @@
   color: var(--cream);
 }
 
+.ss-retry-btn {
+  display: block;
+  margin: 0.75rem auto 0;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ss-retry-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 640px) {
