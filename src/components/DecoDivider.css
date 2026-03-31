@@ -1,0 +1,19 @@
+/* ── Art Deco Divider ── */
+
+.deco-divider {
+  display: flex;
+  justify-content: center;
+  color: var(--gold);
+  padding: 0.25rem 0;
+  opacity: 0.7;
+}
+
+.deco-divider svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.deco-fan svg {
+  max-width: 140px;
+}

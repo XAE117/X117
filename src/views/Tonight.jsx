@@ -24,9 +24,19 @@ function getRelativeTime(screeningMinutes, nowMinutes) {
   return `Started ${mins}m ago`
 }
 
-function ScreeningItem({ s, isNow, relative, data }) {
+function getUrgencyClass(parsedMinutes, nowMinutes) {
+  if (parsedMinutes == null) return ''
+  const diff = parsedMinutes - nowMinutes
+  if (diff <= 0) return '' // already started, handled by now-showing
+  if (diff <= 30) return 'urgency-imminent'
+  if (diff <= 120) return 'urgency-soon'
+  return ''
+}
+
+function ScreeningItem({ s, isNow, relative, data, nowMinutes }) {
   const navigate = useNavigate()
   const itemRef = useRef(null)
+  const urgency = getUrgencyClass(s.parsedMinutes, nowMinutes)
 
   const handleClick = (e) => {
     if (e.target.closest('a')) return
@@ -39,7 +49,7 @@ function ScreeningItem({ s, isNow, relative, data }) {
   }
 
   return (
-    <li ref={itemRef} className={`tonight-item ${isNow ? 'now-showing' : ''}`} onClick={handleClick}>
+    <li ref={itemRef} className={`tonight-item ${isNow ? 'now-showing' : ''} ${urgency}`} onClick={handleClick}>
       <div className="tonight-time-col">
         <span className="tonight-time">{s.time || 'TBA'}</span>
         {relative && <span className={`tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
@@ -168,7 +178,7 @@ function Tonight({ data }) {
               {past.map(s => {
                 const isNow = false
                 const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
-                return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} />
+                return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} nowMinutes={nowMinutes} />
               })}
             </ul>
           )}
@@ -179,7 +189,7 @@ function Tonight({ data }) {
         {upcoming.map(s => {
           const isNow = s.parsedMinutes != null && (nowMinutes - s.parsedMinutes) >= 0 && (nowMinutes - s.parsedMinutes) <= 150
           const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
-          return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} />
+          return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} nowMinutes={nowMinutes} />
         })}
       </ul>
     </div>

@@ -104,6 +104,29 @@
   background: rgba(201, 168, 76, 0.04);
 }
 
+/* Urgency color states — shifts as showtime approaches */
+.tonight-item.urgency-soon {
+  border-color: #D4A054;
+  background: rgba(212, 160, 84, 0.03);
+}
+
+.tonight-item.urgency-imminent {
+  border-color: #E8753A;
+  background: rgba(232, 117, 58, 0.04);
+  animation: urgencyPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes urgencyPulse {
+  0%, 100% {
+    border-color: #E8753A;
+    box-shadow: 0 0 0 0 rgba(232, 117, 58, 0);
+  }
+  50% {
+    border-color: #F09060;
+    box-shadow: 0 0 8px 1px rgba(232, 117, 58, 0.15);
+  }
+}
+
 /* ── Time Column ── */
 
 .tonight-time-col {
@@ -275,6 +298,30 @@
 
 .tonight-empty-link:hover {
   color: var(--cream);
+}
+
+/* ── Staggered card entrance ── */
+
+.tonight-list .tonight-item {
+  animation: tonightCardIn 0.4s ease-out both;
+}
+
+.tonight-list .tonight-item:nth-child(1) { animation-delay: 0ms; }
+.tonight-list .tonight-item:nth-child(2) { animation-delay: 50ms; }
+.tonight-list .tonight-item:nth-child(3) { animation-delay: 100ms; }
+.tonight-list .tonight-item:nth-child(4) { animation-delay: 150ms; }
+.tonight-list .tonight-item:nth-child(5) { animation-delay: 200ms; }
+.tonight-list .tonight-item:nth-child(n+6) { animation-delay: 250ms; }
+
+@keyframes tonightCardIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ── Responsive ── */

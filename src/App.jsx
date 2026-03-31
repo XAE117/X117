@@ -45,13 +45,27 @@ const NON_FAVORITE_THEATERS = [
   'vidiots',
 ]
 
+// Smart default: redirect to Tonight on first cinema visit if it's evening (4-11pm)
+function SmartCinemaDefault({ filteredData, searchQuery }) {
+  const hour = new Date().getHours()
+  const isEvening = hour >= 16 && hour < 23
+  const hasRedirected = sessionStorage.getItem('palace-smart-routed')
+
+  if (isEvening && !hasRedirected) {
+    sessionStorage.setItem('palace-smart-routed', '1')
+    return <Navigate to="/tonight" replace />
+  }
+
+  return <ByDay data={filteredData} searchQuery={searchQuery} />
+}
+
 function App() {
   const [data, setData] = useState(null)
   const [jazzData, setJazzData] = useState(null)
   const [foodData, setFoodData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
-  const [formatFilter, setFormatFilter] = useState('favorites')
+  const [formatFilter, setFormatFilter] = useState('all')
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isScrolling, setIsScrolling] = useState(false)
@@ -86,6 +100,17 @@ function App() {
   // Auto-collapse filter notch when switching between modes
   useEffect(() => {
     setFiltersExpanded(false)
+  }, [isJazzMode, isFoodMode])
+
+  // Dynamic page title per mode
+  useEffect(() => {
+    if (isFoodMode) {
+      document.title = "LIZA'S PALACE — LA Restaurant Guide"
+    } else if (isJazzMode) {
+      document.title = "LIZA'S PALACE — LA Jazz & Live Music"
+    } else {
+      document.title = "LIZA'S PALACE — LA Repertory Cinema"
+    }
   }, [isJazzMode, isFoodMode])
 
   const fetchData = (isRefresh = false) => {
@@ -295,7 +320,7 @@ function App() {
           <Route path="/" element={
             !splashSeen
               ? <Navigate to="/welcome" replace />
-              : <ByDay data={filteredData} searchQuery={searchQuery} />
+              : <SmartCinemaDefault filteredData={filteredData} searchQuery={searchQuery} />
           } />
           <Route path="/tonight" element={<Tonight data={filteredData} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
@@ -331,6 +356,7 @@ function App() {
         lastUpdated={isJazzMode && jazzData ? jazzData.lastUpdated : isFoodMode && foodData ? foodData.lastUpdated : data?.lastUpdated}
         theaters={isJazzMode && jazzData ? jazzData.venues : data?.theaters}
         isJazz={isJazzMode}
+        isFood={isFoodMode}
       />
       {!isDetailPage && <Nav mode={mode} />}
     </div>

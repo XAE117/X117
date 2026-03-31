@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
+import DecoDivider from '../components/DecoDivider.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData, parseTime } from '../utils/timeUtils.js'
 import './ByDay.css'
 
@@ -211,16 +212,17 @@ function ByDay({ data, searchQuery = '' }) {
           {matchCount} screening{matchCount !== 1 ? 's' : ''}{matchCount > 0 ? ` matching \u201c${searchQuery.trim()}\u201d` : ' found'}
         </div>
       )}
-      {dayEntries.map(([dateKey, day]) => (
-        <DayBlock
-          key={dateKey}
-          dateKey={dateKey}
-          day={day}
-          data={data}
-          now={now}
-          forceUpdate={forceUpdate}
-
-        />
+      {dayEntries.map(([dateKey, day], i) => (
+        <div key={dateKey}>
+          {i > 0 && <DecoDivider variant={i % 2 === 0 ? 'sunburst' : 'fan'} />}
+          <DayBlock
+            dateKey={dateKey}
+            day={day}
+            data={data}
+            now={now}
+            forceUpdate={forceUpdate}
+          />
+        </div>
       ))}
       {query && dayEntries.length === 0 && (
         <p className="day-all-past-hint">No screenings match your search</p>

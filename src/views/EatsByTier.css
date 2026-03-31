@@ -679,3 +679,10 @@
   font-size: 0.65rem;
   padding: 0.4rem 0.8rem;
 }
+
+.eats-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
