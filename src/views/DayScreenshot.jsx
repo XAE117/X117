@@ -16,24 +16,24 @@ function DayScreenshot({ data }) {
 
   const generateImage = useCallback(async () => {
     if (!frameRef.current) return
+    // Temporarily kill the body::before noise overlay — html2canvas hangs on feTurbulence SVG filters
+    document.body.classList.add('no-noise')
     try {
       const { default: html2canvas } = await import('html2canvas')
-      // Race html2canvas against a timeout — it can hang on complex CSS/SVGs
       const canvas = await Promise.race([
         html2canvas(frameRef.current, {
           backgroundColor: '#0D0B0A',
           scale: 2,
           useCORS: true,
-          removeContainer: true,
-          ignoreElements: (el) => el.tagName === 'BODY' && el !== frameRef.current,
         }),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 8000)),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 10000)),
       ])
       const url = canvas.toDataURL('image/png')
       setImageUrl(url)
     } catch {
       setImageUrl(null)
     }
+    document.body.classList.remove('no-noise')
     setGenerating(false)
   }, [])
 

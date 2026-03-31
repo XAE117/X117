@@ -238,6 +238,11 @@ a:hover {
   }
 }
 
+/* Hide noise overlay during html2canvas render (feTurbulence hangs it) */
+body.no-noise::before {
+  display: none !important;
+}
+
 /* Accessibility: reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
