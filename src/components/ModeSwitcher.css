@@ -80,10 +80,11 @@
 
 .mode-notch-emoji {
   font-size: 1rem;
-  line-height: 1;
+  line-height: 1.4;
   display: inline-block;
   min-width: 1.3em;
   text-align: center;
+  vertical-align: middle;
   transition: opacity 0.15s ease, filter 0.15s ease;
 }
 

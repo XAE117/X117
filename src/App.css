@@ -18,6 +18,7 @@
   justify-content: space-between;
   align-items: flex-start;
   pointer-events: none;
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 .top-bar > * {
@@ -259,7 +260,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 3.2rem 1.5rem calc(3rem + 80px); /* top space for fixed top bar + bottom for fixed bottom bar */
+  padding: calc(3.2rem + env(safe-area-inset-top, 0px)) 1.5rem calc(3rem + 80px); /* top space for fixed top bar + safe area + bottom for fixed bottom bar */
   overflow-x: hidden;
 }
 
