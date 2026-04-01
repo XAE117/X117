@@ -276,18 +276,41 @@ function App() {
                 {isFoodMode && (
                   <div className="notch-food-pills">
                     <Link to="/food" className={`notch-food-pill ${location.pathname === '/food' ? 'active' : ''}`}>All</Link>
-                    <button
-                      className={`notch-food-pill ${foodDropdown === 'tiers' || location.pathname === '/food/tiers' ? 'active' : ''}`}
-                      onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'tiers' ? null : 'tiers') }}
-                    >
-                      Tiers
-                    </button>
-                    <button
-                      className={`notch-food-pill notch-food-pill--specialty ${foodDropdown === 'specialty' || location.pathname === '/food/pizza' || location.pathname === '/food/tacos' ? 'active' : ''}`}
-                      onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'specialty' ? null : 'specialty') }}
-                    >
-                      Specialty
-                    </button>
+                    <div className="notch-pill-wrapper">
+                      <button
+                        className={`notch-food-pill ${foodDropdown === 'tiers' || location.pathname === '/food/tiers' ? 'active' : ''}`}
+                        onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'tiers' ? null : 'tiers') }}
+                      >
+                        Tiers
+                      </button>
+                      {foodDropdown === 'tiers' && (
+                        <div className="notch-food-dropdown">
+                          <div className="notch-dropdown-items">
+                            <Link to="/food/tiers" className="notch-dropdown-item">All Tiers</Link>
+                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'street')}>Street</Link>
+                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'feast')}>Feast</Link>
+                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'whale')}>Whale</Link>
+                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'pizza')}>Pizza</Link>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div className="notch-pill-wrapper">
+                      <button
+                        className={`notch-food-pill notch-food-pill--specialty ${foodDropdown === 'specialty' || location.pathname === '/food/pizza' || location.pathname === '/food/tacos' ? 'active' : ''}`}
+                        onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'specialty' ? null : 'specialty') }}
+                      >
+                        Specialty
+                      </button>
+                      {foodDropdown === 'specialty' && (
+                        <div className="notch-food-dropdown">
+                          <div className="notch-dropdown-items">
+                            <Link to="/food/pizza" className="notch-dropdown-item">Pizza Guide</Link>
+                            <Link to="/food/tacos" className="notch-dropdown-item">Taco Guide</Link>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
@@ -335,25 +358,6 @@ function App() {
               </div>
             )}
           </div>
-          {isFoodMode && foodDropdown && (
-            <div className="notch-food-dropdown">
-              {foodDropdown === 'tiers' && (
-                <div className="notch-dropdown-items">
-                  <Link to="/food/tiers" className="notch-dropdown-item">All Tiers</Link>
-                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'street')}>Street</Link>
-                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'feast')}>Feast</Link>
-                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'whale')}>Whale</Link>
-                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'pizza')}>Pizza</Link>
-                </div>
-              )}
-              {foodDropdown === 'specialty' && (
-                <div className="notch-dropdown-items">
-                  <Link to="/food/pizza" className="notch-dropdown-item specialty-dd-pizza">Pizza Guide</Link>
-                  <Link to="/food/tacos" className="notch-dropdown-item specialty-dd-tacos">Taco Guide</Link>
-                </div>
-              )}
-            </div>
-          )}
           <ModeSwitcher />
         </div>
       )}

@@ -160,13 +160,19 @@
   text-shadow: 0 0 8px rgba(232, 117, 58, 0.5), 0 0 16px rgba(232, 117, 58, 0.2);
 }
 
-/* Food dropdown below notch */
+/* Pill wrapper for relative dropdown positioning */
+.notch-pill-wrapper {
+  position: relative;
+}
+
+/* Food dropdown below trigger button */
 .notch-food-dropdown {
-  position: fixed;
-  top: 42px;
-  left: 6px;
+  position: absolute;
+  top: 100%;
+  left: 0;
   z-index: 10;
   pointer-events: auto;
+  padding-top: 0.25rem;
   animation: dropdownFadeIn 0.2s ease-out both;
 }
 
@@ -175,7 +181,6 @@
   flex-direction: column;
   gap: 0.15rem;
   padding: 0.35rem 0;
-  padding-left: 0.3rem;
 }
 
 .notch-dropdown-item {
@@ -192,39 +197,18 @@
   border: none;
   cursor: pointer;
   white-space: nowrap;
-  text-shadow: 0 0 12px rgba(232, 213, 163, 0.3), 0 0 24px rgba(232, 213, 163, 0.15);
+  text-shadow:
+    0 0 16px rgba(232, 213, 163, 0.5),
+    0 0 32px rgba(232, 213, 163, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .notch-dropdown-item:hover {
   color: #fff;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 30px rgba(232, 117, 58, 0.4);
-}
-
-/* Specialty dropdown items */
-.notch-dropdown-item.specialty-dd-pizza {
-  color: var(--eats-pizza);
-  text-shadow: 0 0 14px rgba(232, 72, 48, 0.4), 0 0 28px rgba(232, 72, 48, 0.2);
-}
-
-.notch-dropdown-item.specialty-dd-pizza:hover {
-  color: #FF6B5A;
-  text-shadow: 0 0 14px rgba(232, 72, 48, 0.6), 0 0 36px rgba(232, 72, 48, 0.3);
-}
-
-.notch-dropdown-item.specialty-dd-tacos {
-  color: var(--eats-tacos);
-  text-shadow: 0 0 14px rgba(124, 179, 66, 0.4), 0 0 28px rgba(124, 179, 66, 0.2);
-}
-
-.notch-dropdown-item.specialty-dd-tacos:hover {
-  color: #9CCC65;
-  text-shadow: 0 0 14px rgba(124, 179, 66, 0.6), 0 0 36px rgba(124, 179, 66, 0.3);
-}
-
-/* Tier dropdown items */
-.notch-dropdown-item:hover {
-  color: var(--eats-accent);
-  text-shadow: 0 0 12px rgba(232, 117, 58, 0.5), 0 0 28px rgba(232, 117, 58, 0.25);
+  text-shadow:
+    0 0 16px rgba(255, 255, 255, 0.6),
+    0 0 36px rgba(232, 117, 58, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 @keyframes dropdownFadeIn {
