@@ -162,11 +162,18 @@ function FoodByCategory({ data }) {
               <span className="food-group-count">{group.items.length}</span>
             </div>
             {group.key === 'pizza' ? (
-              <Link to="/food/pizza" className="food-pizza-guide-link">
-                <span className="food-pizza-guide-emoji">{'\uD83C\uDF55'}</span>
-                <span className="food-pizza-guide-text">View the Pizza Guide</span>
-                <span className="food-pizza-guide-count">{group.items.length} pizzerias</span>
-                <span className="food-pizza-guide-arrow">{'\u2192'}</span>
+              <Link to="/food/pizza" className="food-guide-link food-guide-link--pizza">
+                <span className="food-guide-link-emoji">{'\uD83C\uDF55'}</span>
+                <span className="food-guide-link-text" style={{ color: 'var(--eats-pizza)' }}>View the Pizza Guide</span>
+                <span className="food-guide-link-count">{group.items.length} pizzerias</span>
+                <span className="food-guide-link-arrow">{'\u2192'}</span>
+              </Link>
+            ) : group.key === 'tacos' ? (
+              <Link to="/food/tacos" className="food-guide-link food-guide-link--tacos">
+                <span className="food-guide-link-emoji">{'\uD83C\uDF2E'}</span>
+                <span className="food-guide-link-text" style={{ color: 'var(--eats-tacos)' }}>View the Taco Guide</span>
+                <span className="food-guide-link-count">{group.items.length} taquer\u00edas</span>
+                <span className="food-guide-link-arrow">{'\u2192'}</span>
               </Link>
             ) : (
               <div className="food-list">

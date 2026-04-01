@@ -80,6 +80,12 @@
   background: rgba(232, 72, 48, 0.08);
 }
 
+.eats-filter-pill.tier-pill-tacos.active {
+  color: var(--eats-tacos);
+  border-color: var(--eats-tacos);
+  background: rgba(124, 179, 66, 0.08);
+}
+
 /* ── Tier Sections ── */
 
 .eats-tier-section {
@@ -107,6 +113,7 @@
 .tier-feast .eats-tier-label { color: var(--eats-feast); }
 .tier-whale .eats-tier-label { color: var(--eats-whale); }
 .tier-pizza .eats-tier-label { color: var(--eats-pizza); }
+.tier-tacos .eats-tier-label { color: var(--eats-tacos); }
 
 .eats-tier-subtitle {
   font-family: var(--font-body);
@@ -148,6 +155,7 @@
 .eats-card.tier-feast { border-left-color: var(--eats-feast); }
 .eats-card.tier-whale { border-left-color: var(--eats-whale); }
 .eats-card.tier-pizza { border-left-color: var(--eats-pizza); }
+.eats-card.tier-tacos { border-left-color: var(--eats-tacos); }
 
 .eats-card.is-new {
   box-shadow: inset 0 0 0 1px rgba(232, 117, 58, 0.15);
@@ -415,6 +423,7 @@
 .eats-tier-pill.tier-feast { color: var(--eats-feast); background: rgba(212, 165, 116, 0.1); }
 .eats-tier-pill.tier-whale { color: var(--eats-whale); background: rgba(201, 168, 76, 0.1); }
 .eats-tier-pill.tier-pizza { color: var(--eats-pizza); background: rgba(232, 72, 48, 0.1); }
+.eats-tier-pill.tier-tacos { color: var(--eats-tacos); background: rgba(124, 179, 66, 0.1); }
 
 /* ── EatsNew header ── */
 
@@ -573,6 +582,7 @@
 .eats-detail-card.tier-feast { border-top-color: var(--eats-feast); }
 .eats-detail-card.tier-whale { border-top-color: var(--eats-whale); }
 .eats-detail-card.tier-pizza { border-top-color: var(--eats-pizza); }
+.eats-detail-card.tier-tacos { border-top-color: var(--eats-tacos); }
 
 .eats-detail-header {
   margin-bottom: 0.75rem;
@@ -606,6 +616,7 @@
 .eats-detail-tier.tier-feast { color: var(--eats-feast); }
 .eats-detail-tier.tier-whale { color: var(--eats-whale); }
 .eats-detail-tier.tier-pizza { color: var(--eats-pizza); }
+.eats-detail-tier.tier-tacos { color: var(--eats-tacos); }
 
 .eats-detail-meta {
   display: flex;

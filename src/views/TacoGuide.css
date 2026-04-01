@@ -1,0 +1,341 @@
+/* ── Taco Guide ── */
+
+.taco-guide {
+  padding: 0.5rem 0;
+  padding-bottom: 5rem;
+}
+
+/* Header */
+.taco-guide-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.taco-deco-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--eats-tacos) 20%,
+    var(--eats-tacos) 50%,
+    var(--eats-tacos) 80%,
+    transparent
+  );
+  margin: 0.6rem auto;
+  max-width: 200px;
+  opacity: 0.4;
+}
+
+.taco-guide-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--eats-tacos);
+}
+
+.taco-guide-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.taco-guide-count {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+/* Section headers */
+.taco-section {
+  margin-bottom: 2rem;
+}
+
+.taco-section-header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.taco-section-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eats-tacos);
+  margin-bottom: 0.35rem;
+}
+
+.taco-section-intro {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-dim);
+  max-width: 540px;
+}
+
+.taco-section-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+/* Card list */
+.taco-section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Taco cards */
+.taco-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--eats-tacos);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.taco-card:hover {
+  background: var(--bg-card-hover);
+}
+
+.taco-card.expanded {
+  border-color: rgba(124, 179, 66, 0.3);
+  border-left-color: var(--eats-tacos);
+}
+
+.taco-card.taco-glow-pulse {
+  animation: tacoCardGlow 1.5s ease-out forwards;
+}
+
+@keyframes tacoCardGlow {
+  0% { box-shadow: 0 0 0 rgba(124, 179, 66, 0); }
+  15% { box-shadow: 0 0 12px rgba(124, 179, 66, 0.3), inset 0 0 8px rgba(124, 179, 66, 0.05); }
+  100% { box-shadow: 0 0 0 rgba(124, 179, 66, 0); }
+}
+
+/* Card header */
+.taco-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.taco-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.taco-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.taco-card-hood {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.taco-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.taco-card-price {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Style badges */
+.taco-style-badge {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  color: var(--eats-tacos);
+  background: rgba(124, 179, 66, 0.1);
+  border: 1px solid rgba(124, 179, 66, 0.2);
+}
+
+.taco-style-badge.style-masa {
+  color: #8BC34A;
+  background: rgba(139, 195, 74, 0.1);
+  border-color: rgba(139, 195, 74, 0.2);
+}
+
+.taco-style-badge.style-al-pastor {
+  color: #E8753A;
+  background: rgba(232, 117, 58, 0.1);
+  border-color: rgba(232, 117, 58, 0.2);
+}
+
+.taco-style-badge.style-regional {
+  color: #D4A574;
+  background: rgba(212, 165, 116, 0.1);
+  border-color: rgba(212, 165, 116, 0.2);
+}
+
+.taco-style-badge.style-slow-cook {
+  color: #E8A838;
+  background: rgba(232, 168, 56, 0.1);
+  border-color: rgba(232, 168, 56, 0.2);
+}
+
+.taco-style-badge.style-mariscos {
+  color: #64B5F6;
+  background: rgba(100, 181, 246, 0.1);
+  border-color: rgba(100, 181, 246, 0.2);
+}
+
+/* Fire */
+.taco-fire {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* Star button */
+.taco-star-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.15s ease;
+  padding: 0.1rem 0.2rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.taco-star-btn:hover {
+  color: var(--gold);
+  transform: scale(1.15);
+}
+
+.taco-star-btn.starred {
+  color: var(--gold);
+  filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.5));
+}
+
+/* Expanded card body */
+.taco-card-body {
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  animation: tacoExpandIn 0.25s ease-out both;
+}
+
+@keyframes tacoExpandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.taco-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+
+.taco-card-whyhot {
+  font-style: italic;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--eats-tacos);
+  border-left: 2px solid var(--eats-tacos);
+  padding-left: 0.75rem;
+  margin: 0.6rem 0;
+  opacity: 0.9;
+}
+
+.taco-card-accolades {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0;
+}
+
+.taco-accolade-chip {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+
+.taco-card-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.taco-tag-chip {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+  padding: 0.2rem 0.45rem;
+}
+
+.taco-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.taco-action-btn {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.taco-detail-btn {
+  background: transparent;
+  color: var(--eats-tacos);
+  border: 1px solid rgba(124, 179, 66, 0.3);
+}
+
+.taco-detail-btn:hover {
+  background: rgba(124, 179, 66, 0.08);
+  border-color: var(--eats-tacos);
+  color: var(--eats-tacos);
+}
