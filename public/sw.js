@@ -1,6 +1,6 @@
 // Liza's Palace — Service Worker
 // Strategy: network-first for all requests, cache as offline fallback only
-const CACHE_NAME = 'palace-v4'
+const CACHE_NAME = 'palace-v5'
 const BASE = '/X117/'
 
 self.addEventListener('install', (e) => {

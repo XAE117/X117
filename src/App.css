@@ -260,6 +260,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 3.2rem 1.5rem calc(3rem + 80px); /* top space for fixed top bar + bottom for fixed bottom bar */
+  overflow-x: hidden;
 }
 
 .refresh-btn {

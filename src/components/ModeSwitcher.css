@@ -81,6 +81,9 @@
 .mode-notch-emoji {
   font-size: 1rem;
   line-height: 1;
+  display: inline-block;
+  min-width: 1.3em;
+  text-align: center;
   transition: opacity 0.15s ease, filter 0.15s ease;
 }
 
@@ -164,4 +167,20 @@
   0% { filter: grayscale(0.7) drop-shadow(0 0 0px rgba(201, 123, 58, 0)); }
   12% { filter: grayscale(0.7) drop-shadow(0 0 8px rgba(201, 123, 58, 0.9)) drop-shadow(0 0 16px rgba(201, 123, 58, 0.5)); }
   100% { filter: grayscale(0.7) drop-shadow(0 0 0px rgba(201, 123, 58, 0)); }
+}
+
+/* Dice emoji subtle pulse when dimmed — invites interaction */
+.mode-notch-emoji.dice-emoji.dimmed {
+  animation: dicePulse 3s ease-in-out infinite;
+}
+
+@keyframes dicePulse {
+  0%, 100% {
+    opacity: 0.35;
+    filter: grayscale(0.7);
+  }
+  50% {
+    opacity: 0.5;
+    filter: grayscale(0.4) drop-shadow(0 0 4px rgba(201, 168, 76, 0.2));
+  }
 }

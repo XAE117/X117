@@ -18,10 +18,12 @@
 
 .guide-page {
   display: flex;
+  flex-direction: column;
   gap: 0;
   max-width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ── Desktop TOC (floating panel) ── */
