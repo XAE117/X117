@@ -19,6 +19,7 @@ import JazzByDay from './views/JazzByDay.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
 import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
+import JazzDayScreenshot from './views/JazzDayScreenshot.jsx'
 import FoodByCategory from './views/FoodByCategory.jsx'
 import FoodStarred from './views/FoodStarred.jsx'
 import EatsByTier from './views/EatsByTier.jsx'
@@ -30,6 +31,7 @@ import TacoGuide from './views/TacoGuide.jsx'
 import GuidePage from './views/GuidePage.jsx'
 import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
+import DateNightGenerator from './views/DateNightGenerator.jsx'
 import './App.css'
 
 
@@ -82,6 +84,7 @@ function App() {
   const isJazzMode = location.pathname.startsWith('/jazz')
   const isGuideMode = location.pathname === '/guide'
   const isFoodMode = location.pathname.startsWith('/food') || isGuideMode
+  const isRollMode = location.pathname === '/roll'
 
   // Scroll to top on route change
   useEffect(() => {
@@ -116,7 +119,9 @@ function App() {
 
   // Dynamic page title per mode
   useEffect(() => {
-    if (isGuideMode) {
+    if (isRollMode) {
+      document.title = "LIZA'S PALACE — Tonight's Lineup"
+    } else if (isGuideMode) {
       document.title = "LIZA'S PALACE — The Corn & Fire Companion"
     } else if (isFoodMode) {
       document.title = "LIZA'S PALACE — LA Restaurant Guide"
@@ -125,7 +130,7 @@ function App() {
     } else {
       document.title = "LIZA'S PALACE — LA Repertory Cinema"
     }
-  }, [isJazzMode, isFoodMode, isGuideMode])
+  }, [isJazzMode, isFoodMode, isGuideMode, isRollMode])
 
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
@@ -248,7 +253,7 @@ function App() {
 
   const filteredData = getFilteredData()
 
-  // Screenshot view renders standalone — no nav/header/footer chrome
+  // Screenshot views render standalone — no nav/header/footer chrome
   if (location.pathname.startsWith('/day/')) {
     return (
       <Routes>
@@ -257,17 +262,25 @@ function App() {
     )
   }
 
-  const mode = isFoodMode ? 'food' : isJazzMode ? 'jazz' : 'cinema'
+  if (location.pathname.startsWith('/jazz/day/')) {
+    return (
+      <Routes>
+        <Route path="/jazz/day/:date" element={<JazzDayScreenshot data={jazzData} />} />
+      </Routes>
+    )
+  }
+
+  const mode = isRollMode ? 'roll' : isFoodMode ? 'food' : isJazzMode ? 'jazz' : 'cinema'
 
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
   const isSplashPage = location.pathname === '/welcome'
   const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
 
   return (
-    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isRollMode ? 'roll-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
-          <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
+          {!isRollMode && <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
             {!filtersExpanded && (
               <div className="filter-notch-collapsed">
                 <button
@@ -365,11 +378,11 @@ function App() {
                 </div>
               </div>
             )}
-          </div>
+          </div>}
           <ModeSwitcher />
         </div>
       )}
-      {!isDetailPage && !isJazzMode && !isFoodMode && !isGuideMode && <GodfatherAlert data={data} />}
+      {!isDetailPage && !isJazzMode && !isFoodMode && !isGuideMode && !isRollMode && <GodfatherAlert data={data} />}
       <main className="main-content">
         <Routes>
           {/* Splash */}
@@ -405,6 +418,9 @@ function App() {
           <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
           <Route path="/food/spot/:spotId" element={<EatsDetail data={foodData} />} />
           <Route path="/food/map" element={<EatsMapView data={foodData} />} />
+
+          {/* Date Night Generator */}
+          <Route path="/roll" element={<DateNightGenerator cinemaData={data} jazzData={jazzData} foodData={foodData} />} />
 
           {/* Guide route */}
           <Route path="/guide" element={<GuidePage guideData={guideData} />} />

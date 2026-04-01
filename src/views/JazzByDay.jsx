@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useNow, getRelativeLabel, isScreeningPast } from '../utils/timeUtils.js'
 import './JazzByDay.css'
 
@@ -118,6 +118,10 @@ function DayBlock({ day, now }) {
       <h3 className="jbd-day-header">
         {day.label}
         {day.hotCount > 0 && <span className="jbd-hot-count">🔥 {day.hotCount}</span>}
+        <Link to={`/jazz/day/${day.date}`} className="day-screenshot-btn" title="Screenshot view">
+          <span className="day-screenshot-label">SCREENSHOT</span>
+          <span className="day-screenshot-icon">📸</span>
+        </Link>
       </h3>
 
       {past.length > 0 && (

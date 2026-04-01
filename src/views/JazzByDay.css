@@ -190,6 +190,37 @@
   font-weight: 600;
 }
 
+/* ── Screenshot Button (mirrors ByDay.css) ── */
+
+.jbd-day-header .day-screenshot-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--cream);
+  opacity: 0.6;
+  flex-shrink: 0;
+  padding: 0.15rem;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.jbd-day-header .day-screenshot-btn:hover {
+  color: var(--jazz-accent);
+  opacity: 1;
+}
+
+.jbd-day-header .day-screenshot-label {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.jbd-day-header .day-screenshot-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 640px) {

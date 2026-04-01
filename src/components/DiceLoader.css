@@ -1,0 +1,161 @@
+/* ── Dice Loader ── */
+
+.dice-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 2rem;
+}
+
+/* ── Dice Container ── */
+
+.dice-container {
+  display: flex;
+  gap: 1.2rem;
+  perspective: 400px;
+}
+
+.dice {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2A2520 0%, #1A1715 100%);
+  border: 1px solid var(--gold-dim);
+  box-shadow:
+    0 0 12px rgba(201, 168, 76, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dice-1 {
+  animation: diceTumble1 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.dice-2 {
+  animation: diceTumble2 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  animation-delay: 0.15s;
+}
+
+.dice-container.settled .dice-1,
+.dice-container.settled .dice-2 {
+  animation: diceSettle 0.4s ease-out forwards;
+}
+
+.dice-container.settled .dice {
+  box-shadow:
+    0 0 20px rgba(201, 168, 76, 0.3),
+    0 0 40px rgba(201, 168, 76, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-color: var(--gold);
+}
+
+/* ── Dice Face ── */
+
+.dice-face {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 34px;
+  height: 34px;
+  gap: 2px;
+  place-items: center;
+}
+
+.dice-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 4px rgba(201, 168, 76, 0.4);
+}
+
+/* 5-dot layout: corners + center */
+.dice-1 .dice-face .dice-dot:nth-child(1) { grid-area: 1 / 1; }
+.dice-1 .dice-face .dice-dot:nth-child(2) { grid-area: 1 / 3; }
+.dice-1 .dice-face .dice-dot:nth-child(3) { grid-area: 2 / 2; }
+.dice-1 .dice-face .dice-dot:nth-child(4) { grid-area: 3 / 1; }
+.dice-1 .dice-face .dice-dot:nth-child(5) { grid-area: 3 / 3; }
+
+/* 3-dot layout: diagonal */
+.dice-2 .dice-face .dice-dot:nth-child(1) { grid-area: 1 / 3; }
+.dice-2 .dice-face .dice-dot:nth-child(2) { grid-area: 2 / 2; }
+.dice-2 .dice-face .dice-dot:nth-child(3) { grid-area: 3 / 1; }
+
+/* ── Sparks on settle ── */
+
+.dice-sparks {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+}
+
+.dice-sparks::before,
+.dice-sparks::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: spark 0.8s ease-out forwards;
+}
+
+.dice-sparks::before {
+  left: 30%;
+  top: 20%;
+  box-shadow: 0 0 4px var(--gold);
+}
+
+.dice-sparks::after {
+  right: 30%;
+  top: 30%;
+  animation-delay: 0.1s;
+  box-shadow: 0 0 4px rgba(232, 213, 163, 0.8);
+}
+
+/* ── Phrase Cycling ── */
+
+.dice-phrase {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-align: center;
+  min-height: 1.5em;
+  animation: phraseFade 0.4s ease-out;
+}
+
+/* ── Keyframes ── */
+
+@keyframes diceTumble1 {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(15deg) translateY(-8px); }
+  50% { transform: rotate(-10deg) translateY(2px); }
+  75% { transform: rotate(8deg) translateY(-4px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes diceTumble2 {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-12deg) translateY(-10px); }
+  50% { transform: rotate(14deg) translateY(3px); }
+  75% { transform: rotate(-6deg) translateY(-6px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes diceSettle {
+  0% { transform: rotate(5deg) translateY(-3px); }
+  60% { transform: rotate(-1deg) translateY(1px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes phraseFade {
+  0% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

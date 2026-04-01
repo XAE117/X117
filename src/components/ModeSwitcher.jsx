@@ -32,11 +32,12 @@ function ModeSwitcher() {
   }, [labelTarget])
 
   const isFood = location.pathname.startsWith('/food') || location.pathname === '/guide'
+  const isRoll = location.pathname === '/roll'
 
   return (
     <div className="mode-notch">
       <Link to="/" className="mode-notch-btn" aria-label="Film listings" onClick={() => triggerGlow('film')}>
-        <span className={`mode-notch-emoji ${!isJazz && !isFood ? '' : 'dimmed'} ${glowTarget === 'film' ? 'mode-glow-pulse glow-blue' : ''}`}>🎞️</span>
+        <span className={`mode-notch-emoji ${!isJazz && !isFood && !isRoll ? '' : 'dimmed'} ${glowTarget === 'film' ? 'mode-glow-pulse glow-blue' : ''}`}>🎞️</span>
         {labelTarget === 'film' && <span className="mode-notch-tooltip">FILM</span>}
       </Link>
       <Link to="/jazz" className="mode-notch-btn" aria-label="Jazz listings" onClick={() => triggerGlow('jazz')}>
@@ -46,6 +47,10 @@ function ModeSwitcher() {
       <Link to="/food" className="mode-notch-btn" aria-label="Food listings" onClick={() => triggerGlow('food')}>
         <span className={`mode-notch-emoji ${isFood ? '' : 'dimmed'} ${glowTarget === 'food' ? 'mode-glow-pulse glow-red' : ''}`}>🍕</span>
         {labelTarget === 'food' && <span className="mode-notch-tooltip">FOOD</span>}
+      </Link>
+      <Link to="/roll" className="mode-notch-btn" aria-label="Date night generator" onClick={() => triggerGlow('roll')}>
+        <span className={`mode-notch-emoji dice-emoji ${isRoll ? '' : 'dimmed'} ${glowTarget === 'roll' ? 'mode-glow-pulse glow-amber' : ''}`}>🎲</span>
+        {labelTarget === 'roll' && <span className="mode-notch-tooltip">ROLL</span>}
       </Link>
     </div>
   )
