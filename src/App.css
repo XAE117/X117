@@ -140,6 +140,7 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.06em;
+  line-height: 1;
   text-transform: uppercase;
   color: var(--text-muted);
   text-decoration: none;
@@ -163,6 +164,8 @@
 /* Pill wrapper for relative dropdown positioning */
 .notch-pill-wrapper {
   position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Food dropdown below trigger button */
