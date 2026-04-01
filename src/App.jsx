@@ -254,17 +254,10 @@ function App() {
   const filteredData = getFilteredData()
 
   // Screenshot views render standalone — no nav/header/footer chrome
-  if (location.pathname.startsWith('/day/')) {
+  if (location.pathname.startsWith('/day/') || location.pathname.startsWith('/jazz/day/')) {
     return (
       <Routes>
         <Route path="/day/:date" element={<DayScreenshot data={data} />} />
-      </Routes>
-    )
-  }
-
-  if (location.pathname.startsWith('/jazz/day/')) {
-    return (
-      <Routes>
         <Route path="/jazz/day/:date" element={<JazzDayScreenshot data={jazzData} />} />
       </Routes>
     )
