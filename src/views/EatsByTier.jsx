@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './EatsByTier.css'
 
@@ -157,7 +157,14 @@ function TierSection({ tier, label, subtitle, restaurants, accentClass }) {
 }
 
 function EatsByTier({ data }) {
-  const [tierFilter, setTierFilter] = useState('all')
+  const [tierFilter, setTierFilter] = useState(() => {
+    const saved = sessionStorage.getItem('palace-tier-filter')
+    if (saved) {
+      sessionStorage.removeItem('palace-tier-filter')
+      return saved
+    }
+    return 'all'
+  })
 
   const tiers = useMemo(() => {
     if (!data?.restaurants) return { street: [], feast: [], whale: [], pizza: [] }

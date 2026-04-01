@@ -70,6 +70,7 @@ function App() {
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isScrolling, setIsScrolling] = useState(false)
+  const [foodDropdown, setFoodDropdown] = useState(null) // 'tiers' | 'pizza' | null
   const [splashSeen, setSplashSeen] = useState(() => {
     try { return sessionStorage.getItem('palace-splash-seen') === '1' } catch { return true }
   })
@@ -101,7 +102,13 @@ function App() {
   // Auto-collapse filter notch when switching between modes
   useEffect(() => {
     setFiltersExpanded(false)
+    setFoodDropdown(null)
   }, [isJazzMode, isFoodMode])
+
+  // Close food dropdown on route change
+  useEffect(() => {
+    setFoodDropdown(null)
+  }, [location.pathname])
 
   // Dynamic page title per mode
   useEffect(() => {
@@ -267,8 +274,18 @@ function App() {
                 {isFoodMode && (
                   <div className="notch-food-pills">
                     <Link to="/food" className={`notch-food-pill ${location.pathname === '/food' ? 'active' : ''}`}>All</Link>
-                    <Link to="/food/tiers" className={`notch-food-pill ${location.pathname === '/food/tiers' ? 'active' : ''}`}>Tiers</Link>
-                    <Link to="/food/pizza" className={`notch-food-pill ${location.pathname === '/food/pizza' ? 'active' : ''}`}>Pizza</Link>
+                    <button
+                      className={`notch-food-pill ${foodDropdown === 'tiers' || location.pathname === '/food/tiers' ? 'active' : ''}`}
+                      onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'tiers' ? null : 'tiers') }}
+                    >
+                      Tiers
+                    </button>
+                    <button
+                      className={`notch-food-pill ${foodDropdown === 'pizza' || location.pathname === '/food/pizza' ? 'active' : ''}`}
+                      onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'pizza' ? null : 'pizza') }}
+                    >
+                      Pizza
+                    </button>
                   </div>
                 )}
               </div>
@@ -316,6 +333,28 @@ function App() {
               </div>
             )}
           </div>
+          {isFoodMode && foodDropdown && (
+            <div className="notch-food-dropdown">
+              {foodDropdown === 'tiers' && (
+                <div className="notch-dropdown-items">
+                  <Link to="/food/tiers" className="notch-dropdown-item">All Tiers</Link>
+                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'street')}>Street</Link>
+                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'feast')}>Feast</Link>
+                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'whale')}>Whale</Link>
+                  <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'pizza')}>Pizza</Link>
+                </div>
+              )}
+              {foodDropdown === 'pizza' && (
+                <div className="notch-dropdown-items">
+                  <Link to="/food/pizza" className="notch-dropdown-item">All Pizza</Link>
+                  <Link to="/food/pizza" className="notch-dropdown-item pizza-dd-neo" onClick={() => sessionStorage.setItem('palace-pizza-scroll', 'tokyo-neapolitan')}>Neapolitan</Link>
+                  <Link to="/food/pizza" className="notch-dropdown-item pizza-dd-sourdough" onClick={() => sessionStorage.setItem('palace-pizza-scroll', 'sourdough')}>Sourdough</Link>
+                  <Link to="/food/pizza" className="notch-dropdown-item pizza-dd-chicago" onClick={() => sessionStorage.setItem('palace-pizza-scroll', 'chicago')}>Chicago</Link>
+                  <Link to="/food/pizza" className="notch-dropdown-item pizza-dd-detroit" onClick={() => sessionStorage.setItem('palace-pizza-scroll', 'detroit-square')}>Detroit</Link>
+                </div>
+              )}
+            </div>
+          )}
           <ModeSwitcher />
         </div>
       )}

@@ -129,23 +129,26 @@
 .notch-food-pills {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
   border-left: 1px solid var(--gold-dim);
-  padding-left: 0.45rem;
+  padding-left: 0.4rem;
   margin-left: 0.05rem;
 }
 
 .notch-food-pill {
   font-family: var(--font-body);
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-decoration: none;
-  padding: 0.15rem 0.35rem;
-  border-radius: 999px;
+  background: transparent;
+  border: none;
+  padding: 0.15rem 0.3rem;
+  cursor: pointer;
   transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .notch-food-pill:hover {
@@ -154,7 +157,71 @@
 
 .notch-food-pill.active {
   color: var(--eats-accent);
-  background: rgba(232, 117, 58, 0.1);
+  text-shadow: 0 0 8px rgba(232, 117, 58, 0.5), 0 0 16px rgba(232, 117, 58, 0.2);
+}
+
+/* Food dropdown below notch */
+.notch-food-dropdown {
+  position: fixed;
+  top: 42px;
+  left: 6px;
+  z-index: 10;
+  pointer-events: auto;
+  animation: dropdownFadeIn 0.2s ease-out both;
+}
+
+.notch-dropdown-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.3rem 0;
+}
+
+.notch-dropdown-item {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.15s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.notch-dropdown-item:hover {
+  color: var(--eats-accent);
+  text-shadow: 0 0 8px rgba(232, 117, 58, 0.4);
+}
+
+/* Pizza subcategory color hints */
+.notch-dropdown-item.pizza-dd-neo:hover {
+  color: var(--eats-pizza);
+  text-shadow: 0 0 8px rgba(232, 72, 48, 0.4);
+}
+
+.notch-dropdown-item.pizza-dd-sourdough:hover {
+  color: #D4A574;
+  text-shadow: 0 0 8px rgba(212, 165, 116, 0.4);
+}
+
+.notch-dropdown-item.pizza-dd-chicago:hover {
+  color: #E8A838;
+  text-shadow: 0 0 8px rgba(232, 168, 56, 0.4);
+}
+
+.notch-dropdown-item.pizza-dd-detroit:hover {
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* LC proximity link in jazz filter notch */

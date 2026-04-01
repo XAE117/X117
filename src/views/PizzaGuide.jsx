@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getStarredIds, toggleStar } from './FoodByCategory.jsx'
 import './PizzaGuide.css'
@@ -134,6 +134,18 @@ function PizzaGuide({ data }) {
     return data.restaurants.filter(r => r.category === 'pizza' || r.tier === 'pizza')
   }, [data])
 
+  // Scroll to section if coming from dropdown
+  useEffect(() => {
+    const scrollTo = sessionStorage.getItem('palace-pizza-scroll')
+    if (scrollTo) {
+      sessionStorage.removeItem('palace-pizza-scroll')
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`pizza-section-${scrollTo}`)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+  }, [])
+
   if (!data) return null
 
   return (
@@ -154,7 +166,7 @@ function PizzaGuide({ data }) {
         if (spots.length === 0) return null
 
         return (
-          <section key={section.key} className="pizza-section">
+          <section key={section.key} id={`pizza-section-${section.key}`} className="pizza-section">
             <div className="pizza-section-header">
               <h2 className="pizza-section-title">{section.title}</h2>
               <p className="pizza-section-intro">{section.intro}</p>
