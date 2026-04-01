@@ -31,7 +31,7 @@ function ModeSwitcher() {
     }
   }, [labelTarget])
 
-  const isFood = location.pathname.startsWith('/food')
+  const isFood = location.pathname.startsWith('/food') || location.pathname === '/guide'
 
   return (
     <div className="mode-notch">

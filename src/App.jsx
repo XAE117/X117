@@ -27,6 +27,7 @@ import EatsDetail from './views/EatsDetail.jsx'
 import EatsMapView from './views/EatsMapView.jsx'
 import PizzaGuide from './views/PizzaGuide.jsx'
 import TacoGuide from './views/TacoGuide.jsx'
+import GuidePage from './views/GuidePage.jsx'
 import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
 import './App.css'
@@ -65,6 +66,7 @@ function App() {
   const [data, setData] = useState(null)
   const [jazzData, setJazzData] = useState(null)
   const [foodData, setFoodData] = useState(null)
+  const [guideData, setGuideData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('all')
@@ -78,7 +80,8 @@ function App() {
   const location = useLocation()
 
   const isJazzMode = location.pathname.startsWith('/jazz')
-  const isFoodMode = location.pathname.startsWith('/food')
+  const isGuideMode = location.pathname === '/guide'
+  const isFoodMode = location.pathname.startsWith('/food') || isGuideMode
 
   // Scroll to top on route change
   useEffect(() => {
@@ -113,14 +116,16 @@ function App() {
 
   // Dynamic page title per mode
   useEffect(() => {
-    if (isFoodMode) {
+    if (isGuideMode) {
+      document.title = "LIZA'S PALACE — The Corn & Fire Companion"
+    } else if (isFoodMode) {
       document.title = "LIZA'S PALACE — LA Restaurant Guide"
     } else if (isJazzMode) {
       document.title = "LIZA'S PALACE — LA Jazz & Live Music"
     } else {
       document.title = "LIZA'S PALACE — LA Repertory Cinema"
     }
-  }, [isJazzMode, isFoodMode])
+  }, [isJazzMode, isFoodMode, isGuideMode])
 
   const fetchData = (isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
@@ -131,8 +136,9 @@ function App() {
       fetch(base + 'theaters.json?t=' + t).then(res => res.json()),
       fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
       fetch(base + 'restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
+      fetch(base + 'guide-restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
     ])
-      .then(([cinemaData, jazz, food]) => {
+      .then(([cinemaData, jazz, food, guide]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
         if (food) {
@@ -168,6 +174,7 @@ function App() {
           }
           setFoodData(food)
         }
+        if (guide) setGuideData(guide)
         setLoading(false)
         setRefreshing(false)
       })
@@ -257,7 +264,7 @@ function App() {
   const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
 
   return (
-    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
+    <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
           <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
@@ -311,6 +318,7 @@ function App() {
                         </div>
                       )}
                     </div>
+                    <Link to="/guide" className={`notch-food-pill ${location.pathname === '/guide' ? 'active' : ''}`}>Guide</Link>
                   </div>
                 )}
               </div>
@@ -361,7 +369,7 @@ function App() {
           <ModeSwitcher />
         </div>
       )}
-      {!isDetailPage && !isJazzMode && !isFoodMode && <GodfatherAlert data={data} />}
+      {!isDetailPage && !isJazzMode && !isFoodMode && !isGuideMode && <GodfatherAlert data={data} />}
       <main className="main-content">
         <Routes>
           {/* Splash */}
@@ -397,6 +405,9 @@ function App() {
           <Route path="/food/starred" element={<FoodStarred data={foodData} />} />
           <Route path="/food/spot/:spotId" element={<EatsDetail data={foodData} />} />
           <Route path="/food/map" element={<EatsMapView data={foodData} />} />
+
+          {/* Guide route */}
+          <Route path="/guide" element={<GuidePage guideData={guideData} />} />
           <Route path="*" element={
             <div style={{ color: '#E88A82', padding: '2rem', textAlign: 'center', fontFamily: 'monospace', fontSize: '0.8rem' }}>
               <p>No route matched: {window.location.pathname}</p>

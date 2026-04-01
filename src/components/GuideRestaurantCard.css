@@ -1,0 +1,138 @@
+/* ── Guide Restaurant Inline Card ── */
+
+.guide-restaurant-trigger-wrap {
+  position: relative;
+  display: inline;
+}
+
+.guide-restaurant-name {
+  color: var(--guide-accent, #C97B3A);
+  border-bottom: 1px dotted var(--guide-accent-dim, #A66830);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  font-weight: 400;
+}
+
+.guide-restaurant-name:hover {
+  color: var(--guide-accent-bright, #E8A060);
+  border-color: var(--guide-accent-bright, #E8A060);
+}
+
+.guide-restaurant-card {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: #1E1A16;
+  border: 1px solid rgba(201, 123, 58, 0.25);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  min-width: 220px;
+  max-width: 280px;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(201, 123, 58, 0.08);
+  animation: guideCardIn 0.2s ease-out both;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.guide-restaurant-card::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(201, 123, 58, 0.25);
+}
+
+@keyframes guideCardIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.guide-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.guide-card-name {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--guide-accent-bright, #E8A060);
+  letter-spacing: 0.02em;
+}
+
+.guide-card-price {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.guide-card-neighborhood {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.guide-card-note {
+  font-family: var(--guide-serif, 'Source Serif 4', Georgia, serif);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.guide-card-links {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(201, 123, 58, 0.12);
+}
+
+.guide-card-link {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--guide-accent, #C97B3A) !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.guide-card-link:hover {
+  color: var(--guide-accent-bright, #E8A060) !important;
+}
+
+/* ── Mobile: card pops below instead of above ── */
+@media (max-width: 600px) {
+  .guide-restaurant-card {
+    position: fixed;
+    bottom: auto;
+    left: 16px !important;
+    right: 16px !important;
+    top: auto;
+    transform: none;
+    max-width: none;
+    min-width: 0;
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .guide-restaurant-card::after {
+    display: none;
+  }
+}
