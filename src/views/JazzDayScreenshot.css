@@ -1,0 +1,63 @@
+/* ── Jazz Day Screenshot — overrides for DayScreenshot.css ── */
+
+.jss-subtitle {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.1rem;
+}
+
+.jss-list {
+  gap: 0.6rem;
+}
+
+.jss-item {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.15rem;
+  border-bottom: 1px solid rgba(42, 37, 32, 0.6);
+  padding: 0.35rem 0;
+}
+
+.jss-item:last-child {
+  border-bottom: none;
+}
+
+.jss-row-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.jss-row-top .ss-theater {
+  text-shadow: 0 0 1px currentColor;
+}
+
+.jss-row-top .ss-film {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.jss-item .ss-time-col {
+  align-items: flex-end;
+}
+
+.jss-hot-badge {
+  font-size: 0.7rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.jss-oc-badge {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.4rem;
+  letter-spacing: 0.08em;
+  padding: 0.04rem 0.2rem;
+  border-radius: 2px;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-dim);
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
