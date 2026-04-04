@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-29T09:41:48.988Z",
-  "lastFullScrape": "2026-03-29T09:41:48.988Z",
+  "lastUpdated": "2026-04-04T02:27:22.140Z",
+  "lastFullScrape": "2026-04-04T02:27:22.140Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -159,7 +159,56 @@
     "dha-rae-oak-los-angeles",
     "yeobo-darling-menlo-park",
     "naides-san-francisco",
-    "little-mountain-montecito"
+    "little-mountain-montecito",
+    "pizzeria-sei",
+    "pizzana",
+    "mother-wolf",
+    "speak-cheezy",
+    "hail-mary-pizza",
+    "lodge-bread-co",
+    "two-doughs",
+    "side-pie",
+    "masa-echo-park",
+    "ginos-east-la",
+    "doughbox-la",
+    "union-pizza-co",
+    "chi-pie",
+    "dtown-pizzeria",
+    "apollonias-pizzeria",
+    "bub-and-grandmas",
+    "la-yalaltequita",
+    "ditroit-tacos",
+    "la-princesita",
+    "sabys-cafe",
+    "los-cinco-puntos",
+    "tacos-la-guera",
+    "angels-tijuana-tacos",
+    "tacos-tamix",
+    "villas-tacos",
+    "carnitas-el-artista",
+    "carnitas-uruapan",
+    "carnitas-los-gabrieles",
+    "tacos-los-guichos",
+    "metro-balderas",
+    "birrieria-familia-castro",
+    "goat-mafia",
+    "barbacoa-ramirez",
+    "mariscos-el-chito",
+    "perse",
+    "badmaash-venice",
+    "very-thai",
+    "sushi-samba-west-hollywood",
+    "the-holloway",
+    "sushisamba",
+    "details-here-santa-monica",
+    "joyce",
+    "crudo-e-nudo-santa-monica",
+    "corteza-at-sendero",
+    "men-beasts",
+    "the-benjamin-hollywood",
+    "taqueria-frontera",
+    "komal",
+    "leo-taqueria-eagle-rock"
   ],
   "restaurants": [
     {
@@ -192,13 +241,17 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/holbox"
+        },
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
         }
       ],
       "pricePp": 14,
       "tier": "tacos",
       "tacoStyle": "mariscos",
       "sourceCount": 2,
-      "heatScore": 10
+      "heatScore": 4
     },
     {
       "id": "burritos-la-palma",
@@ -259,7 +312,7 @@
       "tier": "tacos",
       "tacoStyle": "mariscos",
       "sourceCount": 0,
-      "heatScore": 8
+      "heatScore": 0
     },
     {
       "id": "sonoratown",
@@ -269,7 +322,7 @@
       "price": "$10–16/pp",
       "category": "tacos",
       "fire": 5,
-      "description": "Primary ambassador for Sonora in LA. Paper-thin yet sturdy flour tortillas hold beef short rib (not skirt steak) grilled over mesquite. The salsa roja uses 34 Roma tomatoes and a precise half-ounce of dried chile de \u00e1rbol. The taco de tripa is boiled with the velvet intact, then rendered in its own fat.",
+      "description": "Primary ambassador for Sonora in LA. Paper-thin yet sturdy flour tortillas hold beef short rib (not skirt steak) grilled over mesquite. The salsa roja uses 34 Roma tomatoes and a precise half-ounce of dried chile de árbol. The taco de tripa is boiled with the velvet intact, then rendered in its own fat.",
       "whyHot": "The flour tortilla is the technical centerpiece — they originally drove 5 hours to the Arizona-Mexico border to source the wheat flour. That obsession shows.",
       "accolades": [
         "Michelin Bib Gourmand",
@@ -288,7 +341,7 @@
       "tier": "tacos",
       "tacoStyle": "regional",
       "sourceCount": 0,
-      "heatScore": 9
+      "heatScore": 0
     },
     {
       "id": "howlin-rays",
@@ -851,6 +904,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -858,11 +915,12 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "regalade",
       "addedDate": "2026-03-19",
-      "address": "8136 W 3rd St, Los Angeles, CA 90048, United States"
+      "address": "8136 W 3rd St, Los Angeles, CA 90048, United States",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/regalade?venueId=94696"
     },
     {
       "name": "Kar Son",
@@ -1233,6 +1291,10 @@
         {
           "name": "Michelin 3 Stars",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -1240,10 +1302,11 @@
         "tasting-menu"
       ],
       "tier": "whale",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "somni-beverly-hills",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/somni-ca?venueId=95205"
     },
     {
       "name": "Providence",
@@ -1566,7 +1629,7 @@
       "price": "$$",
       "pricePp": 15,
       "michelinStatus": "bib-gourmand",
-      "description": "F\u00e1tima Juarez's 'masa temple' — the city's primary nixtamal specialist. She nixtamalizes different colors of corn (blue, white, red) with obsessive precision, adjusting hydration and lime amounts for each variety. Tortillas with the complexity of sourdough bread. Wholesale supplier to Holbox and Rustic Canyon.",
+      "description": "Fátima Juarez's 'masa temple' — the city's primary nixtamal specialist. She nixtamalizes different colors of corn (blue, white, red) with obsessive precision, adjusting hydration and lime amounts for each variety. Tortillas with the complexity of sourdough bread. Wholesale supplier to Holbox and Rustic Canyon.",
       "whyHot": "The artisanal infrastructure for LA's entire fine-dining Mexican sector. If your favorite restaurant has incredible tortillas, Komal probably made them.",
       "sources": [
         {
@@ -1574,7 +1637,10 @@
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/komal"
         }
       ],
-      "accolades": ["Michelin Bib Gourmand", "Taco Madness 2026 Bracket"],
+      "accolades": [
+        "Michelin Bib Gourmand",
+        "Taco Madness 2026 Bracket"
+      ],
       "tags": [
         "NIXTAMAL",
         "HEIRLOOM CORN",
@@ -1585,8 +1651,8 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "sourceCount": 3,
-      "heatScore": 10,
+      "sourceCount": 1,
+      "heatScore": 2,
       "fire": 5,
       "id": "komal-dtla",
       "addedDate": "2026-03-19"
@@ -1726,7 +1792,7 @@
       "sources": [],
       "accolades": [],
       "sourceCount": 0,
-      "heatScore": 8,
+      "heatScore": 0,
       "color": "#7CB342",
       "tags": [
         "LATE-NIGHT",
@@ -2380,26 +2446,34 @@
       "address": "3147 Glendale Blvd, Los Angeles, CA 90039, United States"
     },
     {
-      "name": "Taquer\u00eda Frontera",
+      "name": "Taquería Frontera",
       "neighborhood": "Cypress Park / Silver Lake",
       "cuisine": "Al Pastor Tacos",
       "price": "$",
-      "description": "Ranked as the top taco spot in LA by multiple critical outlets. The technical distinction is paper-thin yellow tortillas imported from El Grano de Oro tortiller\u00eda in Tijuana, heated on a plancha until they reach a slight oily crisp. The robustly marinated al pastor is shaved directly from the trompo.",
-      "whyHot": "Those Tijuana-imported yellow tortillas are the secret weapon — a slight oily crisp that provides textural contrast most taquer\u00edas can't match.",
+      "description": "Ranked as the top taco spot in LA by multiple critical outlets. The technical distinction is paper-thin yellow tortillas imported from El Grano de Oro tortillería in Tijuana, heated on a plancha until they reach a slight oily crisp. The robustly marinated al pastor is shaved directly from the trompo.",
+      "whyHot": "Those Tijuana-imported yellow tortillas are the secret weapon — a slight oily crisp that provides textural contrast most taquerías can't match.",
       "sources": [
         {
           "name": "Thrillist LA",
           "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
         }
       ],
-      "accolades": ["#1 LA Taco Rankings", "Taco Madness 2026 #3 Seed"],
-      "tags": ["AL PASTOR", "TROMPO", "TIJUANA TORTILLAS", "LATE-NIGHT"],
+      "accolades": [
+        "#1 LA Taco Rankings",
+        "Taco Madness 2026 #3 Seed"
+      ],
+      "tags": [
+        "AL PASTOR",
+        "TROMPO",
+        "TIJUANA TORTILLAS",
+        "LATE-NIGHT"
+      ],
       "color": "#7CB342",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "al-pastor",
       "sourceCount": 1,
-      "heatScore": 10,
+      "heatScore": 2,
       "fire": 5,
       "id": "taqueria-frontera",
       "addedDate": "2026-03-21",
@@ -3185,13 +3259,20 @@
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pizzeria-mozza"
         }
       ],
-      "tags": ["WOOD-FIRED", "DATE NIGHT", "ICONIC"],
-      "accolades": ["Michelin Guide", "James Beard Award Winner"],
+      "tags": [
+        "WOOD-FIRED",
+        "DATE NIGHT",
+        "ICONIC"
+      ],
+      "accolades": [
+        "Michelin Guide",
+        "James Beard Award Winner"
+      ],
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "neo-neapolitan",
       "sourceCount": 1,
-      "heatScore": 8,
+      "heatScore": 2,
       "fire": 4,
       "color": "#E84830",
       "id": "pizzeria-mozza-los-angeles",
@@ -3627,13 +3708,20 @@
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pizzeria-bianco"
         }
       ],
-      "tags": ["WOOD-FIRED", "ICONIC", "WORTH THE WAIT"],
-      "accolades": ["James Beard Outstanding Restaurant", "Michelin Guide"],
+      "tags": [
+        "WOOD-FIRED",
+        "ICONIC",
+        "WORTH THE WAIT"
+      ],
+      "accolades": [
+        "James Beard Outstanding Restaurant",
+        "Michelin Guide"
+      ],
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "neo-neapolitan",
       "sourceCount": 1,
-      "heatScore": 10,
+      "heatScore": 2,
       "fire": 5,
       "color": "#E84830",
       "id": "pizzeria-bianco-los-angeles-los-angeles",
@@ -3679,7 +3767,7 @@
       "name": "Grá",
       "neighborhood": "Los Angeles",
       "cuisine": "",
-      "description": "",
+      "description": "Bobby Pradachith's sourdough pizza pop-up turned permanent. Wild-fermented dough with a tangy complexity that pairs brilliantly with creative, seasonal toppings. The mushroom pie with truffle is transcendent.",
       "sources": [
         {
           "name": "Michelin Guide",
@@ -3742,13 +3830,20 @@
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/quarter-sheets-pizza"
         }
       ],
-      "tags": ["DETROIT-STYLE", "TAKEOUT FRIENDLY", "SEASONAL"],
-      "accolades": ["Michelin Guide", "Eater LA Essential"],
+      "tags": [
+        "DETROIT-STYLE",
+        "TAKEOUT FRIENDLY",
+        "SEASONAL"
+      ],
+      "accolades": [
+        "Michelin Guide",
+        "Eater LA Essential"
+      ],
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "detroit-square",
       "sourceCount": 1,
-      "heatScore": 8,
+      "heatScore": 2,
       "fire": 4,
       "color": "#E84830",
       "id": "quarter-sheets-los-angeles",
@@ -3943,14 +4038,23 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "tokyo-neapolitan",
-      "heatScore": 10,
+      "heatScore": 0,
       "fire": 5,
       "color": "#E84830",
       "description": "Yusho Asai's omakase-style pizza counter — 8 seats, 12 courses, each pie a conversation between Japanese precision and Neapolitan tradition. Ingredients imported from Japan and Italy. This is pizza as fine art.",
       "whyHot": "Ranked #2 in the USA on 50 Top Pizza 2025. Omakase pizza is a genre Sei essentially invented in LA.",
-      "tags": ["WOOD-FIRED", "OMAKASE", "DATE NIGHT", "TASTING MENU"],
-      "accolades": ["#2 USA 50 Top Pizza 2025", "Michelin Guide"],
-      "addedDate": "2026-03-31"
+      "tags": [
+        "WOOD-FIRED",
+        "OMAKASE",
+        "DATE NIGHT",
+        "TASTING MENU"
+      ],
+      "accolades": [
+        "#2 USA 50 Top Pizza 2025",
+        "Michelin Guide"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "pizzana",
@@ -3961,14 +4065,22 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "neo-neapolitan",
-      "heatScore": 8,
+      "heatScore": 0,
       "fire": 4,
       "color": "#E84830",
       "description": "Daniele Uditi's masterclass in neo-Neapolitan technique. The cacio e pepe pizza is a phenomenon — pecorino cream, black pepper, fresh mozzarella. Multiple locations, but Brentwood is the original.",
       "whyHot": "The cacio e pepe pie put Pizzana on the national map. Uditi's dough fermentation process creates an impossibly light, blistered crust.",
-      "tags": ["WOOD-FIRED", "MULTIPLE LOCATIONS", "FAMILY FRIENDLY"],
-      "accolades": ["50 Top Pizza USA", "LA Times 101"],
-      "addedDate": "2026-03-31"
+      "tags": [
+        "WOOD-FIRED",
+        "MULTIPLE LOCATIONS",
+        "FAMILY FRIENDLY"
+      ],
+      "accolades": [
+        "50 Top Pizza USA",
+        "LA Times 101"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "mother-wolf",
@@ -3979,32 +4091,23 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "neo-neapolitan",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#E84830",
       "description": "Evan Funke's Roman-inspired temple at the Hollywood Citizen News building. The pizza al taglio (Roman sheet pan style) and pinsa are exceptional, alongside legendary pasta. The room itself is a showstopper.",
       "whyHot": "Funke's obsessive approach to Roman dough technique — the al taglio has that impossibly airy, crispy base that most places can't replicate.",
-      "tags": ["ROMAN-STYLE", "DATE NIGHT", "PASTA", "SCENE"],
-      "accolades": ["Michelin Guide", "Eater LA Essential"],
-      "addedDate": "2026-03-31"
-    },
-    {
-      "id": "gra-pizza",
-      "name": "Gr\u00e1",
-      "neighborhood": "East Hollywood",
-      "cuisine": "Sourdough Pizza",
-      "price": "$$",
-      "tier": "pizza",
-      "category": "pizza",
-      "pizzaStyle": "sourdough",
-      "heatScore": 9,
-      "fire": 5,
-      "color": "#E84830",
-      "description": "Bobby Pradachith's sourdough pizza pop-up turned permanent. Wild-fermented dough with a tangy complexity that pairs brilliantly with creative, seasonal toppings. The mushroom pie with truffle is transcendent.",
-      "whyHot": "Leading the sourdough pizza movement in LA. The fermentation gives each crust a character that conventional dough simply can't match.",
-      "tags": ["SOURDOUGH", "SEASONAL", "NATURAL WINE"],
-      "accolades": ["Eater LA Essential", "LA Times 101"],
-      "addedDate": "2026-03-31"
+      "tags": [
+        "ROMAN-STYLE",
+        "DATE NIGHT",
+        "PASTA",
+        "SCENE"
+      ],
+      "accolades": [
+        "Michelin Guide",
+        "Eater LA Essential"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "speak-cheezy",
@@ -4015,14 +4118,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "sourdough",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#E84830",
       "description": "Speakeasy-vibes sourdough pizza tucked in the Arts District. Long-fermented dough, quality ingredients, and a natural wine list. The white pies with seasonal produce are standouts.",
       "whyHot": "The 72-hour fermented dough creates a crust with real depth — tangy, chewy, with beautiful leopard-spotted char.",
-      "tags": ["SOURDOUGH", "NATURAL WINE", "CRAFT COCKTAILS"],
+      "tags": [
+        "SOURDOUGH",
+        "NATURAL WINE",
+        "CRAFT COCKTAILS"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "hail-mary-pizza",
@@ -4033,14 +4141,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "sourdough",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#E84830",
       "description": "Neighborhood sourdough pizza shop in Atwater Village. Naturally leavened dough, high-quality toppings, a casual counter-service vibe. The pepperoni with hot honey is a crowd favorite.",
       "whyHot": "Proof that serious sourdough technique works beautifully in a casual neighborhood setting. No pretense, just great pizza.",
-      "tags": ["SOURDOUGH", "COUNTER SERVICE", "FAMILY FRIENDLY"],
+      "tags": [
+        "SOURDOUGH",
+        "COUNTER SERVICE",
+        "FAMILY FRIENDLY"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "lodge-bread-co",
@@ -4051,14 +4164,21 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "sourdough",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Bakery-first operation where world-class bread becomes world-class pizza. The sourdough crust has a depth of flavor from their house-milled flour that you can taste in every bite. Also legendary focaccia.",
       "whyHot": "When your pizza crust is made by actual master bakers using house-milled grain, it shows. The crust IS the star here.",
-      "tags": ["SOURDOUGH", "BAKERY", "HOUSE-MILLED"],
-      "accolades": ["LA Times 101"],
-      "addedDate": "2026-03-31"
+      "tags": [
+        "SOURDOUGH",
+        "BAKERY",
+        "HOUSE-MILLED"
+      ],
+      "accolades": [
+        "LA Times 101"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "two-doughs",
@@ -4069,14 +4189,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "sourdough",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Highland Park's dedicated sourdough pizza spot. Long-fermented crusts with creative seasonal toppings and a solid craft beer selection. Relaxed neighborhood energy.",
       "whyHot": "Consistent execution on the sourdough fundamentals with rotating seasonal specials that keep regulars coming back.",
-      "tags": ["SOURDOUGH", "CRAFT BEER", "NEIGHBORHOOD"],
+      "tags": [
+        "SOURDOUGH",
+        "CRAFT BEER",
+        "NEIGHBORHOOD"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "side-pie",
@@ -4087,14 +4212,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "sourdough",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Casual sourdough pizza spot in Eagle Rock with a loyal following. Naturally fermented crust, thoughtful toppings, very approachable prices. The margherita is deceptively simple and excellent.",
       "whyHot": "Great sourdough pizza that doesn't require a reservation or a second mortgage. Eagle Rock's go-to slice shop.",
-      "tags": ["SOURDOUGH", "CASUAL", "VALUE"],
+      "tags": [
+        "SOURDOUGH",
+        "CASUAL",
+        "VALUE"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "masa-echo-park",
@@ -4105,14 +4235,23 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "chicago",
-      "heatScore": 8,
+      "heatScore": 0,
       "fire": 4,
       "color": "#E84830",
       "description": "The definitive Chicago deep dish experience in LA. Buttery, flaky crust piled with cheese and chunky tomato sauce. The cornmeal crust has a biscuit-like quality that converts even deep dish skeptics.",
       "whyHot": "Masa has been holding it down for Chicago-style in LA for over a decade. The wait is real and worth it.",
-      "tags": ["DEEP DISH", "CASH ONLY", "BYOB", "WORTH THE WAIT"],
-      "accolades": ["Eater LA Essential", "LA Times 101"],
-      "addedDate": "2026-03-31"
+      "tags": [
+        "DEEP DISH",
+        "CASH ONLY",
+        "BYOB",
+        "WORTH THE WAIT"
+      ],
+      "accolades": [
+        "Eater LA Essential",
+        "LA Times 101"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "ginos-east-la",
@@ -4123,14 +4262,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "chicago",
-      "heatScore": 5,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "The legendary Chicago chain's LA outpost. Classic deep dish with that signature cornmeal crust, layers of mozzarella, and chunky tomato sauce. Also serves tavern-style thin crust for the initiated.",
       "whyHot": "The real deal from Chicago, transplanted to the Valley. The tavern-style thin crust is the sleeper hit.",
-      "tags": ["DEEP DISH", "TAVERN-STYLE", "FAMILY FRIENDLY"],
+      "tags": [
+        "DEEP DISH",
+        "TAVERN-STYLE",
+        "FAMILY FRIENDLY"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "doughbox-la",
@@ -4141,14 +4285,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "chicago",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Stuffed and deep dish pizza in WeHo with a modern twist. Creative fillings inside that thick, buttery crust. The spinach-artichoke stuffed pizza is a standout.",
       "whyHot": "Filling the Chicago void on the Westside with legit deep dish and stuffed variations.",
-      "tags": ["DEEP DISH", "STUFFED", "DELIVERY"],
+      "tags": [
+        "DEEP DISH",
+        "STUFFED",
+        "DELIVERY"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "union-pizza-co",
@@ -4159,14 +4308,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "chicago",
-      "heatScore": 5,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Pasadena spot specializing in Chicago tavern-style thin crust — the cracker-crisp, square-cut party pizza that actual Chicagoans eat more than deep dish. Also solid Italian beef.",
       "whyHot": "If you know, you know: tavern-style is what Chicago really eats. Thin, crispy, cut in squares. This is the real one.",
-      "tags": ["TAVERN-STYLE", "THIN CRUST", "ITALIAN BEEF"],
+      "tags": [
+        "TAVERN-STYLE",
+        "THIN CRUST",
+        "ITALIAN BEEF"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "chi-pie",
@@ -4177,14 +4331,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "chicago",
-      "heatScore": 5,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Silverlake's deep dish destination. Proper Chicago-style with that tall, butter-crust wall holding rivers of cheese and tangy tomato. Pre-order recommended — these pies take time.",
       "whyHot": "Eastside answer to the deep dish craving. The crust has that authentic buttery flake.",
-      "tags": ["DEEP DISH", "PRE-ORDER", "NEIGHBORHOOD"],
+      "tags": [
+        "DEEP DISH",
+        "PRE-ORDER",
+        "NEIGHBORHOOD"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "dtown-pizzeria",
@@ -4195,14 +4354,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "detroit-square",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Authentic Detroit-style pizza with the telltale crispy cheese crown baked in blue steel pans. Wisconsin brick cheese creates that distinctive caramelized edge. Thick, airy, and deeply satisfying.",
       "whyHot": "True blue-steel-pan Detroit style with proper Wisconsin brick cheese. The racing stripe of sauce on top seals the deal.",
-      "tags": ["DETROIT-STYLE", "BRICK CHEESE", "TAKEOUT FRIENDLY"],
+      "tags": [
+        "DETROIT-STYLE",
+        "BRICK CHEESE",
+        "TAKEOUT FRIENDLY"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "apollonias-pizzeria",
@@ -4213,14 +4377,19 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "detroit-square",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#E84830",
       "description": "Family-run shop doing both Detroit-style squares and Neapolitan rounds. The Detroit pies nail the crispy-cheese-edge fundamentals, and they offer both styles so you don't have to choose.",
       "whyHot": "Best of both worlds — Detroit squares AND Neapolitan rounds under one roof, both executed with care.",
-      "tags": ["DETROIT-STYLE", "NEAPOLITAN", "FAMILY-RUN"],
+      "tags": [
+        "DETROIT-STYLE",
+        "NEAPOLITAN",
+        "FAMILY-RUN"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "bub-and-grandmas",
@@ -4231,14 +4400,22 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "detroit-square",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#E84830",
       "description": "Matt Chernus's beloved Eagle Rock shop doing thick, cheesy square pies and outstanding Italian sandwiches. The pan pizza has a focaccia-like base with generous toppings. Also: the meatball sub is elite.",
       "whyHot": "The square pizza here is the comfort food ideal — thick, pillowy, loaded. Plus some of the best sandwiches in Northeast LA.",
-      "tags": ["SQUARE", "SANDWICHES", "COUNTER SERVICE", "NEIGHBORHOOD"],
-      "accolades": ["Eater LA Essential"],
-      "addedDate": "2026-03-31"
+      "tags": [
+        "SQUARE",
+        "SANDWICHES",
+        "COUNTER SERVICE",
+        "NEIGHBORHOOD"
+      ],
+      "accolades": [
+        "Eater LA Essential"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "la-yalaltequita",
@@ -4249,32 +4426,44 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "heatScore": 8,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "The Mecinas family, third-generation bakers, preserve the ancestral knowledge of the Oaxacan blandas tradition. Their soaking process produces tortillas that are blistered, fragrant, and resilient — the polar opposite of industrial Maseca. Earthy, alive flavor reflecting the terroir of the Sierra Norte.",
       "whyHot": "Three generations of Oaxacan blandas technique. These tortillas taste like the earth they came from — in the best possible way.",
-      "tags": ["OAXACAN", "NIXTAMAL", "BLANDAS", "GENERATIONAL"],
+      "tags": [
+        "OAXACAN",
+        "NIXTAMAL",
+        "BLANDAS",
+        "GENERATIONAL"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "ditroit-tacos",
       "name": "Ditroit",
       "neighborhood": "Arts District",
-      "cuisine": "Ma\u00edz Criollo Tacos",
+      "cuisine": "Maíz Criollo Tacos",
       "price": "$$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
-      "description": "House-nixtamalized tortillas from ma\u00edz criollo — specifically chalque\u00f1o blanco and other heirloom varietals. The tortillas have elegant yet rustic textures with nuanced flavor notes of lactic tang and yogurt. This is wine-industry thinking applied to corn.",
-      "whyHot": "Varietal specificity for corn like winemakers have for grapes. The chalque\u00f1o blanco tortilla has a lactic tang that haunts you.",
-      "tags": ["NIXTAMAL", "HEIRLOOM CORN", "MA\u00cdZ CRIOLLO", "ARTS DISTRICT"],
+      "description": "House-nixtamalized tortillas from maíz criollo — specifically chalqueño blanco and other heirloom varietals. The tortillas have elegant yet rustic textures with nuanced flavor notes of lactic tang and yogurt. This is wine-industry thinking applied to corn.",
+      "whyHot": "Varietal specificity for corn like winemakers have for grapes. The chalqueño blanco tortilla has a lactic tang that haunts you.",
+      "tags": [
+        "NIXTAMAL",
+        "HEIRLOOM CORN",
+        "MAÍZ CRIOLLO",
+        "ARTS DISTRICT"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "la-princesita",
@@ -4285,14 +4474,20 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#7CB342",
       "description": "Volcanic stone grinding of U.S.-grown organic corn. The masa has a mineral depth from the stone and a clean, sweet corn flavor from the organic sourcing. Traditional technique with a modern sustainability angle.",
       "whyHot": "Volcanic stone grinding gives the masa a mineral quality you can't get from steel burrs. Old tools, new standards.",
-      "tags": ["NIXTAMAL", "VOLCANIC STONE", "ORGANIC", "BOYLE HEIGHTS"],
+      "tags": [
+        "NIXTAMAL",
+        "VOLCANIC STONE",
+        "ORGANIC",
+        "BOYLE HEIGHTS"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "sabys-cafe",
@@ -4303,14 +4498,20 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#7CB342",
       "description": "Small-batch, hand-nixtamalized blue corn tortillas with walnut undertones. A neighborhood gem in Mar Vista where the masa program runs with the care of a craft bakery. Every tortilla is pressed to order.",
       "whyHot": "The walnut undertone in the blue corn is subtle and addictive. Proof that great masa doesn't require a fancy address.",
-      "tags": ["NIXTAMAL", "BLUE CORN", "NEIGHBORHOOD", "PRESSED TO ORDER"],
+      "tags": [
+        "NIXTAMAL",
+        "BLUE CORN",
+        "NEIGHBORHOOD",
+        "PRESSED TO ORDER"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "los-cinco-puntos",
@@ -4321,32 +4522,44 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "Overnight rest in an alkaline bath produces extra-thick traditional tortillas with deep corn flavor. Also a carnitas destination — traditional braising in lard with metate-ground tortillas. Buche, moronga, and lamb head for the adventurous.",
       "whyHot": "The overnight alkaline soak creates tortillas with a density and depth that the quick-nixtamal crowd can't touch. Old Boyle Heights magic.",
-      "tags": ["NIXTAMAL", "OVERNIGHT SOAK", "CARNITAS", "TRADITIONAL"],
+      "tags": [
+        "NIXTAMAL",
+        "OVERNIGHT SOAK",
+        "CARNITAS",
+        "TRADITIONAL"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "tacos-la-guera",
-      "name": "Tacos La G\u00fcera",
+      "name": "Tacos La Güera",
       "neighborhood": "West Pico Blvd",
       "cuisine": "Al Pastor Tacos",
       "price": "$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "al-pastor",
-      "heatScore": 9,
+      "heatScore": 0,
       "fire": 5,
       "color": "#7CB342",
       "description": "The 'meat croissant' texture — thinly sliced, translucent layers of pork with charred edges and a succulent interior. The direct-shave method harvests only the perfectly cooked exterior from the trompo directly into the tortilla, preserving the vertical roast's unique moisture profile.",
       "whyHot": "The direct-shave technique is the gold standard. No plancha finishing — just trompo to tortilla. That's where the magic lives.",
-      "tags": ["AL PASTOR", "TROMPO", "DIRECT-SHAVE", "STREET"],
+      "tags": [
+        "AL PASTOR",
+        "TROMPO",
+        "DIRECT-SHAVE",
+        "STREET"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "angels-tijuana-tacos",
@@ -4357,14 +4570,20 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "al-pastor",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 3,
       "color": "#7CB342",
       "description": "Handmade tortillas paired with creamy guacamole that balances the rich, adobo-marinated al pastor. The Tijuana aesthetic — the trompo for pastor, the vampiro for birria — runs strong here.",
       "whyHot": "The guacamole integration is the differentiator. It's not a garnish — it's a structural element that makes each bite complete.",
-      "tags": ["AL PASTOR", "HANDMADE TORTILLAS", "GUACAMOLE", "TIJUANA-STYLE"],
+      "tags": [
+        "AL PASTOR",
+        "HANDMADE TORTILLAS",
+        "GUACAMOLE",
+        "TIJUANA-STYLE"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "tacos-tamix",
@@ -4375,104 +4594,142 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "al-pastor",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 3,
       "color": "#7CB342",
       "description": "Traditional al pastor execution with the airborne pineapple technique — sliced to order, the pineapple is launched from the trompo and caught mid-air on your taco. Performance meets precision.",
       "whyHot": "The airborne pineapple catch is pure theater, but it's also technically precise — the slice has to be thin enough to complement, not overwhelm.",
-      "tags": ["AL PASTOR", "TROMPO", "PINEAPPLE FLICK", "TRADITIONAL"],
+      "tags": [
+        "AL PASTOR",
+        "TROMPO",
+        "PINEAPPLE FLICK",
+        "TRADITIONAL"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "villas-tacos",
       "name": "Villa's Tacos",
       "neighborhood": "Highland Park",
-      "cuisine": "Michoac\u00e1n Blue Corn Tacos",
+      "cuisine": "Michoacán Blue Corn Tacos",
       "price": "$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "regional",
-      "heatScore": 9,
+      "heatScore": 0,
       "fire": 5,
       "color": "#7CB342",
-      "description": "A Highland Park institution representing the flavors of Michoac\u00e1n. Blue corn tortillas provide an earthy, nutty base for mesquite-grilled proteins. The 'heavy build' — melted Monterey Jack, cotija, sour cream, guacamole — creates a taco only LA could dream up.",
+      "description": "A Highland Park institution representing the flavors of Michoacán. Blue corn tortillas provide an earthy, nutty base for mesquite-grilled proteins. The 'heavy build' — melted Monterey Jack, cotija, sour cream, guacamole — creates a taco only LA could dream up.",
       "whyHot": "Michelin Bib Gourmand for a reason. The interplay of salty cotija and creamy condiments on blue corn is a flavor architecture unique to this city.",
-      "accolades": ["Michelin Bib Gourmand"],
-      "tags": ["BLUE CORN", "MICHOAC\u00c1N", "MESQUITE", "BIB GOURMAND"],
-      "addedDate": "2026-03-31"
+      "accolades": [
+        "Michelin Bib Gourmand"
+      ],
+      "tags": [
+        "BLUE CORN",
+        "MICHOACÁN",
+        "MESQUITE",
+        "BIB GOURMAND"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "carnitas-el-artista",
       "name": "Carnitas El Artista",
       "neighborhood": "Inglewood (La Brea)",
-      "cuisine": "Michoac\u00e1n Carnitas",
+      "cuisine": "Michoacán Carnitas",
       "price": "$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 8,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "Four-generation carnitas recipe using traditional copper pots (cazo de cobre). The copper's thermal conductivity ensures uniform temperature through the four-hour confit process. The result: meat that is simultaneously tender, crispy, and glazed in its own collagen. Maciza, cueritos, and surtido cuts.",
       "whyHot": "Copper pot carnitas passed down four generations. The cazo de cobre isn't nostalgia — it's science. Uniform heat, no burning, perfect confit.",
-      "tags": ["CARNITAS", "COPPER POT", "GENERATIONAL", "CONFIT"],
+      "tags": [
+        "CARNITAS",
+        "COPPER POT",
+        "GENERATIONAL",
+        "CONFIT"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "carnitas-uruapan",
       "name": "Carnitas Uruapan",
       "neighborhood": "Boyle Heights",
-      "cuisine": "Michoac\u00e1n Carnitas & Masa",
+      "cuisine": "Michoacán Carnitas & Masa",
       "price": "$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "Metate-ground nixtamal and traditional 1960s carnitas methodology. The masa here has the rough, mineral texture that only a metate can produce, and the carnitas follow a recipe unchanged since the Kennedy administration.",
       "whyHot": "Metate-ground masa meets 1960s carnitas technique. Nothing has changed because nothing needs to.",
-      "tags": ["CARNITAS", "METATE", "NIXTAMAL", "TRADITIONAL"],
+      "tags": [
+        "CARNITAS",
+        "METATE",
+        "NIXTAMAL",
+        "TRADITIONAL"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "carnitas-los-gabrieles",
       "name": "Carnitas Los Gabrieles",
-      "neighborhood": "Pi\u00f1ata District",
+      "neighborhood": "Piñata District",
       "cuisine": "Sidewalk Cazo Carnitas",
       "price": "$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "An 800-pound capacity sidewalk cazo — one of the largest in the city — producing carnitas with a 'sticky' texture from the massive volume of rendering fat. The surtido and costilla cuts are the move. Pure spectacle and substance.",
       "whyHot": "800 pounds of pork in a sidewalk cazo is a sight. The volume creates a unique sticky, glazed texture smaller operations can't replicate.",
-      "tags": ["CARNITAS", "SIDEWALK CAZO", "SPECTACLE", "PI\u00d1ATA DISTRICT"],
+      "tags": [
+        "CARNITAS",
+        "SIDEWALK CAZO",
+        "SPECTACLE",
+        "PIÑATA DISTRICT"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "tacos-los-guichos",
-      "name": "Tacos Los G\u00fcichos",
+      "name": "Tacos Los Güichos",
       "neighborhood": "South Central",
       "cuisine": "Mexico City-Style Tacos",
       "price": "$",
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 6,
+      "heatScore": 0,
       "fire": 3,
       "color": "#7CB342",
       "description": "Mexico City street-style tacos with thoughtful frying technique. Specializing in the offal cuts — trompa, oreja, buche — that define the DF taco experience. For the adventurous eater who wants the real deal.",
       "whyHot": "Nose-to-tail taco execution in the DF tradition. The buche is cooked to a crisp that shatters, then yields.",
-      "tags": ["OFFAL", "MEXICO CITY", "NOSE-TO-TAIL", "STREET"],
+      "tags": [
+        "OFFAL",
+        "MEXICO CITY",
+        "NOSE-TO-TAIL",
+        "STREET"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "metro-balderas",
@@ -4483,14 +4740,20 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "Snout-to-tail specialists working from a traditional cazo. Nana (uterus), snout, and ribs — cuts that most places won't touch, prepared with the reverence they deserve. The traditional cazo method produces a depth of flavor that modern equipment can't replicate.",
       "whyHot": "If you want the full spectrum of the animal, this is your spot. Nana, snout, ribs — all from the cazo, all remarkable.",
-      "tags": ["SNOUT-TO-TAIL", "OFFAL", "TRADITIONAL CAZO", "HIGHLAND PARK"],
+      "tags": [
+        "SNOUT-TO-TAIL",
+        "OFFAL",
+        "TRADITIONAL CAZO",
+        "HIGHLAND PARK"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "birrieria-familia-castro",
@@ -4501,14 +4764,22 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 10,
+      "heatScore": 0,
       "fire": 5,
       "color": "#7CB342",
-      "description": "Named #1 taco spot in America by Yelp 2025. Tijuana-style beef birria with a closely guarded family recipe from the owner's grandmother. Their vampiros — tortillas griddled until charred and curled like bat wings, Sinaloa style — are the signature move. Served with consom\u00e9 for dipping.",
+      "description": "Named #1 taco spot in America by Yelp 2025. Tijuana-style beef birria with a closely guarded family recipe from the owner's grandmother. Their vampiros — tortillas griddled until charred and curled like bat wings, Sinaloa style — are the signature move. Served with consomé for dipping.",
       "whyHot": "#1 in America for a reason. The slow-stewed tenderness + the vampiro char is a textural one-two punch nobody else lands this clean.",
-      "accolades": ["Yelp #1 USA 2025"],
-      "tags": ["BIRRIA", "VAMPIROS", "TIJUANA-STYLE", "CONSOM\u00c9"],
-      "addedDate": "2026-03-31"
+      "accolades": [
+        "Yelp #1 USA 2025"
+      ],
+      "tags": [
+        "BIRRIA",
+        "VAMPIROS",
+        "TIJUANA-STYLE",
+        "CONSOMÉ"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "goat-mafia",
@@ -4519,14 +4790,20 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 8,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "Juan Garcia's crusade for authentic birria de chivo — 'si no es chivo, no es birria.' Culinary school techniques meet tradition: ginger as aromatic, imperial stout in fall months for chocolatey depth. If it's not goat, it's not birria.",
       "whyHot": "The purist's purist. Garcia uses imperial stout in the braise during fall for a chocolatey, savory depth that elevates goat birria to high art.",
-      "tags": ["BIRRIA DE CHIVO", "GOAT", "TRADITIONAL", "POP-UP"],
+      "tags": [
+        "BIRRIA DE CHIVO",
+        "GOAT",
+        "TRADITIONAL",
+        "POP-UP"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "barbacoa-ramirez",
@@ -4537,14 +4814,21 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "slow-cook",
-      "heatScore": 9,
+      "heatScore": 0,
       "fire": 5,
       "color": "#7CB342",
-      "description": "Gonzalo Ramirez raises his own lambs in Central California and butchers them himself. Meat is roasted 24 hours in a traditional underground pit wrapped in maguey spines. The rendered oils and smoke create an earthy consom\u00e9 that captures the smoldering essence of the lamb. Ranch-to-pit-to-table.",
+      "description": "Gonzalo Ramirez raises his own lambs in Central California and butchers them himself. Meat is roasted 24 hours in a traditional underground pit wrapped in maguey spines. The rendered oils and smoke create an earthy consomé that captures the smoldering essence of the lamb. Ranch-to-pit-to-table.",
       "whyHot": "Full vertical integration — ranch to pit to table. 24-hour underground pit roasting in maguey. The pinnacle of Hidalguense barbacoa.",
-      "tags": ["BARBACOA", "PIT-ROASTED", "LAMB", "RANCH-TO-TABLE", "24-HOUR"],
+      "tags": [
+        "BARBACOA",
+        "PIT-ROASTED",
+        "LAMB",
+        "RANCH-TO-TABLE",
+        "24-HOUR"
+      ],
       "accolades": [],
-      "addedDate": "2026-03-31"
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
     },
     {
       "id": "mariscos-el-chito",
@@ -4555,14 +4839,316 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "mariscos",
-      "heatScore": 7,
+      "heatScore": 0,
       "fire": 4,
       "color": "#7CB342",
       "description": "Baja-style seafood tacos and dorados in El Sereno. Crispy fried fish and shrimp with the tangy, creamy slaw that defines the Baja tradition. The dorados are textbook — golden, shattering shells holding perfectly seasoned seafood.",
       "whyHot": "Ranked #10 in Yelp's national top 100. El Sereno's seafood standard-bearer for Baja-style execution.",
-      "accolades": ["Yelp #10 USA 2025"],
-      "tags": ["SEAFOOD", "BAJA-STYLE", "DORADOS", "EL SERENO"],
-      "addedDate": "2026-03-31"
+      "accolades": [
+        "Yelp #10 USA 2025"
+      ],
+      "tags": [
+        "SEAFOOD",
+        "BAJA-STYLE",
+        "DORADOS",
+        "EL SERENO"
+      ],
+      "addedDate": "2026-03-31",
+      "sourceCount": 0
+    },
+    {
+      "name": "Perse",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "perse",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Badmaash Venice",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "badmaash-venice",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Very Thai",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "very-thai",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Sushi Samba West Hollywood",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sushi-samba-west-hollywood",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "The Holloway",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "the-holloway",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Sushisamba",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sushisamba",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "details here",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/santa-monica-ca/venues/crudo-e-nudo?date=2026-03-24&seats=2",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "details-here-santa-monica",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Joyce",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/joyce?venueId=91924",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "joyce",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Crudo e Nudo",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/santa-monica-ca/venues/crudo-e-nudo?venueId=44364",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "crudo-e-nudo-santa-monica",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Corteza at Sendero",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/corteza-at-sendero?venueId=84553",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "corteza-at-sendero",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Men & Beasts",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/men-and-beasts?venueId=89398",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "men-beasts",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "The Benjamin Hollywood",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-benjamin-hollywood?venueId=82879",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "the-benjamin-hollywood",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "name": "Taqueria Frontera",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "taqueria-frontera",
+      "addedDate": "2026-03-21"
+    },
+    {
+      "name": "Komal",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Thrillist LA",
+          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        },
+        {
+          "name": "Michelin Bib Gourmand",
+          "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        }
+      ],
+      "tags": [],
+      "pricePp": 15,
+      "tier": "street",
+      "sourceCount": 2,
+      "heatScore": 4,
+      "id": "komal",
+      "addedDate": "2026-04-04"
+    },
+    {
+      "id": "leo-taqueria-eagle-rock",
+      "name": "Leo's Tacos",
+      "neighborhood": "Eagle Rock",
+      "cuisine": "Tacos",
+      "tier": "street",
+      "priceRange": "$5–10/pp",
+      "pricePp": 7,
+      "description": "The most famous al pastor in LA. The spinning trompo is mesmerizing, the tacos are $1.50, and the multiple locations make this the city's most reliable late-night taco option.",
+      "whyHot": "Multiple locations but the truck is the OG experience. Cash only.",
+      "sources": [],
+      "sourceCount": 0,
+      "heatScore": 0,
+      "tags": [
+        "late-night",
+        "cash-only",
+        "truck",
+        "tacos",
+        "al-pastor"
+      ],
+      "isNew": false,
+      "address": "1515 N La Brea Ave, Los Angeles, CA 90028",
+      "lat": 34.096,
+      "lng": -118.3442,
+      "googleMapsUrl": "https://maps.google.com/?q=Leos+Tacos+La+Brea+Los+Angeles",
+      "hours": "Daily 9am-3am",
+      "manualPick": true,
+      "addedDate": "2026-03-19"
     }
   ]
 }
