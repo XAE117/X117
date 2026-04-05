@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-04T10:29:59.435Z",
+  "lastUpdated": "2026-04-05T10:30:05.444Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,24 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-reservoir-dogs-2026-04-03",
-          "title": "Reservoir Dogs",
-          "date": "2026-04-03",
-          "time": "11:59 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4548?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
-        {
-          "id": "new-beverly-kill-bill-the-whole-bloody-affair-2026-04-03",
-          "title": "Kill Bill: The Whole Bloody Affair",
-          "date": "2026-04-03",
-          "time": "5:30 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4545?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-night-of-the-lepus-2026-04-04",
           "title": "Night of the Lepus",
@@ -114,27 +96,18 @@
           "title": "Reservoir Dogs",
           "date": "2026-04-10",
           "time": "11:59 pm",
-          "format": "digital",
-          "notes": "Midnight",
-          "link": "https://thenewbev.com/program/april-10-reservoir-dogs-midnight-show/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4562?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
-          "id": "new-beverly-the-old-fashioned-way-2026-04-10",
-          "title": "The Old Fashioned Way",
+          "id": "new-beverly-the-old-fashioned-way-misbehaving-ladies-2026-04-10",
+          "title": "The Old Fashioned Way / Misbehaving Ladies",
           "date": "2026-04-10",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/april-10-the-old-fashioned-way-misbehaving-ladies/"
-        },
-        {
-          "id": "new-beverly-misbehaving-ladies-2026-04-10",
-          "title": "Misbehaving Ladies",
-          "date": "2026-04-10",
-          "time": "8:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/april-10-the-old-fashioned-way-misbehaving-ladies/"
+          "time": "7:00 pm / 8:40 pm",
+          "format": "35mm",
+          "notes": "Both in 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4560?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-cartoon-club-2026-04-11",
@@ -615,51 +588,6 @@
       "color": "#B89AD4",
       "screenings": [
         {
-          "id": "vista-theatre-american-graffiti-2026-04-03",
-          "title": "American Graffiti",
-          "date": "2026-04-03",
-          "time": "11:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3492?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-the-drama-2026-04-03",
-          "title": "The Drama",
-          "date": "2026-04-03",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3390?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-the-drama-2026-04-03",
-          "title": "The Drama",
-          "date": "2026-04-03",
-          "time": "3:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3395?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-the-drama-2026-04-03",
-          "title": "The Drama",
-          "date": "2026-04-03",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3396?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-pride-of-the-blue-grass-federal-fugitives-2026-04-03",
-          "title": "Pride of the Blue Grass / Federal Fugitives",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3438?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
           "id": "vista-theatre-the-drama-2026-04-04",
           "title": "The Drama",
           "date": "2026-04-04",
@@ -885,40 +813,49 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3444?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-car-wash-2026-04-10-11:59pm",
+          "id": "vista-theatre-car-wash-2026-04-10",
           "title": "Car Wash",
           "date": "2026-04-10",
           "time": "11:59 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3457?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-the-drama-2026-04-10-12:00pm",
+          "id": "vista-theatre-the-drama-2026-04-10",
           "title": "The Drama",
           "date": "2026-04-10",
           "time": "12:00 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3411?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-the-drama-2026-04-10-3:45pm",
+          "id": "vista-theatre-the-drama-2026-04-10",
           "title": "The Drama",
           "date": "2026-04-10",
           "time": "3:45 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3417?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-the-drama-2026-04-10-7:15pm",
+          "id": "vista-theatre-the-drama-2026-04-10",
           "title": "The Drama",
           "date": "2026-04-10",
           "time": "7:15 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3418?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-phantom-killer-blonde-comet-2026-04-10",
+          "title": "Phantom Killer / Blonde Comet",
+          "date": "2026-04-10",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3471?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
           "id": "vista-theatre-the-drama-2026-04-11-1:15pm",
@@ -1192,24 +1129,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-psycho-2026-04-03",
-          "title": "Psycho",
-          "date": "2026-04-03",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/psycho-019be236-0eb9-f843-f472-84e8cb2c43ac"
-        },
-        {
-          "id": "academy-museum-ikiru-to-live-in-35mm-2026-04-03",
-          "title": "Ikiru (to Live) in 35mm",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/ikiru-to-live-in-35-mm-019c062a-f565-75f5-4be0-16278de57735"
-        },
-        {
           "id": "academy-museum-lupin-the-3rd-the-castle-of-cagliostro-2026-04-04",
           "title": "Lupin the 3rd: The Castle of Cagliostro",
           "date": "2026-04-04",
@@ -1307,6 +1226,24 @@
           "format": "35mm",
           "notes": "At the Ted Mann Theater.",
           "link": "https://www.academymuseum.org/en/programs/detail/no-regrets-for-our-youth-waga-seishun-ni-kui-nashi-in-35-mm-019c0634-6642-ca6a-7f2a-3129b42e2524"
+        },
+        {
+          "id": "academy-museum-the-housemaid-2026-04-10",
+          "title": "The Housemaid",
+          "date": "2026-04-10",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/the-housemaid-019be237-abf6-a8bd-0d36-f893ba7926ab"
+        },
+        {
+          "id": "academy-museum-stray-dog-nora-inu-in-35mm-2026-04-10",
+          "title": "Stray Dog (Nora Inu) in 35mm",
+          "date": "2026-04-10",
+          "time": "7:30 pm",
+          "format": "35mm",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/stray-dog-in-35-mm-019c0634-e877-2a82-3436-1d52e10104d4"
         }
       ]
     },
@@ -1318,15 +1255,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-the-serpent-s-skin-2026-04-03",
-          "title": "The Serpent’s Skin",
-          "date": "2026-04-03",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Part of the “Fantastic Fest Presents” series. With director Alice Maio Mackay in attendance.",
-          "link": "https://drafthouse.com/los-angeles/event/live-qa-the-serpents-skin#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-04",
           "title": "The Super Mario Galaxy Movie",
@@ -1364,13 +1292,40 @@
           "link": "https://drafthouse.com/los-angeles/event/live-q-a-our-hero-balthazar"
         },
         {
-          "id": "alamo-dtla-our-hero-balthazar-sold-out-2026-04-05",
-          "title": "Our Hero, Balthazar (Sold Out)",
+          "id": "alamo-dtla-our-hero-balthazar-2026-04-05",
+          "title": "Our Hero, Balthazar",
           "date": "2026-04-05",
           "time": "7:45 pm",
           "format": "digital",
           "notes": "Live Q&A with the cast and crew.",
-          "link": "https://drafthouse.com/los-angeles/event/live-q-a-our-hero-balthazar"
+          "link": "https://drafthouse.com/los-angeles/event/live-q-a-our-hero-balthazar#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-06",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-06",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Movie Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/movie-party-the-super-mario-galaxy-movie-star-party#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-06",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-06",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "Part of the “Movie Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/movie-party-the-super-mario-galaxy-movie-star-party#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-06",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-06",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "Part of the “Cereal Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/cereal-party-the-super-mario-galaxy-movie-cereal-pajama-party#js-showtimescomponent"
         },
         {
           "id": "alamo-dtla-castration-movie-anthology-i-traps-2026-04-07",
@@ -1400,6 +1355,24 @@
           "link": "https://drafthouse.com/los-angeles/event/advance-screening-mermaid-2026-sneak-preview#js-showtimescomponent"
         },
         {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-08",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-08",
+          "time": "10:45 am",
+          "format": "digital",
+          "notes": "Part of the “Cereal Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/cereal-party-the-super-mario-galaxy-movie-cereal-pajama-party#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-08",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-08",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "Part of the “Movie Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/movie-party-the-super-mario-galaxy-movie-star-party#js-showtimescomponent"
+        },
+        {
           "id": "alamo-dtla-mermaid-2026-sold-out-2026-04-08",
           "title": "Mermaid (2026) (Sold Out)",
           "date": "2026-04-08",
@@ -1418,6 +1391,15 @@
           "link": "https://drafthouse.com/los-angeles/event/weird-wednesday-freddys-dead-the-final-nightmare-live-qa#js-showtimescomponent"
         },
         {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-08",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-08",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Cereal Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/cereal-party-the-super-mario-galaxy-movie-cereal-pajama-party#js-showtimescomponent"
+        },
+        {
           "id": "alamo-dtla-faces-of-death-2026-2026-04-08",
           "title": "Faces of Death (2026)",
           "date": "2026-04-08",
@@ -1427,6 +1409,33 @@
           "link": "https://drafthouse.com/los-angeles/event/advance-screening-faces-of-death-2026-early-access#js-showtimescomponent"
         },
         {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-09",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-09",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Cereal Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/cereal-party-the-super-mario-galaxy-movie-cereal-pajama-party#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-09",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-09",
+          "time": "11:00 am",
+          "format": "digital",
+          "notes": "Part of the “Cereal Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/cereal-party-the-super-mario-galaxy-movie-cereal-pajama-party#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-the-super-mario-galaxy-movie-2026-04-09",
+          "title": "The Super Mario Galaxy Movie",
+          "date": "2026-04-09",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "Part of the “Movie Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/movie-party-the-super-mario-galaxy-movie-star-party#js-showtimescomponent"
+        },
+        {
           "id": "alamo-dtla-city-on-fire-1987-2026-04-09",
           "title": "City on Fire (1987)",
           "date": "2026-04-09",
@@ -1434,6 +1443,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://drafthouse.com/los-angeles/show/city-on-fire-1987#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-ghost-world-2026-04-10",
+          "title": "Ghost World",
+          "date": "2026-04-10",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/ghost-world#js-showtimescomponent"
         }
       ]
     },
@@ -1445,15 +1463,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-black-angel-blues-in-the-night-2026-04-03",
-          "title": "Black Angel / Blues in the Night",
-          "date": "2026-04-03",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Live musical performance by singer Laura Ellis and the Nick Rossi Trio. Introductions by Eddie Muller, Alan K. Rode and Nick Rossi.",
-          "link": "https://www.americancinematheque.com/now-showing/black-angel-blues-in-the-night-4-3-26/"
-        },
         {
           "id": "egyptian-hangover-square-2026-04-04",
           "title": "Hangover Square",
@@ -1579,6 +1588,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2384/seats"
+        },
+        {
+          "id": "egyptian-the-man-i-love-nora-prentiss-2026-04-10",
+          "title": "The Man I Love / Nora Prentiss",
+          "date": "2026-04-10",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Live musical performance by singer Elizabeth Bougerol and the Nick Rossi Trio. Introductions by Eddie Muller, Alan K. Rode and Elizabeth Bougerol.",
+          "link": "https://www.americancinematheque.com/now-showing/the-man-i-love-nora-prentiss-4-10-26/"
         }
       ]
     },
@@ -1590,15 +1608,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#7ABFC0",
       "screenings": [
-        {
-          "id": "aero-floating-clouds-2026-04-03",
-          "title": "Floating Clouds",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "35mm print courtesy of The Japan Foundation, Los Angeles. Series co-presented by The Japan Foundation, Los Angeles and The Yanai Initiative for Globalizing Japanese Humanities.",
-          "link": "https://www.americancinematheque.com/now-showing/floating-clouds-4-3-26/"
-        },
         {
           "id": "aero-repast-lightning-2026-04-09",
           "title": "Repast / Lightning",
@@ -1618,69 +1627,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb-2026-",
-          "title": "Dr. Strangelove Or: How I Learned to Stop Worrying and Love the Bomb",
-          "date": "2026-04-03",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema. Part of the “Movie Den” series.",
-          "link": "https://vidiotsfoundation.org/purchase/3860158/"
-        },
-        {
-          "id": "vidiots-dj-ahmet-2026-04-03",
-          "title": "DJ Ahmet",
-          "date": "2026-04-03",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3863147/"
-        },
-        {
-          "id": "vidiots-blue-velvet-2026-04-03",
-          "title": "Blue Velvet",
-          "date": "2026-04-03",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3840890/"
-        },
-        {
-          "id": "vidiots-arco-english-dubbed-2026-04-03",
-          "title": "Arco (English Dubbed)",
-          "date": "2026-04-03",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema. Part of the “Films for Everyone” series.",
-          "link": "https://vidiotsfoundation.org/purchase/3863145/"
-        },
-        {
-          "id": "vidiots-jesus-christ-superstar-2026-04-03",
-          "title": "Jesus Christ Superstar",
-          "date": "2026-04-03",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3840888/"
-        },
-        {
-          "id": "vidiots-dj-ahmet-2026-04-03",
-          "title": "DJ Ahmet",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3863146/"
-        },
-        {
-          "id": "vidiots-the-blade-2026-04-03",
-          "title": "The Blade",
-          "date": "2026-04-03",
-          "time": "9:45 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3867501/"
-        },
         {
           "id": "vidiots-james-and-the-giant-peach-2026-04-04",
           "title": "James and the Giant Peach",
@@ -1853,57 +1799,57 @@
           "link": "https://vidiotsfoundation.org/purchase/3889030/"
         },
         {
-          "id": "vidiots-the-moment-2026-04-10-10:00pm",
+          "id": "vidiots-the-moment-2026-04-10",
           "title": "The Moment",
           "date": "2026-04-10",
           "time": "10:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3889036/"
         },
         {
-          "id": "vidiots-rrr-2026-04-10-3:00pm",
+          "id": "vidiots-rrr-2026-04-10",
           "title": "RRR",
           "date": "2026-04-10",
           "time": "3:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3860500/"
         },
         {
-          "id": "vidiots-the-moment-2026-04-10-4:30pm",
+          "id": "vidiots-the-moment-2026-04-10",
           "title": "The Moment",
           "date": "2026-04-10",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3889031/"
         },
         {
-          "id": "vidiots-lady-snowblood-2026-04-10-7:00pm",
+          "id": "vidiots-lady-snowblood-2026-04-10",
           "title": "Lady Snowblood",
           "date": "2026-04-10",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3896018/"
         },
         {
-          "id": "vidiots-john-lilly-and-the-earth-coincidence-control-office-2026-04-10-7:30pm",
+          "id": "vidiots-john-lilly-and-the-earth-coincidence-control-office-2026-04-10",
           "title": "John Lilly and the Earth Coincidence Control Office",
           "date": "2026-04-10",
           "time": "7:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3889035/"
         },
         {
-          "id": "vidiots-south-park-bigger-longer-uncut-2026-04-10-9:45pm",
+          "id": "vidiots-south-park-bigger-longer-uncut-2026-04-10",
           "title": "South Park: Bigger, Longer & Uncut",
           "date": "2026-04-10",
           "time": "9:45 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3920382/"
         },
         {
@@ -2493,24 +2439,6 @@
       "color": "#8EBF8E",
       "screenings": [
         {
-          "id": "brain-dead-the-master-2026-04-03",
-          "title": "The Master",
-          "date": "2026-04-03",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://studios.wearebraindead.com/purchase/1271577/"
-        },
-        {
-          "id": "brain-dead-the-big-lebowski-2026-04-03",
-          "title": "The Big Lebowski",
-          "date": "2026-04-03",
-          "time": "9:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://studios.wearebraindead.com/purchase/1271576/"
-        },
-        {
           "id": "brain-dead-the-day-of-the-dolphin-2026-04-04",
           "title": "The Day of the Dolphin",
           "date": "2026-04-04",
@@ -2562,7 +2490,7 @@
           "time": "7:30 pm",
           "format": "digital",
           "notes": "",
-          "link": "https://dice.fm/partner/tickets/event/2wk35m-beyond-the-mat-qa-with-director-barry-blaustein-and-we-watch-wrestling-8th-apr-brain-dead-studios-los-angeles-tickets?dice_id=8195202&dice_channel=web&dice_tags=organic&dice_campaign=Brain+Dead+LLC&dice_feature=mio_marketing&_branch_match_id=1256662425127165609&utm_source=web&utm_campaign=Brain+Dead+LLC&utm_medium=mio_marketing&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1S8wMUw2szSwNDGwTLOvK0pNSy0qysxLj08qyi8vTi2ydc4oys9NBQBXIBSBOwAAAA"
+          "link": "https://dice.fm/partner/tickets/event/2wk35m-beyond-the-mat-qa-with-director-barry-blaustein-and-we-watch-wrestling-8th-apr-brain-dead-studios-los-angeles-tickets"
         },
         {
           "id": "brain-dead-embrace-of-the-serpent-fainting-spells-2026-04-09",
@@ -2574,13 +2502,13 @@
           "link": "https://studios.wearebraindead.com/purchase/1272815/"
         },
         {
-          "id": "brain-dead-conan-the-barbarian-2026-04-10-9:30pm",
+          "id": "brain-dead-conan-the-barbarian-2026-04-10",
           "title": "Conan the Barbarian",
           "date": "2026-04-10",
           "time": "9:30 pm",
           "format": "digital",
           "notes": "",
-          "link": "https://dice.fm/event/6d2abq-brain-dead-fantasy-fest-10th-apr-brain-dead-studios-los-angeles-homage-brewing-los-angeles-tickets?dice_id=A2c60d338cbb&_kx=cLxOssOST4BMi_kALbDLbQ.TtXPcf&_branch_match_id=1256662425127165609&utm_source=dice.fm&utm_campaign=event_share&utm_medium=event_share&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1Xc0SjYzSDE2tkhOSrKPz66wTfap8C8u9g8OMXHyzYzPdvRJcvFJCtQLKYkISE5TqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAlpM1hl0AAAA"
+          "link": "https://dice.fm/event/6d2abq-brain-dead-fantasy-fest-10th-apr-brain-dead-studios-los-angeles-homage-brewing-los-angeles-tickets"
         },
         {
           "id": "brain-dead-heavy-metal-2026-04-11-11:00pm",
@@ -2764,15 +2692,6 @@
       "color": "#8EA0CF",
       "screenings": [
         {
-          "id": "billy-wilder-comedy-as-resistance-hollywood-shuffle-2026-04-03",
-          "title": "Comedy as Resistance: Hollywood Shuffle",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.cinema.ucla.edu/events/comedy-as-resistance-hollywood-shuffle-2026-04-03/"
-        },
-        {
           "id": "billy-wilder-the-night-of-the-hunter-2026-04-05",
           "title": "The Night of the Hunter",
           "date": "2026-04-05",
@@ -2801,15 +2720,6 @@
       "color": "#B4A0D4",
       "screenings": [
         {
-          "id": "laemmle-nuart-the-french-connection-2026-04-03",
-          "title": "The French Connection",
-          "date": "2026-04-03",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/ccd650e2-8f34-5673-96c5-78feff6f94e8"
-        },
-        {
           "id": "laemmle-nuart-the-rocky-horror-picture-show-2026-04-04",
           "title": "The Rocky Horror Picture Show",
           "date": "2026-04-04",
@@ -2817,6 +2727,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://booking.landmarktheatres.com/launch/ticketing/ce96c21a-4719-57cc-b62f-8759f8afa384"
+        },
+        {
+          "id": "laemmle-nuart-the-exorcist-the-version-you-ve-never-seen-2026-04-10",
+          "title": "The Exorcist: The Version You’ve Never Seen",
+          "date": "2026-04-10",
+          "time": "10:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/1aa93828-a2ef-5a44-9a5a-0e0d089452c1"
         }
       ]
     },
@@ -2881,6 +2800,51 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/139854"
+        },
+        {
+          "id": "laemmle-noho-piff-block-5-2026-04-10",
+          "title": "PIFF: Block 5",
+          "date": "2026-04-10",
+          "time": "1:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139855"
+        },
+        {
+          "id": "laemmle-noho-piff-block-6-2026-04-10",
+          "title": "PIFF: Block 6",
+          "date": "2026-04-10",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139856"
+        },
+        {
+          "id": "laemmle-noho-piff-block-7-2026-04-10",
+          "title": "PIFF: Block 7",
+          "date": "2026-04-10",
+          "time": "5:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139857"
+        },
+        {
+          "id": "laemmle-noho-piff-block-8-2026-04-10",
+          "title": "PIFF: Block 8",
+          "date": "2026-04-10",
+          "time": "7:40 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139858"
+        },
+        {
+          "id": "laemmle-noho-piff-block-9-2026-04-10",
+          "title": "PIFF: Block 9",
+          "date": "2026-04-10",
+          "time": "9:55 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139859"
         }
       ]
     },
@@ -2892,15 +2856,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-twin-peaks-season-2-ep-6-7-2026-04-03",
-          "title": "Twin Peaks: Season 2, Ep. 6 & 7",
-          "date": "2026-04-03",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "“Demons” and “Lonely Souls.” Part of the “TWIN PEAKS: The Complete Series” series.",
-          "link": "https://www.americancinematheque.com/now-showing/twin-peaks-season-2-ep-6-7-4-3-26/"
-        },
         {
           "id": "los-feliz-3-moment-of-terror-2026-04-04",
           "title": "Moment of Terror",
@@ -3046,6 +3001,33 @@
           "format": "digital",
           "notes": "Screening will be followed by a Q&A with Peter Coccoma (Writer/Director) and Breanne Thomas (Producer). Evening also includes a performance by the film’s composer, Elori Saxl, playing a set of all new music inspired by the film score. Opening performance by Enhancement, a project of composer and producer Ben Babbitt.",
           "link": "https://dice.fm/event/2w87ap-drifts-film-premiere-elori-saxl-enhancement-live-8th-apr-2220-arts-archives-los-angeles-tickets"
+        },
+        {
+          "id": "2220-arts-los-angeles-festival-of-movies-with-hasan-in-gaza-2026-04-10",
+          "title": "Los Angeles Festival of Movies: With Hasan in Gaza",
+          "date": "2026-04-10",
+          "time": "2:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lafestivalofmovies.org/with-hasan-in-gaza"
+        },
+        {
+          "id": "2220-arts-los-angeles-festival-of-movies-after-dreaming-2026-04-10",
+          "title": "Los Angeles Festival of Movies: After Dreaming",
+          "date": "2026-04-10",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "Q&A with writer/director Christine Haroutounian.",
+          "link": "https://lafestivalofmovies.org/after-dreaming"
+        },
+        {
+          "id": "2220-arts-los-angeles-festival-of-movies-in-the-glow-of-darkness-2026-04-10",
+          "title": "Los Angeles Festival of Movies: In the Glow of Darkness",
+          "date": "2026-04-10",
+          "time": "7:15 pm",
+          "format": "digital",
+          "notes": "Q&A with writer/director Tucker Bennett, writer/EP/composer Chris Corrente, and additional cast and crew.",
+          "link": "https://lafestivalofmovies.org/in-the-glow-of-darkness"
         }
       ]
     },
@@ -3076,114 +3058,6 @@
       "url": "https://lumieremusichall.com",
       "color": "#D4C890",
       "screenings": [
-        {
-          "id": "lumiere-cinema-late-shift-2026-04-03",
-          "title": "Late Shift",
-          "date": "2026-04-03",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70887"
-        },
-        {
-          "id": "lumiere-cinema-pillion-2026-04-03",
-          "title": "Pillion",
-          "date": "2026-04-03",
-          "time": "1:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70884"
-        },
-        {
-          "id": "lumiere-cinema-calle-malaga-2026-04-03",
-          "title": "Calle Malaga",
-          "date": "2026-04-03",
-          "time": "1:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70886"
-        },
-        {
-          "id": "lumiere-cinema-good-luck-have-fun-don-t-die-2026-04-03",
-          "title": "Good Luck, Have Fun, Don’t Die",
-          "date": "2026-04-03",
-          "time": "3:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70885"
-        },
-        {
-          "id": "lumiere-cinema-this-island-esta-isla-2026-04-03",
-          "title": "This Island (Esta Isla)",
-          "date": "2026-04-03",
-          "time": "3:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70878"
-        },
-        {
-          "id": "lumiere-cinema-the-president-s-cake-2026-04-03",
-          "title": "The President’s Cake",
-          "date": "2026-04-03",
-          "time": "3:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70888"
-        },
-        {
-          "id": "lumiere-cinema-epic-elvis-presley-in-concert-2026-04-03",
-          "title": "Epic: Elvis Presley in Concert",
-          "date": "2026-04-03",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70879"
-        },
-        {
-          "id": "lumiere-cinema-idiotka-2026-04-03",
-          "title": "Idiotka",
-          "date": "2026-04-03",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70882"
-        },
-        {
-          "id": "lumiere-cinema-my-father-s-shadow-2026-04-03",
-          "title": "My Father’s Shadow",
-          "date": "2026-04-03",
-          "time": "6:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70883"
-        },
-        {
-          "id": "lumiere-cinema-two-prosecutors-2026-04-03",
-          "title": "Two Prosecutors",
-          "date": "2026-04-03",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70873"
-        },
-        {
-          "id": "lumiere-cinema-forbidden-fruits-2026-04-03",
-          "title": "Forbidden Fruits",
-          "date": "2026-04-03",
-          "time": "8:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70871"
-        },
-        {
-          "id": "lumiere-cinema-a-magnificent-life-2026-04-03",
-          "title": "A Magnificent Life",
-          "date": "2026-04-03",
-          "time": "8:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=70874"
-        },
         {
           "id": "lumiere-cinema-a-magnificent-life-2026-04-04",
           "title": "A Magnificent Life",
@@ -3852,24 +3726,6 @@
       "color": "#A8C0D4",
       "screenings": [
         {
-          "id": "laemmle-town-center-palestine-36-2026-04-03",
-          "title": "Palestine 36",
-          "date": "2026-04-03",
-          "time": "1:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/75204"
-        },
-        {
-          "id": "laemmle-town-center-palestine-36-2026-04-03",
-          "title": "Palestine 36",
-          "date": "2026-04-03",
-          "time": "7:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/75205"
-        },
-        {
           "id": "laemmle-town-center-palestine-36-2026-04-04",
           "title": "Palestine 36",
           "date": "2026-04-04",
@@ -4024,42 +3880,6 @@
       "color": "#90C4A8",
       "screenings": [
         {
-          "id": "art-theatre-cloudy-with-a-chance-of-meatballs-2-2026-04-03",
-          "title": "Cloudy with a Chance of Meatballs 2",
-          "date": "2026-04-03",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-cloudy-with-a-chance-of-meatballs-2026-04-03",
-          "title": "Cloudy with a Chance of Meatballs",
-          "date": "2026-04-03",
-          "time": "11:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-cloudy-with-a-chance-of-meatballs-2026-04-03",
-          "title": "Cloudy with a Chance of Meatballs",
-          "date": "2026-04-03",
-          "time": "4:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-cloudy-with-a-chance-of-meatballs-2-2026-04-03",
-          "title": "Cloudy with a Chance of Meatballs 2",
-          "date": "2026-04-03",
-          "time": "6:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
           "id": "art-theatre-cloudy-with-a-chance-of-meatballs-2026-04-04",
           "title": "Cloudy with a Chance of Meatballs",
           "date": "2026-04-04",
@@ -4148,6 +3968,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-dead-lover-in-stink-o-vision-2026-04-10",
+          "title": "Dead Lover in Stink-O-Vision!",
+          "date": "2026-04-10",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-burt-2026-04-10",
+          "title": "Burt",
+          "date": "2026-04-10",
+          "time": "12:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-burt-2026-04-10",
+          "title": "Burt",
+          "date": "2026-04-10",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-carrie-on-16mm-2026-04-10",
+          "title": "Carrie on 16mm,",
+          "date": "2026-04-10",
+          "time": "7:30 pm",
+          "format": "16mm",
+          "notes": "50th anniversary.",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
         }
       ]
     },
@@ -4177,42 +4033,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A0CFB4",
       "screenings": [
-        {
-          "id": "laemmle-glendale-yes-2026-04-03",
-          "title": "Yes",
-          "date": "2026-04-03",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/56459"
-        },
-        {
-          "id": "laemmle-glendale-premarital-2026-04-03",
-          "title": "Premarital",
-          "date": "2026-04-03",
-          "time": "10:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57102"
-        },
-        {
-          "id": "laemmle-glendale-premarital-2026-04-03",
-          "title": "Premarital",
-          "date": "2026-04-03",
-          "time": "4:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57009"
-        },
-        {
-          "id": "laemmle-glendale-yes-2026-04-03",
-          "title": "Yes",
-          "date": "2026-04-03",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/56460"
-        },
         {
           "id": "laemmle-glendale-yes-2026-04-04",
           "title": "Yes",
@@ -4421,42 +4241,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8B8D4",
       "screenings": [
-        {
-          "id": "laemmle-monica-andre-is-an-idiot-2026-04-03",
-          "title": "Andre Is an Idiot",
-          "date": "2026-04-03",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/88959"
-        },
-        {
-          "id": "laemmle-monica-miroirs-no-3-2026-04-03",
-          "title": "Miroirs No. 3",
-          "date": "2026-04-03",
-          "time": "3:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/88964"
-        },
-        {
-          "id": "laemmle-monica-andre-is-an-idiot-2026-04-03",
-          "title": "Andre Is an Idiot",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/88960"
-        },
-        {
-          "id": "laemmle-monica-miroirs-no-3-2026-04-03",
-          "title": "Miroirs No. 3",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/88965"
-        },
         {
           "id": "laemmle-monica-andre-is-an-idiot-2026-04-04",
           "title": "Andre Is an Idiot",
@@ -4783,24 +4567,6 @@
       "color": "#C4D490",
       "screenings": [
         {
-          "id": "rooftop-cinema-american-psycho-2026-04-03",
-          "title": "American Psycho",
-          "date": "2026-04-03",
-          "time": "11:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20155-american-psycho/"
-        },
-        {
-          "id": "rooftop-cinema-the-hunger-games-2026-04-03",
-          "title": "The Hunger Games",
-          "date": "2026-04-03",
-          "time": "7:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20154-the-hunger-games/"
-        },
-        {
           "id": "rooftop-cinema-the-social-network-2026-04-04",
           "title": "The Social Network",
           "date": "2026-04-04",
@@ -4880,6 +4646,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20163-point-break/"
+        },
+        {
+          "id": "rooftop-cinema-pride-prejudice-2026-04-10",
+          "title": "Pride & Prejudice",
+          "date": "2026-04-10",
+          "time": "7:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/los-angeles/dtla/film/20165-pride-prejudice/"
         }
       ]
     },
@@ -4910,87 +4685,6 @@
       "url": "https://www.thefridacinema.org",
       "color": "#D4908A",
       "screenings": [
-        {
-          "id": "frida-cinema-dead-lover-2026-04-03",
-          "title": "Dead Lover",
-          "date": "2026-04-03",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489354/"
-        },
-        {
-          "id": "frida-cinema-two-prosecutors-2026-04-03",
-          "title": "Two Prosecutors",
-          "date": "2026-04-03",
-          "time": "11:45 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489289/"
-        },
-        {
-          "id": "frida-cinema-palestine-36-2026-04-03",
-          "title": "Palestine 36",
-          "date": "2026-04-03",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489013/"
-        },
-        {
-          "id": "frida-cinema-two-prosecutors-2026-04-03",
-          "title": "Two Prosecutors",
-          "date": "2026-04-03",
-          "time": "2:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489290/"
-        },
-        {
-          "id": "frida-cinema-palestine-36-2026-04-03",
-          "title": "Palestine 36",
-          "date": "2026-04-03",
-          "time": "2:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489014/"
-        },
-        {
-          "id": "frida-cinema-kiki-s-delivery-service-subtitled-2026-04-03",
-          "title": "Kiki’s Delivery Service (Subtitled)",
-          "date": "2026-04-03",
-          "time": "5:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489370/"
-        },
-        {
-          "id": "frida-cinema-palestine-36-2026-04-03",
-          "title": "Palestine 36",
-          "date": "2026-04-03",
-          "time": "5:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489015/"
-        },
-        {
-          "id": "frida-cinema-kiki-s-delivery-service-dubbed-2026-04-03",
-          "title": "Kiki’s Delivery Service (Dubbed)",
-          "date": "2026-04-03",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1489371/"
-        },
-        {
-          "id": "frida-cinema-the-napa-boys-2026-04-03",
-          "title": "The Napa Boys",
-          "date": "2026-04-03",
-          "time": "8:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1488974/"
-        },
         {
           "id": "frida-cinema-harvey-2026-04-04",
           "title": "Harvey",
@@ -5404,6 +5098,60 @@
           "format": "digital",
           "notes": "",
           "link": "https://thefridacinema.org/purchase/1497782/"
+        },
+        {
+          "id": "frida-cinema-one-battle-after-another-2026-04-10",
+          "title": "One Battle After Another",
+          "date": "2026-04-10",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1504241/"
+        },
+        {
+          "id": "frida-cinema-the-rocky-horror-picture-show-2026-04-10",
+          "title": "The Rocky Horror Picture Show",
+          "date": "2026-04-10",
+          "time": "11:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1495064/"
+        },
+        {
+          "id": "frida-cinema-mars-2026-04-10",
+          "title": "Mars",
+          "date": "2026-04-10",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1498165/"
+        },
+        {
+          "id": "frida-cinema-one-battle-after-another-2026-04-10",
+          "title": "One Battle After Another",
+          "date": "2026-04-10",
+          "time": "5:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1504242/"
+        },
+        {
+          "id": "frida-cinema-mars-2026-04-10",
+          "title": "Mars",
+          "date": "2026-04-10",
+          "time": "8:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1497791/"
+        },
+        {
+          "id": "frida-cinema-crash-2026-04-10",
+          "title": "Crash",
+          "date": "2026-04-10",
+          "time": "8:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1498206/"
         }
       ]
     },
@@ -5460,33 +5208,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-amc-at-citywalk-hollywood",
       "color": "#A8102A",
       "screenings": [
-        {
-          "id": "amc-citywalk-the-mummy-returns-2026-04-03",
-          "title": "The Mummy Returns",
-          "date": "2026-04-03",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-03/citywalk/all/142011856"
-        },
-        {
-          "id": "amc-citywalk-the-mummy-returns-2026-04-03",
-          "title": "The Mummy Returns",
-          "date": "2026-04-03",
-          "time": "11:05 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-03/citywalk/all/142011807"
-        },
-        {
-          "id": "amc-citywalk-the-mummy-returns-2026-04-03",
-          "title": "The Mummy Returns",
-          "date": "2026-04-03",
-          "time": "7:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-03/citywalk/all/142011865"
-        },
         {
           "id": "amc-citywalk-the-mummy-returns-2026-04-04",
           "title": "The Mummy Returns",

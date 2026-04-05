@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-04T10:30:23.441Z",
+  "lastUpdated": "2026-04-05T10:30:28.463Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,24 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-04-04-robert-glasper",
-          "artist": "Robert Glasper",
-          "date": "2026-04-04",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/robert-glasper-21/",
-          "hot": true
-        },
-        {
-          "id": "blue-note-la-2026-04-04-robert-glasper-experiment",
-          "artist": "Robert Glasper Experiment",
-          "date": "2026-04-04",
-          "time": "9:30 PM",
-          "notes": "",
-          "link": "https://www.songkick.com/concerts/43074833-robert-glasper-experiment-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
-          "hot": true
-        },
         {
           "id": "blue-note-la-2026-04-05-robert-glasper",
           "artist": "Robert Glasper",
@@ -343,18 +325,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-04-04-jerry-bergonzi",
-          "artist": "Jerry Bergonzi",
-          "date": "2026-04-04",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "sam-first-2026-04-04-adam-hersh",
-          "artist": "Adam Hersh",
-          "date": "2026-04-04",
+          "id": "sam-first-2026-04-05-gerald-clayton-tuesday-happeni",
+          "artist": "Gerald Clayton Tuesday Happenings Jam Session",
+          "date": "2026-04-05",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -373,48 +346,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-04-04-friends-featuring-liliana-de-l",
-          "artist": "Friends featuring Liliana De los Reyes",
-          "date": "2026-04-04",
-          "time": "10:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/friends-featuring-liliana-de-los-reyes-1",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-04-04-tony-galla",
-          "artist": "Tony Galla",
-          "date": "2026-04-04",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-04-04-lilliana-de-los-reyes",
-          "artist": "Lilliana De los Reyes",
-          "date": "2026-04-04",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-04-04-george-brown-ansambel",
-          "artist": "George Brown Ansambel",
-          "date": "2026-04-04",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-04-05-the-george-brown-ansambel",
           "artist": "The George Brown Ansambel",
           "date": "2026-04-05",
           "time": "10:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/the-george-brown-ansambel-jazz-in-paris-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-05-george-brown-ansambel",
+          "artist": "George Brown Ansambel",
+          "date": "2026-04-05",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -870,36 +816,6 @@
       ]
     },
     {
-      "id": "world-stage",
-      "name": "The World Stage",
-      "shortName": "World Stage",
-      "neighborhood": "Leimert Park",
-      "url": "https://www.theworldstage.org/",
-      "color": "#D4AC0D",
-      "tier": "dedicated",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "world-stage-2026-04-04-eric-reed-workshop-reed-s-cree",
-          "artist": "Eric Reed Workshop Reed's Creeds",
-          "date": "2026-04-04",
-          "time": "1:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "world-stage-2026-04-04-pan-afrikan-peoples-arkestra",
-          "artist": "Pan Afrikan Peoples Arkestra",
-          "date": "2026-04-04",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -909,15 +825,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-04-04-courtney-marie-andrews-the-val",
-          "artist": "Courtney Marie Andrews – The Valentine Tour",
-          "date": "2026-04-04",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/courtney-marie-andrews-the-valentine-tour/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-04-05-knumears",
           "artist": "Knumears",
@@ -1790,6 +1697,27 @@
       ]
     },
     {
+      "id": "the-high-low",
+      "name": "The High Low",
+      "shortName": "High Low",
+      "neighborhood": "Atwater Village",
+      "url": "https://www.thehighlow.com/",
+      "color": "#27AE60",
+      "tier": "regular",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "the-high-low-2026-04-05-javier-santiago",
+          "artist": "Javier Santiago",
+          "date": "2026-04-05",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1799,15 +1727,6 @@
       "tier": "regular",
       "region": "LA",
       "shows": [
-        {
-          "id": "the-mint-2026-04-05-ladies-sing-the-blues-blues-qu",
-          "artist": "Ladies Sing The Blues: Blues Queens Jam Night",
-          "date": "2026-04-05",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/7dmvob-ladies-sing-the-blues-blues-queens-jam-night-4th-apr-the-mint-los-angeles-tickets",
-          "hot": false
-        },
         {
           "id": "the-mint-2026-04-10-ingram-street-lady-coco-sergio",
           "artist": "Ingram Street, Lady Coco, Sergio Snow ",
@@ -1897,6 +1816,24 @@
           "notes": "",
           "link": "https://dice.fm/event/8egebw--herbie-hancock-institute-jazz-kevin-kanner-jazz-jam-3rd-may-the-mint-los-angeles-tickets",
           "hot": false
+        },
+        {
+          "id": "the-mint-2026-05-08-ryan-bieber-weeper-violet-whim",
+          "artist": "Ryan Bieber, Weeper, Violet Whimsey, 2 Minute Mile",
+          "date": "2026-05-08",
+          "time": "2:30 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/eor98d-ryan-bieber-weeper-violet-whimsey-2-minute-mile-7th-may-the-mint-los-angeles-tickets",
+          "hot": false
+        },
+        {
+          "id": "the-mint-2026-05-09-sophia-suzanne-miles-arcana-po",
+          "artist": "Sophia Suzanne, Miles Arcana, Poor Elijah Peters, Jimmy Gordon",
+          "date": "2026-05-09",
+          "time": "2:00 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/92avk9-sophia-suzanne-miles-arcana-poor-elijah-peters-jimmy-gordon-8th-may-the-mint-los-angeles-tickets",
+          "hot": false
         }
       ]
     },
@@ -1911,10 +1848,19 @@
       "region": "LA",
       "shows": [
         {
-          "id": "lighthouse-cafe-2026-04-04-lia-booth",
+          "id": "lighthouse-cafe-2026-04-05-lia-booth",
           "artist": "Lia Booth",
-          "date": "2026-04-04",
+          "date": "2026-04-05",
           "time": "10:00 AM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "lighthouse-cafe-2026-04-05-jacques-lesure-jam-session",
+          "artist": "Jacques Lesure Jam Session",
+          "date": "2026-04-05",
+          "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
@@ -1932,26 +1878,17 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-04-04-jazz-pass-may-2026",
+          "id": "campus-jax-2026-04-05-jazz-pass-may-2026",
           "artist": "Jazz Pass May 2026",
-          "date": "2026-04-04",
+          "date": "2026-04-05",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/2",
           "hot": false
         },
         {
-          "id": "campus-jax-2026-04-04-the-reflexx",
-          "artist": "The Reflexx",
-          "date": "2026-04-04",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/836",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-04-07-jax-songstage-singer-songwrite",
-          "artist": "JAX SongStage\nSinger-Songwriter Showcase\nft. Rich Bonhart, Ewen Williams, Lance Tenazas, Rob Gallas, Sam Morrison, Chris Amodeo",
+          "id": "campus-jax-2026-04-07-jax-songstagesinger-songwriter",
+          "artist": "JAX SongStageSinger-Songwriter Showcaseft. Rich Bohn, Lance Tenazas, Rob Gallas, Sam Morrison, Chris Amodeo",
           "date": "2026-04-07",
           "time": "6:30 PM",
           "notes": "",
@@ -2157,8 +2094,8 @@
           "hot": false
         },
         {
-          "id": "campus-jax-2026-05-03-tony-gil-paul-bollenbackw-the-",
-          "artist": "Tony Gil & Paul Bollenbackw/ the Tony Guerrero Quintet",
+          "id": "campus-jax-2026-05-03-tony-gil-w-the-tony-guerrero-q",
+          "artist": "Tony Gil w/ the Tony Guerrero Quintet",
           "date": "2026-05-03",
           "time": "7:00 PM",
           "notes": "",
@@ -2796,6 +2733,12 @@
           "hot": false
         }
       ]
+    }
+  ],
+  "scrapeErrors": [
+    {
+      "source": "eventbrite.com",
+      "error": "Request failed with status code 405"
     }
   ]
 }
