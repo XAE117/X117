@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-06T10:53:25.091Z",
+  "lastUpdated": "2026-04-07T10:52:49.257Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-04-06-the-don-brown-collective-frien",
-          "artist": "The Don Brown Collective & Friends",
-          "date": "2026-04-06",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/the-don-brown-collective-friends/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-04-07-arin-ray",
           "artist": "Arin Ray",
@@ -325,18 +316,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-04-06-gerald-clayton-tuesday-happeni",
+          "id": "sam-first-2026-04-07-gerald-clayton-tuesday-happeni",
           "artist": "Gerald Clayton Tuesday Happenings Jam Session",
-          "date": "2026-04-06",
+          "date": "2026-04-07",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-04-06-alexis-lombre",
+          "id": "sam-first-2026-04-07-alexis-lombre",
           "artist": "Alexis Lombre",
-          "date": "2026-04-06",
+          "date": "2026-04-07",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-04-07-kazemde-george",
+          "artist": "Kazemde George",
+          "date": "2026-04-07",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -355,21 +355,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-04-06-pete-escovedo",
-          "artist": "Pete Escovedo",
-          "date": "2026-04-06",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-04-07--dear-amy-",
           "artist": "\"Dear Amy\"",
           "date": "2026-04-07",
           "time": "10:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/nm8lpntdnjwhl5j46ypzhncacw7bnl",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-07-pete-escovedo",
+          "artist": "Pete Escovedo",
+          "date": "2026-04-07",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-07-shylah-ray",
+          "artist": "Shylah Ray",
+          "date": "2026-04-07",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -751,8 +760,8 @@
           "hot": false
         },
         {
-          "id": "vibrato-2026-05-24-peter-erskine-trio-featuring-a",
-          "artist": "Peter Erskine Trio featuring Alan Pasqua and Scott Colley",
+          "id": "vibrato-2026-05-24-peter-erskine-trio-album-relea",
+          "artist": "Peter Erskine Trio Album Release — featuring Alan Pasqua and Scott Colley",
           "date": "2026-05-24",
           "time": "2:00 PM",
           "notes": "",
@@ -760,8 +769,8 @@
           "hot": false
         },
         {
-          "id": "vibrato-2026-05-26-closed-private-event",
-          "artist": "Closed - Private Event",
+          "id": "vibrato-2026-05-26-nick-pritchard-songs-from-the-",
+          "artist": "Nick Pritchard: Songs from the Silver Screen & The American Songbook",
           "date": "2026-05-26",
           "time": "8:30 PM",
           "notes": "",
@@ -816,6 +825,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-04-07-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-04-07",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -825,15 +855,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-04-06-kev-herrera",
-          "artist": "Kev Herrera",
-          "date": "2026-04-06",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/kev-herrera/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-04-07-okonski",
           "artist": "Okonski",
@@ -1647,6 +1668,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-10-15-tyler-ballgame",
+          "artist": "Tyler Ballgame",
+          "date": "2026-10-15",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/tyler-ballgame/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-10-28-lime-garden",
           "artist": "Lime Garden",
           "date": "2026-10-28",
@@ -1684,27 +1714,6 @@
           "notes": "",
           "link": "https://dice.fm/event/8egydr-aries-and-friends-18th-apr-scribble-los-angeles-tickets",
           "hot": true
-        }
-      ]
-    },
-    {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-04-06-javier-santiago",
-          "artist": "Javier Santiago",
-          "date": "2026-04-06",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
         }
       ]
     },
@@ -1829,27 +1838,6 @@
       ]
     },
     {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-04-06-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-04-06",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1860,21 +1848,21 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-04-06-jazz-pass-may-2026",
-          "artist": "Jazz Pass May 2026",
-          "date": "2026-04-06",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/2",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-04-07-jax-songstagesinger-songwriter",
           "artist": "JAX SongStageSinger-Songwriter Showcaseft. Rich Bohn, Lance Tenazas, Rob Gallas, Sam Morrison, Chris Amodeo",
           "date": "2026-04-07",
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/854",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-04-07-jazz-pass-may-2026",
+          "artist": "Jazz Pass May 2026",
+          "date": "2026-04-07",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/2",
           "hot": false
         },
         {
@@ -2347,7 +2335,7 @@
         },
         {
           "id": "campus-jax-2026-06-20-stevie-nicks-illusion-a-tribut",
-          "artist": "Stevie Nicks Illusion \nA Tribute to Fleetwood Mac",
+          "artist": "Stevie Nicks Illusion A Tribute to Fleetwood Mac",
           "date": "2026-06-20",
           "time": "8:30 PM",
           "notes": "",
