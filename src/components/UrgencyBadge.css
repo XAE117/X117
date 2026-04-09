@@ -1,0 +1,16 @@
+/* ── Urgency Badge (LAST SCREENING / FINAL NIGHT) ── */
+
+.urgency-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e85d4a;
+  animation: ember-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ember-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
