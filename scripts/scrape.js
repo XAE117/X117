@@ -371,12 +371,14 @@ for (const t of THEATERS) {
 
 // ── Utility ──
 
-function generateId(theaterId, title, date) {
-  const slug = `${theaterId}-${title}-${date}`
+function generateId(theaterId, title, date, time = '') {
+  // Include time so multiple showtimes for the same film on the same day
+  // get unique IDs (otherwise React's list keys collide and warn loudly).
+  const slug = `${theaterId}-${title}-${date}-${time || ''}`
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '')
-  return slug.substring(0, 80)
+  return slug.substring(0, 96)
 }
 
 function detectFormat(text) {
@@ -452,7 +454,7 @@ async function scrapeRevivalHouses() {
         .trim()
 
       screeningsByTheater[theater.id].push({
-        id: generateId(theater.id, cleanTitle, dateId),
+        id: generateId(theater.id, cleanTitle, dateId, time),
         title: cleanTitle,
         date: dateId,
         time: time || '',
@@ -525,7 +527,7 @@ async function scrapeNewBeverly(cutoffDate) {
         const format = detectFormat(`${cleanTitle} ${label}`)
 
         screenings.push({
-          id: generateId('new-beverly', cleanTitle, date),
+          id: generateId('new-beverly', cleanTitle, date, time),
           title: cleanTitle,
           date,
           time,
@@ -598,7 +600,7 @@ async function scrapeVista(cutoffDate) {
             const ticketLink = $a.attr('href') || 'https://www.vistatheaterhollywood.com'
 
             screenings.push({
-              id: generateId('vista-theatre', cleanTitle, date) + `-${timeText.replace(/\s+/g, '')}`,
+              id: generateId('vista-theatre', cleanTitle, date, timeText),
               title: cleanTitle,
               date,
               time: timeText,
@@ -651,7 +653,7 @@ function scrapeFilmbotDatePage($, theaterId, date, baseUrl) {
         const ticketLink = ticketHref.startsWith('http') ? ticketHref : `${baseUrl}${ticketHref}`
 
         screenings.push({
-          id: generateId(theaterId, cleanTitle, date) + `-${time.replace(/\s+/g, '')}`,
+          id: generateId(theaterId, cleanTitle, date, time),
           title: cleanTitle,
           date,
           time,
@@ -663,7 +665,7 @@ function scrapeFilmbotDatePage($, theaterId, date, baseUrl) {
     } else {
       // No showtimes listed, just record the screening
       screenings.push({
-        id: generateId(theaterId, cleanTitle, date),
+        id: generateId(theaterId, cleanTitle, date, 'tba'),
         title: cleanTitle,
         date,
         time: '',
@@ -764,7 +766,7 @@ async function scrapeCinespia(cutoffDate) {
       const fullLink = link.startsWith('http') ? link : `https://cinespia.org${link}`
 
       screenings.push({
-        id: generateId('cinespia', title, date),
+        id: generateId('cinespia', title, date, '8:00 PM'),
         title,
         date,
         time: '8:00 PM',
@@ -812,7 +814,7 @@ async function scrape2220Arts(cutoffDate) {
       const format = detectFormat(title)
 
       screenings.push({
-        id: generateId('2220-arts', title, date),
+        id: generateId('2220-arts', title, date, 'tba'),
         title: title.replace(/\s*\((?:70mm|35mm|16mm|IMAX|nitrate)\)\s*/gi, '').trim(),
         date,
         time: '',
@@ -935,7 +937,7 @@ async function scrapeAMCShowtimes() {
             : 'digital'
 
           results[theater.id].push({
-            id: generateId(theater.id, movieName, dateISO) + `-${time.replace(/\s+/g, '')}`,
+            id: generateId(theater.id, movieName, dateISO, time),
             title: movieName,
             date: dateISO,
             time,

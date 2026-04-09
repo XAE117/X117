@@ -2,8 +2,9 @@ name: Scrape & Notify
 
 on:
   schedule:
-    - cron: '0 10 * * *'   # Daily at 10am UTC (2am PT)
-    - cron: '0 0 * * 6'    # Weekly digest Fridays at 4pm PT (midnight UTC Saturday)
+    - cron: '0 10 * * *'   # Daily 2am PT — cinema + jazz
+    - cron: '0 0 * * 6'    # Friday 4pm PT — restaurants + weekly digest
+    - cron: '0 9 * * 0'    # Sunday 1am PT — WEEKLY DEEP REFRESH (everything)
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,9 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: PUPPETEER_SKIP_DOWNLOAD=1 npm ci
+      - name: Install Puppeteer Chrome
+        continue-on-error: true
+        run: npx puppeteer browsers install chrome
       - name: Scrape theater data and send SMS alerts
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
@@ -29,8 +33,8 @@ jobs:
         run: npm run scrape
       - name: Scrape jazz data
         run: npm run scrape:jazz
-      - name: Scrape restaurant data (Fridays only)
-        if: github.event.schedule == '0 0 * * 6' || github.event_name == 'workflow_dispatch'
+      - name: Scrape restaurant data (weekly + Fridays)
+        if: github.event.schedule == '0 0 * * 6' || github.event.schedule == '0 9 * * 0' || github.event_name == 'workflow_dispatch'
         run: npm run scrape:eats
       - name: Send weekly digest (Fridays only)
         if: github.event.schedule == '0 0 * * 6'
@@ -39,11 +43,15 @@ jobs:
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
         run: node scripts/weekly-digest.js
+      - name: Validate data
+        if: always()
+        run: node scripts/validate-data.js
       - name: Commit updated data
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/theaters.json public/jazz-venues.json public/restaurants.json public/scrape-log.json
+          git add public/theaters.json public/jazz-venues.json public/restaurants.json public/scrape-log.json public/health-report.md
           git diff --cached --quiet || git commit -m "Update screening, jazz, and restaurant data"
           git push
 
