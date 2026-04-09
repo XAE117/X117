@@ -2,7 +2,9 @@ import { useState, useCallback, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
 import DecoDivider from '../components/DecoDivider.jsx'
+import UrgencyBadge from '../components/UrgencyBadge.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData, parseTime } from '../utils/timeUtils.js'
+import { getUrgencyType } from '../utils/urgencyUtils.js'
 import './ByDay.css'
 
 function FormatBadge({ format }) {
@@ -29,9 +31,10 @@ function MetricsBadges({ film }) {
   return <>{badges}</>
 }
 
-function ScreeningRow({ s, now, data, forceUpdate }) {
+function ScreeningRow({ s, now, data, forceUpdate, allScreenings }) {
   const relative = getRelativeLabel(s.date, s.time, now)
   const film = getFilmData(s.title, data.films)
+  const urgencyType = getUrgencyType(s, allScreenings)
   const navigate = useNavigate()
   const itemRef = useRef(null)
 
@@ -52,57 +55,77 @@ function ScreeningRow({ s, now, data, forceUpdate }) {
       className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}
       onClick={handleClick}
     >
-      <div className="day-row-title">
-        <span className="day-title-truncate">
-          <span className="day-film-link">{s.title}</span>
-          {filmMeta(s.title, data.films) && (
-            <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
-          )}
-        </span>
-        <a
-          href={s.theaterUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="day-item-theater"
-          style={{ color: s.theaterColor }}
-        >
-          {s.theaterName}
-        </a>
+      <div className={`day-row-poster ${film?.posterPath ? '' : 'day-row-poster-empty'}`} aria-hidden="true">
+        {film?.posterPath && (
+          <img
+            src={`https://image.tmdb.org/t/p/w92${film.posterPath}`}
+            alt=""
+            loading="lazy"
+          />
+        )}
       </div>
-      <div className="day-row-time">
-        <span className="day-time">{s.time || ''}</span>
-        {s.link && (
+      <div className="day-row-content">
+        <div className="day-row-title">
+          <span className="day-title-truncate">
+            <span className="day-film-link">{s.title}</span>
+            {filmMeta(s.title, data.films) && (
+              <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
+            )}
+          </span>
           <a
-            href={s.link}
+            href={s.theaterUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="day-ticket-link"
-            title="Get Tickets"
+            className="day-item-theater"
+            style={{ color: s.theaterColor }}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15,3 21,3 21,9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
+            {s.theaterName}
           </a>
-        )}
-      </div>
-      <div className="day-row-badges">
-        <span className="day-badges-left">
-          <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-          <NewReleaseBadge film={film} />
-          <MetricsBadges film={film} />
-          <FormatBadge format={s.format} />
-        </span>
-        {relative && (
-          <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
-        )}
+        </div>
+        <div className="day-row-time">
+          <span className="day-time">{s.time || ''}</span>
+          {s.link && (
+            <a
+              href={s.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="day-ticket-link"
+              title="Get Tickets"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15,3 21,3 21,9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          )}
+        </div>
+        <div className="day-row-badges">
+          <span className="day-badges-left">
+            <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
+            <NewReleaseBadge film={film} />
+            <MetricsBadges film={film} />
+            <FormatBadge format={s.format} />
+          </span>
+          {(relative || urgencyType) && (
+            <span className="day-badges-right">
+              {relative && relative.isNow && urgencyType ? (
+                <span className="day-relative is-now">{relative.label} · <UrgencyBadge type={urgencyType} /></span>
+              ) : (
+                <>
+                  {relative && <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>}
+                  <UrgencyBadge type={urgencyType} />
+                </>
+              )}
+            </span>
+          )}
+        </div>
       </div>
     </li>
   )
 }
 
-function DayBlock({ dateKey, day, data, now, forceUpdate }) {
+function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings }) {
   const [showPast, setShowPast] = useState(false)
 
   const past = []
@@ -132,14 +155,14 @@ function DayBlock({ dateKey, day, data, now, forceUpdate }) {
           </button>
           {showPast && (
             <ul className="day-block-list past-screenings-list">
-              {past.map(s => <ScreeningRow key={s.id} s={s} now={now} data={data} forceUpdate={forceUpdate} />)}
+              {past.map(s => <ScreeningRow key={s.id} s={s} now={now} data={data} forceUpdate={forceUpdate} allScreenings={allScreenings} />)}
             </ul>
           )}
         </div>
       )}
       {upcoming.length > 0 && (
         <ul className="day-block-list">
-          {upcoming.map(s => <ScreeningRow key={s.id} s={s} now={now} data={data} forceUpdate={forceUpdate} />)}
+          {upcoming.map(s => <ScreeningRow key={s.id} s={s} now={now} data={data} forceUpdate={forceUpdate} allScreenings={allScreenings} />)}
         </ul>
       )}
       {upcoming.length === 0 && past.length > 0 && !showPast && (
@@ -221,6 +244,7 @@ function ByDay({ data, searchQuery = '' }) {
             data={data}
             now={now}
             forceUpdate={forceUpdate}
+            allScreenings={allScreenings}
           />
         </div>
       ))}

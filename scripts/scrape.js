@@ -1014,36 +1014,74 @@ function slugifyTitle(title) {
 }
 
 /**
- * Normalize a screening title for TMDB lookup:
- * - Strip format suffixes: "on 35mm", "in 70mm", "in 16mm", etc.
- * - Strip "(Adults Only)", "(Sold Out)", "en Español"
- * - Strip "Presented by X", "Presents:", "Mezzanine Presents:"
- * - Handle year suffixes like "(1976)" by keeping them for disambiguation
- * - For double features "A / B", return just the first film
+ * Normalize a screening title for TMDB lookup and extract a year hint.
+ * Returns { title, year } — year is an integer or null.
+ *
+ * Strips format/print/restoration junk that LA rep theaters love to pile on
+ * their listings (it's only useful to the audience, not to TMDB search):
+ * - Format suffixes: "on 35mm", "in 70mm", "in 16mm", "in nitrate"
+ * - Year parentheticals "(1955)" → extracted as year hint, removed from query
+ * - Silent film descriptors "(Silent with Live Music Score)"
+ * - Print descriptors "(IB Tech Print)", "(Brand New 35mm Print)", "(New Print)"
+ * - Restoration/cut descriptors "(4K)", "(Restored)", "(Director's Cut)"
+ * - Anniversary tags "(20th Anniversary)"
+ * - "(Adults Only)", "(Sold Out)"
+ * - Presenter prefixes "Cinematic Void Presents", "Mezzanine Presents:"
+ * - Language tags "en Español"
+ * - Extended edition suffix
+ * - Double features: "Film A / Film B" → "Film A"
  */
 function normalizeTitleForSearch(title) {
   let t = title
-  // Strip format suffixes
+  let year = null
+
+  // Extract year hint before stripping parentheticals so we can pass it to TMDB
+  const yearMatch = t.match(/\(\s*(\d{4})\s*\)/)
+  if (yearMatch) {
+    const y = parseInt(yearMatch[1], 10)
+    if (y >= 1900 && y <= 2100) year = y
+  }
+
+  // Strip format suffixes: "on 35mm", "in 70mm", etc.
   t = t.replace(/\s+(on|in)\s+(35mm|70mm|16mm|nitrate)\b/i, '')
   // Strip "– 70mm Early Access" etc.
   t = t.replace(/\s*[–—-]\s*\d+mm\s*\w*\s*$/i, '')
-  // Strip "(Adults Only)", "(Sold Out)"
-  t = t.replace(/\s*\((?:Adults Only|Sold Out)\)/gi, '')
   // Strip "en Español"
   t = t.replace(/\s+en\s+Espa[ñn]ol\b/i, '')
   // Strip presenter prefixes
   t = t.replace(/^(?:Cinematic Void Presents\s+|PHANTASMAGORIA presents\s+|Mezzanine Presents:\s*|Vidiots Presents:\s*)/i, '')
+
+  // Strip junk parentheticals. Loop so adjacent parens like "(1928)(Silent...)"
+  // all get removed in one pass.
+  const junkParenPatterns = [
+    /\s*\(\s*\d{4}\s*\)/g,                                                    // year
+    /\s*\([^)]*silent[^)]*\)/gi,                                              // silent-film descriptors
+    /\s*\([^)]*(print|dcp|35mm|70mm|16mm|nitrate|ib\s*tech)[^)]*\)/gi,        // format/print descriptors
+    /\s*\([^)]*(restoration|restored|remastered)[^)]*\)/gi,                   // restoration tags
+    /\s*\([^)]*(uncut|director'?s?\s*cut|extended\s*cut|final\s*cut|theatrical\s*cut|unrated)[^)]*\)/gi,
+    /\s*\(\s*4k[^)]*\)/gi,                                                    // 4K tags
+    /\s*\((?:adults only|sold out)\)/gi,                                      // audience warnings
+    /\s*\([^)]*(anniversary|new\s*print|brand\s*new)[^)]*\)/gi,               // anniversary/new print
+  ]
+  for (const re of junkParenPatterns) {
+    t = t.replace(re, '')
+  }
+
   // Handle double features: "Film A / Film B" → "Film A"
   if (t.includes(' / ')) {
     t = t.split(' / ')[0].trim()
   }
-  // Strip "Extended Edition" etc. for matching, but keep for slug
+  // Strip ":Extended Edition" for matching, but keep the slug intact
   t = t.replace(/:\s*Extended Edition\b/i, '')
-  return t.trim()
+
+  // Collapse whitespace
+  t = t.replace(/\s+/g, ' ').trim()
+  return { title: t, year }
 }
 
-async function tmdbSearch(title, apiKey) {
-  const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(title)}&api_key=${apiKey}`
+async function tmdbSearch(title, apiKey, year = null) {
+  let url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(title)}&api_key=${apiKey}`
+  if (year) url += `&year=${year}`
   const html = execSync(
     `curl -s --max-time 10 '${url}'`,
     { encoding: 'utf-8' },
@@ -1126,8 +1164,13 @@ async function enrichWithTMDB(outputTheaters) {
         await new Promise(r => setTimeout(r, 10000))
       }
 
-      const searchTitle = normalizeTitleForSearch(title)
-      const searchResult = await tmdbSearch(searchTitle, apiKey)
+      const { title: searchTitle, year: searchYear } = normalizeTitleForSearch(title)
+      let searchResult = await tmdbSearch(searchTitle, apiKey, searchYear)
+      // If year-constrained search returns nothing, retry without the year
+      // (some TMDB release dates don't match the print year on the poster)
+      if (!searchResult.results?.length && searchYear) {
+        searchResult = await tmdbSearch(searchTitle, apiKey)
+      }
       const movie = searchResult.results?.[0]
       if (!movie) {
         // No TMDB match but preserve existing data if any
