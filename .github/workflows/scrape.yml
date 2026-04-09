@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   scrape:
@@ -45,3 +46,13 @@ jobs:
           git add public/theaters.json public/jazz-venues.json public/restaurants.json public/scrape-log.json
           git diff --cached --quiet || git commit -m "Update screening, jazz, and restaurant data"
           git push
+
+      # Pushes from GITHUB_TOKEN cannot trigger other workflows, so the
+      # daily data push silently never re-deploys Pages. We trigger the
+      # deploy workflow explicitly here. workflow_dispatch events DO
+      # trigger from a GITHUB_TOKEN-authenticated gh CLI call.
+      - name: Trigger Pages deploy
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main -R ${{ github.repository }}
