@@ -840,7 +840,7 @@ async function scrape2220Arts(cutoffDate) {
 const AMC_THEATERS = THEATERS.filter(t => t.amcSlug)
 
 async function fetchAMCApi(path) {
-  const apiKey = process.env.AMC_API_KEY || '33407B35-31D1-48C9-8BA1-3DBB829F3F61'
+  const apiKey = process.env.AMC_API_KEY
   if (!apiKey) return null
   const url = `https://api.amctheatres.com${path}`
   const result = execSync(
@@ -851,7 +851,7 @@ async function fetchAMCApi(path) {
 }
 
 async function scrapeAMCShowtimes() {
-  const apiKey = process.env.AMC_API_KEY || '33407B35-31D1-48C9-8BA1-3DBB829F3F61'
+  const apiKey = process.env.AMC_API_KEY
   if (!apiKey) {
     console.log('  AMC_API_KEY not set — skipping AMC theaters.')
     return {}
