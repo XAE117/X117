@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-04T02:27:22.140Z",
-  "lastFullScrape": "2026-04-04T02:27:22.140Z",
+  "lastUpdated": "2026-04-11T02:34:22.881Z",
+  "lastFullScrape": "2026-04-11T02:34:22.881Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -208,7 +208,10 @@
     "the-benjamin-hollywood",
     "taqueria-frontera",
     "komal",
-    "leo-taqueria-eagle-rock"
+    "leo-taqueria-eagle-rock",
+    "amiguita",
+    "sandeomi-hamjipark",
+    "pizzeria-bianco-los-angeles-los-angeles"
   ],
   "restaurants": [
     {
@@ -5111,13 +5114,17 @@
         {
           "name": "Michelin Bib Gourmand",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/komal"
         }
       ],
       "tags": [],
       "pricePp": 15,
       "tier": "street",
-      "sourceCount": 2,
-      "heatScore": 4,
+      "sourceCount": 3,
+      "heatScore": 6,
       "id": "komal",
       "addedDate": "2026-04-04"
     },
@@ -5149,6 +5156,64 @@
       "hours": "Daily 9am-3am",
       "manualPick": true,
       "addedDate": "2026-03-19"
+    },
+    {
+      "name": "Amiguita",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "amiguita",
+      "addedDate": "2026-04-11"
+    },
+    {
+      "name": "Sandeomi Hamjipark",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sandeomi-hamjipark",
+      "addedDate": "2026-04-11"
+    },
+    {
+      "name": "Pizzeria Bianco Los Angeles",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pizzeria-bianco"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "pizzeria-bianco-los-angeles-los-angeles",
+      "addedDate": "2026-03-29"
     }
   ]
 }
