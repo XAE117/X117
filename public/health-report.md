@@ -1,6 +1,6 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-04-11 02:34 UTC_
+_Generated 2026-04-11 10:33 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -11,13 +11,13 @@ _Generated 2026-04-11 02:34 UTC_
 ## Cinema (theaters.json)
 - Last updated: 2026-04-11 (today)
 - 36 theaters tracked, 30 with future screenings
-- 506 future screenings, horizon 36 days
+- 504 future screenings, horizon 36 days
 - ⚠️ 6 theaters with 0 screenings: REDCAT, Secret Movie Club, Cinespia, The Landmark Westwood, El Capitan Theatre, Landmark Sunset Hollywood
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-04-11 (today)
 - 11 venues, 11 with future shows
-- 339 future shows, horizon 364 days
+- 338 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-04-11 (today)
