@@ -1,28 +1,26 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-04-13 11:18 UTC_
+_Generated 2026-04-14 11:02 UTC_
 
 **Status: WARNINGS** ⚠️
 
-## Warnings (2)
+## Warnings (1)
 
 - **[Cinema (theaters.json)]** 3 theaters with 0 future screenings: REDCAT, Secret Movie Club, Cinespia
-- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
-- Last updated: 2026-04-13 (today)
+- Last updated: 2026-04-14 (today)
 - 36 theaters tracked, 33 with future screenings
-- 415 future screenings, horizon 34 days
+- 437 future screenings, horizon 46 days
 - ⚠️ 3 theaters with 0 screenings: REDCAT, Secret Movie Club, Cinespia
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-04-13 (today)
+- Last updated: 2026-04-14 (today)
 - 10 venues, 10 with future shows
-- 294 future shows, horizon 262 days
-- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
+- 289 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-04-12 (yesterday)
+- Last updated: 2026-04-12 (2 days ago)
 - 229 restaurants tracked
 - Tiers: street 7, feast 165, whale 14
 
