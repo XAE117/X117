@@ -64,3 +64,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref main -R ${{ github.repository }}
+
+      # A silently failing scrape is how we ended up shipping 4 theaters to
+      # production for a week. Make any failure visible in the Actions log.
+      - name: Report scrape failure
+        if: failure()
+        run: |
+          echo "::error title=Scrape failed::The scrape workflow exited non-zero. public/theaters.json was NOT updated."
+          echo "Check the 'Scrape theater data' step above for the root cause."
+          echo "Common causes: revivalhouses.com HTML changed, Puppeteer timeout on JS-rendered sites, missing API keys, or network flake."

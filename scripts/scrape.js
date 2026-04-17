@@ -1284,11 +1284,16 @@ async function main() {
   })
 
   const totalScreenings = outputTheaters.reduce((sum, t) => sum + t.screenings.length, 0)
+  const theatersWithScreenings = outputTheaters.filter(t => t.screenings.length > 0).length
 
-  if (totalScreenings === 0) {
-    console.log('')
-    console.log('WARNING: No screenings scraped. Keeping existing theaters.json.')
-    console.log('  revivalhouses.com may be down or its HTML structure may have changed.')
+  // Fail loudly if the scrape came back mostly empty. A silent write of thin
+  // data ages out within a week and leaves the app showing a handful of
+  // theaters in production. Keep existing theaters.json instead.
+  const MIN_THEATERS_WITH_SCREENINGS = 10
+  if (totalScreenings === 0 || theatersWithScreenings < MIN_THEATERS_WITH_SCREENINGS) {
+    console.error('')
+    console.error(`SCRAPE FAILED: only ${theatersWithScreenings} theaters have screenings (${totalScreenings} total). Aborting write.`)
+    console.error('  revivalhouses.com may be down or its HTML structure may have changed.')
     process.exit(1)
   }
 
