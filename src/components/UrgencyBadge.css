@@ -1,16 +1,39 @@
-/* ── Urgency Badge (LAST SCREENING / FINAL NIGHT) ── */
+/* ── Urgency Dot (LAST SCREENING / FINAL NIGHT) ── */
 
-.urgency-badge {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #e85d4a;
-  animation: ember-pulse 2s ease-in-out infinite;
+.urgency-dot-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-@keyframes ember-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.55; }
+.urgency-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e85d4a;
+  flex-shrink: 0;
+  box-shadow: 0 0 4px rgba(232, 93, 74, 0.7), 0 0 8px rgba(232, 93, 74, 0.35);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 4px rgba(232, 93, 74, 0.7), 0 0 8px rgba(232, 93, 74, 0.35);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 2px rgba(232, 93, 74, 0.3), 0 0 4px rgba(232, 93, 74, 0.15);
+  }
+}
+
+.urgency-dot-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e85d4a;
+  opacity: 0.85;
 }

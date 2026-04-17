@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
+import { getUrgencyType } from '../utils/urgencyUtils.js'
+import UrgencyBadge from '../components/UrgencyBadge.jsx'
 import './Detail.css'
 
 function generateICS(screening, theater) {
@@ -227,6 +229,8 @@ function Detail({ data }) {
   const filmKey = slugify(screening.title)
   const film = data.films?.[filmKey] || null
   const relative = getRelativeLabel(screening.date, screening.time, now)
+  const allScreenings = data.theaters.flatMap(t => t.screenings)
+  const urgencyType = getUrgencyType(screening, allScreenings)
 
   const shareScreening = async () => {
     const d = new Date(screening.date + 'T00:00:00')
@@ -335,16 +339,23 @@ function Detail({ data }) {
 
           {/* Poster + action pill — always shown, placeholder if no poster */}
           <div className="detail-sidebar">
-            <div className="detail-poster-box">
-              <div className="detail-poster-placeholder" />
-              {film?.posterPath && (
-                <img
-                  src={`https://image.tmdb.org/t/p/w342${film.posterPath}`}
-                  alt={`${screening.title} poster`}
-                  className="detail-poster-img"
-                  loading="lazy"
-                  onError={(e) => { e.target.style.display = 'none' }}
-                />
+            <div className="detail-poster-col">
+              <div className="detail-poster-box">
+                <div className="detail-poster-placeholder" />
+                {film?.posterPath && (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w342${film.posterPath}`}
+                    alt={`${screening.title} poster`}
+                    className="detail-poster-img"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                )}
+              </div>
+              {urgencyType && (
+                <div className="detail-urgency-row">
+                  <UrgencyBadge type={urgencyType} showLabel />
+                </div>
               )}
             </div>
 

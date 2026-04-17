@@ -36,16 +36,14 @@ import './App.css'
 const FILM_FORMATS = ['35mm', '70mm', '16mm', 'nitrate']
 const NEW_RELEASE_MIN_YEAR = 2024
 
-// Theaters excluded from the Favorites filter
-const NON_FAVORITE_THEATERS = [
-  'brain-dead',
-  'billy-wilder',
-  'redcat',
-  'laemmle-nuart',
-  'laemmle-noho',
+// Theaters included in the Favorites filter
+const FAVORITE_THEATERS = [
+  'vista-theatre',
+  'alamo-dtla',
+  'egyptian',
   'los-feliz-3',
-  'laemmle-royal',
-  'vidiots',
+  'new-beverly',
+  'academy-museum',
 ]
 
 function SmartCinemaDefault({ filteredData, searchQuery }) {
@@ -190,9 +188,9 @@ function App() {
 
     let theaterList = data.theaters
 
-    // Favorites filter: exclude non-favorite theaters entirely
+    // Favorites filter: show only curated theaters
     if (formatFilter === 'favorites') {
-      theaterList = theaterList.filter(t => !NON_FAVORITE_THEATERS.includes(t.id))
+      theaterList = theaterList.filter(t => FAVORITE_THEATERS.includes(t.id))
     }
 
     const theaters = theaterList.map(theater => {

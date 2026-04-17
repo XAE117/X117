@@ -38,6 +38,7 @@
 .detail-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 1.25rem 2rem 2.5rem;
   position: relative;
   overflow: hidden;
@@ -127,16 +128,29 @@
   gap: 0.5rem;
 }
 
+.detail-poster-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
 .detail-poster-box {
   position: relative;
   width: 130px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
   border: 1px solid var(--border);
-  flex-shrink: 0;
-  align-self: flex-start;
   animation: posterReveal 0.6s ease-out both;
   animation-delay: 0.2s;
+}
+
+.detail-urgency-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0;
 }
 
 .detail-poster-placeholder {
@@ -754,6 +768,10 @@
     margin-bottom: 0.5rem;
   }
 
+  .detail-poster-col {
+    align-self: auto;
+  }
+
   .detail-poster-box {
     width: 110px;
   }
@@ -764,7 +782,7 @@
     flex: 1;
     max-width: 200px;
     border-radius: 999px;
-    align-self: center;
+    align-self: flex-start;
   }
 
   .detail-pill-btn {

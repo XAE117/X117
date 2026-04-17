@@ -1,9 +1,14 @@
 import './UrgencyBadge.css'
 
-function UrgencyBadge({ type }) {
+function UrgencyBadge({ type, showLabel }) {
   if (!type) return null
-  const label = type === 'last-screening' ? 'LAST SCREENING' : 'FINAL NIGHT'
-  return <span className="urgency-badge">{label}</span>
+  const label = type === 'last-screening' ? 'Last Screening' : 'Final Night'
+  return (
+    <span className="urgency-dot-wrap">
+      <span className="urgency-dot" />
+      {showLabel && <span className="urgency-dot-label">{label}</span>}
+    </span>
+  )
 }
 
 export default UrgencyBadge
