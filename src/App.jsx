@@ -6,6 +6,7 @@ import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import FormatFilter from './components/FormatFilter.jsx'
 import GodfatherAlert from './components/GodfatherAlert.jsx'
+import BackPill from './components/BackPill.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
 import Detail from './views/Detail.jsx'
@@ -254,6 +255,7 @@ function App() {
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
   const isSplashPage = location.pathname === '/welcome'
   const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
+  const showBackPill = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/') || location.pathname.startsWith('/food/spot/')
 
   return (
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isRollMode ? 'roll-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
@@ -416,6 +418,7 @@ function App() {
         isFood={isFoodMode}
       />
       {!isDetailPage && <Nav mode={mode} />}
+      {showBackPill && <BackPill />}
     </div>
   )
 }

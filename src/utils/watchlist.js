@@ -20,7 +20,7 @@ export function getCurrentUser() {
 
 export function getOtherUser() {
   const current = getCurrentUser()
-  return current === 'James' ? 'Liza' : current === 'Liza' ? 'James' : null
+  return current === 'James' ? 'Visitor' : current === 'Visitor' ? 'James' : null
 }
 
 export function isOnWatchlist(screeningId) {

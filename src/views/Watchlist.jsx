@@ -11,7 +11,7 @@ function UserPicker({ onPick }) {
         <h2>Who are you?</h2>
         <div className="user-picker-buttons">
           <button className="user-picker-btn" onClick={() => onPick('James')}>James</button>
-          <button className="user-picker-btn" onClick={() => onPick('Liza')}>Liza</button>
+          <button className="user-picker-btn" onClick={() => onPick('Visitor')}>Visitor</button>
         </div>
       </div>
     </div>
