@@ -35,3 +35,20 @@ dist-ssr
 # Scraper caches
 public/neighborhood-cache.json
 public/scrape-log.json
+
+# Local dev artifacts
+*.db
+*.db-shm
+*.db-wal
+lifeos_config.json
+notion_config.json
+notion_schema_export.json
+test-scraper.js
+.claude/
+IMPLEMENTATION-CHECKLIST.md
+QUICK-START.md
+README-SCRAPING-ANALYSIS.md
+SCRAPING-ANALYSIS-SUMMARY.txt
+SCRAPING-QUICK-REFERENCE.md
+restaurant-scraping-analysis.md
+source-comparison.md
