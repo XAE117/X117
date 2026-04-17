@@ -112,7 +112,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   color: var(--gold, #C9A84C);
-  margin-bottom: 1rem;
+  margin-bottom: 0.35rem;
   text-shadow:
     0 0 30px rgba(201, 168, 76, 0.5),
     0 0 80px rgba(201, 168, 76, 0.2),
@@ -142,7 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   gap: 1px;
 }
 
@@ -192,13 +192,13 @@
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-dim, #B8B0A0);
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.6rem;
 }
 
 /* Enter prompt */
 .splash-enter {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text-muted, #7A7268);
