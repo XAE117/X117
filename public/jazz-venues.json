@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-16T11:02:22.063Z",
+  "lastUpdated": "2026-04-17T10:55:39.872Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-04-16-samara-joy",
-          "artist": "Samara Joy",
-          "date": "2026-04-16",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/samara-joy/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-04-17-kota-the-friend",
           "artist": "KOTA The Friend",
@@ -214,15 +205,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "catalina-jazz-2026-04-16-marvin-gaye-reimagined",
-          "artist": "Marvin Gaye Reimagined",
-          "date": "2026-04-16",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/marvin-gaye-reimagined/",
-          "hot": false
-        },
-        {
           "id": "catalina-jazz-2026-04-17-tribute-to-two-legends-celia-c",
           "artist": "TRIBUTE TO TWO LEGENDS: CELIA CRUZ & BENNY MORE |  feat: Lily H. Clark & Gonzalo Chomat",
           "date": "2026-04-17",
@@ -403,12 +385,51 @@
           "hot": false
         },
         {
-          "id": "catalina-jazz-2027-04-15-fred-dinkins-concert-book-sign",
-          "artist": "FRED DINKINS: Concert & Book Signing Event (Grammy Award-nominated Musician, Producer & Educator)",
-          "date": "2027-04-15",
+          "id": "catalina-jazz-2027-04-16-marvin-gaye-reimagined",
+          "artist": "Marvin Gaye Reimagined",
+          "date": "2027-04-16",
           "time": "8:30 PM",
           "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/fred-dinkins-concert-book-signing-event-grammy-award-nominated-musician-producer-educator/",
+          "link": "https://catalinajazzclub.com/tm-event/marvin-gaye-reimagined/",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "id": "sam-first",
+      "name": "Sam First",
+      "shortName": "Sam First",
+      "neighborhood": "Westchester",
+      "url": "https://www.samfirstbar.com/",
+      "color": "#2E86C1",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "sam-first-2026-04-17-aaron-shaw-devin-daniels-quint",
+          "artist": "Aaron Shaw/Devin Daniels Quintet",
+          "date": "2026-04-17",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": true
+        },
+        {
+          "id": "sam-first-2026-04-17-larry-koonse-david-roitstein",
+          "artist": "Larry Koonse & David Roitstein",
+          "date": "2026-04-17",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-04-17-janek-gwizdala",
+          "artist": "Janek Gwizdala",
+          "date": "2026-04-17",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         }
       ]
@@ -424,21 +445,39 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-04-16-ilya-serov-friends",
-          "artist": "Ilya Serov & Friends",
-          "date": "2026-04-16",
-          "time": "11:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/ilya-serov-friends-1",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-04-17-the-jive-aces",
           "artist": "The Jive Aces",
           "date": "2026-04-17",
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43076048-jive-aces-at-vibrato-grill-and-jazz?utm_medium=organic&utm_source=microformat",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-17-jive-aces",
+          "artist": "Jive Aces",
+          "date": "2026-04-17",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-17-brenna-whitaker",
+          "artist": "Brenna Whitaker",
+          "date": "2026-04-17",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-17-ilya-serov",
+          "artist": "Ilya Serov",
+          "date": "2026-04-17",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -804,6 +843,45 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-04-17-eric-reed-workshop-reed-s-cree",
+          "artist": "Eric Reed Workshop Reed's Creeds",
+          "date": "2026-04-17",
+          "time": "1:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "world-stage-2026-04-17-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-04-17",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "world-stage-2026-04-17-theo-saunders",
+          "artist": "Theo Saunders",
+          "date": "2026-04-17",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -813,15 +891,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-04-16-western-standard-time-ska-orch",
-          "artist": "Western Standard Time Ska Orchestra featuring Mara Kaye (vocals)",
-          "date": "2026-04-16",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/western-standard-time-ska-orchestra-3/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-04-17-remember-sports",
           "artist": "Remember Sports",
@@ -1032,8 +1101,8 @@
           "promoter": "Minaret Records"
         },
         {
-          "id": "lodge-room-2026-05-08-wu-lyf",
-          "artist": "Wu Lyf",
+          "id": "lodge-room-2026-05-08-wu-lyf-postponed",
+          "artist": "Wu Lyf – postponed",
           "date": "2026-05-08",
           "time": "8:00 PM",
           "notes": "",
@@ -1041,8 +1110,8 @@
           "hot": true
         },
         {
-          "id": "lodge-room-2026-05-09-wu-lyf",
-          "artist": "Wu Lyf",
+          "id": "lodge-room-2026-05-09-wu-lyf-postponed",
+          "artist": "Wu Lyf – postponed",
           "date": "2026-05-09",
           "time": "8:00 PM",
           "notes": "",
@@ -1779,18 +1848,9 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-04-16-mr-b-s-all-stars",
-          "artist": "Mr. B's All Stars",
-          "date": "2026-04-16",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/943",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-04-16-jazz-pass-may-2026",
+          "id": "campus-jax-2026-04-17-jazz-pass-may-2026",
           "artist": "Jazz Pass May 2026",
-          "date": "2026-04-16",
+          "date": "2026-04-17",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/2",
@@ -2607,12 +2667,6 @@
           "hot": false
         }
       ]
-    }
-  ],
-  "scrapeErrors": [
-    {
-      "source": "eventbrite.com",
-      "error": "Request failed with status code 405"
     }
   ]
 }
