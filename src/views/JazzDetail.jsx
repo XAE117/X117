@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import { getArtistLink } from '../data/artistLinks.js'
 import './JazzDetail.css'
@@ -95,9 +95,6 @@ function JazzDetail({ data }) {
         <div className="jazz-detail-not-found">
           <h2>Show not found</h2>
           <p>This show may no longer be listed.</p>
-          <Link to="/jazz" className="jazz-detail-back">
-            &larr; Go Back
-          </Link>
         </div>
       </div>
     )
@@ -259,9 +256,6 @@ function JazzDetail({ data }) {
         </div>
       </div>
 
-      <Link to="/jazz" className="jazz-detail-back">
-        &larr; back
-      </Link>
     </div>
   )
 }

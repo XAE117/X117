@@ -1,25 +1,17 @@
 import { useMemo } from 'react'
 import './EatsByTier.css'
 
+const TIER_COLORS = {
+  street: '#FF6B35',
+  feast: '#D4A574',
+  whale: '#C9A84C',
+}
+
 function EatsMapView({ data }) {
-  const restaurants = data?.restaurants || []
-
-  const tierColors = {
-    street: '#FF6B35',
-    feast: '#D4A574',
-    whale: '#C9A84C',
-  }
-
-  if (!data) {
-    return (
-      <div className="eats-empty">
-        <h2>Loading restaurants...</h2>
-      </div>
-    )
-  }
-
-  // Group by neighborhood, separating unknowns
+  // Group by neighborhood, separating unknowns.
+  // Hook must be called unconditionally — before any early return.
   const { namedGroups, unknownRestaurants } = useMemo(() => {
+    const restaurants = data?.restaurants || []
     const groups = {}
     const unknown = []
     for (const r of restaurants) {
@@ -34,13 +26,21 @@ function EatsMapView({ data }) {
     const sorted = Object.entries(groups)
       .sort(([a], [b]) => a.localeCompare(b))
     return { namedGroups: sorted, unknownRestaurants: unknown }
-  }, [restaurants])
+  }, [data])
+
+  if (!data) {
+    return (
+      <div className="eats-empty">
+        <h2>Loading restaurants...</h2>
+      </div>
+    )
+  }
 
   return (
     <div className="eats-page">
       <div className="eats-map-header">
         <h2 className="eats-map-title">BY NEIGHBORHOOD</h2>
-        <p className="eats-map-subtitle">{restaurants.length} restaurants across LA</p>
+        <p className="eats-map-subtitle">{data.restaurants.length} restaurants across LA</p>
       </div>
       <div className="eats-map-list">
         {namedGroups.map(([neighborhood, spots]) => (
@@ -62,7 +62,7 @@ function EatsMapView({ data }) {
                     >
                       <span
                         className="eats-map-spot-dot"
-                        style={{ background: tierColors[r.tier] }}
+                        style={{ background: TIER_COLORS[r.tier] }}
                       />
                       <span className="eats-map-spot-name">{r.name}</span>
                       <span className="eats-map-spot-cuisine">{r.cuisine}</span>
@@ -93,7 +93,7 @@ function EatsMapView({ data }) {
                     >
                       <span
                         className="eats-map-spot-dot"
-                        style={{ background: tierColors[r.tier] }}
+                        style={{ background: TIER_COLORS[r.tier] }}
                       />
                       <span className="eats-map-spot-name">{r.name}</span>
                       <span className="eats-map-spot-cuisine">{r.cuisine}</span>

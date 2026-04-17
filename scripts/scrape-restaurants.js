@@ -13,7 +13,7 @@
  *   GOOGLE_PLACES_API_KEY — For address/hours/rating enrichment
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -246,7 +246,7 @@ async function enrichNeighborhoods(restaurants) {
 
       // Rate limit: 5 requests per second (2 calls per restaurant)
       await new Promise(resolve => setTimeout(resolve, 200))
-    } catch (err) {
+    } catch {
       // Skip this restaurant, don't fail the whole scrape
     }
   }

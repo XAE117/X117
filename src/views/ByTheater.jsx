@@ -1,7 +1,9 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef, useMemo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
+import UrgencyBadge from '../components/UrgencyBadge.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData } from '../utils/timeUtils.js'
+import { getUrgencyType } from '../utils/urgencyUtils.js'
 import './ByTheater.css'
 
 function FormatBadge({ format }) {
@@ -28,9 +30,10 @@ function MetricsBadges({ film }) {
   return <>{badges}</>
 }
 
-function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate }) {
+function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate, allScreenings }) {
   const relative = getRelativeLabel(s.date, s.time, now)
   const film = getFilmData(s.title, data.films)
+  const urgencyType = getUrgencyType({ ...s, theaterId: theater.id }, allScreenings)
   const navigate = useNavigate()
   const itemRef = useRef(null)
 
@@ -55,12 +58,13 @@ function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate }) {
       <NewReleaseBadge film={film} />
       <MetricsBadges film={film} />
       <FormatBadge format={s.format} />
-      {(s.time || relative) && (
+      {(s.time || relative || urgencyType) && (
         <span className="screening-time-col">
           {s.time && <span className="screening-time">{s.time}</span>}
           {relative && (
             <span className={`screening-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
           )}
+          <UrgencyBadge type={urgencyType} />
         </span>
       )}
       {s.link && (
@@ -82,7 +86,7 @@ function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate }) {
   )
 }
 
-function MonthGroup({ month, screenings, theater, now, data, forceUpdate, formatDate }) {
+function MonthGroup({ month, screenings, theater, now, data, forceUpdate, formatDate, allScreenings }) {
   const [showPast, setShowPast] = useState(false)
 
   const past = []
@@ -107,7 +111,7 @@ function MonthGroup({ month, screenings, theater, now, data, forceUpdate, format
           {showPast && (
             <ul className="screening-list past-screenings-list">
               {past.map(s => (
-                <ScreeningRow key={s.id} s={s} theater={theater} now={now} data={data} forceUpdate={forceUpdate} formatDate={formatDate} />
+                <ScreeningRow key={s.id} s={s} theater={theater} now={now} data={data} forceUpdate={forceUpdate} formatDate={formatDate} allScreenings={allScreenings} />
               ))}
             </ul>
           )}
@@ -116,7 +120,7 @@ function MonthGroup({ month, screenings, theater, now, data, forceUpdate, format
       {upcoming.length > 0 && (
         <ul className="screening-list">
           {upcoming.map(s => (
-            <ScreeningRow key={s.id} s={s} theater={theater} now={now} data={data} forceUpdate={forceUpdate} formatDate={formatDate} />
+            <ScreeningRow key={s.id} s={s} theater={theater} now={now} data={data} forceUpdate={forceUpdate} formatDate={formatDate} allScreenings={allScreenings} />
           ))}
         </ul>
       )}
@@ -151,6 +155,18 @@ function ByTheater({ data }) {
     const d = new Date(dateStr + 'T00:00:00')
     return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
   }
+
+  // Build flat array of all screenings with theaterId for urgency computation
+  const allScreenings = useMemo(() => {
+    if (!data) return []
+    const all = []
+    data.theaters.forEach(theater => {
+      theater.screenings.forEach(s => {
+        all.push({ ...s, theaterId: theater.id })
+      })
+    })
+    return all
+  }, [data])
 
   if (!data || data.theaters.length === 0) {
     return <div className="empty-state">No screenings found.</div>
@@ -194,6 +210,7 @@ function ByTheater({ data }) {
                     data={data}
                     forceUpdate={forceUpdate}
                     formatDate={formatDate}
+                    allScreenings={allScreenings}
                   />
                 ))}
               </div>

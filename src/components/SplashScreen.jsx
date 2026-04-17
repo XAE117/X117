@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import './SplashScreen.css'
 
 function FilmReel() {
@@ -59,7 +59,9 @@ function EatsSplashIcon() {
 function SplashScreen({ title, subtitle, onDone, isJazz, isEats }) {
   const [fading, setFading] = useState(false)
 
-  const stars = useMemo(() =>
+  // useState lazy initializer is the blessed way to run impure code once
+  // per mount. Using useMemo([]) here trips react-hooks/purity.
+  const [stars] = useState(() =>
     Array.from({ length: 60 }, (_, i) => {
       const size = Math.random() * 2.5 + 0.5
       return {
@@ -71,7 +73,7 @@ function SplashScreen({ title, subtitle, onDone, isJazz, isEats }) {
         duration: 2.0 + Math.random() * 3.0,
         bright: size > 1.8,
       }
-    }), []
+    })
   )
 
   useEffect(() => {

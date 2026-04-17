@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './EatsByTier.css'
 
@@ -132,7 +132,7 @@ function RestaurantCard({ restaurant }) {
   )
 }
 
-function TierSection({ tier, label, subtitle, restaurants, accentClass }) {
+function TierSection({ label, subtitle, restaurants, accentClass }) {
   const sorted = useMemo(() =>
     [...restaurants].sort((a, b) => b.heatScore - a.heatScore),
     [restaurants]
@@ -199,7 +199,6 @@ function EatsByTier({ data }) {
 
       {(tierFilter === 'all' || tierFilter === 'street') && (
         <TierSection
-          tier="street"
           label="STREET"
           subtitle="Pop-ups & Stands \u00B7 Under $20/pp"
           restaurants={tiers.street}
@@ -208,7 +207,6 @@ function EatsByTier({ data }) {
       )}
       {(tierFilter === 'all' || tierFilter === 'feast') && (
         <TierSection
-          tier="feast"
           label="FEAST"
           subtitle="The Sweet Spot \u00B7 $20\u2013$120/pp"
           restaurants={tiers.feast}
@@ -217,7 +215,6 @@ function EatsByTier({ data }) {
       )}
       {(tierFilter === 'all' || tierFilter === 'whale') && (
         <TierSection
-          tier="whale"
           label="WHITE WHALE"
           subtitle="Fine Dining \u00B7 $120+/pp"
           restaurants={tiers.whale}
@@ -226,7 +223,6 @@ function EatsByTier({ data }) {
       )}
       {(tierFilter === 'all' || tierFilter === 'pizza') && (
         <TierSection
-          tier="pizza"
           label="PIZZA"
           subtitle="LA\u2019s Best Pies \u00B7 All Styles"
           restaurants={tiers.pizza}
@@ -235,7 +231,6 @@ function EatsByTier({ data }) {
       )}
       {(tierFilter === 'all' || tierFilter === 'tacos') && (
         <TierSection
-          tier="tacos"
           label="TACOS"
           subtitle="The Global Capital \u00B7 All Styles"
           restaurants={tiers.tacos}

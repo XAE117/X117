@@ -106,8 +106,7 @@
 
 /* Scroll-based pill fade — quick fade-out, slow fade-back-in */
 .app.ui-scrolling .filter-notch,
-.app.ui-scrolling .mode-notch,
-.app.ui-scrolling .bottom-bar {
+.app.ui-scrolling .mode-notch {
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
@@ -244,8 +243,91 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.3rem;
+  gap: 0;
   animation: expandIn 0.5s ease-out both;
+}
+
+.notch-toggle--close {
+  margin-bottom: 0.5rem;
+}
+
+/* ── Vertical nav group in expanded dropdown ── */
+
+.notch-nav-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.notch-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.3rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.07);
+  transition: color 0.15s ease, background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  animation: slideInRow 0.22s ease-out both;
+}
+
+.notch-nav-row:last-child {
+  border-bottom: none;
+}
+
+.notch-nav-row:hover,
+.notch-nav-row:focus {
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.03);
+  outline: none;
+}
+
+.notch-nav-row.active {
+  color: var(--gold);
+}
+
+.notch-nav-emoji {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 1.4em;
+  text-align: center;
+}
+
+.notch-nav-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Double divider between nav group and filter group */
+.notch-double-divider {
+  width: 100%;
+  height: 5px;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  margin: 3px 0;
+  flex-shrink: 0;
+}
+
+/* Search row at bottom of expanded notch */
+.notch-search-row {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+@keyframes slideInRow {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .filter-notch-search {
@@ -260,7 +342,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: calc(3.2rem + env(safe-area-inset-top, 0px)) 1.5rem calc(3rem + 80px); /* top space for fixed top bar + safe area + bottom for fixed bottom bar */
+  padding: calc(3.2rem + env(safe-area-inset-top, 0px)) 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 16px));
   overflow-x: hidden;
 }
 

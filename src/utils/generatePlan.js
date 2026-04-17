@@ -279,12 +279,20 @@ function enrichRestaurant(r, activity) {
   return enriched
 }
 
+function estimateDriveTime(miles) {
+  if (!miles || miles <= 0) return { minutes: 15, label: '~15 min drive' }
+  // LA average ~22 mph including signals and traffic
+  const raw = miles / 22 * 60
+  const rounded = Math.max(5, Math.ceil(raw / 5) * 5)
+  return { minutes: rounded, label: `~${rounded} min drive` }
+}
+
 function buildTimeline(plan, type) {
   const activityTime = plan.activity.timeParsed
-  // Suggest dinner 1.5-2 hours before activity
-  const dinnerStart = type === 'movie' ? activityTime - 2 : activityTime - 2
+  const drive = estimateDriveTime(plan.restaurant?.distanceMiles)
+  const dinnerStart = activityTime - 2
   const dinnerEnd = dinnerStart + 1.25 // ~75 min dinner
-  const travelTime = 0.25 // 15 min
+  const travelTime = drive.minutes / 60
   const arriveTime = activityTime - travelTime
 
   // Activity duration estimate
@@ -293,7 +301,7 @@ function buildTimeline(plan, type) {
   return {
     dinnerTime: formatTime12(Math.max(dinnerStart, 17)), // no earlier than 5 PM
     dinnerEnd: formatTime12(dinnerEnd),
-    travelNote: '~15 min',
+    travelNote: drive.label,
     arriveTime: formatTime12(arriveTime),
     activityTime: plan.activity.time || formatTime12(activityTime),
     activityEnd: formatTime12(activityEnd),

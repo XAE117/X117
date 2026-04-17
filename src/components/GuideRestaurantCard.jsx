@@ -33,8 +33,6 @@ function GuideRestaurantCard({ restaurant, children }) {
 
   if (!restaurant) return <span>{children}</span>
 
-  const priceLabel = { '$': 'Street', '$$': 'Midrange', '$$$': 'Upscale', '$$$$': 'Fine Dining' }
-
   return (
     <span className="guide-restaurant-trigger-wrap">
       <span

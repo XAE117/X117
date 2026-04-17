@@ -1,6 +1,8 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useNow, parseTime, filmMeta } from '../utils/timeUtils.js'
+import { getUrgencyType } from '../utils/urgencyUtils.js'
+import UrgencyBadge from '../components/UrgencyBadge.jsx'
 import './Tonight.css'
 
 function FormatBadge({ format }) {
@@ -33,10 +35,11 @@ function getUrgencyClass(parsedMinutes, nowMinutes) {
   return ''
 }
 
-function ScreeningItem({ s, isNow, relative, data, nowMinutes }) {
+function ScreeningItem({ s, isNow, relative, data, nowMinutes, allScreenings }) {
   const navigate = useNavigate()
   const itemRef = useRef(null)
   const urgency = getUrgencyClass(s.parsedMinutes, nowMinutes)
+  const urgencyType = getUrgencyType(s, allScreenings)
 
   const handleClick = (e) => {
     if (e.target.closest('a')) return
@@ -53,6 +56,7 @@ function ScreeningItem({ s, isNow, relative, data, nowMinutes }) {
       <div className="tonight-time-col">
         <span className="tonight-time">{s.time || 'TBA'}</span>
         {relative && <span className={`tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
+        <UrgencyBadge type={urgencyType} />
       </div>
       <div className="tonight-info-col">
         <span className="tonight-title-link">{s.title}</span>
@@ -97,6 +101,18 @@ function Tonight({ data }) {
   }, [now])
 
   const nowMinutes = now.getHours() * 60 + now.getMinutes()
+
+  // Build flat array of ALL screenings (needed for urgency badges)
+  const allScreenings = useMemo(() => {
+    if (!data) return []
+    const all = []
+    data.theaters.forEach(theater => {
+      theater.screenings.forEach(s => {
+        all.push({ ...s, theaterId: theater.id })
+      })
+    })
+    return all
+  }, [data])
 
   const tonightScreenings = useMemo(() => {
     if (!data) return []
@@ -178,7 +194,7 @@ function Tonight({ data }) {
               {past.map(s => {
                 const isNow = false
                 const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
-                return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} nowMinutes={nowMinutes} />
+                return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} nowMinutes={nowMinutes} allScreenings={allScreenings} />
               })}
             </ul>
           )}
@@ -189,7 +205,7 @@ function Tonight({ data }) {
         {upcoming.map(s => {
           const isNow = s.parsedMinutes != null && (nowMinutes - s.parsedMinutes) >= 0 && (nowMinutes - s.parsedMinutes) <= 150
           const relative = s.parsedMinutes != null ? getRelativeTime(s.parsedMinutes, nowMinutes) : null
-          return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} nowMinutes={nowMinutes} />
+          return <ScreeningItem key={s.id} s={s} isNow={isNow} relative={relative} data={data} nowMinutes={nowMinutes} allScreenings={allScreenings} />
         })}
       </ul>
     </div>

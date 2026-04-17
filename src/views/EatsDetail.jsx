@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './EatsByTier.css'
 
 function EatsDetail({ data }) {
@@ -26,7 +26,6 @@ function EatsDetail({ data }) {
       <div className="eats-empty">
         <h2>Restaurant Not Found</h2>
         <p>This restaurant may no longer be listed.</p>
-        <Link to="/food" className="back-btn">&larr; Back to Eats</Link>
       </div>
     )
   }
@@ -134,7 +133,6 @@ function EatsDetail({ data }) {
         )}
       </div>
 
-      <Link to="/food" className="back-btn">&larr; back</Link>
     </div>
   )
 }

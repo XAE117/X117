@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import { getUrgencyType } from '../utils/urgencyUtils.js'
 import UrgencyBadge from '../components/UrgencyBadge.jsx'
@@ -207,9 +207,6 @@ function Detail({ data }) {
       <div className="detail-not-found">
         <h2>Screening Not Found</h2>
         <p>This screening may no longer be available.</p>
-        <Link to="/" className="back-btn">
-          &larr; Go Back
-        </Link>
       </div>
     )
   }
@@ -415,9 +412,6 @@ function Detail({ data }) {
         </div>
       </div>
 
-      <Link to="/" className="back-btn">
-        &larr; back
-      </Link>
     </div>
   )
 }

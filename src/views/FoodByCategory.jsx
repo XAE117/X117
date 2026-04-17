@@ -1,25 +1,11 @@
 import { useState, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { getStarredIds, toggleStar } from '../utils/starredFood.js'
 import './FoodByCategory.css'
-
-const STAR_KEY = 'palace-starred-restaurants'
-
-function getStarredIds() {
-  try {
-    return JSON.parse(localStorage.getItem(STAR_KEY)) || []
-  } catch { return [] }
-}
-
-function toggleStar(id) {
-  const ids = getStarredIds()
-  const next = ids.includes(id) ? ids.filter(x => x !== id) : [...ids, id]
-  localStorage.setItem(STAR_KEY, JSON.stringify(next))
-  return next
-}
 
 function FireBadge({ count }) {
   if (!count) return null
-  return <span className="food-fire">{Array.from({ length: count }, (_, i) => '🔥').join('')}</span>
+  return <span className="food-fire">{'🔥'.repeat(count)}</span>
 }
 
 function BibBadge() {
@@ -212,5 +198,4 @@ function FoodByCategory({ data }) {
   )
 }
 
-export { getStarredIds, toggleStar }
 export default FoodByCategory

@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getStarredIds, toggleStar } from './FoodByCategory.jsx'
+import { getStarredIds, toggleStar } from '../utils/starredFood.js'
 import './TacoGuide.css'
 
 const STYLE_SECTIONS = [
@@ -38,7 +38,7 @@ const STYLE_SECTIONS = [
 
 function FireBadge({ count }) {
   if (!count) return null
-  return <span className="taco-fire">{Array.from({ length: count }, (_, i) => '\uD83D\uDD25').join('')}</span>
+  return <span className="taco-fire">{'\uD83D\uDD25'.repeat(count)}</span>
 }
 
 function StyleBadge({ style }) {

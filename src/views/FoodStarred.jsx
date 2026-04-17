@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getStarredIds, toggleStar } from './FoodByCategory.jsx'
+import { getStarredIds, toggleStar } from '../utils/starredFood.js'
 import './FoodStarred.css'
 
 function FireBadge({ count }) {

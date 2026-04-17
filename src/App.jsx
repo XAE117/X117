@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useLocation, Navigate, Link } from 'react-router-dom'
-import Nav from './components/Nav.jsx'
+import { Routes, Route, useLocation, Navigate, NavLink } from 'react-router-dom'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
@@ -267,96 +266,135 @@ function App() {
                 <button
                   className="notch-toggle"
                   onClick={() => setFiltersExpanded(true)}
-                  aria-label="Open filters"
+                  aria-label="Open menu"
                 >
                   <span className="notch-plus">+</span>
                 </button>
-                {showFormatFilter && (
-                  <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={false} />
-                )}
-                {isFoodMode && (
-                  <div className="notch-food-pills">
-                    <Link to="/food" className={`notch-food-pill ${location.pathname === '/food' ? 'active' : ''}`}>All</Link>
-                    <div className="notch-pill-wrapper">
-                      <button
-                        className={`notch-food-pill ${foodDropdown === 'tiers' || location.pathname === '/food/tiers' ? 'active' : ''}`}
-                        onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'tiers' ? null : 'tiers') }}
-                      >
-                        Tiers
-                      </button>
-                      {foodDropdown === 'tiers' && (
-                        <div className="notch-food-dropdown">
-                          <div className="notch-dropdown-items">
-                            <Link to="/food/tiers" className="notch-dropdown-item">All Tiers</Link>
-                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'street')}>Street</Link>
-                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'feast')}>Feast</Link>
-                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'whale')}>Whale</Link>
-                            <Link to="/food/tiers" className="notch-dropdown-item" onClick={() => sessionStorage.setItem('palace-tier-filter', 'pizza')}>Pizza</Link>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <div className="notch-pill-wrapper">
-                      <button
-                        className={`notch-food-pill notch-food-pill--specialty ${foodDropdown === 'specialty' || location.pathname === '/food/pizza' || location.pathname === '/food/tacos' ? 'active' : ''}`}
-                        onClick={(e) => { e.stopPropagation(); setFoodDropdown(foodDropdown === 'specialty' ? null : 'specialty') }}
-                      >
-                        Specialty
-                      </button>
-                      {foodDropdown === 'specialty' && (
-                        <div className="notch-food-dropdown">
-                          <div className="notch-dropdown-items">
-                            <Link to="/food/pizza" className="notch-dropdown-item">Pizza Guide</Link>
-                            <Link to="/food/tacos" className="notch-dropdown-item">Taco Guide</Link>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <Link to="/guide" className={`notch-food-pill ${location.pathname === '/guide' ? 'active' : ''}`}>Guide</Link>
-                  </div>
-                )}
               </div>
             )}
             {filtersExpanded && (
               <div className="filter-notch-expanded">
                 <button
-                  className="notch-toggle"
+                  className="notch-toggle notch-toggle--close"
                   onClick={() => setFiltersExpanded(false)}
-                  aria-label="Close filters"
+                  aria-label="Close menu"
                 >
                   <span className="notch-plus open">+</span>
                 </button>
+
+                {/* Nav rows — mode-specific */}
+                <div className="notch-nav-group">
+                  {isJazzMode && [
+                    { to: '/jazz', end: true, emoji: '📍', label: 'By Day' },
+                    { to: '/jazz/by-venue', emoji: '🏛️', label: 'Venues' },
+                    { to: '/jazz/proximity', emoji: '📡', label: 'LC ℃' },
+                    { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
+                  ].map((item, i, arr) => (
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      end={item.end}
+                      className={({ isActive }) => `notch-nav-row ${isActive ? 'active' : ''}`}
+                      onClick={() => setFiltersExpanded(false)}
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
+                      <span className="notch-nav-emoji">{item.emoji}</span>
+                      <span className="notch-nav-label">{item.label}</span>
+                    </NavLink>
+                  ))}
+
+                  {isFoodMode && [
+                    { to: '/food', end: true, emoji: '🍽️', label: 'All' },
+                    { to: '/food/tacos', emoji: '🌮', label: 'Tacos' },
+                    { to: '/food/pizza', emoji: '🍕', label: 'Pizza' },
+                    { to: '/food/starred', emoji: '⭐', label: 'Starred' },
+                    { to: '/food/map', emoji: '📍', label: 'Hoods' },
+                    { to: '/guide', emoji: '📖', label: 'Guide' },
+                  ].map((item, i) => (
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      end={item.end}
+                      className={({ isActive }) => `notch-nav-row ${isActive ? 'active' : ''}`}
+                      onClick={() => setFiltersExpanded(false)}
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
+                      <span className="notch-nav-emoji">{item.emoji}</span>
+                      <span className="notch-nav-label">{item.label}</span>
+                    </NavLink>
+                  ))}
+
+                  {!isJazzMode && !isFoodMode && [
+                    { to: '/', end: true, emoji: '📍', label: 'By Day' },
+                    { to: '/by-theater', emoji: '🏛️', label: 'Theaters' },
+                    { to: '/watchlist', emoji: '💛', label: 'Watchlist' },
+                    { to: '/map', emoji: '🗺️', label: 'Map' },
+                  ].map((item, i) => (
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      end={item.end}
+                      className={({ isActive }) => `notch-nav-row ${isActive ? 'active' : ''}`}
+                      onClick={() => setFiltersExpanded(false)}
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
+                      <span className="notch-nav-emoji">{item.emoji}</span>
+                      <span className="notch-nav-label">{item.label}</span>
+                    </NavLink>
+                  ))}
+                </div>
+
+                {/* Format filters + search — film mode only */}
                 {showFormatFilter && (
                   <>
-                    <FormatFilter current={formatFilter} onChange={setFormatFilter} expanded={true} />
-                    <button
-                      className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
-                      onClick={() => fetchData(true)}
-                      disabled={refreshing}
-                      title="Refresh listings"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                        <path d="M23 4v6h-6" />
-                        <path d="M1 20v-6h6" />
-                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                      </svg>
-                    </button>
+                    <div className="notch-double-divider" />
+                    <div className="notch-nav-group">
+                      {[
+                        { key: 'all', emoji: '🪩', label: 'All' },
+                        { key: 'film', emoji: '📽️', label: 'Film' },
+                        { key: 'new', emoji: '⭐', label: 'New' },
+                        { key: 'favorites', emoji: '✨', label: 'Faves' },
+                      ].map((f, i) => (
+                        <button
+                          key={f.key}
+                          className={`notch-nav-row notch-filter-row ${formatFilter === f.key ? 'active' : ''}`}
+                          onClick={() => { setFormatFilter(f.key); setFiltersExpanded(false) }}
+                          style={{ animationDelay: `${(i + 4) * 0.05}s` }}
+                        >
+                          <span className="notch-nav-emoji">{f.emoji}</span>
+                          <span className="notch-nav-label">{f.label}</span>
+                          <button
+                            className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+                            style={{ display: f.key === 'all' ? 'inline-flex' : 'none', marginLeft: 'auto' }}
+                            onClick={(e) => { e.stopPropagation(); fetchData(true) }}
+                            disabled={refreshing}
+                            title="Refresh listings"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                              <path d="M23 4v6h-6" />
+                              <path d="M1 20v-6h6" />
+                              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                            </svg>
+                          </button>
+                        </button>
+                      ))}
+                    </div>
+                    <div className="filter-notch-search notch-search-row">
+                      <input
+                        type="text"
+                        className="expanded-search-input"
+                        placeholder="Search films..."
+                        value={searchQuery}
+                        onChange={e => setSearchQuery(e.target.value)}
+                      />
+                      {searchQuery && (
+                        <button className="expanded-search-clear" onClick={() => setSearchQuery('')}>
+                          &times;
+                        </button>
+                      )}
+                    </div>
                   </>
                 )}
-                <div className="filter-notch-search">
-                  <input
-                    type="text"
-                    className="expanded-search-input"
-                    placeholder="Search films..."
-                    value={searchQuery}
-                    onChange={e => setSearchQuery(e.target.value)}
-                  />
-                  {searchQuery && (
-                    <button className="expanded-search-clear" onClick={() => setSearchQuery('')}>
-                      &times;
-                    </button>
-                  )}
-                </div>
               </div>
             )}
           </div>}
@@ -417,7 +455,6 @@ function App() {
         isJazz={isJazzMode}
         isFood={isFoodMode}
       />
-      {!isDetailPage && <Nav mode={mode} />}
       {showBackPill && <BackPill />}
     </div>
   )
