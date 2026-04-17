@@ -82,7 +82,7 @@ function JazzDayScreenshot({ data }) {
             <span className="ss-diamond">&#10022;</span>
           </div>
 
-          <h1 className="ss-title">LIZA'S PALACE</h1>
+          <h1 className="ss-title">SIXPM</h1>
           <h2 className="ss-date jss-subtitle">TONIGHT'S SETS</h2>
           <h3 className="ss-date">{dayLabel}</h3>
 

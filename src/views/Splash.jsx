@@ -12,8 +12,9 @@ function Splash({ onEnter }) {
   const [fading, setFading] = useState(false)
   const containerRef = useRef(null)
 
-  // Generate random stars
-  const stars = useRef(
+  // useState lazy initializer is the blessed escape hatch for impure setup
+  // (react-hooks/purity bans Math.random in render and useMemo bodies).
+  const [stars] = useState(() =>
     Array.from({ length: 80 }, (_, i) => ({
       key: i,
       style: {
@@ -25,10 +26,9 @@ function Splash({ onEnter }) {
         animationDuration: `${2 + Math.random() * 3}s`,
       },
     }))
-  ).current
+  )
 
-  // Shooting stars
-  const shootingStars = useRef(
+  const [shootingStars] = useState(() =>
     Array.from({ length: 3 }, (_, i) => ({
       key: i,
       style: {
@@ -37,7 +37,7 @@ function Splash({ onEnter }) {
         animationDelay: `${1 + i * 2.5}s`,
       },
     }))
-  ).current
+  )
 
   const handleEnter = () => {
     setFading(true)
@@ -85,8 +85,8 @@ function Splash({ onEnter }) {
 
       <div className="splash-content">
         <h1 className="splash-title">
-          <span className="splash-title-line1">Liza's</span>
-          <span className="splash-title-line2">Palace</span>
+          <span className="splash-title-line1">six</span>
+          <span className="splash-title-line2">pm</span>
         </h1>
         <div className="splash-sparkle-row">
           <span className="splash-sparkle">✦</span>

@@ -126,7 +126,7 @@ function GuidePage({ guideData }) {
       <article className="guide-article">
         {/* ── Hero / Title ── */}
         <header className="guide-hero">
-          <p className="guide-kicker">Liza's Palace Presents</p>
+          <p className="guide-kicker">SIXPM Presents</p>
           <h1 className="guide-title">The Corn & Fire<br />Companion</h1>
           <p className="guide-subtitle">
             A field guide to the taco landscape of Los Angeles — the masa temples, the trompo masters, the regional kingdoms, and the living argument that this city is the greatest taco city on earth.

@@ -402,7 +402,7 @@ function ShareButton({ plan, type, label }) {
         lines.push(`   ${plan.activity.time}`)
       }
     }
-    lines.push(`\nVia Liza's Palace ✨`)
+    lines.push(`\nVia SIXPM ✨`)
 
     navigator.clipboard.writeText(lines.join('\n')).then(() => {
       setCopied(true)

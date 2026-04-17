@@ -85,7 +85,7 @@ function DayScreenshot({ data }) {
             <span className="ss-diamond">&#9670;</span>
           </div>
 
-          <h1 className="ss-title">LIZA'S PALACE</h1>
+          <h1 className="ss-title">SIXPM</h1>
           <h2 className="ss-date">{dayLabel}</h2>
 
           <div className="ss-divider">

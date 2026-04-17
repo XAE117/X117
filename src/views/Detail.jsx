@@ -35,7 +35,7 @@ function generateICS(screening, theater) {
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Liza\'s Palace//EN',
+    'PRODID:-//SIXPM//EN',
     'BEGIN:VEVENT',
     `DTSTART;TZID=America/Los_Angeles:${start}`,
     `DTEND;TZID=America/Los_Angeles:${end}`,
@@ -43,7 +43,7 @@ function generateICS(screening, theater) {
     `LOCATION:${escapeICS(theater.name)}\\, ${escapeICS(theater.neighborhood)}`,
     `DESCRIPTION:${screening.notes ? escapeICS(screening.notes) + '\\n' : ''}${screening.link || ''}`,
     screening.link ? `URL:${screening.link}` : '',
-    `UID:${screening.id}@lizaspalace`,
+    `UID:${screening.id}@sixpm`,
     'END:VEVENT',
     'END:VCALENDAR'
   ].filter(Boolean).join('\r\n')

@@ -120,15 +120,15 @@ function App() {
   // Dynamic page title per mode
   useEffect(() => {
     if (isRollMode) {
-      document.title = "LIZA'S PALACE — Tonight's Lineup"
+      document.title = "SIXPM — Tonight's Lineup"
     } else if (isGuideMode) {
-      document.title = "LIZA'S PALACE — The Corn & Fire Companion"
+      document.title = "SIXPM — The Corn & Fire Companion"
     } else if (isFoodMode) {
-      document.title = "LIZA'S PALACE — LA Restaurant Guide"
+      document.title = "SIXPM — LA Restaurant Guide"
     } else if (isJazzMode) {
-      document.title = "LIZA'S PALACE — LA Jazz & Live Music"
+      document.title = "SIXPM — LA Jazz & Live Music"
     } else {
-      document.title = "LIZA'S PALACE — LA Repertory Cinema"
+      document.title = "SIXPM — LA Repertory Cinema"
     }
   }, [isJazzMode, isFoodMode, isGuideMode, isRollMode])
 
