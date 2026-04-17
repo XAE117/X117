@@ -71,7 +71,31 @@
   box-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
 }
 
-/* ── Swipe Dots (mobile) ── */
+/* ── Swipe Hint + Dots (mobile) ── */
+
+.dn-swipe-hint {
+  display: none;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+  animation: swipeHintGlow 2s ease-in-out infinite;
+}
+
+@keyframes swipeHintGlow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(201, 168, 76, 0.3), 0 0 8px rgba(201, 168, 76, 0.1);
+    opacity: 0.7;
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.7), 0 0 20px rgba(201, 168, 76, 0.35);
+    opacity: 1;
+  }
+}
 
 .dn-swipe-dots {
   display: none;
@@ -522,21 +546,33 @@
 /* ── Mobile: Swipe between plans ── */
 
 @media (max-width: 600px) {
+  .dn-swipe-hint {
+    display: block;
+  }
+
   .dn-swipe-dots {
     display: flex;
   }
 
   .dn-plans {
-    flex-direction: row;
     overflow: hidden;
     gap: 0;
   }
 
+  /* Track slides as a single unit — avoids CSS-variable inheritance issues */
+  .dn-plans-track {
+    display: flex;
+    width: 200%;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    gap: 0;
+  }
+
   .dn-plan-card {
-    min-width: 100%;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-    transform: translateX(calc(var(--swipe-index, 0) * -100%));
+    flex: 0 0 50%;
+    width: 50%;
+    min-width: 0;
+    max-width: 50%;
   }
 }
 
@@ -546,6 +582,11 @@
   .dn-plans {
     flex-direction: row;
     gap: 1rem;
+  }
+
+  /* Track is transparent on desktop — children lay out in .dn-plans directly */
+  .dn-plans-track {
+    display: contents;
   }
 
   .dn-plan-card {

@@ -4,7 +4,7 @@
   background: linear-gradient(135deg, #1a0a0a 0%, #2a1215 40%, #1a0a0a 100%);
   border: 1px solid #6B2737;
   border-left: 4px solid #C9A84C;
-  margin: 0 auto 0;
+  margin: calc(3.5rem + env(safe-area-inset-top, 0px)) auto 0;
   max-width: 1200px;
   width: calc(100% - 3rem);
   position: relative;

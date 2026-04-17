@@ -12,8 +12,6 @@ import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
 import DayScreenshot from './views/DayScreenshot.jsx'
-import Tonight from './views/Tonight.jsx'
-import JazzTonight from './views/JazzTonight.jsx'
 import JazzByVenue from './views/JazzByVenue.jsx'
 import JazzByDay from './views/JazzByDay.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
@@ -50,17 +48,7 @@ const NON_FAVORITE_THEATERS = [
   'vidiots',
 ]
 
-// Smart default: redirect to Tonight on first cinema visit if it's evening (4-11pm)
 function SmartCinemaDefault({ filteredData, searchQuery }) {
-  const hour = new Date().getHours()
-  const isEvening = hour >= 16 && hour < 23
-  const hasRedirected = sessionStorage.getItem('palace-smart-routed')
-
-  if (isEvening && !hasRedirected) {
-    sessionStorage.setItem('palace-smart-routed', '1')
-    return <Navigate to="/tonight" replace />
-  }
-
   return <ByDay data={filteredData} searchQuery={searchQuery} />
 }
 
@@ -387,7 +375,6 @@ function App() {
               ? <Navigate to="/welcome" replace />
               : <SmartCinemaDefault filteredData={filteredData} searchQuery={searchQuery} />
           } />
-          <Route path="/tonight" element={<Tonight data={filteredData} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />
@@ -396,7 +383,6 @@ function App() {
 
           {/* Jazz routes */}
           <Route path="/jazz" element={<JazzByDay data={jazzData} />} />
-          <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} />} />
           <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
           <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />

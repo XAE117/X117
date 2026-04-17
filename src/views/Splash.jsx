@@ -84,10 +84,7 @@ function Splash({ onEnter }) {
       </div>
 
       <div className="splash-content">
-        <h1 className="splash-title">
-          <span className="splash-title-line1">six</span>
-          <span className="splash-title-line2">pm</span>
-        </h1>
+        <h1 className="splash-title">sixpm</h1>
         <div className="splash-sparkle-row">
           <span className="splash-sparkle">✦</span>
           <span className="splash-sparkle">✦</span>

@@ -4,7 +4,7 @@
   position: fixed;
   bottom: 12px;
   left: 6px;
-  z-index: 100;
+  z-index: 9999;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -118,8 +118,12 @@
 .tab-emoji {
   font-size: 1rem;
   line-height: 1;
-  transition: opacity 0.3s ease;
-  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .tab:not(.active) .tab-emoji {
@@ -131,29 +135,34 @@
   opacity: 1;
 }
 
-/* Tooltip flash on tap */
+/* Label floats above the pill on tap, glows, then slowly fades */
 .tab-tooltip {
   position: absolute;
-  top: calc(100% + 2px);
+  bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  font-family: var(--font-body);
-  font-size: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.5rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--gold);
   white-space: nowrap;
   pointer-events: none;
   line-height: 1;
-  z-index: 999;
-  animation: tabTooltipFlash 1.2s ease-out forwards;
+  z-index: 10000;
+  text-shadow:
+    0 0 6px rgba(201, 168, 76, 0.8),
+    0 0 18px rgba(201, 168, 76, 0.4),
+    0 0 32px rgba(201, 168, 76, 0.15);
+  animation: tabLabelFloat 2.2s ease-out forwards;
 }
 
-@keyframes tabTooltipFlash {
-  0% { opacity: 0; transform: translateX(-50%) translateY(2px); }
-  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
-  70% { opacity: 1; }
-  100% { opacity: 0; }
+@keyframes tabLabelFloat {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  12%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  60%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-3px); }
 }
 
 /* Golden glow pulse on tap */

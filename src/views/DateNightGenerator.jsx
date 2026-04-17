@@ -142,28 +142,32 @@ function DateNightGenerator({ cinemaData, jazzData, foodData }) {
         className="dn-plans"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        style={{ '--swipe-index': swipeIndex }}
       >
-        <PlanCard
-          plan={planA}
-          type="movie"
-          label="DINNER & A MOVIE"
-          emoji="🎬"
-          accentClass="plan-a"
-          locked={locked.planA}
-          onToggleLock={(el) => toggleLock('A', el)}
-          selectedDate={selectedDate}
-        />
-        <PlanCard
-          plan={planB}
-          type="jazz"
-          label="DINNER & JAZZ"
-          emoji="🎷"
-          accentClass="plan-b"
-          locked={locked.planB}
-          onToggleLock={(el) => toggleLock('B', el)}
-          selectedDate={selectedDate}
-        />
+        <div
+          className="dn-plans-track"
+          style={{ transform: `translateX(${swipeIndex * -50}%)` }}
+        >
+          <PlanCard
+            plan={planA}
+            type="movie"
+            label="DINNER & A MOVIE"
+            emoji="🎬"
+            accentClass="plan-a"
+            locked={locked.planA}
+            onToggleLock={(el) => toggleLock('A', el)}
+            selectedDate={selectedDate}
+          />
+          <PlanCard
+            plan={planB}
+            type="jazz"
+            label="DINNER & JAZZ"
+            emoji="🎷"
+            accentClass="plan-b"
+            locked={locked.planB}
+            onToggleLock={(el) => toggleLock('B', el)}
+            selectedDate={selectedDate}
+          />
+        </div>
       </div>
 
       {/* Action Bar */}
