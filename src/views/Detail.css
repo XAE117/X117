@@ -170,6 +170,7 @@
   width: fit-content;
   min-width: 155px;
   align-self: stretch;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
   background: rgba(20, 18, 16, 0.7);
@@ -547,14 +548,10 @@
   min-width: 80px;
 }
 
+/* AFI + S&S — full glow */
 .detail-metric-card.afi {
   border-color: rgba(201, 168, 76, 0.3);
   box-shadow: 0 0 4px rgba(201, 168, 76, 0.15), 0 0 10px rgba(201, 168, 76, 0.06);
-}
-
-.detail-metric-card.rt {
-  border-color: rgba(232, 138, 130, 0.3);
-  box-shadow: 0 0 4px rgba(232, 138, 130, 0.15), 0 0 10px rgba(232, 138, 130, 0.06);
 }
 
 .detail-metric-card.ss {
@@ -562,14 +559,20 @@
   box-shadow: 0 0 4px rgba(130, 200, 160, 0.15), 0 0 10px rgba(130, 200, 160, 0.06);
 }
 
+/* RT, LB, TMDB — equal, reduced glow */
+.detail-metric-card.rt {
+  border-color: rgba(232, 138, 130, 0.2);
+  box-shadow: 0 0 4px rgba(232, 138, 130, 0.07), 0 0 10px rgba(232, 138, 130, 0.03);
+}
+
 .detail-metric-card.lb {
-  border-color: rgba(137, 207, 240, 0.3);
-  box-shadow: 0 0 4px rgba(137, 207, 240, 0.15), 0 0 10px rgba(137, 207, 240, 0.06);
+  border-color: rgba(137, 207, 240, 0.2);
+  box-shadow: 0 0 4px rgba(137, 207, 240, 0.07), 0 0 10px rgba(137, 207, 240, 0.03);
 }
 
 .detail-metric-card.tmdb {
-  border-color: rgba(1, 180, 228, 0.3);
-  box-shadow: 0 0 4px rgba(1, 180, 228, 0.15), 0 0 10px rgba(1, 180, 228, 0.06);
+  border-color: rgba(1, 180, 228, 0.2);
+  box-shadow: 0 0 4px rgba(1, 180, 228, 0.07), 0 0 10px rgba(1, 180, 228, 0.03);
 }
 
 .detail-metric-value {

@@ -13,18 +13,18 @@
   border-radius: 50%;
   background: #e85d4a;
   flex-shrink: 0;
-  box-shadow: 0 0 4px rgba(232, 93, 74, 0.7), 0 0 8px rgba(232, 93, 74, 0.35);
+  box-shadow: 0 0 4px rgba(232, 93, 74, 0.35), 0 0 8px rgba(232, 93, 74, 0.175);
   animation: dot-pulse 2s ease-in-out infinite;
 }
 
 @keyframes dot-pulse {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 4px rgba(232, 93, 74, 0.7), 0 0 8px rgba(232, 93, 74, 0.35);
+    box-shadow: 0 0 4px rgba(232, 93, 74, 0.35), 0 0 8px rgba(232, 93, 74, 0.175);
   }
   50% {
     opacity: 0.55;
-    box-shadow: 0 0 2px rgba(232, 93, 74, 0.3), 0 0 4px rgba(232, 93, 74, 0.15);
+    box-shadow: 0 0 2px rgba(232, 93, 74, 0.15), 0 0 4px rgba(232, 93, 74, 0.08);
   }
 }
 
