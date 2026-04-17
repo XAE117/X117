@@ -254,7 +254,9 @@
       "tier": "tacos",
       "tacoStyle": "mariscos",
       "sourceCount": 2,
-      "heatScore": 4
+      "heatScore": 4,
+      "lat": 34.017356,
+      "lng": -118.278405
     },
     {
       "id": "burritos-la-palma",
@@ -287,7 +289,9 @@
       "pricePp": 11,
       "tier": "street",
       "sourceCount": 1,
-      "heatScore": 2
+      "heatScore": 2,
+      "lat": 34.023325,
+      "lng": -118.217185
     },
     {
       "id": "mariscos-jalisco",
@@ -315,7 +319,9 @@
       "tier": "tacos",
       "tacoStyle": "mariscos",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.021041,
+      "lng": -118.212809
     },
     {
       "id": "sonoratown",
@@ -344,7 +350,9 @@
       "tier": "tacos",
       "tacoStyle": "regional",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.041615,
+      "lng": -118.252184
     },
     {
       "id": "howlin-rays",
@@ -367,7 +375,9 @@
       "color": "#D94B2B",
       "tier": "feast",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.131973,
+      "lng": -118.147087
     },
     {
       "id": "jitlada",
@@ -392,7 +402,9 @@
       "color": "#E85D3A",
       "tier": "feast",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.098572,
+      "lng": -118.304078
     },
     {
       "id": "porridge-puffs",
@@ -425,7 +437,9 @@
       "pricePp": 12,
       "tier": "street",
       "sourceCount": 1,
-      "heatScore": 2
+      "heatScore": 2,
+      "lat": 34.070832,
+      "lng": -118.279533
     },
     {
       "id": "guerrilla-tacos",
@@ -448,7 +462,9 @@
       "color": "#C96B3C",
       "tier": "feast",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.03445,
+      "lng": -118.232038
     },
     {
       "id": "lasa",
@@ -472,7 +488,9 @@
       "bibGourmand": true,
       "tier": "feast",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.061472,
+      "lng": -118.239482
     },
     {
       "id": "sushi-ginza-onodera",
@@ -503,7 +521,9 @@
       "pricePp": 350,
       "tier": "whale",
       "sourceCount": 1,
-      "heatScore": 2
+      "heatScore": 2,
+      "lat": 34.082322,
+      "lng": -118.376716
     },
     {
       "id": "hayato",
@@ -539,7 +559,9 @@
       "pricePp": 300,
       "tier": "whale",
       "sourceCount": 2,
-      "heatScore": 4
+      "heatScore": 4,
+      "lat": 34.033765,
+      "lng": -118.241946
     },
     {
       "id": "dialogue",
@@ -569,7 +591,9 @@
       "pricePp": 175,
       "tier": "whale",
       "sourceCount": 1,
-      "heatScore": 2
+      "heatScore": 2,
+      "lat": 34.016629,
+      "lng": -118.497047
     },
     {
       "id": "kato",
@@ -605,7 +629,9 @@
       "pricePp": 98,
       "tier": "feast",
       "sourceCount": 2,
-      "heatScore": 4
+      "heatScore": 4,
+      "lat": 34.034175,
+      "lng": -118.241063
     },
     {
       "id": "republique",
@@ -639,7 +665,9 @@
       "pricePp": 58,
       "tier": "feast",
       "sourceCount": 1,
-      "heatScore": 2
+      "heatScore": 2,
+      "lat": 34.064159,
+      "lng": -118.343697
     },
     {
       "id": "bestia",
@@ -670,7 +698,9 @@
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/bestia"
         }
-      ]
+      ],
+      "lat": 34.033834,
+      "lng": -118.229329
     },
     {
       "id": "bavel",
@@ -694,7 +724,9 @@
       "color": "#C96B3C",
       "tier": "feast",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.041487,
+      "lng": -118.232931
     },
     {
       "id": "guelaguetza",
@@ -724,7 +756,9 @@
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/guelaguetza"
         }
-      ]
+      ],
+      "lat": 34.052407,
+      "lng": -118.300668
     },
     {
       "id": "majordomo",
@@ -753,7 +787,9 @@
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/majordomo"
         }
-      ]
+      ],
+      "lat": 34.069082,
+      "lng": -118.226167
     },
     {
       "id": "yangban",
@@ -779,7 +815,9 @@
       "bibGourmand": true,
       "tier": "feast",
       "sourceCount": 0,
-      "heatScore": 0
+      "heatScore": 0,
+      "lat": 34.033977,
+      "lng": -118.229739
     },
     {
       "name": "Lielle",
@@ -804,7 +842,9 @@
       "heatScore": 6,
       "id": "lielle",
       "addedDate": "2026-03-19",
-      "address": "9575 W Pico Blvd, Los Angeles, CA 90035, United States"
+      "address": "9575 W Pico Blvd, Los Angeles, CA 90035, United States",
+      "lat": 34.055364,
+      "lng": -118.397567
     },
     {
       "name": "Sonmari",
@@ -825,7 +865,9 @@
       "heatScore": 3,
       "id": "sonmari",
       "addedDate": "2026-03-19",
-      "address": "3503 Sunset Blvd, Los Angeles, CA 90026, United States"
+      "address": "3503 Sunset Blvd, Los Angeles, CA 90026, United States",
+      "lat": 34.089061,
+      "lng": -118.276379
     },
     {
       "name": "Cheesesteaks By Matū",
@@ -846,7 +888,9 @@
       "heatScore": 3,
       "id": "cheesesteaks-by-mat",
       "addedDate": "2026-03-19",
-      "address": "625B E Colorado Blvd, Pasadena, CA 91101, United States"
+      "address": "625B E Colorado Blvd, Pasadena, CA 91101, United States",
+      "lat": 34.146073,
+      "lng": -118.137385
     },
     {
       "name": "Lapaba",
@@ -871,7 +915,9 @@
       "heatScore": 6,
       "id": "lapaba",
       "addedDate": "2026-03-19",
-      "address": "558 S Western Ave, Los Angeles, CA 90020, United States"
+      "address": "558 S Western Ave, Los Angeles, CA 90020, United States",
+      "lat": 34.063651,
+      "lng": -118.308952
     },
     {
       "name": "Sqirl",
@@ -897,7 +943,9 @@
       "id": "sqirl",
       "addedDate": "2026-03-19",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sqirl_la?venueId=1640",
-      "address": "720 Virgil Ave #4, Los Angeles, CA 90029, United States"
+      "address": "720 Virgil Ave #4, Los Angeles, CA 90029, United States",
+      "lat": 34.084465,
+      "lng": -118.286695
     },
     {
       "name": "Regalade",
@@ -923,7 +971,9 @@
       "id": "regalade",
       "addedDate": "2026-03-19",
       "address": "8136 W 3rd St, Los Angeles, CA 90048, United States",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/regalade?venueId=94696"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/regalade?venueId=94696",
+      "lat": 34.072097,
+      "lng": -118.367219
     },
     {
       "name": "Kar Son",
@@ -944,7 +994,9 @@
       "heatScore": 3,
       "id": "kar-son",
       "addedDate": "2026-03-19",
-      "address": "777 S Alameda St, ROW M1 Suite 134, Los Angeles, CA 90021, United States"
+      "address": "777 S Alameda St, ROW M1 Suite 134, Los Angeles, CA 90021, United States",
+      "lat": 34.0352,
+      "lng": -118.240756
     },
     {
       "name": "Holy Basil",
@@ -965,7 +1017,9 @@
       "heatScore": 3,
       "id": "holy-basil",
       "addedDate": "2026-03-19",
-      "address": "718 S Los Angeles St space A, Los Angeles, CA 90014, United States"
+      "address": "718 S Los Angeles St space A, Los Angeles, CA 90014, United States",
+      "lat": 34.04277,
+      "lng": -118.250843
     },
     {
       "name": "Little Fish",
@@ -990,7 +1044,9 @@
       "heatScore": 5,
       "id": "little-fish",
       "addedDate": "2026-03-19",
-      "address": "5035 Melrose Ave, Los Angeles, CA 90038, United States"
+      "address": "5035 Melrose Ave, Los Angeles, CA 90038, United States",
+      "lat": 34.083635,
+      "lng": -118.310196
     },
     {
       "name": "Hermon's",
@@ -1020,7 +1076,9 @@
       "id": "hermon-s",
       "addedDate": "2026-03-19",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/hermons?venueId=93816",
-      "address": "5800 Monterey Rd, Los Angeles, CA 90042, United States"
+      "address": "5800 Monterey Rd, Los Angeles, CA 90042, United States",
+      "lat": 34.103899,
+      "lng": -118.185012
     },
     {
       "name": "Corridor 109",
@@ -1045,7 +1103,9 @@
       "heatScore": 5,
       "id": "corridor-109",
       "addedDate": "2026-03-19",
-      "address": "641 N Western Ave Ste A, Los Angeles, CA 90004, United States"
+      "address": "641 N Western Ave Ste A, Los Angeles, CA 90004, United States",
+      "lat": 34.082975,
+      "lng": -118.309619
     },
     {
       "name": "Henrietta",
@@ -1071,7 +1131,9 @@
       "id": "henrietta",
       "addedDate": "2026-03-19",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/henrietta-ca?venueId=93420",
-      "address": "343 Glendale Blvd, Los Angeles, CA 90026, United States"
+      "address": "343 Glendale Blvd, Los Angeles, CA 90026, United States",
+      "lat": 34.066757,
+      "lng": -118.260715
     },
     {
       "name": "Chainsaw",
@@ -1092,7 +1154,9 @@
       "heatScore": 3,
       "id": "chainsaw",
       "addedDate": "2026-03-19",
-      "address": "5022 Melrose Ave, Los Angeles, CA 90038, United States"
+      "address": "5022 Melrose Ave, Los Angeles, CA 90038, United States",
+      "lat": 34.083353,
+      "lng": -118.310016
     },
     {
       "name": "Hojokban",
@@ -1117,7 +1181,9 @@
       "heatScore": 6,
       "id": "hojokban",
       "addedDate": "2026-03-19",
-      "address": "734 E 3rd St, Los Angeles, CA 90013, United States"
+      "address": "734 E 3rd St, Los Angeles, CA 90013, United States",
+      "lat": 34.045458,
+      "lng": -118.236707
     },
     {
       "name": "Old Gold Tomato Pies",
@@ -1138,7 +1204,9 @@
       "heatScore": 3,
       "id": "old-gold-tomato-pies",
       "addedDate": "2026-03-19",
-      "address": "4681 Hollywood Blvd, Los Angeles, CA 90027, United States"
+      "address": "4681 Hollywood Blvd, Los Angeles, CA 90027, United States",
+      "lat": 34.101077,
+      "lng": -118.291161
     },
     {
       "name": "Max & Helen's",
@@ -1159,7 +1227,9 @@
       "heatScore": 3,
       "id": "max-helen-s",
       "addedDate": "2026-03-19",
-      "address": "127 N Larchmont Blvd, Los Angeles, CA 90004, United States"
+      "address": "127 N Larchmont Blvd, Los Angeles, CA 90004, United States",
+      "lat": 34.073876,
+      "lng": -118.32397
     },
     {
       "name": "The Mulberry",
@@ -1189,7 +1259,9 @@
       "id": "the-mulberry",
       "addedDate": "2026-03-19",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-mulberry?venueId=93307",
-      "address": "1800 Sawtelle Blvd, Los Angeles, CA 90025, United States"
+      "address": "1800 Sawtelle Blvd, Los Angeles, CA 90025, United States",
+      "lat": 34.043884,
+      "lng": -118.445966
     },
     {
       "name": "Wilde’s",
@@ -1215,7 +1287,9 @@
       "id": "wilde-s",
       "addedDate": "2026-03-19",
       "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/wildes?venueId=92065",
-      "address": "1850 Hillhurst Ave, Los Angeles, CA 90027, United States"
+      "address": "1850 Hillhurst Ave, Los Angeles, CA 90027, United States",
+      "lat": 34.104621,
+      "lng": -118.287279
     },
     {
       "name": "Morihiro",
@@ -1240,7 +1314,9 @@
       "heatScore": 5,
       "id": "morihiro",
       "addedDate": "2026-03-19",
-      "address": "1115 Sunset Blvd Ste 100, Los Angeles, CA 90012, United States"
+      "address": "1115 Sunset Blvd Ste 100, Los Angeles, CA 90012, United States",
+      "lat": 34.067102,
+      "lng": -118.248923
     },
     {
       "name": "Sonny's",
@@ -1261,7 +1337,9 @@
       "heatScore": 3,
       "id": "sonny-s",
       "addedDate": "2026-03-19",
-      "address": "7501 Sunset Blvd, Los Angeles, CA 90046, United States"
+      "address": "7501 Sunset Blvd, Los Angeles, CA 90046, United States",
+      "lat": 34.098221,
+      "lng": -118.353025
     },
     {
       "name": "LA’s New Restaurant Openings",
@@ -1282,7 +1360,9 @@
       "heatScore": 3,
       "id": "la-s-new-restaurant-openings",
       "addedDate": "2026-03-19",
-      "address": "127 N Larchmont Blvd, Los Angeles, CA 90004, United States"
+      "address": "127 N Larchmont Blvd, Los Angeles, CA 90004, United States",
+      "lat": 34.032969,
+      "lng": -118.332747
     },
     {
       "name": "Somni",
@@ -1309,7 +1389,9 @@
       "heatScore": 4,
       "id": "somni-beverly-hills",
       "addedDate": "2026-03-19",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/somni-ca?venueId=95205"
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/somni-ca?venueId=95205",
+      "lat": 34.082541,
+      "lng": -118.3884
     },
     {
       "name": "Providence",
@@ -1335,7 +1417,9 @@
       "sourceCount": 2,
       "heatScore": 4,
       "id": "providence-hollywood",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.08367,
+      "lng": -118.330025
     },
     {
       "name": "n/naka",
@@ -1357,7 +1441,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "n-naka-palms",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.025128,
+      "lng": -118.412202
     },
     {
       "name": "Melisse",
@@ -1379,7 +1465,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "melisse-santa-monica",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.024522,
+      "lng": -118.491356
     },
     {
       "name": "Vespertine",
@@ -1409,7 +1497,9 @@
       "sourceCount": 3,
       "heatScore": 6,
       "id": "vespertine-culver-city",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.024197,
+      "lng": -118.381879
     },
     {
       "name": "Anajak Thai",
@@ -1435,7 +1525,9 @@
       "sourceCount": 2,
       "heatScore": 4,
       "id": "anajak-thai-sherman-oaks",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.151512,
+      "lng": -118.453379
     },
     {
       "name": "Camphor",
@@ -1461,7 +1553,9 @@
       "sourceCount": 2,
       "heatScore": 4,
       "id": "camphor-dtla",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.046639,
+      "lng": -118.234202
     },
     {
       "name": "Rustic Canyon",
@@ -1483,7 +1577,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "rustic-canyon-santa-monica",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.025079,
+      "lng": -118.491317
     },
     {
       "name": "Sushi Kaneyoshi",
@@ -1509,7 +1605,9 @@
       "sourceCount": 2,
       "heatScore": 4,
       "id": "sushi-kaneyoshi-dtla",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.050036,
+      "lng": -118.241518
     },
     {
       "name": "Mori Sushi",
@@ -1531,7 +1629,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "mori-sushi-west-la",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.033348,
+      "lng": -118.442127
     },
     {
       "name": "Hippo",
@@ -1553,7 +1653,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "hippo-highland-park",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.110644,
+      "lng": -118.190342
     },
     {
       "name": "Shibumi",
@@ -1575,7 +1677,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "shibumi-dtla",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.044206,
+      "lng": -118.256266
     },
     {
       "name": "Manzke",
@@ -1597,7 +1701,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "manzke-los-feliz",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.055363,
+      "lng": -118.397589
     },
     {
       "name": "Orsa & Winston",
@@ -1623,7 +1729,9 @@
       "sourceCount": 2,
       "heatScore": 4,
       "id": "orsa-winston-dtla",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.048425,
+      "lng": -118.248016
     },
     {
       "name": "Komal Molino",
@@ -1658,7 +1766,9 @@
       "heatScore": 2,
       "fire": 5,
       "id": "komal-dtla",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.017311,
+      "lng": -118.278148
     },
     {
       "name": "Rasarumah",
@@ -1683,7 +1793,9 @@
       "sourceCount": 2,
       "heatScore": 4,
       "id": "rasarumah-mid-wilshire",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.072104,
+      "lng": -118.282412
     },
     {
       "name": "Vin Folk",
@@ -1704,7 +1816,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "vin-folk-highland-park",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 33.864575,
+      "lng": -118.400863
     },
     {
       "name": "L'Antica Pizzeria da Michele",
@@ -1725,7 +1839,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "l-antica-pizzeria-da-michele-hollywood",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.099061,
+      "lng": -118.337311
     },
     {
       "name": "Chengdu Taste",
@@ -1746,7 +1862,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "chengdu-taste-alhambra",
-      "addedDate": "2026-03-19"
+      "addedDate": "2026-03-19",
+      "lat": 34.077826,
+      "lng": -118.132463
     },
     {
       "id": "tacos-el-chato-olympic",
@@ -1830,7 +1948,9 @@
       "heatScore": 3,
       "id": "bevel-coffee",
       "addedDate": "2026-03-20",
-      "address": "1866 Allen Ave, Pasadena, CA 91104, United States"
+      "address": "1866 Allen Ave, Pasadena, CA 91104, United States",
+      "lat": 34.178142,
+      "lng": -118.111984
     },
     {
       "name": "Mariscos Los Corchos",
@@ -1848,7 +1968,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "mariscos-los-corchos",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "lat": 34.030009,
+      "lng": -118.150476
     },
     {
       "name": "Le Dräq",
@@ -1867,7 +1989,9 @@
       "heatScore": 3,
       "id": "le-dr-q",
       "addedDate": "2026-03-20",
-      "address": "118 East 4th St, Los Angeles, CA 90013, United States"
+      "address": "118 East 4th St, Los Angeles, CA 90013, United States",
+      "lat": 34.048415,
+      "lng": -118.247928
     },
     {
       "name": "Paradise Dynasty",
@@ -1886,7 +2010,9 @@
       "heatScore": 3,
       "id": "paradise-dynasty",
       "addedDate": "2026-03-20",
-      "address": "177 Caruso Ave, Glendale, CA 91210, United States"
+      "address": "177 Caruso Ave, Glendale, CA 91210, United States",
+      "lat": 34.143125,
+      "lng": -118.255256
     },
     {
       "name": "El Moro Echo Park",
@@ -1905,7 +2031,9 @@
       "heatScore": 3,
       "id": "el-moro-echo-park",
       "addedDate": "2026-03-20",
-      "address": "1524 Sunset Blvd, Los Angeles, CA 90026, United States"
+      "address": "1524 Sunset Blvd, Los Angeles, CA 90026, United States",
+      "lat": 34.076012,
+      "lng": -118.256153
     },
     {
       "name": "Vandell",
@@ -1924,7 +2052,9 @@
       "heatScore": 3,
       "id": "vandell",
       "addedDate": "2026-03-20",
-      "address": "1966 Hillhurst Ave, Los Angeles, CA 90027, United States"
+      "address": "1966 Hillhurst Ave, Los Angeles, CA 90027, United States",
+      "lat": 34.107271,
+      "lng": -118.287218
     },
     {
       "name": "Chainsaw Cafe",
@@ -1943,7 +2073,9 @@
       "heatScore": 3,
       "id": "chainsaw-cafe",
       "addedDate": "2026-03-20",
-      "address": "5022 Melrose Ave, Los Angeles, CA 90038, United States"
+      "address": "5022 Melrose Ave, Los Angeles, CA 90038, United States",
+      "lat": 34.083353,
+      "lng": -118.310016
     },
     {
       "name": "Little Fish Melrose Hill",
@@ -1967,7 +2099,9 @@
       "heatScore": 5,
       "id": "little-fish-melrose-hill",
       "addedDate": "2026-03-20",
-      "address": "5035 Melrose Ave, Los Angeles, CA 90038, United States"
+      "address": "5035 Melrose Ave, Los Angeles, CA 90038, United States",
+      "lat": 34.083635,
+      "lng": -118.310196
     },
     {
       "name": "Harun Coffee",
@@ -1986,7 +2120,9 @@
       "heatScore": 3,
       "id": "harun-coffee",
       "addedDate": "2026-03-20",
-      "address": "4336 Degnan Blvd, Los Angeles, CA 90008, United States"
+      "address": "4336 Degnan Blvd, Los Angeles, CA 90008, United States",
+      "lat": 34.004854,
+      "lng": -118.331267
     },
     {
       "name": "The Night We Met",
@@ -2010,7 +2146,9 @@
       "heatScore": 5,
       "id": "the-night-we-met",
       "addedDate": "2026-03-20",
-      "address": "788 S La Brea Ave, Los Angeles, CA 90036, United States"
+      "address": "788 S La Brea Ave, Los Angeles, CA 90036, United States",
+      "lat": 34.060694,
+      "lng": -118.344304
     },
     {
       "name": "Fiorelli Pizza",
@@ -2029,7 +2167,9 @@
       "heatScore": 3,
       "id": "fiorelli-pizza",
       "addedDate": "2026-03-20",
-      "address": "8236 W 3rd St, Los Angeles, CA 90048, United States"
+      "address": "8236 W 3rd St, Los Angeles, CA 90048, United States",
+      "lat": 34.072396,
+      "lng": -118.369232
     },
     {
       "name": "Toranj Manhattan Beach",
@@ -2048,7 +2188,9 @@
       "heatScore": 3,
       "id": "toranj-manhattan-beach",
       "addedDate": "2026-03-20",
-      "address": "1019 Manhattan Beach Blvd, Manhattan Beach, CA 90266, United States"
+      "address": "1019 Manhattan Beach Blvd, Manhattan Beach, CA 90266, United States",
+      "lat": 33.887595,
+      "lng": -118.397092
     },
     {
       "name": "Liu’s Cafe Westwood",
@@ -2067,7 +2209,9 @@
       "heatScore": 3,
       "id": "liu-s-cafe-westwood",
       "addedDate": "2026-03-20",
-      "address": "1108 Gayley Ave, Los Angeles, CA 90024, United States"
+      "address": "1108 Gayley Ave, Los Angeles, CA 90024, United States",
+      "lat": 34.060055,
+      "lng": -118.44608
     },
     {
       "name": "Holy Basil Santa Monica",
@@ -2086,7 +2230,9 @@
       "heatScore": 3,
       "id": "holy-basil-santa-monica",
       "addedDate": "2026-03-20",
-      "address": "2828 Santa Monica Blvd, Santa Monica, CA 90404, United States"
+      "address": "2828 Santa Monica Blvd, Santa Monica, CA 90404, United States",
+      "lat": 34.035007,
+      "lng": -118.471626
     },
     {
       "name": "Noma LA",
@@ -2106,7 +2252,9 @@
       "heatScore": 2,
       "id": "noma-la",
       "addedDate": "2026-03-20",
-      "address": "2020 Wilshire Blvd, Santa Monica, CA 90403, United States"
+      "address": "2020 Wilshire Blvd, Santa Monica, CA 90403, United States",
+      "lat": 34.031664,
+      "lng": -118.482392
     },
     {
       "name": "Holbox Tasting Menu",
@@ -2126,7 +2274,9 @@
       "heatScore": 2,
       "id": "holbox-tasting-menu",
       "addedDate": "2026-03-20",
-      "address": "3655 S Grand Ave c9, Los Angeles, CA 90007, United States"
+      "address": "3655 S Grand Ave c9, Los Angeles, CA 90007, United States",
+      "lat": 34.017356,
+      "lng": -118.278405
     },
     {
       "name": "Darling by Sean Brock",
@@ -2146,7 +2296,9 @@
       "heatScore": 2,
       "id": "darling-by-sean-brock",
       "addedDate": "2026-03-20",
-      "address": "631 N Robertson Blvd, West Hollywood, CA 90069, United States"
+      "address": "631 N Robertson Blvd, West Hollywood, CA 90069, United States",
+      "lat": 34.08174,
+      "lng": -118.385912
     },
     {
       "name": "baby bistro",
@@ -2166,7 +2318,9 @@
       "heatScore": 2,
       "id": "baby-bistro",
       "addedDate": "2026-03-20",
-      "address": "1027 Alpine St, Los Angeles, CA 90012, United States"
+      "address": "1027 Alpine St, Los Angeles, CA 90012, United States",
+      "lat": 34.065621,
+      "lng": -118.246965
     },
     {
       "name": "Sora Craft Kitchen",
@@ -2186,7 +2340,9 @@
       "heatScore": 2,
       "id": "sora-craft-kitchen",
       "addedDate": "2026-03-20",
-      "address": "1109 E 12th St, Los Angeles, CA 90021, United States"
+      "address": "1109 E 12th St, Los Angeles, CA 90021, United States",
+      "lat": 34.031229,
+      "lng": -118.24741
     },
     {
       "name": "Only The Wild Ones",
@@ -2205,7 +2361,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "only-the-wild-ones-venice",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "lat": 33.992188,
+      "lng": -118.471529
     },
     {
       "name": "Marvito",
@@ -2225,7 +2383,9 @@
       "heatScore": 2,
       "id": "marvito",
       "addedDate": "2026-03-20",
-      "address": "1113 N Harper Ave, West Hollywood, CA 90046, United States"
+      "address": "1113 N Harper Ave, West Hollywood, CA 90046, United States",
+      "lat": 34.091094,
+      "lng": -118.369062
     },
     {
       "name": "Bess",
@@ -2244,7 +2404,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "bess-arcadia",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "lat": 34.161651,
+      "lng": -118.053835
     },
     {
       "name": "Ine Bistro",
@@ -2264,7 +2426,9 @@
       "heatScore": 2,
       "id": "ine-bistro",
       "addedDate": "2026-03-20",
-      "address": "4672 York Blvd, Los Angeles, CA 90041, United States"
+      "address": "4672 York Blvd, Los Angeles, CA 90041, United States",
+      "lat": 34.122717,
+      "lng": -118.214149
     },
     {
       "name": "Lucia",
@@ -2284,7 +2448,9 @@
       "heatScore": 2,
       "id": "lucia",
       "addedDate": "2026-03-20",
-      "address": "351 N Fairfax Ave, Los Angeles, CA 90036, United States"
+      "address": "351 N Fairfax Ave, Los Angeles, CA 90036, United States",
+      "lat": 34.077667,
+      "lng": -118.361744
     },
     {
       "name": "Café Tondo",
@@ -2304,7 +2470,9 @@
       "heatScore": 2,
       "id": "caf-tondo",
       "addedDate": "2026-03-20",
-      "address": "1135 N Alameda St, Los Angeles, CA 90012, United States"
+      "address": "1135 N Alameda St, Los Angeles, CA 90012, United States",
+      "lat": 34.062683,
+      "lng": -118.236344
     },
     {
       "name": "Electric Bleu",
@@ -2324,7 +2492,9 @@
       "heatScore": 2,
       "id": "electric-bleu",
       "addedDate": "2026-03-20",
-      "address": "3523 S Centinela Ave, Los Angeles, CA 90066, United States"
+      "address": "3523 S Centinela Ave, Los Angeles, CA 90066, United States",
+      "lat": 34.009932,
+      "lng": -118.438626
     },
     {
       "name": "Cuevita",
@@ -2343,7 +2513,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "cuevita-long-beach",
-      "addedDate": "2026-03-20"
+      "addedDate": "2026-03-20",
+      "lat": 33.828578,
+      "lng": -118.185267
     },
     {
       "name": "Force of Nature",
@@ -2363,7 +2535,9 @@
       "heatScore": 2,
       "id": "force-of-nature",
       "addedDate": "2026-03-20",
-      "address": "1031 Abbot Kinney Blvd, Venice, CA 90291, United States"
+      "address": "1031 Abbot Kinney Blvd, Venice, CA 90291, United States",
+      "lat": 33.992188,
+      "lng": -118.471529
     },
     {
       "name": "Barra Santos",
@@ -2387,7 +2561,9 @@
       "heatScore": 4,
       "id": "barra-santos",
       "addedDate": "2026-03-20",
-      "address": "1215 Cypress Ave, Los Angeles, CA 90065, United States"
+      "address": "1215 Cypress Ave, Los Angeles, CA 90065, United States",
+      "lat": 34.095664,
+      "lng": -118.228049
     },
     {
       "name": "Tomat",
@@ -2407,7 +2583,9 @@
       "heatScore": 2,
       "id": "tomat",
       "addedDate": "2026-03-20",
-      "address": "6261 W 87th St, Los Angeles, CA 90045, United States"
+      "address": "6261 W 87th St, Los Angeles, CA 90045, United States",
+      "lat": 33.958853,
+      "lng": -118.394816
     },
     {
       "name": "Ahgassi Gopchang - LA",
@@ -2427,7 +2605,9 @@
       "heatScore": 2,
       "id": "ahgassi-gopchang-la",
       "addedDate": "2026-03-20",
-      "address": "3744 W 6th St, Los Angeles, CA 90005, United States"
+      "address": "3744 W 6th St, Los Angeles, CA 90005, United States",
+      "lat": 34.063392,
+      "lng": -118.303939
     },
     {
       "name": "Bar Sinizki",
@@ -2446,7 +2626,9 @@
       "heatScore": 2,
       "id": "bar-sinizki",
       "addedDate": "2026-03-21",
-      "address": "3147 Glendale Blvd, Los Angeles, CA 90039, United States"
+      "address": "3147 Glendale Blvd, Los Angeles, CA 90039, United States",
+      "lat": 34.117203,
+      "lng": -118.26225
     },
     {
       "name": "Taquería Frontera",
@@ -2480,7 +2662,9 @@
       "fire": 5,
       "id": "taqueria-frontera",
       "addedDate": "2026-03-21",
-      "address": "700 Cypress Ave, Los Angeles, CA 90065, United States"
+      "address": "700 Cypress Ave, Los Angeles, CA 90065, United States",
+      "lat": 34.090923,
+      "lng": -118.223712
     },
     {
       "name": "Carnal",
@@ -2499,7 +2683,9 @@
       "heatScore": 2,
       "id": "carnal",
       "addedDate": "2026-03-21",
-      "address": "5831 N Figueroa St, Los Angeles, CA 90042, United States"
+      "address": "5831 N Figueroa St, Los Angeles, CA 90042, United States",
+      "lat": 34.110681,
+      "lng": -118.191128
     },
     {
       "name": "Zizou",
@@ -2518,7 +2704,9 @@
       "heatScore": 2,
       "id": "zizou",
       "addedDate": "2026-03-21",
-      "address": "2425 Daly St, Los Angeles, CA 90031, United States"
+      "address": "2425 Daly St, Los Angeles, CA 90031, United States",
+      "lat": 34.074501,
+      "lng": -118.215793
     },
     {
       "name": "III Mas",
@@ -2537,7 +2725,9 @@
       "heatScore": 2,
       "id": "iii-mas",
       "addedDate": "2026-03-21",
-      "address": "#312, Los Angeles, CA 90015, United States"
+      "address": "#312, Los Angeles, CA 90015, United States",
+      "lat": 34.031684,
+      "lng": -118.264425
     },
     {
       "name": "Belle’s",
@@ -2556,7 +2746,9 @@
       "heatScore": 2,
       "id": "belle-s",
       "addedDate": "2026-03-21",
-      "address": "2920 W Jefferson Blvd, Los Angeles, CA 90018, United States"
+      "address": "2920 W Jefferson Blvd, Los Angeles, CA 90018, United States",
+      "lat": 34.025453,
+      "lng": -118.327924
     },
     {
       "name": "Butchr Bar",
@@ -2575,7 +2767,9 @@
       "heatScore": 2,
       "id": "butchr-bar",
       "addedDate": "2026-03-21",
-      "address": "301 Glendale Blvd, Los Angeles, CA 90026, United States"
+      "address": "301 Glendale Blvd, Los Angeles, CA 90026, United States",
+      "lat": 34.065936,
+      "lng": -118.260503
     },
     {
       "name": "A Tí",
@@ -2594,7 +2788,9 @@
       "heatScore": 2,
       "id": "a-t",
       "addedDate": "2026-03-21",
-      "address": "1498 Sunset Blvd, Los Angeles, CA 90026, United States"
+      "address": "1498 Sunset Blvd, Los Angeles, CA 90026, United States",
+      "lat": 34.075532,
+      "lng": -118.255273
     },
     {
       "name": "Udatsu Sushi",
@@ -2613,7 +2809,9 @@
       "heatScore": 2,
       "id": "udatsu-sushi",
       "addedDate": "2026-03-21",
-      "address": "6634 Sunset Blvd 2nd Floor, Los Angeles, CA 90028, United States"
+      "address": "6634 Sunset Blvd 2nd Floor, Los Angeles, CA 90028, United States",
+      "lat": 34.09784,
+      "lng": -118.33448
     },
     {
       "name": "Bridgetown Roti",
@@ -2632,7 +2830,9 @@
       "heatScore": 2,
       "id": "bridgetown-roti",
       "addedDate": "2026-03-21",
-      "address": "858 N Vermont Ave, Los Angeles, CA 90029, United States"
+      "address": "858 N Vermont Ave, Los Angeles, CA 90029, United States",
+      "lat": 34.087001,
+      "lng": -118.29152
     },
     {
       "name": "Tendon Tempura Carlos Jr",
@@ -2651,7 +2851,9 @@
       "heatScore": 2,
       "id": "tendon-tempura-carlos-jr",
       "addedDate": "2026-03-21",
-      "address": "1510 Cabrillo Ave, Torrance, CA 90501, United States"
+      "address": "1510 Cabrillo Ave, Torrance, CA 90501, United States",
+      "lat": 33.833409,
+      "lng": -118.314205
     },
     {
       "name": "Authentic Xian Liangpi",
@@ -2670,7 +2872,9 @@
       "heatScore": 2,
       "id": "authentic-xian-liangpi",
       "addedDate": "2026-03-21",
-      "address": "56 E Duarte Rd unit 106, Arcadia, CA 91006, United States"
+      "address": "56 E Duarte Rd unit 106, Arcadia, CA 91006, United States",
+      "lat": 34.129677,
+      "lng": -118.02892
     },
     {
       "name": "Asadero Chikali",
@@ -2689,7 +2893,9 @@
       "heatScore": 2,
       "id": "asadero-chikali",
       "addedDate": "2026-03-21",
-      "address": "4233 W Century Blvd #7, Inglewood, CA 90304, United States"
+      "address": "4233 W Century Blvd #7, Inglewood, CA 90304, United States",
+      "lat": 33.945819,
+      "lng": -118.349921
     },
     {
       "name": "Restaurant Ki",
@@ -2707,7 +2913,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "restaurant-ki-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.050097,
+      "lng": -118.24138
     },
     {
       "name": "Seline",
@@ -2725,7 +2933,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "seline-santa-monica",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 33.997782,
+      "lng": -118.479653
     },
     {
       "name": "Manuela",
@@ -2743,7 +2953,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "manuela-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.04646,
+      "lng": -118.234834
     },
     {
       "name": "Citrin",
@@ -2761,7 +2973,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "citrin-santa-monica",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.024425,
+      "lng": -118.49132
     },
     {
       "name": "Chifa",
@@ -2779,7 +2993,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "chifa-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.123672,
+      "lng": -118.221026
     },
     {
       "name": "Damian",
@@ -2797,7 +3013,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "damian-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.033466,
+      "lng": -118.228951
     },
     {
       "name": "Found Oyster",
@@ -2815,7 +3033,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "found-oyster-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.095236,
+      "lng": -118.295817
     },
     {
       "name": "Chef Tony",
@@ -2833,7 +3053,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "chef-tony-arcadia",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.127234,
+      "lng": -118.054358
     },
     {
       "name": "Élephante",
@@ -2851,7 +3073,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "lephante-santa-monica",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.015245,
+      "lng": -118.498
     },
     {
       "name": "Jeong Yuk Jeom",
@@ -2869,7 +3093,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "jeong-yuk-jeom-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.062972,
+      "lng": -118.30956
     },
     {
       "name": "Pasjoli",
@@ -2887,7 +3113,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "pasjoli-santa-monica",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.000193,
+      "lng": -118.482091
     },
     {
       "name": "Tūmbi",
@@ -2905,7 +3133,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "t-mbi-santa-monica",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.014569,
+      "lng": -118.497731
     },
     {
       "name": "Killer Noodle",
@@ -2923,7 +3153,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "killer-noodle-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.040324,
+      "lng": -118.44285
     },
     {
       "name": "Luscious Dumplings",
@@ -2941,7 +3173,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "luscious-dumplings-monrovia",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.131785,
+      "lng": -118.018139
     },
     {
       "name": "Sweet Rice",
@@ -2959,7 +3193,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "sweet-rice-gardena",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 33.888268,
+      "lng": -118.305226
     },
     {
       "name": "Manhattan Beach Post",
@@ -2977,7 +3213,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "manhattan-beach-post-manhattan-beach",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 33.885247,
+      "lng": -118.410742
     },
     {
       "name": "Amor y Tacos",
@@ -2995,7 +3233,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "amor-y-tacos-cerritos",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 33.860255,
+      "lng": -118.047106
     },
     {
       "name": "Lunasia Dim Sum House",
@@ -3013,7 +3253,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "lunasia-dim-sum-house-alhambra",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.092279,
+      "lng": -118.132198
     },
     {
       "name": "Redbird",
@@ -3031,7 +3273,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "redbird-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.050562,
+      "lng": -118.244075
     },
     {
       "name": "Charcoal Venice",
@@ -3049,7 +3293,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "charcoal-venice-venice",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 33.981627,
+      "lng": -118.462943
     },
     {
       "name": "Sichuan Impression",
@@ -3067,7 +3313,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "sichuan-impression-alhambra",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.094309,
+      "lng": -118.13
     },
     {
       "name": "The Factory Kitchen",
@@ -3085,7 +3333,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "the-factory-kitchen-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.038983,
+      "lng": -118.235878
     },
     {
       "name": "LaoXi Noodle House",
@@ -3103,7 +3353,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "laoxi-noodle-house-arcadia",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.108776,
+      "lng": -118.017935
     },
     {
       "name": "Angelini Osteria",
@@ -3121,7 +3373,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "angelini-osteria-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.076392,
+      "lng": -118.349132
     },
     {
       "name": "Union",
@@ -3139,7 +3393,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "union-pasadena",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.146998,
+      "lng": -118.149638
     },
     {
       "name": "Quarters BBQ",
@@ -3157,7 +3413,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "quarters-bbq-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.064016,
+      "lng": -118.297709
     },
     {
       "name": "Rocio's Mexican Kitchen",
@@ -3175,7 +3433,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "rocio-s-mexican-kitchen-bell-gardens",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 33.960029,
+      "lng": -118.156577
     },
     {
       "name": "République",
@@ -3193,7 +3453,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "r-publique-hollywood",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.064159,
+      "lng": -118.343697
     },
     {
       "name": "Langer's",
@@ -3211,7 +3473,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "langer-s-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.056178,
+      "lng": -118.276799
     },
     {
       "name": "Ronan",
@@ -3229,7 +3493,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "ronan-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.083705,
+      "lng": -118.349246
     },
     {
       "name": "Nozawa Bar",
@@ -3247,7 +3513,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "nozawa-bar-beverly-hills",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.068235,
+      "lng": -118.398259
     },
     {
       "name": "Pizzeria Mozza",
@@ -3279,7 +3547,9 @@
       "fire": 4,
       "color": "#E84830",
       "id": "pizzeria-mozza-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.083117,
+      "lng": -118.338867
     },
     {
       "name": "Jon & Vinny’s",
@@ -3297,7 +3567,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "jon-vinny-s-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.078644,
+      "lng": -118.361283
     },
     {
       "name": "Chosun Galbee",
@@ -3315,7 +3587,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "chosun-galbee-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.05243,
+      "lng": -118.310468
     },
     {
       "name": "Maccheroni Republic",
@@ -3333,7 +3607,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "maccheroni-republic-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.050031,
+      "lng": -118.248536
     },
     {
       "name": "Yong Su San",
@@ -3351,7 +3627,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "yong-su-san-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.053888,
+      "lng": -118.291386
     },
     {
       "name": "Kismet",
@@ -3369,7 +3647,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "kismet-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.100225,
+      "lng": -118.290726
     },
     {
       "name": "Avra",
@@ -3387,7 +3667,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "avra-beverly-hills",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.067786,
+      "lng": -118.400167
     },
     {
       "name": "Uka",
@@ -3405,7 +3687,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "uka-los-angeles",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.101794,
+      "lng": -118.339225
     },
     {
       "name": "Manohar’s Delhi Palace",
@@ -3423,7 +3707,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "manohar-s-delhi-palace-la-puente-2880159",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.011828,
+      "lng": -117.924671
     },
     {
       "name": "La'Shukran",
@@ -3442,7 +3728,9 @@
       "heatScore": 2,
       "id": "la-shukran",
       "addedDate": "2026-03-21",
-      "address": "Alley Entrance, 417 Morse St NE 2nd Floor, Washington, DC 20002, United States"
+      "address": "Alley Entrance, 417 Morse St NE 2nd Floor, Washington, DC 20002, United States",
+      "lat": 38.907275,
+      "lng": -76.999508
     },
     {
       "name": "Café Riggs",
@@ -3461,7 +3749,9 @@
       "heatScore": 2,
       "id": "caf-riggs",
       "addedDate": "2026-03-21",
-      "address": "939 S Figueroa St UNIT 300, Los Angeles, CA 90015, United States"
+      "address": "939 S Figueroa St UNIT 300, Los Angeles, CA 90015, United States",
+      "lat": 34.046988,
+      "lng": -118.251414
     },
     {
       "name": "Xiquet",
@@ -3479,7 +3769,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "xiquet",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 38.92128,
+      "lng": -77.072426
     },
     {
       "name": "Family Ethiopian",
@@ -3498,7 +3790,9 @@
       "heatScore": 2,
       "id": "family-ethiopian",
       "addedDate": "2026-03-21",
-      "address": "1041 S Fairfax Ave, Los Angeles, CA 90019, United States"
+      "address": "1041 S Fairfax Ave, Los Angeles, CA 90019, United States",
+      "lat": 34.056742,
+      "lng": -118.364131
     },
     {
       "name": "Badmaash",
@@ -3516,7 +3810,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "badmaash-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.078807,
+      "lng": -118.361198
     },
     {
       "name": "Sushi Takeda",
@@ -3534,7 +3830,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "sushi-takeda-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.050321,
+      "lng": -118.24245
     },
     {
       "name": "Bar Sawa",
@@ -3552,7 +3850,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "bar-sawa-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.050097,
+      "lng": -118.24138
     },
     {
       "name": "Marugame Monzo",
@@ -3570,7 +3870,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "marugame-monzo-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.049948,
+      "lng": -118.240044
     },
     {
       "name": "San Laurel",
@@ -3588,7 +3890,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "san-laurel-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.055312,
+      "lng": -118.248642
     },
     {
       "name": "715",
@@ -3606,7 +3910,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "715-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.045464,
+      "lng": -118.236748
     },
     {
       "name": "Baroo",
@@ -3624,7 +3930,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "baroo-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.04727,
+      "lng": -118.234776
     },
     {
       "name": "Yunomi Handroll",
@@ -3642,7 +3950,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "yunomi-handroll-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.045726,
+      "lng": -118.235945
     },
     {
       "name": "Q Sushi",
@@ -3660,7 +3970,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "q-sushi-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.047124,
+      "lng": -118.256106
     },
     {
       "name": "Girl & the Goat Los Angeles",
@@ -3678,7 +3990,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "girl-the-goat-los-angeles-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.040226,
+      "lng": -118.233169
     },
     {
       "name": "Firstborn",
@@ -3696,7 +4010,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "firstborn-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.066116,
+      "lng": -118.23596
     },
     {
       "name": "Pizzeria Bianco",
@@ -3728,7 +4044,9 @@
       "fire": 5,
       "color": "#E84830",
       "id": "pizzeria-bianco-los-angeles-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.034355,
+      "lng": -118.241566
     },
     {
       "name": "Dama",
@@ -3746,7 +4064,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "dama-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.035269,
+      "lng": -118.253172
     },
     {
       "name": "Rossoblu",
@@ -3764,7 +4084,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "rossoblu-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.034925,
+      "lng": -118.253358
     },
     {
       "name": "Grá",
@@ -3782,7 +4104,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "gr-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.06659,
+      "lng": -118.260847
     },
     {
       "name": "kodō",
@@ -3800,7 +4124,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "kod-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.03414,
+      "lng": -118.229654
     },
     {
       "name": "Tsubaki",
@@ -3818,7 +4144,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "tsubaki-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.072781,
+      "lng": -118.251525
     },
     {
       "name": "Quarter Sheets",
@@ -3850,7 +4178,9 @@
       "fire": 4,
       "color": "#E84830",
       "id": "quarter-sheets-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.075878,
+      "lng": -118.25433
     },
     {
       "name": "Guisados",
@@ -3868,7 +4198,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "guisados-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.070221,
+      "lng": -118.250287
     },
     {
       "name": "Moo's Craft Barbecue",
@@ -3886,7 +4218,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "moo-s-craft-barbecue-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.073239,
+      "lng": -118.218191
     },
     {
       "name": "Carnes Asadas Pancho Lopez",
@@ -3904,7 +4238,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "carnes-asadas-pancho-lopez-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.083784,
+      "lng": -118.213083
     },
     {
       "name": "Parks BBQ",
@@ -3922,7 +4258,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "parks-bbq-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.053957,
+      "lng": -118.292058
     },
     {
       "name": "Danbi",
@@ -3940,7 +4278,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "danbi-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.063972,
+      "lng": -118.296799
     },
     {
       "name": "Pine & Crane",
@@ -3958,7 +4298,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "pine-crane-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.040883,
+      "lng": -118.262399
     },
     {
       "name": "Dha Rae Oak",
@@ -3976,7 +4318,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "dha-rae-oak-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.050556,
+      "lng": -118.308772
     },
     {
       "name": "Yeobo, Darling",
@@ -3994,7 +4338,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "yeobo-darling-menlo-park",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 37.450481,
+      "lng": -122.185137
     },
     {
       "name": "Naides",
@@ -4012,7 +4358,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "naides-san-francisco",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.062024,
+      "lng": -118.297697
     },
     {
       "name": "Little Mountain",
@@ -4030,7 +4378,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "little-mountain-montecito",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.437381,
+      "lng": -119.631314
     },
     {
       "id": "pizzeria-sei",
@@ -4057,7 +4407,9 @@
         "Michelin Guide"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.054959,
+      "lng": -118.383437
     },
     {
       "id": "pizzana",
@@ -4083,7 +4435,9 @@
         "LA Times 101"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.053306,
+      "lng": -118.466021
     },
     {
       "id": "mother-wolf",
@@ -4110,7 +4464,9 @@
         "Eater LA Essential"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.099424,
+      "lng": -118.33131
     },
     {
       "id": "speak-cheezy",
@@ -4133,7 +4489,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 33.771557,
+      "lng": -118.14612
     },
     {
       "id": "hail-mary-pizza",
@@ -4156,7 +4514,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.118414,
+      "lng": -118.260886
     },
     {
       "id": "lodge-bread-co",
@@ -4181,7 +4541,9 @@
         "LA Times 101"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 33.997683,
+      "lng": -118.420311
     },
     {
       "id": "two-doughs",
@@ -4204,7 +4566,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.14452,
+      "lng": -118.754181
     },
     {
       "id": "side-pie",
@@ -4227,7 +4591,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.139202,
+      "lng": -118.204643
     },
     {
       "id": "masa-echo-park",
@@ -4254,7 +4620,9 @@
         "LA Times 101"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.077582,
+      "lng": -118.259608
     },
     {
       "id": "ginos-east-la",
@@ -4277,7 +4645,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.157383,
+      "lng": -118.414655
     },
     {
       "id": "doughbox-la",
@@ -4300,7 +4670,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.095731,
+      "lng": -118.372149
     },
     {
       "id": "union-pizza-co",
@@ -4323,7 +4695,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.146998,
+      "lng": -118.149638
     },
     {
       "id": "chi-pie",
@@ -4346,7 +4720,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.10403,
+      "lng": -118.273593
     },
     {
       "id": "dtown-pizzeria",
@@ -4369,7 +4745,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.090417,
+      "lng": -118.373852
     },
     {
       "id": "apollonias-pizzeria",
@@ -4392,7 +4770,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.061775,
+      "lng": -118.342711
     },
     {
       "id": "bub-and-grandmas",
@@ -4418,7 +4798,9 @@
         "Eater LA Essential"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.116296,
+      "lng": -118.235916
     },
     {
       "id": "la-yalaltequita",
@@ -4442,7 +4824,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.045214,
+      "lng": -118.328746
     },
     {
       "id": "ditroit-tacos",
@@ -4466,7 +4850,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.033075,
+      "lng": -118.229044
     },
     {
       "id": "la-princesita",
@@ -4490,7 +4876,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.045843,
+      "lng": -118.206081
     },
     {
       "id": "sabys-cafe",
@@ -4514,7 +4902,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 33.999508,
+      "lng": -118.441188
     },
     {
       "id": "los-cinco-puntos",
@@ -4538,7 +4928,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.040032,
+      "lng": -118.192948
     },
     {
       "id": "tacos-la-guera",
@@ -4562,7 +4954,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.047572,
+      "lng": -118.304809
     },
     {
       "id": "angels-tijuana-tacos",
@@ -4586,7 +4980,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.018872,
+      "lng": -118.190276
     },
     {
       "id": "tacos-tamix",
@@ -4610,7 +5006,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.048519,
+      "lng": -118.341364
     },
     {
       "id": "villas-tacos",
@@ -4636,7 +5034,9 @@
         "BIB GOURMAND"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.108605,
+      "lng": -118.19685
     },
     {
       "id": "carnitas-el-artista",
@@ -4660,7 +5060,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 33.969409,
+      "lng": -118.355732
     },
     {
       "id": "carnitas-uruapan",
@@ -4684,7 +5086,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.048251,
+      "lng": -118.211347
     },
     {
       "id": "carnitas-los-gabrieles",
@@ -4708,7 +5112,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.033021,
+      "lng": -118.244966
     },
     {
       "id": "tacos-los-guichos",
@@ -4732,7 +5138,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 33.988999,
+      "lng": -118.279261
     },
     {
       "id": "metro-balderas",
@@ -4756,7 +5164,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.107309,
+      "lng": -118.197854
     },
     {
       "id": "birrieria-familia-castro",
@@ -4782,7 +5192,9 @@
         "CONSOMÉ"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.181423,
+      "lng": -118.37015
     },
     {
       "id": "goat-mafia",
@@ -4806,7 +5218,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.142843,
+      "lng": -118.073653
     },
     {
       "id": "barbacoa-ramirez",
@@ -4831,7 +5245,9 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.248095,
+      "lng": -118.443819
     },
     {
       "id": "mariscos-el-chito",
@@ -4857,7 +5273,9 @@
         "EL SERENO"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0
+      "sourceCount": 0,
+      "lat": 34.086001,
+      "lng": -118.173662
     },
     {
       "name": "Perse",
@@ -4875,7 +5293,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "perse",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.053946,
+      "lng": -118.465339
     },
     {
       "name": "Badmaash Venice",
@@ -4893,7 +5313,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "badmaash-venice",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 33.989593,
+      "lng": -118.463728
     },
     {
       "name": "Very Thai",
@@ -4911,7 +5333,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "very-thai",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.059,
+      "lng": -118.420059
     },
     {
       "name": "Sushi Samba West Hollywood",
@@ -4929,7 +5353,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "sushi-samba-west-hollywood",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.081935,
+      "lng": -118.386754
     },
     {
       "name": "The Holloway",
@@ -4947,7 +5373,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "the-holloway",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.077359,
+      "lng": -118.256735
     },
     {
       "name": "Sushisamba",
@@ -4967,7 +5395,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "sushisamba",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.081935,
+      "lng": -118.386754
     },
     {
       "name": "details here",
@@ -4986,7 +5416,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "details-here-santa-monica",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.016064,
+      "lng": -118.496227
     },
     {
       "name": "Joyce",
@@ -5005,7 +5437,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "joyce",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.046269,
+      "lng": -118.257165
     },
     {
       "name": "Crudo e Nudo",
@@ -5024,7 +5458,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "crudo-e-nudo-santa-monica",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.000331,
+      "lng": -118.4822
     },
     {
       "name": "Corteza at Sendero",
@@ -5043,7 +5479,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "corteza-at-sendero",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.045161,
+      "lng": -118.266671
     },
     {
       "name": "Men & Beasts",
@@ -5062,7 +5500,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "men-beasts",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.07734,
+      "lng": -118.263946
     },
     {
       "name": "The Benjamin Hollywood",
@@ -5081,7 +5521,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "the-benjamin-hollywood",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.083282,
+      "lng": -118.346035
     },
     {
       "name": "Taqueria Frontera",
@@ -5099,7 +5541,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "taqueria-frontera",
-      "addedDate": "2026-03-21"
+      "addedDate": "2026-03-21",
+      "lat": 34.090923,
+      "lng": -118.223712
     },
     {
       "name": "Komal",
@@ -5126,7 +5570,9 @@
       "sourceCount": 3,
       "heatScore": 6,
       "id": "komal",
-      "addedDate": "2026-04-04"
+      "addedDate": "2026-04-04",
+      "lat": 34.017311,
+      "lng": -118.278148
     },
     {
       "id": "leo-taqueria-eagle-rock",
@@ -5175,7 +5621,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "amiguita",
-      "addedDate": "2026-04-11"
+      "addedDate": "2026-04-11",
+      "lat": 34.088822,
+      "lng": -118.27667
     },
     {
       "name": "Sandeomi Hamjipark",
@@ -5195,7 +5643,9 @@
       "sourceCount": 1,
       "heatScore": 3,
       "id": "sandeomi-hamjipark",
-      "addedDate": "2026-04-11"
+      "addedDate": "2026-04-11",
+      "lat": 34.063823,
+      "lng": -118.295878
     },
     {
       "name": "Pizzeria Bianco Los Angeles",
@@ -5213,7 +5663,9 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "pizzeria-bianco-los-angeles-los-angeles",
-      "addedDate": "2026-03-29"
+      "addedDate": "2026-03-29",
+      "lat": 34.034355,
+      "lng": -118.241566
     }
   ]
 }

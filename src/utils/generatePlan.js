@@ -51,7 +51,7 @@ const TIER_COST = {
   whale: [65, 150],
 }
 
-function estimateCost(restaurant, activityType, jazzShow) {
+function estimateCost(restaurant, activityType) {
   const [rLow, rHigh] = TIER_COST[restaurant?.tier] || TIER_COST.feast
   if (activityType === 'movie') {
     return [rLow + 15, rHigh + 25] // ticket $15-25
@@ -184,7 +184,6 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
 
   // ── Pick for Plan A (Dinner & Movie) ──
   const planA = buildPlan({
-    type: 'movie',
     restaurants,
     activities: screenings,
     locked: locked.planA || {},
@@ -195,7 +194,6 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
 
   // ── Pick for Plan B (Dinner & Jazz) ──
   const planB = buildPlan({
-    type: 'jazz',
     restaurants,
     activities: jazzShows,
     locked: locked.planB || {},
@@ -220,13 +218,13 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
   }
   if (planB?.restaurant && planB?.activity) {
     planB.timeline = buildTimeline(planB, 'jazz')
-    planB.costEstimate = estimateCost(planB.restaurant, 'jazz', planB.activity)
+    planB.costEstimate = estimateCost(planB.restaurant, 'jazz')
   }
 
   return { planA, planB }
 }
 
-function buildPlan({ type, restaurants, activities, locked, previousRestaurantId, previousActivityId, excludeRestaurantId }) {
+function buildPlan({ restaurants, activities, locked, previousRestaurantId, previousActivityId, excludeRestaurantId }) {
   // Pick activity
   let activity = locked.activity || null
   if (!activity && activities.length > 0) {
@@ -245,8 +243,14 @@ function buildPlan({ type, restaurants, activities, locked, previousRestaurantId
     if (pool.length === 0) pool = restaurants.filter(r => r.id !== excludeRestaurantId)
     if (pool.length === 0) pool = restaurants
 
-    // Soft proximity preference: if activity has coords, prefer nearby restaurants
-    // But since most restaurants don't have coords, just shuffle
+    // Proximity filter: prefer restaurants within 8 miles (~20 min) of activity venue
+    if (activity?.coords) {
+      const nearby = pool.filter(r => {
+        if (!r.lat || !r.lng) return false
+        return getDistance(r.lat, r.lng, activity.coords.lat, activity.coords.lng) <= 8
+      })
+      if (nearby.length >= 3) pool = nearby
+    }
     restaurant = enrichRestaurant(shuffle(pool)[0], activity)
   } else if (restaurant) {
     restaurant = enrichRestaurant(restaurant, activity)
