@@ -47,20 +47,31 @@ jobs:
         if: always()
         run: node scripts/validate-data.js
       - name: Commit updated data
+        id: commit_data
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/theaters.json public/jazz-venues.json public/restaurants.json public/scrape-log.json public/health-report.md
-          git diff --cached --quiet || git commit -m "Update screening, jazz, and restaurant data"
-          git push
+          if git diff --cached --quiet; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            echo "No data changes to commit."
+          else
+            git commit -m "Update screening, jazz, and restaurant data"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       # Pushes from GITHUB_TOKEN cannot trigger other workflows, so the
       # daily data push silently never re-deploys Pages. We trigger the
       # deploy workflow explicitly here. workflow_dispatch events DO
       # trigger from a GITHUB_TOKEN-authenticated gh CLI call.
+      #
+      # We gate on commit_data.outputs.committed rather than job success,
+      # because validate-data.js exits 1 on benign warnings (e.g. known
+      # inactive theaters), which would otherwise skip the deploy forever.
       - name: Trigger Pages deploy
-        if: success()
+        if: always() && steps.commit_data.outputs.committed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref main -R ${{ github.repository }}
