@@ -104,34 +104,128 @@
 .detail-corner.br::before { bottom: 0; right: 0; }
 .detail-corner.br::after { bottom: 0; right: 0; }
 
-/* ── Content Layout with Poster ── */
+/* ── Content Layout — always row ── */
 
 .detail-content-layout {
   display: flex;
-  flex-direction: column;
-}
-
-.detail-content-layout.has-poster {
   flex-direction: row;
-  gap: 2rem;
-}
-
-.detail-poster {
-  flex-shrink: 0;
-  width: 180px;
-}
-
-.detail-poster-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 2px solid var(--gold-dim);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  gap: 1.25rem;
+  align-items: flex-start;
 }
 
 .detail-content-main {
   flex: 1;
   min-width: 0;
+}
+
+/* ── Sidebar: poster + action pill ── */
+
+.detail-sidebar {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.detail-poster-box {
+  position: relative;
+  width: 130px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  align-self: flex-start;
+  animation: posterReveal 0.6s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.detail-poster-placeholder {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 11, 10, 0.9);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='32' fill='%23C9A84C' fill-opacity='0.13'%3E6%3C/text%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  background-repeat: repeat;
+  animation: placeholderGlow 3s ease-in-out infinite;
+}
+
+@keyframes placeholderGlow {
+  0%, 100% { box-shadow: inset 0 0 20px rgba(201, 168, 76, 0.04); }
+  50%       { box-shadow: inset 0 0 30px rgba(201, 168, 76, 0.10); }
+}
+
+.detail-poster-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Action Pill ── */
+
+.detail-action-pill {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  align-self: stretch;
+  background: rgba(26, 23, 21, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.05);
+}
+
+.detail-pill-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.25rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.detail-pill-btn:first-child {
+  border-top: none;
+}
+
+.detail-pill-btn span {
+  font-family: var(--font-body);
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.detail-pill-btn:hover {
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.detail-pill-btn--ticket {
+  color: var(--gold);
+}
+
+.detail-pill-btn--ticket:hover {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+/* ── Poster fade-in ── */
+
+@keyframes posterReveal {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 /* ── Staggered content cascade ── */
@@ -158,24 +252,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* ── Poster fade-in ── */
-
-.detail-poster {
-  animation: posterReveal 0.6s ease-out both;
-  animation-delay: 0.2s;
-}
-
-@keyframes posterReveal {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -640,103 +716,6 @@
   color: var(--text-muted);
 }
 
-/* ── Action Buttons ── */
-
-.detail-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.ticket-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--bg-dark);
-  background: var(--gold);
-  border: 2px solid var(--gold);
-  padding: 0.75rem 1.75rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.ticket-btn:hover {
-  background: transparent;
-  color: var(--gold);
-}
-
-.calendar-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid var(--gold-dim);
-  padding: 0.75rem 1.75rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.calendar-btn:hover {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: var(--gold);
-}
-
-.letterboxd-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  background: transparent;
-  border: 1px solid var(--border);
-  padding: 0.75rem 1.75rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.letterboxd-btn:hover {
-  border-color: #40BCF4;
-  color: var(--text);
-}
-
-.share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid var(--gold-dim);
-  padding: 0.75rem 1.75rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.share-btn:hover {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: var(--gold);
-}
 
 /* ── Not Found ── */
 
@@ -764,28 +743,40 @@
     padding: 1rem 1.25rem 2rem;
   }
 
-  .detail-content-layout.has-poster {
+  .detail-content-layout {
     flex-direction: column;
   }
 
-  .detail-poster {
-    width: 140px;
-    margin: 0 auto 1rem;
-    order: -1;
+  .detail-sidebar {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-poster-box {
+    width: 110px;
+  }
+
+  .detail-action-pill {
+    flex-direction: row;
+    width: auto;
+    flex: 1;
+    max-width: 200px;
+    border-radius: 999px;
+    align-self: center;
+  }
+
+  .detail-pill-btn {
+    border-top: none;
+    border-left: 1px solid rgba(201, 168, 76, 0.08);
+  }
+
+  .detail-pill-btn:first-child {
+    border-left: none;
   }
 
   .detail-info-grid {
     gap: 1rem;
-  }
-
-  .detail-actions {
-    flex-direction: column;
-  }
-
-  .ticket-btn,
-  .calendar-btn,
-  .letterboxd-btn,
-  .share-btn {
-    justify-content: center;
   }
 }
