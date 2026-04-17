@@ -398,6 +398,12 @@ function App() {
               </div>
             )}
           </div>}
+          {/* Centered dice pill — always visible, teases the Roll page */}
+          {!isRollMode && (
+            <NavLink to="/roll" className="dice-pill" aria-label="Roll date night">
+              🎲
+            </NavLink>
+          )}
           <ModeSwitcher />
         </div>
       )}

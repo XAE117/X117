@@ -61,6 +61,7 @@ function useTypewriter() {
 function Splash({ onEnter }) {
   const navigate = useNavigate()
   const [visible, setVisible] = useState(true)
+  const [waiting, setWaiting] = useState(false)
   const [fading, setFading] = useState(false)
   const containerRef = useRef(null)
   const { display, phase } = useTypewriter()
@@ -93,13 +94,16 @@ function Splash({ onEnter }) {
   )
 
   const handleEnter = () => {
-    setFading(true)
+    if (waiting) return
+    setWaiting(true)
     sessionStorage.setItem('palace-splash-seen', '1')
     if (onEnter) onEnter()
+    // Brief pause so "please wait..." is readable, then slow fade
+    setTimeout(() => setFading(true), 500)
     setTimeout(() => {
       setVisible(false)
       navigate('/', { replace: true })
-    }, 800)
+    }, 1800)
   }
 
   // Check if user has seen splash before this session
@@ -145,7 +149,9 @@ function Splash({ onEnter }) {
           {phase > 0 && phase < 4 && <span className="splash-cursor">|</span>}
         </div>
         <p className="splash-subtitle">Film · Jazz · Food</p>
-        <p className="splash-enter">tap to enter</p>
+        <p className={`splash-enter ${waiting ? 'splash-waiting' : ''}`}>
+          {waiting ? 'please wait\u2026' : 'tap to enter'}
+        </p>
       </div>
 
       <div className="splash-glow-orb" />
