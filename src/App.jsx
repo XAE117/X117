@@ -18,6 +18,7 @@ import JazzDetail from './views/JazzDetail.jsx'
 import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
 import JazzDayScreenshot from './views/JazzDayScreenshot.jsx'
+import JazzBioEssay from './views/JazzBioEssay.jsx'
 import FoodByCategory from './views/FoodByCategory.jsx'
 import FoodStarred from './views/FoodStarred.jsx'
 import EatsByTier from './views/EatsByTier.jsx'
@@ -65,6 +66,7 @@ function App() {
   const [jazzData, setJazzData] = useState(null)
   const [foodData, setFoodData] = useState(null)
   const [guideData, setGuideData] = useState(null)
+  const [bioData, setBioData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
   const [formatFilter, setFormatFilter] = useState('all')
@@ -152,10 +154,12 @@ function App() {
       fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
       fetch(base + 'restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
       fetch(base + 'guide-restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
+      fetch(base + 'louis-cole-bio.json?t=' + t).then(res => res.json()).catch(() => null),
     ])
-      .then(([cinemaData, jazz, food, guide]) => {
+      .then(([cinemaData, jazz, food, guide, bio]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
+        if (bio) setBioData(bio)
         if (food) {
           // Normalize restaurant data — bridge field gaps between manual entries and scraper-added
           const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C', pizza: '#E84830', tacos: '#7CB342' }
@@ -385,6 +389,7 @@ function App() {
                     { to: '/jazz/by-venue', emoji: '🏛️', label: 'Venues' },
                     { to: '/jazz/proximity', emoji: '📡', label: 'LC ℃' },
                     { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
+                    { to: '/jazz/bio', emoji: '📖', label: 'LC Bio' },
                   ].map((item, i, arr) => (
                     <NavLink
                       key={item.to}
@@ -523,6 +528,7 @@ function App() {
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
           <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />
           <Route path="/jazz/map" element={<JazzMapView data={jazzData} />} />
+          <Route path="/jazz/bio" element={<JazzBioEssay bioData={bioData} />} />
 
           {/* Food routes */}
           <Route path="/food" element={<FoodByCategory data={foodData} />} />

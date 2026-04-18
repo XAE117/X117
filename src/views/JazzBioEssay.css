@@ -1,0 +1,61 @@
+/* ── Jazz Bio Essay — chapter-specific additions on top of GuidePage.css ── */
+
+.bio-chapter-label {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--guide-accent);
+  margin-bottom: 0.3rem;
+}
+
+.bio-scene-break {
+  border: none;
+  height: 1px;
+  background: transparent;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.bio-scene-break::before {
+  content: '· · ·';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  color: var(--guide-muted);
+  background: var(--guide-bg);
+  padding: 0 0.5rem;
+}
+
+.bio-loading {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  font-family: var(--guide-serif);
+  font-style: italic;
+  color: var(--guide-muted);
+}
+
+.bio-coda-link {
+  color: var(--guide-accent);
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.bio-coda-link:hover {
+  color: var(--guide-accent-bright);
+}
+
+/* Slightly larger measure for long-form reading */
+.bio-chapter .guide-section-title {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
