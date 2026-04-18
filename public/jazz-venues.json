@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-18T02:40:11.739Z",
+  "lastUpdated": "2026-04-18T10:39:36.432Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -181,6 +181,15 @@
           "time": "9:30 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43068709-chris-botti-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
+          "hot": false
+        },
+        {
+          "id": "blue-note-la-2026-05-26-theo-croker",
+          "artist": "Theo Croker",
+          "date": "2026-05-26",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.songkick.com/concerts/43044109-theo-croker-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
           "hot": false
         }
       ]
@@ -1798,6 +1807,24 @@
           "notes": "",
           "link": "https://dice.fm/event/92avk9-sophia-suzanne-miles-arcana-jimmy-gordon-8th-may-the-mint-los-angeles-tickets",
           "hot": false
+        },
+        {
+          "id": "the-mint-2026-05-10-thisend",
+          "artist": "thisend",
+          "date": "2026-05-10",
+          "time": "4:45 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/mx3wdw-thisend-9th-may-the-mint-los-angeles-tickets",
+          "hot": false
+        },
+        {
+          "id": "the-mint-2026-05-11-jazz-sunday-the-jazz-bakers-ke",
+          "artist": "Jazz Sunday: The Jazz Bakers & Kevin Kanner Jazz",
+          "date": "2026-05-11",
+          "time": "2:00 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/8eg8gv-jazz-sunday-the-jazz-bakers-kevin-kanner-jazz-10th-may-the-mint-los-angeles-tickets",
+          "hot": false
         }
       ]
     },
@@ -2641,23 +2668,8 @@
           "notes": "",
           "link": "https://www.campusjax.com/events/event/964",
           "hot": false
-        },
-        {
-          "id": "campus-jax-2027-04-17-wayward-sons",
-          "artist": "Wayward Sons",
-          "date": "2027-04-17",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/862",
-          "hot": false
         }
       ]
-    }
-  ],
-  "scrapeErrors": [
-    {
-      "source": "eventbrite.com",
-      "error": "Request failed with status code 405"
     }
   ]
 }

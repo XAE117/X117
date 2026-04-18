@@ -1,25 +1,23 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-04-18 02:40 UTC_
+_Generated 2026-04-18 10:39 UTC_
 
 **Status: WARNINGS** ⚠️
 
-## Warnings (2)
+## Warnings (1)
 
 - **[Cinema (theaters.json)]** 5 theaters with 0 future screenings: REDCAT, Secret Movie Club, Cinespia, FILM at LACMA, Landmark Sunset Hollywood
-- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
 - Last updated: 2026-04-18 (today)
 - 36 theaters tracked, 31 with future screenings
-- 455 future screenings, horizon 43 days
+- 471 future screenings, horizon 43 days
 - ⚠️ 5 theaters with 0 screenings: REDCAT, Secret Movie Club, Cinespia, FILM at LACMA, Landmark Sunset Hollywood
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-04-18 (today)
 - 10 venues, 10 with future shows
-- 281 future shows, horizon 364 days
-- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
+- 283 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-04-18 (today)
