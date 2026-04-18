@@ -276,12 +276,14 @@ function App() {
   const mode = isRollMode ? 'roll' : isFoodMode ? 'food' : isJazzMode ? 'jazz' : 'cinema'
 
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
-  const isSplashPage = location.pathname === '/welcome'
+  const isSplashPage = !splashSeen || location.pathname === '/welcome'
   const isDetailPage = isSplashPage || location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/')
   const showBackPill = location.pathname.startsWith('/screening/') || location.pathname.startsWith('/jazz/show/') || location.pathname.startsWith('/food/spot/')
 
   return (
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isRollMode ? 'roll-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
+      {/* Splash overlay — renders on top, no route redirect needed */}
+      {!splashSeen && <Splash onEnter={() => setSplashSeen(true)} />}
       {!isDetailPage && (
         <div className="top-bar">
           {/* Guide section pill — guide routes only */}
@@ -504,15 +506,11 @@ function App() {
       {!isDetailPage && !isJazzMode && !isFoodMode && !isGuideMode && !isRollMode && <GodfatherAlert data={data} />}
       <main className="main-content">
         <Routes>
-          {/* Splash */}
-          <Route path="/welcome" element={<Splash onEnter={() => setSplashSeen(true)} />} />
+          {/* Splash route — redirects to home since splash is now an overlay */}
+          <Route path="/welcome" element={<Navigate to="/" replace />} />
 
           {/* Cinema routes */}
-          <Route path="/" element={
-            !splashSeen
-              ? <Navigate to="/welcome" replace />
-              : <SmartCinemaDefault filteredData={filteredData} searchQuery={searchQuery} />
-          } />
+          <Route path="/" element={<SmartCinemaDefault filteredData={filteredData} searchQuery={searchQuery} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
 import './Splash.css'
 
 function Star({ style }) {
@@ -59,15 +58,12 @@ function useTypewriter() {
 }
 
 function Splash({ onEnter }) {
-  const navigate = useNavigate()
   const [visible, setVisible] = useState(true)
   const [waiting, setWaiting] = useState(false)
   const [fading, setFading] = useState(false)
   const containerRef = useRef(null)
   const { display, phase } = useTypewriter()
 
-  // useState lazy initializer is the blessed escape hatch for impure setup
-  // (react-hooks/purity bans Math.random in render and useMemo bodies).
   const [stars] = useState(() =>
     Array.from({ length: 80 }, (_, i) => ({
       key: i,
@@ -98,29 +94,10 @@ function Splash({ onEnter }) {
     setWaiting(true)
     sessionStorage.setItem('sixpm-splash-seen', '1')
     if (onEnter) onEnter()
-    // Brief pause so "please wait..." is readable, then slow fade
-    setTimeout(() => setFading(true), 500)
-    setTimeout(() => {
-      setVisible(false)
-      navigate('/', { replace: true })
-    }, 1800)
+    // Start fade immediately — the text cross-fades on its own
+    setTimeout(() => setFading(true), 400)
+    setTimeout(() => setVisible(false), 1800)
   }
-
-  // Check if user has seen splash before this session
-  useEffect(() => {
-    try {
-      const seen = sessionStorage.getItem('sixpm-splash-seen')
-      if (seen) {
-        setVisible(false)
-        navigate('/', { replace: true })
-      }
-    } catch {
-      // sessionStorage unavailable — skip splash
-      setVisible(false)
-      navigate('/', { replace: true })
-    }
-  }, [navigate])
-
 
   if (!visible) return null
 
@@ -149,9 +126,14 @@ function Splash({ onEnter }) {
           {phase > 0 && phase < 4 && <span className="splash-cursor">|</span>}
         </div>
         <p className="splash-subtitle">Film · Jazz · Food</p>
-        <p className={`splash-enter ${waiting ? 'splash-waiting' : ''}`}>
-          {waiting ? 'please wait\u2026' : 'tap to enter'}
-        </p>
+        <div className="splash-enter-wrap">
+          <p className={`splash-enter ${waiting ? 'splash-enter-out' : ''}`}>
+            tap to enter
+          </p>
+          <p className={`splash-enter splash-waiting-text ${waiting ? 'splash-enter-in' : ''}`}>
+            please wait&hellip;
+          </p>
+        </div>
       </div>
 
       <div className="splash-glow-orb" />

@@ -13,9 +13,24 @@
   box-shadow: inset 0 0 8px rgba(201, 168, 76, 0.08);
   cursor: pointer;
   color: rgba(201, 168, 76, 0.5);
-  transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
+  animation: backPillGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes backPillGlow {
+  0%, 100% {
+    box-shadow:
+      inset 0 0 8px rgba(201, 168, 76, 0.08),
+      0 0 6px 2px rgba(201, 168, 76, 0.08);
+    color: rgba(201, 168, 76, 0.4);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 10px rgba(201, 168, 76, 0.15),
+      0 0 14px 4px rgba(201, 168, 76, 0.2);
+    color: rgba(201, 168, 76, 0.7);
+  }
 }
 
 .back-pill::before {
@@ -46,4 +61,41 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1;
+}
+
+/* ── Loading overlay (shown on back tap) ── */
+
+.back-loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: var(--bg-dark, #0D0B0A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: backLoadFadeIn 0.2s ease-out both;
+}
+
+@keyframes backLoadFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.back-loading-text {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold, #C9A84C);
+  text-shadow:
+    0 0 20px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(0, 0, 0, 0.5);
+  animation: loadingPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
