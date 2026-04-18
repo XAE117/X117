@@ -34,6 +34,56 @@
   margin-top: 0.25rem;
 }
 
+/* Header date toggle row */
+.dn-date-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+}
+
+.dn-date-header-btn {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.1rem 0.15rem;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dn-date-header-btn:hover {
+  color: var(--gold);
+}
+
+.dn-date-vsep {
+  color: var(--border);
+  font-size: 0.65rem;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.dn-date-header-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.4rem 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
 /* ── Vibe Pills ── */
 
 .dn-vibes {
@@ -376,7 +426,7 @@
   gap: 0.6rem;
   padding: 0.5rem 0;
   position: sticky;
-  bottom: 70px; /* above bottom nav */
+  bottom: 24px;
   z-index: 10;
 }
 

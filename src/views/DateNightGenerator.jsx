@@ -12,17 +12,19 @@ const VIBES = [
   { key: 'budget', label: 'Budget' },
 ]
 
-function DateNightGenerator({ cinemaData, jazzData, foodData }) {
+function DateNightGenerator({ cinemaData, jazzData, foodData, vibe, setVibe }) {
   const [phase, setPhase] = useState('loading') // 'loading' | 'results'
   const [plans, setPlans] = useState(null)
   const [previousPlans, setPreviousPlans] = useState(null)
   const [selectedDate, setSelectedDate] = useState(() => getNextDays(1)[0])
-  const [vibe, setVibe] = useState('all')
   const [dateOpen, setDateOpen] = useState(false)
+  const [headerDateOpen, setHeaderDateOpen] = useState(false)
   const [locked, setLocked] = useState({ planA: {}, planB: {} })
   const [rerolling, setRerolling] = useState(false)
   const [swipeIndex, setSwipeIndex] = useState(0)
   const dateRef = useRef(null)
+  const headerDateRef = useRef(null)
+  const vibeInitialized = useRef(false)
   const days = getNextDays(7)
 
   const generate = useCallback(() => {
@@ -60,12 +62,12 @@ function DateNightGenerator({ cinemaData, jazzData, foodData }) {
     setPhase('loading')
   }, [])
 
-  const handleVibeChange = useCallback((v) => {
-    setVibe(v)
+  // Regenerate when vibe prop changes (skip initial mount)
+  useEffect(() => {
+    if (!vibeInitialized.current) { vibeInitialized.current = true; return }
     setPreviousPlans(null)
-    // Regenerate immediately if already showing results
     setPhase('loading')
-  }, [])
+  }, [vibe])
 
   const toggleLock = useCallback((plan, element) => {
     setLocked(prev => {
@@ -81,12 +83,11 @@ function DateNightGenerator({ cinemaData, jazzData, foodData }) {
     })
   }, [plans])
 
-  // Close date dropdown on outside click
+  // Close date dropdowns on outside click
   useEffect(() => {
     const handler = (e) => {
-      if (dateRef.current && !dateRef.current.contains(e.target)) {
-        setDateOpen(false)
-      }
+      if (dateRef.current && !dateRef.current.contains(e.target)) setDateOpen(false)
+      if (headerDateRef.current && !headerDateRef.current.contains(e.target)) setHeaderDateOpen(false)
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
@@ -115,20 +116,28 @@ function DateNightGenerator({ cinemaData, jazzData, foodData }) {
       {/* Header */}
       <div className="dn-header">
         <h1 className="dn-title">TONIGHT'S LINEUP</h1>
-        <p className="dn-subtitle">{selectedDate.label}</p>
-      </div>
-
-      {/* Vibe Pills */}
-      <div className="dn-vibes">
-        {VIBES.map(v => (
-          <button
-            key={v.key}
-            className={`dn-vibe-pill ${vibe === v.key ? 'active' : ''}`}
-            onClick={() => handleVibeChange(v.key)}
-          >
-            {v.label}
+        <div className="dn-date-header" ref={headerDateRef}>
+          <button className="dn-date-header-btn" onClick={() => setHeaderDateOpen(v => !v)}>
+            tonight
           </button>
-        ))}
+          <span className="dn-date-vsep">|</span>
+          <button className="dn-date-header-btn" onClick={() => setHeaderDateOpen(v => !v)}>
+            tomorrow
+          </button>
+          {headerDateOpen && (
+            <div className="dn-date-header-dropdown">
+              {days.map(day => (
+                <button
+                  key={day.iso}
+                  className={`dn-date-option ${day.iso === selectedDate.iso ? 'active' : ''}`}
+                  onClick={() => { handleDateSelect(day); setHeaderDateOpen(false) }}
+                >
+                  {day.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Swipe indicator (mobile) */}

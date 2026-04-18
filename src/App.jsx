@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Routes, Route, useLocation, Navigate, NavLink } from 'react-router-dom'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
@@ -46,6 +46,14 @@ const FAVORITE_THEATERS = [
   'academy-museum',
 ]
 
+const VIBES_OPTIONS = [
+  { key: 'all', label: 'All Vibes', emoji: '✨' },
+  { key: 'casual', label: 'Casual', emoji: '😌' },
+  { key: 'romantic', label: 'Romantic', emoji: '🌹' },
+  { key: 'adventure', label: 'Adventure', emoji: '🔥' },
+  { key: 'budget', label: 'Budget', emoji: '💸' },
+]
+
 function SmartCinemaDefault({ filteredData, searchQuery }) {
   return <ByDay data={filteredData} searchQuery={searchQuery} />
 }
@@ -66,6 +74,9 @@ function App() {
     try { return sessionStorage.getItem('palace-splash-seen') === '1' } catch { return true }
   })
   const location = useLocation()
+  const [vibe, setVibe] = useState('all')
+  const [vibeOpen, setVibeOpen] = useState(false)
+  const vibeRef = useRef(null)
 
   const isJazzMode = location.pathname.startsWith('/jazz')
   const isGuideMode = location.pathname === '/guide'
@@ -92,11 +103,22 @@ function App() {
     }
   }, [])
 
+  // Close vibes dropdown on outside click
+  useEffect(() => {
+    if (!vibeOpen) return
+    const handler = (e) => {
+      if (vibeRef.current && !vibeRef.current.contains(e.target)) setVibeOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [vibeOpen])
+
   // Auto-collapse filter notch when switching between modes
   useEffect(() => {
     setFiltersExpanded(false)
     setFoodDropdown(null)
-  }, [isJazzMode, isFoodMode])
+    setVibeOpen(false)
+  }, [isJazzMode, isFoodMode, isRollMode])
 
   // Close food dropdown on route change
   useEffect(() => {
@@ -260,6 +282,37 @@ function App() {
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isRollMode ? 'roll-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
+          {/* Vibes pill — roll mode only */}
+          {isRollMode && (
+            <div className={`filter-notch vibes-notch ${vibeOpen ? 'filter-notch--open' : ''}`} ref={vibeRef}>
+              {!vibeOpen ? (
+                <button className="notch-toggle vibes-toggle" onClick={() => setVibeOpen(true)} aria-label="Vibe filter">
+                  <span className="notch-quick-emoji">✨</span>
+                  <span className="vibes-pill-label">VIBES</span>
+                </button>
+              ) : (
+                <div className="filter-notch-expanded">
+                  <button className="notch-toggle notch-toggle--close" onClick={() => setVibeOpen(false)}>
+                    <span className="notch-plus open">+</span>
+                  </button>
+                  <div className="notch-nav-group">
+                    {VIBES_OPTIONS.map((v, i) => (
+                      <button
+                        key={v.key}
+                        className={`notch-nav-row ${vibe === v.key ? 'active' : ''}`}
+                        onClick={() => { setVibe(v.key); setVibeOpen(false) }}
+                        style={{ animationDelay: `${i * 0.05}s` }}
+                      >
+                        <span className="notch-nav-emoji">{v.emoji}</span>
+                        <span className="notch-nav-label">{v.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {!isRollMode && <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
             {!filtersExpanded && (
               <div className="filter-notch-collapsed">
@@ -270,6 +323,34 @@ function App() {
                 >
                   <span className="notch-plus">+</span>
                 </button>
+                {/* Film: quick-access format filters */}
+                {!isJazzMode && !isFoodMode && (
+                  <>
+                    <span className="notch-quick-divider" />
+                    <button className="notch-quick-btn" onClick={() => setFormatFilter('all')} aria-label="All formats">
+                      <span className={`notch-quick-emoji ${formatFilter === 'all' ? 'active' : ''}`}>🪩</span>
+                    </button>
+                    <button className="notch-quick-btn" onClick={() => setFormatFilter('favorites')} aria-label="Favorites">
+                      <span className={`notch-quick-emoji ${formatFilter === 'favorites' ? 'active' : ''}`}>✨</span>
+                    </button>
+                  </>
+                )}
+                {/* Food: quick nav to All and Guide */}
+                {isFoodMode && (
+                  <>
+                    <span className="notch-quick-divider" />
+                    <NavLink to="/food" end className="notch-quick-btn" aria-label="All restaurants">
+                      {({ isActive }) => (
+                        <span className={`notch-quick-emoji ${isActive ? 'active' : ''}`}>🍽️</span>
+                      )}
+                    </NavLink>
+                    <NavLink to="/guide" className="notch-quick-btn" aria-label="Guide">
+                      {({ isActive }) => (
+                        <span className={`notch-quick-emoji ${isActive ? 'active' : ''}`}>📖</span>
+                      )}
+                    </NavLink>
+                  </>
+                )}
               </div>
             )}
             {filtersExpanded && (
@@ -443,7 +524,7 @@ function App() {
           <Route path="/food/map" element={<EatsMapView data={foodData} />} />
 
           {/* Date Night Generator */}
-          <Route path="/roll" element={<DateNightGenerator cinemaData={data} jazzData={jazzData} foodData={foodData} />} />
+          <Route path="/roll" element={<DateNightGenerator cinemaData={data} jazzData={jazzData} foodData={foodData} vibe={vibe} setVibe={setVibe} />} />
 
           {/* Guide route */}
           <Route path="/guide" element={<GuidePage guideData={guideData} />} />
