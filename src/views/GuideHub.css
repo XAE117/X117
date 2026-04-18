@@ -69,6 +69,10 @@
   border-top: 2px solid rgba(232, 117, 58, 0.5);
 }
 
+.guide-hub-card--taco-list {
+  border-top: 2px solid rgba(232, 117, 58, 0.3);
+}
+
 .guide-hub-card--pizza {
   border-top: 2px solid rgba(201, 168, 76, 0.5);
 }
@@ -81,6 +85,11 @@
 .guide-hub-card--tacos:hover {
   border-color: rgba(232, 117, 58, 0.4);
   box-shadow: 0 0 20px rgba(232, 117, 58, 0.08);
+}
+
+.guide-hub-card--taco-list:hover {
+  border-color: rgba(232, 117, 58, 0.3);
+  box-shadow: 0 0 20px rgba(232, 117, 58, 0.06);
 }
 
 .guide-hub-card--pizza:hover {

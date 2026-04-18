@@ -14,7 +14,7 @@ function GuideHub() {
 
       <div className="guide-hub-cards">
         <Link to="/guide/tacos" className="guide-hub-card guide-hub-card--tacos">
-          <span className="guide-hub-card-emoji">🌮</span>
+          <span className="guide-hub-card-emoji">🌽</span>
           <div className="guide-hub-card-body">
             <h2 className="guide-hub-card-title">The Corn & Fire Companion</h2>
             <p className="guide-hub-card-desc">
@@ -22,6 +22,18 @@ function GuideHub() {
               Why LA is the greatest taco city on earth.
             </p>
             <span className="guide-hub-card-cta">Read the Essay →</span>
+          </div>
+        </Link>
+
+        <Link to="/food/tacos" className="guide-hub-card guide-hub-card--taco-list">
+          <span className="guide-hub-card-emoji">🌮</span>
+          <div className="guide-hub-card-body">
+            <h2 className="guide-hub-card-title">The Taco Guide</h2>
+            <p className="guide-hub-card-desc">
+              Masa temples, trompo masters, birria specialists, mariscos.
+              Curated by style — every essential taquería in LA.
+            </p>
+            <span className="guide-hub-card-cta">Browse the Guide →</span>
           </div>
         </Link>
 
