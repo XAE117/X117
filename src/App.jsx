@@ -27,6 +27,8 @@ import EatsMapView from './views/EatsMapView.jsx'
 import PizzaGuide from './views/PizzaGuide.jsx'
 import TacoGuide from './views/TacoGuide.jsx'
 import GuidePage from './views/GuidePage.jsx'
+import GuideHub from './views/GuideHub.jsx'
+import PizzaGuideEssay from './views/PizzaGuideEssay.jsx'
 import Search from './views/Search.jsx'
 import Splash from './views/Splash.jsx'
 import DateNightGenerator from './views/DateNightGenerator.jsx'
@@ -79,7 +81,7 @@ function App() {
   const vibeRef = useRef(null)
 
   const isJazzMode = location.pathname.startsWith('/jazz')
-  const isGuideMode = location.pathname === '/guide'
+  const isGuideMode = location.pathname.startsWith('/guide')
   const isFoodMode = location.pathname.startsWith('/food') || isGuideMode
   const isRollMode = location.pathname === '/roll'
 
@@ -282,6 +284,17 @@ function App() {
     <div className={`app ${isJazzMode ? 'jazz-mode' : ''} ${isFoodMode ? 'food-mode' : ''} ${isGuideMode ? 'guide-mode' : ''} ${isRollMode ? 'roll-mode' : ''} ${isScrolling ? 'ui-scrolling' : ''}`}>
       {!isDetailPage && (
         <div className="top-bar">
+          {/* Guide section pill — guide routes only */}
+          {isGuideMode && !isRollMode && (
+            <div className="filter-notch guide-section-notch">
+              <NavLink to="/guide" end className={({ isActive }) => `guide-section-btn${isActive ? ' active' : ''}`}>MAIN</NavLink>
+              <span className="guide-section-sep">|</span>
+              <NavLink to="/guide/pizza" className={({ isActive }) => `guide-section-btn${isActive ? ' active' : ''}`}>PIZZA</NavLink>
+              <span className="guide-section-sep">|</span>
+              <NavLink to="/guide/tacos" className={({ isActive }) => `guide-section-btn${isActive ? ' active' : ''}`}>TACOS</NavLink>
+            </div>
+          )}
+
           {/* Vibes pill — roll mode only */}
           {isRollMode && (
             <div className={`filter-notch vibes-notch ${vibeOpen ? 'filter-notch--open' : ''}`} ref={vibeRef}>
@@ -313,7 +326,7 @@ function App() {
             </div>
           )}
 
-          {!isRollMode && <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
+          {!isRollMode && !isGuideMode && <div className={`filter-notch ${filtersExpanded ? 'filter-notch--open' : ''}`}>
             {!filtersExpanded && (
               <div className="filter-notch-collapsed">
                 <button
@@ -526,8 +539,10 @@ function App() {
           {/* Date Night Generator */}
           <Route path="/roll" element={<DateNightGenerator cinemaData={data} jazzData={jazzData} foodData={foodData} vibe={vibe} setVibe={setVibe} />} />
 
-          {/* Guide route */}
-          <Route path="/guide" element={<GuidePage guideData={guideData} />} />
+          {/* Guide routes */}
+          <Route path="/guide" element={<GuideHub />} />
+          <Route path="/guide/tacos" element={<GuidePage guideData={guideData} />} />
+          <Route path="/guide/pizza" element={<PizzaGuideEssay />} />
           <Route path="*" element={
             <div style={{ color: '#E88A82', padding: '2rem', textAlign: 'center', fontFamily: 'monospace', fontSize: '0.8rem' }}>
               <p>No route matched: {window.location.pathname}</p>

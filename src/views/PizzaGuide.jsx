@@ -2,6 +2,7 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getStarredIds, toggleStar } from '../utils/starredFood.js'
 import './PizzaGuide.css'
+import './PizzaGuideEssay.css'
 
 const STYLE_SECTIONS = [
   {
@@ -150,6 +151,11 @@ function PizzaGuide({ data }) {
 
   return (
     <div className="pizza-guide">
+      <div className="guide-essay-btn-wrap">
+        <Link to="/guide/pizza" className="guide-essay-btn">
+          📖 Read the Essay
+        </Link>
+      </div>
       <div className="pizza-guide-header">
         <div className="pizza-deco-line" />
         <h1 className="pizza-guide-title">THE PIZZA GUIDE</h1>

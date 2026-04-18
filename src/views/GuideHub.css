@@ -1,0 +1,141 @@
+/* ── Guide Hub Landing ── */
+
+.guide-hub {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.guide-hub-hero {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+}
+
+.guide-hub-kicker {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.guide-hub-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  text-shadow:
+    0 0 30px rgba(201, 168, 76, 0.3),
+    0 0 60px rgba(201, 168, 76, 0.1);
+}
+
+.guide-hub-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+/* ── Guide Cards ── */
+
+.guide-hub-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.guide-hub-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guide-hub-card--tacos {
+  border-top: 2px solid rgba(232, 117, 58, 0.5);
+}
+
+.guide-hub-card--pizza {
+  border-top: 2px solid rgba(201, 168, 76, 0.5);
+}
+
+.guide-hub-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.guide-hub-card--tacos:hover {
+  border-color: rgba(232, 117, 58, 0.4);
+  box-shadow: 0 0 20px rgba(232, 117, 58, 0.08);
+}
+
+.guide-hub-card--pizza:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.08);
+}
+
+.guide-hub-card-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.guide-hub-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.guide-hub-card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  text-transform: uppercase;
+}
+
+.guide-hub-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.guide-hub-card-cta {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-top: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.guide-hub-card--tacos .guide-hub-card-cta {
+  color: rgba(232, 117, 58, 0.7);
+}
+
+.guide-hub-card:hover .guide-hub-card-cta {
+  color: var(--gold);
+}
+
+.guide-hub-card--tacos:hover .guide-hub-card-cta {
+  color: rgba(232, 117, 58, 1);
+}

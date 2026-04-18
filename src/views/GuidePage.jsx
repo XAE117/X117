@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import GuideRestaurantCard from '../components/GuideRestaurantCard.jsx'
 import './GuidePage.css'
+import './PizzaGuideEssay.css'
 
 const SECTIONS = [
   { id: 'nixtamal-revolution', title: 'The Nixtamal Revolution', emoji: '🌽' },
@@ -74,6 +76,13 @@ function GuidePage({ guideData }) {
 
   return (
     <div className="guide-page">
+      {/* Back to listings */}
+      <div className="guide-essay-back-wrap">
+        <Link to="/food/tacos" className="guide-essay-back-btn">
+          ← Taco Listings
+        </Link>
+      </div>
+
       {/* ── Table of Contents: Desktop floating panel ── */}
       <nav className={`guide-toc-desktop ${tocDesktopOpen ? 'open' : 'collapsed'} ${tocFaded ? 'scroll-faded' : ''}`}>
         <button

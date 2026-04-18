@@ -1,0 +1,23 @@
+/* ── Pizza Guide Essay — back button + overrides ── */
+
+.guide-essay-back-wrap {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem 0;
+}
+
+.guide-essay-back-btn {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guide-essay-back-btn:hover {
+  color: var(--gold);
+}

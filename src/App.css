@@ -496,6 +496,88 @@
   color: var(--gold);
 }
 
+/* ── Guide section pill (MAIN | PIZZA | TACOS) ── */
+
+.guide-section-notch {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.65rem;
+}
+
+.guide-section-btn {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.1rem 0.15rem;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guide-section-btn.active {
+  color: var(--gold);
+}
+
+.guide-section-btn:hover {
+  color: var(--cream);
+}
+
+.guide-section-sep {
+  color: var(--gold-dim);
+  opacity: 0.35;
+  font-size: 0.55rem;
+  user-select: none;
+}
+
+/* ── Glowing guide essay toggle button (on listing pages) ── */
+
+.guide-essay-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.guide-essay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  background: rgba(201, 168, 76, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  animation: guideEssayGlow 3s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guide-essay-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.45);
+  box-shadow: 0 0 16px rgba(201, 168, 76, 0.2);
+}
+
+@keyframes guideEssayGlow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(201, 168, 76, 0.12), 0 0 14px rgba(201, 168, 76, 0.04);
+    border-color: rgba(201, 168, 76, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(201, 168, 76, 0.32), 0 0 28px rgba(201, 168, 76, 0.1);
+    border-color: rgba(201, 168, 76, 0.42);
+  }
+}
+
 /* ── Collapsed notch quick-access buttons ── */
 
 .notch-quick-divider {
