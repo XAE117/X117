@@ -71,7 +71,7 @@ function MapView({ data }) {
         opacity: 0.9,
         fillOpacity: 0.6,
       })
-        .bindPopup(popupContent, { className: 'palace-popup', maxWidth: 280 })
+        .bindPopup(popupContent, { className: 'sixpm-popup', maxWidth: 280 })
         .addTo(map)
     })
   }, [data])

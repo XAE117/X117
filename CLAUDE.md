@@ -1,4 +1,4 @@
-# Liza's Palace — Claude Code Build Context
+# SIXPM — Claude Code Build Context
 
 ## API Keys
 **All keys are stored in `.env` (gitignored) and as GitHub Actions secrets.**

@@ -73,7 +73,7 @@ function App() {
   const [isScrolling, setIsScrolling] = useState(false)
   const [foodDropdown, setFoodDropdown] = useState(null) // 'tiers' | 'specialty' | null
   const [splashSeen, setSplashSeen] = useState(() => {
-    try { return sessionStorage.getItem('palace-splash-seen') === '1' } catch { return true }
+    try { return sessionStorage.getItem('sixpm-splash-seen') === '1' } catch { return true }
   })
   const location = useLocation()
   const [vibe, setVibe] = useState('all')

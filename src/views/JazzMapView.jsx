@@ -79,7 +79,7 @@ function JazzMapView({ data }) {
         opacity: 0.9,
         fillOpacity: 0.6,
       })
-        .bindPopup(popupContent, { className: 'palace-popup jazz-popup', maxWidth: 280 })
+        .bindPopup(popupContent, { className: 'sixpm-popup jazz-popup', maxWidth: 280 })
         .addTo(map)
     })
   }, [data])

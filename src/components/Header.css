@@ -1,11 +1,11 @@
 /* ── Header ── */
 
-.palace-header {
+.sixpm-header {
   text-align: center;
   padding: 1.25rem 1rem 0.5rem;
 }
 
-.palace-title {
+.sixpm-title {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(1.4rem, 5vw, 2.2rem);
@@ -13,10 +13,10 @@
   letter-spacing: 0.3em;
   margin: 0.4rem 0 0.2rem;
   position: relative;
-  animation: palaceGlow 4s ease-in-out infinite;
+  animation: sixpmGlow 4s ease-in-out infinite;
 }
 
-.palace-title::after {
+.sixpm-title::after {
   content: '';
   position: absolute;
   inset: -4px -8px;
@@ -26,10 +26,10 @@
     transparent 70%
   );
   pointer-events: none;
-  animation: palaceSparkle 6s ease-in-out infinite;
+  animation: sixpmSparkle 6s ease-in-out infinite;
 }
 
-@keyframes palaceGlow {
+@keyframes sixpmGlow {
   0%, 100% {
     text-shadow:
       0 0 10px rgba(201, 168, 76, 0.25),
@@ -44,14 +44,14 @@
   }
 }
 
-@keyframes palaceSparkle {
+@keyframes sixpmSparkle {
   0%, 100% { opacity: 0.4; filter: blur(8px); }
   25% { opacity: 0.8; filter: blur(6px); }
   50% { opacity: 0.3; filter: blur(10px); }
   75% { opacity: 0.7; filter: blur(5px); }
 }
 
-.palace-subtitle {
+.sixpm-subtitle {
   font-family: var(--font-body);
   font-weight: 300;
   font-size: clamp(0.55rem, 1.5vw, 0.7rem);
@@ -99,12 +99,12 @@
 
 /* ── Jazz Mode ── */
 
-.jazz-mode .palace-title {
+.jazz-mode .sixpm-title {
   color: var(--jazz-accent);
-  animation: palaceGlowJazz 4s ease-in-out infinite;
+  animation: sixpmGlowJazz 4s ease-in-out infinite;
 }
 
-.jazz-mode .palace-title::after {
+.jazz-mode .sixpm-title::after {
   background: radial-gradient(
     ellipse at 50% 50%,
     rgba(212, 165, 116, 0.06) 0%,
@@ -112,7 +112,7 @@
   );
 }
 
-@keyframes palaceGlowJazz {
+@keyframes sixpmGlowJazz {
   0%, 100% {
     text-shadow:
       0 0 10px rgba(212, 165, 116, 0.25),

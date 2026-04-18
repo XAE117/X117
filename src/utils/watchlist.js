@@ -12,7 +12,7 @@ function setWatchlist(user, ids) {
 
 export function getCurrentUser() {
   try {
-    return localStorage.getItem('palace-user') || null
+    return localStorage.getItem('sixpm-user') || null
   } catch {
     return null
   }

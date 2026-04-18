@@ -1,7 +1,7 @@
 // Starred-restaurant persistence. Split out of FoodByCategory.jsx so that
 // file can pure-export components (Fast Refresh requirement).
 
-const STAR_KEY = 'palace-starred-restaurants'
+const STAR_KEY = 'sixpm-starred-restaurants'
 
 export function getStarredIds() {
   try {

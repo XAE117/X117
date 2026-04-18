@@ -6,10 +6,10 @@ function Header({ mode }) {
     : 'Los Angeles Repertory & Arthouse Cinema'
 
   return (
-    <header className={`palace-header ${mode === 'jazz' ? 'jazz-mode' : ''}`}>
+    <header className={`sixpm-header ${mode === 'jazz' ? 'jazz-mode' : ''}`}>
       <div className="header-deco-line" />
-      <h1 className="palace-title">SIXPM</h1>
-      <p className="palace-subtitle">{subtitle}</p>
+      <h1 className="sixpm-title">SIXPM</h1>
+      <p className="sixpm-subtitle">{subtitle}</p>
       <div className="header-deco-line" />
     </header>
   )

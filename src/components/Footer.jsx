@@ -13,7 +13,7 @@ function Footer({ lastUpdated, isJazz, isFood }) {
   }
 
   return (
-    <footer className="palace-footer">
+    <footer className="sixpm-footer">
       <div className="footer-inner">
         <span className="footer-updated">
           Updated {formatDate(lastUpdated)}

@@ -143,9 +143,9 @@ function TacoGuide({ data }) {
 
   // Scroll to section if coming from dropdown
   useEffect(() => {
-    const scrollTo = sessionStorage.getItem('palace-taco-scroll')
+    const scrollTo = sessionStorage.getItem('sixpm-taco-scroll')
     if (scrollTo) {
-      sessionStorage.removeItem('palace-taco-scroll')
+      sessionStorage.removeItem('sixpm-taco-scroll')
       requestAnimationFrame(() => {
         const el = document.getElementById(`taco-section-${scrollTo}`)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })

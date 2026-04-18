@@ -137,9 +137,9 @@ function PizzaGuide({ data }) {
 
   // Scroll to section if coming from dropdown
   useEffect(() => {
-    const scrollTo = sessionStorage.getItem('palace-pizza-scroll')
+    const scrollTo = sessionStorage.getItem('sixpm-pizza-scroll')
     if (scrollTo) {
-      sessionStorage.removeItem('palace-pizza-scroll')
+      sessionStorage.removeItem('sixpm-pizza-scroll')
       requestAnimationFrame(() => {
         const el = document.getElementById(`pizza-section-${scrollTo}`)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })

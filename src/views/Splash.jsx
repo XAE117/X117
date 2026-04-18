@@ -96,7 +96,7 @@ function Splash({ onEnter }) {
   const handleEnter = () => {
     if (waiting) return
     setWaiting(true)
-    sessionStorage.setItem('palace-splash-seen', '1')
+    sessionStorage.setItem('sixpm-splash-seen', '1')
     if (onEnter) onEnter()
     // Brief pause so "please wait..." is readable, then slow fade
     setTimeout(() => setFading(true), 500)
@@ -109,7 +109,7 @@ function Splash({ onEnter }) {
   // Check if user has seen splash before this session
   useEffect(() => {
     try {
-      const seen = sessionStorage.getItem('palace-splash-seen')
+      const seen = sessionStorage.getItem('sixpm-splash-seen')
       if (seen) {
         setVisible(false)
         navigate('/', { replace: true })

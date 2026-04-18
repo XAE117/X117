@@ -158,9 +158,9 @@ function TierSection({ label, subtitle, restaurants, accentClass }) {
 
 function EatsByTier({ data }) {
   const [tierFilter, setTierFilter] = useState(() => {
-    const saved = sessionStorage.getItem('palace-tier-filter')
+    const saved = sessionStorage.getItem('sixpm-tier-filter')
     if (saved) {
-      sessionStorage.removeItem('palace-tier-filter')
+      sessionStorage.removeItem('sixpm-tier-filter')
       return saved
     }
     return 'all'

@@ -142,7 +142,7 @@ function Watchlist({ data }) {
   if (!user) {
     return (
       <UserPicker onPick={(name) => {
-        localStorage.setItem('palace-user', name)
+        localStorage.setItem('sixpm-user', name)
         setUser(name)
       }} />
     )
@@ -190,7 +190,7 @@ function Watchlist({ data }) {
         <button className="watchlist-switch-user" onClick={() => {
           const other = otherUser
           if (other) {
-            localStorage.setItem('palace-user', other)
+            localStorage.setItem('sixpm-user', other)
             setUser(other)
           }
         }}>
