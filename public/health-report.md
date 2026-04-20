@@ -1,28 +1,26 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-04-19 10:38 UTC_
+_Generated 2026-04-20 11:19 UTC_
 
 **Status: WARNINGS** ⚠️
 
-## Warnings (2)
+## Warnings (1)
 
-- **[Cinema (theaters.json)]** 6 theaters with 0 future screenings: REDCAT, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood
-- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
+- **[Cinema (theaters.json)]** 6 theaters with 0 future screenings: Secret Movie Club, Cinespia, 2220 Arts + Archives, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-04-19 (today)
+- Last updated: 2026-04-20 (today)
 - 36 theaters tracked, 30 with future screenings
-- 445 future screenings, horizon 42 days
-- ⚠️ 6 theaters with 0 screenings: REDCAT, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood
+- 417 future screenings, horizon 41 days
+- ⚠️ 6 theaters with 0 screenings: Secret Movie Club, Cinespia, 2220 Arts + Archives, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-04-19 (today)
-- 10 venues, 10 with future shows
-- 277 future shows, horizon 364 days
-- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
+- Last updated: 2026-04-20 (today)
+- 8 venues, 8 with future shows
+- 269 future shows, horizon 255 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-04-19 (today)
+- Last updated: 2026-04-19 (yesterday)
 - 229 restaurants tracked
 - Tiers: street 7, feast 165, whale 14
 
