@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-20T11:19:19.593Z",
+  "lastUpdated": "2026-04-21T11:05:50.467Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,24 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-romancing-the-stone-2026-04-19-2-00-pm",
-          "title": "Romancing the Stone",
-          "date": "2026-04-19",
-          "time": "2:00 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4584?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
-        {
-          "id": "new-beverly-penrod-and-sam-1923-silent-with-live-music-score-brand-new-35mm-print-2026-04-19-6-3",
-          "title": "Penrod and Sam (1923)(Silent with Live Music Score)(Brand New 35mm Print)",
-          "date": "2026-04-19",
-          "time": "6:30 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4586?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-detective-kitty-o-day-bowery-champs-2026-04-20-7-30-pm-9-00-pm",
           "title": "Detective Kitty O’Day / Bowery Champs",
@@ -114,27 +96,18 @@
           "title": "Raiders of the Lost Ark",
           "date": "2026-04-26",
           "time": "2:00 pm",
-          "format": "digital",
-          "notes": "Kiddie Matinee",
-          "link": "https://thenewbev.com/program/april-26-raiders-of-the-lost-ark-family-matinee/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4601?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
-          "id": "new-beverly-high-society-1955-2026-04-26-6-30-pm",
-          "title": "High Society (1955)",
+          "id": "new-beverly-high-society-1955-pride-of-the-blue-grass-1954-2026-04-26-6-30-pm-8-00-pm",
+          "title": "High Society (1955) / Pride of the Blue Grass (1954)",
           "date": "2026-04-26",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/april-26-high-society-pride-of-the-blue-grass/"
-        },
-        {
-          "id": "new-beverly-pride-of-the-blue-grass-1954-2026-04-26-8-00-pm",
-          "title": "Pride of the Blue Grass (1954)",
-          "date": "2026-04-26",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/april-26-high-society-pride-of-the-blue-grass/"
+          "time": "6:30 pm / 8:00 pm",
+          "format": "35mm",
+          "notes": "In 35mm and 16mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4603?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-bela-lugosi-meets-a-brooklyn-gorilla-2026-04-27-10-25-pm",
@@ -236,42 +209,6 @@
       "url": "https://www.vistatheaterhollywood.com",
       "color": "#B89AD4",
       "screenings": [
-        {
-          "id": "vista-theatre-normal-2026-04-19-1-00-pm",
-          "title": "Normal",
-          "date": "2026-04-19",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3497?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-the-ghost-and-mr-chicken-2026-04-19-10-00-am",
-          "title": "The Ghost and Mr. Chicken",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3464?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-normal-2026-04-19-4-00-pm",
-          "title": "Normal",
-          "date": "2026-04-19",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3500?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-normal-2026-04-19-7-00-pm",
-          "title": "Normal",
-          "date": "2026-04-19",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3501?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
         {
           "id": "vista-theatre-normal-2026-04-20-1-00-pm",
           "title": "Normal",
@@ -484,7 +421,7 @@
           "title": "Normal",
           "date": "2026-04-26",
           "time": "1:00 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3520?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
@@ -493,7 +430,7 @@
           "title": "Libeled Lady",
           "date": "2026-04-26",
           "time": "10:00 am",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3437?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
@@ -502,7 +439,7 @@
           "title": "Normal",
           "date": "2026-04-26",
           "time": "4:00 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3528?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
@@ -511,7 +448,7 @@
           "title": "Normal",
           "date": "2026-04-26",
           "time": "7:15 pm",
-          "format": "35mm",
+          "format": "digital",
           "notes": "",
           "link": "https://ticketing.uswest.veezi.com/purchase/3529?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
@@ -598,33 +535,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-midnight-cowboy-in-4k-2026-04-19-2-00-pm",
-          "title": "Midnight Cowboy in 4K",
-          "date": "2026-04-19",
-          "time": "2:00 pm",
-          "format": "digital",
-          "notes": "At the David Geffen Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/midnight-cowboy-019be226-d097-65cf-a70e-af6a6dd5561f"
-        },
-        {
-          "id": "academy-museum-one-wonderful-sunday-subarashiki-nichiyobi-in-35mm-2026-04-19-2-30-pm",
-          "title": "One Wonderful Sunday (Subarashiki Nichiyobi) in 35mm",
-          "date": "2026-04-19",
-          "time": "2:30 pm",
-          "format": "35mm",
-          "notes": "At the Ted Mann Theater. In person: Academy Collection and Preservation Executive Vice President Matt Severson.",
-          "link": "https://www.academymuseum.org/en/programs/detail/one-wonderful-sunday-subarashiki-nichiyobi-in-35-mm-019c068d-fb79-8423-d71b-7307313ee163"
-        },
-        {
-          "id": "academy-museum-the-lower-depths-donzoko-in-35mm-2026-04-19-6-30-pm",
-          "title": "The Lower Depths (Donzoko) in 35mm",
-          "date": "2026-04-19",
-          "time": "6:30 pm",
-          "format": "35mm",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/the-lower-depths-in-35-mm-019c064b-5bcb-9df8-5424-65decc456d57"
-        },
-        {
           "id": "academy-museum-the-servant-in-4k-2026-04-20-2-30-pm",
           "title": "The Servant in 4K",
           "date": "2026-04-20",
@@ -704,6 +614,24 @@
           "format": "35mm",
           "notes": "At the Ted Mann Theater.",
           "link": "https://www.academymuseum.org/en/programs/detail/the-bad-sleep-well-warui-yatsu-hodo-yoku-nemuru-in-35-mm-019c064d-95c8-0bd5-dbac-becff4634f3f"
+        },
+        {
+          "id": "academy-museum-ordinary-people-in-35mm-2026-04-26-2-00-pm",
+          "title": "Ordinary People in 35mm",
+          "date": "2026-04-26",
+          "time": "2:00 pm",
+          "format": "35mm",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/ordinary-people-019be227-18dd-4cba-6348-0875e69008cd"
+        },
+        {
+          "id": "academy-museum-janie-geiser-s-time-a-substance-2026-04-26-6-30-pm",
+          "title": "Janie Geiser’s Time, a Substance",
+          "date": "2026-04-26",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater. In person: filmmaker Janie Geiser in conversation with USC professor Holly Willis.",
+          "link": "https://www.academymuseum.org/en/programs/detail/janie-geisers-time-a-substance-019be21a-5319-b8b1-8b4b-c13615afb76e"
         }
       ]
     },
@@ -715,24 +643,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-face-off-2026-04-19-3-30-pm",
-          "title": "Face/Off",
-          "date": "2026-04-19",
-          "time": "3:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/face-off#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-bridesmaids-2026-04-19-4-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "It's happening! Director Paul Feig in person for 15th anniversary celebration.",
-          "link": "https://drafthouse.com/los-angeles/event/live-q-a-bridesmaids-15th-anniversary#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-the-big-lebowski-2026-04-20-1-00-pm",
           "title": "The Big Lebowski",
@@ -966,6 +876,42 @@
           "format": "digital",
           "notes": "Part of the “Fantastic Fest Presents” series.",
           "link": "https://drafthouse.com/los-angeles/show/girl-internet-show-a-kati-kelli-mixtape#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-terror-of-mechagodzilla-sold-out-2026-04-26-12-45-pm",
+          "title": "Terror of Mechagodzilla (Sold Out)",
+          "date": "2026-04-26",
+          "time": "12:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/terror-of-mechagodzilla"
+        },
+        {
+          "id": "alamo-dtla-terror-of-mechagodzilla-sold-out-2026-04-26-3-25-pm",
+          "title": "Terror of Mechagodzilla (Sold Out)",
+          "date": "2026-04-26",
+          "time": "3:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/terror-of-mechagodzilla"
+        },
+        {
+          "id": "alamo-dtla-terror-of-mechagodzilla-2026-04-26-6-00-pm",
+          "title": "Terror of Mechagodzilla",
+          "date": "2026-04-26",
+          "time": "6:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/terror-of-mechagodzilla#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-terror-of-mechagodzilla-2026-04-26-8-35-pm",
+          "title": "Terror of Mechagodzilla",
+          "date": "2026-04-26",
+          "time": "8:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/terror-of-mechagodzilla#js-showtimescomponent"
         }
       ]
     },
@@ -977,24 +923,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-sergei-eisenstein-m-xico-death-day-thunder-over-mexico-outtakes-2026-04-19-4-00-pm",
-          "title": "¡Sergei Eisenstein MéXico!: “Death Day” / Thunder Over Mexico / “Outtakes”",
-          "date": "2026-04-19",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "Advance Screening of New RestorationsFilms courtesy of British Film Institute, Cineric, Inc., Det Danske Filminstitut, Filmmakers Showcase, Gosfilmofond of Russia, Indiana University Libraries Moving Image Archive, Indiana University, Bloomington and Turner Classic Movies. Restorations by Bruce Posner.",
-          "link": "https://www.americancinematheque.com/now-showing/eisenstein-in-mexico-4-18-26/"
-        },
-        {
-          "id": "egyptian-in-the-bathtub-of-the-world-i-am-a-sex-addict-2026-04-19-7-00-pm",
-          "title": "In the Bathtub of the World / I Am a Sex Addict",
-          "date": "2026-04-19",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Caveh Zahedi. Moderated by Jay Duplass. Part of the “This Is Not a Fiction 2026” and “Caveh Zahedi: An American Cinematheque Tribute” series.",
-          "link": "https://www.americancinematheque.com/now-showing/in-the-bathtub-of-the-world-i-am-a-sex-addict-4-19-26/"
-        },
         {
           "id": "egyptian-all-is-lost-2026-04-20-10-15-pm",
           "title": "All Is Lost",
@@ -1156,6 +1084,24 @@
           "format": "digital",
           "notes": "Co-presented by IFFLA.",
           "link": "https://www.americancinematheque.com/now-showing/sholay-4-25-26/"
+        },
+        {
+          "id": "egyptian-the-greatest-story-ever-told-2026-04-26-1-00-pm",
+          "title": "The Greatest Story Ever Told",
+          "date": "2026-04-26",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "New 4K Restoration. 'Sunday \"Rest\"orations'.",
+          "link": "https://www.americancinematheque.com/now-showing/the-greatest-story-ever-told-4-26-26/"
+        },
+        {
+          "id": "egyptian-when-a-woman-ascends-the-stairs-2026-04-26-7-00-pm",
+          "title": "When a Woman Ascends the Stairs",
+          "date": "2026-04-26",
+          "time": "7:00 pm",
+          "format": "35mm",
+          "notes": "35mm print courtesy of The Japan Foundation, Los Angeles. Series co-presented by The Japan Foundation, Los Angeles and The Yanai Initiative for Globalizing Japanese Humanities. Part of the “Mikio Naruse: An American Cinematheque Retrospective” series.",
+          "link": "https://www.americancinematheque.com/now-showing/when-a-woman-ascends-the-stairs-4-26-26/"
         }
       ]
     },
@@ -1167,24 +1113,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#7ABFC0",
       "screenings": [
-        {
-          "id": "aero-ocean-with-david-attenborough-2026-04-19-3-00-pm",
-          "title": "Ocean with David Attenborough",
-          "date": "2026-04-19",
-          "time": "3:00 pm",
-          "format": "digital",
-          "notes": "Pre-recorded introduction by narrator David Attenborough. 'This Is Not a Fiction 2026'.",
-          "link": "https://www.americancinematheque.com/now-showing/ocean-with-david-attenborough-04-19-2026/"
-        },
-        {
-          "id": "aero-john-candy-i-like-me-2026-04-19-7-30-pm",
-          "title": "John Candy: I Like Me",
-          "date": "2026-04-19",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Q&A with director/producer Colin Hanks and co-executive producers Jennifer Candy-Sullivan and Chris Candy. 'This Is Not a Fiction 2026'.",
-          "link": "https://www.americancinematheque.com/now-showing/john-candy-i-like-me-4-19-26/"
-        },
         {
           "id": "aero-the-show-about-the-show-2026-04-20-7-00-pm",
           "title": "The Show About the Show",
@@ -1247,6 +1175,24 @@
           "format": "digital",
           "notes": "Q&A with executive producer and actor Charlie Hunnam, co-creator, writer, director and executive producer Ian Brennan, director and executive producer Max Winkler, cinematographer Michael Bauman, head of makeup Corey Castellano, production designer Matthew Flood Ferguson and editor Adam Penn, ACE.",
           "link": "https://www.americancinematheque.com/now-showing/monster-the-ed-gein-story-4-25-26/"
+        },
+        {
+          "id": "aero-mad-max-2-the-road-warrior-2026-04-26-3-00-pm",
+          "title": "Mad Max 2: The Road Warrior",
+          "date": "2026-04-26",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/mad-max-2-the-road-warrior-4-26-26/"
+        },
+        {
+          "id": "aero-the-thing-2026-04-26-7-00-pm",
+          "title": "The Thing",
+          "date": "2026-04-26",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/the-thing-4-26-26/"
         }
       ]
     },
@@ -1258,60 +1204,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-the-land-before-time-2026-04-19-1-00-pm",
-          "title": "The Land Before Time",
-          "date": "2026-04-19",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle. Part of the “Films for Everyone” series.",
-          "link": "https://vidiotsfoundation.org/purchase/3860606/"
-        },
-        {
-          "id": "vidiots-trains-2026-04-19-1-30-pm",
-          "title": "Trains",
-          "date": "2026-04-19",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3946021/"
-        },
-        {
-          "id": "vidiots-the-apostle-2026-04-19-3-30-pm",
-          "title": "The Apostle",
-          "date": "2026-04-19",
-          "time": "3:30 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3860607/"
-        },
-        {
-          "id": "vidiots-trains-2026-04-19-4-30-pm",
-          "title": "Trains",
-          "date": "2026-04-19",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3889628/"
-        },
-        {
-          "id": "vidiots-shall-we-dance-2026-04-19-7-00-pm",
-          "title": "Shall We Dance?",
-          "date": "2026-04-19",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/3860608/"
-        },
-        {
-          "id": "vidiots-dead-lover-2026-04-19-7-30-pm",
-          "title": "Dead Lover",
-          "date": "2026-04-19",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/3889629/"
-        },
         {
           "id": "vidiots-dead-lover-2026-04-20-7-00-pm",
           "title": "Dead Lover",
@@ -1493,12 +1385,21 @@
           "link": "https://vidiotsfoundation.org/purchase/3865605/"
         },
         {
+          "id": "vidiots-jeff-parker-eta-ivtet-happy-today-2026-04-26-1-00-pm",
+          "title": "Jeff Parker - ETA IVtet - Happy Today",
+          "date": "2026-04-26",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "Showing in the MUBI Microcinema. Jeff Parker and band members in person.",
+          "link": "https://vidiotsfoundation.org/purchase/3941789/"
+        },
+        {
           "id": "vidiots-flight-of-the-navigator-2026-04-26-12-00-pm",
           "title": "Flight of the Navigator",
           "date": "2026-04-26",
           "time": "12:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle. Part of the “Films for Everyone” series.",
           "link": "https://vidiotsfoundation.org/purchase/3953318/"
         },
         {
@@ -1507,8 +1408,17 @@
           "date": "2026-04-26",
           "time": "2:45 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/3953317/"
+        },
+        {
+          "id": "vidiots-jeff-parker-eta-ivtet-happy-today-2026-04-26-3-30-pm",
+          "title": "Jeff Parker - ETA IVtet - Happy Today",
+          "date": "2026-04-26",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "Showing in the MUBI Microcinema. Jeff Parker and band members in person.",
+          "link": "https://vidiotsfoundation.org/purchase/3941790/"
         },
         {
           "id": "vidiots-numbskull-revolution-2026-04-26-7-00-pm",
@@ -1516,8 +1426,17 @@
           "date": "2026-04-26",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/3895058/"
+        },
+        {
+          "id": "vidiots-chungking-express-2026-04-27-7-30-pm",
+          "title": "Chungking Express",
+          "date": "2026-04-27",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4030080/"
         },
         {
           "id": "vidiots-the-young-girls-of-rochefort-2026-04-28-7-30-pm",
@@ -1745,6 +1664,24 @@
           "link": "https://vidiotsfoundation.org/purchase/4001200/"
         },
         {
+          "id": "vidiots-mad-bills-to-pay-or-destiny-dile-que-no-soy-malo-2026-05-08-8-00-pm",
+          "title": "Mad Bills to Pay (or Destiny, dile que no soy malo)",
+          "date": "2026-05-08",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4009780/"
+        },
+        {
+          "id": "vidiots-mad-bills-to-pay-or-destiny-dile-que-no-soy-malo-2026-05-09-10-00-pm",
+          "title": "Mad Bills to Pay (or Destiny, dile que no soy malo)",
+          "date": "2026-05-09",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4009803/"
+        },
+        {
           "id": "vidiots-popeye-2026-05-09-2-00-pm",
           "title": "Popeye",
           "date": "2026-05-09",
@@ -1752,6 +1689,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/3999509/"
+        },
+        {
+          "id": "vidiots-mad-bills-to-pay-or-destiny-dile-que-no-soy-malo-2026-05-09-7-15-pm",
+          "title": "Mad Bills to Pay (or Destiny, dile que no soy malo)",
+          "date": "2026-05-09",
+          "time": "7:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4009797/"
         },
         {
           "id": "vidiots-serpent-s-path-2026-05-09-9-45-pm",
@@ -2034,24 +1980,6 @@
       "color": "#8EBF8E",
       "screenings": [
         {
-          "id": "brain-dead-where-is-the-friend-s-house-2026-04-19-5-30-pm",
-          "title": "Where Is the Friend’s House?",
-          "date": "2026-04-19",
-          "time": "5:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://studios.wearebraindead.com/purchase/1273192/"
-        },
-        {
-          "id": "brain-dead-persepolis-2026-04-19-8-00-pm",
-          "title": "Persepolis",
-          "date": "2026-04-19",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://studios.wearebraindead.com/purchase/1273193/"
-        },
-        {
           "id": "brain-dead-we-direct-music-videos-volume-9-devont-hynes-2026-04-20-7-00-pm",
           "title": "We Direct Music Videos Volume 9: Devonté Hynes",
           "date": "2026-04-20",
@@ -2197,15 +2125,6 @@
       "color": "#8EA0CF",
       "screenings": [
         {
-          "id": "billy-wilder-black-pack-television-in-living-color-2026-04-19-7-00-pm",
-          "title": "Black Pack Television: In Living Color",
-          "date": "2026-04-19",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "In person: Introduction by Artel Great, associate professor, San Francisco State University School of Cinema, and author of The Black Pack: Comedy, Race, and Resistance. Q&A with Great.",
-          "link": "https://www.cinema.ucla.edu/events/black-pack-television-in-living-color-2026-04-19/"
-        },
-        {
           "id": "billy-wilder-the-cultural-politics-of-eddie-murphy-coming-to-america-2026-04-20-7-30-pm",
           "title": "The Cultural Politics of Eddie Murphy: Coming to America",
           "date": "2026-04-20",
@@ -2222,6 +2141,15 @@
           "format": "digital",
           "notes": "In person: Introduction by Artel Great, associate professor, San Francisco State University School of Cinema, and author of The Black Pack: Comedy, Race, and Resistance. Q&A with Great, The Five Heartbeats cast member Tico Wells and Scot Brown, associate professor, UCLA Department of History.",
           "link": "https://www.cinema.ucla.edu/events/harmony-and-hustle-the-five-heartbeats-2026-04-25/"
+        },
+        {
+          "id": "billy-wilder-the-last-laugh-harlem-nights-and-the-legacy-of-comedy-as-resistance-2026-04-26-7-00",
+          "title": "The Last Laugh: Harlem Nights and the Legacy of Comedy as Resistance",
+          "date": "2026-04-26",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "In person: Introduction by Artel Great, associate professor, San Francisco State University School of Cinema, and author of The Black Pack: Comedy, Race, and Resistance. Q&A with Great and photographer Bruce Talamon.",
+          "link": "https://www.cinema.ucla.edu/events/the-last-laugh-harlem-nights-and-the-legacy-of-comedy-as-resistance-2026-04-26/"
         }
       ]
     },
@@ -2281,15 +2209,6 @@
       "color": "#C8A8D9",
       "screenings": [
         {
-          "id": "laemmle-noho-bridesmaids-2026-04-19-7-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "15th anniversary.",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139772"
-        },
-        {
           "id": "laemmle-noho-bridesmaids-2026-04-20-7-00-pm",
           "title": "Bridesmaids",
           "date": "2026-04-20",
@@ -2333,6 +2252,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/139401"
+        },
+        {
+          "id": "laemmle-noho-something-casual-2026-04-26-10-00-am",
+          "title": "Something Casual",
+          "date": "2026-04-26",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/139402"
         }
       ]
     },
@@ -2344,42 +2272,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-titicut-follies-2026-04-19-1-00-pm",
-          "title": "Titicut Follies",
-          "date": "2026-04-19",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "Archival Q&A with filmmaker Frederick Wiseman. 'This Is Not a Fiction 2026' and 'Sunday Print Edition'.",
-          "link": "https://www.americancinematheque.com/now-showing/titicut-follies-4-19-26/"
-        },
-        {
-          "id": "los-feliz-3-robert-wilson-and-the-civil-wars-2026-04-19-10-00-pm",
-          "title": "Robert Wilson and the Civil Wars",
-          "date": "2026-04-19",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "West Coast Premiere of New Restoration. 'This Is Not a Fiction 2026'.",
-          "link": "https://www.americancinematheque.com/now-showing/robert-wilson-and-the-civil-wars-4-19-26/"
-        },
-        {
-          "id": "los-feliz-3-fire-at-sea-2026-04-19-4-00-pm",
-          "title": "Fire at Sea",
-          "date": "2026-04-19",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Gianfranco Rosi. Part of the “This Is Not a Fiction 2026” and “Gianfranco Rosi: An American Cinematheque Retrospective” series.",
-          "link": "https://www.americancinematheque.com/now-showing/fire-at-sea-04-19-2026/"
-        },
-        {
-          "id": "los-feliz-3-everybody-to-kenmure-street-2026-04-19-7-00-pm",
-          "title": "Everybody to Kenmure Street",
-          "date": "2026-04-19",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Felipe Bustos Sierra. West Coast Premiere. 'This Is Not a Fiction 2026'.",
-          "link": "https://www.americancinematheque.com/now-showing/everybody-to-kenmure-street-west-coast-premiere-04-19-2026/"
-        },
         {
           "id": "los-feliz-3-romer-a-2026-04-20-10-00-pm",
           "title": "RomeríA",
@@ -2523,6 +2415,42 @@
           "format": "digital",
           "notes": "Q&A with filmmakers Travis Wood and Alex Mallis. L.A. Premiere.",
           "link": "https://www.americancinematheque.com/now-showing/the-travel-companion-4-25-26/"
+        },
+        {
+          "id": "los-feliz-3-travis-wood-presents-the-seventh-seal-2026-04-26-1-00-pm",
+          "title": "Travis Wood Presents The Seventh Seal",
+          "date": "2026-04-26",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "Introduction by filmmaker Travis Wood. 'Sunday Print Edition'.",
+          "link": "https://www.americancinematheque.com/now-showing/travis-wood-presents-the-seventh-seal-4-26-26/"
+        },
+        {
+          "id": "los-feliz-3-the-sixth-sense-2026-04-26-10-00-pm",
+          "title": "The Sixth Sense",
+          "date": "2026-04-26",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "'Late Night, Late '90s'.",
+          "link": "https://www.americancinematheque.com/now-showing/the-sixth-sense-4-26-26/"
+        },
+        {
+          "id": "los-feliz-3-miroirs-no-3-2026-04-26-4-00-pm",
+          "title": "Miroirs No. 3",
+          "date": "2026-04-26",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.americancinematheque.com/now-showing/miroirs-no-3-4-26-26/"
+        },
+        {
+          "id": "los-feliz-3-the-seduction-of-mimi-2026-04-26-7-00-pm",
+          "title": "The Seduction of Mimi",
+          "date": "2026-04-26",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "New 4K Restoration.",
+          "link": "https://www.americancinematheque.com/now-showing/the-seduction-of-mimi-4-26-26/"
         }
       ]
     },
@@ -2535,21 +2463,12 @@
       "color": "#7AAED4",
       "screenings": [
         {
-          "id": "laemmle-royal-everyone-is-lying-to-you-for-money-2026-04-19-1-20-pm",
-          "title": "Everyone Is Lying to You for Money",
-          "date": "2026-04-19",
-          "time": "1:20 pm",
-          "format": "digital",
-          "notes": "Everyone is Lying to You for Money Q&As with writer/director Ben McKenzie following the 7:10 PM show on Saturday, 4/18 (moderated by Adam Brody) and after the 1:20 PM show on Sunday, 4/19 (moderated by Paul Walter Hauser) at the Royal.",
-          "link": "https://tickets.laemmle.com/ticketing/90/62901"
-        },
-        {
           "id": "laemmle-royal-everyone-is-lying-to-you-for-money-2026-04-20-4-30-pm",
           "title": "Everyone Is Lying to You for Money",
           "date": "2026-04-20",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "Everyone is Lying to You for Money Q&As with writer/director Ben McKenzie following the 7:10 PM show on Saturday, 4/18 (moderated by Adam Brody) and after the 1:20 PM show on Sunday, 4/19 (moderated by Paul Walter Hauser) at the Royal.",
+          "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/62906"
         },
         {
@@ -2567,7 +2486,7 @@
           "date": "2026-04-21",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "Everyone is Lying to You for Money Q&As with writer/director Ben McKenzie following the 7:10 PM show on Saturday, 4/18 (moderated by Adam Brody) and after the 1:20 PM show on Sunday, 4/19 (moderated by Paul Walter Hauser) at the Royal.",
+          "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/62907"
         },
         {
@@ -2576,7 +2495,7 @@
           "date": "2026-04-22",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "Everyone is Lying to You for Money Q&As with writer/director Ben McKenzie following the 7:10 PM show on Saturday, 4/18 (moderated by Adam Brody) and after the 1:20 PM show on Sunday, 4/19 (moderated by Paul Walter Hauser) at the Royal.",
+          "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/62912"
         },
         {
@@ -2594,7 +2513,7 @@
           "date": "2026-04-23",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "Everyone is Lying to You for Money Q&As with writer/director Ben McKenzie following the 7:10 PM show on Saturday, 4/18 (moderated by Adam Brody) and after the 1:20 PM show on Sunday, 4/19 (moderated by Paul Walter Hauser) at the Royal.",
+          "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/62913"
         },
         {
@@ -2635,13 +2554,13 @@
       "color": "#D4A0C4",
       "screenings": [
         {
-          "id": "2220-arts-la-filmforum-the-films-of-gordon-matta-clark-2026-04-19-1-00-pm",
-          "title": "LA Filmforum: The Films of Gordon Matta-Clark",
-          "date": "2026-04-19",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "In person: curators Jessamyn Fiore, Director of the Estate of Gordon Matta-Clark, and Dylan Adamson.",
-          "link": "https://dice.fm/event/k69gro-la-filmforum-the-films-of-gordon-matta-clark-19th-apr-2220-arts-archives-los-angeles-tickets"
+          "id": "2220-arts-filmforum-50-flaming-creatures-the-films-of-jack-smith-2026-04-26-7-30-pm",
+          "title": "Filmforum 50: Flaming Creatures — the Films of Jack Smith",
+          "date": "2026-04-26",
+          "time": "7:30 pm",
+          "format": "16mm",
+          "notes": "Mature subject matter (ages 18+ only). Five films, all screening in 16mm.",
+          "link": "https://dice.fm/event/g5aqpp-filmforum-50-flaming-creatures-the-films-of-jack-smith-26th-apr-2220-arts-archives-los-angeles-tickets"
         }
       ]
     },
@@ -2653,15 +2572,6 @@
       "url": "https://whammyanalog.com",
       "color": "#D9A090",
       "screenings": [
-        {
-          "id": "whammy-analog-secret-john-carpenter-screening-2026-04-19-8-00-pm",
-          "title": "Secret John Carpenter Screening",
-          "date": "2026-04-19",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.whammyanalog.com/events/secret-john-carpenter-screening"
-        },
         {
           "id": "whammy-analog-level-five-2026-04-22-8-00-pm",
           "title": "Level Five",
@@ -2699,33 +2609,6 @@
       "url": "https://lumieremusichall.com",
       "color": "#D4C890",
       "screenings": [
-        {
-          "id": "lumiere-cinema-in-her-words-2026-04-19-4-15-pm",
-          "title": "In Her Words",
-          "date": "2026-04-19",
-          "time": "4:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=69860"
-        },
-        {
-          "id": "lumiere-cinema-in-her-words-2026-04-19-6-15-pm",
-          "title": "In Her Words",
-          "date": "2026-04-19",
-          "time": "6:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=69861"
-        },
-        {
-          "id": "lumiere-cinema-in-her-words-2026-04-19-8-15-pm",
-          "title": "In Her Words",
-          "date": "2026-04-19",
-          "time": "8:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=69862"
-        },
         {
           "id": "lumiere-cinema-in-her-words-2026-04-20-4-15-pm",
           "title": "In Her Words",
@@ -2842,6 +2725,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://lumieretickets.com/purchase?showId=69874"
+        },
+        {
+          "id": "lumiere-cinema-broken-bird-2026-04-24-7-30-pm",
+          "title": "Broken Bird",
+          "date": "2026-04-24",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71084"
+        },
+        {
+          "id": "lumiere-cinema-ricky-2026-04-24-8-00-pm",
+          "title": "Ricky",
+          "date": "2026-04-24",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71089"
+        },
+        {
+          "id": "lumiere-cinema-dog-piracy-2026-04-26-2-30-pm",
+          "title": "Dog$Piracy",
+          "date": "2026-04-26",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=70880"
         }
       ]
     },
@@ -2862,24 +2772,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8C0D4",
       "screenings": [
-        {
-          "id": "laemmle-town-center-changing-lanes-2026-04-19-10-00-am",
-          "title": "Changing Lanes",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "Changing Lanes director director Ben Wolf will participate in a Q&A following the prime show on Thursday, April 16, at the Royal with special guest Jacob Wessel from the L.A. Metro's Office of Strategic Innovation; after the 10 AM show on Saturday, April 18, at the Glendale with special guest Andrew Wright from the California Bicycle Coalition; and after the 7 PM show on Monday, April 20, at the Monica Film Center with writer Alissa Walker and Santa Monica Mayor Caroline Torosis.",
-          "link": "https://tickets.laemmle.com/ticketing/86/74920"
-        },
-        {
-          "id": "laemmle-town-center-the-gardener-2026-04-19-4-15-pm",
-          "title": "The Gardener",
-          "date": "2026-04-19",
-          "time": "4:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/75428"
-        },
         {
           "id": "laemmle-town-center-the-gardener-2026-04-20-4-15-pm",
           "title": "The Gardener",
@@ -2942,6 +2834,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/86/74916"
+        },
+        {
+          "id": "laemmle-town-center-lumiere-le-cinema-2026-04-26-10-00-am",
+          "title": "Lumiere, le Cinema",
+          "date": "2026-04-26",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/74917"
         }
       ]
     },
@@ -2963,11 +2864,56 @@
       "color": "#90C4A8",
       "screenings": [
         {
+          "id": "art-theatre-steal-this-story-please-2026-04-20-1-30-pm",
+          "title": "Steal This Story, Please!",
+          "date": "2026-04-20",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
           "id": "art-theatre-cheech-y-chong-s-up-in-smoke-on-16mm-2026-04-20-4-20-pm",
           "title": "Cheech y Chong’s Up in Smoke on 16mm",
           "date": "2026-04-20",
           "time": "4:20 pm",
           "format": "16mm",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-steal-this-story-please-2026-04-20-7-00-pm",
+          "title": "Steal This Story, Please!",
+          "date": "2026-04-20",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-steal-this-story-please-2026-04-21-1-30-pm",
+          "title": "Steal This Story, Please!",
+          "date": "2026-04-21",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-steal-this-story-please-2026-04-21-4-15-pm",
+          "title": "Steal This Story, Please!",
+          "date": "2026-04-21",
+          "time": "4:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-steal-this-story-please-2026-04-22-1-30-pm",
+          "title": "Steal This Story, Please!",
+          "date": "2026-04-22",
+          "time": "1:30 pm",
+          "format": "digital",
           "notes": "",
           "link": "https://arttheatre.easy-ware-ticketing.com/events"
         },
@@ -3024,6 +2970,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-the-architecture-of-doom-2026-04-26-11-00-am",
+          "title": "The Architecture of Doom",
+          "date": "2026-04-26",
+          "time": "11:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-metropolis-live-score-by-cliff-retallick-2026-04-26-2-00-pm",
+          "title": "Metropolis + Live Score by Cliff Retallick",
+          "date": "2026-04-26",
+          "time": "2:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-california-scenario-panel-discussion-with-filmmaking-team-2026-04-26-6-30-pm",
+          "title": "California Scenario + Panel Discussion with Filmmaking Team!",
+          "date": "2026-04-26",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
         }
       ]
     },
@@ -3035,33 +3008,6 @@
       "url": "https://www.fineartstheatrebh.com",
       "color": "#D4C4A0",
       "screenings": [
-        {
-          "id": "fine-arts-bh-batman-the-movie-1966-2026-04-19-12-30-pm",
-          "title": "Batman: The Movie (1966)",
-          "date": "2026-04-19",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": ".89¢ anniversary admissions!",
-          "link": "https://ticketing.uswest.veezi.com/purchase/73?siteToken=tez3prscsvfbagchhkxbevjwk8"
-        },
-        {
-          "id": "fine-arts-bh-the-great-race-2026-04-19-3-45-pm",
-          "title": "The Great Race",
-          "date": "2026-04-19",
-          "time": "3:45 pm",
-          "format": "digital",
-          "notes": ".89¢ anniversary admissions!",
-          "link": "https://ticketing.uswest.veezi.com/purchase/74?siteToken=tez3prscsvfbagchhkxbevjwk8"
-        },
-        {
-          "id": "fine-arts-bh-fine-arts-anniversary-rob-reiner-double-feature-the-princess-bride-misery-2026-04-1",
-          "title": "Fine Arts Anniversary Rob Reiner Double Feature: The Princess Bride / Misery",
-          "date": "2026-04-19",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "Fine Arts 89th anniversary special! $1.78 anniversary admissions!",
-          "link": "https://ticketing.uswest.veezi.com/purchase/87?siteToken=tez3prscsvfbagchhkxbevjwk8"
-        },
         {
           "id": "fine-arts-bh-wednesday-with-welles-the-lady-from-shanghai-2026-04-22-7-30-pm",
           "title": "Wednesday with Welles: The Lady From Shanghai",
@@ -3079,6 +3025,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://www.eventbrite.com/e/start-let-the-bullets-fly-los-angeles-tickets-1985477027236"
+        },
+        {
+          "id": "fine-arts-bh-rock-is-dead-2026-04-26-7-30-pm",
+          "title": "Rock Is Dead",
+          "date": "2026-04-26",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/115?siteToken=tez3prscsvfbagchhkxbevjwk8"
         }
       ]
     },
@@ -3090,42 +3045,6 @@
       "url": "https://elcapitantheatre.com",
       "color": "#D4A0A0",
       "screenings": [
-        {
-          "id": "el-capitan-rogue-one-a-star-wars-story-2026-04-19-1-30-pm",
-          "title": "Rogue One a Star Wars Story",
-          "date": "2026-04-19",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/rogue-one-a-star-wars-story"
-        },
-        {
-          "id": "el-capitan-rogue-one-a-star-wars-story-2026-04-19-10-00-am",
-          "title": "Rogue One a Star Wars Story",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/rogue-one-a-star-wars-story"
-        },
-        {
-          "id": "el-capitan-rogue-one-a-star-wars-story-2026-04-19-5-00-pm",
-          "title": "Rogue One a Star Wars Story",
-          "date": "2026-04-19",
-          "time": "5:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/rogue-one-a-star-wars-story"
-        },
-        {
-          "id": "el-capitan-rogue-one-a-star-wars-story-2026-04-19-8-30-pm",
-          "title": "Rogue One a Star Wars Story",
-          "date": "2026-04-19",
-          "time": "8:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/rogue-one-a-star-wars-story"
-        },
         {
           "id": "el-capitan-rogue-one-a-star-wars-story-2026-04-20-1-30-pm",
           "title": "Rogue One a Star Wars Story",
@@ -3341,6 +3260,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://elcapitantheatre.com/showings/star-wars-the-force-awakens"
+        },
+        {
+          "id": "el-capitan-star-wars-vii-the-force-awakens-2026-04-26-1-30-pm",
+          "title": "Star Wars VII: The Force Awakens",
+          "date": "2026-04-26",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/star-wars-the-force-awakens"
+        },
+        {
+          "id": "el-capitan-star-wars-vii-the-force-awakens-2026-04-26-10-00-am",
+          "title": "Star Wars VII: The Force Awakens",
+          "date": "2026-04-26",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/star-wars-the-force-awakens"
+        },
+        {
+          "id": "el-capitan-star-wars-vii-the-force-awakens-2026-04-26-5-00-pm",
+          "title": "Star Wars VII: The Force Awakens",
+          "date": "2026-04-26",
+          "time": "5:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/star-wars-the-force-awakens"
+        },
+        {
+          "id": "el-capitan-star-wars-vii-the-force-awakens-2026-04-26-8-30-pm",
+          "title": "Star Wars VII: The Force Awakens",
+          "date": "2026-04-26",
+          "time": "8:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/star-wars-the-force-awakens"
         }
       ]
     },
@@ -3352,33 +3307,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A0CFB4",
       "screenings": [
-        {
-          "id": "laemmle-glendale-changing-lanes-2026-04-19-10-00-am",
-          "title": "Changing Lanes",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "Changing Lanes director director Ben Wolf will participate in a Q&A following the prime show on Thursday, April 16, at the Royal with special guest Jacob Wessel from the L.A. Metro's Office of Strategic Innovation; after the 10 AM show on Saturday, April 18, at the Glendale with special guest Andrew Wright from the California Bicycle Coalition; and after the 7 PM show on Monday, April 20, at the Monica Film Center with writer Alissa Walker and Santa Monica Mayor Caroline Torosis.",
-          "link": "https://tickets.laemmle.com/ticketing/325402/56631"
-        },
-        {
-          "id": "laemmle-glendale-living-the-land-2026-04-19-10-00-am",
-          "title": "Living the Land",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57318"
-        },
-        {
-          "id": "laemmle-glendale-living-the-land-2026-04-19-4-00-pm",
-          "title": "Living the Land",
-          "date": "2026-04-19",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57319"
-        },
         {
           "id": "laemmle-glendale-living-the-land-2026-04-20-4-00-pm",
           "title": "Living the Land",
@@ -3495,6 +3423,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/325402/57258"
+        },
+        {
+          "id": "laemmle-glendale-eraserheads-combo-on-the-run-2026-04-26-1-10-pm",
+          "title": "Eraserheads: Combo on the Run",
+          "date": "2026-04-26",
+          "time": "1:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57259"
+        },
+        {
+          "id": "laemmle-glendale-lumiere-le-cinema-2026-04-26-10-00-am",
+          "title": "Lumiere, le Cinema",
+          "date": "2026-04-26",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/56634"
+        },
+        {
+          "id": "laemmle-glendale-american-solitaire-2026-04-26-5-00-pm",
+          "title": "American Solitaire",
+          "date": "2026-04-26",
+          "time": "5:00 pm",
+          "format": "digital",
+          "notes": "American Solitaire writer-director Aaron Davidman will participate in Q&As following the 7:00 PM show on Thursday, April 23, at the Noho 7 and on Monday, 4/27, at the Royal, where actor Gilbert Owuor will join him.",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57146"
+        },
+        {
+          "id": "laemmle-glendale-eraserheads-combo-on-the-run-2026-04-26-7-30-pm",
+          "title": "Eraserheads: Combo on the Run",
+          "date": "2026-04-26",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57260"
         }
       ]
     },
@@ -3506,60 +3470,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8B8D4",
       "screenings": [
-        {
-          "id": "laemmle-monica-mile-end-kicks-2026-04-19-1-30-pm",
-          "title": "Mile End Kicks",
-          "date": "2026-04-19",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89135"
-        },
-        {
-          "id": "laemmle-monica-changing-lanes-2026-04-19-10-00-am",
-          "title": "Changing Lanes",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "Changing Lanes director director Ben Wolf will participate in a Q&A following the prime show on Thursday, April 16, at the Royal with special guest Jacob Wessel from the L.A. Metro's Office of Strategic Innovation; after the 10 AM show on Saturday, April 18, at the Glendale with special guest Andrew Wright from the California Bicycle Coalition; and after the 7 PM show on Monday, April 20, at the Monica Film Center with writer Alissa Walker and Santa Monica Mayor Caroline Torosis.",
-          "link": "https://tickets.laemmle.com/ticketing/57796/87398"
-        },
-        {
-          "id": "laemmle-monica-fantasy-life-2026-04-19-10-10-am",
-          "title": "Fantasy Life",
-          "date": "2026-04-19",
-          "time": "10:10 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89480"
-        },
-        {
-          "id": "laemmle-monica-palestine-36-2026-04-19-10-20-am",
-          "title": "Palestine 36",
-          "date": "2026-04-19",
-          "time": "10:20 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89477"
-        },
-        {
-          "id": "laemmle-monica-mile-end-kicks-2026-04-19-4-30-pm",
-          "title": "Mile End Kicks",
-          "date": "2026-04-19",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89136"
-        },
-        {
-          "id": "laemmle-monica-mile-end-kicks-2026-04-19-7-30-pm",
-          "title": "Mile End Kicks",
-          "date": "2026-04-19",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89137"
-        },
         {
           "id": "laemmle-monica-mile-end-kicks-2026-04-20-1-30-pm",
           "title": "Mile End Kicks",
@@ -3721,6 +3631,33 @@
           "format": "digital",
           "notes": "Kangaroo Island director Timothy David participate in a Q&A following the 7:10 PM show on Friday, 4/24 at the Monica Film Center.",
           "link": "https://tickets.laemmle.com/ticketing/57796/88363"
+        },
+        {
+          "id": "laemmle-monica-kangaroo-island-2026-04-26-1-20-pm",
+          "title": "Kangaroo Island",
+          "date": "2026-04-26",
+          "time": "1:20 pm",
+          "format": "digital",
+          "notes": "Kangaroo Island director Timothy David participate in a Q&A following the 7:10 PM show on Friday, 4/24 at the Monica Film Center.",
+          "link": "https://tickets.laemmle.com/ticketing/57796/88365"
+        },
+        {
+          "id": "laemmle-monica-lumiere-le-cinema-2026-04-26-10-00-am",
+          "title": "Lumiere, le Cinema",
+          "date": "2026-04-26",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/88712"
+        },
+        {
+          "id": "laemmle-monica-kangaroo-island-2026-04-26-7-10-pm",
+          "title": "Kangaroo Island",
+          "date": "2026-04-26",
+          "time": "7:10 pm",
+          "format": "digital",
+          "notes": "Kangaroo Island director Timothy David participate in a Q&A following the 7:10 PM show on Friday, 4/24 at the Monica Film Center.",
+          "link": "https://tickets.laemmle.com/ticketing/57796/88369"
         }
       ]
     },
@@ -3732,24 +3669,6 @@
       "url": "https://rooftopcinemaclub.com/los-angeles",
       "color": "#C4D490",
       "screenings": [
-        {
-          "id": "rooftop-cinema-la-la-land-2026-04-19-10-30-pm",
-          "title": "La La Land",
-          "date": "2026-04-19",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/screenings/psycho-1960-22198"
-        },
-        {
-          "id": "rooftop-cinema-psycho-1960-2026-04-19-7-55-pm",
-          "title": "Psycho (1960)",
-          "date": "2026-04-19",
-          "time": "7:55 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/screenings/psycho-1960-20177"
-        },
         {
           "id": "rooftop-cinema-twilight-2026-04-20-8-00-pm",
           "title": "Twilight",
@@ -3830,6 +3749,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/us/screenings/la-la-land-20186"
+        },
+        {
+          "id": "rooftop-cinema-500-days-of-summer-2026-04-26-11-15-pm",
+          "title": "500 Days of Summer",
+          "date": "2026-04-26",
+          "time": "11:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/us/screenings/500-days-of-summer-22116"
+        },
+        {
+          "id": "rooftop-cinema-the-housemaid-2026-04-26-8-05-pm",
+          "title": "The Housemaid",
+          "date": "2026-04-26",
+          "time": "8:05 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/us/screenings/the-housemaid-20188"
         }
       ]
     },
@@ -3841,24 +3778,6 @@
       "url": "https://www.theculvertheater.com",
       "color": "#B8A0D4",
       "screenings": [
-        {
-          "id": "culver-theater-sunday-matinee-a-league-of-their-own-2026-04-19-2-00-pm",
-          "title": "Sunday Matinee: A League of Their Own",
-          "date": "2026-04-19",
-          "time": "2:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://web.theculvertheater.com/order/showtimes/1001-39193/seats"
-        },
-        {
-          "id": "culver-theater-alula-ff-ashes-of-time-redux-the-eagle-shooting-heroes-2026-04-19-5-00-pm",
-          "title": "Alula FF: Ashes of Time Redux / The Eagle Shooting Heroes",
-          "date": "2026-04-19",
-          "time": "5:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://web.theculvertheater.com/order/showtimes/1001-42447/tickets"
-        },
         {
           "id": "culver-theater-movie-mad-mondays-the-master-2026-04-20-7-00-pm",
           "title": "Movie-Mad Mondays: The Master",
@@ -3896,69 +3815,6 @@
       "url": "https://www.thefridacinema.org",
       "color": "#D4908A",
       "screenings": [
-        {
-          "id": "frida-cinema-four-rational-people-presented-by-segerstrom-center-for-the-arts-2026-04-19-1-00-pm",
-          "title": "Four Rational People: Presented by Segerstrom Center for the Arts",
-          "date": "2026-04-19",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1451712/"
-        },
-        {
-          "id": "frida-cinema-casablanca-2026-04-19-12-30-pm",
-          "title": "Casablanca",
-          "date": "2026-04-19",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1504410/"
-        },
-        {
-          "id": "frida-cinema-casablanca-2026-04-19-3-00-pm",
-          "title": "Casablanca",
-          "date": "2026-04-19",
-          "time": "3:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1504411/"
-        },
-        {
-          "id": "frida-cinema-selena-2026-04-19-4-00-pm",
-          "title": "Selena",
-          "date": "2026-04-19",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1498246/"
-        },
-        {
-          "id": "frida-cinema-kiki-s-delivery-service-dubbed-2026-04-19-5-30-pm",
-          "title": "Kiki’s Delivery Service (Dubbed)",
-          "date": "2026-04-19",
-          "time": "5:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1555853/"
-        },
-        {
-          "id": "frida-cinema-up-in-smoke-presented-by-see-it-on-16mm-2026-04-19-7-30-pm",
-          "title": "Up in Smoke: Presented by See It on 16mm",
-          "date": "2026-04-19",
-          "time": "7:30 pm",
-          "format": "16mm",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1501330/"
-        },
-        {
-          "id": "frida-cinema-smiley-face-2026-04-19-8-00-pm",
-          "title": "Smiley Face",
-          "date": "2026-04-19",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1498253/"
-        },
         {
           "id": "frida-cinema-scooby-doo-scooby-doo-2-monsters-unleashed-double-feature-presented-by-caffeinated-",
           "title": "Scooby-Doo + Scooby-Doo 2: Monsters Unleashed Double Feature: Presented by Caffeinated Coven Co.",
@@ -4336,6 +4192,51 @@
           "format": "digital",
           "notes": "",
           "link": "https://thefridacinema.org/purchase/1266925/"
+        },
+        {
+          "id": "frida-cinema-labyrinth-2026-04-26-12-30-pm",
+          "title": "Labyrinth",
+          "date": "2026-04-26",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1501339/"
+        },
+        {
+          "id": "frida-cinema-the-maltese-falcon-2026-04-26-12-45-pm",
+          "title": "The Maltese Falcon",
+          "date": "2026-04-26",
+          "time": "12:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1504417/"
+        },
+        {
+          "id": "frida-cinema-cool-hand-luke-2026-04-26-3-00-pm",
+          "title": "Cool Hand Luke",
+          "date": "2026-04-26",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1501370/"
+        },
+        {
+          "id": "frida-cinema-secrets-lies-2026-04-26-4-00-pm",
+          "title": "Secrets & Lies",
+          "date": "2026-04-26",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1537279/"
+        },
+        {
+          "id": "frida-cinema-star-wars-the-last-jedi-presented-by-the-hunt-for-ben-solo-fan-campaign-2026-04-26-",
+          "title": "Star Wars: The Last Jedi: Presented by the Hunt for Ben Solo Fan Campaign",
+          "date": "2026-04-26",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1481836/"
         }
       ]
     },
@@ -4356,24 +4257,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/amc-century-city-15",
       "color": "#E31937",
       "screenings": [
-        {
-          "id": "amc-century-city-ferris-bueller-s-day-off-2026-04-19-10-30-am",
-          "title": "Ferris Bueller’s Day Off",
-          "date": "2026-04-19",
-          "time": "10:30 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/centurycity/all/142315359"
-        },
-        {
-          "id": "amc-century-city-bridesmaids-2026-04-19-6-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/centurycity/all/141511267"
-        },
         {
           "id": "amc-century-city-ferris-bueller-s-day-off-2026-04-20-3-45-pm",
           "title": "Ferris Bueller’s Day Off",
@@ -4439,15 +4322,6 @@
       "color": "#B50D28",
       "screenings": [
         {
-          "id": "amc-burbank-bridesmaids-2026-04-19-6-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/burbank/all/141511247"
-        },
-        {
           "id": "amc-burbank-bridesmaids-2026-04-21-4-00-pm",
           "title": "Bridesmaids",
           "date": "2026-04-21",
@@ -4482,6 +4356,24 @@
           "format": "digital",
           "notes": "45th anniversary.",
           "link": "https://www.amctheatres.com/showtimes/all/2026-04-24/burbank/all/141853919"
+        },
+        {
+          "id": "amc-burbank-the-silence-of-the-lambs-2026-04-26-4-00-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/burbank/all/140482142"
+        },
+        {
+          "id": "amc-burbank-the-silence-of-the-lambs-2026-04-26-6-25-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "6:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/burbank/all/142503038"
         }
       ]
     },
@@ -4493,24 +4385,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/amc-rolling-hills-20",
       "color": "#C41230",
       "screenings": [
-        {
-          "id": "amc-rolling-hills-ferris-bueller-s-day-off-2026-04-19-3-00-pm",
-          "title": "Ferris Bueller’s Day Off",
-          "date": "2026-04-19",
-          "time": "3:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/rollinghills/all/142377984"
-        },
-        {
-          "id": "amc-rolling-hills-bridesmaids-2026-04-19-6-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/rollinghills/all/141511263"
-        },
         {
           "id": "amc-rolling-hills-ferris-bueller-s-day-off-2026-04-20-12-40-pm",
           "title": "Ferris Bueller’s Day Off",
@@ -4564,6 +4438,15 @@
           "format": "digital",
           "notes": "45th anniversary.",
           "link": "https://www.amctheatres.com/showtimes/all/2026-04-24/rollinghills/all/141854070"
+        },
+        {
+          "id": "amc-rolling-hills-the-silence-of-the-lambs-2026-04-26-4-00-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/rollinghills/all/140482219"
         }
       ]
     },
@@ -4575,24 +4458,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/amc-the-americana-at-brand-18",
       "color": "#D42039",
       "screenings": [
-        {
-          "id": "amc-americana-ferris-bueller-s-day-off-2026-04-19-3-15-pm",
-          "title": "Ferris Bueller’s Day Off",
-          "date": "2026-04-19",
-          "time": "3:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/AMCTheAmericanaatBrand18/all/142313161"
-        },
-        {
-          "id": "amc-americana-bridesmaids-2026-04-19-6-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/AMCTheAmericanaatBrand18/all/141513556"
-        },
         {
           "id": "amc-americana-ferris-bueller-s-day-off-2026-04-20-12-20-pm",
           "title": "Ferris Bueller’s Day Off",
@@ -4655,6 +4520,24 @@
           "format": "digital",
           "notes": "45th anniversary.",
           "link": "https://www.amctheatres.com/showtimes/all/2026-04-24/AMCTheAmericanaatBrand18/all/141854007"
+        },
+        {
+          "id": "amc-americana-the-silence-of-the-lambs-2026-04-26-1-00-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/AMCTheAmericanaatBrand18/all/142150640"
+        },
+        {
+          "id": "amc-americana-the-silence-of-the-lambs-2026-04-26-4-00-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/AMCTheAmericanaatBrand18/all/140483611"
         }
       ]
     },
@@ -4666,51 +4549,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-amc-at-citywalk-hollywood",
       "color": "#A8102A",
       "screenings": [
-        {
-          "id": "amc-citywalk-bridesmaids-2026-04-19-1-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/citywalk/all/142450916"
-        },
-        {
-          "id": "amc-citywalk-ferris-bueller-s-day-off-2026-04-19-1-45-pm",
-          "title": "Ferris Bueller’s Day Off",
-          "date": "2026-04-19",
-          "time": "1:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/citywalk/all/142021155"
-        },
-        {
-          "id": "amc-citywalk-bridesmaids-2026-04-19-10-00-am",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/citywalk/all/142450915"
-        },
-        {
-          "id": "amc-citywalk-ferris-bueller-s-day-off-2026-04-19-11-00-am",
-          "title": "Ferris Bueller’s Day Off",
-          "date": "2026-04-19",
-          "time": "11:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/citywalk/all/142450571"
-        },
-        {
-          "id": "amc-citywalk-bridesmaids-2026-04-19-6-00-pm",
-          "title": "Bridesmaids",
-          "date": "2026-04-19",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-04-19/citywalk/all/141511735"
-        },
         {
           "id": "amc-citywalk-ferris-bueller-s-day-off-2026-04-20-1-00-pm",
           "title": "Ferris Bueller’s Day Off",
@@ -4791,30 +4629,29 @@
           "format": "digital",
           "notes": "45th anniversary.",
           "link": "https://www.amctheatres.com/showtimes/all/2026-04-24/citywalk/all/141853994"
+        },
+        {
+          "id": "amc-citywalk-the-silence-of-the-lambs-2026-04-26-1-00-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/citywalk/all/142236565"
+        },
+        {
+          "id": "amc-citywalk-the-silence-of-the-lambs-2026-04-26-4-00-pm",
+          "title": "The Silence of the Lambs",
+          "date": "2026-04-26",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-04-26/citywalk/all/140485443"
         }
       ]
     }
   ],
   "films": {
-    "romancing-the-stone": {
-      "director": "Robert Zemeckis",
-      "year": 1984,
-      "runtime": 106,
-      "posterPath": "/qaCLbDs6Ace4I1lAbBNWPQAm75h.jpg",
-      "overview": "Though she can spin wild tales of passionate romance, novelist Joan Wilder has no life of her own. Then one day adventure comes her way in the form of a mysterious package. It turns out that the parce",
-      "rating": 6.762,
-      "rottenTomatoes": 86,
-      "imdbId": "tt0088011",
-      "letterboxd": 3.38
-    },
-    "penrod-and-sam-1923-silent-with-live-music-score-brand-new-35mm-print": {
-      "director": "William Beaudine",
-      "year": 1923,
-      "runtime": 84,
-      "posterPath": "/4s0XubUe3tFS2NFWICn6a76hYqE.jpg",
-      "overview": "Penrod and his gang don't want to let neighborhood \"goodie-goodie\" Georgie Bassett into their club, but Penrod's father pressures him to allow the boy in because his parents are wealthy and prominent ",
-      "rating": 6.2
-    },
     "detective-kitty-o-day-bowery-champs": {
       "director": "William Beaudine",
       "year": 1944,
@@ -4845,7 +4682,7 @@
       "runtime": 99,
       "posterPath": "/xi8Iu6qyTfyZVDVy60raIOYJJmk.jpg",
       "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic ",
-      "rating": 8.116,
+      "rating": 8.115,
       "rottenTomatoes": 90,
       "imdbId": "tt0105236",
       "letterboxd": 4.14
@@ -4873,22 +4710,13 @@
       "imdbId": "tt0082971",
       "letterboxd": 4.15
     },
-    "high-society-1955": {
+    "high-society-1955-pride-of-the-blue-grass-1954": {
       "director": "William Beaudine",
       "year": 1955,
       "runtime": 61,
       "posterPath": "/1xhE49JHAhhNqPlPqSACJevRQDx.jpg",
       "overview": "Sach receives news that he is the heir to the Terwilliger Debussy Jones fortune. Accompanied by his pal Slip, he arrives at the Jones mansion to review the legal papers needed for him to claim his new",
-      "rating": 5,
-      "letterboxd": 3.45
-    },
-    "pride-of-the-blue-grass-1954": {
-      "director": "William Beaudine",
-      "year": 1954,
-      "runtime": 71,
-      "posterPath": "/8h6MiHDhu6uwf58uvq8MotzKWOL.jpg",
-      "overview": "A girl owns a horse, and hires a boy as a trainer. The horse enters a race and is injured. The boy takes job at another stable and is semi-seduced by the stable siren. The girl finally rehabilitates t",
-      "rating": 0
+      "rating": 5
     },
     "bela-lugosi-meets-a-brooklyn-gorilla": {
       "director": "William Beaudine",
@@ -4945,20 +4773,9 @@
       "runtime": 90,
       "posterPath": "/dHP7nurzOYGHNcNK1O4naVzsGCv.jpg",
       "overview": "Interim sheriff Ulysses, called to the snowbound town of Normal, MN, uncovers an international criminal conspiracy at the heart of the seemingly quaint whistle-stop when he comes to the aid of a bank-",
-      "rating": 7.25,
+      "rating": 7.2,
       "rottenTomatoes": 83,
       "imdbId": "tt31195136"
-    },
-    "the-ghost-and-mr-chicken": {
-      "director": "Alan Rafkin",
-      "year": 1966,
-      "runtime": 90,
-      "posterPath": "/AomOgoN5kmVtMWWMKVeTPT8nVOE.jpg",
-      "overview": "Luther Heggs, a typesetter for the town newspaper, pitches an idea for a story about a local haunted house where a famous murder/suicide occurred 20 years earlier. After the editor assigns Luther to s",
-      "rating": 6.724,
-      "rottenTomatoes": 67,
-      "imdbId": "tt0059221",
-      "letterboxd": 3.38
     },
     "bowery-champs-gas-house-kids-go-west": {
       "director": "William Beaudine",
@@ -5022,31 +4839,13 @@
       "overview": "Old Mr. Cohen (Paul Graetz) simply walks away from his London department store, leaving his sons to run it.",
       "rating": 6.5
     },
-    "one-wonderful-sunday-subarashiki-nichiyobi-in-35mm": {
-      "director": "Akira Kurosawa",
-      "year": 1947,
-      "runtime": 108,
-      "posterPath": "/2JADvAzmEiLaYqnw8eZVOp88q5j.jpg",
-      "overview": "Two broke sweethearts wander war-scarred Tokyo on a single Sunday, stretching 35 yen as they chase housing, small pleasures, and a little hope.",
-      "rating": 7.2,
-      "letterboxd": 3.78
-    },
-    "the-lower-depths-donzoko-in-35mm": {
-      "director": "Akira Kurosawa",
-      "year": 1957,
-      "runtime": 125,
-      "posterPath": "/hhvK59WDqMzjv5Vm9bPA1xtP0kv.jpg",
-      "overview": "Residents of a rundown boardinghouse in 19th-century Japan, including a mysterious old man and an aging actor, get drawn into a love triangle that turns violent. When amoral thief Sutekichi breaks off",
-      "rating": 7.1,
-      "letterboxd": 3.61
-    },
     "the-warriors": {
       "director": "Walter Hill",
       "year": 1979,
       "runtime": 94,
       "posterPath": "/d6YZpBq4BhQr1K985J3CuL1cA8J.jpg",
       "overview": "Prominent gang leader Cyrus calls a meeting of New York's gangs to set aside their turf wars and take over the city. At the meeting, a rival leader kills Cyrus, but a Coney Island gang called the Warr",
-      "rating": 7.666,
+      "rating": 7.665,
       "rottenTomatoes": 88,
       "letterboxd": 3.8,
       "reviews": [
@@ -5095,27 +4894,13 @@
       "overview": "Documentary made by Toho for the Masterworks reissue of all of its Kurosawa films. This one focuses on \"The Bad Sleep Well\" (1960).",
       "rating": 0
     },
-    "face-off": {
-      "director": "John Woo",
-      "year": 1997,
-      "runtime": 139,
-      "posterPath": "/69Xzn8UdPbVnmqSChKz2RTpoNfB.jpg",
-      "overview": "In order to foil a terrorist plot, an FBI agent undergoes facial transplant surgery and assumes the identity of a criminal mastermind. The plan turns sour when the criminal wakes up prematurely and se",
-      "rating": 7.051,
-      "rottenTomatoes": 93,
-      "imdbId": "tt0119094",
-      "letterboxd": 3.57
-    },
-    "bridesmaids": {
-      "director": "Paul Feig",
-      "year": 2011,
-      "runtime": 125,
-      "posterPath": "/gJtA7hYsBMQ7EM3sPBMUdBfU7a0.jpg",
-      "overview": "Annie's life is a mess. But when she finds out her lifetime best friend is engaged, she simply must serve as Lillian's maid of honor. Though lovelorn and broke, Annie bluffs her way through the expens",
-      "rating": 6.5,
-      "rottenTomatoes": 89,
-      "imdbId": "tt1478338",
-      "letterboxd": 3.43
+    "ordinary-people-in-35mm": {
+      "director": "Jennifer Rutherford",
+      "year": 2002,
+      "runtime": 55,
+      "posterPath": "/uvgJx1590X2DCsw0gNOgkWHQUzP.jpg",
+      "overview": "Far right and anti-immigration politics have been on the rise worldwide. In Australia, as in many other western countries, as Ordinary People was filming, a new political force began drawing on the di",
+      "rating": 8.5
     },
     "the-big-lebowski": {
       "director": "Joel Coen",
@@ -5123,7 +4908,7 @@
       "runtime": 117,
       "posterPath": "/3bv6WAp6BSxxYvB5ozKFUYuRA8C.jpg",
       "overview": "Jeffrey 'The Dude' Lebowski, a Los Angeles slacker who only wants to bowl and drink White Russians, is mistaken for another Jeffrey Lebowski, a wheelchair-bound millionaire, and finds himself dragged ",
-      "rating": 7.84,
+      "rating": 7.841,
       "rottenTomatoes": 79,
       "imdbId": "tt0118715",
       "letterboxd": 4.11
@@ -5134,7 +4919,7 @@
       "runtime": 137,
       "posterPath": "/rUSjbyvYWN9H4az8xt0tDtU7I6v.jpg",
       "overview": "Freddie, a volatile, heavy-drinking veteran who suffers from post-traumatic stress disorder, finds some semblance of a family when he stumbles onto the ship of Lancaster Dodd, the charismatic leader o",
-      "rating": 7.103,
+      "rating": 7.101,
       "imdbId": "tt27701660",
       "letterboxd": 3.98
     },
@@ -5147,6 +4932,17 @@
       "rating": 5.1,
       "imdbId": "tt1941536",
       "letterboxd": 3.81
+    },
+    "face-off": {
+      "director": "John Woo",
+      "year": 1997,
+      "runtime": 139,
+      "posterPath": "/69Xzn8UdPbVnmqSChKz2RTpoNfB.jpg",
+      "overview": "In order to foil a terrorist plot, an FBI agent undergoes facial transplant surgery and assumes the identity of a criminal mastermind. The plan turns sour when the criminal wakes up prematurely and se",
+      "rating": 7.053,
+      "rottenTomatoes": 93,
+      "imdbId": "tt0119094",
+      "letterboxd": 3.57
     },
     "hokum-sold-out": {
       "director": "Damian McCarthy",
@@ -5210,14 +5006,13 @@
       "overview": "This feature-length “mixtape” curated by Jane Schoenbrun and Jordan Wippell reintroduces a stunning body of work by Kati Kelli, an outsider YouTube artist who ran “Girl Internet Show” before her passi",
       "rating": 2
     },
-    "in-the-bathtub-of-the-world-i-am-a-sex-addict": {
-      "director": "Caveh Zahedi",
-      "year": 2001,
-      "runtime": 73,
-      "posterPath": "/m6mgFixa4V5N8ylLDSZ4QcZ2wjb.jpg",
-      "overview": "On January 1st, 1999, Caveh Zahedi started a one-year video diary. The idea was to shoot one minute each day. This is the result.",
-      "rating": 5.5,
-      "letterboxd": 3.7
+    "terror-of-mechagodzilla-sold-out": {
+      "director": "Ishirō Honda",
+      "year": 1975,
+      "runtime": 83,
+      "posterPath": "/kHBJNwdxTJ4ub01bWg6WFpS3WF2.jpg",
+      "overview": "A submarine expedition to salvage the remains of Mechagodzilla is thwarted by a massive dinosaur named Titanosaurus. An Interpol investigation leads biologist Ichinose to uncover the work of Dr. Mafun",
+      "rating": 6.81
     },
     "all-is-lost": {
       "director": "J.C. Chandor",
@@ -5269,7 +5064,7 @@
       "runtime": 103,
       "posterPath": "/jxjLpZseFdzMBvGfTscTTpM94Yk.jpg",
       "overview": "A group of settlers traveling through the Oregon High Desert in 1845 find themselves stranded in harsh conditions.",
-      "rating": 6.5,
+      "rating": 6.487,
       "imdbId": "tt2304963",
       "letterboxd": 3.72
     },
@@ -5305,27 +5100,21 @@
       "overview": "After his family is slain by the notorious bandit Gabbar Singh, former Inspector Thakur Baldev Singh enlists low-level outlaws Jai and Veeru to capture Gabbar and seek revenge.",
       "rating": 7.011
     },
-    "ocean-with-david-attenborough": {
-      "director": "Colin Butfield",
-      "year": 2025,
-      "runtime": 85,
-      "posterPath": "/oAKzcqUCP3EK7rgAx9Jj8Futv8O.jpg",
-      "overview": "David Attenborough takes viewers on a breathtaking journey showing there is nowhere more vital for our survival, more full of life, wonder, or surprise, than the ocean. Through spectacular sequences f",
-      "rating": 8,
-      "rottenTomatoes": 100,
-      "imdbId": "tt33022710",
-      "letterboxd": 4.31
+    "the-greatest-story-ever-told": {
+      "director": "George Stevens",
+      "year": 1965,
+      "runtime": 199,
+      "posterPath": "/c21ON7BZn0jwdNl6ibZ1vhXJmpy.jpg",
+      "overview": "From his birth in Bethlehem to his death and eventual resurrection, the life of Jesus Christ is given the all-star treatment in this epic retelling. Major aspects of Christ's life are touched upon, in",
+      "rating": 6.4
     },
-    "john-candy-i-like-me": {
-      "director": "Colin Hanks",
-      "year": 2025,
-      "runtime": 113,
-      "posterPath": "/mNEJdx9WSXeyMmkuQfTeY4zouNx.jpg",
-      "overview": "Those who knew iconic funnyman John Candy best share his story, in their own words, through never-before-seen archival footage, imagery, and interviews.",
-      "rating": 7.854,
-      "rottenTomatoes": 89,
-      "imdbId": "tt26683420",
-      "letterboxd": 3.96
+    "when-a-woman-ascends-the-stairs": {
+      "director": "Mikio Naruse",
+      "year": 1960,
+      "runtime": 111,
+      "posterPath": "/miGb5TwM8SIK5URe0mPMOYZqr3g.jpg",
+      "overview": "Keiko, whom everyone calls Mama, narrates her story: she's a hostess on the Ginza, 30, a widow. She describes life's vicious cycle: acting cheerful around drunks, dressing and living well to convey co",
+      "rating": 8
     },
     "the-show-about-the-show": {
       "director": "Caveh Zahedi",
@@ -5378,56 +5167,21 @@
       "overview": "Paratrooper commander Colonel Mathieu, a former French Resistance fighter during World War II, is sent to Algeria to reinforce efforts to squelch the uprisings of the Algerian War. There he faces Ali ",
       "rating": 7.885
     },
-    "the-land-before-time": {
-      "director": "Don Bluth",
-      "year": 1988,
-      "runtime": 69,
-      "posterPath": "/wSC2wxFj3ZgrIHlIaePeuHN4igo.jpg",
-      "overview": "An orphaned brontosaurus named Littlefoot sets off in search of the legendary Great Valley. A land of lush vegetation where the dinosaurs can thrive and live in peace. Along the way he meets four othe",
-      "rating": 7.143,
-      "rottenTomatoes": 65,
-      "imdbId": "tt0095489",
-      "letterboxd": 3.78
+    "mad-max-2-the-road-warrior": {
+      "director": "George Miller",
+      "year": 1981,
+      "runtime": 96,
+      "posterPath": "/l1KVEhkGDpWRzQ0VqIhZqDDuOim.jpg",
+      "overview": "Max Rockatansky returns as the heroic loner who drives the dusty roads of a postapocalyptic Australian Outback in an unending search for gasoline. Arrayed against him and the other scraggly defendants",
+      "rating": 7.386
     },
-    "trains": {
-      "director": "Caleb Deschanel",
-      "year": 1976,
-      "runtime": 15,
-      "posterPath": null,
-      "overview": "After shooting more short films and documentaries, Deschanel wrote, directed and shot Trains, a short film that won the Silver Bear at the 1976 Berlin Film Festival. Trains is an exquisitely filmed sh",
-      "rating": 7,
-      "imdbId": "tt0234915"
-    },
-    "the-apostle": {
-      "director": "Robert Duvall",
-      "year": 1997,
-      "runtime": 134,
-      "posterPath": "/9KqCzLhWbFMBPjqRpZ69izRiYgG.jpg",
-      "overview": "A Pentecostal preacher on the run from the law reinvents himself in a small Louisiana town. Duvall wrote, directed, financed, and delivered one of cinema's most complex portraits of faith — a man who is simultaneously a genuine holy man and a dangerously flawed human being.",
-      "rating": 6.309,
-      "rottenTomatoes": 93,
-      "letterboxd": 3.6,
-      "reviews": [
-        {
-          "quote": "Duvall wrote, directed, financed, and stars in one of the great American performances — a preacher both charismatic and deeply flawed.",
-          "critic": "Roger Ebert",
-          "publication": "Chicago Sun-Times"
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "The Rewatchables",
-          "episode": "The Apostle"
-        }
-      ]
-    },
-    "shall-we-dance": {
-      "director": "Koyanagi Naoko",
-      "year": 2014,
-      "runtime": 100,
-      "posterPath": "/35RcQROpMxktGxBlOQqOmNKVfxM.jpg",
-      "overview": "Hailey Hartz was born to a normal family, led a normal college-student life and now works at a normal job. This normal guy created a normal family and thus has the kind of good fortune that anyone wou",
-      "rating": 0
+    "the-thing": {
+      "director": "John Carpenter",
+      "year": 1982,
+      "runtime": 109,
+      "posterPath": "/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
+      "overview": "A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims.",
+      "rating": 8.069
     },
     "dead-lover": {
       "director": "Grace Glowicki",
@@ -5464,7 +5218,7 @@
       "runtime": 128,
       "posterPath": "/PvdD2gTqSZfFWclP9ee4bqCn0B.jpg",
       "overview": "Alpha, a troubled 13-year-old lives with her single mom. Their world collapses the day she returns from school with a tattoo on her arm.",
-      "rating": 6.4,
+      "rating": 6.403,
       "rottenTomatoes": 80,
       "imdbId": "tt32275943",
       "letterboxd": 3.26
@@ -5486,7 +5240,7 @@
       "runtime": 113,
       "posterPath": "/z6ZQqwoxWy9muIxwUP4K2zWw7BU.jpg",
       "overview": "A young Shaolin follower reunites with his discouraged brothers to form a soccer team using their martial art skills to their advantage.",
-      "rating": 7.149,
+      "rating": 7.15,
       "rottenTomatoes": 89,
       "imdbId": "tt0286112",
       "letterboxd": 3.79
@@ -5497,7 +5251,7 @@
       "runtime": 108,
       "posterPath": "/ckQzKpQJO4ZQDCN5evdpKcfm7Ys.jpg",
       "overview": "The wildly funny and touching story of a lonely Hawaiian girl and the fugitive alien who helps to mend her broken family.",
-      "rating": 7.193,
+      "rating": 7.2,
       "rottenTomatoes": 72,
       "imdbId": "tt11655566",
       "letterboxd": 3.01
@@ -5508,7 +5262,7 @@
       "runtime": 116,
       "posterPath": "/skS02wdeH2C0nrbCQP3qKwJdZtZ.jpg",
       "overview": "The residents of San Francisco are becoming drone-like shadows of their former selves, and as the phenomenon spreads, two Department of Health workers uncover the horrifying truth.",
-      "rating": 7.223
+      "rating": 7.222
     },
     "the-height-of-the-coconut-trees": {
       "director": "Du Jie",
@@ -5522,9 +5276,9 @@
       "director": "Arthur Penn",
       "year": 1967,
       "runtime": 111,
-      "posterPath": "/sCSQFK9kMsprT4jgWqgw82dT6WI.jpg",
+      "posterPath": "/psITX0BMm6BTKMZZjpcXO93yjbb.jpg",
       "overview": "In the 1930s, bored European-American waitress Bonnie Parker falls in love with a European-American ex-con named Clyde Barrow and together they start a violent crime spree through the country, stealin",
-      "rating": 7.492,
+      "rating": 7.5,
       "afi100": 42,
       "rottenTomatoes": 91,
       "imdbId": "tt0061418",
@@ -5557,13 +5311,21 @@
       "imdbId": "tt0051390",
       "letterboxd": 3.82
     },
+    "chungking-express": {
+      "director": "Wong Kar-Wai",
+      "year": 1994,
+      "runtime": 103,
+      "posterPath": "/43I9DcNoCzpyzK8JCkJYpHqHqGG.jpg",
+      "overview": "Two melancholic Hong Kong policemen fall in love: one with a mysterious underworld figure, the other with a beautiful and ethereal server at a late-night restaurant.",
+      "rating": 7.963
+    },
     "the-young-girls-of-rochefort": {
       "director": "Jacques Demy",
       "year": 1967,
       "runtime": 126,
       "posterPath": "/jtxhyGaYhurH6KsjvP1jV3dDypz.jpg",
       "overview": "In the seaside town of Rochefort, twin sisters Delphine and Solange dream of love and artistic fulfillment beyond their quiet lives. As sailors, artists, musicians, and chance visitors pass through to",
-      "rating": 7.671,
+      "rating": 7.672,
       "rottenTomatoes": 98,
       "imdbId": "tt0062873",
       "letterboxd": 4.32
@@ -5582,7 +5344,7 @@
       "runtime": 92,
       "posterPath": "/yPHwX78mcwJw3I6YOJ9qh2wQBFr.jpg",
       "overview": "Tethered by a frightening conclusion, Maya and the Strangers are locked on an unavoidable, unforgiving collision course — a showdown that proves they’re far from strangers now.",
-      "rating": 5.702,
+      "rating": 5.67,
       "rottenTomatoes": 92,
       "imdbId": "tt11897478",
       "letterboxd": 3.49
@@ -5691,13 +5453,21 @@
       "imdbId": "tt0120907",
       "letterboxd": 3.61
     },
+    "mad-bills-to-pay-or-destiny-dile-que-no-soy-malo": {
+      "director": "Joel Alfonso Vargas",
+      "year": 2026,
+      "runtime": 101,
+      "posterPath": "/5f0AG1eGsRC5aIdUGt8wAkrTSuS.jpg",
+      "overview": "Rico’s summer is a mix of chasing girls and hustling homemade cocktails out of a cooler on Orchard Beach, the Bronx. But when Destiny, his teenage girlfriend, crashes at his place with his family, it’",
+      "rating": 0
+    },
     "popeye": {
       "director": "Robert Altman",
       "year": 1980,
       "runtime": 114,
       "posterPath": "/hCCp4pESgYY6uTFARYf4UYV1BdU.jpg",
       "overview": "Popeye is a super-strong, spinach-scarfing sailor man who's searching for his father. During a storm that wrecks his ship, Popeye washes ashore and winds up rooming at the Oyl household, where he meet",
-      "rating": 5.552,
+      "rating": 5.556,
       "rottenTomatoes": 60,
       "imdbId": "tt0081353",
       "letterboxd": 2.94
@@ -5773,7 +5543,7 @@
       "runtime": 99,
       "posterPath": "/k4KW2CUkzDKaCy4H4cS02cO8gvV.jpg",
       "overview": "After telling the story of Flint's last journey to young Jim Hawkins, Billy Bones has a heart attack and dies just as Jim and his friends are attacked by pirates. The gang escapes into the town where ",
-      "rating": 6.7
+      "rating": 6.693
     },
     "hearts-of-darkness-a-filmmaker-s-apocalypse": {
       "rottenTomatoes": 100,
@@ -5781,12 +5551,12 @@
       "letterboxd": 4.21
     },
     "the-rescuers-down-under": {
-      "director": "Hendel Butoy",
+      "director": "Mike Gabriel",
       "year": 1990,
       "runtime": 77,
       "posterPath": "/5koTDBmMAkJOgAe4PL4163UKjvG.jpg",
       "overview": "A lawless poacher wants to capture a majestic and rare golden eagle, so he kidnaps the boy who knows where to find the bird. Not to worry -- the Rescue Aid Society's top agents, heroic mice Miss Bianc",
-      "rating": 6.644,
+      "rating": 6.6,
       "rottenTomatoes": 85,
       "imdbId": "tt0100477",
       "letterboxd": 3.23
@@ -5825,7 +5595,7 @@
       "runtime": 76,
       "posterPath": "/i2s1L8AavAfKIcKf3ONhF3no405.jpg",
       "overview": "Cozy, a dissatisfied housewife, meets Lee at a bar. A drink turns into a home break-in, and a gunshot sends them on the run together, thinking they've committed murder.",
-      "rating": 6.226,
+      "rating": 6.209,
       "letterboxd": 3.44
     },
     "con-air": {
@@ -5834,7 +5604,7 @@
       "runtime": 116,
       "posterPath": "/kOKjgrEzGOP92rVQ6srA9jtp60l.jpg",
       "overview": "Newly-paroled former US Army ranger Cameron Poe is headed back to his wife, but must fly home aboard a prison transport flight dubbed \"Jailbird\" taking the “worst of the worst” prisoners, a group desc",
-      "rating": 6.767,
+      "rating": 6.768,
       "rottenTomatoes": 59,
       "imdbId": "tt0118880",
       "letterboxd": 3.46
@@ -5883,7 +5653,7 @@
       "runtime": 104,
       "posterPath": "/lYfRc57Kx9VgLZ48iulu0HKnM15.jpg",
       "overview": "'Toon star Roger is worried that his wife Jessica is playing pattycake with someone else, so the studio hires detective Eddie Valiant to snoop on her. But the stakes are quickly raised when Marvin Acm",
-      "rating": 7.535,
+      "rating": 7.536,
       "rottenTomatoes": 96,
       "imdbId": "tt0096438",
       "letterboxd": 3.97
@@ -5894,7 +5664,7 @@
       "runtime": 158,
       "posterPath": "/fa0RDkAlCec0STeMNAhPaF89q6U.jpg",
       "overview": "Ruthless silver miner, turned oil prospector, Daniel Plainview, moves to oil-rich California. Using his son to project a trustworthy, family-man image, Plainview cons local landowners into selling him",
-      "rating": 8.1,
+      "rating": 8.077,
       "sightAndSound": 102,
       "rottenTomatoes": 91,
       "imdbId": "tt0469494",
@@ -5944,7 +5714,7 @@
       "letterboxd": 3.37
     },
     "airplane": {
-      "director": "Jim Abrahams",
+      "director": "Jerry Zucker",
       "year": 1980,
       "runtime": 88,
       "posterPath": "/7Q3efxd3AF1vQjlSxnlerSA7RzN.jpg",
@@ -5969,28 +5739,6 @@
       "posterPath": "/4kIXsE4SwUjO0eUqpolsHNO5GLH.jpg",
       "overview": "A fictional account of the life of Japanese author Yukio Mishima, combining dramatizations of three of his novels and a depiction of the events of November 25th, 1970.",
       "rating": 7.829
-    },
-    "where-is-the-friend-s-house": {
-      "director": "Abbas Kiarostami",
-      "year": 1987,
-      "runtime": 83,
-      "posterPath": "/2rTW4s1kgvoqVs0Kv8ARle1SrkF.jpg",
-      "overview": "An 8-year-old boy must return his friend's notebook he took by mistake, lest his friend be punished by expulsion from school.",
-      "rating": 7.9,
-      "rottenTomatoes": 100,
-      "imdbId": "tt0093342",
-      "letterboxd": 4.38
-    },
-    "persepolis": {
-      "director": "Vincent Paronnaud",
-      "year": 2007,
-      "runtime": 95,
-      "posterPath": "/aU8i2QAdTyRR1nYb36Gq51xXP8p.jpg",
-      "overview": "In 1970s Iran, Marjane 'Marji' Satrapi watches events through her young eyes and her idealistic family of a long dream being fulfilled of the hated Shah's defeat in the Iranian Revolution of 1979. How",
-      "rating": 7.881,
-      "rottenTomatoes": 96,
-      "imdbId": "tt0808417",
-      "letterboxd": 4.21
     },
     "drop-dead-gorgeous": {
       "director": "",
@@ -6056,7 +5804,7 @@
       "runtime": 84,
       "posterPath": "/105stT9GkiENXiYqvWYKoAuHKQL.jpg",
       "overview": "A figure known as \"The Assassin\" descends from the heavens into a nightmarish pit full of monsters, titans, and cruelty.",
-      "rating": 6.832,
+      "rating": 6.8,
       "rottenTomatoes": 92,
       "imdbId": "tt15090124",
       "letterboxd": 3.8
@@ -6126,7 +5874,7 @@
       "runtime": 102,
       "posterPath": "/bb9CND0WyfwdHOZY5XmP4Qn8taz.jpg",
       "overview": "When New York is caught in the grip of a sadistic serial killer who preys on patrons of the city's underground bars, young rookie Steve Burns infiltrates the S&M subculture to try and lure him out of ",
-      "rating": 6.6
+      "rating": 6.623
     },
     "the-rocky-horror-picture-show": {
       "director": "Jim Sharman",
@@ -6134,7 +5882,7 @@
       "runtime": 100,
       "posterPath": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
       "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters",
-      "rating": 7.4,
+      "rating": 7.441,
       "rottenTomatoes": 80,
       "letterboxd": 3.6,
       "reviews": [
@@ -6154,6 +5902,17 @@
           "episode": "Rocky Horror"
         }
       ]
+    },
+    "bridesmaids": {
+      "director": "Paul Feig",
+      "year": 2011,
+      "runtime": 125,
+      "posterPath": "/gJtA7hYsBMQ7EM3sPBMUdBfU7a0.jpg",
+      "overview": "Annie's life is a mess. But when she finds out her lifetime best friend is engaged, she simply must serve as Lillian's maid of honor. Though lovelorn and broke, Annie bluffs her way through the expens",
+      "rating": 6.505,
+      "rottenTomatoes": 89,
+      "imdbId": "tt1478338",
+      "letterboxd": 3.43
     },
     "fight-club": {
       "director": "David Fincher",
@@ -6190,54 +5949,13 @@
       "overview": "Alex, a first-generation latino artist, and Frankie, a professional dancer, navigate the soulless casual hookup culture of Los Angeles. Dating apps and casual sex reign, as they both deny their feelin",
       "rating": 10
     },
-    "titicut-follies": {
-      "director": "Frederick Wiseman",
-      "year": 1967,
-      "runtime": 84,
-      "posterPath": "/hAJOSqWB4FeVV7yi0fRSYFoCwvM.jpg",
-      "overview": "A stark and graphic portrayal of the conditions that existed at the State Prison for the Criminally Insane at Bridgewater, Massachusetts, and documents the various ways the inmates are treated by the ",
-      "rating": 7.2,
-      "rottenTomatoes": 100,
-      "imdbId": "tt0062374",
-      "letterboxd": 4.02
-    },
-    "robert-wilson-and-the-civil-wars": {
-      "director": "Howard Brookner",
-      "year": 1987,
-      "runtime": 90,
-      "posterPath": "/8BDN6ZDAJDUkKgO88ib33cKLaQx.jpg",
-      "overview": "Robert Wilson and the Civil Wars is an in-depth documentation of Robert Wilson’s ambitious attempt to stage an epic, twelve-hour, multinational opera for the 1984 Summer Olympics. Filmmaker Howard Bro",
-      "rating": 0,
-      "imdbId": "tt0299116"
-    },
-    "fire-at-sea": {
-      "director": "Gianfranco Rosi",
-      "year": 2016,
-      "runtime": 114,
-      "posterPath": "/fKZCS6IBTyGX7Sl67eMLSGHFsQn.jpg",
-      "overview": "Capturing life on the Italian island of Lampedusa, a frontline in the European migrant crisis.",
-      "rating": 6.6,
-      "rottenTomatoes": 95,
-      "imdbId": "tt3652526",
-      "letterboxd": 3.54
-    },
-    "everybody-to-kenmure-street": {
-      "director": "Felipe Bustos Sierra",
-      "year": 2026,
-      "runtime": 98,
-      "posterPath": "/m3ZR0dcDwpO7JdAs6sc12ks3Th9.jpg",
-      "overview": "In May 2021, a UK Home Office dawn raid triggers one of the most spontaneous and successful acts of civil resistance in recent memory. In Pollokshields, Scotland’s most diverse neighbourhood, hundreds",
-      "rating": 8,
-      "imdbId": "tt36966956",
-      "letterboxd": 4.16
-    },
     "romer-a": {
       "director": "Carla Simón",
       "year": 2025,
       "runtime": 112,
       "posterPath": "/6Wo9z9dvy0ns1Q84OLEHXemRpeh.jpg",
       "overview": "With her mother's diary in hand, Marina's search for official documents for university leads her to her biological family on the Atlantic coast. What starts as an administrative quest reveals long-bur",
-      "rating": 6.538,
+      "rating": 6.556,
       "imdbId": "tt32538648"
     },
     "notturno": {
@@ -6327,6 +6045,33 @@
       "overview": "Simon, a struggling documentary filmmaker, enjoys free flights courtesy of his best friend and roommate, Bruce, who works for an airline. However, when Beatrice, a more successful filmmaker, enters th",
       "rating": 0
     },
+    "the-sixth-sense": {
+      "director": "M. Night Shyamalan",
+      "year": 1999,
+      "runtime": 107,
+      "posterPath": "/vOyfUXNFSnaTk7Vk5AjpsKTUWsu.jpg",
+      "overview": "Following an unexpected tragedy, child psychologist Malcolm Crowe meets a nine year old boy named Cole Sear, who is hiding a dark secret.",
+      "rating": 7.95
+    },
+    "miroirs-no-3": {
+      "director": "Christian Petzold",
+      "year": 2025,
+      "runtime": 86,
+      "posterPath": "/dNzLDieAVlX3So2Qs2XSAOUmvxM.jpg",
+      "overview": "On a weekend trip to the countryside, Laura miraculously survives a car crash. Physically unhurt but deeply shaken, she is taken in by a local woman who witnessed the accident and now cares for Laura ",
+      "rating": 6.3,
+      "rottenTomatoes": 94,
+      "imdbId": "tt36848172",
+      "letterboxd": 3.47
+    },
+    "the-seduction-of-mimi": {
+      "director": "Lina Wertmüller",
+      "year": 1972,
+      "runtime": 113,
+      "posterPath": "/cmWOm384ObHI8ZuV0OR92GLVDj.jpg",
+      "overview": "Voting against the Mafia in what he thinks is a secret ballot costs Sicilian laborer Mimi his livelihood. He leaves his wife, flees to Turin and romances a Communist organizer – but he just can’t shak",
+      "rating": 7.1
+    },
     "everyone-is-lying-to-you-for-money": {
       "director": "Ben McKenzie",
       "year": 2026,
@@ -6372,6 +6117,39 @@
       "rating": 0,
       "imdbId": "tt33990511"
     },
+    "broken-bird": {
+      "director": "Rachel Harrison Gordon",
+      "year": 2020,
+      "runtime": 10,
+      "posterPath": "/phiurUoS1kKv5WXQqUmW5LnxsYf.jpg",
+      "overview": "Birdie, growing up as the daughter of a Black American and a white woman, is Jewish, has unruly hair and must deal with the different identity offers that surround her. Highlighting the challenges of ",
+      "rating": 5.8
+    },
+    "ricky": {
+      "director": "François Ozon",
+      "year": 2009,
+      "runtime": 90,
+      "posterPath": "/2n3UNhg9GhDK9aymmR2anM9rR3h.jpg",
+      "overview": "When Katie meets Paco, they fall in love. From this an extraordinary child is born; Ricky, who quickly develops into something wonderful and not so normal.",
+      "rating": 5.759
+    },
+    "dog-piracy": {
+      "director": "Paul Crompton",
+      "year": 2025,
+      "runtime": 98,
+      "posterPath": "/kvcowZBkUfvG88MyBdqDJBFTYb8.jpg",
+      "overview": "An animal welfare campaigner investigates the abuse of dogs and meets like-minded people seeking changes in the law to legislate against this ill-treatment.",
+      "rating": 0
+    },
+    "the-gardener": {
+      "director": "Dabney Day",
+      "year": 2026,
+      "runtime": 107,
+      "posterPath": "/3v2vttsSVOAaJEmYmnHLik05790.jpg",
+      "overview": "Cosmetics heiress Sabena Weathers, battling a hostile takeover of her company, finds solace and renewal at a remote mountain cottage, where she connects with a mysterious gardener.",
+      "rating": 0,
+      "imdbId": "tt39747274"
+    },
     "changing-lanes": {
       "director": "Roger Michell",
       "year": 2002,
@@ -6382,15 +6160,6 @@
       "rottenTomatoes": 77,
       "imdbId": "tt0264472",
       "letterboxd": 3.05
-    },
-    "the-gardener": {
-      "director": "Dabney Day",
-      "year": 2026,
-      "runtime": 107,
-      "posterPath": "/3v2vttsSVOAaJEmYmnHLik05790.jpg",
-      "overview": "Cosmetics heiress Sabena Weathers, battling a hostile takeover of her company, finds solace and renewal at a remote mountain cottage, where she connects with a mysterious gardener.",
-      "rating": 0,
-      "imdbId": "tt39747274"
     },
     "the-kid-officer": {
       "director": "",
@@ -6407,6 +6176,15 @@
       "posterPath": "/6ZCBDsnLXdLptJOSPG7mm0dblqU.jpg",
       "overview": "In one of those wonderful coincidences of history, lumière, the French word for “light,” was also the last name of brothers Auguste and Louis, whose brilliant invention, the cinematograph, helped to i",
       "rating": 7.038
+    },
+    "steal-this-story-please": {
+      "director": "Carl Deal",
+      "year": 2026,
+      "runtime": 98,
+      "posterPath": "/d7SqbT4URKiw1zmmZBSy0aTzD50.jpg",
+      "overview": "New York-based independent investigative journalist Amy Goodman has been reporting from hotspots around the world for decades: from East Timor to Morocco, Nigeria, and Gaza, and closer to home during ",
+      "rating": 0,
+      "letterboxd": 3.78
     },
     "cheech-y-chong-s-up-in-smoke-on-16mm": {
       "director": "Lou Adler",
@@ -6440,26 +6218,13 @@
       "overview": "When protests move into public spaces and take root there, blockading, defending, or seizing these spaces, they produce protest architecture. The film “Protest/Architecture”, which consists entirely o",
       "rating": 0
     },
-    "batman-the-movie-1966": {
-      "director": "Leslie H. Martinson",
-      "year": 1966,
-      "runtime": 105,
-      "posterPath": "/zzoPxWHnPa0eyfkMLgwbNvdEcVF.jpg",
-      "overview": "The Dynamic Duo faces four super-villains who plan to hold the world for ransom with the help of a secret invention that instantly dehydrates people.",
-      "rating": 6.37,
-      "imdbId": "tt28871620",
-      "letterboxd": 3.32
-    },
-    "the-great-race": {
-      "director": "Blake Edwards",
-      "year": 1965,
-      "runtime": 160,
-      "posterPath": "/9rL8GWuFdO3fLXcNV9rZRHskoOn.jpg",
-      "overview": "Professional daredevil and white-suited hero, The Great Leslie, convinces turn-of-the-century auto makers that a race from New York to Paris (westward across America, the Bering Straight and Russia) w",
-      "rating": 7.084,
-      "rottenTomatoes": 68,
-      "imdbId": "tt0059243",
-      "letterboxd": 3.6
+    "the-architecture-of-doom": {
+      "director": "Peter Cohen",
+      "year": 1989,
+      "runtime": 119,
+      "posterPath": "/802z31I21EFE8TfsOloTnVSKrHI.jpg",
+      "overview": "Featuring never-before-seen film footage of Adolf Hitler and the Nazi regime, The Architecture of Doom captures the inner workings of the Third Reich and illuminates the Nazi aesthetic in art, archite",
+      "rating": 7.2
     },
     "let-the-bullets-fly": {
       "director": "Jiang Wen",
@@ -6468,6 +6233,14 @@
       "posterPath": "/pkwBO3XkQLhgb31vl5ZwmGC5meT.jpg",
       "overview": "When circumstances force an outlaw to impersonate a county governor and clean up a corrupt town, the Robin Hood figure finds himself in a showdown with the local godfather.",
       "rating": 7.779
+    },
+    "rock-is-dead": {
+      "director": "Daniel Sarkissian",
+      "year": 2019,
+      "runtime": 92,
+      "posterPath": "/nbZSaj8KHm4Zs3TR4nZtzoY6MsH.jpg",
+      "overview": "'Rock is Dead?' is my most recent music documentary. It features musicians and/or producers from KISS, Nirvana, Scorpions, Greta Van Fleet, Sum 41, Nightwish, Kamelot, Dream Theater, Grand Funk Railro",
+      "rating": 0
     },
     "rogue-one-a-star-wars-story": {
       "director": "Gareth Edwards",
@@ -6535,25 +6308,6 @@
       "imdbId": "tt33301434",
       "letterboxd": 3.46
     },
-    "fantasy-life": {
-      "director": "Matthew Shear",
-      "year": 2026,
-      "runtime": 91,
-      "posterPath": "/e0qtdCm7TJGRfMv0tmdP8DsOy3U.jpg",
-      "overview": "An anxious New York law school dropout stumbles into a job babysitting his psychiatrist's three granddaughters and falls for the girls' mother, an actress in a rocky marriage.",
-      "rating": 6
-    },
-    "palestine-36": {
-      "director": "Annemarie Jacir",
-      "year": 2025,
-      "runtime": 120,
-      "posterPath": "/ajeiriNRFPLESjGZ0vdp4MVardZ.jpg",
-      "overview": "Year 1936. As villages across Palestine rise against British colonial rule, Yusuf drifts between his rural home and the restless energy of Jerusalem, longing for a future beyond the growing unrest. Bu",
-      "rating": 7.92,
-      "rottenTomatoes": 100,
-      "imdbId": "tt29271622",
-      "letterboxd": 3.89
-    },
     "crybaby-bridge": {
       "director": "Sarah T. Schwab",
       "year": 2026,
@@ -6566,50 +6320,9 @@
       "director": "Timothy David",
       "year": 2025,
       "runtime": 110,
-      "posterPath": "/mPSF2zpV2Hvt3PFoZUL7ltBsejV.jpg",
+      "posterPath": "/m8m46Kiylm7Q9rmdzafnAHRfwbk.jpg",
       "overview": "Lou Wells has hit rock bottom after a promising start to her Hollywood career. Now broke and aimless, she reluctantly accepts a plane ticket from her estranged father, Rory to return home to South Aus",
       "rating": 6.7
-    },
-    "la-la-land": {
-      "rottenTomatoes": 91,
-      "letterboxd": 3.9,
-      "reviews": [
-        {
-          "quote": "A gorgeous, old-fashioned enchantment that scrapes away the lacquer of nostalgia to find something achingly true underneath.",
-          "critic": "Justin Chang",
-          "publication": "Los Angeles Times"
-        },
-        {
-          "quote": "Chazelle has made a series of films about artists who sacrifice everything. This one counts the cost.",
-          "critic": "David Ehrlich",
-          "publication": "IndieWire"
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "The Rewatchables",
-          "episode": "La La Land"
-        },
-        {
-          "name": "Blank Check",
-          "episode": "La La Land"
-        }
-      ],
-      "posterPath": "/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
-      "director": "Damien Chazelle",
-      "year": 2016,
-      "runtime": 129,
-      "overview": "A jazz pianist and an aspiring actress fall in love while pursuing their dreams in Los Angeles, only to find that success and romance may be incompatible. Chazelle's ravishing musical is a love letter to the city, to old Hollywood, and to the bittersweet cost of ambition.",
-      "rating": 7.898
-    },
-    "psycho-1960": {
-      "director": "Alfred Hitchcock",
-      "year": 1960,
-      "runtime": 109,
-      "posterPath": "/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg",
-      "overview": "When larcenous real estate clerk Marion Crane goes on the lam with a wad of cash and hopes of starting a new life, she ends up at the notorious Bates Motel, where manager Norman Bates cares for his ho",
-      "rating": 8.415,
-      "letterboxd": 4.31
     },
     "twilight": {
       "director": "Catherine Hardwicke",
@@ -6617,7 +6330,7 @@
       "runtime": 122,
       "posterPath": "/3Gkb6jm6962ADUPaCBqzz9CTbn9.jpg",
       "overview": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire. Despite Edward's repeated",
-      "rating": 6.28
+      "rating": 6.279
     },
     "the-notebook": {
       "director": "Nick Cassavetes",
@@ -6671,7 +6384,7 @@
       "runtime": 138,
       "posterPath": "/705nQHqe4JGdEisrQmVYmXyjs1U.jpg",
       "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
-      "rating": 7.47,
+      "rating": 7.469,
       "rottenTomatoes": 93,
       "letterboxd": 4,
       "reviews": [
@@ -6693,6 +6406,57 @@
         }
       ]
     },
+    "la-la-land": {
+      "rottenTomatoes": 91,
+      "letterboxd": 3.9,
+      "reviews": [
+        {
+          "quote": "A gorgeous, old-fashioned enchantment that scrapes away the lacquer of nostalgia to find something achingly true underneath.",
+          "critic": "Justin Chang",
+          "publication": "Los Angeles Times"
+        },
+        {
+          "quote": "Chazelle has made a series of films about artists who sacrifice everything. This one counts the cost.",
+          "critic": "David Ehrlich",
+          "publication": "IndieWire"
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "The Rewatchables",
+          "episode": "La La Land"
+        },
+        {
+          "name": "Blank Check",
+          "episode": "La La Land"
+        }
+      ],
+      "posterPath": "/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
+      "director": "Damien Chazelle",
+      "year": 2016,
+      "runtime": 129,
+      "overview": "A jazz pianist and an aspiring actress fall in love while pursuing their dreams in Los Angeles, only to find that success and romance may be incompatible. Chazelle's ravishing musical is a love letter to the city, to old Hollywood, and to the bittersweet cost of ambition.",
+      "rating": 7.898
+    },
+    "500-days-of-summer": {
+      "director": "Marc Webb",
+      "year": 2009,
+      "runtime": 95,
+      "posterPath": "/qXAuQ9hF30sQRsXf40OfRVl0MJZ.jpg",
+      "overview": "Tom, greeting-card writer and hopeless romantic, is caught completely off-guard when his girlfriend, Summer, suddenly dumps him. He reflects on their 500 days together to try to figure out where their",
+      "rating": 7.3
+    },
+    "the-housemaid": {
+      "director": "Paul Feig",
+      "year": 2025,
+      "runtime": 131,
+      "posterPath": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+      "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dang",
+      "rating": 7.22,
+      "rottenTomatoes": 73,
+      "imdbId": "tt27543632",
+      "letterboxd": 3.03
+    },
     "fight-club-4k-remaster": {
       "director": "David Fincher",
       "year": 1999,
@@ -6710,6 +6474,15 @@
       "overview": "A little girl's innocence is shattered when she takes an unexpected ride in her wealthy family's rolling laundry cart and learns their dark secrets.",
       "rating": 0
     },
+    "city-wide-fever": {
+      "director": "Josh Heaps",
+      "year": 2026,
+      "runtime": 73,
+      "posterPath": "/n9PkDK1INHTm35YoovTQlgq4umG.jpg",
+      "overview": "Sam, a young film student, discovers a USB detailing the life and career of forgotten Italian horror director Saturnino Barresi. As she begins to investigate his mysterious disappearance, Sam finds he",
+      "rating": 0,
+      "letterboxd": 3.35
+    },
     "casablanca": {
       "director": "Michael Curtiz",
       "year": 1943,
@@ -6719,37 +6492,6 @@
       "rating": 8.142,
       "afi100": 3,
       "letterboxd": 4.28
-    },
-    "selena": {
-      "director": "Gregory Nava",
-      "year": 1997,
-      "runtime": 127,
-      "posterPath": "/j8xX3yBAFOayfSaImgLZPnAcdWz.jpg",
-      "overview": "In this biographical drama, Selena Quintanilla is born into a musical Mexican-American family in Texas. Her father, Abraham, realizes that his young daughter is talented and begins performing with her",
-      "rating": 7.692,
-      "rottenTomatoes": 67,
-      "imdbId": "tt0120094",
-      "letterboxd": 3.62
-    },
-    "smiley-face": {
-      "director": "Gregg Araki",
-      "year": 2007,
-      "runtime": 85,
-      "posterPath": "/kGQZGujjw8S6NKs5C8nugsMtol.jpg",
-      "overview": "Jane, a struggling but perpetually stoned actress, has a busy day ahead. She has several important tasks on her list, including buying more marijuana. Even though she already has a good start on the d",
-      "rating": 6.005,
-      "rottenTomatoes": 64,
-      "imdbId": "tt0780608",
-      "letterboxd": 3.56
-    },
-    "city-wide-fever": {
-      "director": "Josh Heaps",
-      "year": 2026,
-      "runtime": 73,
-      "posterPath": "/n9PkDK1INHTm35YoovTQlgq4umG.jpg",
-      "overview": "Sam, a young film student, discovers a USB detailing the life and career of forgotten Italian horror director Saturnino Barresi. As she begins to investigate his mysterious disappearance, Sam finds he",
-      "rating": 0,
-      "letterboxd": 3.35
     },
     "ferngully-the-last-rainforest": {
       "director": "Bill Kroyer",
@@ -6768,7 +6510,7 @@
       "runtime": 97,
       "posterPath": "/k23E4UAcow8eczLRmVCMdukL4Mx.jpg",
       "overview": "Childhood chums Rocky Sullivan and Jerry Connelly grow up on opposite sides of the fence: Rocky matures into a prominent gangster, while Jerry becomes a priest, tending to the needs of his old tenemen",
-      "rating": 7.542,
+      "rating": 7.54,
       "rottenTomatoes": 100,
       "imdbId": "tt0029870",
       "letterboxd": 3.93
@@ -6814,6 +6556,17 @@
         }
       ]
     },
+    "palestine-36": {
+      "director": "Annemarie Jacir",
+      "year": 2025,
+      "runtime": 120,
+      "posterPath": "/ajeiriNRFPLESjGZ0vdp4MVardZ.jpg",
+      "overview": "Year 1936. As villages across Palestine rise against British colonial rule, Yusuf drifts between his rural home and the restless energy of Jerusalem, longing for a future beyond the growing unrest. Bu",
+      "rating": 7.92,
+      "rottenTomatoes": 100,
+      "imdbId": "tt29271622",
+      "letterboxd": 3.89
+    },
     "cool-hand-luke": {
       "director": "Stuart Rosenberg",
       "year": 1967,
@@ -6830,6 +6583,14 @@
       "overview": "Frustrated with babysitting on yet another weekend night, Sarah, a teenager with an active imagination, summons the Goblins to take her baby stepbrother away. When little Toby actually disappears, Sar",
       "rating": 7.275
     },
+    "secrets-lies": {
+      "director": "Mike Leigh",
+      "year": 1996,
+      "runtime": 142,
+      "posterPath": "/zQBuRQ3hrLhkEsXcxteUxuxLrvs.jpg",
+      "overview": "After her adoptive mother dies, Hortense, a successful black optometrist, seeks out her birth mother. She's shocked when her research leads her to Cynthia, a working class white woman.",
+      "rating": 7.576
+    },
     "ferris-bueller-s-day-off": {
       "director": "John Hughes",
       "year": 1986,
@@ -6840,6 +6601,284 @@
       "rottenTomatoes": 83,
       "imdbId": "tt0091042",
       "letterboxd": 3.96
+    },
+    "the-silence-of-the-lambs": {
+      "director": "Jonathan Demme",
+      "year": 1991,
+      "runtime": 119,
+      "posterPath": "/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+      "overview": "Clarice Starling is a top student at the FBI's training academy.  Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life ",
+      "rating": 8.345
+    },
+    "romancing-the-stone": {
+      "director": "Robert Zemeckis",
+      "year": 1984,
+      "runtime": 106,
+      "posterPath": "/qaCLbDs6Ace4I1lAbBNWPQAm75h.jpg",
+      "overview": "Though she can spin wild tales of passionate romance, novelist Joan Wilder has no life of her own. Then one day adventure comes her way in the form of a mysterious package. It turns out that the parce",
+      "rating": 6.762,
+      "rottenTomatoes": 86,
+      "imdbId": "tt0088011",
+      "letterboxd": 3.38
+    },
+    "penrod-and-sam-1923-silent-with-live-music-score-brand-new-35mm-print": {
+      "director": "William Beaudine",
+      "year": 1923,
+      "runtime": 84,
+      "posterPath": "/4s0XubUe3tFS2NFWICn6a76hYqE.jpg",
+      "overview": "Penrod and his gang don't want to let neighborhood \"goodie-goodie\" Georgie Bassett into their club, but Penrod's father pressures him to allow the boy in because his parents are wealthy and prominent ",
+      "rating": 6.2
+    },
+    "high-society-1955": {
+      "director": "William Beaudine",
+      "year": 1955,
+      "runtime": 61,
+      "posterPath": "/1xhE49JHAhhNqPlPqSACJevRQDx.jpg",
+      "overview": "Sach receives news that he is the heir to the Terwilliger Debussy Jones fortune. Accompanied by his pal Slip, he arrives at the Jones mansion to review the legal papers needed for him to claim his new",
+      "rating": 5,
+      "letterboxd": 3.45
+    },
+    "pride-of-the-blue-grass-1954": {
+      "director": "William Beaudine",
+      "year": 1954,
+      "runtime": 71,
+      "posterPath": "/8h6MiHDhu6uwf58uvq8MotzKWOL.jpg",
+      "overview": "A girl owns a horse, and hires a boy as a trainer. The horse enters a race and is injured. The boy takes job at another stable and is semi-seduced by the stable siren. The girl finally rehabilitates t",
+      "rating": 0
+    },
+    "the-ghost-and-mr-chicken": {
+      "director": "Alan Rafkin",
+      "year": 1966,
+      "runtime": 90,
+      "posterPath": "/AomOgoN5kmVtMWWMKVeTPT8nVOE.jpg",
+      "overview": "Luther Heggs, a typesetter for the town newspaper, pitches an idea for a story about a local haunted house where a famous murder/suicide occurred 20 years earlier. After the editor assigns Luther to s",
+      "rating": 6.724,
+      "rottenTomatoes": 67,
+      "imdbId": "tt0059221",
+      "letterboxd": 3.38
+    },
+    "one-wonderful-sunday-subarashiki-nichiyobi-in-35mm": {
+      "director": "Akira Kurosawa",
+      "year": 1947,
+      "runtime": 108,
+      "posterPath": "/2JADvAzmEiLaYqnw8eZVOp88q5j.jpg",
+      "overview": "Two broke sweethearts wander war-scarred Tokyo on a single Sunday, stretching 35 yen as they chase housing, small pleasures, and a little hope.",
+      "rating": 7.2,
+      "letterboxd": 3.78
+    },
+    "the-lower-depths-donzoko-in-35mm": {
+      "director": "Akira Kurosawa",
+      "year": 1957,
+      "runtime": 125,
+      "posterPath": "/hhvK59WDqMzjv5Vm9bPA1xtP0kv.jpg",
+      "overview": "Residents of a rundown boardinghouse in 19th-century Japan, including a mysterious old man and an aging actor, get drawn into a love triangle that turns violent. When amoral thief Sutekichi breaks off",
+      "rating": 7.1,
+      "letterboxd": 3.61
+    },
+    "in-the-bathtub-of-the-world-i-am-a-sex-addict": {
+      "director": "Caveh Zahedi",
+      "year": 2001,
+      "runtime": 73,
+      "posterPath": "/m6mgFixa4V5N8ylLDSZ4QcZ2wjb.jpg",
+      "overview": "On January 1st, 1999, Caveh Zahedi started a one-year video diary. The idea was to shoot one minute each day. This is the result.",
+      "rating": 5.5,
+      "letterboxd": 3.7
+    },
+    "ocean-with-david-attenborough": {
+      "director": "Colin Butfield",
+      "year": 2025,
+      "runtime": 85,
+      "posterPath": "/oAKzcqUCP3EK7rgAx9Jj8Futv8O.jpg",
+      "overview": "David Attenborough takes viewers on a breathtaking journey showing there is nowhere more vital for our survival, more full of life, wonder, or surprise, than the ocean. Through spectacular sequences f",
+      "rating": 8,
+      "rottenTomatoes": 100,
+      "imdbId": "tt33022710",
+      "letterboxd": 4.31
+    },
+    "john-candy-i-like-me": {
+      "director": "Colin Hanks",
+      "year": 2025,
+      "runtime": 113,
+      "posterPath": "/mNEJdx9WSXeyMmkuQfTeY4zouNx.jpg",
+      "overview": "Those who knew iconic funnyman John Candy best share his story, in their own words, through never-before-seen archival footage, imagery, and interviews.",
+      "rating": 7.854,
+      "rottenTomatoes": 89,
+      "imdbId": "tt26683420",
+      "letterboxd": 3.96
+    },
+    "the-land-before-time": {
+      "director": "Don Bluth",
+      "year": 1988,
+      "runtime": 69,
+      "posterPath": "/wSC2wxFj3ZgrIHlIaePeuHN4igo.jpg",
+      "overview": "An orphaned brontosaurus named Littlefoot sets off in search of the legendary Great Valley. A land of lush vegetation where the dinosaurs can thrive and live in peace. Along the way he meets four othe",
+      "rating": 7.143,
+      "rottenTomatoes": 65,
+      "imdbId": "tt0095489",
+      "letterboxd": 3.78
+    },
+    "trains": {
+      "director": "Caleb Deschanel",
+      "year": 1976,
+      "runtime": 15,
+      "posterPath": null,
+      "overview": "After shooting more short films and documentaries, Deschanel wrote, directed and shot Trains, a short film that won the Silver Bear at the 1976 Berlin Film Festival. Trains is an exquisitely filmed sh",
+      "rating": 7,
+      "imdbId": "tt0234915"
+    },
+    "the-apostle": {
+      "director": "Robert Duvall",
+      "year": 1997,
+      "runtime": 134,
+      "posterPath": "/9KqCzLhWbFMBPjqRpZ69izRiYgG.jpg",
+      "overview": "A Pentecostal preacher on the run from the law reinvents himself in a small Louisiana town. Duvall wrote, directed, financed, and delivered one of cinema's most complex portraits of faith — a man who is simultaneously a genuine holy man and a dangerously flawed human being.",
+      "rating": 6.309,
+      "rottenTomatoes": 93,
+      "letterboxd": 3.6,
+      "reviews": [
+        {
+          "quote": "Duvall wrote, directed, financed, and stars in one of the great American performances — a preacher both charismatic and deeply flawed.",
+          "critic": "Roger Ebert",
+          "publication": "Chicago Sun-Times"
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "The Rewatchables",
+          "episode": "The Apostle"
+        }
+      ]
+    },
+    "shall-we-dance": {
+      "director": "Koyanagi Naoko",
+      "year": 2014,
+      "runtime": 100,
+      "posterPath": "/35RcQROpMxktGxBlOQqOmNKVfxM.jpg",
+      "overview": "Hailey Hartz was born to a normal family, led a normal college-student life and now works at a normal job. This normal guy created a normal family and thus has the kind of good fortune that anyone wou",
+      "rating": 0
+    },
+    "where-is-the-friend-s-house": {
+      "director": "Abbas Kiarostami",
+      "year": 1987,
+      "runtime": 83,
+      "posterPath": "/2rTW4s1kgvoqVs0Kv8ARle1SrkF.jpg",
+      "overview": "An 8-year-old boy must return his friend's notebook he took by mistake, lest his friend be punished by expulsion from school.",
+      "rating": 7.9,
+      "rottenTomatoes": 100,
+      "imdbId": "tt0093342",
+      "letterboxd": 4.38
+    },
+    "persepolis": {
+      "director": "Vincent Paronnaud",
+      "year": 2007,
+      "runtime": 95,
+      "posterPath": "/aU8i2QAdTyRR1nYb36Gq51xXP8p.jpg",
+      "overview": "In 1970s Iran, Marjane 'Marji' Satrapi watches events through her young eyes and her idealistic family of a long dream being fulfilled of the hated Shah's defeat in the Iranian Revolution of 1979. How",
+      "rating": 7.881,
+      "rottenTomatoes": 96,
+      "imdbId": "tt0808417",
+      "letterboxd": 4.21
+    },
+    "titicut-follies": {
+      "director": "Frederick Wiseman",
+      "year": 1967,
+      "runtime": 84,
+      "posterPath": "/hAJOSqWB4FeVV7yi0fRSYFoCwvM.jpg",
+      "overview": "A stark and graphic portrayal of the conditions that existed at the State Prison for the Criminally Insane at Bridgewater, Massachusetts, and documents the various ways the inmates are treated by the ",
+      "rating": 7.2,
+      "rottenTomatoes": 100,
+      "imdbId": "tt0062374",
+      "letterboxd": 4.02
+    },
+    "robert-wilson-and-the-civil-wars": {
+      "director": "Howard Brookner",
+      "year": 1987,
+      "runtime": 90,
+      "posterPath": "/8BDN6ZDAJDUkKgO88ib33cKLaQx.jpg",
+      "overview": "Robert Wilson and the Civil Wars is an in-depth documentation of Robert Wilson’s ambitious attempt to stage an epic, twelve-hour, multinational opera for the 1984 Summer Olympics. Filmmaker Howard Bro",
+      "rating": 0,
+      "imdbId": "tt0299116"
+    },
+    "fire-at-sea": {
+      "director": "Gianfranco Rosi",
+      "year": 2016,
+      "runtime": 114,
+      "posterPath": "/fKZCS6IBTyGX7Sl67eMLSGHFsQn.jpg",
+      "overview": "Capturing life on the Italian island of Lampedusa, a frontline in the European migrant crisis.",
+      "rating": 6.6,
+      "rottenTomatoes": 95,
+      "imdbId": "tt3652526",
+      "letterboxd": 3.54
+    },
+    "everybody-to-kenmure-street": {
+      "director": "Felipe Bustos Sierra",
+      "year": 2026,
+      "runtime": 98,
+      "posterPath": "/m3ZR0dcDwpO7JdAs6sc12ks3Th9.jpg",
+      "overview": "In May 2021, a UK Home Office dawn raid triggers one of the most spontaneous and successful acts of civil resistance in recent memory. In Pollokshields, Scotland’s most diverse neighbourhood, hundreds",
+      "rating": 8,
+      "imdbId": "tt36966956",
+      "letterboxd": 4.16
+    },
+    "batman-the-movie-1966": {
+      "director": "Leslie H. Martinson",
+      "year": 1966,
+      "runtime": 105,
+      "posterPath": "/zzoPxWHnPa0eyfkMLgwbNvdEcVF.jpg",
+      "overview": "The Dynamic Duo faces four super-villains who plan to hold the world for ransom with the help of a secret invention that instantly dehydrates people.",
+      "rating": 6.37,
+      "imdbId": "tt28871620",
+      "letterboxd": 3.32
+    },
+    "the-great-race": {
+      "director": "Blake Edwards",
+      "year": 1965,
+      "runtime": 160,
+      "posterPath": "/9rL8GWuFdO3fLXcNV9rZRHskoOn.jpg",
+      "overview": "Professional daredevil and white-suited hero, The Great Leslie, convinces turn-of-the-century auto makers that a race from New York to Paris (westward across America, the Bering Straight and Russia) w",
+      "rating": 7.084,
+      "rottenTomatoes": 68,
+      "imdbId": "tt0059243",
+      "letterboxd": 3.6
+    },
+    "fantasy-life": {
+      "director": "Matthew Shear",
+      "year": 2026,
+      "runtime": 91,
+      "posterPath": "/e0qtdCm7TJGRfMv0tmdP8DsOy3U.jpg",
+      "overview": "An anxious New York law school dropout stumbles into a job babysitting his psychiatrist's three granddaughters and falls for the girls' mother, an actress in a rocky marriage.",
+      "rating": 6
+    },
+    "psycho-1960": {
+      "director": "Alfred Hitchcock",
+      "year": 1960,
+      "runtime": 109,
+      "posterPath": "/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg",
+      "overview": "When larcenous real estate clerk Marion Crane goes on the lam with a wad of cash and hopes of starting a new life, she ends up at the notorious Bates Motel, where manager Norman Bates cares for his ho",
+      "rating": 8.415,
+      "letterboxd": 4.31
+    },
+    "selena": {
+      "director": "Gregory Nava",
+      "year": 1997,
+      "runtime": 127,
+      "posterPath": "/j8xX3yBAFOayfSaImgLZPnAcdWz.jpg",
+      "overview": "In this biographical drama, Selena Quintanilla is born into a musical Mexican-American family in Texas. Her father, Abraham, realizes that his young daughter is talented and begins performing with her",
+      "rating": 7.692,
+      "rottenTomatoes": 67,
+      "imdbId": "tt0120094",
+      "letterboxd": 3.62
+    },
+    "smiley-face": {
+      "director": "Gregg Araki",
+      "year": 2007,
+      "runtime": 85,
+      "posterPath": "/kGQZGujjw8S6NKs5C8nugsMtol.jpg",
+      "overview": "Jane, a struggling but perpetually stoned actress, has a busy day ahead. She has several important tasks on her list, including buying more marijuana. Even though she already has a good start on the d",
+      "rating": 6.005,
+      "rottenTomatoes": 64,
+      "imdbId": "tt0780608",
+      "letterboxd": 3.56
     },
     "hot-fuzz": {
       "director": "Edgar Wright",
@@ -7052,15 +7091,6 @@
       "overview": "In a series of small portraits, Gianfranco Rosi depicts life on and along the banks of the Ganges River. The director’s first film documents the boat trip he took along India’s sacred river with his h",
       "rating": 6.5,
       "letterboxd": 3.68
-    },
-    "steal-this-story-please": {
-      "director": "Carl Deal",
-      "year": 2026,
-      "runtime": 98,
-      "posterPath": "/d7SqbT4URKiw1zmmZBSy0aTzD50.jpg",
-      "overview": "New York-based independent investigative journalist Amy Goodman has been reporting from hotspots around the world for decades: from East Timor to Morocco, Nigeria, and Gaza, and closer to home during ",
-      "rating": 0,
-      "letterboxd": 3.78
     },
     "blue-beetle": {
       "director": "Ángel Manuel Soto",
@@ -7278,17 +7308,6 @@
       "overview": "A woman, employed as a website content moderator, comes across a series of violent videos reproducing death scenes from a film.",
       "rating": 6.3,
       "letterboxd": 3.07
-    },
-    "miroirs-no-3": {
-      "director": "Christian Petzold",
-      "year": 2025,
-      "runtime": 86,
-      "posterPath": "/dNzLDieAVlX3So2Qs2XSAOUmvxM.jpg",
-      "overview": "On a weekend trip to the countryside, Laura miraculously survives a car crash. Physically unhurt but deeply shaken, she is taken in by a local woman who witnessed the accident and now cares for Laura ",
-      "rating": 6.3,
-      "rottenTomatoes": 94,
-      "imdbId": "tt36848172",
-      "letterboxd": 3.47
     },
     "john-lilly-and-the-earth-coincidence-control-office": {
       "director": "Michael Almereyda",
@@ -8655,17 +8674,6 @@
       "posterPath": "/cXVfhlz9KJT6e2Nn1xdBrIzDFZI.jpg",
       "overview": "Well-known philanthropist and deaf-mute John G. Harrison is identified leaving the scene of several murders but evades successful prosecution as there are hundreds of witnesses who have also seen him ",
       "rating": 4.5
-    },
-    "the-housemaid": {
-      "director": "Paul Feig",
-      "year": 2025,
-      "runtime": 131,
-      "posterPath": "/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
-      "overview": "Trying to escape her past, Millie Calloway accepts a job as a live-in housemaid for the wealthy Nina and Andrew Winchester. But what begins as a dream job quickly unravels into something far more dang",
-      "rating": 7.19,
-      "rottenTomatoes": 73,
-      "imdbId": "tt27543632",
-      "letterboxd": 3.03
     },
     "stray-dog-nora-inu-in-35mm": {
       "director": "Yoshio Inoue",
