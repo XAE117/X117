@@ -1,6 +1,6 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-04-23 11:07 UTC_
+_Generated 2026-04-24 11:06 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -10,19 +10,19 @@ _Generated 2026-04-23 11:07 UTC_
 - **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
-- Last updated: 2026-04-23 (today)
+- Last updated: 2026-04-24 (today)
 - 36 theaters tracked, 33 with future screenings
-- 477 future screenings, horizon 38 days
+- 539 future screenings, horizon 37 days
 - ⚠️ 3 theaters with 0 screenings: Secret Movie Club, Cinespia, The Landmark Westwood
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-04-23 (today)
+- Last updated: 2026-04-24 (today)
 - 8 venues, 8 with future shows
-- 270 future shows, horizon 364 days
+- 266 future shows, horizon 364 days
 - ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-04-19 (4 days ago)
+- Last updated: 2026-04-19 (5 days ago)
 - 229 restaurants tracked
 - Tiers: street 7, feast 165, whale 14
 
