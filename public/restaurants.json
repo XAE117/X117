@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-19T09:42:39.748Z",
-  "lastFullScrape": "2026-04-19T09:42:39.748Z",
+  "lastUpdated": "2026-04-25T02:41:36.428Z",
+  "lastFullScrape": "2026-04-25T02:41:36.428Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -23,63 +23,6 @@
     "morihiro",
     "sonny-s",
     "la-s-new-restaurant-openings",
-    "bar-sinizki",
-    "taqueria-frontera",
-    "carnal",
-    "zizou",
-    "iii-mas",
-    "belle-s",
-    "butchr-bar",
-    "a-t",
-    "udatsu-sushi",
-    "bridgetown-roti",
-    "tendon-tempura-carlos-jr",
-    "authentic-xian-liangpi",
-    "asadero-chikali",
-    "restaurant-ki-los-angeles",
-    "seline-santa-monica",
-    "manuela-los-angeles",
-    "citrin-santa-monica",
-    "chifa-los-angeles",
-    "damian-los-angeles",
-    "found-oyster-los-angeles",
-    "chef-tony-arcadia",
-    "lephante-santa-monica",
-    "jeong-yuk-jeom-los-angeles",
-    "pasjoli-santa-monica",
-    "t-mbi-santa-monica",
-    "killer-noodle-los-angeles",
-    "luscious-dumplings-monrovia",
-    "sweet-rice-gardena",
-    "manhattan-beach-post-manhattan-beach",
-    "amor-y-tacos-cerritos",
-    "lunasia-dim-sum-house-alhambra",
-    "redbird-los-angeles",
-    "charcoal-venice-venice",
-    "sichuan-impression-alhambra",
-    "the-factory-kitchen-los-angeles",
-    "laoxi-noodle-house-arcadia",
-    "angelini-osteria-los-angeles",
-    "union-pasadena",
-    "quarters-bbq-los-angeles",
-    "rocio-s-mexican-kitchen-bell-gardens",
-    "r-publique-hollywood",
-    "langer-s-los-angeles",
-    "ronan-los-angeles",
-    "nozawa-bar-beverly-hills",
-    "pizzeria-mozza-los-angeles",
-    "jon-vinny-s-los-angeles",
-    "chosun-galbee-los-angeles",
-    "maccheroni-republic-los-angeles",
-    "yong-su-san-los-angeles",
-    "kismet-los-angeles",
-    "avra-beverly-hills",
-    "uka-los-angeles",
-    "manohar-s-delhi-palace-la-puente-2880159",
-    "la-shukran",
-    "caf-riggs",
-    "xiquet",
-    "family-ethiopian",
     "badmaash-los-angeles",
     "sushi-takeda-los-angeles",
     "bar-sawa-los-angeles",
@@ -154,11 +97,15 @@
     "corteza-at-sendero",
     "men-beasts",
     "the-benjamin-hollywood",
-    "taqueria-frontera",
     "komal",
     "amiguita",
     "sandeomi-hamjipark",
-    "pizzeria-bianco-los-angeles-los-angeles"
+    "pizzeria-bianco-los-angeles-los-angeles",
+    "padi-cafe-indonesian-kitchen",
+    "elcielo-new-york",
+    "hwaro",
+    "le-ch-ne",
+    "cove"
   ],
   "restaurants": [
     {
@@ -5613,6 +5560,98 @@
       "addedDate": "2026-03-29",
       "lat": 34.034355,
       "lng": -118.241566
+    },
+    {
+      "name": "Padi Cafe + Indonesian Kitchen",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "padi-cafe-indonesian-kitchen",
+      "addedDate": "2026-04-25"
+    },
+    {
+      "name": "Elcielo New York",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/elcielo-new-york"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "elcielo-new-york",
+      "addedDate": "2026-04-25"
+    },
+    {
+      "name": "Hwaro",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/hwaro"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "hwaro",
+      "addedDate": "2026-04-25"
+    },
+    {
+      "name": "Le Chêne",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-chene"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "le-ch-ne",
+      "addedDate": "2026-04-25"
+    },
+    {
+      "name": "Cove",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cove-1244899"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "cove",
+      "addedDate": "2026-04-25"
     }
   ]
 }
