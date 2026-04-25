@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-25T02:41:34.397Z",
+  "lastUpdated": "2026-04-25T10:44:18.064Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -170,7 +170,7 @@
         },
         {
           "id": "catalina-jazz-2026-05-01-streetcorner-renaissance-award",
-          "artist": "STREETCORNER RENAISSANCE (Award-winning Vocal Group)",
+          "artist": "STREETCORNER RENAISSANCE (Award-winning Vocal Group) featuring Special Guest : WINDY BARNES",
           "date": "2026-05-01",
           "time": "8:30 PM",
           "notes": "",
@@ -202,6 +202,15 @@
           "time": "8:30 PM",
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/victor-orlando-fun-ja-la-cinco-de-mayo-celebration-grammy-award-nominated-musician/",
+          "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-05-06-million-dollar-voices-starring",
+          "artist": "Million Dollar Voices starring Tino MACCHIA Celebrating the Greatest Singers of All Time!",
+          "date": "2026-05-06",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/million-dollar-voices-starring-tino-macchia-celebrating-the-greatest-singers-of-all-time/",
           "hot": false
         },
         {
@@ -301,15 +310,6 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/la-voix-studio-in-assoc-with-maison-de-music-foundation-presents-legendary-groups-through-the-decades-theme-show/",
-          "hot": false
-        },
-        {
-          "id": "catalina-jazz-2026-05-20-stephanie-pope-livin-it-up-bro",
-          "artist": "STEPHANIE POPE: LIVIN’ IT UP! (Broadway & Jazz Singer)",
-          "date": "2026-05-20",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/stephanie-pope-livin-it-up-broadway-soul-singer/",
           "hot": false
         },
         {
@@ -1545,15 +1545,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-04-25--colonels-of-truth-hambone-rel",
-          "artist": " Colonels Of Truth, Hambone Relay, JENTL,  Sofía Élan",
-          "date": "2026-04-25",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/7dmxbb--colonels-of-truth-hambone-relay-jentl-sofa-lan-24th-apr-the-mint-los-angeles-tickets",
-          "hot": false
-        },
-        {
           "id": "the-mint-2026-04-25-izzak-weatherwax",
           "artist": "Izzak Weatherwax",
           "date": "2026-04-25",
@@ -1650,6 +1641,15 @@
           "time": "3:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/2w3pdo-gorden-campbell-friends-19th-may-the-mint-los-angeles-tickets",
+          "hot": false
+        },
+        {
+          "id": "the-mint-2026-05-25-jazz-sunday-the-windward-schoo",
+          "artist": "Jazz Sunday: The Windward School's Advanced Jazz Ensemble & Kevin Kanner Jazz",
+          "date": "2026-05-25",
+          "time": "2:00 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/8egow7-jazz-sunday-the-windward-schools-advanced-jazz-ensemble-kevin-kanner-jazz-24th-may-the-mint-los-angeles-tickets",
           "hot": false
         }
       ]
@@ -2458,17 +2458,14 @@
           "notes": "",
           "link": "https://www.campusjax.com/events/event/964",
           "hot": false
-        },
-        {
-          "id": "campus-jax-2027-04-24-tijuana-dogs",
-          "artist": "Tijuana Dogs",
-          "date": "2027-04-24",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/830",
-          "hot": false
         }
       ]
+    }
+  ],
+  "scrapeErrors": [
+    {
+      "source": "eventbrite.com",
+      "error": "Request failed with status code 405"
     }
   ]
 }
