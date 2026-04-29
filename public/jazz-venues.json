@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T11:44:58.786Z",
+  "lastUpdated": "2026-04-29T11:28:10.845Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-04-28-infinity-song",
-          "artist": "Infinity Song",
-          "date": "2026-04-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/infinity-song/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-04-29-durand-bernarr",
           "artist": "Durand Bernarr",
@@ -133,12 +124,12 @@
           "hot": false
         },
         {
-          "id": "catalina-jazz-2026-05-02-ricardo-lemvo-africando-tribut",
-          "artist": "Ricardo Lemvo: Africando Tribute",
+          "id": "catalina-jazz-2026-05-02-willie-colon-hector-lavoe-trib",
+          "artist": "Willie Colon & Hector Lavoe Tribute",
           "date": "2026-05-02",
           "time": "8:30 PM",
           "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/ricardo-lemvo-africando-tribute/",
+          "link": "https://catalinajazzclub.com/tm-event/willie-colon-hector-lavoe-tribute/",
           "hot": false
         },
         {
@@ -307,18 +298,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-04-28-devin-daniels-tuesday-happenin",
+          "id": "sam-first-2026-04-29-devin-daniels-tuesday-happenin",
           "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-04-28",
+          "date": "2026-04-29",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
         },
         {
-          "id": "sam-first-2026-04-28-calarts-usc-jazz-bands",
+          "id": "sam-first-2026-04-29-calarts-usc-jazz-bands",
           "artist": "CalArts/USC Jazz Bands",
-          "date": "2026-04-28",
+          "date": "2026-04-29",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-04-29-dafnis-prieto",
+          "artist": "Dafnis Prieto",
+          "date": "2026-04-29",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -337,30 +337,39 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-04-28-selena-tribute-dreaming-of-you",
-          "artist": "Selena Tribute: Dreaming of You",
-          "date": "2026-04-28",
-          "time": "11:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/oambrbgc6lsn8e6c1c5ec3qb1r9qd0",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-04-28-debby-boone",
-          "artist": "Debby Boone",
-          "date": "2026-04-28",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-04-29-debby-boone-it-s-been-a-while-",
           "artist": "Debby Boone - It’s Been a While…",
           "date": "2026-04-29",
           "time": "12:00 AM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/debby-boone-its-been-a-while-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-29-california-jazzpops-orchestra",
+          "artist": "California JazzPops Orchestra",
+          "date": "2026-04-29",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-29-debby-boone",
+          "artist": "Debby Boone",
+          "date": "2026-04-29",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-04-29--9-30pm-california-jazzpops-or",
+          "artist": "​9:30PM California JazzPops Orchestra",
+          "date": "2026-04-29",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -618,6 +627,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-04-29-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-04-29",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -627,15 +657,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-04-28-soul-blind",
-          "artist": "Soul Blind",
-          "date": "2026-04-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/soul-blind/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-04-29-shabazz-palaces",
           "artist": "Shabazz Palaces",
@@ -679,6 +700,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/shayfer-james-the-counterfeit-summoning-tour/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-05-04-raevolution-a-benefit-concert-",
+          "artist": "Raevolution – A Benefit Concert for Rae Huang's Run for Mayor of LA",
+          "date": "2026-05-04",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/raevolution-a-benefit-concert-for-rae-huangs-run-for-mayor-of-la/",
           "hot": true
         },
         {
@@ -1415,27 +1445,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-04-28-alexander-noice",
-          "artist": "Alexander Noice",
-          "date": "2026-04-28",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1516,36 +1525,6 @@
           "notes": "",
           "link": "https://dice.fm/event/8egow7-jazz-sunday-the-windward-schools-advanced-jazz-ensemble-kevin-kanner-jazz-24th-may-the-mint-los-angeles-tickets",
           "hot": false
-        },
-        {
-          "id": "the-mint-2026-06-01-jazz-sunday-josh-brown-the-jaz",
-          "artist": "Jazz Sunday: Josh Brown & the Jazz Message & Kevin Kanner Jazz",
-          "date": "2026-06-01",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/mx3n7w-jazz-sunday-josh-brown-the-jazz-message-kevin-kanner-jazz-31st-may-the-mint-los-angeles-tickets",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-04-28-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-04-28",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
         }
       ]
     },
@@ -1560,30 +1539,21 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-04-28-whittier-union-high-school-dis",
-          "artist": "Whittier Union High School District All-Star Jazz Band",
-          "date": "2026-04-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/945",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-04-28-jazz-pass-may-2026",
-          "artist": "Jazz Pass May 2026",
-          "date": "2026-04-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/2",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-04-29-jukebox-wednesday",
           "artist": "Jukebox Wednesday",
           "date": "2026-04-29",
           "time": "5:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/730",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-04-29-jazz-pass-may-2026",
+          "artist": "Jazz Pass May 2026",
+          "date": "2026-04-29",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/2",
           "hot": false
         },
         {
@@ -2370,6 +2340,12 @@
           "hot": false
         }
       ]
+    }
+  ],
+  "scrapeErrors": [
+    {
+      "source": "eventbrite.com",
+      "error": "Request failed with status code 405"
     }
   ]
 }
