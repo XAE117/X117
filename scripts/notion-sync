@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Manual trigger for the Notion Projects Shard sync.
+# Symlinked to ~/.local/bin/notion-sync by install-notion-sync.sh.
+set -euo pipefail
+exec /usr/bin/env python3 "$HOME/scripts/notion_shard_sync.py" "$@"
