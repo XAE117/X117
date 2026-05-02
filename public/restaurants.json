@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-26T09:46:45.930Z",
-  "lastFullScrape": "2026-04-26T09:46:45.930Z",
+  "lastUpdated": "2026-05-02T02:55:33.193Z",
+  "lastFullScrape": "2026-05-02T02:55:33.193Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -23,68 +23,6 @@
     "morihiro",
     "sonny-s",
     "la-s-new-restaurant-openings",
-    "badmaash-los-angeles",
-    "sushi-takeda-los-angeles",
-    "bar-sawa-los-angeles",
-    "marugame-monzo-los-angeles",
-    "san-laurel-los-angeles",
-    "715-los-angeles",
-    "baroo-los-angeles",
-    "yunomi-handroll-los-angeles",
-    "q-sushi-los-angeles",
-    "girl-the-goat-los-angeles-los-angeles",
-    "firstborn-los-angeles",
-    "pizzeria-bianco-los-angeles-los-angeles",
-    "dama-los-angeles",
-    "rossoblu-los-angeles",
-    "gr-los-angeles",
-    "kod-los-angeles",
-    "tsubaki-los-angeles",
-    "quarter-sheets-los-angeles",
-    "guisados-los-angeles",
-    "moo-s-craft-barbecue-los-angeles",
-    "carnes-asadas-pancho-lopez-los-angeles",
-    "parks-bbq-los-angeles",
-    "danbi-los-angeles",
-    "pine-crane-los-angeles",
-    "dha-rae-oak-los-angeles",
-    "yeobo-darling-menlo-park",
-    "naides-san-francisco",
-    "little-mountain-montecito",
-    "pizzeria-sei",
-    "pizzana",
-    "mother-wolf",
-    "speak-cheezy",
-    "hail-mary-pizza",
-    "lodge-bread-co",
-    "two-doughs",
-    "side-pie",
-    "masa-echo-park",
-    "ginos-east-la",
-    "doughbox-la",
-    "union-pizza-co",
-    "chi-pie",
-    "dtown-pizzeria",
-    "apollonias-pizzeria",
-    "bub-and-grandmas",
-    "la-yalaltequita",
-    "ditroit-tacos",
-    "la-princesita",
-    "sabys-cafe",
-    "los-cinco-puntos",
-    "tacos-la-guera",
-    "angels-tijuana-tacos",
-    "tacos-tamix",
-    "villas-tacos",
-    "carnitas-el-artista",
-    "carnitas-uruapan",
-    "carnitas-los-gabrieles",
-    "tacos-los-guichos",
-    "metro-balderas",
-    "birrieria-familia-castro",
-    "goat-mafia",
-    "barbacoa-ramirez",
-    "mariscos-el-chito",
     "perse",
     "badmaash-venice",
     "very-thai",
@@ -100,12 +38,18 @@
     "komal",
     "amiguita",
     "sandeomi-hamjipark",
-    "pizzeria-bianco-los-angeles-los-angeles",
     "padi-cafe-indonesian-kitchen",
     "elcielo-new-york",
     "hwaro",
     "le-ch-ne",
-    "cove"
+    "cove",
+    "bar-di-bello",
+    "azizam",
+    "evil-cooks",
+    "two-homm-s-inglewood",
+    "the-let-s-go",
+    "big-sur-grill-santa-monica",
+    "betsy-altadena-ca"
   ],
   "restaurants": [
     {
@@ -2512,17 +2456,22 @@
         {
           "name": "Thrillist LA",
           "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "bar-sinizki",
       "addedDate": "2026-03-21",
       "address": "3147 Glendale Blvd, Los Angeles, CA 90039, United States",
       "lat": 34.117203,
-      "lng": -118.26225
+      "lng": -118.26225,
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/bar-sinizki?venueId=95924"
     },
     {
       "name": "Taquería Frontera",
@@ -5505,6 +5454,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -5512,12 +5465,13 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "amiguita",
       "addedDate": "2026-04-11",
       "lat": 34.088822,
-      "lng": -118.27667
+      "lng": -118.27667,
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/amiguita?venueId=95292"
     },
     {
       "name": "Sandeomi Hamjipark",
@@ -5652,6 +5606,139 @@
       "heatScore": 2,
       "id": "cove",
       "addedDate": "2026-04-25"
+    },
+    {
+      "name": "Bar di Bello",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/bar-di-bello?venueId=94002",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "bar-di-bello",
+      "addedDate": "2026-05-02"
+    },
+    {
+      "name": "Azizam",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/azizam?venueId=93275",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "azizam",
+      "addedDate": "2026-05-02"
+    },
+    {
+      "name": "Evil Cooks",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/evil-cooks?venueId=95117",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "evil-cooks",
+      "addedDate": "2026-05-02"
+    },
+    {
+      "name": "Two Hommés",
+      "neighborhood": "Inglewood",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/inglewood-ca/venues/two-hommes?venueId=95056",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "two-homm-s-inglewood",
+      "addedDate": "2026-05-02"
+    },
+    {
+      "name": "The Let's Go",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-lets-go?venueId=95084",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "the-let-s-go",
+      "addedDate": "2026-05-02"
+    },
+    {
+      "name": "Big Sur Grill",
+      "neighborhood": "Santa Monica",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/santa-monica-ca/venues/big-sur-grill?venueId=94055",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "big-sur-grill-santa-monica",
+      "addedDate": "2026-05-02"
+    },
+    {
+      "name": "Betsy",
+      "neighborhood": "Altadena Ca",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/altadena-ca-ca/venues/betsy?venueId=92039",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "betsy-altadena-ca",
+      "addedDate": "2026-05-02"
     }
   ]
 }
