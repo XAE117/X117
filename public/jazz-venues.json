@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-05T11:16:33.969Z",
+  "lastUpdated": "2026-05-06T11:48:28.268Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-05-05-meshell-ndegeocello",
-          "artist": "Meshell Ndegeocello",
-          "date": "2026-05-05",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/meshell-ndegeocello/",
-          "hot": true
-        },
         {
           "id": "blue-note-la-2026-05-06-bilal-1st-born-second-album-25",
           "artist": "Bilal – '1st Born Second' Album 25th Anniversary",
@@ -313,15 +304,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "catalina-jazz-2026-05-05-victor-orlando-fun-ja-la-cinco",
-          "artist": "VICTOR ORLANDO & FUN-JA-LA: CINCO DE MAYO CELEBRATION (Grammy Award-nominated Musician)",
-          "date": "2026-05-05",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/victor-orlando-fun-ja-la-cinco-de-mayo-celebration-grammy-award-nominated-musician/",
-          "hot": false
-        },
-        {
           "id": "catalina-jazz-2026-05-06-million-dollar-voices-starring",
           "artist": "Million Dollar Voices starring Tino MACCHIA Celebrating the Greatest Singers of All Time!",
           "date": "2026-05-06",
@@ -484,12 +466,21 @@
           "hot": false
         },
         {
-          "id": "catalina-jazz-2026-05-28-havana-nights-presents-cabaret",
-          "artist": "Havana Nights Presents: Cabaret Tropicana feat. Lily H Clark",
+          "id": "catalina-jazz-2026-05-28-cabaret-tropicana-feat-lily-h-",
+          "artist": "Cabaret Tropicana feat. Lily H Clark",
           "date": "2026-05-28",
           "time": "8:30 PM",
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/havana-nights-presents-cabaret-tropicana-feat-lily-h-clark/",
+          "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-05-29-jazz-legends-billy-childs-trio",
+          "artist": "Jazz Legends: BILLY CHILDS TRIO (2024 Grammy Award-winner)",
+          "date": "2026-05-29",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/jazz-legends-billy-childs-trio-2024-grammy-award-winner/",
           "hot": false
         },
         {
@@ -514,18 +505,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-05-05-eric-revis-plays-charles-mingu",
-          "artist": "Eric Revis Plays Charles Mingus",
-          "date": "2026-05-05",
+          "id": "sam-first-2026-05-06-michael-orenstein",
+          "artist": "Michael Orenstein",
+          "date": "2026-05-06",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-05-05-michael-orenstein",
-          "artist": "Michael Orenstein",
-          "date": "2026-05-05",
+          "id": "sam-first-2026-05-06-alan-ferber-nonet",
+          "artist": "Alan Ferber Nonet",
+          "date": "2026-05-06",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-05-06-josh-nelson-plays-dave-brubeck",
+          "artist": "Josh Nelson Plays Dave Brubeck's “Time Out”",
+          "date": "2026-05-06",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -544,21 +544,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-05-05-closed-private-event",
-          "artist": "Closed - Private Event",
-          "date": "2026-05-05",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/5a8k42mlba2rrtr5tc4atmsfrbg43n-fbba5-hcyl3",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-05-06--dear-amy-",
           "artist": "\"Dear Amy\"",
           "date": "2026-05-06",
           "time": "12:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/xw5xdcdgxewgtdwws29syc826yxhx9",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-05-06-meghan-murphy",
+          "artist": "Meghan Murphy",
+          "date": "2026-05-06",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -978,6 +978,36 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-05-06-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-05-06",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "world-stage-2026-05-06-salim-washington",
+          "artist": "Salim Washington",
+          "date": "2026-05-06",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -987,15 +1017,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-05-05-comedy-night-for-neno-a-fundra",
-          "artist": "Comedy Night for NENO A Fundraiser Benefiting our Unhoused Neighbors in NELA",
-          "date": "2026-05-05",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/comedy-night-for-neno-a-fundraiser-benefiting-our-unhoused-neighbors-in-nela/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-05-06-tempers-delusion-record-releas",
           "artist": "Tempers – Delusion Record Release Show",
@@ -1476,6 +1497,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-07-17-babe-rainbow",
+          "artist": "Babe Rainbow",
+          "date": "2026-07-17",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/babe-rainbow/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-07-18-king-woman-celestial-blues-5-y",
           "artist": "King Woman – Celestial Blues 5 year Anniversary Show",
           "date": "2026-07-18",
@@ -1545,6 +1575,24 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/alela-diane-whos-keeping-time-album-release-tour/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-08-17-ida",
+          "artist": "Ida",
+          "date": "2026-08-17",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/ida/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-08-18-silkworm",
+          "artist": "Silkworm",
+          "date": "2026-08-18",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/silkworm/",
           "hot": true
         },
         {
@@ -1755,6 +1803,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-11-19-son-volt",
+          "artist": "Son Volt",
+          "date": "2026-11-19",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/son-volt/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-11-21-bayonne-the-filters-tour",
           "artist": "Bayonne-The Filters Tour",
           "date": "2026-11-21",
@@ -1762,27 +1819,6 @@
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/bayonne-the-filters-tour/",
           "hot": true
-        }
-      ]
-    },
-    {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-05-05-julien-knowles",
-          "artist": "Julien Knowles",
-          "date": "2026-05-05",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
         }
       ]
     },
@@ -1842,12 +1878,12 @@
           "hot": false
         },
         {
-          "id": "the-mint-2026-05-20-gorden-campbell-friends",
-          "artist": "Gorden Campbell & Friends",
+          "id": "the-mint-2026-05-20-gorden-campbell-s-birthday-cel",
+          "artist": "Gorden Campbell's Birthday Celebration Show with  Friends",
           "date": "2026-05-20",
           "time": "3:00 AM",
           "notes": "",
-          "link": "https://dice.fm/event/2w3pdo-gorden-campbell-friends-19th-may-the-mint-los-angeles-tickets",
+          "link": "https://dice.fm/event/2w3pdo-gorden-campbells-birthday-celebration-show-with-friends-19th-may-the-mint-los-angeles-tickets",
           "hot": false
         },
         {
@@ -1880,27 +1916,6 @@
       ]
     },
     {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-05-05-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-05-05",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1910,15 +1925,6 @@
       "tier": "dedicated",
       "region": "OC",
       "shows": [
-        {
-          "id": "campus-jax-2026-05-05-jax-songstagesinger-songwriter",
-          "artist": "JAX SongStageSinger-Songwriter Showcase featuring \nShannon Kain\nEwen Williams\nMichael Hill\nIn Deep Duo\nEGGS\nKevin McKelvie  \nVictoria Vox",
-          "date": "2026-05-05",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/856",
-          "hot": false
-        },
         {
           "id": "campus-jax-2026-05-07-tony-guerrero-and-west-coast-s",
           "artist": "Tony Guerrero and West Coast Sound",
@@ -2016,6 +2022,15 @@
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/952",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-05-20-closed-for-private-event",
+          "artist": "Closed for Private Event",
+          "date": "2026-05-20",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1026",
           "hot": false
         },
         {
@@ -2163,8 +2178,8 @@
           "hot": false
         },
         {
-          "id": "campus-jax-2026-06-11-bill-cantos",
-          "artist": "Bill Cantos",
+          "id": "campus-jax-2026-06-11-bill-cantos-friends",
+          "artist": "Bill Cantos & Friends",
           "date": "2026-06-11",
           "time": "6:30 PM",
           "notes": "",
@@ -2241,6 +2256,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/814",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-21-jason-feddy-and-his-only-frien",
+          "artist": "Jason Feddy and his Only Friends \nFather's Day Show",
+          "date": "2026-06-21",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1024",
           "hot": false
         },
         {
@@ -2337,7 +2361,7 @@
           "id": "campus-jax-2026-07-15-matt-mauser-dave-murdy-jax-duo",
           "artist": "Matt Mauser & Dave Murdy JAX Duos",
           "date": "2026-07-15",
-          "time": "6:30 PM",
+          "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/966",
           "hot": false
@@ -2427,7 +2451,7 @@
           "id": "campus-jax-2026-08-06-tony-guerrero-friends",
           "artist": "Tony Guerrero & Friends",
           "date": "2026-08-06",
-          "time": "7:00 PM",
+          "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1022",
           "hot": false
@@ -2463,7 +2487,7 @@
           "id": "campus-jax-2026-08-16-scot-bruce-as-elvis",
           "artist": "Scot Bruce as Elvis",
           "date": "2026-08-16",
-          "time": "7:00 PM",
+          "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/960",
           "hot": false
@@ -2532,12 +2556,30 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2026-09-17-brian-clemens-big-band-ft-tawa",
+          "artist": "Brian Clemens Big Band ft. Tawanda",
+          "date": "2026-09-17",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1025",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2026-09-19-a-steely-dan-revuepretzel-logi",
           "artist": "A Steely Dan RevuePretzel Logic",
           "date": "2026-09-19",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/819",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-09-20-closed-for-private-event",
+          "artist": "Closed for Private Event",
+          "date": "2026-09-20",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1027",
           "hot": false
         },
         {
@@ -2616,7 +2658,7 @@
           "id": "campus-jax-2026-10-22-kristin-korbthe-vocal-side-of-",
           "artist": "Kristin KorbThe Vocal Side of Ray Brown",
           "date": "2026-10-22",
-          "time": "7:00 PM",
+          "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/968",
           "hot": false
@@ -2730,12 +2772,6 @@
           "hot": false
         }
       ]
-    }
-  ],
-  "scrapeErrors": [
-    {
-      "source": "eventbrite.com",
-      "error": "Request failed with status code 405"
     }
   ]
 }
