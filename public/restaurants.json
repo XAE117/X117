@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-03T10:02:06.545Z",
-  "lastFullScrape": "2026-05-03T10:02:06.545Z",
+  "lastUpdated": "2026-05-09T03:22:57.373Z",
+  "lastFullScrape": "2026-05-09T03:22:57.373Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -23,19 +23,7 @@
     "morihiro",
     "sonny-s",
     "la-s-new-restaurant-openings",
-    "perse",
-    "badmaash-venice",
-    "very-thai",
-    "sushi-samba-west-hollywood",
-    "the-holloway",
     "sushisamba",
-    "details-here-santa-monica",
-    "joyce",
-    "crudo-e-nudo-santa-monica",
-    "corteza-at-sendero",
-    "men-beasts",
-    "the-benjamin-hollywood",
-    "komal",
     "amiguita",
     "sandeomi-hamjipark",
     "padi-cafe-indonesian-kitchen",
@@ -49,7 +37,11 @@
     "two-homm-s-inglewood",
     "the-let-s-go",
     "big-sur-grill-santa-monica",
-    "betsy-altadena-ca"
+    "betsy-altadena-ca",
+    "picala",
+    "roshona-bilash",
+    "bengara",
+    "bar-betsy"
   ],
   "restaurants": [
     {
@@ -5617,12 +5609,16 @@
         {
           "name": "Resy Hit List",
           "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "bar-di-bello",
       "addedDate": "2026-05-02"
     },
@@ -5739,6 +5735,78 @@
       "heatScore": 2,
       "id": "betsy-altadena-ca",
       "addedDate": "2026-05-02"
+    },
+    {
+      "name": "Picala",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "picala",
+      "addedDate": "2026-05-09"
+    },
+    {
+      "name": "Roshona Bilash",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "roshona-bilash",
+      "addedDate": "2026-05-09"
+    },
+    {
+      "name": "Bengara",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "bengara",
+      "addedDate": "2026-05-09"
+    },
+    {
+      "name": "Bar Betsy",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "bar-betsy",
+      "addedDate": "2026-05-09"
     }
   ]
 }
