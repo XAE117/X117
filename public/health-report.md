@@ -1,13 +1,12 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-05-09 03:22 UTC_
+_Generated 2026-05-09 10:56 UTC_
 
 **Status: WARNINGS** ⚠️
 
-## Warnings (2)
+## Warnings (1)
 
 - **[Cinema (theaters.json)]** 9 theaters with 0 future screenings: Billy Wilder Theater at the Hammer, Laemmle Royal, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, AMC Century City 15
-- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
 - Last updated: 2026-05-09 (today)
@@ -17,9 +16,8 @@ _Generated 2026-05-09 03:22 UTC_
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-05-09 (today)
-- 8 venues, 8 with future shows
-- 293 future shows, horizon 364 days
-- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
+- 9 venues, 9 with future shows
+- 291 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-05-09 (today)
