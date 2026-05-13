@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-12T11:53:31.934Z",
+  "lastUpdated": "2026-05-13T12:03:18.502Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-05-12-rakim",
-          "artist": "Rakim",
-          "date": "2026-05-12",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/rakim/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-05-13-lizz-wright",
           "artist": "Lizz Wright",
@@ -504,6 +495,45 @@
       ]
     },
     {
+      "id": "sam-first",
+      "name": "Sam First",
+      "shortName": "Sam First",
+      "neighborhood": "Westchester",
+      "url": "https://www.samfirstbar.com/",
+      "color": "#2E86C1",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "sam-first-2026-05-13-caroline-davis",
+          "artist": "Caroline Davis",
+          "date": "2026-05-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-05-13-max-gerl",
+          "artist": "Max Gerl",
+          "date": "2026-05-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-05-13-lori-bell",
+          "artist": "Lori Bell",
+          "date": "2026-05-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "vibrato",
       "name": "Vibrato Grill Jazz",
       "shortName": "Vibrato",
@@ -514,21 +544,39 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-05-12-session-syndicate",
-          "artist": "Session Syndicate",
-          "date": "2026-05-12",
-          "time": "1:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/session-syndicate-4",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-05-13-coming-up-after-the-break-an-e",
           "artist": "Coming Up After The Break: An Evening With Carolyn Hennesy",
           "date": "2026-05-13",
           "time": "1:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/coming-up-after-the-break-an-evening-with-carolyn-hennesy",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-05-13-session-syndicate",
+          "artist": "Session Syndicate",
+          "date": "2026-05-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-05-13-carolyn-hennesey",
+          "artist": "Carolyn Hennesey",
+          "date": "2026-05-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-05-13-paris-chansons",
+          "artist": "Paris Chansons",
+          "date": "2026-05-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -903,6 +951,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-05-13-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-05-13",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -912,15 +981,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-05-12-oranssi-pazuzu",
-          "artist": "Oranssi Pazuzu",
-          "date": "2026-05-12",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/oranssi-pazuzu/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-05-13-andy-stott",
           "artist": "Andy Stott",
@@ -1408,6 +1468,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-08-15-alex-amen-with-grass",
+          "artist": "Alex Amen with Grass",
+          "date": "2026-08-15",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/alex-amen-with-grass/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-08-17-ida",
           "artist": "Ida",
           "date": "2026-08-17",
@@ -1480,6 +1549,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-09-10-the-damnwells",
+          "artist": "The Damnwells",
+          "date": "2026-09-10",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/the-damnwells/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-09-13-bratmobile",
           "artist": "Bratmobile",
           "date": "2026-09-13",
@@ -1513,6 +1591,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/ghostly-kisses-north-american-tour-2026/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-09-26-vieux-farka-tour-",
+          "artist": "Vieux Farka Touré",
+          "date": "2026-09-26",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/vieux-farka-toure-3/",
           "hot": true
         },
         {
@@ -1649,6 +1736,15 @@
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/bayonne-the-filters-tour/",
           "hot": true
+        },
+        {
+          "id": "lodge-room-2026-12-19-pokey-lafarge",
+          "artist": "Pokey LaFarge",
+          "date": "2026-12-19",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/pokey-lafarge-3/",
+          "hot": true
         }
       ]
     },
@@ -1729,39 +1825,30 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-05-12-mt-san-antonio-college-present",
-          "artist": "Mt. San Antonio College presents Singcopation",
-          "date": "2026-05-12",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/890",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-05-12-jazz-passjune-2026",
-          "artist": "Jazz PassJune 2026",
-          "date": "2026-05-12",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/3",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-05-12-jazz-passjuly-2026",
-          "artist": "Jazz PassJuly 2026",
-          "date": "2026-05-12",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/4",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-05-13-tricia-freeman-friends",
           "artist": "Tricia Freeman & Friends",
           "date": "2026-05-13",
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/825",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-05-13-jazz-passjune-2026",
+          "artist": "Jazz PassJune 2026",
+          "date": "2026-05-13",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/3",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-05-13-jazz-passjuly-2026",
+          "artist": "Jazz PassJuly 2026",
+          "date": "2026-05-13",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/4",
           "hot": false
         },
         {
@@ -2437,6 +2524,15 @@
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/944",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-10-15-dave-murdy-trio",
+          "artist": "Dave Murdy Trio",
+          "date": "2026-10-15",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1030",
           "hot": false
         },
         {
