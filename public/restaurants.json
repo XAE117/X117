@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-10T10:08:12.387Z",
-  "lastFullScrape": "2026-05-10T10:08:12.387Z",
+  "lastUpdated": "2026-05-16T03:27:50.674Z",
+  "lastFullScrape": "2026-05-16T03:27:50.674Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -41,7 +41,9 @@
     "picala",
     "roshona-bilash",
     "bengara",
-    "bar-betsy"
+    "bar-betsy",
+    "folks-pizzeria",
+    "tev-s-kitchen"
   ],
   "restaurants": [
     {
@@ -5763,12 +5765,16 @@
         {
           "name": "Eater Heatmap",
           "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        },
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 6,
       "id": "roshona-bilash",
       "addedDate": "2026-05-09"
     },
@@ -5807,6 +5813,46 @@
       "heatScore": 3,
       "id": "bar-betsy",
       "addedDate": "2026-05-09"
+    },
+    {
+      "name": "Folks Pizzeria",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "folks-pizzeria",
+      "addedDate": "2026-05-16"
+    },
+    {
+      "name": "Tev’s Kitchen",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "tev-s-kitchen",
+      "addedDate": "2026-05-16"
     }
   ]
 }
