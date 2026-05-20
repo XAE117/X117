@@ -1,26 +1,26 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-05-19 12:38 UTC_
+_Generated 2026-05-20 12:22 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 8 theaters with 0 future screenings: Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, WHAMMY! Analog Media, The Landmark Westwood, El Capitan Theatre
+- **[Cinema (theaters.json)]** 6 theaters with 0 future screenings: Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, The Landmark Westwood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-05-19 (today)
-- 36 theaters tracked, 28 with future screenings
-- 335 future screenings, horizon 42 days
-- ⚠️ 8 theaters with 0 screenings: Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, WHAMMY! Analog Media, The Landmark Westwood, El Capitan Theatre
+- Last updated: 2026-05-20 (today)
+- 36 theaters tracked, 30 with future screenings
+- 313 future screenings, horizon 41 days
+- ⚠️ 6 theaters with 0 screenings: Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, The Landmark Westwood
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-05-19 (today)
+- Last updated: 2026-05-20 (today)
 - 9 venues, 9 with future shows
-- 279 future shows, horizon 226 days
+- 278 future shows, horizon 225 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-05-17 (2 days ago)
+- Last updated: 2026-05-17 (3 days ago)
 - 247 restaurants tracked
 - Tiers: street 7, feast 183, whale 14
 

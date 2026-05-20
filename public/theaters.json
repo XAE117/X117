@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-19T12:37:59.160Z",
+  "lastUpdated": "2026-05-20T12:22:08.973Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,15 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-i-love-maria-aces-go-places-iv-2026-05-18-7-30-pm-9-40-pm",
-          "title": "I Love Maria / Aces Go Places IV",
-          "date": "2026-05-18",
-          "time": "7:30 pm / 9:40 pm",
-          "format": "35mm",
-          "notes": "In English-subtitled 35mm and English-subtitled 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4694?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-tobruk-rough-night-in-jericho-ib-tech-print-2026-05-19-7-30-pm-9-50-pm",
           "title": "Tobruk / Rough Night in Jericho (IB Tech Print)",
@@ -42,9 +33,9 @@
           "title": "The Hallelujah Trail (IB Tech Print)",
           "date": "2026-05-21",
           "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/may-21-the-hallelujah-trail/"
+          "format": "35mm",
+          "notes": "In IB Technicolor 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4668?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-django-unchained-2026-05-22-11-59-pm",
@@ -282,24 +273,6 @@
       "color": "#B89AD4",
       "screenings": [
         {
-          "id": "vista-theatre-the-rip-2026-05-18-4-00-pm",
-          "title": "The Rip",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3625?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-the-rip-2026-05-18-7-30-pm",
-          "title": "The Rip",
-          "date": "2026-05-18",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3629?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
           "id": "vista-theatre-the-scarlet-empress-2026-05-19-2-00-pm",
           "title": "The Scarlet Empress",
           "date": "2026-05-19",
@@ -358,8 +331,8 @@
           "title": "The Rip",
           "date": "2026-05-21",
           "time": "4:00 pm",
-          "format": "35mm",
-          "notes": "",
+          "format": "digital",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/3628?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
@@ -367,9 +340,18 @@
           "title": "The Rip",
           "date": "2026-05-21",
           "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "",
+          "format": "digital",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/3632?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-christine-maximum-overdrive-2026-05-21-8-00-pm",
+          "title": "Christine / Maximum Overdrive",
+          "date": "2026-05-21",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "Showing in the Video Archives microcinema. VHS screening.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3591?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
           "id": "vista-theatre-the-dark-knight-2026-05-22-11-15-pm",
@@ -688,24 +670,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-barton-fink-in-35mm-2026-05-18-2-30-pm",
-          "title": "Barton Fink in 35mm",
-          "date": "2026-05-18",
-          "time": "2:30 pm",
-          "format": "35mm",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/barton-fink-019be23e-fa7c-bce5-3e19-60258b8caa53"
-        },
-        {
-          "id": "academy-museum-the-passionate-friends-2026-05-18-7-30-pm",
-          "title": "The Passionate Friends",
-          "date": "2026-05-18",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/the-passionate-friends-019c065b-931a-f68a-6dc8-35c6665ebbf8"
-        },
-        {
           "id": "academy-museum-barton-fink-in-35mm-2026-05-20-2-30-pm",
           "title": "Barton Fink in 35mm",
           "date": "2026-05-20",
@@ -722,6 +686,15 @@
           "format": "35mm",
           "notes": "At the David Geffen Theater. In person: cinematographer Caleb Deschanel and Academy Governor Peter Devlin.",
           "link": "https://www.academymuseum.org/en/programs/detail/being-there-019be210-d889-23c4-fc46-fb61ed623eb5"
+        },
+        {
+          "id": "academy-museum-the-hidden-room-aka-obsession-2026-05-21-7-30-pm",
+          "title": "The Hidden Room (aka Obsession)",
+          "date": "2026-05-21",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/the-hidden-room-aka-obsession-019c065b-dc76-64a4-0aea-86ab36464280"
         }
       ]
     },
@@ -733,51 +706,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-the-bridges-of-madison-county-2026-05-18-12-45-pm",
-          "title": "The Bridges of Madison County",
-          "date": "2026-05-18",
-          "time": "12:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/the-bridges-of-madison-county#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-shrek-2026-05-18-6-30-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "Part of the “Movie Parties” series. 25th anniversary.",
-          "link": "https://drafthouse.com/los-angeles/event/movie-party-shrek-25th-anniversary#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-top-gun-maverick-2026-05-18-7-00-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/top-gun-maverick#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-kiss-me-deadly-2026-05-18-7-00-pm",
-          "title": "Kiss Me Deadly",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/kiss-me-deadly#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-blind-cop-2-2026-05-18-8-00-pm",
-          "title": "Blind Cop 2",
-          "date": "2026-05-18",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "He's back for the first time!",
-          "link": "https://drafthouse.com/los-angeles/event/live-q-a-blind-cop-2#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-sorry-to-bother-you-2026-05-19-1-00-pm",
           "title": "Sorry to Bother You",
@@ -858,6 +786,15 @@
           "format": "digital",
           "notes": "Part of the “Weird Wednesday” series.",
           "link": "https://drafthouse.com/los-angeles/event/weird-wednesday-by-design#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-top-gun-maverick-2026-05-21-4-30-pm",
+          "title": "Top Gun: Maverick",
+          "date": "2026-05-21",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/top-gun-maverick#js-showtimescomponent"
         }
       ]
     },
@@ -877,6 +814,24 @@
           "format": "digital",
           "notes": "Includes Q&A.",
           "link": "https://airtable.com/appKJOHGIj8PKmfQi/pagZg6pmdJzrdzSvl/form"
+        },
+        {
+          "id": "egyptian-thelma-louise-2026-05-21-10-00-pm",
+          "title": "Thelma & Louise",
+          "date": "2026-05-21",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2483/seats"
+        },
+        {
+          "id": "egyptian-thelma-louise-2026-05-21-7-00-pm",
+          "title": "Thelma & Louise",
+          "date": "2026-05-21",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2482/seats"
         }
       ]
     },
@@ -889,15 +844,6 @@
       "color": "#7ABFC0",
       "screenings": [
         {
-          "id": "aero-remarkably-bright-creatures-2026-05-18-7-30-pm",
-          "title": "Remarkably Bright Creatures",
-          "date": "2026-05-18",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Olivia Newman and editor Tamara Meem. Popcorn and soda courtesy of Netflix.",
-          "link": "https://www.americancinematheque.com/now-showing/remarkably-bright-creatures-5-18-26/"
-        },
-        {
           "id": "aero-dirty-harry-euphoria-2026-05-20-7-30-pm",
           "title": "Dirty Harry / Euphoria",
           "date": "2026-05-20",
@@ -905,6 +851,15 @@
           "format": "digital",
           "notes": "Q&A with creator, writer, director and executive producer Sam Levinson. Popcorn and soda courtesy of HBO Max.",
           "link": "https://www.americancinematheque.com/now-showing/dirty-harry-euphoria-05-20-2026/"
+        },
+        {
+          "id": "aero-a-short-film-about-love-a-short-film-about-killing-2026-05-21-7-30-pm",
+          "title": "A Short Film About Love / A Short Film About Killing",
+          "date": "2026-05-21",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Co-presented with the Polish Cultural Institute New York. 'Krzysztof Kieślowski: An American Cinematheque Retrospective'.",
+          "link": "https://www.americancinematheque.com/now-showing/a-short-film-about-love-a-short-film-about-killing-5-13-26/"
         }
       ]
     },
@@ -916,15 +871,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-sir-no-sir-on-35mm-2026-05-18-7-30-pm",
-          "title": "Sir! No Sir! On 35mm",
-          "date": "2026-05-18",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "Showing in the Eagle. Welcoming actor, activist, and eternal icon Jane Fonda for a special 20th Anniversary screening of the documentary Sir Followed by a conversation with Fonda, director David Zeiger, and Viet Thanh Nguyen (The Sympathizer).",
-          "link": "https://vidiotsfoundation.org/purchase/4001216/"
-        },
         {
           "id": "vidiots-river-of-grass-2026-05-19-7-00-pm",
           "title": "River of Grass",
@@ -1854,6 +1800,15 @@
           "link": "https://studios.wearebraindead.com/purchase/1302713/"
         },
         {
+          "id": "brain-dead-house-2026-05-29-8-45-pm",
+          "title": "House",
+          "date": "2026-05-29",
+          "time": "8:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://studios.wearebraindead.com/purchase/1317946/"
+        },
+        {
           "id": "brain-dead-build-your-own-synth-5-30-2026-05-30-3-00-pm",
           "title": "BUILD YOUR OWN SYNTH - 5/30",
           "date": "2026-05-30",
@@ -1908,6 +1863,24 @@
           "link": "https://studios.wearebraindead.com/purchase/1296646/"
         },
         {
+          "id": "brain-dead-dog-movie-puppygirl-2026-06-08-7-30-pm",
+          "title": "Dog Movie + Puppygirl",
+          "date": "2026-06-08",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://studios.wearebraindead.com/purchase/1317924/"
+        },
+        {
+          "id": "brain-dead-maps-to-the-stars-with-bruce-wagner-2026-06-14-8-00-pm",
+          "title": "Maps to the Stars with Bruce Wagner",
+          "date": "2026-06-14",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://studios.wearebraindead.com/purchase/1317939/"
+        },
+        {
           "id": "brain-dead-the-decay-of-fiction-2026-06-17-7-30-pm",
           "title": "The Decay of Fiction",
           "date": "2026-06-17",
@@ -1924,6 +1897,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://studios.wearebraindead.com/purchase/1315402/"
+        },
+        {
+          "id": "brain-dead-the-secret-lives-of-bill-bartell-born-innocent-the-redd-kross-story-2026-06-27-7-00-p",
+          "title": "THE SECRET LIVES OF BILL BARTELL + BORN INNOCENT: THE REDD KROSS STORY",
+          "date": "2026-06-27",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://studios.wearebraindead.com/purchase/1317919/"
         }
       ]
     },
@@ -1963,15 +1945,6 @@
       "color": "#C8A8D9",
       "screenings": [
         {
-          "id": "laemmle-noho-texas-music-revolution-2026-05-18-7-00-pm",
-          "title": "Texas Music Revolution",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/139975"
-        },
-        {
           "id": "laemmle-noho-the-man-who-fell-to-earth-2026-05-20-7-00-pm",
           "title": "The Man Who Fell to Earth",
           "date": "2026-05-20",
@@ -1979,6 +1952,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/140505"
+        },
+        {
+          "id": "laemmle-noho-stolen-kingdom-2026-05-21-7-30-pm",
+          "title": "Stolen Kingdom",
+          "date": "2026-05-21",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/140672"
         }
       ]
     },
@@ -1990,24 +1972,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-freeway-2026-05-18-10-00-pm",
-          "title": "Freeway",
-          "date": "2026-05-18",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "'FAITH, REDEMPTION, EVIL: EUPHORIA Inspirations'.",
-          "link": "https://www.americancinematheque.com/now-showing/freeway-05-18-2026/"
-        },
-        {
-          "id": "los-feliz-3-cinematic-void-presents-j-d-s-revenge-2026-05-18-7-00-pm",
-          "title": "Cinematic Void Presents J.D.’s Revenge",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "50th Anniversary. Co-presented by 36 Cinema.",
-          "link": "https://www.americancinematheque.com/now-showing/cinematic-void-presents-jds-revenge-5-18-26/"
-        },
         {
           "id": "los-feliz-3-le-d-m-nagement-l-homme-la-valise-2026-05-19-10-00-pm",
           "title": "“Le DéMéNagement” / L'Homme à la Valise",
@@ -2043,6 +2007,24 @@
           "format": "digital",
           "notes": "Co-presented with the Polish Cultural Institute New York. 'Krzysztof Kieślowski: An American Cinematheque Retrospective'.",
           "link": "https://www.americancinematheque.com/now-showing/blind-chance-5-20-26/"
+        },
+        {
+          "id": "los-feliz-3-twin-peaks-season-2-ep-19-20-2026-05-21-10-00-pm",
+          "title": "Twin Peaks: Season 2, Ep. 19 & 20",
+          "date": "2026-05-21",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "Variations on Relations” and The Path to the Black Lodge.” Part of the “TWIN PEAKS: The Complete Series” series.",
+          "link": "https://www.americancinematheque.com/now-showing/twin-peaks-season-2-ep-19-20-5-21-26/"
+        },
+        {
+          "id": "los-feliz-3-under-the-sun-of-satan-2026-05-21-7-00-pm",
+          "title": "Under the Sun of Satan",
+          "date": "2026-05-21",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "'Maurice Pialat: An American Cinematheque Retrospective'.",
+          "link": "https://www.americancinematheque.com/now-showing/under-the-sun-of-satan-5-21-26/"
         }
       ]
     },
@@ -2054,15 +2036,6 @@
       "url": "https://www.laemmle.com",
       "color": "#7AAED4",
       "screenings": [
-        {
-          "id": "laemmle-royal-blue-heron-2026-05-18-1-25-pm",
-          "title": "Blue Heron",
-          "date": "2026-05-18",
-          "time": "1:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/63306"
-        },
         {
           "id": "laemmle-royal-blue-heron-2026-05-19-1-25-pm",
           "title": "Blue Heron",
@@ -2107,6 +2080,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/63316"
+        },
+        {
+          "id": "laemmle-royal-blue-heron-2026-05-21-1-25-pm",
+          "title": "Blue Heron",
+          "date": "2026-05-21",
+          "time": "1:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/63317"
+        },
+        {
+          "id": "laemmle-royal-blue-heron-2026-05-21-7-25-pm",
+          "title": "Blue Heron",
+          "date": "2026-05-21",
+          "time": "7:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/63320"
         }
       ]
     },
@@ -2154,7 +2145,17 @@
       "neighborhood": "Various",
       "url": "https://whammyanalog.com",
       "color": "#D9A090",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "whammy-analog-talkies-live-comedy-short-films-2026-05-21-8-00-pm",
+          "title": "Talkies Live Comedy & Short Films",
+          "date": "2026-05-21",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "Time shown is approximate. Please check WHAMMY!’s site for show time.",
+          "link": "https://www.whammyanalog.com/events/talkies-live-comedy-short-films"
+        }
+      ]
     },
     {
       "id": "lumiere-cinema",
@@ -2164,96 +2165,6 @@
       "url": "https://lumieremusichall.com",
       "color": "#D4C890",
       "screenings": [
-        {
-          "id": "lumiere-cinema-the-drama-2026-05-18-1-25-pm",
-          "title": "The Drama",
-          "date": "2026-05-18",
-          "time": "1:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71562"
-        },
-        {
-          "id": "lumiere-cinema-fantasy-life-2026-05-18-1-30-pm",
-          "title": "Fantasy Life",
-          "date": "2026-05-18",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71572"
-        },
-        {
-          "id": "lumiere-cinema-omaha-2026-05-18-1-35-pm",
-          "title": "Omaha",
-          "date": "2026-05-18",
-          "time": "1:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71569"
-        },
-        {
-          "id": "lumiere-cinema-the-stranger-2026-05-18-3-35-pm",
-          "title": "The Stranger",
-          "date": "2026-05-18",
-          "time": "3:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71568"
-        },
-        {
-          "id": "lumiere-cinema-kontinental-25-2026-05-18-3-40-pm",
-          "title": "Kontinental '25",
-          "date": "2026-05-18",
-          "time": "3:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71567"
-        },
-        {
-          "id": "lumiere-cinema-palestine-36-2026-05-18-3-50-pm",
-          "title": "Palestine 36",
-          "date": "2026-05-18",
-          "time": "3:50 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71561"
-        },
-        {
-          "id": "lumiere-cinema-fantasy-life-2026-05-18-6-05-pm",
-          "title": "Fantasy Life",
-          "date": "2026-05-18",
-          "time": "6:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71566"
-        },
-        {
-          "id": "lumiere-cinema-erupcja-2026-05-18-6-10-pm",
-          "title": "Erupcja",
-          "date": "2026-05-18",
-          "time": "6:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71563"
-        },
-        {
-          "id": "lumiere-cinema-mad-bills-to-pay-2026-05-18-8-10-pm",
-          "title": "Mad Bills to Pay",
-          "date": "2026-05-18",
-          "time": "8:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71570"
-        },
-        {
-          "id": "lumiere-cinema-driver-s-ed-2026-05-18-8-15-pm",
-          "title": "Driver’s Ed",
-          "date": "2026-05-18",
-          "time": "8:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71565"
-        },
         {
           "id": "lumiere-cinema-wasteman-2026-05-19-1-10-pm",
           "title": "Wasteman",
@@ -2343,15 +2254,6 @@
           "format": "digital",
           "notes": "",
           "link": "https://lumieretickets.com/purchase?showId=71576"
-        },
-        {
-          "id": "lumiere-cinema-open-screen-2026-05-19-8-00-pm",
-          "title": "Open Screen",
-          "date": "2026-05-19",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "They host this filmmaker open mic night every month. If you have a film under 10 minutes that you’d like to see on the big screen, buy a ticket and sign up at the door.",
-          "link": "https://lumieretickets.com/purchase?showId=71269"
         },
         {
           "id": "lumiere-cinema-driver-s-ed-2026-05-19-8-25-pm",
@@ -2469,6 +2371,96 @@
           "format": "digital",
           "notes": "",
           "link": "https://lumieretickets.com/purchase?showId=71586"
+        },
+        {
+          "id": "lumiere-cinema-ricky-2026-05-21-1-40-pm",
+          "title": "Ricky",
+          "date": "2026-05-21",
+          "time": "1:40 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71605"
+        },
+        {
+          "id": "lumiere-cinema-the-blue-trail-2026-05-21-1-45-pm",
+          "title": "The Blue Trail",
+          "date": "2026-05-21",
+          "time": "1:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71609"
+        },
+        {
+          "id": "lumiere-cinema-mad-bills-to-pay-2026-05-21-1-50-pm",
+          "title": "Mad Bills to Pay",
+          "date": "2026-05-21",
+          "time": "1:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71611"
+        },
+        {
+          "id": "lumiere-cinema-the-stranger-2026-05-21-3-45-pm",
+          "title": "The Stranger",
+          "date": "2026-05-21",
+          "time": "3:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71607"
+        },
+        {
+          "id": "lumiere-cinema-the-drama-2026-05-21-4-05-pm",
+          "title": "The Drama",
+          "date": "2026-05-21",
+          "time": "4:05 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71608"
+        },
+        {
+          "id": "lumiere-cinema-fantasy-life-2026-05-21-4-15-pm",
+          "title": "Fantasy Life",
+          "date": "2026-05-21",
+          "time": "4:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71610"
+        },
+        {
+          "id": "lumiere-cinema-omaha-2026-05-21-6-20-pm",
+          "title": "Omaha",
+          "date": "2026-05-21",
+          "time": "6:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71604"
+        },
+        {
+          "id": "lumiere-cinema-wasteman-2026-05-21-6-25-pm",
+          "title": "Wasteman",
+          "date": "2026-05-21",
+          "time": "6:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71606"
+        },
+        {
+          "id": "lumiere-cinema-driver-s-ed-2026-05-21-8-20-pm",
+          "title": "Driver’s Ed",
+          "date": "2026-05-21",
+          "time": "8:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71602"
+        },
+        {
+          "id": "lumiere-cinema-erupcja-2026-05-21-8-35-pm",
+          "title": "Erupcja",
+          "date": "2026-05-21",
+          "time": "8:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71603"
         }
       ]
     },
@@ -2488,6 +2480,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://www.lacma.org/event/exclusive-member-screening-bait"
+        },
+        {
+          "id": "lacma-special-member-advance-screening-apple-tv-s-star-city-and-post-screening-conversation-2026",
+          "title": "Special Member Advance Screening: Apple TV’s Star City and Post-Screening Conversation",
+          "date": "2026-05-21",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.lacma.org/event/exclusive-member-screening-star-city"
         }
       ]
     },
@@ -2499,24 +2500,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8C0D4",
       "screenings": [
-        {
-          "id": "laemmle-town-center-the-audience-2026-05-18-7-00-pm",
-          "title": "The Audience",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/75279"
-        },
-        {
-          "id": "laemmle-town-center-they-called-us-trujillo-s-jews-2026-05-18-7-00-pm",
-          "title": "They Called Us Trujillo’s Jews",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/75669"
-        },
         {
           "id": "laemmle-town-center-coup-53-2026-05-20-7-30-pm",
           "title": "Coup 53",
@@ -2546,33 +2529,6 @@
       "color": "#90C4A8",
       "screenings": [
         {
-          "id": "art-theatre-american-dream-4k-restoration-2026-05-18-2-05-pm",
-          "title": "American Dream 4K Restoration",
-          "date": "2026-05-18",
-          "time": "2:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-american-dream-4k-restoration-2026-05-18-4-40-pm",
-          "title": "American Dream 4K Restoration",
-          "date": "2026-05-18",
-          "time": "4:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-american-dream-4k-restoration-2026-05-18-7-15-pm",
-          "title": "American Dream 4K Restoration",
-          "date": "2026-05-18",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
           "id": "art-theatre-american-dream-4k-restoration-2026-05-19-2-05-pm",
           "title": "American Dream 4K Restoration",
           "date": "2026-05-19",
@@ -2591,11 +2547,38 @@
           "link": "https://arttheatre.easy-ware-ticketing.com/events"
         },
         {
+          "id": "art-theatre-american-dream-4k-restoration-2026-05-20-3-45-pm",
+          "title": "American Dream 4K Restoration",
+          "date": "2026-05-20",
+          "time": "3:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
           "id": "art-theatre-year-of-the-cat-q-a-with-director-tony-nguyen-2026-05-20-6-30-pm",
           "title": "Year of the Cat + Q&A with Director Tony Nguyen",
           "date": "2026-05-20",
           "time": "6:30 pm",
           "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-american-dream-4k-restoration-2026-05-21-4-45-pm",
+          "title": "American Dream 4K Restoration",
+          "date": "2026-05-21",
+          "time": "4:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-see-it-on-16mm-presents-secret-grindhouse-night-2026-05-21-9-00-pm",
+          "title": "See It on 16mm Presents Secret Grindhouse Night",
+          "date": "2026-05-21",
+          "time": "9:00 pm",
+          "format": "16mm",
           "notes": "",
           "link": "https://arttheatre.easy-ware-ticketing.com/events"
         }
@@ -2627,7 +2610,35 @@
       "neighborhood": "Hollywood",
       "url": "https://elcapitantheatre.com",
       "color": "#D4A0A0",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-2026-05-21-10-55-pm",
+          "title": "The Mandalorian and Grogu",
+          "date": "2026-05-21",
+          "time": "10:55 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
+        },
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-2026-05-21-4-00-pm",
+          "title": "The Mandalorian and Grogu",
+          "date": "2026-05-21",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
+        },
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-opening-night-2026-05-21-7-30-pm",
+          "title": "The Mandalorian and Grogu Opening Night",
+          "date": "2026-05-21",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu-opening-night"
+        }
+      ]
     },
     {
       "id": "laemmle-glendale",
@@ -2637,60 +2648,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A0CFB4",
       "screenings": [
-        {
-          "id": "laemmle-glendale-mistura-2026-05-18-1-20-pm",
-          "title": "Mistura",
-          "date": "2026-05-18",
-          "time": "1:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57864"
-        },
-        {
-          "id": "laemmle-glendale-blue-film-2026-05-18-12-50-pm",
-          "title": "Blue Film",
-          "date": "2026-05-18",
-          "time": "12:50 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57802"
-        },
-        {
-          "id": "laemmle-glendale-our-hero-balthazar-2026-05-18-4-10-pm",
-          "title": "Our Hero, Balthazar",
-          "date": "2026-05-18",
-          "time": "4:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57877"
-        },
-        {
-          "id": "laemmle-glendale-blue-film-2026-05-18-5-20-pm",
-          "title": "Blue Film",
-          "date": "2026-05-18",
-          "time": "5:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57803"
-        },
-        {
-          "id": "laemmle-glendale-the-audience-2026-05-18-7-00-pm",
-          "title": "The Audience",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57116"
-        },
-        {
-          "id": "laemmle-glendale-mistura-2026-05-18-7-10-pm",
-          "title": "Mistura",
-          "date": "2026-05-18",
-          "time": "7:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57865"
-        },
         {
           "id": "laemmle-glendale-mistura-2026-05-19-1-20-pm",
           "title": "Mistura",
@@ -2798,6 +2755,51 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/325402/57921"
+        },
+        {
+          "id": "laemmle-glendale-mistura-2026-05-21-1-20-pm",
+          "title": "Mistura",
+          "date": "2026-05-21",
+          "time": "1:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57870"
+        },
+        {
+          "id": "laemmle-glendale-blue-film-2026-05-21-12-50-pm",
+          "title": "Blue Film",
+          "date": "2026-05-21",
+          "time": "12:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57808"
+        },
+        {
+          "id": "laemmle-glendale-our-hero-balthazar-2026-05-21-4-10-pm",
+          "title": "Our Hero, Balthazar",
+          "date": "2026-05-21",
+          "time": "4:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57880"
+        },
+        {
+          "id": "laemmle-glendale-blue-film-2026-05-21-5-20-pm",
+          "title": "Blue Film",
+          "date": "2026-05-21",
+          "time": "5:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57809"
+        },
+        {
+          "id": "laemmle-glendale-mistura-2026-05-21-7-10-pm",
+          "title": "Mistura",
+          "date": "2026-05-21",
+          "time": "7:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57871"
         }
       ]
     },
@@ -2809,51 +2811,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8B8D4",
       "screenings": [
-        {
-          "id": "laemmle-monica-decorado-2026-05-18-1-25-pm",
-          "title": "Decorado",
-          "date": "2026-05-18",
-          "time": "1:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89927"
-        },
-        {
-          "id": "laemmle-monica-christine-sinclair-kind-of-a-big-deal-2026-05-18-3-45-pm",
-          "title": "Christine Sinclair *Kind of a Big Deal",
-          "date": "2026-05-18",
-          "time": "3:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89934"
-        },
-        {
-          "id": "laemmle-monica-group-the-schopenhauer-effect-2026-05-18-4-00-pm",
-          "title": "Group: The Schopenhauer Effect",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89943"
-        },
-        {
-          "id": "laemmle-monica-the-audience-2026-05-18-7-00-pm",
-          "title": "The Audience",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89254"
-        },
-        {
-          "id": "laemmle-monica-decorado-2026-05-18-7-25-pm",
-          "title": "Decorado",
-          "date": "2026-05-18",
-          "time": "7:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/89928"
-        },
         {
           "id": "laemmle-monica-decorado-2026-05-19-1-25-pm",
           "title": "Decorado",
@@ -2925,6 +2882,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/57796/89780"
+        },
+        {
+          "id": "laemmle-monica-decorado-2026-05-21-1-25-pm",
+          "title": "Decorado",
+          "date": "2026-05-21",
+          "time": "1:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/89990"
+        },
+        {
+          "id": "laemmle-monica-christine-sinclair-kind-of-a-big-deal-2026-05-21-3-45-pm",
+          "title": "Christine Sinclair *Kind of a Big Deal",
+          "date": "2026-05-21",
+          "time": "3:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/89997"
+        },
+        {
+          "id": "laemmle-monica-group-the-schopenhauer-effect-2026-05-21-4-00-pm",
+          "title": "Group: The Schopenhauer Effect",
+          "date": "2026-05-21",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/90006"
+        },
+        {
+          "id": "laemmle-monica-decorado-2026-05-21-7-25-pm",
+          "title": "Decorado",
+          "date": "2026-05-21",
+          "time": "7:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/89991"
         }
       ]
     },
@@ -2936,15 +2929,6 @@
       "url": "https://rooftopcinemaclub.com/los-angeles",
       "color": "#C4D490",
       "screenings": [
-        {
-          "id": "rooftop-cinema-10-things-i-hate-about-you-2026-05-18-8-20-pm",
-          "title": "10 Things I Hate About You",
-          "date": "2026-05-18",
-          "time": "8:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/screenings/10-things-i-hate-about-you-21855"
-        },
         {
           "id": "rooftop-cinema-the-notebook-2026-05-19-8-20-pm",
           "title": "The Notebook",
@@ -2962,6 +2946,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/us/screenings/brown-sugar-20881"
+        },
+        {
+          "id": "rooftop-cinema-zoolander-2026-05-21-11-00-pm",
+          "title": "Zoolander",
+          "date": "2026-05-21",
+          "time": "11:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/us/screenings/zoolander-21859"
+        },
+        {
+          "id": "rooftop-cinema-superbad-2026-05-21-8-20-pm",
+          "title": "Superbad",
+          "date": "2026-05-21",
+          "time": "8:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/us/screenings/superbad-20882"
         }
       ]
     },
@@ -2973,15 +2975,6 @@
       "url": "https://www.theculvertheater.com",
       "color": "#B8A0D4",
       "screenings": [
-        {
-          "id": "culver-theater-movie-mad-mondays-jfk-the-director-s-cut-2026-05-18-7-00-pm",
-          "title": "Movie-Mad Mondays: JFK (the Director’s Cut)",
-          "date": "2026-05-18",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://web.theculvertheater.com/order/showtimes/1001-39199/seats"
-        },
         {
           "id": "culver-theater-malcolm-x-2026-05-19-7-00-pm",
           "title": "Malcolm X",
@@ -3011,67 +3004,13 @@
       "color": "#D4908A",
       "screenings": [
         {
-          "id": "frida-cinema-allegro-non-troppo-2026-05-18-1-00-pm",
-          "title": "Allegro Non Troppo",
-          "date": "2026-05-18",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1590177/"
-        },
-        {
-          "id": "frida-cinema-the-treasure-of-the-sierra-madre-2026-05-18-12-30-pm",
-          "title": "The Treasure of the Sierra Madre",
-          "date": "2026-05-18",
+          "id": "frida-cinema-erupcja-2026-05-19-12-30-pm",
+          "title": "Erupcja",
+          "date": "2026-05-19",
           "time": "12:30 pm",
           "format": "digital",
           "notes": "",
-          "link": "https://thefridacinema.org/purchase/1515343/"
-        },
-        {
-          "id": "frida-cinema-erupcja-2026-05-18-3-00-pm",
-          "title": "Erupcja",
-          "date": "2026-05-18",
-          "time": "3:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1590179/"
-        },
-        {
-          "id": "frida-cinema-the-good-the-bad-and-the-ugly-2026-05-18-4-00-pm",
-          "title": "The Good, the Bad and the Ugly",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1590183/"
-        },
-        {
-          "id": "frida-cinema-allegro-non-troppo-2026-05-18-5-00-pm",
-          "title": "Allegro Non Troppo",
-          "date": "2026-05-18",
-          "time": "5:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1590181/"
-        },
-        {
-          "id": "frida-cinema-hairspray-cry-baby-double-feature-2026-05-18-7-15-pm",
-          "title": "Hairspray + Cry Baby Double Feature",
-          "date": "2026-05-18",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1497716/"
-        },
-        {
-          "id": "frida-cinema-the-treasure-of-the-sierra-madre-2026-05-18-7-45-pm",
-          "title": "The Treasure of the Sierra Madre",
-          "date": "2026-05-18",
-          "time": "7:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1515344/"
+          "link": "https://thefridacinema.org/purchase/1590189/"
         },
         {
           "id": "frida-cinema-the-treasure-of-the-sierra-madre-2026-05-19-12-30-pm",
@@ -3081,15 +3020,6 @@
           "format": "digital",
           "notes": "",
           "link": "https://thefridacinema.org/purchase/1515345/"
-        },
-        {
-          "id": "frida-cinema-erupcja-2026-05-19-12-30-pm",
-          "title": "Erupcja",
-          "date": "2026-05-19",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1590189/"
         },
         {
           "id": "frida-cinema-allegro-non-troppo-2026-05-19-2-30-pm",
@@ -3198,6 +3128,78 @@
           "format": "digital",
           "notes": "",
           "link": "https://thefridacinema.org/purchase/1590223/"
+        },
+        {
+          "id": "frida-cinema-erupcja-2026-05-21-1-00-pm",
+          "title": "Erupcja",
+          "date": "2026-05-21",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1590225/"
+        },
+        {
+          "id": "frida-cinema-crash-2026-05-21-10-00-pm",
+          "title": "Crash",
+          "date": "2026-05-21",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1590237/"
+        },
+        {
+          "id": "frida-cinema-our-hero-balthazar-2026-05-21-12-30-pm",
+          "title": "Our Hero, Balthazar",
+          "date": "2026-05-21",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1620311/"
+        },
+        {
+          "id": "frida-cinema-allegro-non-troppo-2026-05-21-3-00-pm",
+          "title": "Allegro Non Troppo",
+          "date": "2026-05-21",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1590227/"
+        },
+        {
+          "id": "frida-cinema-our-hero-balthazar-2026-05-21-3-15-pm",
+          "title": "Our Hero, Balthazar",
+          "date": "2026-05-21",
+          "time": "3:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1620313/"
+        },
+        {
+          "id": "frida-cinema-erupcja-2026-05-21-5-30-pm",
+          "title": "Erupcja",
+          "date": "2026-05-21",
+          "time": "5:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1603679/"
+        },
+        {
+          "id": "frida-cinema-our-hero-balthazar-2026-05-21-7-30-pm",
+          "title": "Our Hero, Balthazar",
+          "date": "2026-05-21",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1590231/"
+        },
+        {
+          "id": "frida-cinema-junebug-2026-05-21-8-30-pm",
+          "title": "Junebug",
+          "date": "2026-05-21",
+          "time": "8:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1590229/"
         }
       ]
     },
@@ -3228,60 +3230,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/amc-century-city-15",
       "color": "#E31937",
       "screenings": [
-        {
-          "id": "amc-century-city-top-gun-2026-05-18-1-00-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/centurycity/all/142433809"
-        },
-        {
-          "id": "amc-century-city-shrek-2026-05-18-1-30-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/centurycity/all/143030640"
-        },
-        {
-          "id": "amc-century-city-shrek-2026-05-18-11-00-am",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "11:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/centurycity/all/143075434"
-        },
-        {
-          "id": "amc-century-city-shrek-2026-05-18-2-30-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/centurycity/all/142787410"
-        },
-        {
-          "id": "amc-century-city-top-gun-maverick-2026-05-18-4-00-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/centurycity/all/142434033"
-        },
-        {
-          "id": "amc-century-city-top-gun-maverick-2026-05-18-9-45-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "9:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/centurycity/all/143075293"
-        },
         {
           "id": "amc-century-city-shrek-2026-05-19-1-30-pm",
           "title": "Shrek",
@@ -3391,69 +3339,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/amc-burbank-16",
       "color": "#B50D28",
       "screenings": [
-        {
-          "id": "amc-burbank-top-gun-maverick-2026-05-18-1-10-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "1:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/143153883"
-        },
-        {
-          "id": "amc-burbank-shrek-2026-05-18-1-20-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "1:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/143029515"
-        },
-        {
-          "id": "amc-burbank-top-gun-2026-05-18-1-30-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/143153801"
-        },
-        {
-          "id": "amc-burbank-top-gun-2026-05-18-10-20-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "10:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/143153884"
-        },
-        {
-          "id": "amc-burbank-top-gun-2026-05-18-4-00-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/142495672"
-        },
-        {
-          "id": "amc-burbank-top-gun-2026-05-18-4-10-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "4:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/143181967"
-        },
-        {
-          "id": "amc-burbank-top-gun-maverick-2026-05-18-7-15-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/burbank/all/142495608"
-        },
         {
           "id": "amc-burbank-top-gun-maverick-2026-05-19-1-10-pm",
           "title": "Top Gun: Maverick",
@@ -3600,51 +3485,6 @@
       "color": "#C41230",
       "screenings": [
         {
-          "id": "amc-rolling-hills-top-gun-maverick-2026-05-18-12-45-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "12:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/rollinghills/all/143123989"
-        },
-        {
-          "id": "amc-rolling-hills-shrek-2026-05-18-2-10-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "2:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/rollinghills/all/143124028"
-        },
-        {
-          "id": "amc-rolling-hills-top-gun-2026-05-18-4-25-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "4:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/rollinghills/all/143124003"
-        },
-        {
-          "id": "amc-rolling-hills-shrek-2026-05-18-4-45-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "4:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/rollinghills/all/143124027"
-        },
-        {
-          "id": "amc-rolling-hills-top-gun-maverick-2026-05-18-7-05-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "7:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/rollinghills/all/143124018"
-        },
-        {
           "id": "amc-rolling-hills-top-gun-2026-05-19-1-00-pm",
           "title": "Top Gun",
           "date": "2026-05-19",
@@ -3754,60 +3594,6 @@
       "color": "#D42039",
       "screenings": [
         {
-          "id": "amc-americana-shrek-2026-05-18-1-00-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/AMCTheAmericanaatBrand18/all/143083236"
-        },
-        {
-          "id": "amc-americana-top-gun-2026-05-18-1-00-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/AMCTheAmericanaatBrand18/all/142458507"
-        },
-        {
-          "id": "amc-americana-top-gun-2026-05-18-10-20-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "10:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/AMCTheAmericanaatBrand18/all/143083307"
-        },
-        {
-          "id": "amc-americana-top-gun-maverick-2026-05-18-12-00-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/AMCTheAmericanaatBrand18/all/142458500"
-        },
-        {
-          "id": "amc-americana-shrek-2026-05-18-3-30-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "3:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/AMCTheAmericanaatBrand18/all/142030129"
-        },
-        {
-          "id": "amc-americana-top-gun-maverick-2026-05-18-4-00-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/AMCTheAmericanaatBrand18/all/143083369"
-        },
-        {
           "id": "amc-americana-shrek-2026-05-19-1-00-pm",
           "title": "Shrek",
           "date": "2026-05-19",
@@ -3898,69 +3684,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-amc-at-citywalk-hollywood",
       "color": "#A8102A",
       "screenings": [
-        {
-          "id": "amc-citywalk-shrek-2026-05-18-1-30-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/142456735"
-        },
-        {
-          "id": "amc-citywalk-shrek-2026-05-18-11-00-am",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "11:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/143167464"
-        },
-        {
-          "id": "amc-citywalk-shrek-2026-05-18-12-00-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/142021191"
-        },
-        {
-          "id": "amc-citywalk-shrek-2026-05-18-2-30-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/143167586"
-        },
-        {
-          "id": "amc-citywalk-top-gun-2026-05-18-4-00-pm",
-          "title": "Top Gun",
-          "date": "2026-05-18",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/142456734"
-        },
-        {
-          "id": "amc-citywalk-shrek-2026-05-18-5-00-pm",
-          "title": "Shrek",
-          "date": "2026-05-18",
-          "time": "5:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/143167587"
-        },
-        {
-          "id": "amc-citywalk-top-gun-maverick-2026-05-18-9-55-pm",
-          "title": "Top Gun: Maverick",
-          "date": "2026-05-18",
-          "time": "9:55 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-05-18/citywalk/all/143167885"
-        },
         {
           "id": "amc-citywalk-shrek-2026-05-19-1-30-pm",
           "title": "Shrek",
@@ -4104,19 +3827,29 @@
           "format": "digital",
           "notes": "",
           "link": "https://www.amctheatres.com/showtimes/all/2026-05-20/citywalk/all/143167656"
+        },
+        {
+          "id": "amc-citywalk-top-gun-maverick-2026-05-21-12-00-pm",
+          "title": "Top Gun: Maverick",
+          "date": "2026-05-21",
+          "time": "12:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-05-21/citywalk/all/143209815"
+        },
+        {
+          "id": "amc-citywalk-shrek-2026-05-21-12-40-pm",
+          "title": "Shrek",
+          "date": "2026-05-21",
+          "time": "12:40 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-05-21/citywalk/all/142512057"
         }
       ]
     }
   ],
   "films": {
-    "i-love-maria-aces-go-places-iv": {
-      "director": "David Chung",
-      "year": 1988,
-      "runtime": 100,
-      "posterPath": "/5qRHuvKnUk4IBk7zH5uDCRhlVft.jpg",
-      "overview": "A gang of criminals terrorizes Hong Kong with two killer robots, one of which is modelled on the gang's female thug, Maria. When the robot gets damaged during a mission, an inventor working for the po",
-      "rating": 6.4
-    },
     "tobruk-rough-night-in-jericho-ib-tech-print": {
       "director": "Arthur Hiller",
       "year": 1967,
@@ -4236,14 +3969,6 @@
       "overview": "When her father unexpectedly passes away, young Ella finds herself at the mercy of her cruel stepmother and her daughters. Never one to give up hope, Ella's fortunes begin to change after meeting a da",
       "rating": 6.824
     },
-    "the-rip": {
-      "director": "Joe Carnahan",
-      "year": 2026,
-      "runtime": 113,
-      "posterPath": "/eZo31Dhl5BQ6GfbMNf3oU0tUvPZ.jpg",
-      "overview": "Trust frays when a team of Miami cops discovers millions in cash inside a run-down stash house, calling everyone — and everything — into question.",
-      "rating": 7.06
-    },
     "the-scarlet-empress": {
       "director": "Josef von Sternberg",
       "year": 1934,
@@ -4251,6 +3976,14 @@
       "posterPath": "/lCoyv38br7T4hFPJF0OnfAGuzbp.jpg",
       "overview": "During the 18th century, German noblewoman Sophia Frederica, who would later become Catherine the Great, travels to Moscow to marry the dimwitted Grand Duke Peter, the heir to the Russian throne. Thei",
       "rating": 6.9
+    },
+    "the-rip": {
+      "director": "Joe Carnahan",
+      "year": 2026,
+      "runtime": 113,
+      "posterPath": "/eZo31Dhl5BQ6GfbMNf3oU0tUvPZ.jpg",
+      "overview": "Trust frays when a team of Miami cops discovers millions in cash inside a run-down stash house, calling everyone — and everything — into question.",
+      "rating": 7.06
     },
     "blonde-dynamite-no-holds-barred": {
       "director": "William Beaudine",
@@ -4372,14 +4105,6 @@
       "overview": "A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.",
       "rating": 7.465
     },
-    "the-passionate-friends": {
-      "director": "David Lean",
-      "year": 1949,
-      "runtime": 91,
-      "posterPath": "/awmC8rVQR2WcN7kTKP7bXHFInnA.jpg",
-      "overview": "A woman is torn between the love of her life, who's married to someone else, and her older husband.",
-      "rating": 6.9
-    },
     "being-there-in-35mm": {
       "director": "Hal Ashby",
       "year": 1979,
@@ -4388,21 +4113,13 @@
       "overview": "A simple-minded gardener named Chance has spent all his life in the Washington D.C. house of an old man. When the man dies, Chance is put out on the street with no knowledge of the world except what h",
       "rating": 7.595
     },
-    "the-bridges-of-madison-county": {
-      "director": "Clint Eastwood",
-      "year": 1995,
-      "runtime": 135,
-      "posterPath": "/aCBrhOQjhG397GLkEZ49zReQEKX.jpg",
-      "overview": "Photographer Robert Kincaid wanders into the life of housewife Francesca Johnson for four days in the 1960s.",
-      "rating": 7.705
-    },
-    "shrek": {
-      "director": "Andrew Adamson",
-      "year": 2001,
-      "runtime": 90,
-      "posterPath": "/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg",
-      "overview": "It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up ",
-      "rating": 7.761
+    "sorry-to-bother-you": {
+      "director": "Boots Riley",
+      "year": 2018,
+      "runtime": 112,
+      "posterPath": "/peTl1V04E9ppvhgvNmSX0r2ALqO.jpg",
+      "overview": "In an alternate present-day version of Oakland, black telemarketer Cassius Green discovers a magical key to professional success – which propels him into a macabre universe.",
+      "rating": 6.778
     },
     "top-gun-maverick": {
       "director": "Joseph Kosinski",
@@ -4411,30 +4128,6 @@
       "posterPath": "/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg",
       "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TO",
       "rating": 8.157
-    },
-    "kiss-me-deadly": {
-      "director": "Robert Aldrich",
-      "year": 1955,
-      "runtime": 106,
-      "posterPath": "/z7me91nrpWLHY1mZOB2v20cK0zY.jpg",
-      "overview": "One evening, Hammer gives a ride to Christina, an attractive hitchhiker on a lonely country road, who has escaped from the nearby lunatic asylum. Thugs waylay them and force his car to crash. When Ham",
-      "rating": 7.2
-    },
-    "blind-cop-2": {
-      "director": "Alec Bonk",
-      "year": 2025,
-      "runtime": 83,
-      "posterPath": "/dCebOrtFpmIWgTTT27Pd0x2jgZH.jpg",
-      "overview": "When an influx of illegal weapons trafficking explodes onto the scene, a grieving blind police officer must purge the city streets or risk mass chaos breaking loose.",
-      "rating": 0
-    },
-    "sorry-to-bother-you": {
-      "director": "Boots Riley",
-      "year": 2018,
-      "runtime": 112,
-      "posterPath": "/peTl1V04E9ppvhgvNmSX0r2ALqO.jpg",
-      "overview": "In an alternate present-day version of Oakland, black telemarketer Cassius Green discovers a magical key to professional success – which propels him into a macabre universe.",
-      "rating": 6.778
     },
     "i-love-boosters": {
       "director": "Boots Riley",
@@ -4452,6 +4145,14 @@
       "overview": "A woman goes to a back alley abortion clinic, only to have her aborted fetus attack her, her boyfriend, and everyone else at the clinic.",
       "rating": 4.731
     },
+    "the-bridges-of-madison-county": {
+      "director": "Clint Eastwood",
+      "year": 1995,
+      "runtime": 135,
+      "posterPath": "/aCBrhOQjhG397GLkEZ49zReQEKX.jpg",
+      "overview": "Photographer Robert Kincaid wanders into the life of housewife Francesca Johnson for four days in the 1960s.",
+      "rating": 7.705
+    },
     "blood-incantation-all-gates-open-in-search-of-absolute-elsewhere": {
       "director": "Niklas Tschaikowsky",
       "year": 2024,
@@ -4468,14 +4169,6 @@
       "overview": "A woman swaps bodies with a chair, and everyone likes her better as a chair.",
       "rating": 5.833
     },
-    "remarkably-bright-creatures": {
-      "director": "Olivia Newman",
-      "year": 2026,
-      "runtime": 114,
-      "posterPath": "/9HcEqn3D4J6b2Z0jK54id9nA0fr.jpg",
-      "overview": "Through unlikely bonds formed during night shifts at a local aquarium, Tova, an elderly widow, learns of a life-changing discovery that may bring her joy and wonder once again.",
-      "rating": 8.56
-    },
     "dirty-harry-euphoria": {
       "director": "Don Siegel",
       "year": 1971,
@@ -4483,14 +4176,6 @@
       "posterPath": "/scl2JDHzYoIEs5xyYy5ITCfyY0G.jpg",
       "overview": "When a madman dubbed 'Scorpio' terrorizes San Francisco, hard-nosed cop, Harry Callahan – famous for his take-no-prisoners approach to law enforcement – is tasked with hunting down the psychopath.",
       "rating": 7.45
-    },
-    "sir-no-sir-on-35mm": {
-      "director": "David Zeiger",
-      "year": 2005,
-      "runtime": 85,
-      "posterPath": "/7du9KOIHxfWSOarTbKmsplV7PNP.jpg",
-      "overview": "Sir! No Sir! is a documentary film about the anti-war movement within the ranks of the United States Military during the Vietnam War. It consists in part of interviews with Vietnam veterans explaining",
-      "rating": 6.844
     },
     "river-of-grass": {
       "director": "Kelly Reichardt",
@@ -5120,14 +4805,6 @@
       "overview": "In a dysfunctional family where the mother is a heroin addict and prostitute, beaten by her son, and the father is an ex-TV reporter, sleeping with his daughter and filming his son being beaten up, ‘Q",
       "rating": 6.3
     },
-    "texas-music-revolution": {
-      "director": "Troy Paff",
-      "year": 2023,
-      "runtime": 103,
-      "posterPath": "/8ESFS56NpqTvFBggfp9G5Td9Nov.jpg",
-      "overview": "Since 1997, KHYI-FM in Dallas has championed the authentic, unpolished sound of indie Americana and country music. It’s a cause that crystallized when station manager Joshua Jones founded Texas Music ",
-      "rating": 0
-    },
     "the-man-who-fell-to-earth": {
       "director": "Nicolas Roeg",
       "year": 1976,
@@ -5135,37 +4812,6 @@
       "posterPath": "/gwmPVphE5DMFFGXGMhfEFyxOOYj.jpg",
       "overview": "Thomas Jerome Newton is an alien who has come to Earth in search of water to save his home planet. Aided by lawyer Oliver Farnsworth, Thomas uses his knowledge of advanced technology to create profita",
       "rating": 6.5
-    },
-    "freeway": {
-      "director": "Matthew Bright",
-      "year": 1996,
-      "runtime": 102,
-      "posterPath": "/m0pAARUq3foDWFsrUmlYDHtNPE9.jpg",
-      "overview": "Following the arrest of her mother, Ramona, young Vanessa Lutz decides to go in search of her estranged grandmother. On the way, she is given a ride by school counselor Bob Wolverton. During the journ",
-      "rating": 6.46,
-      "rottenTomatoes": 73,
-      "letterboxd": 3.5,
-      "reviews": [
-        {
-          "quote": "Reese Witherspoon tears through this deranged Little Red Riding Hood update with a ferocity that announced a major talent.",
-          "critic": "Janet Maslin",
-          "publication": "The New York Times"
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "Blank Check",
-          "episode": "Freeway"
-        }
-      ]
-    },
-    "cinematic-void-presents-j-d-s-revenge": {
-      "director": "Arthur Marks",
-      "year": 1976,
-      "runtime": 95,
-      "posterPath": "/s9uQYcIJj3W4bsIhY1ohqpVYqga.jpg",
-      "overview": "Although notorious New Orleans gangster J.D. Walker is shot and killed in the 1940s, his spirit remains restless for three decades, until a hypnotist's supernatural nightclub act allows him to take ov",
-      "rating": 5.743
     },
     "le-d-m-nagement-l-homme-la-valise": {
       "director": "Olivier Doran",
@@ -5199,83 +4845,6 @@
       "overview": "Eager to impress his activist crush, a wealthy New York teenager follows an online connection to Texas, where he's convinced he can stop an act of extreme violence.",
       "rating": 1
     },
-    "the-drama": {
-      "director": "Kristoffer Borgli",
-      "year": 2026,
-      "runtime": 105,
-      "posterPath": "/yPV87cvDabRMTZs6NIbZLOufBLR.jpg",
-      "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
-      "rating": 6.9,
-      "imdbId": "tt33071426",
-      "letterboxd": 3.76
-    },
-    "fantasy-life": {
-      "director": "Matthew Shear",
-      "year": 2026,
-      "runtime": 91,
-      "posterPath": "/e0qtdCm7TJGRfMv0tmdP8DsOy3U.jpg",
-      "overview": "An anxious New York law school dropout stumbles into a job babysitting his psychiatrist's three granddaughters and falls for the girls' mother, an actress in a rocky marriage.",
-      "rating": 6.286
-    },
-    "omaha": {
-      "director": "Cole Webley",
-      "year": 2025,
-      "runtime": 83,
-      "posterPath": "/s1SNVyTWWmvpWK439bOrRF9xywS.jpg",
-      "overview": "A father conceals the truth about his family’s seemingly spontaneous road trip across the American West.",
-      "rating": 8
-    },
-    "the-stranger": {
-      "director": "Rob Marshall",
-      "year": 2011,
-      "runtime": 136,
-      "posterPath": "/keGfSvCmYj7CvdRx36OdVrAEibE.jpg",
-      "overview": "When Jack crosses paths with a woman from his past, he's not sure if it's love...or if she's a ruthless con artist using him to find the fabled Fountain of Youth.",
-      "rating": 6.567,
-      "rottenTomatoes": 92,
-      "imdbId": "tt11897478",
-      "letterboxd": 3.49
-    },
-    "kontinental-25": {
-      "imdbId": "tt35492581",
-      "letterboxd": 3.53
-    },
-    "palestine-36": {
-      "director": "Annemarie Jacir",
-      "year": 2025,
-      "runtime": 120,
-      "posterPath": "/ajeiriNRFPLESjGZ0vdp4MVardZ.jpg",
-      "overview": "Year 1936. As villages across Palestine rise against British colonial rule, Yusuf drifts between his rural home and the restless energy of Jerusalem, longing for a future beyond the growing unrest. Bu",
-      "rating": 7.813,
-      "rottenTomatoes": 100,
-      "imdbId": "tt29271622",
-      "letterboxd": 3.89
-    },
-    "erupcja": {
-      "director": "Pete Ohs",
-      "year": 2026,
-      "runtime": 71,
-      "posterPath": "/1OMiyrpkZvu5YmWbPBtwDQHZsu1.jpg",
-      "overview": "While on vacation in Poland, Bethany breaks away from a romantic itinerary planned by her doting boyfriend, Rob, fearing that a marriage proposal is imminent. Reuniting instead with an old friend, Nel",
-      "rating": 7,
-      "letterboxd": 3.31
-    },
-    "mad-bills-to-pay": {
-      "director": "Joel Alfonso Vargas",
-      "year": 2026,
-      "runtime": 101,
-      "posterPath": "/5f0AG1eGsRC5aIdUGt8wAkrTSuS.jpg",
-      "overview": "Rico’s summer is a mix of chasing girls and hustling homemade cocktails out of a cooler on Orchard Beach, the Bronx. But when Destiny, his teenage girlfriend, crashes at his place with his family, it’",
-      "rating": 0
-    },
-    "driver-s-ed": {
-      "director": "Bobby Farrelly",
-      "year": 2026,
-      "runtime": 102,
-      "posterPath": "/hHbzSzjJnmcq02l2razSScBEVBf.jpg",
-      "overview": "A group of teens hit the road in a stolen driver's ed car, racing against time to help a lovesick high school senior track down his college-freshman girlfriend and win her back.",
-      "rating": 6.5
-    },
     "wasteman": {
       "director": "Cal McMau",
       "year": 2026,
@@ -5296,6 +4865,17 @@
       "imdbId": "tt35340614",
       "letterboxd": 3.7
     },
+    "the-stranger": {
+      "director": "Rob Marshall",
+      "year": 2011,
+      "runtime": 136,
+      "posterPath": "/keGfSvCmYj7CvdRx36OdVrAEibE.jpg",
+      "overview": "When Jack crosses paths with a woman from his past, he's not sure if it's love...or if she's a ruthless con artist using him to find the fabled Fountain of Youth.",
+      "rating": 6.567,
+      "rottenTomatoes": 92,
+      "imdbId": "tt11897478",
+      "letterboxd": 3.49
+    },
     "miroirs-no-3": {
       "director": "Christian Petzold",
       "year": 2025,
@@ -5307,6 +4887,15 @@
       "imdbId": "tt36848172",
       "letterboxd": 3.47
     },
+    "erupcja": {
+      "director": "Pete Ohs",
+      "year": 2026,
+      "runtime": 71,
+      "posterPath": "/1OMiyrpkZvu5YmWbPBtwDQHZsu1.jpg",
+      "overview": "While on vacation in Poland, Bethany breaks away from a romantic itinerary planned by her doting boyfriend, Rob, fearing that a marriage proposal is imminent. Reuniting instead with an old friend, Nel",
+      "rating": 7,
+      "letterboxd": 3.31
+    },
     "marama": {
       "director": "Taratoa Stappard",
       "year": 2026,
@@ -5314,6 +4903,24 @@
       "posterPath": "/kbhqPDnqGBfmTf5Yu5f8fBj6tfp.jpg",
       "overview": "1859. When a young Māori woman is summoned from New Zealand to North Yorkshire, she uncovers her horrific colonial heritage and is compelled to confront and destroy the titled Englishman who devastate",
       "rating": 5.6
+    },
+    "the-drama": {
+      "director": "Kristoffer Borgli",
+      "year": 2026,
+      "runtime": 105,
+      "posterPath": "/yPV87cvDabRMTZs6NIbZLOufBLR.jpg",
+      "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
+      "rating": 6.9,
+      "imdbId": "tt33071426",
+      "letterboxd": 3.76
+    },
+    "mad-bills-to-pay": {
+      "director": "Joel Alfonso Vargas",
+      "year": 2026,
+      "runtime": 101,
+      "posterPath": "/5f0AG1eGsRC5aIdUGt8wAkrTSuS.jpg",
+      "overview": "Rico’s summer is a mix of chasing girls and hustling homemade cocktails out of a cooler on Orchard Beach, the Bronx. But when Destiny, his teenage girlfriend, crashes at his place with his family, it’",
+      "rating": 0
     },
     "ricky": {
       "director": "Peter Farrelly",
@@ -5333,29 +4940,44 @@
       "imdbId": "tt1006959",
       "letterboxd": 3.37
     },
-    "open-screen": {
-      "director": "John McGowan",
-      "year": null,
-      "runtime": 6,
-      "posterPath": "/vnXcoecxFobYTwXMuOngT44PrgB.jpg",
-      "overview": "Charlie sits down at a movie theater only to find that the film being screened is about him. After much confusion and panic, he decides that he must stop the screening.",
-      "rating": 0
-    },
-    "the-audience": {
-      "director": "Claus Peymann",
-      "year": 1966,
-      "runtime": null,
-      "posterPath": null,
-      "overview": "Four actors analyze the nature of theatre for an hour and then alternately insult the audience and praise its “performance.” TV recording of the premiere at the \"Theater am Turm\" in Frankfurt/Main.",
-      "rating": 9
-    },
-    "they-called-us-trujillo-s-jews": {
-      "director": "Michael Puro",
+    "driver-s-ed": {
+      "director": "Bobby Farrelly",
       "year": 2026,
-      "runtime": 60,
-      "posterPath": "/aXCuQVSB13kMdLhAUYuIkKIMQ0T.jpg",
-      "overview": "The story of the Sosúa settlement, the refugee colony created on land donated by Dominican dictator Rafael Trujillo that saved hundreds of European Jews at a moment when few countries would accept the",
-      "rating": 0
+      "runtime": 102,
+      "posterPath": "/hHbzSzjJnmcq02l2razSScBEVBf.jpg",
+      "overview": "A group of teens hit the road in a stolen driver's ed car, racing against time to help a lovesick high school senior track down his college-freshman girlfriend and win her back.",
+      "rating": 6.5
+    },
+    "palestine-36": {
+      "director": "Annemarie Jacir",
+      "year": 2025,
+      "runtime": 120,
+      "posterPath": "/ajeiriNRFPLESjGZ0vdp4MVardZ.jpg",
+      "overview": "Year 1936. As villages across Palestine rise against British colonial rule, Yusuf drifts between his rural home and the restless energy of Jerusalem, longing for a future beyond the growing unrest. Bu",
+      "rating": 7.813,
+      "rottenTomatoes": 100,
+      "imdbId": "tt29271622",
+      "letterboxd": 3.89
+    },
+    "kontinental-25": {
+      "imdbId": "tt35492581",
+      "letterboxd": 3.53
+    },
+    "omaha": {
+      "director": "Cole Webley",
+      "year": 2025,
+      "runtime": 83,
+      "posterPath": "/s1SNVyTWWmvpWK439bOrRF9xywS.jpg",
+      "overview": "A father conceals the truth about his family’s seemingly spontaneous road trip across the American West.",
+      "rating": 8
+    },
+    "fantasy-life": {
+      "director": "Matthew Shear",
+      "year": 2026,
+      "runtime": 91,
+      "posterPath": "/e0qtdCm7TJGRfMv0tmdP8DsOy3U.jpg",
+      "overview": "An anxious New York law school dropout stumbles into a job babysitting his psychiatrist's three granddaughters and falls for the girls' mother, an actress in a rocky marriage.",
+      "rating": 6.286
     },
     "coup-53": {
       "director": "Taghi Amirani",
@@ -5388,29 +5010,6 @@
       "posterPath": "/1BgGxvgaNp6yHjJqjMSgGdTfrnR.jpg",
       "overview": "Arnold, an unemployed middle-aged mouse, confides to his wife Maria that he suspects his entire world is nothing more than a set, and his life a scripted performance. When his best friend Ramiro dies ",
       "rating": 6.3
-    },
-    "10-things-i-hate-about-you": {
-      "rottenTomatoes": 72,
-      "letterboxd": 3.7,
-      "reviews": [
-        {
-          "quote": "Heath Ledger's incandescent charm powers a teen comedy that's smarter and more literate than it has any right to be.",
-          "critic": "Owen Gleiberman",
-          "publication": "Entertainment Weekly"
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "The Rewatchables",
-          "episode": "10 Things I Hate About You"
-        }
-      ],
-      "posterPath": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
-      "director": "Gil Junger",
-      "year": 1999,
-      "runtime": 97,
-      "overview": "A new kid at school recruits the only guy tough enough to date the meanest girl on campus so he can date her younger sister. Gil Junger's Shakespeare-via-Seattle teen comedy is a time capsule of late-90s perfection, elevated by Heath Ledger's star-making performance and a killer soundtrack.",
-      "rating": 7.591
     },
     "the-notebook": {
       "director": "Nick Cassavetes",
@@ -5488,6 +5087,14 @@
       "overview": "Four best friends (Tibby, Lena, Carmen &amp; Bridget) who buy a mysterious pair of pants that fits each of them, despite their differing sizes, and makes whoever wears them feel fabulous. When faced w",
       "rating": 6.512
     },
+    "shrek": {
+      "director": "Andrew Adamson",
+      "year": 2001,
+      "runtime": 90,
+      "posterPath": "/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg",
+      "overview": "It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up ",
+      "rating": 7.761
+    },
     "top-gun": {
       "director": "Tony Scott",
       "year": 1986,
@@ -5503,6 +5110,140 @@
       "posterPath": "/4RN5El3Pj2W4gpwgiAGLVfSJv2g.jpg",
       "overview": "With their freedom on the line, the Looney Tunes seek the help of NBA superstar Michael Jordan to win a basketball game against a team of moronic aliens.",
       "rating": 6.809
+    },
+    "i-love-maria-aces-go-places-iv": {
+      "director": "David Chung",
+      "year": 1988,
+      "runtime": 100,
+      "posterPath": "/5qRHuvKnUk4IBk7zH5uDCRhlVft.jpg",
+      "overview": "A gang of criminals terrorizes Hong Kong with two killer robots, one of which is modelled on the gang's female thug, Maria. When the robot gets damaged during a mission, an inventor working for the po",
+      "rating": 6.4
+    },
+    "the-passionate-friends": {
+      "director": "David Lean",
+      "year": 1949,
+      "runtime": 91,
+      "posterPath": "/awmC8rVQR2WcN7kTKP7bXHFInnA.jpg",
+      "overview": "A woman is torn between the love of her life, who's married to someone else, and her older husband.",
+      "rating": 6.9
+    },
+    "kiss-me-deadly": {
+      "director": "Robert Aldrich",
+      "year": 1955,
+      "runtime": 106,
+      "posterPath": "/z7me91nrpWLHY1mZOB2v20cK0zY.jpg",
+      "overview": "One evening, Hammer gives a ride to Christina, an attractive hitchhiker on a lonely country road, who has escaped from the nearby lunatic asylum. Thugs waylay them and force his car to crash. When Ham",
+      "rating": 7.2
+    },
+    "blind-cop-2": {
+      "director": "Alec Bonk",
+      "year": 2025,
+      "runtime": 83,
+      "posterPath": "/dCebOrtFpmIWgTTT27Pd0x2jgZH.jpg",
+      "overview": "When an influx of illegal weapons trafficking explodes onto the scene, a grieving blind police officer must purge the city streets or risk mass chaos breaking loose.",
+      "rating": 0
+    },
+    "remarkably-bright-creatures": {
+      "director": "Olivia Newman",
+      "year": 2026,
+      "runtime": 114,
+      "posterPath": "/9HcEqn3D4J6b2Z0jK54id9nA0fr.jpg",
+      "overview": "Through unlikely bonds formed during night shifts at a local aquarium, Tova, an elderly widow, learns of a life-changing discovery that may bring her joy and wonder once again.",
+      "rating": 8.56
+    },
+    "sir-no-sir-on-35mm": {
+      "director": "David Zeiger",
+      "year": 2005,
+      "runtime": 85,
+      "posterPath": "/7du9KOIHxfWSOarTbKmsplV7PNP.jpg",
+      "overview": "Sir! No Sir! is a documentary film about the anti-war movement within the ranks of the United States Military during the Vietnam War. It consists in part of interviews with Vietnam veterans explaining",
+      "rating": 6.844
+    },
+    "texas-music-revolution": {
+      "director": "Troy Paff",
+      "year": 2023,
+      "runtime": 103,
+      "posterPath": "/8ESFS56NpqTvFBggfp9G5Td9Nov.jpg",
+      "overview": "Since 1997, KHYI-FM in Dallas has championed the authentic, unpolished sound of indie Americana and country music. It’s a cause that crystallized when station manager Joshua Jones founded Texas Music ",
+      "rating": 0
+    },
+    "freeway": {
+      "director": "Matthew Bright",
+      "year": 1996,
+      "runtime": 102,
+      "posterPath": "/m0pAARUq3foDWFsrUmlYDHtNPE9.jpg",
+      "overview": "Following the arrest of her mother, Ramona, young Vanessa Lutz decides to go in search of her estranged grandmother. On the way, she is given a ride by school counselor Bob Wolverton. During the journ",
+      "rating": 6.46,
+      "rottenTomatoes": 73,
+      "letterboxd": 3.5,
+      "reviews": [
+        {
+          "quote": "Reese Witherspoon tears through this deranged Little Red Riding Hood update with a ferocity that announced a major talent.",
+          "critic": "Janet Maslin",
+          "publication": "The New York Times"
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "Blank Check",
+          "episode": "Freeway"
+        }
+      ]
+    },
+    "cinematic-void-presents-j-d-s-revenge": {
+      "director": "Arthur Marks",
+      "year": 1976,
+      "runtime": 95,
+      "posterPath": "/s9uQYcIJj3W4bsIhY1ohqpVYqga.jpg",
+      "overview": "Although notorious New Orleans gangster J.D. Walker is shot and killed in the 1940s, his spirit remains restless for three decades, until a hypnotist's supernatural nightclub act allows him to take ov",
+      "rating": 5.743
+    },
+    "open-screen": {
+      "director": "John McGowan",
+      "year": null,
+      "runtime": 6,
+      "posterPath": "/vnXcoecxFobYTwXMuOngT44PrgB.jpg",
+      "overview": "Charlie sits down at a movie theater only to find that the film being screened is about him. After much confusion and panic, he decides that he must stop the screening.",
+      "rating": 0
+    },
+    "the-audience": {
+      "director": "Claus Peymann",
+      "year": 1966,
+      "runtime": null,
+      "posterPath": null,
+      "overview": "Four actors analyze the nature of theatre for an hour and then alternately insult the audience and praise its “performance.” TV recording of the premiere at the \"Theater am Turm\" in Frankfurt/Main.",
+      "rating": 9
+    },
+    "they-called-us-trujillo-s-jews": {
+      "director": "Michael Puro",
+      "year": 2026,
+      "runtime": 60,
+      "posterPath": "/aXCuQVSB13kMdLhAUYuIkKIMQ0T.jpg",
+      "overview": "The story of the Sosúa settlement, the refugee colony created on land donated by Dominican dictator Rafael Trujillo that saved hundreds of European Jews at a moment when few countries would accept the",
+      "rating": 0
+    },
+    "10-things-i-hate-about-you": {
+      "rottenTomatoes": 72,
+      "letterboxd": 3.7,
+      "reviews": [
+        {
+          "quote": "Heath Ledger's incandescent charm powers a teen comedy that's smarter and more literate than it has any right to be.",
+          "critic": "Owen Gleiberman",
+          "publication": "Entertainment Weekly"
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "The Rewatchables",
+          "episode": "10 Things I Hate About You"
+        }
+      ],
+      "posterPath": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
+      "director": "Gil Junger",
+      "year": 1999,
+      "runtime": 97,
+      "overview": "A new kid at school recruits the only guy tough enough to date the meanest girl on campus so he can date her younger sister. Gil Junger's Shakespeare-via-Seattle teen comedy is a time capsule of late-90s perfection, elevated by Heath Ledger's star-making performance and a killer soundtrack.",
+      "rating": 7.591
     },
     "frankenstein": {
       "director": "Guillermo del Toro",
