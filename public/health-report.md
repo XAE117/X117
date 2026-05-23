@@ -1,6 +1,6 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-05-23 03:32 UTC_
+_Generated 2026-05-23 11:10 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -17,7 +17,7 @@ _Generated 2026-05-23 03:32 UTC_
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-05-23 (today)
 - 9 venues, 9 with future shows
-- 267 future shows, horizon 364 days
+- 266 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-05-23 (today)
