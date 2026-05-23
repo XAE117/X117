@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-17T10:20:07.539Z",
-  "lastFullScrape": "2026-05-17T10:20:07.539Z",
+  "lastUpdated": "2026-05-23T03:32:30.873Z",
+  "lastFullScrape": "2026-05-23T03:32:30.873Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -43,7 +43,13 @@
     "bengara",
     "bar-betsy",
     "folks-pizzeria",
-    "tev-s-kitchen"
+    "tev-s-kitchen",
+    "miura",
+    "lynx-los-angeles",
+    "kitchen-istanbul-san-francisco",
+    "good-alley-rosemead",
+    "alto-studio-city",
+    "casa-leo-los-angeles"
   ],
   "restaurants": [
     {
@@ -181,10 +187,16 @@
       "bibGourmand": true,
       "tier": "tacos",
       "tacoStyle": "regional",
-      "sourceCount": 0,
-      "heatScore": 0,
+      "sourceCount": 1,
+      "heatScore": 2,
       "lat": 34.041615,
-      "lng": -118.252184
+      "lng": -118.252184,
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/sonoratown"
+        }
+      ]
     },
     {
       "id": "howlin-rays",
@@ -2164,12 +2176,16 @@
         {
           "name": "Resy Hit List",
           "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        },
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/sora-craft-kitchen"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "sora-craft-kitchen",
       "addedDate": "2026-03-20",
       "address": "1109 E 12th St, Los Angeles, CA 90021, United States",
@@ -5853,6 +5869,116 @@
       "heatScore": 3,
       "id": "tev-s-kitchen",
       "addedDate": "2026-05-16"
+    },
+    {
+      "name": "Miura",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "miura",
+      "addedDate": "2026-05-23"
+    },
+    {
+      "name": "Lynx",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/lynx"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "lynx-los-angeles",
+      "addedDate": "2026-05-23"
+    },
+    {
+      "name": "Kitchen Istanbul",
+      "neighborhood": "San Francisco",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/san-francisco/restaurant/kitchen-istanbul"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "kitchen-istanbul-san-francisco",
+      "addedDate": "2026-05-23"
+    },
+    {
+      "name": "Good Alley",
+      "neighborhood": "Rosemead",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/rosemead/restaurant/good-alley"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "good-alley-rosemead",
+      "addedDate": "2026-05-23"
+    },
+    {
+      "name": "ALTO",
+      "neighborhood": "Studio City",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/studio-city/restaurant/alto-1250145"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "alto-studio-city",
+      "addedDate": "2026-05-23"
+    },
+    {
+      "name": "CASA LEO",
+      "neighborhood": "Los Angeles",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/casa-leo"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "casa-leo-los-angeles",
+      "addedDate": "2026-05-23"
     }
   ]
 }
