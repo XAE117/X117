@@ -1,28 +1,28 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-05-28 13:46 UTC_
+_Generated 2026-05-29 12:49 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (2)
 
-- **[Cinema (theaters.json)]** 12 theaters with 0 future screenings: REDCAT, Secret Movie Club, Cinespia, WHAMMY! Analog Media, Laemmle Town Center 5, The Landmark Westwood, Fine Arts Theatre Beverly Hills, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC Rolling Hills 20, AMC The Americana at Brand 18
-- **[Jazz (jazz-venues.json)]** 2 source errors: songkick.com (Request failed with status code 406), eventbrite.com (Request failed with status code 405)
+- **[Cinema (theaters.json)]** 12 theaters with 0 future screenings: REDCAT, Laemmle NoHo 7, Secret Movie Club, 2220 Arts + Archives, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC Rolling Hills 20, AMC The Americana at Brand 18, Universal Cinema AMC at CityWalk
+- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
-- Last updated: 2026-05-28 (today)
+- Last updated: 2026-05-29 (today)
 - 36 theaters tracked, 24 with future screenings
-- 370 future screenings, horizon 38 days
-- ⚠️ 12 theaters with 0 screenings: REDCAT, Secret Movie Club, Cinespia, WHAMMY! Analog Media, Laemmle Town Center 5, The Landmark Westwood, Fine Arts Theatre Beverly Hills, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC Rolling Hills 20, AMC The Americana at Brand 18
+- 383 future screenings, horizon 37 days
+- ⚠️ 12 theaters with 0 screenings: REDCAT, Laemmle NoHo 7, Secret Movie Club, 2220 Arts + Archives, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC Rolling Hills 20, AMC The Americana at Brand 18, Universal Cinema AMC at CityWalk
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-05-28 (today)
-- 9 venues, 9 with future shows
-- 244 future shows, horizon 217 days
-- ⚠️ 2 source errors: songkick.com (Request failed with status code 406), eventbrite.com (Request failed with status code 405)
+- Last updated: 2026-05-29 (today)
+- 8 venues, 8 with future shows
+- 259 future shows, horizon 216 days
+- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-05-24 (4 days ago)
+- Last updated: 2026-05-24 (5 days ago)
 - 253 restaurants tracked
 - Tiers: street 7, feast 189, whale 14
 
