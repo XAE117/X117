@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-24T10:29:25.208Z",
-  "lastFullScrape": "2026-05-24T10:29:25.208Z",
+  "lastUpdated": "2026-05-30T03:40:20.429Z",
+  "lastFullScrape": "2026-05-30T03:40:20.429Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -27,10 +27,6 @@
     "amiguita",
     "sandeomi-hamjipark",
     "padi-cafe-indonesian-kitchen",
-    "elcielo-new-york",
-    "hwaro",
-    "le-ch-ne",
-    "cove",
     "bar-di-bello",
     "azizam",
     "evil-cooks",
@@ -49,7 +45,13 @@
     "kitchen-istanbul-san-francisco",
     "good-alley-rosemead",
     "alto-studio-city",
-    "casa-leo-los-angeles"
+    "casa-leo-los-angeles",
+    "asadero",
+    "cafe-stella",
+    "the-bohemian",
+    "the-brisket-shoppe",
+    "osteria-ester",
+    "elyu-omakase"
   ],
   "restaurants": [
     {
@@ -5979,6 +5981,118 @@
       "heatScore": 2,
       "id": "casa-leo-los-angeles",
       "addedDate": "2026-05-23"
+    },
+    {
+      "name": "Asadero",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "asadero",
+      "addedDate": "2026-05-30"
+    },
+    {
+      "name": "Cafe Stella",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "cafe-stella",
+      "addedDate": "2026-05-30"
+    },
+    {
+      "name": "The Bohemian",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/florida/bonita-springs_2883470/restaurant/the-bohemian"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "the-bohemian",
+      "addedDate": "2026-05-30"
+    },
+    {
+      "name": "The Brisket Shoppe",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/florida/tampa/restaurant/the-brisket-shoppe"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "the-brisket-shoppe",
+      "addedDate": "2026-05-30"
+    },
+    {
+      "name": "Osteria Ester",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/florida/orlando/restaurant/osteria-ester"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "osteria-ester",
+      "addedDate": "2026-05-30"
+    },
+    {
+      "name": "Elyu Omakase",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Michelin Guide",
+          "url": "https://guide.michelin.com/us/en/florida/coral-gables/restaurant/elyu-omakase"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "elyu-omakase",
+      "addedDate": "2026-05-30"
     }
   ]
 }
