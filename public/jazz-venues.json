@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-03T14:28:16.348Z",
+  "lastUpdated": "2026-06-04T12:46:00.370Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-06-03-yuki-chiba",
-          "artist": "Yuki Chiba",
-          "date": "2026-06-03",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/yuki-chiba/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-06-04-arturo-sandoval",
           "artist": "Arturo Sandoval",
@@ -136,6 +127,15 @@
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.bluenotejazz.com/la/tm-event/cash-cobain/",
+          "hot": false
+        },
+        {
+          "id": "blue-note-la-2026-06-17-keyon-harrold",
+          "artist": "Keyon Harrold",
+          "date": "2026-06-17",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.bluenotejazz.com/la/tm-event/keyon-harrold-5/",
           "hot": false
         },
         {
@@ -285,15 +285,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "catalina-jazz-2026-06-03-roccadile-trio-honoring-jazz-g",
-          "artist": "Roccadile Trio: Honoring Jazz Guitar Giants",
-          "date": "2026-06-03",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/roccadile-trio-honoring-jazz-guitar-giants/",
-          "hot": false
-        },
         {
           "id": "catalina-jazz-2026-06-04-an-evening-with-darcus-emmy-aw",
           "artist": "An Evening with DARCUS (Emmy Award-winning Pop-Soul Diva & Vegas Headliner)",
@@ -491,6 +482,15 @@
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/5th-annual-enthrone-entertainment-honors-celebrating-our-entertainment-heros/",
           "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-06-28-artur-zakiyan-solo-piano-armen",
+          "artist": "ARTUR ZAKIYAN: SOLO PIANO (Armenian Piano Virtuoso & Composer)",
+          "date": "2026-06-28",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/artur-zakiyan-solo-piano-armenian-piano-virtuoso-composer/",
+          "hot": false
         }
       ]
     },
@@ -505,27 +505,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-06-03-gerald-clayton-tuesday-happeni",
-          "artist": "Gerald Clayton Tuesday Happenings Jam Session",
-          "date": "2026-06-03",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "sam-first-2026-06-03-christian-moraga",
+          "id": "sam-first-2026-06-04-christian-moraga",
           "artist": "Christian Moraga",
-          "date": "2026-06-03",
+          "date": "2026-06-04",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-06-03-vde-jazz-orchestra",
+          "id": "sam-first-2026-06-04-vde-jazz-orchestra",
           "artist": "VDE Jazz Orchestra",
-          "date": "2026-06-03",
+          "date": "2026-06-04",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-06-04-le-boeuf-brothers",
+          "artist": "Le Boeuf Brothers",
+          "date": "2026-06-04",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -544,39 +544,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-06-03-sal-the-voice-valentinetti-w-d",
-          "artist": "Sal \"The Voice\" Valentinetti w/ Dave Damiani & The No Vacancy Orchestra",
-          "date": "2026-06-03",
-          "time": "12:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/sal-the-voice-valentinetti-w-dave-damiani-the-no-vacancy-orchestra-1",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-06-03-wayne-bergeron-big-band",
-          "artist": "Wayne Bergeron Big Band",
-          "date": "2026-06-03",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-06-03-dave-damiani-w-the-no-vacancy-",
-          "artist": "Dave Damiani w/The No Vacancy Orchestra",
-          "date": "2026-06-03",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-06-04-andy-vargas-featuring-la-verda",
           "artist": "Andy Vargas featuring La Verdad",
           "date": "2026-06-04",
           "time": "12:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/andy-vargas-featuring-la-verdad-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-06-04-lilliana-de-los-reyes",
+          "artist": "Lilliana de los Reyes",
+          "date": "2026-06-04",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-06-04-dave-damiani-w-the-no-vacancy-",
+          "artist": "Dave Damiani w/The No Vacancy Orchestra",
+          "date": "2026-06-04",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -940,21 +931,21 @@
           "hot": false
         },
         {
-          "id": "vibrato-2026-07-22-the-feel-of-neil-a-tribute-to-",
-          "artist": "The Feel of Neil – A Tribute to Neil Diamond",
+          "id": "vibrato-2026-07-22-terrell-edwards-unforgettable-",
+          "artist": "Terrell Edwards  - \"Unforgettable\"",
           "date": "2026-07-22",
           "time": "11:00 PM",
           "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/the-feel-of-neil-a-tribute-to-neil-diamond-1",
+          "link": "https://www.vibratogrilljazz.com/music/trgdy77arwwsgm6r446m4jfdtae6jm",
           "hot": false
         },
         {
-          "id": "vibrato-2026-07-23-terrell-edwards-unforgettable-",
-          "artist": "Terrell Edwards  - \"Unforgettable\"",
+          "id": "vibrato-2026-07-23-the-feel-of-neil-a-tribute-to-",
+          "artist": "The Feel of Neil – A Tribute to Neil Diamond",
           "date": "2026-07-23",
           "time": "11:00 PM",
           "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/trgdy77arwwsgm6r446m4jfdtae6jm",
+          "link": "https://www.vibratogrilljazz.com/music/the-feel-of-neil-a-tribute-to-neil-diamond-1",
           "hot": false
         },
         {
@@ -1033,10 +1024,19 @@
       "region": "LA",
       "shows": [
         {
-          "id": "world-stage-2026-06-03-billy-higgins-instrumental-jam",
+          "id": "world-stage-2026-06-04-billy-higgins-instrumental-jam",
           "artist": "Billy Higgins Instrumental Jam Session",
-          "date": "2026-06-03",
+          "date": "2026-06-04",
           "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "world-stage-2026-06-04-louis-van-taylor",
+          "artist": "Louis Van Taylor",
+          "date": "2026-06-04",
+          "time": "8:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
@@ -1053,15 +1053,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-06-03-pretty-loud-lodge-room-and-che",
-          "artist": "Pretty Loud – Lodge Room and Checker Hall Staff Showcase 2026",
-          "date": "2026-06-03",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/lodge-room-and-checker-hall-staff-showcase-2026/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-06-04-an-evening-with-jalen-ngonda",
           "artist": "An Evening with Jalen Ngonda",
@@ -1189,6 +1180,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-06-20-missing-wiba-and-the-burbank-p",
+          "artist": "Missing Wiba and the Burbank Philharmonic",
+          "date": "2026-06-20",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/missing-wiba-the-burbank-philharmonic/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-06-20-solya-postponed",
           "artist": "Solya – POSTPONED",
           "date": "2026-06-20",
@@ -1205,6 +1205,26 @@
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/soundtrack-live-the-blues-brothers-10-piece-band-performing-the-soundtrack-in-sync-with-the-film/",
           "hot": true
+        },
+        {
+          "id": "lodge-room-2026-06-23-saxophone-summit-june-23-24-ny",
+          "artist": "Saxophone Summit (June 23-24, NYC)",
+          "date": "2026-06-23",
+          "time": "8:00 PM",
+          "notes": "All ages",
+          "link": "https://www.minaretrecords.com/shows/saxsummit",
+          "hot": true,
+          "promoter": "Minaret Records"
+        },
+        {
+          "id": "lodge-room-2026-06-23-ics",
+          "artist": "ICS",
+          "date": "2026-06-23",
+          "time": "8:00 PM",
+          "notes": "All ages",
+          "link": "https://www.minaretrecords.com/shows/saxsummit?format=ical",
+          "hot": true,
+          "promoter": "Minaret Records"
         },
         {
           "id": "lodge-room-2026-06-24-girli",
@@ -1960,30 +1980,30 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-06-03-jazz-passjune-2026",
-          "artist": "Jazz PassJune 2026",
-          "date": "2026-06-03",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/3",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-06-03-jazz-passjuly-2026",
-          "artist": "Jazz PassJuly 2026",
-          "date": "2026-06-03",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/4",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-06-04-chad-willis-jazz-orchestra-w-c",
           "artist": "Chad Willis Jazz Orchestra w/ Crystal Lewis",
           "date": "2026-06-04",
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1020",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-04-jazz-passjune-2026",
+          "artist": "Jazz PassJune 2026",
+          "date": "2026-06-04",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/3",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-04-jazz-passjuly-2026",
+          "artist": "Jazz PassJuly 2026",
+          "date": "2026-06-04",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/4",
           "hot": false
         },
         {
@@ -2743,12 +2763,6 @@
           "hot": false
         }
       ]
-    }
-  ],
-  "scrapeErrors": [
-    {
-      "source": "eventbrite.com",
-      "error": "Request failed with status code 405"
     }
   ]
 }
