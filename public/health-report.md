@@ -1,30 +1,30 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-06-05 12:37 UTC_
+_Generated 2026-06-06 03:43 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (2)
 
-- **[Cinema (theaters.json)]** 13 theaters with 0 future screenings: Academy Museum, REDCAT, Secret Movie Club, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC The Americana at Brand 18
+- **[Cinema (theaters.json)]** 7 theaters with 0 future screenings: Academy Museum, REDCAT, Secret Movie Club, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood, AMC Century City 15
 - **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
-- Last updated: 2026-06-05 (today)
-- 36 theaters tracked, 23 with future screenings
-- 376 future screenings, horizon 48 days
-- ⚠️ 13 theaters with 0 screenings: Academy Museum, REDCAT, Secret Movie Club, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC The Americana at Brand 18
+- Last updated: 2026-06-06 (today)
+- 36 theaters tracked, 29 with future screenings
+- 384 future screenings, horizon 47 days
+- ⚠️ 7 theaters with 0 screenings: Academy Museum, REDCAT, Secret Movie Club, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood, AMC Century City 15
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-06-05 (today)
-- 8 venues, 8 with future shows
-- 299 future shows, horizon 209 days
+- Last updated: 2026-06-06 (today)
+- 9 venues, 9 with future shows
+- 297 future shows, horizon 364 days
 - ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-05-31 (5 days ago)
-- 259 restaurants tracked
-- Tiers: street 7, feast 195, whale 14
+- Last updated: 2026-06-06 (today)
+- 276 restaurants tracked
+- Tiers: street 7, feast 212, whale 14
 
 ## Guide (guide-restaurants.json)
 - 25 hand-curated entries

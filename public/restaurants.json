@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-31T10:55:37.481Z",
-  "lastFullScrape": "2026-05-31T10:55:37.481Z",
+  "lastUpdated": "2026-06-06T03:43:43.365Z",
+  "lastFullScrape": "2026-06-06T03:43:43.365Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -27,13 +27,6 @@
     "amiguita",
     "sandeomi-hamjipark",
     "padi-cafe-indonesian-kitchen",
-    "bar-di-bello",
-    "azizam",
-    "evil-cooks",
-    "two-homm-s-inglewood",
-    "the-let-s-go",
-    "big-sur-grill-santa-monica",
-    "betsy-altadena-ca",
     "picala",
     "roshona-bilash",
     "bengara",
@@ -51,7 +44,24 @@
     "the-bohemian",
     "the-brisket-shoppe",
     "osteria-ester",
-    "elyu-omakase"
+    "elyu-omakase",
+    "bad-roman",
+    "sushi-nakazawa",
+    "alta-adams",
+    "jacaranda",
+    "abl-hollywood",
+    "brick-lane-los-angeles",
+    "seedy",
+    "wa-iro",
+    "mitsi",
+    "josephine",
+    "hayama-by-watami-culver-city",
+    "coucou-manhattan-beach-manhattan-beach",
+    "cafe-triste",
+    "sushi-nakazawa-la",
+    "montauk-redondo-beach",
+    "night-on-earth",
+    "seco-silverlake"
   ],
   "restaurants": [
     {
@@ -247,10 +257,17 @@
       ],
       "color": "#E85D3A",
       "tier": "feast",
-      "sourceCount": 0,
-      "heatScore": 0,
+      "sourceCount": 1,
+      "heatScore": 2,
       "lat": 34.098572,
-      "lng": -118.304078
+      "lng": -118.304078,
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/jitlada?venueId=94615"
     },
     {
       "id": "porridge-puffs",
@@ -6093,6 +6110,321 @@
       "heatScore": 2,
       "id": "elyu-omakase",
       "addedDate": "2026-05-30"
+    },
+    {
+      "name": "Bad Roman",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "bad-roman",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Sushi Nakazawa",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "sushi-nakazawa",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Alta Adams",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "alta-adams",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Jacaranda",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "jacaranda",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "ABL Hollywood",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "abl-hollywood",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Brick Lane Los Angeles",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "brick-lane-los-angeles",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Seedy",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "seedy",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Wa-Iro",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "wa-iro",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Mitsi",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/mitsi?venueId=92722",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "mitsi",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Josephine",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/josephine-ca?venueId=96929",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "josephine",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Hayama by WATAMI",
+      "neighborhood": "Culver City",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/culver-city-ca/venues/hayama-by-watami?venueId=95194",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "hayama-by-watami-culver-city",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Coucou – Manhattan Beach",
+      "neighborhood": "Manhattan Beach",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/manhattan-beach-ca/venues/coucou-manhattan-beach?venueId=95202",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "coucou-manhattan-beach-manhattan-beach",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Cafe Triste",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/cafe-triste?date=2026-05-20&seats=2",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "cafe-triste",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Sushi Nakazawa LA",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sushi-nakazawa-la?venueId=60444",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "sushi-nakazawa-la",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Montauk",
+      "neighborhood": "Redondo Beach",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/redondo-beach-ca/venues/montauk?venueId=93847",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "montauk-redondo-beach",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Night on Earth",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/night-on-earth?venueId=94967",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "night-on-earth",
+      "addedDate": "2026-06-06"
+    },
+    {
+      "name": "Seco Silverlake",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/seco-silverlake?venueId=84236",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "seco-silverlake",
+      "addedDate": "2026-06-06"
     }
   ]
 }
