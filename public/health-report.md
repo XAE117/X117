@@ -1,28 +1,32 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-06-07 11:47 UTC_
+_Generated 2026-06-08 14:05 UTC_
 
-**Status: WARNINGS** ⚠️
+**Status: CRITICAL** ✗
+
+## Critical Issues (1)
+
+- **[Cinema (theaters.json)]** Only 19 theaters have future screenings (floor: 20)
 
 ## Warnings (2)
 
-- **[Cinema (theaters.json)]** 9 theaters with 0 future screenings: Academy Museum, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood, AMC Century City 15
-- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
+- **[Cinema (theaters.json)]** 17 theaters with 0 future screenings: Academy Museum, American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Laemmle NoHo 7, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC The Americana at Brand 18
+- **[Jazz (jazz-venues.json)]** 1 source errors: songkick.com (Request failed with status code 406)
 
 ## Cinema (theaters.json)
-- Last updated: 2026-06-07 (today)
-- 36 theaters tracked, 27 with future screenings
-- 344 future screenings, horizon 46 days
-- ⚠️ 9 theaters with 0 screenings: Academy Museum, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Landmark Sunset Hollywood, AMC Century City 15
+- Last updated: 2026-06-08 (today)
+- 36 theaters tracked, 19 with future screenings
+- 300 future screenings, horizon 45 days
+- ⚠️ 17 theaters with 0 screenings: Academy Museum, American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Laemmle NoHo 7, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC The Americana at Brand 18
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-06-07 (today)
+- Last updated: 2026-06-08 (today)
 - 10 venues, 10 with future shows
-- 291 future shows, horizon 207 days
-- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
+- 272 future shows, horizon 206 days
+- ⚠️ 1 source errors: songkick.com (Request failed with status code 406)
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-06-07 (today)
+- Last updated: 2026-06-07 (yesterday)
 - 276 restaurants tracked
 - Tiers: street 7, feast 212, whale 14
 
