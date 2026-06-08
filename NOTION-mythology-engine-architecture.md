@@ -15,6 +15,13 @@ Influences synthesized:
 - **Thomas Frank** — the dashboard is a decision-support tool used weekly ("what do
   I watch next," "what's feeding this scene"), not an archive you remember to open
 
+**Revision note:** this draft folds in the full Mythology Engine spec — the
+five-star calibration list, the recurring theme/mood vocabularies, and the named
+ATMOM/BiRD influence lists — and incorporates three refinements that fuller spec
+surfaced: a capture point for third-party recommendations (`Heard About` /
+`Heard From`), an `Essay`/`Other` release valve on Type, and day-one seeding with
+calibration data so the system is useful before a single new thing gets logged.
+
 ---
 
 ## Round 1 — The "complete" architecture (every requirement, taken literally)
@@ -99,15 +106,18 @@ questions without inventing a new object type for each one.
 | Property | Type | Why |
 |---|---|---|
 | Name | Title | — |
-| Type | Select: Film · TV · Documentary · Book · Game · Podcast | the one required category |
-| Status | Select: Queue · In Progress · Finished · Abandoned | drives every "what's next" view |
+| Type | Select: Film · TV · Documentary · Book · Game · Podcast · Essay · Other | `Other` is the pressure-release valve — the schema never needs surgery when a video lecture or long-form interview shows up |
+| Status | Select: Heard About · Queue · In Progress · Finished · Abandoned | `Heard About` is the capture point for "preserve recommendations from conversations, friends, critics, podcasts, reviews" — log the mention the moment it happens, before deciding to commit |
 | Rating | Select: ⭐️ 1–5 | a select, not a number — forces a deliberate choice instead of a silent 0 |
 | Finished On | Date | powers "this year" and recency views |
-| Note | Rich text (one field, freeform) | runtime, page count, why it mattered, who recommended it — one flexible field beats five rigid ones a person won't reliably fill in |
+| Note | Rich text (one field, freeform) | runtime, page count, why it mattered — one flexible field beats five rigid ones a person won't reliably fill in |
+| Heard From | Rich text | who/where recommended it — "Mike," "NYT review," "that podcast about Lynch." The one property the fuller spec justifies adding: it turns "what has Mike recommended that I still owe a watch" into a one-click filter instead of a memory exercise |
 | Creator | Relation → Creators | — |
-| Threads | Relation → Threads | carries themes, projects, *and* canon — see below |
+| Threads | Relation → Threads | carries themes, projects, canon, *and* mood — see below |
 
-Seven properties. Everything else is inferred from these.
+Nine properties (the original draft undercounted this as "seven" — it was always
+eight; `Heard From` is the single addition the fuller spec earns). Everything else
+is inferred from these.
 
 ### 2. Creators
 Name · **Role** (multi-select: Director · Author · Musician · Showrunner ·
@@ -126,15 +136,52 @@ through, not a different category of thing. Splitting them into three databases
 just because their names differ triples the maintenance surface for no functional
 gain.
 
-Name · **Kind** (select: Theme · Project · Canon) · Note (what this lens is, what
-you're looking for when you tag into it) · rollup for **Tagged Works**.
+Name · **Kind** (select: Theme · Project · Canon · Mood) · Note (what this lens is,
+what you're looking for when you tag into it) · rollup for **Tagged Works**.
 
-Examples of entries: *Cosmic horror* (Theme) · *ATMOM* (Project) · *Doubling/twins*
-(Theme) · *BiRD* (Project) · *Personal Canon — Top Tier* (Canon).
+`Mood` earns a place in `Kind` because moods are structurally identical to
+themes — both are lenses that describe a work rather than research objects you'd
+build a page around. "Melancholy," "Dreamlike," "Meditative" sit in the same
+relation field as "Cosmic horror" and "Grief," which means "find me something
+Meditative and Dreamlike tonight" is answered by the *exact same* mechanism as
+"find me everything feeding ATMOM" — one relation, one mental model, infinitely
+extensible without ever touching the schema again.
+
+Examples of entries: *Cosmic horror* (Theme) · *Grief* (Theme) · *ATMOM* (Project)
+· *BiRD* (Project) · *Personal Canon — Top Tier* (Canon) · *Dreamlike* (Mood) ·
+*Melancholy* (Mood).
 
 Tagging *Annihilation* into "Doubling/twins," "ATMOM," and "Personal Canon — Top
 Tier" is one relation field, filled three times, in one motion — not three database
 entries maintained in three separate places.
+
+### Day-one seeding — calibration data, not a cold start
+A system that launches empty has nothing for "Open Loops" or "The Canon" to
+surface — and empty systems are the ones that get abandoned (the spec's own test:
+"should become more valuable as it grows, not another abandoned database"). So it
+launches with substance already in it:
+
+- **Personal Canon — Top Tier** (Canon thread) is seeded immediately with the
+  eleven calibration favorites — *The Leftovers, Les Revenants, Top of the Lake,
+  True Detective S1, Twin Peaks, Twin Peaks: The Return, The Terror, Dark, Stalker,
+  Solaris, The Thing* — each logged as `Status: Finished, Rating: 5`. These aren't
+  just record-keeping; they're the calibration points the entire "resembles my
+  favorites" instinct runs on.
+- **ATMOM** (Project thread) is pre-tagged with its named atmospheric influences —
+  *The Terror, The Thing, At the Mountains of Madness, Alien, Solaris, Stalker* —
+  and **BiRD** with its own — *The Leftovers, Les Revenants, Twin Peaks, Rectify,
+  The OA, Undone*. "Feeds the Work" has real substance from minute one, not an
+  empty view waiting to be filled.
+- **Theme and Mood vocabularies are pre-populated**, not invented ad hoc while
+  tagging — *Grief, Identity, Consciousness, Memory, Myth, Cosmic Horror, Jungian
+  Psychology…* as Themes; *Melancholy, Dread, Dreamlike, Transcendent, Haunting…*
+  as Moods. A controlled vocabulary set up front is what keeps tagging coherent at
+  10,000 entries — free-text tags invented in the moment fragment into
+  near-duplicates ("dreamlike" / "dream-like" / "oneiric") within a year.
+
+This turns launch day from "here's an empty database, good luck" into "here's a
+working map of your taste with eleven five-star anchors and two live projects
+already wired in" — useful before a single new thing gets logged.
 
 ### Formulas — exactly one
 ```
@@ -175,7 +222,10 @@ watch.
 ## Why Round 2 is more elegant
 
 - **3 databases, not 6** — half the relation-tax, half the places to file something wrong
-- **7 properties on the core database, not 10+** — each one answers a real question
+- **9 properties on the core database, each earning its place** — including the one
+  the fuller spec justified adding (`Heard From`, for "what has Mike recommended
+  that I haven't gotten to") — versus 10+ fields that exist because a category
+  sounded plausible
 - **1 formula, not 3** — and it does genuine interpretive work (surfacing canon)
   rather than performing intelligence it doesn't have
 - **4 views, not ~36** — each maps to an actual weekly moment (choosing what to
