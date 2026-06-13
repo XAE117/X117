@@ -1,12 +1,13 @@
 # Liza's Palace — Data Health Report
 
-_Generated 2026-06-13 04:01 UTC_
+_Generated 2026-06-13 11:54 UTC_
 
 **Status: WARNINGS** ⚠️
 
-## Warnings (1)
+## Warnings (2)
 
 - **[Cinema (theaters.json)]** 9 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle NoHo 7, Secret Movie Club, FILM at LACMA, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC The Americana at Brand 18
+- **[Jazz (jazz-venues.json)]** 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Cinema (theaters.json)
 - Last updated: 2026-06-13 (today)
@@ -16,8 +17,9 @@ _Generated 2026-06-13 04:01 UTC_
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-06-13 (today)
-- 9 venues, 9 with future shows
-- 285 future shows, horizon 364 days
+- 10 venues, 10 with future shows
+- 285 future shows, horizon 201 days
+- ⚠️ 1 source errors: eventbrite.com (Request failed with status code 405)
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-06-13 (today)

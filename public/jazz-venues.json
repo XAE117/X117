@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-13T04:01:47.533Z",
+  "lastUpdated": "2026-06-13T11:54:48.444Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -403,21 +403,21 @@
           "hot": false
         },
         {
+          "id": "catalina-jazz-2026-07-18-the-flos-former-ladies-of-the-",
+          "artist": "The FLOS (Former Ladies of The Supremes): 40TH ANNIVERSARY CELEBRATION",
+          "date": "2026-07-18",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/the-flos-former-ladies-of-the-supremes-40th-anniversary-celebration/",
+          "hot": false
+        },
+        {
           "id": "catalina-jazz-2026-07-26-kat-edmonson",
           "artist": "Kat Edmonson",
           "date": "2026-07-26",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43220844-kat-edmonson-at-catalina-bar-and-grill?utm_medium=organic&utm_source=microformat",
-          "hot": false
-        },
-        {
-          "id": "catalina-jazz-2027-06-12-kinga-glyk-polish-bass-sensati",
-          "artist": "KINGA GLYK (Polish Bass Sensation)",
-          "date": "2027-06-12",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/kinga-glyk-polish-bass-sensation/",
           "hot": false
         }
       ]
@@ -460,15 +460,6 @@
           "time": "12:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/mtkf4prxxpc9y3752hl8xjd8x6eacl",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-06-13-tony-guerrero-w-lia-booth",
-          "artist": "Tony Guerrero w/Lia Booth",
-          "date": "2026-06-13",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -1778,6 +1769,27 @@
       ]
     },
     {
+      "id": "the-high-low",
+      "name": "The High Low",
+      "shortName": "High Low",
+      "neighborhood": "Atwater Village",
+      "url": "https://www.thehighlow.com/",
+      "color": "#27AE60",
+      "tier": "regular",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "the-high-low-2026-06-13-sprague-rotem-schnelle",
+          "artist": "Sprague/Rotem/Schnelle",
+          "date": "2026-06-13",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1849,6 +1861,15 @@
           "artist": "Lia Booth",
           "date": "2026-06-13",
           "time": "10:00 AM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "lighthouse-cafe-2026-06-13-jacques-lesure-jam-session",
+          "artist": "Jacques Lesure Jam Session",
+          "date": "2026-06-13",
+          "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
@@ -2665,17 +2686,14 @@
           "notes": "",
           "link": "https://www.campusjax.com/events/event/964",
           "hot": false
-        },
-        {
-          "id": "campus-jax-2027-06-12-abbey-road-a-tribute-to-the-be",
-          "artist": "Abbey Road — A Tribute to The Beatles",
-          "date": "2027-06-12",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/929",
-          "hot": false
         }
       ]
+    }
+  ],
+  "scrapeErrors": [
+    {
+      "source": "eventbrite.com",
+      "error": "Request failed with status code 405"
     }
   ]
 }
