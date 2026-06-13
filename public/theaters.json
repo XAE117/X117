@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-12T12:53:42.305Z",
+  "lastUpdated": "2026-06-13T04:01:08.478Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,15 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-days-of-heaven-the-wild-child-2026-06-11-7-30-pm-9-35-pm",
-          "title": "Days of Heaven / The Wild Child",
-          "date": "2026-06-11",
-          "time": "7:30 pm / 9:35 pm",
-          "format": "35mm",
-          "notes": "In 35mm and English-subtitled 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4724?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-inglourious-basterds-2026-06-12-11-59-pm",
           "title": "Inglourious Basterds",
@@ -78,9 +69,9 @@
           "title": "Indiana Jones and the Last Crusade",
           "date": "2026-06-14",
           "time": "2:00 pm",
-          "format": "digital",
-          "notes": "Kiddie Matinee",
-          "link": "https://thenewbev.com/program/june-14-indiana-jones-and-the-last-crusade-family-matinee/"
+          "format": "35mm",
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4732?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-the-third-man-new-35mm-print-2026-06-14-6-30-pm",
@@ -88,8 +79,8 @@
           "date": "2026-06-14",
           "time": "6:30 pm",
           "format": "35mm",
-          "notes": "",
-          "link": "https://thenewbev.com/program/june-14-the-third-man/"
+          "notes": "In 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/4728?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-the-death-of-robin-hood-director-michael-sarnoski-in-person-2026-06-15-7-00-pm",
@@ -408,33 +399,6 @@
       "color": "#B89AD4",
       "screenings": [
         {
-          "id": "vista-theatre-disclosure-day-2026-06-11-2-00-pm",
-          "title": "Disclosure Day",
-          "date": "2026-06-11",
-          "time": "2:00 pm",
-          "format": "70mm",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3671?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-disclosure-day-2026-06-11-6-30-pm",
-          "title": "Disclosure Day",
-          "date": "2026-06-11",
-          "time": "6:30 pm",
-          "format": "70mm",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3672?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-deadly-china-doll-2026-06-11-8-00-pm",
-          "title": "Deadly China Doll",
-          "date": "2026-06-11",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Video Archives microcinema. DVD screening.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/3728?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
           "id": "vista-theatre-disclosure-day-2026-06-12-10-00-am",
           "title": "Disclosure Day",
           "date": "2026-06-12",
@@ -529,8 +493,8 @@
           "title": "Disclosure Day",
           "date": "2026-06-14",
           "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
+          "format": "70mm",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/3675?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
@@ -538,8 +502,8 @@
           "title": "Disclosure Day",
           "date": "2026-06-14",
           "time": "2:00 pm",
-          "format": "digital",
-          "notes": "",
+          "format": "70mm",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/3682?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
@@ -547,8 +511,8 @@
           "title": "Disclosure Day",
           "date": "2026-06-14",
           "time": "6:30 pm",
-          "format": "digital",
-          "notes": "",
+          "format": "70mm",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/3683?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
@@ -1119,6 +1083,96 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/3670?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
+          "id": "vista-theatre-hollywood-90028-2026-07-10-11-59-pm",
+          "title": "Hollywood 90028",
+          "date": "2026-07-10",
+          "time": "11:59 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3815?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-dances-with-wolves-2026-07-10-7-30-pm",
+          "title": "Dances with Wolves",
+          "date": "2026-07-10",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3807?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-snoopy-come-home-2026-07-11-10-00-am",
+          "title": "Snoopy Come Home",
+          "date": "2026-07-11",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3813?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-hollywood-90028-2026-07-11-11-59-pm",
+          "title": "Hollywood 90028",
+          "date": "2026-07-11",
+          "time": "11:59 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3816?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-dances-with-wolves-2026-07-11-7-30-pm",
+          "title": "Dances with Wolves",
+          "date": "2026-07-11",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3808?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-snoopy-come-home-2026-07-12-10-00-am",
+          "title": "Snoopy Come Home",
+          "date": "2026-07-12",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3814?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-dances-with-wolves-2026-07-12-7-30-pm",
+          "title": "Dances with Wolves",
+          "date": "2026-07-12",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3809?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-dances-with-wolves-2026-07-13-7-30-pm",
+          "title": "Dances with Wolves",
+          "date": "2026-07-13",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3810?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-dances-with-wolves-2026-07-14-7-30-pm",
+          "title": "Dances with Wolves",
+          "date": "2026-07-14",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3811?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
+          "id": "vista-theatre-dances-with-wolves-2026-07-15-7-30-pm",
+          "title": "Dances with Wolves",
+          "date": "2026-07-15",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://ticketing.uswest.veezi.com/purchase/3812?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
+        },
+        {
           "id": "vista-theatre-the-odyssey-2026-07-16-2-00-pm",
           "title": "The Odyssey",
           "date": "2026-07-16",
@@ -1480,24 +1534,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-grave-of-the-fireflies-2026-06-11-2-30-pm",
-          "title": "Grave of the Fireflies",
-          "date": "2026-06-11",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/grave-of-the-fireflies-019dd4e1-6d74-d65a-207d-52ace62370fd"
-        },
-        {
-          "id": "academy-museum-clash-by-night-with-don-t-bother-to-knock-2026-06-11-6-30-pm",
-          "title": "Clash by Night with Don’t Bother to Knock",
-          "date": "2026-06-11",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/en/programs/detail/clash-by-night-with-dont-bother-to-knock-019dda57-f164-2cf8-ab82-757efda2582c"
-        },
-        {
           "id": "academy-museum-grave-of-the-fireflies-2026-06-12-2-30-pm",
           "title": "Grave of the Fireflies",
           "date": "2026-06-12",
@@ -1559,6 +1595,33 @@
           "format": "digital",
           "notes": "At the Ted Mann Theater.",
           "link": "https://www.academymuseum.org/en/programs/detail/how-to-marry-a-millionaire-019dda67-f97f-c6c8-221a-626c11fa6abd"
+        },
+        {
+          "id": "academy-museum-bend-it-like-beckham-in-35mm-2026-06-14-11-00-am",
+          "title": "Bend It Like Beckham in 35mm",
+          "date": "2026-06-14",
+          "time": "11:00 am",
+          "format": "35mm",
+          "notes": "At the David Geffen Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/bend-it-like-beckham-019de534-a9ce-c7f9-7cea-8357cbbf429a"
+        },
+        {
+          "id": "academy-museum-shaolin-soccer-in-35mm-2026-06-14-2-30-pm",
+          "title": "Shaolin Soccer in 35mm",
+          "date": "2026-06-14",
+          "time": "2:30 pm",
+          "format": "35mm",
+          "notes": "At the David Geffen Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/shaolin-soccer-019de536-3069-56db-33cf-a0f9f32f6717"
+        },
+        {
+          "id": "academy-museum-offside-in-35mm-2026-06-14-5-00-pm",
+          "title": "Offside in 35mm",
+          "date": "2026-06-14",
+          "time": "5:00 pm",
+          "format": "35mm",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/en/programs/detail/offside-019de537-5c7e-d4ab-fcac-842733f8eb3d"
         }
       ]
     },
@@ -1570,33 +1633,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-trainspotting-2026-06-11-1-45-pm",
-          "title": "Trainspotting",
-          "date": "2026-06-11",
-          "time": "1:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/special-event-trainspotting-30th-anniversary#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-trainspotting-2026-06-11-4-00-pm",
-          "title": "Trainspotting",
-          "date": "2026-06-11",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/special-event-trainspotting-30th-anniversary#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-trainspotting-2026-06-11-6-45-pm",
-          "title": "Trainspotting",
-          "date": "2026-06-11",
-          "time": "6:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/event/special-event-trainspotting-30th-anniversary#js-showtimescomponent"
-        },
         {
           "id": "alamo-dtla-amores-perros-2026-06-12-1-00-pm",
           "title": "Amores Perros",
@@ -1677,6 +1713,51 @@
           "format": "digital",
           "notes": "",
           "link": "https://drafthouse.com/los-angeles/show/boogie-nights#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-persona-1966-2026-06-14-12-00-pm",
+          "title": "Persona (1966)",
+          "date": "2026-06-14",
+          "time": "12:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Sad Girl Cinema Club” series.",
+          "link": "https://drafthouse.com/los-angeles/event/sad-girl-cinema-club-persona-1966#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-boogie-nights-2026-06-14-12-30-pm",
+          "title": "Boogie Nights",
+          "date": "2026-06-14",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/boogie-nights#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-but-i-m-a-cheerleader-2026-06-14-2-45-pm",
+          "title": "But I’m a Cheerleader",
+          "date": "2026-06-14",
+          "time": "2:45 pm",
+          "format": "digital",
+          "notes": "Part of the “Movie Parties” series.",
+          "link": "https://drafthouse.com/los-angeles/event/movie-party-but-im-a-cheerleader#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-boogie-nights-2026-06-14-5-30-pm",
+          "title": "Boogie Nights",
+          "date": "2026-06-14",
+          "time": "5:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/boogie-nights#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-dressed-to-kill-1980-2026-06-14-9-45-pm",
+          "title": "Dressed to Kill (1980)",
+          "date": "2026-06-14",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/dressed-to-kill-1980#js-showtimescomponent"
         }
       ]
     },
@@ -1698,15 +1779,6 @@
       "color": "#7ABFC0",
       "screenings": [
         {
-          "id": "aero-ulysses-gaze-2026-06-11-7-30-pm",
-          "title": "Ulysses’ Gaze",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "Rare 35mm collection print courtesy of the UCLA Film & Television Archive.",
-          "link": "https://www.americancinematheque.com/now-showing/ulysses-gaze-06-11-2026/"
-        },
-        {
           "id": "aero-batman-in-70mm-2026-06-12-7-30-pm",
           "title": "Batman in 70mm",
           "date": "2026-06-12",
@@ -1723,6 +1795,24 @@
           "format": "70mm",
           "notes": "Ultra rare screening! Last screened in L.A. in 1998.",
           "link": "https://www.americancinematheque.com/now-showing/batman-70mm-06-13-2026/"
+        },
+        {
+          "id": "aero-lawrence-of-arabia-in-70mm-2026-06-14-2-00-pm",
+          "title": "Lawrence of Arabia in 70mm",
+          "date": "2026-06-14",
+          "time": "2:00 pm",
+          "format": "70mm",
+          "notes": "Part of the “Ultra Cinematheque 70 Fest 2026” series. The American Cinematheque’s own pristine 70mm archival print!",
+          "link": "https://www.americancinematheque.com/now-showing/lawrence-of-arabia-in-70mm-06-14-2026/"
+        },
+        {
+          "id": "aero-2001-a-space-odyssey-2026-06-14-7-30-pm",
+          "title": "2001: A Space Odyssey",
+          "date": "2026-06-14",
+          "time": "7:30 pm",
+          "format": "70mm",
+          "notes": "Part of the “Ultra Cinematheque 70 Fest 2026” series. The American Cinematheque’s own pristine 70mm archival print!",
+          "link": "https://www.americancinematheque.com/now-showing/2001-a-space-odyssey-06-14-2026/"
         }
       ]
     },
@@ -1734,15 +1824,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-five-easy-pieces-2026-06-11-7-30-pm",
-          "title": "Five Easy Pieces",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/4127701/"
-        },
         {
           "id": "vidiots-onda-nova-2026-06-12-10-15-pm",
           "title": "Onda Nova",
@@ -1866,7 +1947,7 @@
           "date": "2026-06-14",
           "time": "1:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/4188799/"
         },
         {
@@ -1875,7 +1956,7 @@
           "date": "2026-06-14",
           "time": "12:45 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle. Part of the “Films for Everyone” series.",
           "link": "https://vidiotsfoundation.org/purchase/4127707/"
         },
         {
@@ -1884,7 +1965,7 @@
           "date": "2026-06-14",
           "time": "3:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/4127708/"
         },
         {
@@ -1893,7 +1974,7 @@
           "date": "2026-06-14",
           "time": "4:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/4133519/"
         },
         {
@@ -1902,7 +1983,7 @@
           "date": "2026-06-14",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the Eagle.",
           "link": "https://vidiotsfoundation.org/purchase/4127711/"
         },
         {
@@ -1911,7 +1992,7 @@
           "date": "2026-06-14",
           "time": "7:30 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/4133520/"
         },
         {
@@ -2023,8 +2104,8 @@
           "link": "https://vidiotsfoundation.org/purchase/4133415/"
         },
         {
-          "id": "vidiots-is-god-is-2026-06-20-10-00-pm",
-          "title": "Is God Is",
+          "id": "vidiots-i-love-boosters-2026-06-20-10-00-pm",
+          "title": "I Love Boosters",
           "date": "2026-06-20",
           "time": "10:00 pm",
           "format": "digital",
@@ -2039,6 +2120,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/4133395/"
+        },
+        {
+          "id": "vidiots-is-god-is-2026-06-20-4-30-pm",
+          "title": "Is God Is",
+          "date": "2026-06-20",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4158802/"
         },
         {
           "id": "vidiots-my-best-friend-s-wedding-2026-06-20-7-00-pm",
@@ -2066,6 +2156,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/4133382/"
+        },
+        {
+          "id": "vidiots-i-love-boosters-2026-06-21-4-00-pm",
+          "title": "I Love Boosters",
+          "date": "2026-06-21",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4158809/"
         },
         {
           "id": "vidiots-stand-by-me-2026-06-21-7-00-pm",
@@ -2374,6 +2473,15 @@
           "link": "https://vidiotsfoundation.org/purchase/4189340/"
         },
         {
+          "id": "vidiots-underland-2026-07-01-7-00-pm",
+          "title": "Underland",
+          "date": "2026-07-01",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4254089/"
+        },
+        {
           "id": "vidiots-cats-vidiots-jellicle-ball-2026-07-01-7-30-pm",
           "title": "Cats + Vidiots' Jellicle Ball",
           "date": "2026-07-01",
@@ -2381,6 +2489,69 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/4248103/"
+        },
+        {
+          "id": "vidiots-underland-2026-07-02-7-00-pm",
+          "title": "Underland",
+          "date": "2026-07-02",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4254104/"
+        },
+        {
+          "id": "vidiots-underland-2026-07-03-1-00-pm",
+          "title": "Underland",
+          "date": "2026-07-03",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253409/"
+        },
+        {
+          "id": "vidiots-wall-e-2026-07-03-12-30-pm",
+          "title": "WALL·E",
+          "date": "2026-07-03",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252656/"
+        },
+        {
+          "id": "vidiots-throne-of-blood-2026-07-03-3-30-pm",
+          "title": "Throne of Blood",
+          "date": "2026-07-03",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252654/"
+        },
+        {
+          "id": "vidiots-underland-2026-07-03-4-00-pm",
+          "title": "Underland",
+          "date": "2026-07-03",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253417/"
+        },
+        {
+          "id": "vidiots-independence-day-2026-07-03-6-30-pm",
+          "title": "Independence Day",
+          "date": "2026-07-03",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252657/"
+        },
+        {
+          "id": "vidiots-tammy-and-the-t-rex-2026-07-03-9-45-pm",
+          "title": "Tammy and the T-Rex",
+          "date": "2026-07-03",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252658/"
         },
         {
           "id": "vidiots-jaws-2026-07-04-1-00-pm",
@@ -2401,6 +2572,60 @@
           "link": "https://vidiotsfoundation.org/purchase/4220152/"
         },
         {
+          "id": "vidiots-aladdin-2026-07-05-1-00-pm",
+          "title": "Aladdin",
+          "date": "2026-07-05",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252663/"
+        },
+        {
+          "id": "vidiots-charade-2026-07-05-4-00-pm",
+          "title": "Charade",
+          "date": "2026-07-05",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252664/"
+        },
+        {
+          "id": "vidiots-overboard-2026-07-05-7-00-pm",
+          "title": "Overboard",
+          "date": "2026-07-05",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252665/"
+        },
+        {
+          "id": "vidiots-picnic-at-hanging-rock-2026-07-07-6-30-pm",
+          "title": "Picnic at Hanging Rock",
+          "date": "2026-07-07",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252668/"
+        },
+        {
+          "id": "vidiots-teenage-mutant-ninja-turtles-2026-07-08-1-00-pm",
+          "title": "Teenage Mutant Ninja Turtles",
+          "date": "2026-07-08",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252669/"
+        },
+        {
+          "id": "vidiots-trainspotting-2026-07-08-7-30-pm",
+          "title": "Trainspotting",
+          "date": "2026-07-08",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252673/"
+        },
+        {
           "id": "vidiots-the-wailing-2026-07-09-7-30-pm",
           "title": "The Wailing",
           "date": "2026-07-09",
@@ -2408,6 +2633,132 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/4197656/"
+        },
+        {
+          "id": "vidiots-the-wailing-2026-07-10-3-15-pm",
+          "title": "The Wailing",
+          "date": "2026-07-10",
+          "time": "3:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252695/"
+        },
+        {
+          "id": "vidiots-waterworld-2026-07-10-7-00-pm",
+          "title": "Waterworld",
+          "date": "2026-07-10",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252699/"
+        },
+        {
+          "id": "vidiots-heavy-metal-2026-07-10-9-55-pm",
+          "title": "Heavy Metal",
+          "date": "2026-07-10",
+          "time": "9:55 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252700/"
+        },
+        {
+          "id": "vidiots-summer-of-sam-2026-07-11-6-30-pm",
+          "title": "Summer of Sam",
+          "date": "2026-07-11",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252707/"
+        },
+        {
+          "id": "vidiots-clerks-2026-07-11-9-45-pm",
+          "title": "Clerks",
+          "date": "2026-07-11",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252710/"
+        },
+        {
+          "id": "vidiots-brave-2026-07-12-1-00-pm",
+          "title": "Brave",
+          "date": "2026-07-12",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252714/"
+        },
+        {
+          "id": "vidiots-godzilla-vs-hedorah-2026-07-12-4-00-pm",
+          "title": "Godzilla vs. Hedorah",
+          "date": "2026-07-12",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252715/"
+        },
+        {
+          "id": "vidiots-eternal-sunshine-of-the-spotless-mind-2026-07-12-7-00-pm",
+          "title": "Eternal Sunshine of the Spotless Mind",
+          "date": "2026-07-12",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4215461/"
+        },
+        {
+          "id": "vidiots-the-deer-hunter-2026-07-13-7-30-pm",
+          "title": "The Deer Hunter",
+          "date": "2026-07-13",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252726/"
+        },
+        {
+          "id": "vidiots-harry-dean-stanton-partly-fiction-2026-07-14-7-30-pm",
+          "title": "Harry Dean Stanton: Partly Fiction",
+          "date": "2026-07-14",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252730/"
+        },
+        {
+          "id": "vidiots-streets-of-fire-on-35mm-2026-07-15-7-30-pm",
+          "title": "Streets of Fire on 35mm",
+          "date": "2026-07-15",
+          "time": "7:30 pm",
+          "format": "35mm",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252731/"
+        },
+        {
+          "id": "vidiots-speed-2026-07-17-7-00-pm",
+          "title": "Speed",
+          "date": "2026-07-17",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4252861/"
+        },
+        {
+          "id": "vidiots-tootsie-2026-07-18-7-00-pm",
+          "title": "Tootsie",
+          "date": "2026-07-18",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253110/"
+        },
+        {
+          "id": "vidiots-the-thing-2026-07-18-9-45-pm",
+          "title": "The Thing",
+          "date": "2026-07-18",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253112/"
         },
         {
           "id": "vidiots-the-popcorn-list-remaining-native-2026-07-19-1-30-pm",
@@ -2419,6 +2770,15 @@
           "link": "https://vidiotsfoundation.org/purchase/4215011/"
         },
         {
+          "id": "vidiots-east-of-eden-2026-07-19-4-00-pm",
+          "title": "East of Eden",
+          "date": "2026-07-19",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253132/"
+        },
+        {
           "id": "vidiots-the-popcorn-list-trash-baby-2026-07-19-4-30-pm",
           "title": "The Popcorn List: Trash Baby",
           "date": "2026-07-19",
@@ -2426,6 +2786,69 @@
           "format": "digital",
           "notes": "",
           "link": "https://vidiotsfoundation.org/purchase/4215020/"
+        },
+        {
+          "id": "vidiots-suspiria-2026-07-19-7-00-pm",
+          "title": "Suspiria",
+          "date": "2026-07-19",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253143/"
+        },
+        {
+          "id": "vidiots-jam-n-jam-n-2026-07-20-7-00-pm",
+          "title": "Jamón Jamón",
+          "date": "2026-07-20",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253144/"
+        },
+        {
+          "id": "vidiots-the-cell-2026-07-24-9-45-pm",
+          "title": "The Cell",
+          "date": "2026-07-24",
+          "time": "9:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253152/"
+        },
+        {
+          "id": "vidiots-a-new-leaf-2026-07-25-4-00-pm",
+          "title": "A New Leaf",
+          "date": "2026-07-25",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253153/"
+        },
+        {
+          "id": "vidiots-three-kings-on-35mm-2026-07-25-7-00-pm",
+          "title": "Three Kings on 35mm",
+          "date": "2026-07-25",
+          "time": "7:00 pm",
+          "format": "35mm",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4253157/"
+        },
+        {
+          "id": "vidiots-the-face-of-another-2026-07-27-7-30-pm",
+          "title": "The Face of Another",
+          "date": "2026-07-27",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4254358/"
+        },
+        {
+          "id": "vidiots-the-unbearable-lightness-of-being-2026-07-28-7-30-pm",
+          "title": "The Unbearable Lightness of Being",
+          "date": "2026-07-28",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4254360/"
         }
       ]
     },
@@ -2437,24 +2860,6 @@
       "url": "https://studios.wearebraindead.com",
       "color": "#8EBF8E",
       "screenings": [
-        {
-          "id": "brain-dead-slowburn-shoot-with-q-a-with-director-adam-j-wilde-hosted-by-chris-van-vliet-2026-06-",
-          "title": "Slowburn Shoot with Q&A with Director Adam J. Wilde Hosted by Chris Van Vliet",
-          "date": "2026-06-11",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://dice.fm/event/nvn6pl-slowburn-shoot-with-qa-with-director-adam-j-wilde-hosted-by-chris-van-vliet-11th-jun-brain-dead-studios-los-angeles-tickets"
-        },
-        {
-          "id": "brain-dead-slowburn-shoot-an-indie-wrestling-story-2026-06-11-7-30-pm",
-          "title": "Slowburn Shoot: An Indie Wrestling Story",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://dice.fm/partner/tickets/event/nvn6pl-slowburn-shoot-with-qa-with-director-adam-j-wilde-hosted-by-chris-van-vliet-11th-jun-brain-dead-studios-los-angeles-tickets"
-        },
         {
           "id": "brain-dead-the-graduate-2026-06-13-10-15-pm",
           "title": "The Graduate",
@@ -2490,6 +2895,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://studios.wearebraindead.com/purchase/1319743/"
+        },
+        {
+          "id": "brain-dead-maps-to-the-stars-with-bruce-wagner-2026-06-14-8-00-pm",
+          "title": "Maps to the Stars with Bruce Wagner",
+          "date": "2026-06-14",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://studios.wearebraindead.com/purchase/1317939/"
         },
         {
           "id": "brain-dead-obsession-2026-06-16-8-00-pm",
@@ -2671,6 +3085,24 @@
           "format": "digital",
           "notes": "In person: curators Arta Barzanji, Hadi Alipanah (via video).",
           "link": "https://www.cinema.ucla.edu/events/cinema-ye-azad-nasib-nasibi-2026-06-13/"
+        },
+        {
+          "id": "billy-wilder-cinema-ye-azad-behnam-jafari-2026-06-14-3-00-pm",
+          "title": "Cinema-Ye Azad: Behnam Jafari",
+          "date": "2026-06-14",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "In person: curators Arta Barzanji, Hadi Alipanah (via video).",
+          "link": "https://www.cinema.ucla.edu/events/cinema-ye-azad-behnam-jafari-2026-06-14/"
+        },
+        {
+          "id": "billy-wilder-checkpoint-dead-end-2026-06-14-7-00-pm",
+          "title": "Checkpoint / Dead End",
+          "date": "2026-06-14",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "In person: director Parviz Sayyad, actor Mary Apick.",
+          "link": "https://www.cinema.ucla.edu/events/checkpoint-dead-end-2026-06-14/"
         }
       ]
     },
@@ -2728,24 +3160,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-boy-2026-06-11-10-30-pm",
-          "title": "Boy",
-          "date": "2026-06-11",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "New 4K Restoration.",
-          "link": "https://www.americancinematheque.com/now-showing/boy-06-11-2026/"
-        },
-        {
-          "id": "los-feliz-3-leviticus-2026-06-11-7-30-pm",
-          "title": "Leviticus",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Introduction by filmmaker Adrian Chiarella and actors Joe Bird and Stacy Clausen. Advance Screening.",
-          "link": "https://www.americancinematheque.com/now-showing/leviticus-06-11-2026/"
-        },
         {
           "id": "los-feliz-3-the-devil-is-a-woman-2026-06-12-1-00-pm",
           "title": "The Devil Is a Woman",
@@ -2817,6 +3231,42 @@
           "format": "digital",
           "notes": "New 4K Restoration. 40th Anniversary.",
           "link": "https://www.americancinematheque.com/now-showing/no-picnic-06-13-2026/"
+        },
+        {
+          "id": "los-feliz-3-down-by-law-2026-06-14-1-00-pm",
+          "title": "Down by Law",
+          "date": "2026-06-14",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "'Sunday Print Edition'.",
+          "link": "https://www.americancinematheque.com/now-showing/down-by-law-06-14-2026/"
+        },
+        {
+          "id": "los-feliz-3-threads-2026-06-14-10-00-pm",
+          "title": "Threads",
+          "date": "2026-06-14",
+          "time": "10:00 pm",
+          "format": "digital",
+          "notes": "Brand-new 4K Restoration by Severin Films.",
+          "link": "https://www.americancinematheque.com/now-showing/threads-06-14-2026/"
+        },
+        {
+          "id": "los-feliz-3-elvira-madigan-2026-06-14-4-00-pm",
+          "title": "Elvira Madigan",
+          "date": "2026-06-14",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "L.A. Theatrical Premiere of 2K Restoration. 'Bo Widerberg: An American Cinematheque Retrospective'.",
+          "link": "https://www.americancinematheque.com/now-showing/elvira-madigan-06-14-2026/"
+        },
+        {
+          "id": "los-feliz-3-dekalog-one-two-2026-06-14-7-00-pm",
+          "title": "Dekalog: One & Two",
+          "date": "2026-06-14",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Co-presented with the Polish Cultural Institute New York. 'Krzysztof Kieślowski: An American Cinematheque Retrospective'.",
+          "link": "https://www.americancinematheque.com/now-showing/dekalog-one-and-two-6-14-26/"
         }
       ]
     },
@@ -2828,33 +3278,6 @@
       "url": "https://www.laemmle.com",
       "color": "#7AAED4",
       "screenings": [
-        {
-          "id": "laemmle-royal-the-currents-2026-06-11-1-30-pm",
-          "title": "The Currents",
-          "date": "2026-06-11",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/63615?fm=29939"
-        },
-        {
-          "id": "laemmle-royal-the-currents-2026-06-11-4-30-pm",
-          "title": "The Currents",
-          "date": "2026-06-11",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/63616?fm=29939"
-        },
-        {
-          "id": "laemmle-royal-the-currents-2026-06-11-7-30-pm",
-          "title": "The Currents",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/63617?fm=29939"
-        },
         {
           "id": "laemmle-royal-the-currents-2026-06-12-4-20-pm",
           "title": "The Currents",
@@ -2872,6 +3295,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/63653?fm=29939"
+        },
+        {
+          "id": "laemmle-royal-the-currents-2026-06-14-4-20-pm",
+          "title": "The Currents",
+          "date": "2026-06-14",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/63659?fm=29939"
         }
       ]
     },
@@ -2912,13 +3344,13 @@
       "color": "#D4A0C4",
       "screenings": [
         {
-          "id": "2220-arts-mirror-mirror-vol-5-my-father-s-shadow-2026-06-11-8-00-pm",
-          "title": "Mirror Mirror Vol. 5: My Father’s Shadow",
-          "date": "2026-06-11",
-          "time": "8:00 pm",
+          "id": "2220-arts-la-filmforum-filmforum-50-barbara-t-smith-the-21st-century-odyssey-2026-06-14-1-00-pm",
+          "title": "LA Filmforum: Filmforum 50: Barbara T. Smith - The 21st Century Odyssey",
+          "date": "2026-06-14",
+          "time": "1:00 pm",
           "format": "digital",
           "notes": "",
-          "link": "https://dice.fm/event/bb7pbx-mirror-mirror-vol-5-my-fathers-shadow-11th-jun-2220-arts-archives-los-angeles-tickets"
+          "link": "https://dice.fm/event/2wyd2o-filmforum-50-barbara-t-smith-the-21st-century-odyssey-14th-jun-2220-arts-archives-los-angeles-tickets"
         }
       ]
     },
@@ -2929,7 +3361,17 @@
       "neighborhood": "Various",
       "url": "https://whammyanalog.com",
       "color": "#D9A090",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "whammy-analog-miss-video-4-u-2026-06-14-8-00-pm",
+          "title": "Miss Video 4 U",
+          "date": "2026-06-14",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.whammyanalog.com/events/miss-video-4-u"
+        }
+      ]
     },
     {
       "id": "lumiere-cinema",
@@ -2939,96 +3381,6 @@
       "url": "https://lumieremusichall.com",
       "color": "#D4C890",
       "screenings": [
-        {
-          "id": "lumiere-cinema-the-drama-2026-06-11-1-40-pm",
-          "title": "The Drama",
-          "date": "2026-06-11",
-          "time": "1:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71873"
-        },
-        {
-          "id": "lumiere-cinema-the-last-guest-of-the-holloway-motel-2026-06-11-1-45-pm",
-          "title": "The Last Guest of the Holloway Motel",
-          "date": "2026-06-11",
-          "time": "1:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71871"
-        },
-        {
-          "id": "lumiere-cinema-is-god-is-2026-06-11-3-45-pm",
-          "title": "Is God Is",
-          "date": "2026-06-11",
-          "time": "3:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71872"
-        },
-        {
-          "id": "lumiere-cinema-cast-aside-the-clouds-2026-06-11-4-00-pm",
-          "title": "Cast Aside the Clouds",
-          "date": "2026-06-11",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71283"
-        },
-        {
-          "id": "lumiere-cinema-the-last-guest-of-the-holloway-motel-2026-06-11-4-05-pm",
-          "title": "The Last Guest of the Holloway Motel",
-          "date": "2026-06-11",
-          "time": "4:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71870"
-        },
-        {
-          "id": "lumiere-cinema-blue-film-2026-06-11-6-00-pm",
-          "title": "Blue Film",
-          "date": "2026-06-11",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71868"
-        },
-        {
-          "id": "lumiere-cinema-asco-without-permission-2026-06-11-6-20-pm",
-          "title": "ASCO: Without Permission",
-          "date": "2026-06-11",
-          "time": "6:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71869"
-        },
-        {
-          "id": "lumiere-cinema-cast-aside-the-clouds-2026-06-11-7-00-pm",
-          "title": "Cast Aside the Clouds",
-          "date": "2026-06-11",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71284"
-        },
-        {
-          "id": "lumiere-cinema-matador-bolero-2026-06-11-8-00-pm",
-          "title": "Matador Bolero",
-          "date": "2026-06-11",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "Plus a Q&A with director Jonathan Rosado.",
-          "link": "https://lumieretickets.com/purchase?showId=71071"
-        },
-        {
-          "id": "lumiere-cinema-the-passenger-2026-2026-06-11-8-30-pm",
-          "title": "The Passenger (2026)",
-          "date": "2026-06-11",
-          "time": "8:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=71867"
-        },
         {
           "id": "lumiere-cinema-blue-film-2026-06-12-1-30-pm",
           "title": "Blue Film",
@@ -3235,6 +3587,114 @@
           "format": "digital",
           "notes": "",
           "link": "https://lumieretickets.com/purchase?showId=71898"
+        },
+        {
+          "id": "lumiere-cinema-savage-house-2026-06-14-12-30-pm",
+          "title": "Savage House",
+          "date": "2026-06-14",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71914"
+        },
+        {
+          "id": "lumiere-cinema-blue-heron-2026-06-14-12-40-pm",
+          "title": "Blue Heron",
+          "date": "2026-06-14",
+          "time": "12:40 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71918"
+        },
+        {
+          "id": "lumiere-cinema-forge-2026-06-14-12-50-pm",
+          "title": "Forge",
+          "date": "2026-06-14",
+          "time": "12:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71919"
+        },
+        {
+          "id": "lumiere-cinema-the-last-guest-of-the-holloway-motel-2026-06-14-2-45-pm",
+          "title": "The Last Guest of the Holloway Motel",
+          "date": "2026-06-14",
+          "time": "2:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71913"
+        },
+        {
+          "id": "lumiere-cinema-is-god-is-2026-06-14-3-00-pm",
+          "title": "Is God Is",
+          "date": "2026-06-14",
+          "time": "3:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71915"
+        },
+        {
+          "id": "lumiere-cinema-asco-without-permission-2026-06-14-3-30-pm",
+          "title": "ASCO: Without Permission",
+          "date": "2026-06-14",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71920"
+        },
+        {
+          "id": "lumiere-cinema-blue-film-2026-06-14-5-15-pm",
+          "title": "Blue Film",
+          "date": "2026-06-14",
+          "time": "5:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71916"
+        },
+        {
+          "id": "lumiere-cinema-renoir-2026-06-14-5-30-pm",
+          "title": "Renoir",
+          "date": "2026-06-14",
+          "time": "5:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71917"
+        },
+        {
+          "id": "lumiere-cinema-the-python-hunt-2026-06-14-5-45-pm",
+          "title": "The Python Hunt",
+          "date": "2026-06-14",
+          "time": "5:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71921"
+        },
+        {
+          "id": "lumiere-cinema-cast-aside-the-clouds-2026-06-14-7-30-pm",
+          "title": "Cast Aside the Clouds",
+          "date": "2026-06-14",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71910"
+        },
+        {
+          "id": "lumiere-cinema-time-of-death-2026-06-14-8-00-pm",
+          "title": "Time of Death",
+          "date": "2026-06-14",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71911"
+        },
+        {
+          "id": "lumiere-cinema-this-tempting-madness-2026-06-14-8-05-pm",
+          "title": "This Tempting Madness",
+          "date": "2026-06-14",
+          "time": "8:05 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=71912"
         }
       ]
     },
@@ -3245,17 +3705,7 @@
       "neighborhood": "Miracle Mile",
       "url": "https://www.lacma.org/film",
       "color": "#C4A870",
-      "screenings": [
-        {
-          "id": "lacma-emmy-award-contender-series-jury-duty-presents-company-retreat-and-post-screening-conversa",
-          "title": "Emmy Award®-Contender Series—Jury Duty Presents: Company Retreat and Post-Screening Conversation",
-          "date": "2026-06-11",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.lacma.org/event/exclusive-member-screening-jury-duty-company-retreat"
-        }
-      ]
+      "screenings": []
     },
     {
       "id": "laemmle-town-center",
@@ -3265,24 +3715,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8C0D4",
       "screenings": [
-        {
-          "id": "laemmle-town-center-ask-e-jean-2026-06-11-1-15-pm",
-          "title": "Ask E. Jean",
-          "date": "2026-06-11",
-          "time": "1:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/76353?fm=30112"
-        },
-        {
-          "id": "laemmle-town-center-ask-e-jean-2026-06-11-7-15-pm",
-          "title": "Ask E. Jean",
-          "date": "2026-06-11",
-          "time": "7:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/76364?fm=30112"
-        },
         {
           "id": "laemmle-town-center-time-and-water-2026-06-12-1-15-pm",
           "title": "Time and Water",
@@ -3327,6 +3759,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/86/76398?fm=30000"
+        },
+        {
+          "id": "laemmle-town-center-time-and-water-2026-06-14-1-15-pm",
+          "title": "Time and Water",
+          "date": "2026-06-14",
+          "time": "1:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/76399?fm=30000"
+        },
+        {
+          "id": "laemmle-town-center-all-my-sons-2026-06-14-10-00-am",
+          "title": "All My Sons",
+          "date": "2026-06-14",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/75497?fm=27277"
+        },
+        {
+          "id": "laemmle-town-center-time-and-water-2026-06-14-7-15-pm",
+          "title": "Time and Water",
+          "date": "2026-06-14",
+          "time": "7:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/76400?fm=30000"
         }
       ]
     },
@@ -3337,7 +3796,17 @@
       "neighborhood": "Westwood",
       "url": "https://www.landmarktheatres.com",
       "color": "#D4B890",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "landmark-westwood-in-the-hand-of-dante-2026-06-14-2-00-pm",
+          "title": "In the Hand of Dante",
+          "date": "2026-06-14",
+          "time": "2:00 pm",
+          "format": "digital",
+          "notes": "Filmmaker Julian Schnabel will appear in person at Landmark's Westwood for a Q&A after the 2:00pm show.",
+          "link": "https://booking.landmarktheatres.com/launch/ticketing/8735342e-4095-5f30-b4f5-7444245181f3"
+        }
+      ]
     },
     {
       "id": "art-theatre",
@@ -3347,33 +3816,6 @@
       "url": "https://www.thearttheatre.com",
       "color": "#90C4A8",
       "screenings": [
-        {
-          "id": "art-theatre-fifa-world-cup-2026-watch-parties-2026-06-11-12-00-pm",
-          "title": "FIFA World Cup 2026 Watch Parties!",
-          "date": "2026-06-11",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-boy-george-and-culture-club-q-a-with-alison-ellwood-2026-06-11-6-30-pm",
-          "title": "Boy George and Culture Club + Q&A with Alison Ellwood",
-          "date": "2026-06-11",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
-        {
-          "id": "art-theatre-dog-movie-puppygirl-q-a-with-henry-hanson-and-milo-talwani-2026-06-11-9-00-pm",
-          "title": "Dog Movie + Puppygirl + Q&A with Henry Hanson and Milo Talwani",
-          "date": "2026-06-11",
-          "time": "9:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatre.easy-ware-ticketing.com/events"
-        },
         {
           "id": "art-theatre-blue-heron-2026-06-12-2-00-pm",
           "title": "Blue Heron",
@@ -3418,6 +3860,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://arttheatre.easy-ware-ticketing.com/events"
+        },
+        {
+          "id": "art-theatre-blue-heron-2026-06-14-12-30-pm",
+          "title": "Blue Heron",
+          "date": "2026-06-14",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatre.easy-ware-ticketing.com/events"
         }
       ]
     },
@@ -3428,7 +3879,17 @@
       "neighborhood": "Beverly Hills",
       "url": "https://www.fineartstheatrebh.com",
       "color": "#D4C4A0",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "fine-arts-bh-joker-2026-06-14-2-00-pm",
+          "title": "Joker",
+          "date": "2026-06-14",
+          "time": "2:00 pm",
+          "format": "70mm",
+          "notes": "70mm screening.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/153?siteToken=tez3prscsvfbagchhkxbevjwk8"
+        }
+      ]
     },
     {
       "id": "el-capitan",
@@ -3438,42 +3899,6 @@
       "url": "https://elcapitantheatre.com",
       "color": "#D4A0A0",
       "screenings": [
-        {
-          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-11-12-30-pm",
-          "title": "The Mandalorian and Grogu",
-          "date": "2026-06-11",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
-        },
-        {
-          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-11-4-00-pm",
-          "title": "The Mandalorian and Grogu",
-          "date": "2026-06-11",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
-        },
-        {
-          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-11-7-30-pm",
-          "title": "The Mandalorian and Grogu",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
-        },
-        {
-          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-11-9-00-am",
-          "title": "The Mandalorian and Grogu",
-          "date": "2026-06-11",
-          "time": "9:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
-        },
         {
           "id": "el-capitan-the-mandalorian-and-grogu-2026-06-12-10-55-pm",
           "title": "The Mandalorian and Grogu",
@@ -3545,6 +3970,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
+        },
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-14-12-30-pm",
+          "title": "The Mandalorian and Grogu",
+          "date": "2026-06-14",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
+        },
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-14-4-00-pm",
+          "title": "The Mandalorian and Grogu",
+          "date": "2026-06-14",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
+        },
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-14-7-30-pm",
+          "title": "The Mandalorian and Grogu",
+          "date": "2026-06-14",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
+        },
+        {
+          "id": "el-capitan-the-mandalorian-and-grogu-2026-06-14-9-00-am",
+          "title": "The Mandalorian and Grogu",
+          "date": "2026-06-14",
+          "time": "9:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/the-mandalorian-and-grogu"
         }
       ]
     },
@@ -3556,42 +4017,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A0CFB4",
       "screenings": [
-        {
-          "id": "laemmle-glendale-cave-of-forgotten-dreams-2026-06-11-12-50-pm",
-          "title": "Cave of Forgotten Dreams",
-          "date": "2026-06-11",
-          "time": "12:50 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/58305?fm=6552"
-        },
-        {
-          "id": "laemmle-glendale-chum-2026-06-11-3-10-pm",
-          "title": "Chum",
-          "date": "2026-06-11",
-          "time": "3:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/58402?fm=30194"
-        },
-        {
-          "id": "laemmle-glendale-cave-of-forgotten-dreams-2026-06-11-7-30-pm",
-          "title": "Cave of Forgotten Dreams",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/58113?fm=6552"
-        },
-        {
-          "id": "laemmle-glendale-reeling-2026-06-11-7-30-pm",
-          "title": "Reeling",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/57637?fm=29965"
-        },
         {
           "id": "laemmle-glendale-kraken-2026-06-12-10-00-pm",
           "title": "Kraken",
@@ -3638,6 +4063,15 @@
           "link": "https://tickets.laemmle.com/ticketing/325402/58518?fm=6552"
         },
         {
+          "id": "laemmle-glendale-the-currents-2026-06-13-10-00-am",
+          "title": "The Currents",
+          "date": "2026-06-13",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/58543?fm=29939"
+        },
+        {
           "id": "laemmle-glendale-underland-2026-06-13-10-00-am",
           "title": "Underland",
           "date": "2026-06-13",
@@ -3672,6 +4106,60 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/325402/58564?fm=30157"
+        },
+        {
+          "id": "laemmle-glendale-all-my-sons-2026-06-14-10-00-am",
+          "title": "All My Sons",
+          "date": "2026-06-14",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/57462?fm=27277"
+        },
+        {
+          "id": "laemmle-glendale-cave-of-forgotten-dreams-2026-06-14-10-00-am",
+          "title": "Cave of Forgotten Dreams",
+          "date": "2026-06-14",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/58519?fm=6552"
+        },
+        {
+          "id": "laemmle-glendale-the-currents-2026-06-14-10-00-am",
+          "title": "The Currents",
+          "date": "2026-06-14",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/58544?fm=29939"
+        },
+        {
+          "id": "laemmle-glendale-underland-2026-06-14-10-00-am",
+          "title": "Underland",
+          "date": "2026-06-14",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/58572?fm=30157"
+        },
+        {
+          "id": "laemmle-glendale-kraken-2026-06-14-12-50-pm",
+          "title": "Kraken",
+          "date": "2026-06-14",
+          "time": "12:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/58549?fm=30118"
+        },
+        {
+          "id": "laemmle-glendale-underland-2026-06-14-5-25-pm",
+          "title": "Underland",
+          "date": "2026-06-14",
+          "time": "5:25 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/58566?fm=30157"
         }
       ]
     },
@@ -3709,6 +4197,24 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/57796/90452?fm=30155"
+        },
+        {
+          "id": "laemmle-monica-all-my-sons-2026-06-14-10-00-am",
+          "title": "All My Sons",
+          "date": "2026-06-14",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/89520?fm=27277"
+        },
+        {
+          "id": "laemmle-monica-forastera-2026-06-14-4-20-pm",
+          "title": "Forastera",
+          "date": "2026-06-14",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/90453?fm=30155"
         }
       ]
     },
@@ -3720,24 +4226,6 @@
       "url": "https://rooftopcinemaclub.com/los-angeles",
       "color": "#C4D490",
       "screenings": [
-        {
-          "id": "rooftop-cinema-twilight-2026-06-11-11-00-pm",
-          "title": "Twilight",
-          "date": "2026-06-11",
-          "time": "11:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/twilight-21888"
-        },
-        {
-          "id": "rooftop-cinema-10-things-i-hate-about-you-2026-06-11-8-35-pm",
-          "title": "10 Things I Hate About You",
-          "date": "2026-06-11",
-          "time": "8:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/grease-23561"
-        },
         {
           "id": "rooftop-cinema-friday-2026-06-12-11-30-pm",
           "title": "Friday",
@@ -3773,6 +4261,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/la-la-land-21891"
+        },
+        {
+          "id": "rooftop-cinema-death-becomes-her-2026-06-14-8-35-pm",
+          "title": "Death Becomes Her",
+          "date": "2026-06-14",
+          "time": "8:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/death-becomes-her-21893"
         }
       ]
     },
@@ -3783,7 +4280,17 @@
       "neighborhood": "Culver City",
       "url": "https://www.theculvertheater.com",
       "color": "#B8A0D4",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "culver-theater-sunday-matinee-the-bad-news-bears-2026-06-14-2-00-pm",
+          "title": "Sunday Matinee: The Bad News Bears",
+          "date": "2026-06-14",
+          "time": "2:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://web.theculvertheater.com/order/showtimes/1001-39203/seats"
+        }
+      ]
     },
     {
       "id": "frida-cinema",
@@ -3793,69 +4300,6 @@
       "url": "https://www.thefridacinema.org",
       "color": "#D4908A",
       "screenings": [
-        {
-          "id": "frida-cinema-the-man-who-fell-to-earth-2026-06-11-1-00-pm",
-          "title": "The Man Who Fell to Earth",
-          "date": "2026-06-11",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1668624/"
-        },
-        {
-          "id": "frida-cinema-savage-house-2026-06-11-10-30-am",
-          "title": "Savage House",
-          "date": "2026-06-11",
-          "time": "10:30 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1679574/"
-        },
-        {
-          "id": "frida-cinema-silent-friend-2026-06-11-12-30-pm",
-          "title": "Silent Friend",
-          "date": "2026-06-11",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1668615/"
-        },
-        {
-          "id": "frida-cinema-silent-friend-2026-06-11-4-00-pm",
-          "title": "Silent Friend",
-          "date": "2026-06-11",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1668618/"
-        },
-        {
-          "id": "frida-cinema-the-man-who-fell-to-earth-2026-06-11-4-00-pm",
-          "title": "The Man Who Fell to Earth",
-          "date": "2026-06-11",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1668627/"
-        },
-        {
-          "id": "frida-cinema-forge-q-a-with-andie-ju-2026-06-11-7-00-pm",
-          "title": "Forge + Q&A with Andie Ju",
-          "date": "2026-06-11",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1668859/"
-        },
-        {
-          "id": "frida-cinema-titane-nu-classics-presented-by-maggie-mae-fish-2026-06-11-7-30-pm",
-          "title": "Titane: Nu-Classics: Presented by Maggie Mae Fish",
-          "date": "2026-06-11",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/1620415/"
-        },
         {
           "id": "frida-cinema-another-world-2026-06-12-1-30-pm",
           "title": "Another World",
@@ -3990,6 +4434,69 @@
           "format": "16mm",
           "notes": "",
           "link": "https://thefridacinema.org/purchase/1668991/"
+        },
+        {
+          "id": "frida-cinema-jinsei-2026-06-14-12-15-pm",
+          "title": "Jinsei",
+          "date": "2026-06-14",
+          "time": "12:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1679659/"
+        },
+        {
+          "id": "frida-cinema-splendor-in-the-grass-co-presented-by-the-muckenthaler-cultural-center-2026-06-14-2",
+          "title": "Splendor in the Grass: Co-Presented by the Muckenthaler Cultural Center",
+          "date": "2026-06-14",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1468591/"
+        },
+        {
+          "id": "frida-cinema-another-world-2026-06-14-2-45-pm",
+          "title": "Another World",
+          "date": "2026-06-14",
+          "time": "2:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1679623/"
+        },
+        {
+          "id": "frida-cinema-splendor-in-the-grass-co-presented-by-the-muckenthaler-cultural-center-2026-06-14-5",
+          "title": "Splendor in the Grass: Co-Presented by the Muckenthaler Cultural Center",
+          "date": "2026-06-14",
+          "time": "5:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1468592/"
+        },
+        {
+          "id": "frida-cinema-another-world-2026-06-14-5-30-pm",
+          "title": "Another World",
+          "date": "2026-06-14",
+          "time": "5:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1679626/"
+        },
+        {
+          "id": "frida-cinema-twin-peaks-the-complete-series-season-2-episodes-6-7-8-2026-06-14-8-00-pm",
+          "title": "Twin Peaks: The Complete Series - Season 2, Episodes 6, 7 & 8",
+          "date": "2026-06-14",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1524488/"
+        },
+        {
+          "id": "frida-cinema-the-texas-chain-saw-massacre-presented-by-see-it-on-16mm-2026-06-14-8-30-pm",
+          "title": "The Texas Chain Saw Massacre: Presented by See It on 16mm",
+          "date": "2026-06-14",
+          "time": "8:30 pm",
+          "format": "16mm",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1668995/"
         }
       ]
     },
@@ -4045,6 +4552,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://www.amctheatres.com/showtimes/all/2026-06-13/rollinghills/all/143479344"
+        },
+        {
+          "id": "amc-rolling-hills-call-me-by-your-name-2026-06-14-4-00-pm",
+          "title": "Call Me by Your Name",
+          "date": "2026-06-14",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/rollinghills/all/143479345"
         }
       ]
     },
@@ -4065,42 +4581,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-amc-at-citywalk-hollywood",
       "color": "#A8102A",
       "screenings": [
-        {
-          "id": "amc-citywalk-disclosure-day-2026-06-11-10-00-pm",
-          "title": "Disclosure Day",
-          "date": "2026-06-11",
-          "time": "10:00 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-06-11/citywalk/all/143214333"
-        },
-        {
-          "id": "amc-citywalk-milk-2026-06-11-11-20-am",
-          "title": "Milk",
-          "date": "2026-06-11",
-          "time": "11:20 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-06-11/citywalk/all/144222219"
-        },
-        {
-          "id": "amc-citywalk-disclosure-day-2026-06-11-3-00-pm",
-          "title": "Disclosure Day",
-          "date": "2026-06-11",
-          "time": "3:00 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-06-11/citywalk/all/143214331"
-        },
-        {
-          "id": "amc-citywalk-disclosure-day-2026-06-11-6-30-pm",
-          "title": "Disclosure Day",
-          "date": "2026-06-11",
-          "time": "6:30 pm",
-          "format": "70mm",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-06-11/citywalk/all/143214332"
-        },
         {
           "id": "amc-citywalk-call-me-by-your-name-2026-06-12-1-00-pm",
           "title": "Call Me by Your Name",
@@ -4226,26 +4706,81 @@
           "format": "70mm",
           "notes": "",
           "link": "https://www.amctheatres.com/showtimes/all/2026-06-13/citywalk/all/143420861"
+        },
+        {
+          "id": "amc-citywalk-call-me-by-your-name-2026-06-14-1-00-pm",
+          "title": "Call Me by Your Name",
+          "date": "2026-06-14",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/143764326"
+        },
+        {
+          "id": "amc-citywalk-disclosure-day-2026-06-14-10-00-pm",
+          "title": "Disclosure Day",
+          "date": "2026-06-14",
+          "time": "10:00 pm",
+          "format": "70mm",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/143420855"
+        },
+        {
+          "id": "amc-citywalk-disclosure-day-2026-06-14-11-30-am",
+          "title": "Disclosure Day",
+          "date": "2026-06-14",
+          "time": "11:30 am",
+          "format": "70mm",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/143420857"
+        },
+        {
+          "id": "amc-citywalk-call-me-by-your-name-2026-06-14-12-40-pm",
+          "title": "Call Me by Your Name",
+          "date": "2026-06-14",
+          "time": "12:40 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/144070675"
+        },
+        {
+          "id": "amc-citywalk-disclosure-day-2026-06-14-3-00-pm",
+          "title": "Disclosure Day",
+          "date": "2026-06-14",
+          "time": "3:00 pm",
+          "format": "70mm",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/143420856"
+        },
+        {
+          "id": "amc-citywalk-call-me-by-your-name-2026-06-14-4-00-pm",
+          "title": "Call Me by Your Name",
+          "date": "2026-06-14",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/143480257"
+        },
+        {
+          "id": "amc-citywalk-disclosure-day-2026-06-14-6-30-pm",
+          "title": "Disclosure Day",
+          "date": "2026-06-14",
+          "time": "6:30 pm",
+          "format": "70mm",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-06-14/citywalk/all/143420858"
         }
       ]
     }
   ],
   "films": {
-    "days-of-heaven-the-wild-child": {
-      "director": "Terrence Malick",
-      "year": 1978,
-      "runtime": 94,
-      "posterPath": "/rwxTYjOZmX2rGhz7avLe1qsjNqe.jpg",
-      "overview": "In 1916, a Chicago steel worker accidentally kills his supervisor and flees to the Texas panhandle with his girlfriend and little sister to work harvesting wheat in the fields of a stoic farmer.",
-      "rating": 7.472
-    },
     "inglourious-basterds": {
       "director": "Quentin Tarantino",
       "year": 2009,
       "runtime": 153,
       "posterPath": "/7sfbEnaARXDDhKm0CZ7D7uc2sbo.jpg",
       "overview": "In Nazi-occupied France during World War II, a group of Jewish-American soldiers known as \"The Basterds\" are chosen specifically to spread fear throughout the Third Reich by scalping and brutally kill",
-      "rating": 8.218
+      "rating": 8.2
     },
     "the-third-man-new-35mm-print": {
       "director": "Carol Reed",
@@ -4301,7 +4836,7 @@
       "runtime": 162,
       "posterPath": "/lbBWwxBht4JFP5PsuJ5onpMqugW.jpg",
       "overview": "Washed-up revolutionary Bob exists in a state of stoned paranoia, surviving off-grid with his spirited, self-reliant daughter, Willa. When his evil nemesis resurfaces after 16 years and she goes missi",
-      "rating": 7.357,
+      "rating": 7.358,
       "rottenTomatoes": 95,
       "imdbId": "tt30144839",
       "letterboxd": 4.15
@@ -4403,7 +4938,7 @@
       "runtime": 126,
       "posterPath": "/A8jYH43plz70dNmHy82zAHGTqxN.jpg",
       "overview": "David Locke is a world-weary American journalist who has been sent to cover a conflict in northern Africa, but he makes little progress with the story. When he discovers the body of a stranger who loo",
-      "rating": 7.245
+      "rating": 7.243
     },
     "born-to-kill": {
       "director": "Robert Wise",
@@ -4427,15 +4962,7 @@
       "runtime": 145,
       "posterPath": "/3o5YPjDGDTcTDL5ftDA9NwN9dLd.jpg",
       "overview": "If you found out we weren’t alone, if someone showed you, proved it to you, would that frighten you?",
-      "rating": 7.5
-    },
-    "deadly-china-doll": {
-      "director": "Huang Feng",
-      "year": 1973,
-      "runtime": 94,
-      "posterPath": "/9Mc4CaeJ2hVVK4LT0N640IyT0HX.jpg",
-      "overview": "Charming stranger Pai Chen arrives in a small town to settle an old score with nefarious local hoodlum Scarface Wu Hsu, who runs an opium smuggling ring. Hsu is planning a drug deal with another crime",
-      "rating": 7
+      "rating": 7.3
     },
     "southern-comfort": {
       "director": "Walter Hill",
@@ -4476,6 +5003,30 @@
       "posterPath": "/3aLabIgttFYtHaN7eVQAA9nGdHz.jpg",
       "overview": "A tiger shark bred by the Navy as a killing machine is wreaking havoc in the sleepy tourist town of Hampton Bay.",
       "rating": 4.274
+    },
+    "hollywood-90028": {
+      "director": "Christina Hornisher",
+      "year": 1973,
+      "runtime": 88,
+      "posterPath": "/5V9V1dZJg3XslcUmSpGG7jcnDc7.jpg",
+      "overview": "Mark, a cameraman who aspires to work on serious Hollywood films but can only find work making porno loops, turns to murder when his personal and professional frustrations reach their breaking point.",
+      "rating": 5.2
+    },
+    "dances-with-wolves": {
+      "director": "Kevin Costner",
+      "year": 1990,
+      "runtime": 181,
+      "posterPath": "/hw0ZEHAaTqTxSXGVwUFX7uvanSA.jpg",
+      "overview": "Wounded Civil War soldier John Dunbar tries to commit suicide—and becomes a hero instead. As a reward, he's assigned to his dream post, a remote junction on the Western frontier, and soon makes unlike",
+      "rating": 7.845
+    },
+    "snoopy-come-home": {
+      "director": "Bill Melendez",
+      "year": 1972,
+      "runtime": 80,
+      "posterPath": "/vGYhYtoXkpjXTZ7KLQMJehwfLG0.jpg",
+      "overview": "When Snoopy receives a letter from his original owner Lila, he goes to visit her in the hospital while Charlie Brown and the gang are on the lookout for him. Suddenly, Snoopy feels that he must go liv",
+      "rating": 7.1
     },
     "the-odyssey": {
       "director": "Christopher Nolan",
@@ -4558,13 +5109,29 @@
       "overview": "Three women set out to find eligible millionaires to marry, but find true love in the process.",
       "rating": 6.832
     },
-    "trainspotting": {
-      "director": "Danny Boyle",
-      "year": 1996,
-      "runtime": 94,
-      "posterPath": "/1jUC02qsqS2NxBMFarbIhcQtazV.jpg",
-      "overview": "Heroin addict Mark Renton stumbles through bad ideas and sobriety attempts with his unreliable friends --Sick Boy, Begbie, Spud and Tommy. He also has an underage girlfriend, Diane, along for the ride",
-      "rating": 8
+    "bend-it-like-beckham-in-35mm": {
+      "director": "Gurinder Chadha",
+      "year": 2002,
+      "runtime": 112,
+      "posterPath": "/2dzSBmFWWqt8NbnubJKIWU21Y86.jpg",
+      "overview": "Jess Bhamra, the daughter of a strict Indian couple in London, is not permitted to play organized soccer, even though she is 18. When Jess is playing for fun one day, her impressive skills are seen by",
+      "rating": 6.3
+    },
+    "shaolin-soccer-in-35mm": {
+      "director": "Stephen Chow",
+      "year": 2001,
+      "runtime": 113,
+      "posterPath": "/z6ZQqwoxWy9muIxwUP4K2zWw7BU.jpg",
+      "overview": "A young Shaolin follower reunites with his discouraged brothers to form a soccer team using their martial art skills to their advantage.",
+      "rating": 7.168
+    },
+    "offside-in-35mm": {
+      "director": "Jimmy Dean",
+      "year": 2015,
+      "runtime": 17,
+      "posterPath": "/pV8fBMaavJ1AS2t0cluf2Xs3ZJm.jpg",
+      "overview": "Eleven-year-old Kirsty struggles to accept her looming womanhood as she learns that she will soon lose her position on the local boy's football team.",
+      "rating": 7.5
     },
     "amores-perros": {
       "director": "Alejandro G. Iñárritu",
@@ -4588,7 +5155,7 @@
       "runtime": 156,
       "posterPath": "/wnE24UPCPQsQnbBOu4zVE2qaDNm.jpg",
       "overview": "In 1977, an idealistic porn producer and his promising protege try to catch up with the end of an era before their never-ending party collides with cold, hard reality.",
-      "rating": 7.6
+      "rating": 7.636
     },
     "dressed-to-kill-1980": {
       "director": "Brian De Palma",
@@ -4606,13 +5173,13 @@
       "overview": "A disillusioned college graduate finds himself torn between his older lover and her daughter.",
       "rating": 7.634
     },
-    "ulysses-gaze": {
-      "director": "Theo Angelopoulos",
-      "year": 1995,
-      "runtime": 169,
-      "posterPath": "/AmRdjyd5nVBd06FzJT8xoTS43ct.jpg",
-      "overview": "An exiled filmmaker finally returns to his home country where former mysteries and afflictions of his early life come back to haunt him once more.",
-      "rating": 7.431
+    "but-i-m-a-cheerleader": {
+      "director": "Jamie Babbit",
+      "year": 2000,
+      "runtime": 85,
+      "posterPath": "/dGEwlAuzTZoZjvsqgT2MRKHnGi8.jpg",
+      "overview": "Megan is an all-American girl. A cheerleader. She has a boyfriend. But Megan doesn't like kissing her boyfriend very much. And she's pretty touchy with her cheerleader friends. Her conservative parent",
+      "rating": 7.1
     },
     "batman-in-70mm": {
       "director": "Matt Reeves",
@@ -4620,15 +5187,23 @@
       "runtime": 177,
       "posterPath": "/74xTEgt7R36Fpooo50r9T25onhq.jpg",
       "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
-      "rating": 7.661
+      "rating": 7.7
     },
-    "five-easy-pieces": {
-      "director": "Bob Rafelson",
-      "year": 1970,
-      "runtime": 98,
-      "posterPath": "/sUEzamvvoTIhPIVhfZw3pUEo6bY.jpg",
-      "overview": "Robert Dupea spends his days doing various odd jobs, drinking and womanizing until an encounter with his sister makes him revisit his past.",
-      "rating": 7.082
+    "lawrence-of-arabia-in-70mm": {
+      "director": "David Lean",
+      "year": 1962,
+      "runtime": 228,
+      "posterPath": "/AiAm0EtDvyGqNpVoieRw4u65vD1.jpg",
+      "overview": "During World War I, English officer Thomas Edward 'T.E.' Lawrence sets out to unite and lead the diverse, often warring, Arab tribes to fight the Turks.",
+      "rating": 8
+    },
+    "2001-a-space-odyssey": {
+      "director": "Stanley Kubrick",
+      "year": 1968,
+      "runtime": 149,
+      "posterPath": "/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg",
+      "overview": "Humanity finds a mysterious object buried beneath the lunar surface and sets off to find its origins with the help of HAL 9000, the world's most advanced super computer.",
+      "rating": 8.049
     },
     "onda-nova": {
       "director": "José Antônio Garcia",
@@ -4652,7 +5227,7 @@
       "runtime": 113,
       "posterPath": "/4pNKIUFy7tkZiBx0rnSmG9ysRy.jpg",
       "overview": "A crew of professional shoplifters takes aim at a cutthroat fashion maven.",
-      "rating": 5.036
+      "rating": 4.933
     },
     "mad-max-fury-road": {
       "director": "George Miller",
@@ -4746,12 +5321,12 @@
       "rating": 7.77
     },
     "playtime": {
-      "director": "Isaac Julien",
-      "year": 2013,
-      "runtime": 67,
-      "posterPath": "/phWg5pHcw4jUsO3hvDiACW0TQpo.jpg",
-      "overview": "Playtime’s cosmopolitan spectacle, presented in a kaleidoscopic montage across seven large screens, interconnects the lives of its archetypical characters—hedge fund managers and art world players in ",
-      "rating": 1,
+      "director": "Jacques Tati",
+      "year": 1967,
+      "runtime": 115,
+      "posterPath": "/kQOrS0DLUXYsqPMedM2G6NJcJBq.jpg",
+      "overview": "Clumsy Monsieur Hulot finds himself perplexed by the intimidating complexity of a gadget-filled Paris. He attempts to meet with a business contact but soon becomes lost. His roundabout journey paralle",
+      "rating": 7.7,
       "sightAndSound": 16,
       "rottenTomatoes": 100,
       "letterboxd": 4.3,
@@ -4798,14 +5373,6 @@
       "overview": "A young professor travels to Budapest to locate a lost colleague. Once there, he gets tangled up in a supernatural mystery.",
       "rating": 6.4
     },
-    "is-god-is": {
-      "director": "Aleshea Harris",
-      "year": 2026,
-      "runtime": 100,
-      "posterPath": "/c3nN8XnbYfj2ZEBcNqqlTbtLiQy.jpg",
-      "overview": "Two sisters embark on an epic quest for revenge, confronting a charged family history that pushes them to extraordinary lengths.",
-      "rating": 5.8
-    },
     "second-nature-gender-and-sexuality-in-the-animal-world": {
       "director": "Drew Denny",
       "year": 2024,
@@ -4813,6 +5380,14 @@
       "posterPath": "/38kWDF6nt85Zq29HrG3jDyfd70C.jpg",
       "overview": "From homosexual penguins and sex-transitioning fish to pregnant male seahorses and sexually dominant female bonobos, thousands of species defy our expectations of gender and sexuality. Director Drew D",
       "rating": 0
+    },
+    "is-god-is": {
+      "director": "Aleshea Harris",
+      "year": 2026,
+      "runtime": 100,
+      "posterPath": "/c3nN8XnbYfj2ZEBcNqqlTbtLiQy.jpg",
+      "overview": "Two sisters embark on an epic quest for revenge, confronting a charged family history that pushes them to extraordinary lengths.",
+      "rating": 5.7
     },
     "crash": {
       "director": "Gareth Johnson",
@@ -4999,21 +5574,292 @@
       "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
       "rating": 8.247
     },
+    "underland": {
+      "director": "Rob Petit",
+      "year": 2026,
+      "runtime": 79,
+      "posterPath": "/lbzzMee5gVt3yPdL9qExyuZtxGe.jpg",
+      "overview": "A cinematic voyage beneath the surface of the earth.",
+      "rating": 5
+    },
+    "wall-e": {
+      "director": "Andrew Stanton",
+      "year": 2008,
+      "runtime": 98,
+      "posterPath": "/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
+      "overview": "After hundreds of years doing what he was built for, WALL•E— a robot designed to clean up the earth—discovers a new purpose in life when he meets a sleek search robot named EVE. EVE comes to realize t",
+      "rating": 8.113
+    },
+    "throne-of-blood": {
+      "director": "Akira Kurosawa",
+      "year": 1957,
+      "runtime": 108,
+      "posterPath": "/zaZFMNxJST0TtPd68yF7fNt1he8.jpg",
+      "overview": "Returning to their lord's castle, samurai warriors Washizu and Miki are waylaid by a spirit who predicts their futures. When the first part of the spirit's prophecy comes true, Washizu's scheming wife",
+      "rating": 7.919
+    },
+    "independence-day": {
+      "director": "Roland Emmerich",
+      "year": 1996,
+      "runtime": 145,
+      "posterPath": "/p0BPQGSPoSa8Ml0DAf2mB2kCU0R.jpg",
+      "overview": "Strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that a force of incredi",
+      "rating": 6.9
+    },
+    "tammy-and-the-t-rex": {
+      "director": "Stewart Raffill",
+      "year": 1994,
+      "runtime": 91,
+      "posterPath": "/uT3W8PIO0NUZqaSxsgNVKoDij1e.jpg",
+      "overview": "An evil scientist implants the brain of a murdered high school student into an animatronic Tyrannosaurus, who later wreaks vengeance on the bullies who killed him, and is reunited with his sweetheart.",
+      "rating": 5.1
+    },
+    "aladdin": {
+      "director": "John Musker",
+      "year": 1992,
+      "runtime": 91,
+      "posterPath": "/eLFfl7vS8dkeG1hKp5mwbm37V83.jpg",
+      "overview": "In the boorish city of Agrabah, kind-hearted street urchin Aladdin and Princess Jasmine fall in love, although she can only marry a prince. He and power-hungry Grand Vizier Jafar vie for a magic lamp ",
+      "rating": 7.655
+    },
+    "charade": {
+      "director": "Stanley Donen",
+      "year": 1963,
+      "runtime": 113,
+      "posterPath": "/qqaPjC5FQidtKY65jbAKZPiOTaS.jpg",
+      "overview": "After Regina Lampert falls for the dashing Peter Joshua on a skiing holiday in the French Alps, she discovers upon her return to Paris that her husband has been murdered. Soon, she and Peter are givin",
+      "rating": 7.7
+    },
+    "overboard": {
+      "director": "Rob Greenberg",
+      "year": 2018,
+      "runtime": 112,
+      "posterPath": "/41Rzkgo9y7n6BNGD6O8j0LVs8Yu.jpg",
+      "overview": "A spoiled, wealthy yacht owner is thrown overboard and becomes the target of revenge from his mistreated employee.",
+      "rating": 6.659
+    },
+    "picnic-at-hanging-rock": {
+      "director": "Peter Weir",
+      "year": 1975,
+      "runtime": 107,
+      "posterPath": "/7BAXwmFN4pZDNb9N6kzmAAwdssi.jpg",
+      "overview": "In the early 1900s, Miranda attends a girls boarding school in Australia. One Valentine's Day, the school's typically strict headmistress treats the girls to a picnic field trip to an unusual but scen",
+      "rating": 7.2
+    },
+    "teenage-mutant-ninja-turtles": {
+      "director": "Jonathan Liebesman",
+      "year": 2014,
+      "runtime": 101,
+      "posterPath": "/azL2ThbJMIkts3ZMt3j1YgBUeDB.jpg",
+      "overview": "When a kingpin threatens New York City, a group of mutated turtle warriors must emerge from the shadows to protect their home.",
+      "rating": 5.928
+    },
+    "trainspotting": {
+      "director": "Danny Boyle",
+      "year": 1996,
+      "runtime": 94,
+      "posterPath": "/1jUC02qsqS2NxBMFarbIhcQtazV.jpg",
+      "overview": "Heroin addict Mark Renton stumbles through bad ideas and sobriety attempts with his unreliable friends --Sick Boy, Begbie, Spud and Tommy. He also has an underage girlfriend, Diane, along for the ride",
+      "rating": 8
+    },
     "the-wailing": {
       "director": "Na Hong-jin",
       "year": 2016,
       "runtime": 156,
       "posterPath": "/RbymxgEM5SpDfO2Io2JMFG10Vi.jpg",
       "overview": "A stranger arrives in a little village and soon after a mysterious sickness starts spreading. A policeman is drawn into the incident and is forced to solve the mystery in order to save his daughter.",
-      "rating": 7.378
+      "rating": 7.377
     },
-    "slowburn-shoot-an-indie-wrestling-story": {
-      "director": "Adam J. Wilde",
+    "waterworld": {
+      "director": "Kevin Reynolds",
+      "year": 1995,
+      "runtime": 135,
+      "posterPath": "/X4UyUO5jgzs3c5YafnmYKLKKYw.jpg",
+      "overview": "In a futuristic world where the polar ice caps have melted and made Earth a liquid planet, a beautiful barmaid rescues a mutant seafarer from a floating island prison. They escape, along with her youn",
+      "rating": 6.231
+    },
+    "heavy-metal": {
+      "director": "Gerald Potterton",
+      "year": 1981,
+      "runtime": 90,
+      "posterPath": "/atUtWrDlLzT1yeVK2EoYtvbS963.jpg",
+      "overview": "The embodiment of ultimate evil, a glowing orb terrorizes a young girl with bizarre stories of dark fantasy, eroticism and horror.",
+      "rating": 6.517,
+      "rottenTomatoes": 66,
+      "imdbId": "tt0082509",
+      "letterboxd": 3.34
+    },
+    "summer-of-sam": {
+      "director": "Spike Lee",
+      "year": 1999,
+      "runtime": 142,
+      "posterPath": "/yvGGA2CbT6xyFVTZUA9f2ok0q5V.jpg",
+      "overview": "Spike Lee's take on the \"Son of Sam\" murders in New York City during the summer of 1977 centering on the residents of an Italian-American Northeast Bronx neighborhood who live in fear and distrust of ",
+      "rating": 6.486
+    },
+    "clerks": {
+      "director": "Kevin Smith",
+      "year": 1994,
+      "runtime": 92,
+      "posterPath": "/9IiSgiq4h4siTIS9H3o4nZ3h5L9.jpg",
+      "overview": "Convenience and video store clerks Dante and Randal are sharp-witted, potty-mouthed and bored out of their minds. So in between needling customers, the counter jockeys play hockey on the roof, visit a",
+      "rating": 7.373
+    },
+    "brave": {
+      "director": "Mark Andrews",
+      "year": 2012,
+      "runtime": 93,
+      "posterPath": "/1XAuDtMWpL0sYSFK0R6EZate2Ux.jpg",
+      "overview": "In the mystical Scottish Highlands, Merida is the princess of a kingdom ruled by King Fergus and Queen Elinor. An unruly daughter and an accomplished archer, Merida one day defies a sacred custom of t",
+      "rating": 7.027
+    },
+    "godzilla-vs-hedorah": {
+      "director": "Yoshimitsu Banno",
+      "year": 1971,
+      "runtime": 85,
+      "posterPath": "/mWVRlVwWK3sUCGd9lzMMWUa7CBu.jpg",
+      "overview": "An ever evolving alien life-form arrives on a comet from the Dark Gaseous Nebula and proceeds to consume pollution. Spewing mists of sulfuric acid and corrosive sludge, neither humanity nor Godzilla m",
+      "rating": 6.8
+    },
+    "eternal-sunshine-of-the-spotless-mind": {
+      "director": "Michel Gondry",
+      "year": 2004,
+      "runtime": 108,
+      "posterPath": "/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg",
+      "overview": "Joel Barish, heartbroken that his girlfriend underwent a procedure to erase him from her memory, decides to do the same. However, as he watches his memories of her fade away, he realises that he still",
+      "rating": 8.1
+    },
+    "the-deer-hunter": {
+      "director": "Michael Cimino",
+      "year": 1978,
+      "runtime": 183,
+      "posterPath": "/bbGtogDZOg09bm42KIpCXUXICkh.jpg",
+      "overview": "Three steelworkers enlist in the army and are sent to Vietnam, one leaving behind a rushed marriage, the others a shared love. What they encounter during the war changes their lives forever.",
+      "rating": 7.973,
+      "afi100": 53,
+      "rottenTomatoes": 86,
+      "imdbId": "tt0077416",
+      "letterboxd": 4.21
+    },
+    "harry-dean-stanton-partly-fiction": {
+      "director": "Sophie Huber",
+      "year": 2013,
+      "runtime": 76,
+      "posterPath": "/xLH3mcp3OewTrJcTNALkT4jQVjW.jpg",
+      "overview": "An impressionistic portrait of the iconic actor Harry Dean Stanton comprised of intimate moments, film clips from some of his 250 films and his renditions of American folk songs.",
+      "rating": 6.9
+    },
+    "streets-of-fire-on-35mm": {
+      "director": "Walter Hill",
+      "year": 1984,
+      "runtime": 93,
+      "posterPath": "/tmYHBKCZkbmiUfhfOQKgfh0jvXK.jpg",
+      "overview": "Raven Shaddock and his gang of merciless biker friends kidnap rock singer Ellen Aim. Ellen's former lover, soldier-for-hire Tom Cody, happens to be passing through town on a visit. In an attempt to sa",
+      "rating": 6.911
+    },
+    "speed": {
+      "director": "Jon Keeyes",
       "year": 2026,
-      "runtime": 82,
-      "posterPath": "/7tK3C42B8WVAj24J5ij0MMv0JeW.jpg",
-      "overview": "Documentary that goes behind the curtain, exploring the intimate relationships and untold stories that shape the pro wrestling industry.",
-      "rating": 0
+      "runtime": 93,
+      "posterPath": "/1qeO6qbbOXFkwN19aCWQAlmpbHQ.jpg",
+      "overview": "Aboard a high-speed train, a Nun who lost her faith must perform her first Exorcism on a possessed passenger hellbent on crashing the runaway train.",
+      "rating": 4.4
+    },
+    "tootsie": {
+      "director": "Sydney Pollack",
+      "year": 1982,
+      "runtime": 116,
+      "posterPath": "/ngyCzZwb9y5sMUCig5JQT4Y33Q.jpg",
+      "overview": "When struggling, out of work actor Michael Dorsey secretly adopts a female alter ego—Dorothy Michaels—in order to land a part in a daytime drama, he unwittingly becomes a feminist icon and ends up in ",
+      "rating": 7.204
+    },
+    "the-thing": {
+      "director": "John Carpenter",
+      "year": 1982,
+      "runtime": 109,
+      "posterPath": "/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
+      "overview": "A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims.",
+      "rating": 8.073
+    },
+    "east-of-eden": {
+      "director": "Elia Kazan",
+      "year": 1955,
+      "runtime": 115,
+      "posterPath": "/xv1MZVIop0SQqwLUymgE5eb2LFl.jpg",
+      "overview": "In the Salinas Valley in and around World War I, Cal Trask feels he must compete against overwhelming odds with his brother for the love of their father. Cal is frustrated at every turn, from his reac",
+      "rating": 7.539
+    },
+    "suspiria": {
+      "director": "Dario Argento",
+      "year": 1977,
+      "runtime": 99,
+      "posterPath": "/sEcvc9h1X3hYZdFgtiiKMm6RB3f.jpg",
+      "overview": "An American newcomer to a prestigious German ballet academy comes to realize that the school is a front for something sinister amid a series of grisly murders.",
+      "rating": 7.473
+    },
+    "jam-n-jam-n": {
+      "director": "Bigas Luna",
+      "year": 1992,
+      "runtime": 94,
+      "posterPath": "/bxYSRl1vXGwaAD98aXSwZQ5hmAe.jpg",
+      "overview": "José Luis has a cushy corporate job at the lingerie factory his mom owns. After he falls in love and proposes to Silvia, a beautiful laborer on the underwear assembly line, his mom enlists Raul, a pot",
+      "rating": 6.2
+    },
+    "the-cell": {
+      "director": "Tarsem Singh",
+      "year": 2000,
+      "runtime": 107,
+      "posterPath": "/fdQHMNDjBzA7PDw1aNFww2eriLz.jpg",
+      "overview": "A psychotherapist journeys inside a comatose serial killer in the hopes of saving his latest victim.",
+      "rating": 6.272
+    },
+    "a-new-leaf": {
+      "director": "Elaine May",
+      "year": 1971,
+      "runtime": 102,
+      "posterPath": "/2yKcVFrizqpBBzZBEBvvBR3JKJF.jpg",
+      "overview": "After running out of funds, Henry Graham, a carefree playboy, plots to marry and murder wealthy botanist Henrietta Lowell.",
+      "rating": 7.3
+    },
+    "three-kings-on-35mm": {
+      "director": "David O. Russell",
+      "year": 1999,
+      "runtime": 114,
+      "posterPath": "/fClJQW8xn8wHOFqoA4jUn0PZh1f.jpg",
+      "overview": "A group of American soldiers stationed in Iraq at the end of the Gulf War find a map they believe will take them to a huge cache of stolen Kuwaiti gold hidden near their base, and they embark on a sec",
+      "rating": 6.6
+    },
+    "the-face-of-another": {
+      "director": "Hiroshi Teshigahara",
+      "year": 1966,
+      "runtime": 122,
+      "posterPath": "/eUnFdf1Mf1b8AD3ChMPOCUfTBDQ.jpg",
+      "overview": "A businessman with a disfigured face obtains a lifelike mask from his new doctor, but the mask starts altering his personality and causing him to question his identity.",
+      "rating": 7.8,
+      "rottenTomatoes": 90,
+      "letterboxd": 3.8,
+      "reviews": [
+        {
+          "quote": "Teshigahara's unsettling identity thriller asks what it means to wear a face — Kafkaesque body horror rendered with cool, clinical beauty.",
+          "critic": "Jonathan Rosenbaum",
+          "publication": "Chicago Reader"
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "Criterion Channel",
+          "episode": "Hiroshi Teshigahara"
+        }
+      ],
+      "sightAndSound": 132
+    },
+    "the-unbearable-lightness-of-being": {
+      "director": "Philip Kaufman",
+      "year": 1988,
+      "runtime": 171,
+      "posterPath": "/g1kPEwATsCI8DnGx6ViAhUVKQSI.jpg",
+      "overview": "Successful surgeon Tomas leaves Prague for an operation, meets a young photographer named Tereza, and brings her back with him. Tereza is surprised to learn that Tomas is already having an affair with",
+      "rating": 6.868
     },
     "damnation": {
       "director": "Makoto Kamiya",
@@ -5037,7 +5883,7 @@
       "runtime": 108,
       "posterPath": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
       "overview": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinis",
-      "rating": 7.9
+      "rating": 7.906
     },
     "the-decay-of-fiction": {
       "director": "Pat O'Neill",
@@ -5151,6 +5997,14 @@
       "overview": "A director is remaking a classic Iranian film in Tajikistan. The studio armorer is worried that the gun they intend to use is not a prop gun, and fears the consequences. A young woman arrives at the l",
       "rating": 5
     },
+    "checkpoint-dead-end": {
+      "director": "Ralph Thomas",
+      "year": 1956,
+      "runtime": 84,
+      "posterPath": "/AmwCMYAU3ugMXu66EkpMZKDJY9C.jpg",
+      "overview": "Stanley Baker's O'Donovan is sent to steal the plans of a rival company's racing car designs, to ensure his employers win the competition. However, when opening a safe containing the plans, he trigger",
+      "rating": 5.571
+    },
     "elysium": {
       "director": "Neill Blomkamp",
       "year": 2013,
@@ -5165,7 +6019,7 @@
       "runtime": 100,
       "posterPath": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
       "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters",
-      "rating": 7.4,
+      "rating": 7.444,
       "rottenTomatoes": 80,
       "letterboxd": 3.6,
       "reviews": [
@@ -5185,22 +6039,6 @@
           "episode": "Rocky Horror"
         }
       ]
-    },
-    "boy": {
-      "director": "Jan Komasa",
-      "year": 2026,
-      "runtime": 110,
-      "posterPath": "/nXWewAZxRAr9jYNe2uypLlyPehl.jpg",
-      "overview": "Tommy, a volatile 19-year-old, revels in drugs, parties and violence. After getting separated from his friends on a drunken bender, he is abducted by a shadowy figure. He wakes to find himself impriso",
-      "rating": 7.275
-    },
-    "leviticus": {
-      "director": "Adrian Chiarella",
-      "year": 2026,
-      "runtime": 88,
-      "posterPath": "/cu0XnXLzJGPeI0msCoJKgnEecKz.jpg",
-      "overview": "Two teenage boys must escape a violent entity that takes the form of the person they desire most — each other.",
-      "rating": 0
     },
     "the-devil-is-a-woman": {
       "director": "Josef von Sternberg",
@@ -5224,7 +6062,7 @@
       "runtime": 121,
       "posterPath": "/kjdJntyBeEvqm9w97QGBdxPptzj.jpg",
       "overview": "After being bitten by a genetically altered spider at Oscorp, nerdy but endearing high school student Peter Parker is endowed with amazing powers to become the superhero known as Spider-Man.",
-      "rating": 7.3
+      "rating": 7.331
     },
     "fear-strikes-out": {
       "director": "Robert Mulligan",
@@ -5266,6 +6104,30 @@
       "overview": "Down-and-out jukebox operator Macabee Cohn wanders the cheap tenements, dive bars, and derelict streets of the East Village in search of a mysterious woman in a striped dress.",
       "rating": 6.9
     },
+    "down-by-law": {
+      "director": "Jim Jarmusch",
+      "year": 1986,
+      "runtime": 106,
+      "posterPath": "/4IyxoUQ7BB5kcSd7gASe2dTyWu7.jpg",
+      "overview": "A disc jockey, a pimp and an Italian tourist escape from jail in New Orleans.",
+      "rating": 7.3
+    },
+    "threads": {
+      "director": "Mick Jackson",
+      "year": 1985,
+      "runtime": 117,
+      "posterPath": "/1LZXTlcgDIdVFtPUvF7Q2XV6D2r.jpg",
+      "overview": "Documentary style account of a nuclear holocaust and its effect on the working class city of Sheffield, England; and the eventual long run effects of nuclear war on civilization.",
+      "rating": 7.6
+    },
+    "elvira-madigan": {
+      "director": "Bo Widerberg",
+      "year": 1967,
+      "runtime": 91,
+      "posterPath": "/odjkOW8BYVTj1q73Ad5KIHFfAge.jpg",
+      "overview": "Famous acrobat Elvira Madigan meets Sixten Sparre, a married Swedish officer with two children. They decide to elope, but since Sparre deserted the army, he's unemployable and the couple encounter var",
+      "rating": 7
+    },
     "the-currents": {
       "director": "Kim Han-min",
       "year": 2014,
@@ -5274,15 +6136,53 @@
       "overview": "Admiral Yi Sun-sin faces a tough challenge when he is forced to defend his nation with just 13 battleships against 300 Japanese enemy ships in the Battle of Myeongryang.",
       "rating": 7
     },
-    "the-drama": {
-      "director": "Kristoffer Borgli",
+    "blue-film": {
+      "director": "Elliot Tuttle",
       "year": 2026,
-      "runtime": 106,
-      "posterPath": "/rnIOUhzwJDfgQakx8EjoNyItKgs.jpg",
-      "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
-      "rating": 6.943,
-      "imdbId": "tt33071426",
-      "letterboxd": 3.76
+      "runtime": 82,
+      "posterPath": "/7wECL45CnlFWsiadBHwArgVJ1nL.jpg",
+      "overview": "Drawn by the promise of easy money and anonymous sex, queer camboy Aaron Eagle is shocked to discover a personal connection with the mysterious stranger who has paid for his company. Over the course o",
+      "rating": 9.5
+    },
+    "forge": {
+      "director": "Alex Kendrick",
+      "year": 2024,
+      "runtime": 123,
+      "posterPath": "/oranxontIQRmhuyQlkoAwxpeBYz.jpg",
+      "overview": "19 year old Isaiah Wright lives for basketball and video games. A year out of high school, he has no job, no plans, and no idea how to be a man. At odds with his single mother Cynthia, Isaiah is given",
+      "rating": 8.175
+    },
+    "renoir": {
+      "director": "Chie Hayakawa",
+      "year": 2025,
+      "runtime": 120,
+      "posterPath": "/dAbvp8cZMTLJsfJthZNxyH9s0EQ.jpg",
+      "overview": "In 1987 Tokyo, a quirky and sensitive 11-year-old girl copes with a terminally ill father and stressed-out working mother while encountering various adults dealing with their own struggles.",
+      "rating": 6.7
+    },
+    "the-python-hunt": {
+      "director": "Xander Robin",
+      "year": 2026,
+      "runtime": 91,
+      "posterPath": "/vDk4hXklfneXGazpyW1RXTnyG4h.jpg",
+      "overview": "Every year, the Florida government invites the general public to compete in an invasive python removal contest in the Everglades. For ten nights, an eclectic group of hunters confront the dangerous te",
+      "rating": 0
+    },
+    "savage-house": {
+      "director": "Peter Glanz",
+      "year": 2026,
+      "runtime": 114,
+      "posterPath": "/vPBy6cDPYMcj35lpl3W5kPEc2OB.jpg",
+      "overview": "Against the backdrop of 18th century England, a massive pox outbreak, and Jacobite uprising – Sir Chauncey Savage and Lady Savage blindly pursue a better life. It's not without a tinge of irony that t",
+      "rating": 6.5
+    },
+    "blue-heron": {
+      "director": "Sophy Romvari",
+      "year": 2026,
+      "runtime": 91,
+      "posterPath": "/4hfMbVbYc2gsMnSE1K8Oc9LQH4j.jpg",
+      "overview": "In the late 1990s, a family of six settles into their new home on Vancouver Island, as internal dynamics are slowly revealed through the experiences of the youngest child, Sasha. Their fresh start is ",
+      "rating": 8.3
     },
     "the-last-guest-of-the-holloway-motel": {
       "director": "Ramiel Petros",
@@ -5300,75 +6200,11 @@
       "overview": "In the shadows of persecution in modern-day Iran, Layla, a determined young Bahá’í woman, and Sasan, a secular Muslim doctor, fall in love against all odds— risking imprisonment, betrayal, and heartbr",
       "rating": 0
     },
-    "blue-film": {
-      "director": "Elliot Tuttle",
-      "year": 2026,
-      "runtime": 82,
-      "posterPath": "/7wECL45CnlFWsiadBHwArgVJ1nL.jpg",
-      "overview": "Drawn by the promise of easy money and anonymous sex, queer camboy Aaron Eagle is shocked to discover a personal connection with the mysterious stranger who has paid for his company. Over the course o",
-      "rating": 9.5
-    },
-    "matador-bolero": {
-      "director": "Jonathan Rosado",
-      "year": 2026,
-      "runtime": 97,
-      "posterPath": "/qExNAeZ3rjITRl7cz8CtnDGVKYG.jpg",
-      "overview": "New York nightclub, The Matador, becomes the site of a high-profile murder that attracts the attention of an obsessive detective, a TV news reporter, and an elusive being living outside the realms of ",
-      "rating": 0
-    },
-    "the-passenger-2026": {
-      "director": "Vadim Perelman",
-      "year": 2026,
-      "runtime": 93,
-      "posterPath": "/i9XqCdF0jrgqveYUaLjOSiRepIq.jpg",
-      "overview": "Hassan, a Somali-American airport shuttle driver in Minneapolis, is struggling to make ends meet. When Lloyd, a stranded twenty-something at the airport, offers to pay Hassan to take him overland to C",
-      "rating": 5.7
-    },
-    "forge": {
-      "director": "Alex Kendrick",
-      "year": 2024,
-      "runtime": 123,
-      "posterPath": "/oranxontIQRmhuyQlkoAwxpeBYz.jpg",
-      "overview": "19 year old Isaiah Wright lives for basketball and video games. A year out of high school, he has no job, no plans, and no idea how to be a man. At odds with his single mother Cynthia, Isaiah is given",
-      "rating": 8.175
-    },
-    "renoir": {
-      "director": "Gilles Bourdos",
-      "year": 2012,
-      "runtime": 111,
-      "posterPath": "/6rITdY5SdUMFZ0lKmLUCsNFoKmJ.jpg",
-      "overview": "In the French Riviera in the summer of 1915, Jean Renoir, son of the Impressionist painter Pierre-Auguste, returns home to convalesce after being wounded in World War I. At his side is Andrée, a young",
-      "rating": 6.331
-    },
-    "the-python-hunt": {
-      "director": "Xander Robin",
-      "year": 2026,
-      "runtime": 91,
-      "posterPath": "/vDk4hXklfneXGazpyW1RXTnyG4h.jpg",
-      "overview": "Every year, the Florida government invites the general public to compete in an invasive python removal contest in the Everglades. For ten nights, an eclectic group of hunters confront the dangerous te",
-      "rating": 0
-    },
-    "savage-house": {
-      "director": "Peter Glanz",
-      "year": 2026,
-      "runtime": 114,
-      "posterPath": "/vPBy6cDPYMcj35lpl3W5kPEc2OB.jpg",
-      "overview": "Against the backdrop of 18th century England, a massive pox outbreak, and Jacobite uprising – Sir Chauncey Savage and Lady Savage blindly pursue a better life. It's not without a tinge of irony that t",
-      "rating": 6.7
-    },
-    "blue-heron": {
-      "director": "Sophy Romvari",
-      "year": 2026,
-      "runtime": 91,
-      "posterPath": "/4hfMbVbYc2gsMnSE1K8Oc9LQH4j.jpg",
-      "overview": "In the late 1990s, a family of six settles into their new home on Vancouver Island, as internal dynamics are slowly revealed through the experiences of the youngest child, Sasha. Their fresh start is ",
-      "rating": 8.3
-    },
     "time-of-death": {
       "director": "Will Wernick",
-      "year": 2026,
+      "year": 2025,
       "runtime": 107,
-      "posterPath": "/86NmEEtkQFvbWT28YtZyFVfv6mO.jpg",
+      "posterPath": "/xwA7uRchl9ol2RmpkQBlMfqMpV7.jpg",
       "overview": "When a prisoner vanishes without a trace, Detective Frank Morley (Michael Kelly) is sent to a decaying prison on the verge of shutdown. What begins as a routine investigation quickly spirals into a da",
       "rating": 0
     },
@@ -5378,14 +6214,6 @@
       "runtime": 92,
       "posterPath": "/yxyWCKdUcfqgBUCrf1xIvghxJlu.jpg",
       "overview": "A young woman awakens from a coma grievously injured, memory fractured, her husband arrested. But as she puts together the pieces of her past, she starts to question her own actions — and her percepti",
-      "rating": 0
-    },
-    "ask-e-jean": {
-      "director": "Ivy Meeropol",
-      "year": 2026,
-      "runtime": 91,
-      "posterPath": "/yFZ40JJcjJM7u5tfZFFb9lrF6Yt.jpg",
-      "overview": "Chronicles E. Jean Carroll's life, trailblazing work and legal battles.",
       "rating": 0
     },
     "time-and-water": {
@@ -5404,13 +6232,37 @@
       "overview": "During WWII, industrialist Joe Keller commits a crime and frames his business partner Herbert Deever. Years later, his sin comes back to haunt him when his son plans to marry Deever's daughter.",
       "rating": 6.5
     },
+    "in-the-hand-of-dante": {
+      "director": "Julian Schnabel",
+      "year": 2026,
+      "runtime": 153,
+      "posterPath": "/nPPIufTBnzEg0d7NoR5RLL1oPra.jpg",
+      "overview": "A Vatican priest discovers Dante's original Divine Comedy manuscript. When asked to authenticate it, writer Nick Tosches steals it, while a parallel story follows Dante's quest to create his masterpie",
+      "rating": 2
+    },
+    "joker": {
+      "director": "Todd Phillips",
+      "year": 2019,
+      "runtime": 122,
+      "posterPath": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+      "overview": "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.",
+      "rating": 8.124
+    },
     "the-mandalorian-and-grogu": {
       "director": "Jon Favreau",
       "year": 2026,
       "runtime": 132,
       "posterPath": "/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg",
       "overview": "The evil Empire has fallen, and Imperial warlords remain scattered throughout the galaxy. As the fledgling New Republic works to protect everything the Rebellion fought for, they have enlisted the hel",
-      "rating": 6.799
+      "rating": 6.806
+    },
+    "kraken": {
+      "director": "Pål Øie",
+      "year": 2026,
+      "runtime": 94,
+      "posterPath": "/xdZ8k5s8DTwWyPBMIcflrYLgcAK.jpg",
+      "overview": "A marine biologist is doing research on a fish farm when she encounters several strange occurrences. Along with the brutal deaths of two teenagers, all signs point to the deep fjord; can there be more",
+      "rating": 6.342
     },
     "cave-of-forgotten-dreams": {
       "director": "Werner Herzog",
@@ -5420,38 +6272,6 @@
       "overview": "Werner Herzog gains exclusive access to film inside the Chauvet caves of Southern France, capturing the oldest known pictorial creations of humankind in their astonishing natural setting.",
       "rating": 7.081
     },
-    "chum": {
-      "director": "Jonathan Zuck",
-      "year": 2026,
-      "runtime": 87,
-      "posterPath": "/uJOW6pWxJ0i5sji9VXRR6Y1wXyE.jpg",
-      "overview": "A newlywed couple joins friends on a Mediterranean yacht excursion, only to find themselves caught between a predatory shark and a psychopathic killer in their midst-transforming a sun-drenched escape",
-      "rating": 5.091
-    },
-    "reeling": {
-      "director": "Yana Alliata",
-      "year": 2025,
-      "runtime": 76,
-      "posterPath": "/ljuvxIUFeZWGHu7TwyzZAQGwOnQ.jpg",
-      "overview": "After a life altering accident, Ryan returns home for a birthday luau and uncovers the secret of when things took a tragic turn.",
-      "rating": 0
-    },
-    "kraken": {
-      "director": "Pål Øie",
-      "year": 2026,
-      "runtime": 94,
-      "posterPath": "/xdZ8k5s8DTwWyPBMIcflrYLgcAK.jpg",
-      "overview": "A marine biologist is doing research on a fish farm when she encounters several strange occurrences. Along with the brutal deaths of two teenagers, all signs point to the deep fjord; can there be more",
-      "rating": 6.353
-    },
-    "underland": {
-      "director": "Rob Petit",
-      "year": 2026,
-      "runtime": 79,
-      "posterPath": "/lbzzMee5gVt3yPdL9qExyuZtxGe.jpg",
-      "overview": "A cinematic voyage beneath the surface of the earth.",
-      "rating": 5
-    },
     "forastera": {
       "director": "Lucía Aleñar Iglesias",
       "year": 2026,
@@ -5459,37 +6279,6 @@
       "posterPath": "/fl7Bl7KSHjN5IzzhGrvWJBsJ3SS.jpg",
       "overview": "Cata will see her summer vacation disrupted by the absurd and sudden death of her grandmother, which only she witnesses. Her grief shifts when she casually turns to play pretend, transforming into the",
       "rating": 0
-    },
-    "twilight": {
-      "director": "Catherine Hardwicke",
-      "year": 2008,
-      "runtime": 122,
-      "posterPath": "/3Gkb6jm6962ADUPaCBqzz9CTbn9.jpg",
-      "overview": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire. Despite Edward's repeated",
-      "rating": 6.282
-    },
-    "10-things-i-hate-about-you": {
-      "rottenTomatoes": 72,
-      "letterboxd": 3.7,
-      "reviews": [
-        {
-          "quote": "Heath Ledger's incandescent charm powers a teen comedy that's smarter and more literate than it has any right to be.",
-          "critic": "Owen Gleiberman",
-          "publication": "Entertainment Weekly"
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "The Rewatchables",
-          "episode": "10 Things I Hate About You"
-        }
-      ],
-      "posterPath": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
-      "director": "Gil Junger",
-      "year": 1999,
-      "runtime": 97,
-      "overview": "A new kid at school recruits the only guy tough enough to date the meanest girl on campus so he can date her younger sister. Gil Junger's Shakespeare-via-Seattle teen comedy is a time capsule of late-90s perfection, elevated by Heath Ledger's star-making performance and a killer soundtrack.",
-      "rating": 7.6
     },
     "friday": {
       "director": "Nisha Ganatra",
@@ -5518,7 +6307,7 @@
       "runtime": 109,
       "posterPath": "/aHTUpo45qy9QYIOnVITGGqLoVcA.jpg",
       "overview": "Two FBI agent brothers, Marcus and Kevin Copeland, accidentally foil a drug bust. To avoid being fired they accept a mission escorting a pair of socialites to the Hamptons--but when the girls are disf",
-      "rating": 6.945,
+      "rating": 6.946,
       "rottenTomatoes": 15,
       "imdbId": "tt0381707",
       "letterboxd": 3.67
@@ -5553,23 +6342,15 @@
       "year": 2016,
       "runtime": 129,
       "overview": "A jazz pianist and an aspiring actress fall in love while pursuing their dreams in Los Angeles, only to find that success and romance may be incompatible. Chazelle's ravishing musical is a love letter to the city, to old Hollywood, and to the bittersweet cost of ambition.",
-      "rating": 7.9
+      "rating": 7.898
     },
-    "the-man-who-fell-to-earth": {
-      "director": "Nicolas Roeg",
-      "year": 1976,
-      "runtime": 139,
-      "posterPath": "/gwmPVphE5DMFFGXGMhfEFyxOOYj.jpg",
-      "overview": "Thomas Jerome Newton is an alien who has come to Earth in search of water to save his home planet. Aided by lawyer Oliver Farnsworth, Thomas uses his knowledge of advanced technology to create profita",
-      "rating": 6.5
-    },
-    "silent-friend": {
-      "director": "Ildikó Enyedi",
-      "year": 2026,
-      "runtime": 147,
-      "posterPath": "/mZjkRpTFfcdsTmtIAzKVM87I94R.jpg",
-      "overview": "In the heart of a botanical garden in a medieval university town in Germany stands a majestic ginkgo tree. This silent witness has observed over a century the quiet rhythms of transformation across th",
-      "rating": 7.2
+    "death-becomes-her": {
+      "director": "Robert Zemeckis",
+      "year": 1992,
+      "runtime": 104,
+      "posterPath": "/kkWxyyyWFK5KNk9WVwQuGEC9H9H.jpg",
+      "overview": "Madeline is married to Ernest, who was once her arch-rival Helen's fiancé. After recovering from a mental breakdown, Helen vows to kill Madeline and steal back Ernest. Unfortunately for everyone, the ",
+      "rating": 6.783
     },
     "another-world": {
       "director": "Fisher Stevens",
@@ -5579,6 +6360,14 @@
       "overview": "What would drive someone to drop everything and move into a city park in lower Manhattan? In the fall of 2011 hundreds of people did just that as a public protest against corporate greed and with the ",
       "rating": 8
     },
+    "the-man-who-fell-to-earth": {
+      "director": "Nicolas Roeg",
+      "year": 1976,
+      "runtime": 139,
+      "posterPath": "/gwmPVphE5DMFFGXGMhfEFyxOOYj.jpg",
+      "overview": "Thomas Jerome Newton is an alien who has come to Earth in search of water to save his home planet. Aided by lawyer Oliver Farnsworth, Thomas uses his knowledge of advanced technology to create profita",
+      "rating": 6.5
+    },
     "call-me-by-your-name": {
       "director": "Luca Guadagnino",
       "year": 2017,
@@ -5586,6 +6375,151 @@
       "posterPath": "/mZ4gBdfkhP9tvLH1DO4m4HYtiyi.jpg",
       "overview": "In the summer of 1983, a 17-year-old Elio spends his days in his family's villa in Italy. One day Oliver, a graduate student, arrives to assist Elio's father, a professor of Greco-Roman culture. Soon,",
       "rating": 8.1
+    },
+    "days-of-heaven-the-wild-child": {
+      "director": "Terrence Malick",
+      "year": 1978,
+      "runtime": 94,
+      "posterPath": "/rwxTYjOZmX2rGhz7avLe1qsjNqe.jpg",
+      "overview": "In 1916, a Chicago steel worker accidentally kills his supervisor and flees to the Texas panhandle with his girlfriend and little sister to work harvesting wheat in the fields of a stoic farmer.",
+      "rating": 7.472
+    },
+    "deadly-china-doll": {
+      "director": "Huang Feng",
+      "year": 1973,
+      "runtime": 94,
+      "posterPath": "/9Mc4CaeJ2hVVK4LT0N640IyT0HX.jpg",
+      "overview": "Charming stranger Pai Chen arrives in a small town to settle an old score with nefarious local hoodlum Scarface Wu Hsu, who runs an opium smuggling ring. Hsu is planning a drug deal with another crime",
+      "rating": 7
+    },
+    "ulysses-gaze": {
+      "director": "Theo Angelopoulos",
+      "year": 1995,
+      "runtime": 169,
+      "posterPath": "/AmRdjyd5nVBd06FzJT8xoTS43ct.jpg",
+      "overview": "An exiled filmmaker finally returns to his home country where former mysteries and afflictions of his early life come back to haunt him once more.",
+      "rating": 7.431
+    },
+    "five-easy-pieces": {
+      "director": "Bob Rafelson",
+      "year": 1970,
+      "runtime": 98,
+      "posterPath": "/sUEzamvvoTIhPIVhfZw3pUEo6bY.jpg",
+      "overview": "Robert Dupea spends his days doing various odd jobs, drinking and womanizing until an encounter with his sister makes him revisit his past.",
+      "rating": 7.082
+    },
+    "slowburn-shoot-an-indie-wrestling-story": {
+      "director": "Adam J. Wilde",
+      "year": 2026,
+      "runtime": 82,
+      "posterPath": "/7tK3C42B8WVAj24J5ij0MMv0JeW.jpg",
+      "overview": "Documentary that goes behind the curtain, exploring the intimate relationships and untold stories that shape the pro wrestling industry.",
+      "rating": 0
+    },
+    "boy": {
+      "director": "Jan Komasa",
+      "year": 2026,
+      "runtime": 110,
+      "posterPath": "/nXWewAZxRAr9jYNe2uypLlyPehl.jpg",
+      "overview": "Tommy, a volatile 19-year-old, revels in drugs, parties and violence. After getting separated from his friends on a drunken bender, he is abducted by a shadowy figure. He wakes to find himself impriso",
+      "rating": 7.275
+    },
+    "leviticus": {
+      "director": "Adrian Chiarella",
+      "year": 2026,
+      "runtime": 88,
+      "posterPath": "/cu0XnXLzJGPeI0msCoJKgnEecKz.jpg",
+      "overview": "Two teenage boys must escape a violent entity that takes the form of the person they desire most — each other.",
+      "rating": 0
+    },
+    "the-drama": {
+      "director": "Kristoffer Borgli",
+      "year": 2026,
+      "runtime": 106,
+      "posterPath": "/rnIOUhzwJDfgQakx8EjoNyItKgs.jpg",
+      "overview": "A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.",
+      "rating": 6.943,
+      "imdbId": "tt33071426",
+      "letterboxd": 3.76
+    },
+    "matador-bolero": {
+      "director": "Jonathan Rosado",
+      "year": 2026,
+      "runtime": 97,
+      "posterPath": "/qExNAeZ3rjITRl7cz8CtnDGVKYG.jpg",
+      "overview": "New York nightclub, The Matador, becomes the site of a high-profile murder that attracts the attention of an obsessive detective, a TV news reporter, and an elusive being living outside the realms of ",
+      "rating": 0
+    },
+    "the-passenger-2026": {
+      "director": "Vadim Perelman",
+      "year": 2026,
+      "runtime": 93,
+      "posterPath": "/i9XqCdF0jrgqveYUaLjOSiRepIq.jpg",
+      "overview": "Hassan, a Somali-American airport shuttle driver in Minneapolis, is struggling to make ends meet. When Lloyd, a stranded twenty-something at the airport, offers to pay Hassan to take him overland to C",
+      "rating": 5.7
+    },
+    "ask-e-jean": {
+      "director": "Ivy Meeropol",
+      "year": 2026,
+      "runtime": 91,
+      "posterPath": "/yFZ40JJcjJM7u5tfZFFb9lrF6Yt.jpg",
+      "overview": "Chronicles E. Jean Carroll's life, trailblazing work and legal battles.",
+      "rating": 0
+    },
+    "chum": {
+      "director": "Jonathan Zuck",
+      "year": 2026,
+      "runtime": 87,
+      "posterPath": "/uJOW6pWxJ0i5sji9VXRR6Y1wXyE.jpg",
+      "overview": "A newlywed couple joins friends on a Mediterranean yacht excursion, only to find themselves caught between a predatory shark and a psychopathic killer in their midst-transforming a sun-drenched escape",
+      "rating": 5.091
+    },
+    "reeling": {
+      "director": "Yana Alliata",
+      "year": 2025,
+      "runtime": 76,
+      "posterPath": "/ljuvxIUFeZWGHu7TwyzZAQGwOnQ.jpg",
+      "overview": "After a life altering accident, Ryan returns home for a birthday luau and uncovers the secret of when things took a tragic turn.",
+      "rating": 0
+    },
+    "twilight": {
+      "director": "Catherine Hardwicke",
+      "year": 2008,
+      "runtime": 122,
+      "posterPath": "/3Gkb6jm6962ADUPaCBqzz9CTbn9.jpg",
+      "overview": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire. Despite Edward's repeated",
+      "rating": 6.282
+    },
+    "10-things-i-hate-about-you": {
+      "rottenTomatoes": 72,
+      "letterboxd": 3.7,
+      "reviews": [
+        {
+          "quote": "Heath Ledger's incandescent charm powers a teen comedy that's smarter and more literate than it has any right to be.",
+          "critic": "Owen Gleiberman",
+          "publication": "Entertainment Weekly"
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "The Rewatchables",
+          "episode": "10 Things I Hate About You"
+        }
+      ],
+      "posterPath": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
+      "director": "Gil Junger",
+      "year": 1999,
+      "runtime": 97,
+      "overview": "A new kid at school recruits the only guy tough enough to date the meanest girl on campus so he can date her younger sister. Gil Junger's Shakespeare-via-Seattle teen comedy is a time capsule of late-90s perfection, elevated by Heath Ledger's star-making performance and a killer soundtrack.",
+      "rating": 7.6
+    },
+    "silent-friend": {
+      "director": "Ildikó Enyedi",
+      "year": 2026,
+      "runtime": 147,
+      "posterPath": "/mZjkRpTFfcdsTmtIAzKVM87I94R.jpg",
+      "overview": "In the heart of a botanical garden in a medieval university town in Germany stands a majestic ginkgo tree. This silent witness has observed over a century the quiet rhythms of transformation across th",
+      "rating": 7.2
     },
     "milk": {
       "director": "Gus Van Sant",
@@ -5873,14 +6807,6 @@
       "posterPath": "/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg",
       "overview": "Ten years after the events of the original, a reprogrammed T-800 is sent back in time to protect young John Connor from the shape-shifting T-1000. Together with his mother Sarah, he fights to stop Sky",
       "rating": 8.15
-    },
-    "threads": {
-      "director": "Mick Jackson",
-      "year": 1985,
-      "runtime": 117,
-      "posterPath": "/1LZXTlcgDIdVFtPUvF7Q2XV6D2r.jpg",
-      "overview": "Documentary style account of a nuclear holocaust and its effect on the working class city of Sheffield, England; and the eventual long run effects of nuclear war on civilization.",
-      "rating": 7.619
     },
     "hereditary": {
       "director": "Ari Aster",
@@ -6430,14 +7356,6 @@
       "overview": "A young boy and a girl with a magic crystal must race against pirates and foreign agents in a search for a legendary floating castle.",
       "rating": 7.97
     },
-    "godzilla-vs-hedorah": {
-      "director": "Yoshimitsu Banno",
-      "year": 1971,
-      "runtime": 85,
-      "posterPath": "/mWVRlVwWK3sUCGd9lzMMWUa7CBu.jpg",
-      "overview": "An ever evolving alien life-form arrives on a comet from the Dark Gaseous Nebula and proceeds to consume pollution. Spewing mists of sulfuric acid and corrosive sludge, neither humanity nor Godzilla m",
-      "rating": 6.8
-    },
     "frances-ha": {
       "director": "Noah Baumbach",
       "year": 2013,
@@ -6677,14 +7595,6 @@
       "posterPath": "/qMk93yMo82svW27FEjudgueBMUL.jpg",
       "overview": "A few decades after the destruction of the Inca Empire, a Spanish expedition led by the infamous Aguirre leaves the mountains of Peru and goes down the Amazon River in search of the lost city of El Do",
       "rating": 7.4
-    },
-    "death-becomes-her": {
-      "director": "Robert Zemeckis",
-      "year": 1992,
-      "runtime": 104,
-      "posterPath": "/kkWxyyyWFK5KNk9WVwQuGEC9H9H.jpg",
-      "overview": "Madeline is married to Ernest, who was once her arch-rival Helen's fiancé. After recovering from a mental breakdown, Helen vows to kill Madeline and steal back Ernest. Unfortunately for everyone, the ",
-      "rating": 6.782
     },
     "a-i-artificial-intelligence": {
       "director": "Steven Spielberg",
@@ -7179,14 +8089,6 @@
       "posterPath": "/4kIXsE4SwUjO0eUqpolsHNO5GLH.jpg",
       "overview": "A fictional account of the life of Japanese author Yukio Mishima, combining dramatizations of three of his novels and a depiction of the events of November 25th, 1970.",
       "rating": 7.8
-    },
-    "picnic-at-hanging-rock": {
-      "director": "Peter Weir",
-      "year": 1975,
-      "runtime": 107,
-      "posterPath": "/7BAXwmFN4pZDNb9N6kzmAAwdssi.jpg",
-      "overview": "In the early 1900s, Miranda attends a girls boarding school in Australia. One Valentine's Day, the school's typically strict headmistress treats the girls to a picnic field trip to an unusual but scen",
-      "rating": 7.242
     },
     "grey-gardens": {
       "director": "Muffie Meyer",
@@ -11730,14 +12632,6 @@
       "overview": "From his birth in Bethlehem to his death and eventual resurrection, the life of Jesus Christ is given the all-star treatment in this epic retelling. Major aspects of Christ's life are touched upon, in",
       "rating": 6.4
     },
-    "the-thing": {
-      "director": "John Carpenter",
-      "year": 1982,
-      "runtime": 109,
-      "posterPath": "/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
-      "overview": "A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims.",
-      "rating": 8.069
-    },
     "flight-of-the-navigator": {
       "director": "Randal Kleiser",
       "year": 1986,
@@ -14132,18 +15026,6 @@
       "overview": "Danny Fisher, young delinquent, flunks out of high school. He quits his job as a busboy in a nightclub, and one night he gets the chance to perform. Success is imminent and the local crime boss Maxie ",
       "rating": 6.4
     },
-    "the-deer-hunter": {
-      "director": "Michael Cimino",
-      "year": 1978,
-      "runtime": 183,
-      "posterPath": "/bbGtogDZOg09bm42KIpCXUXICkh.jpg",
-      "overview": "Three steelworkers enlist in the army and are sent to Vietnam, one leaving behind a rushed marriage, the others a shared love. What they encounter during the war changes their lives forever.",
-      "rating": 8,
-      "afi100": 53,
-      "rottenTomatoes": 86,
-      "imdbId": "tt0077416",
-      "letterboxd": 4.21
-    },
     "the-moment": {
       "director": "Aidan Zamiri",
       "year": 2026,
@@ -14186,17 +15068,6 @@
       "rottenTomatoes": 90,
       "imdbId": "tt0072979",
       "letterboxd": 3.94
-    },
-    "heavy-metal": {
-      "director": "Gerald Potterton",
-      "year": 1981,
-      "runtime": 90,
-      "posterPath": "/atUtWrDlLzT1yeVK2EoYtvbS963.jpg",
-      "overview": "The embodiment of ultimate evil, a glowing orb terrorizes a young girl with bizarre stories of dark fantasy, eroticism and horror.",
-      "rating": 6.5,
-      "rottenTomatoes": 66,
-      "imdbId": "tt0082509",
-      "letterboxd": 3.34
     },
     "legend": {
       "director": "Brian Helgeland",
@@ -16424,30 +17295,6 @@
       "rottenTomatoes": 29,
       "imdbId": "tt0157472",
       "letterboxd": 2.5
-    },
-    "the-face-of-another": {
-      "director": "Hiroshi Teshigahara",
-      "year": 1966,
-      "runtime": 124,
-      "posterPath": "/1FvETrj3MVxW2KFPL5Cw4kx9NFz.jpg",
-      "overview": "A man whose face has been horribly disfigured in an accident obtains a lifelike mask from his doctor and begins a new life with a new identity.",
-      "rating": 7.7,
-      "rottenTomatoes": 90,
-      "letterboxd": 3.8,
-      "reviews": [
-        {
-          "quote": "Teshigahara's unsettling identity thriller asks what it means to wear a face — Kafkaesque body horror rendered with cool, clinical beauty.",
-          "critic": "Jonathan Rosenbaum",
-          "publication": "Chicago Reader"
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "Criterion Channel",
-          "episode": "Hiroshi Teshigahara"
-        }
-      ],
-      "sightAndSound": 132
     },
     "persona": {
       "director": "Ingmar Bergman",

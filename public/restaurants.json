@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-07T11:03:06.389Z",
-  "lastFullScrape": "2026-06-07T11:03:06.389Z",
+  "lastUpdated": "2026-06-13T04:01:50.209Z",
+  "lastFullScrape": "2026-06-13T04:01:50.209Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -27,10 +27,6 @@
     "amiguita",
     "sandeomi-hamjipark",
     "padi-cafe-indonesian-kitchen",
-    "picala",
-    "roshona-bilash",
-    "bengara",
-    "bar-betsy",
     "folks-pizzeria",
     "tev-s-kitchen",
     "miura",
@@ -61,7 +57,8 @@
     "sushi-nakazawa-la",
     "montauk-redondo-beach",
     "night-on-earth",
-    "seco-silverlake"
+    "seco-silverlake",
+    "san-damian"
   ],
   "restaurants": [
     {
@@ -6425,6 +6422,26 @@
       "heatScore": 2,
       "id": "seco-silverlake",
       "addedDate": "2026-06-06"
+    },
+    {
+      "name": "San Damian",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "san-damian",
+      "addedDate": "2026-06-13"
     }
   ]
 }
