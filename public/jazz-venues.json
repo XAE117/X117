@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T11:57:29.270Z",
+  "lastUpdated": "2026-06-15T15:46:31.479Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-06-14-cory-henry-presents-the-gospel",
-          "artist": "Cory Henry Presents – The Gospel Brunch Experience",
-          "date": "2026-06-14",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/cory-henry-presents-the-gospel-brunch-experience/",
-          "hot": true
-        },
         {
           "id": "blue-note-la-2026-06-15-mark-de-clive-lowe",
           "artist": "Mark de Clive-Lowe",
@@ -232,24 +223,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "catalina-jazz-2026-06-14-jazz-legends-an-evening-with-p",
-          "artist": "Jazz Legends: An Evening with PATTI AUSTIN (Grammy Award-winning Jazz and R&B Icon)",
-          "date": "2026-06-14",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/an-evening-with-patti-austin-grammy-award-winning-jazz-and-rb-icon/",
-          "hot": false
-        },
-        {
-          "id": "catalina-jazz-2026-06-14-patti-austin",
-          "artist": "Patti Austin",
-          "date": "2026-06-14",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.songkick.com/concerts/43068651-patti-austin-at-catalina-bar-and-grill?utm_medium=organic&utm_source=microformat",
-          "hot": false
-        },
-        {
           "id": "catalina-jazz-2026-06-16-an-immersive-musical-experienc",
           "artist": "AN IMMERSIVE MUSICAL EXPERIENCE with composer-songwriter BLAIR AARONSON (Free & Open to the Public)",
           "date": "2026-06-16",
@@ -394,6 +367,15 @@
           "hot": false
         },
         {
+          "id": "catalina-jazz-2026-07-24-jennifer-holliday-love-music-l",
+          "artist": "Jennifer Holliday: Love, Music & Life",
+          "date": "2026-07-24",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/jennifer-holliday-love-music-life/",
+          "hot": false
+        },
+        {
           "id": "catalina-jazz-2026-07-26-kat-edmonson",
           "artist": "Kat Edmonson",
           "date": "2026-07-26",
@@ -414,15 +396,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "vibrato-2026-06-14-robert-davi-sings-the-great-am",
-          "artist": "Robert Davi Sings The Great American Songbook",
-          "date": "2026-06-14",
-          "time": "12:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/robert-davi-sings-the-great-american-songbook",
-          "hot": false
-        },
         {
           "id": "vibrato-2026-06-16-her-wild-a-live-music-series-c",
           "artist": "HER/wild - A live music series curated by Frankie Jordan",
@@ -795,15 +768,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-06-14--sgeir",
-          "artist": "Ásgeir",
-          "date": "2026-06-14",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/asgeir/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-06-15-jesca-hoop",
           "artist": "Jesca Hoop",
@@ -1674,15 +1638,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-06-15-jazz-sunday-joshua-c-childress",
-          "artist": "Jazz Sunday: Joshua C. Childress and Friends & Kevin Kanner Jazz Jam",
-          "date": "2026-06-15",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/q292xx-jazz-sunday-joshua-c-childress-and-friends-kevin-kanner-jazz-jam-14th-jun-the-mint-los-angeles-tickets",
-          "hot": false
-        },
-        {
           "id": "the-mint-2026-06-24-gorden-campbell-friends",
           "artist": "Gorden Campbell & Friends",
           "date": "2026-06-24",
@@ -1722,18 +1677,9 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-06-14-bangers-a-tribute-to-british-r",
-          "artist": "Bangers A Tribute to British Rock",
-          "date": "2026-06-14",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1007",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-06-14-jazz-passjuly-2026",
+          "id": "campus-jax-2026-06-15-jazz-passjuly-2026",
           "artist": "Jazz PassJuly 2026",
-          "date": "2026-06-14",
+          "date": "2026-06-15",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/4",
@@ -2505,6 +2451,12 @@
           "hot": false
         }
       ]
+    }
+  ],
+  "scrapeErrors": [
+    {
+      "source": "eventbrite.com",
+      "error": "Request failed with status code 405"
     }
   ]
 }
