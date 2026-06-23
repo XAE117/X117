@@ -26,7 +26,6 @@ function GuidePage({ guideData }) {
   const [tocFaded, setTocFaded] = useState(false)
   const observerRef = useRef(null)
   const scrollTimerRef = useRef(null)
-  const fadeTimerRef = useRef(null)
 
   const restaurants = useMemo(() => guideData?.restaurants || [], [guideData])
 
@@ -45,7 +44,6 @@ function GuidePage({ guideData }) {
     return () => {
       window.removeEventListener('scroll', handleScroll)
       clearTimeout(scrollTimerRef.current)
-      clearTimeout(fadeTimerRef.current)
     }
   }, [])
 
