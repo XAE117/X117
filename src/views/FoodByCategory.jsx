@@ -104,8 +104,8 @@ function FoodByCategory({ data }) {
     setStarredIds(next)
   }
 
-  const categories = data?.categories || []
-  const restaurants = data?.restaurants || []
+  const categories = useMemo(() => data?.categories || [], [data])
+  const restaurants = useMemo(() => data?.restaurants || [], [data])
 
   const filtered = useMemo(() => {
     if (activeCategory === 'all') return restaurants

@@ -146,7 +146,7 @@ function Tonight({ data }) {
         <p className="tonight-date-label">{dayLabel}</p>
         <div className="tonight-empty">
           <p>No screenings tonight — check back tomorrow</p>
-          <Link to="/by-day" className="tonight-empty-link">Browse upcoming screenings &rarr;</Link>
+          <Link to="/" className="tonight-empty-link">Browse upcoming screenings &rarr;</Link>
         </div>
       </div>
     )

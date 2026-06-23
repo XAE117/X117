@@ -12,7 +12,7 @@ const VIBES = [
   { key: 'budget', label: 'Budget' },
 ]
 
-function DateNightGenerator({ cinemaData, jazzData, foodData, vibe, setVibe }) {
+function DateNightGenerator({ cinemaData, jazzData, foodData, vibe }) {
   const [phase, setPhase] = useState('loading') // 'loading' | 'results'
   const [plans, setPlans] = useState(null)
   const [previousPlans, setPreviousPlans] = useState(null)
@@ -65,8 +65,10 @@ function DateNightGenerator({ cinemaData, jazzData, foodData, vibe, setVibe }) {
   // Regenerate when vibe prop changes (skip initial mount)
   useEffect(() => {
     if (!vibeInitialized.current) { vibeInitialized.current = true; return }
-    setPreviousPlans(null)
-    setPhase('loading')
+    queueMicrotask(() => {
+      setPreviousPlans(null)
+      setPhase('loading')
+    })
   }, [vibe])
 
   const toggleLock = useCallback((plan, element) => {
@@ -261,7 +263,7 @@ function PlanCard({ plan, type, label, emoji, accentClass, locked, onToggleLock,
           </span>
         )}
         {costRange && <span className="dn-cost">Est. {costRange}</span>}
-        <ShareButton plan={plan} type={type} label={label} />
+        <ShareButton plan={plan} type={type} />
       </div>
     </div>
   )
@@ -271,7 +273,6 @@ function PlanCard({ plan, type, label, emoji, accentClass, locked, onToggleLock,
 
 function ActivityCard({ type, data, isLocked, onToggleLock }) {
   const labels = { eat: 'EAT', watch: 'WATCH', listen: 'LISTEN' }
-  const icons = { eat: '🍽', watch: '🎬', listen: '🎷' }
 
   return (
     <div className={`dn-activity-card dn-activity-${type}`}>
@@ -397,7 +398,7 @@ function TimelineConnector({ timeline }) {
 
 // ── Share Button ──
 
-function ShareButton({ plan, type, label }) {
+function ShareButton({ plan, type }) {
   const [copied, setCopied] = useState(false)
 
   const handleShare = () => {

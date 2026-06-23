@@ -3,17 +3,18 @@ import { Routes, Route, useLocation, Navigate, NavLink } from 'react-router-dom'
 import ModeSwitcher from './components/ModeSwitcher.jsx'
 import Footer from './components/Footer.jsx'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
-import FormatFilter from './components/FormatFilter.jsx'
 import GodfatherAlert from './components/GodfatherAlert.jsx'
 import BackPill from './components/BackPill.jsx'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
+import Tonight from './views/Tonight.jsx'
 import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
 import DayScreenshot from './views/DayScreenshot.jsx'
 import JazzByVenue from './views/JazzByVenue.jsx'
 import JazzByDay from './views/JazzByDay.jsx'
+import JazzTonight from './views/JazzTonight.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
 import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
@@ -73,7 +74,6 @@ function App() {
   const [filtersExpanded, setFiltersExpanded] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isScrolling, setIsScrolling] = useState(false)
-  const [foodDropdown, setFoodDropdown] = useState(null) // 'tiers' | 'specialty' | null
   const [splashSeen, setSplashSeen] = useState(() => {
     try { return sessionStorage.getItem('sixpm-splash-seen') === '1' } catch { return true }
   })
@@ -119,15 +119,11 @@ function App() {
 
   // Auto-collapse filter notch when switching between modes
   useEffect(() => {
-    setFiltersExpanded(false)
-    setFoodDropdown(null)
-    setVibeOpen(false)
+    queueMicrotask(() => {
+      setFiltersExpanded(false)
+      setVibeOpen(false)
+    })
   }, [isJazzMode, isFoodMode, isRollMode])
-
-  // Close food dropdown on route change
-  useEffect(() => {
-    setFoodDropdown(null)
-  }, [location.pathname])
 
   // Dynamic page title per mode
   useEffect(() => {
@@ -205,7 +201,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchData()
+    queueMicrotask(() => fetchData())
   }, [])
 
   const getFilteredData = () => {
@@ -276,8 +272,6 @@ function App() {
       </Routes>
     )
   }
-
-  const mode = isRollMode ? 'roll' : isFoodMode ? 'food' : isJazzMode ? 'jazz' : 'cinema'
 
   // Detail pages render with minimal chrome (no header/nav/alerts/controls)
   const isSplashPage = !splashSeen || location.pathname === '/welcome'
@@ -386,11 +380,12 @@ function App() {
                 <div className="notch-nav-group">
                   {isJazzMode && [
                     { to: '/jazz', end: true, emoji: '📍', label: 'By Day' },
+                    { to: '/jazz/tonight', emoji: '🌙', label: 'Tonight' },
                     { to: '/jazz/by-venue', emoji: '🏛️', label: 'Venues' },
                     { to: '/jazz/proximity', emoji: '📡', label: 'LC ℃' },
                     { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
                     { to: '/jazz/bio', emoji: '📖', label: 'LC Bio' },
-                  ].map((item, i, arr) => (
+                  ].map((item, i) => (
                     <NavLink
                       key={item.to}
                       to={item.to}
@@ -427,6 +422,7 @@ function App() {
 
                   {!isJazzMode && !isFoodMode && [
                     { to: '/', end: true, emoji: '📍', label: 'By Day' },
+                    { to: '/tonight', emoji: '🌙', label: 'Tonight' },
                     { to: '/by-theater', emoji: '🏛️', label: 'Theaters' },
                     { to: '/watchlist', emoji: '💛', label: 'Watchlist' },
                     { to: '/map', emoji: '🗺️', label: 'Map' },
@@ -455,30 +451,39 @@ function App() {
                         { key: 'film', emoji: '📽️', label: 'Film' },
                         { key: 'new', emoji: '⭐', label: 'New' },
                         { key: 'favorites', emoji: '✨', label: 'Faves' },
-                      ].map((f, i) => (
-                        <button
-                          key={f.key}
-                          className={`notch-nav-row notch-filter-row ${formatFilter === f.key ? 'active' : ''}`}
-                          onClick={() => { setFormatFilter(f.key); setFiltersExpanded(false) }}
-                          style={{ animationDelay: `${(i + 4) * 0.05}s` }}
-                        >
-                          <span className="notch-nav-emoji">{f.emoji}</span>
-                          <span className="notch-nav-label">{f.label}</span>
+                      ].map((f, i) => {
+                        const row = (
                           <button
-                            className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
-                            style={{ display: f.key === 'all' ? 'inline-flex' : 'none', marginLeft: 'auto' }}
-                            onClick={(e) => { e.stopPropagation(); fetchData(true) }}
-                            disabled={refreshing}
-                            title="Refresh listings"
+                            className={`notch-nav-row notch-filter-row ${formatFilter === f.key ? 'active' : ''}`}
+                            onClick={() => { setFormatFilter(f.key); setFiltersExpanded(false) }}
+                            style={{ animationDelay: `${(i + 4) * 0.05}s` }}
                           >
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-                              <path d="M23 4v6h-6" />
-                              <path d="M1 20v-6h6" />
-                              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                            </svg>
+                            <span className="notch-nav-emoji">{f.emoji}</span>
+                            <span className="notch-nav-label">{f.label}</span>
                           </button>
-                        </button>
-                      ))}
+                        )
+
+                        if (f.key !== 'all') return <span key={f.key}>{row}</span>
+
+                        return (
+                          <div key={f.key} className="notch-filter-row-with-action">
+                            {row}
+                            <button
+                              className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+                              onClick={(e) => { e.stopPropagation(); fetchData(true) }}
+                              disabled={refreshing}
+                              title="Refresh listings"
+                              aria-label="Refresh listings"
+                            >
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                                <path d="M23 4v6h-6" />
+                                <path d="M1 20v-6h6" />
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                              </svg>
+                            </button>
+                          </div>
+                        )
+                      })}
                     </div>
                     <div className="filter-notch-search notch-search-row">
                       <input
@@ -516,6 +521,7 @@ function App() {
 
           {/* Cinema routes */}
           <Route path="/" element={<SmartCinemaDefault filteredData={filteredData} searchQuery={searchQuery} />} />
+          <Route path="/tonight" element={<Tonight data={data} />} />
           <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
           <Route path="/screening/:screeningId" element={<Detail data={data} />} />
           <Route path="/watchlist" element={<Watchlist data={data} />} />
@@ -524,6 +530,7 @@ function App() {
 
           {/* Jazz routes */}
           <Route path="/jazz" element={<JazzByDay data={jazzData} />} />
+          <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} />} />
           <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
           <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
           <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />
@@ -541,7 +548,7 @@ function App() {
           <Route path="/food/map" element={<EatsMapView data={foodData} />} />
 
           {/* Date Night Generator */}
-          <Route path="/roll" element={<DateNightGenerator cinemaData={data} jazzData={jazzData} foodData={foodData} vibe={vibe} setVibe={setVibe} />} />
+          <Route path="/roll" element={<DateNightGenerator cinemaData={data} jazzData={jazzData} foodData={foodData} vibe={vibe} />} />
 
           {/* Guide routes */}
           <Route path="/guide" element={<GuideHub />} />
