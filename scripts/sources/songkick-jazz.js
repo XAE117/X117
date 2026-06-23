@@ -11,15 +11,49 @@ import axios from 'axios'
 import * as cheerio from 'cheerio'
 
 const SONGKICK_URL = 'https://www.songkick.com/metro-areas/17835-us-los-angeles-la/genre/jazz'
+const OPTIONAL_BLOCK_STATUSES = new Set([403, 405, 406, 429])
+
+const BROWSER_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+  'Accept-Language': 'en-US,en;q=0.9',
+  'Cache-Control': 'no-cache',
+  'Pragma': 'no-cache',
+  'Upgrade-Insecure-Requests': '1',
+  'Sec-Fetch-Dest': 'document',
+  'Sec-Fetch-Mode': 'navigate',
+  'Sec-Fetch-Site': 'none',
+  'Sec-Fetch-User': '?1',
+}
+
+async function fetchHtml(url) {
+  const axiosResponse = await axios.get(url, {
+    headers: BROWSER_HEADERS,
+    timeout: 15000,
+    validateStatus: () => true,
+  })
+
+  if (axiosResponse.status >= 200 && axiosResponse.status < 300) return axiosResponse.data
+  if (OPTIONAL_BLOCK_STATUSES.has(axiosResponse.status)) {
+    console.log(`    Songkick blocked scrape with HTTP ${axiosResponse.status}; treating optional aggregator as skipped.`)
+    return ''
+  }
+
+  const fetchResponse = await fetch(url, {
+    headers: BROWSER_HEADERS,
+    signal: AbortSignal.timeout(15000),
+  })
+  if (fetchResponse.ok) return await fetchResponse.text()
+  if (OPTIONAL_BLOCK_STATUSES.has(fetchResponse.status)) {
+    console.log(`    Songkick blocked fallback scrape with HTTP ${fetchResponse.status}; treating optional aggregator as skipped.`)
+    return ''
+  }
+  throw new Error(`Songkick HTTP ${axiosResponse.status}; fallback HTTP ${fetchResponse.status}`)
+}
 
 export async function scrapeSongkick() {
-  const { data: html } = await axios.get(SONGKICK_URL, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Accept': 'text/html,application/xhtml+xml',
-    },
-    timeout: 15000,
-  })
+  const html = await fetchHtml(SONGKICK_URL)
+  if (!html) return []
 
   const $ = cheerio.load(html)
   const shows = []
