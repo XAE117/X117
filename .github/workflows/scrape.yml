@@ -45,7 +45,17 @@ jobs:
         run: node scripts/weekly-digest.js
       - name: Validate data
         if: always()
-        run: node scripts/validate-data.js
+        run: |
+          set +e
+          node scripts/validate-data.js
+          validation_status=$?
+          set -e
+
+          # Exit 1 means the data is usable but has health warnings.
+          # Exit 2 means a critical floor/freshness check failed.
+          if [ "$validation_status" -ge 2 ]; then
+            exit "$validation_status"
+          fi
       - name: Commit updated data
         id: commit_data
         if: always()
@@ -67,9 +77,8 @@ jobs:
       # deploy workflow explicitly here. workflow_dispatch events DO
       # trigger from a GITHUB_TOKEN-authenticated gh CLI call.
       #
-      # We gate on commit_data.outputs.committed rather than job success,
-      # because validate-data.js exits 1 on benign warnings (e.g. known
-      # inactive theaters), which would otherwise skip the deploy forever.
+      # We gate on commit_data.outputs.committed rather than job success so
+      # successfully generated data can still deploy if a later step fails.
       - name: Trigger Pages deploy
         if: always() && steps.commit_data.outputs.committed == 'true'
         env:
@@ -81,6 +90,6 @@ jobs:
       - name: Report scrape failure
         if: failure()
         run: |
-          echo "::error title=Scrape failed::The scrape workflow exited non-zero. public/theaters.json was NOT updated."
-          echo "Check the 'Scrape theater data' step above for the root cause."
-          echo "Common causes: revivalhouses.com HTML changed, Puppeteer timeout on JS-rendered sites, missing API keys, or network flake."
+          echo "::error title=Scrape workflow failed::One or more scrape or critical validation steps exited non-zero."
+          echo "Successfully generated files may still have been committed by the cleanup step."
+          echo "Inspect the first failed step above for the root cause."
