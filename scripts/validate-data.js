@@ -256,7 +256,7 @@ const generatedUTC = now.toISOString().slice(0, 16).replace('T', ' ') + ' UTC'
 
 // --- Build markdown report ---
 const md = []
-md.push(`# Liza's Palace — Data Health Report`)
+md.push(`# SIXPM — Data Health Report`)
 md.push('')
 md.push(`_Generated ${generatedUTC}_`)
 md.push('')
@@ -294,7 +294,7 @@ const mdReport = md.join('\n')
 
 // --- Build colorized terminal report ---
 const term = []
-term.push(`${c.bold}${c.cyan}Liza's Palace — Data Health Report${c.reset}`)
+term.push(`${c.bold}${c.cyan}SIXPM — Data Health Report${c.reset}`)
 term.push(`${c.dim}Generated ${generatedUTC}${c.reset}`)
 term.push('')
 term.push(`${c.bold}Status: ${statusColor}${status} ${statusIcon}${c.reset}`)

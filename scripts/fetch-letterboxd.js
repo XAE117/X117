@@ -65,7 +65,7 @@ function cleanTitle(title) {
 
 // For double-bill slugs ("Film A / Film B"), extract just the first title
 function extractFirstTitle(title) {
-  const parts = title.split(/\s*[\/+]\s*/)
+  const parts = title.split(/\s*[/+]\s*/)
   return parts[0].trim()
 }
 

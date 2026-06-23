@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * THE PALACE — Jazz Venue Scraper
+ * SIXPM — Jazz Venue Scraper
  *
  * Sources (in priority order):
  *   1. Blue Note LA (/la/shows/) — calendar grid, highest reliability
@@ -1061,7 +1061,7 @@ function deduplicateShows(allShows) {
 async function main() {
   console.log('')
   console.log('╔══════════════════════════════════════╗')
-  console.log('║   THE PALACE — Jazz Venue Scraper    ║')
+  console.log('║      SIXPM — Jazz Venue Scraper      ║')
   console.log('╚══════════════════════════════════════╝')
   console.log('')
   console.log(`  Today: ${TODAY_ISO}`)

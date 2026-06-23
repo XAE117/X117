@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * THE PALACE — Screening Scraper
+ * SIXPM — Screening Scraper
  *
  * Primary source: revivalhouses.com (~7 days out)
  * Supplemental: direct theater website scraping for further-out dates
@@ -1253,7 +1253,7 @@ async function enrichWithTMDB(outputTheaters) {
 async function main() {
   console.log('')
   console.log('╔══════════════════════════════════════╗')
-  console.log('║   THE PALACE — Screening Scraper     ║')
+  console.log('║      SIXPM — Screening Scraper       ║')
   console.log('╚══════════════════════════════════════╝')
   console.log('')
 
@@ -1320,7 +1320,7 @@ async function main() {
   }
   console.log(`Output: ${OUTPUT_PATH}`)
 
-  // Send Liza an SMS if The Godfather is screening
+  // Send an SMS if The Godfather is screening
   console.log('')
   console.log('Checking for Godfather screenings...')
   await sendGodfatherSMS(result)

@@ -62,7 +62,6 @@ const SS_2022 = {
   'la-jetee': 41,
   'los-olvidados': 42,
   'barry-lyndon': 43,
-  'bicycle-thieves': 44, // duplicate handled below
   'stalker': 45,
   'sansho-the-bailiff': 46,
   'cleo-from-5-to-7': 47,
@@ -111,7 +110,6 @@ const SS_2022 = {
   'grave-of-the-fireflies': 89,
   'tree-of-life': 90,
   'color-of-pomegranates': 91,
-  'jeanne-dielman-23-quai-du-commerce-1080-bruxelles': 1, // canonical dupe
   'platform': 92,
   'nostalghia': 93,
   'the-spirit-of-the-beehive': 94,
@@ -183,7 +181,6 @@ const SS_2022 = {
   'the-old-and-the-new': 159,
   'the-youth-of-maxim': 160,
   // More S&S films likely at LA cinemas
-  'the-conformist': 161,
   'last-tango-in-paris': 162,
   'once-upon-a-time-in-the-west': 163,
   'the-good-the-bad-and-the-ugly': 164,
@@ -351,16 +348,13 @@ let ssTotal = 0, afiTotal = 0, ssCurrentHits = 0, afiCurrentHits = 0
 
 // Apply to all films in the films object
 for (const slug of Object.keys(films)) {
-  let changed = false
   if (SS_DEDUPED[slug] !== undefined) {
     films[slug].sightAndSound = SS_DEDUPED[slug]
     ssTotal++
-    changed = true
   }
   if (AFI_100[slug] !== undefined) {
     films[slug].afi100 = AFI_100[slug]
     afiTotal++
-    changed = true
   }
 }
 

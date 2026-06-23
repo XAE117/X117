@@ -1,16 +1,17 @@
 /**
- * THE PALACE — Godfather SMS Alert
+ * SIXPM — Godfather SMS Alert
  *
- * Sends Liza an SMS via Twilio ONLY when new Godfather screenings
- * appear that she hasn't been alerted about yet.
+ * Sends an SMS via Twilio ONLY when new Godfather screenings
+ * appear that have not been alerted yet.
  *
  * Tracks previously notified screenings in .notified-screenings.json
- * so she doesn't get the same text every day.
+ * so the same text does not go out every day.
  *
  * Required env vars:
  *   TWILIO_ACCOUNT_SID
  *   TWILIO_AUTH_TOKEN
  *   TWILIO_PHONE_NUMBER  (your Twilio number, e.g. +1XXXXXXXXXX)
+ *   TWILIO_TO_PHONE      (recipient number, e.g. +1XXXXXXXXXX)
  *
  * Usage: called automatically by scrape.js after data is written,
  *        or standalone: node scripts/notify.js
@@ -25,7 +26,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const DATA_PATH = join(__dirname, '..', 'public', 'theaters.json')
 const NOTIFIED_PATH = join(__dirname, '..', '.notified-screenings.json')
 
-const LIZA_PHONE = '+12313490274'
 const APP_URL = 'https://xae117.github.io/X117/'
 
 function loadNotified() {
@@ -45,14 +45,14 @@ function saveNotified(ids) {
 
 /**
  * Scan theaters.json for Godfather screenings and send SMS
- * only for screenings Liza hasn't been texted about yet.
+ * only for screenings that have not been texted about yet.
  */
 export async function sendGodfatherSMS(data) {
-  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } = process.env
+  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, TWILIO_TO_PHONE } = process.env
 
-  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER) {
+  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER || !TWILIO_TO_PHONE) {
     console.log('  Twilio credentials not configured — skipping SMS notification.')
-    console.log('  Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_PHONE_NUMBER to enable.')
+    console.log('  Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, and TWILIO_TO_PHONE to enable.')
     return
   }
 
@@ -89,12 +89,12 @@ export async function sendGodfatherSMS(data) {
     return
   }
 
-  // Filter out screenings she's already been texted about
+  // Filter out screenings that have already been texted about
   const alreadyNotified = loadNotified()
   const newMatches = allMatches.filter(m => !alreadyNotified.includes(m.id))
 
   if (newMatches.length === 0) {
-    console.log(`  ${allMatches.length} Godfather screening(s) found, but Liza's already been texted about all of them.`)
+    console.log(`  ${allMatches.length} Godfather screening(s) found, but all have already been texted.`)
     return
   }
 
@@ -119,11 +119,11 @@ export async function sendGodfatherSMS(data) {
     const result = await client.messages.create({
       body: message,
       from: TWILIO_PHONE_NUMBER,
-      to: LIZA_PHONE,
+      to: TWILIO_TO_PHONE,
     })
-    console.log(`  SMS sent to Liza with ${newMatches.length} new screening(s)! SID: ${result.sid}`)
+    console.log(`  SMS sent with ${newMatches.length} new screening(s)! SID: ${result.sid}`)
 
-    // Mark these as notified so she won't get them again
+    // Mark these as notified so they will not send again
     const updatedNotified = [...alreadyNotified, ...newMatches.map(m => m.id)]
     saveNotified(updatedNotified)
   } catch (err) {
