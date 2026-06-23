@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Restaurant scraper orchestrator for Liza's Palace EATS mode.
+ * Restaurant scraper orchestrator for SIXPM Eats mode.
  * Scrapes from multiple LA food media sources, deduplicates, scores by consensus,
  * classifies into tiers, and outputs public/restaurants.json.
  *

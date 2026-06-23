@@ -1,18 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
   <rect width="192" height="192" fill="#0D0B0A"/>
-  <rect x="16" y="16" width="160" height="160" stroke="#C9A84C" stroke-width="2" fill="none"/>
-  <rect x="24" y="24" width="144" height="144" stroke="#A8893A" stroke-width="1" fill="none"/>
-  <!-- L -->
-  <text x="52" y="118" font-family="Georgia, serif" font-weight="bold" font-size="72" fill="#C9A84C">L</text>
-  <!-- P -->
-  <text x="96" y="118" font-family="Georgia, serif" font-weight="bold" font-size="72" fill="#C9A84C">P</text>
-  <!-- Corner ornaments -->
-  <line x1="20" y1="20" x2="40" y2="20" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="20" y1="20" x2="20" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="20" x2="152" y2="20" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="20" x2="172" y2="40" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="20" y1="172" x2="40" y2="172" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="20" y1="172" x2="20" y2="152" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="172" x2="152" y2="172" stroke="#C9A84C" stroke-width="1.5"/>
-  <line x1="172" y1="172" x2="172" y2="152" stroke="#C9A84C" stroke-width="1.5"/>
+  <!-- 6PM -->
+  <text x="96" y="112" font-family="Georgia, serif" font-weight="bold" font-size="62" fill="#C9A84C" text-anchor="middle">6PM</text>
 </svg>

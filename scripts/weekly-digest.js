@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * THE PALACE — Weekly SMS Digest
+ * SIXPM — Weekly SMS Digest
  *
  * Sends a curated weekend screening digest every Friday at 4pm PT.
  * Prioritizes film formats (35mm/70mm/nitrate), then by popularity.
@@ -10,6 +10,7 @@
  *   TWILIO_ACCOUNT_SID
  *   TWILIO_AUTH_TOKEN
  *   TWILIO_PHONE_NUMBER
+ *   TWILIO_TO_PHONE
  *
  * Usage: node scripts/weekly-digest.js
  */
@@ -22,7 +23,6 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DATA_PATH = join(__dirname, '..', 'public', 'theaters.json')
 
-const LIZA_PHONE = '+12313490274'
 const APP_URL = 'https://xae117.github.io/X117/'
 const MAX_SCREENINGS = 10
 
@@ -59,9 +59,9 @@ function scoreScreening(s) {
 }
 
 async function sendWeeklyDigest() {
-  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } = process.env
+  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, TWILIO_TO_PHONE } = process.env
 
-  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER) {
+  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER || !TWILIO_TO_PHONE) {
     console.log('Twilio credentials not configured — skipping weekly digest.')
     return
   }
@@ -112,7 +112,7 @@ async function sendWeeklyDigest() {
   })
 
   const message =
-    `Palace Picks — This Weekend\n\n` +
+    `SIXPM Picks — This Weekend\n\n` +
     `${lines.join('\n')}\n\n` +
     `Full schedule: ${APP_URL}`
 
@@ -125,7 +125,7 @@ async function sendWeeklyDigest() {
     const result = await client.messages.create({
       body: message,
       from: TWILIO_PHONE_NUMBER,
-      to: LIZA_PHONE,
+      to: TWILIO_TO_PHONE,
     })
     console.log(`SMS sent! SID: ${result.sid}`)
   } catch (err) {
