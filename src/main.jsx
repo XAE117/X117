@@ -4,6 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 
+const routerBase = import.meta.env.BASE_URL === '/'
+  ? undefined
+  : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 class RootErrorBoundary extends Component {
   constructor(props) {
     super(props)
@@ -36,7 +40,7 @@ class RootErrorBoundary extends Component {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RootErrorBoundary>
-      <BrowserRouter basename="/X117">
+      <BrowserRouter basename={routerBase}>
         <App />
       </BrowserRouter>
     </RootErrorBoundary>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#16110d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Morning Console body signals check-in" />
+    <link rel="manifest" href="morning-console.webmanifest" />
+    <link rel="apple-touch-icon" href="icon-192.svg" />
+    <title>Morning Console</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #f2dfb6;
+        --muted: #a99369;
+        --panel: #241b14;
+        --panel-2: #18120e;
+        --brass: #d6a94b;
+        --brass-dim: #7f6128;
+        --red: #d45b46;
+        --green: #7bbf7a;
+        --yellow: #d6b45a;
+        --shadow: rgba(0, 0, 0, 0.42);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #16110d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(214, 169, 75, 0.12), transparent 34rem),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 25%),
+          #16110d;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 28px));
+        margin: 0 auto;
+        padding: max(22px, env(safe-area-inset-top)) 0 max(24px, env(safe-area-inset-bottom));
+      }
+
+      .console {
+        border: 1px solid rgba(214, 169, 75, 0.35);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.14)),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 5px),
+          var(--panel);
+        box-shadow: 0 24px 60px var(--shadow), inset 0 1px rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 22px clamp(18px, 3vw, 34px);
+        border-bottom: 1px solid rgba(214, 169, 75, 0.22);
+        background: rgba(0, 0, 0, 0.16);
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .eyebrow,
+      .meter-label,
+      .field-label,
+      .readout-label {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 4px 0 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 7vw, 5.2rem);
+        font-weight: 700;
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .transport {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 42px;
+      }
+
+      .lamp {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--red);
+        box-shadow: 0 0 16px rgba(212, 91, 70, 0.76);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: 1px;
+        background: rgba(214, 169, 75, 0.2);
+      }
+
+      .bay {
+        padding: clamp(16px, 3vw, 30px);
+        background: var(--panel);
+      }
+
+      .bay.dark {
+        background: var(--panel-2);
+      }
+
+      .meter-bank {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .meter {
+        min-width: 0;
+        border: 1px solid rgba(214, 169, 75, 0.26);
+        border-radius: 8px;
+        padding: 16px;
+        background:
+          linear-gradient(180deg, rgba(242, 223, 182, 0.08), rgba(0, 0, 0, 0.12)),
+          #1b140f;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+      }
+
+      .value {
+        margin-top: 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.4rem, 8vw, 4.4rem);
+        line-height: 0.9;
+      }
+
+      .slider {
+        width: 100%;
+        margin-top: 18px;
+        accent-color: var(--brass);
+      }
+
+      .vu {
+        position: relative;
+        height: 74px;
+        margin-top: 14px;
+        border: 1px solid rgba(214, 169, 75, 0.28);
+        border-radius: 6px;
+        background: linear-gradient(90deg, rgba(123, 191, 122, 0.18), rgba(214, 180, 90, 0.2), rgba(212, 91, 70, 0.2));
+        overflow: hidden;
+      }
+
+      .needle {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        height: 72px;
+        background: #110d0a;
+        transform-origin: 50% 100%;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.45);
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .field {
+        min-width: 0;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        min-width: 0;
+        margin-top: 8px;
+        border: 1px solid rgba(214, 169, 75, 0.3);
+        border-radius: 6px;
+        color: var(--ink);
+        background: rgba(0, 0, 0, 0.18);
+        outline: none;
+      }
+
+      .field input {
+        height: 44px;
+        padding: 0 12px;
+      }
+
+      .field textarea {
+        min-height: 136px;
+        resize: vertical;
+        padding: 12px;
+        line-height: 1.5;
+      }
+
+      .switches {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .switch {
+        min-height: 38px;
+        border: 1px solid rgba(214, 169, 75, 0.3);
+        border-radius: 999px;
+        padding: 0 12px;
+        background: rgba(0, 0, 0, 0.16);
+        cursor: pointer;
+      }
+
+      .switch.active {
+        color: #17110d;
+        border-color: var(--brass);
+        background: var(--brass);
+        box-shadow: 0 0 18px rgba(214, 169, 75, 0.24);
+      }
+
+      .pem .switch.active.green {
+        background: var(--green);
+        border-color: var(--green);
+      }
+
+      .pem .switch.active.yellow {
+        background: var(--yellow);
+        border-color: var(--yellow);
+      }
+
+      .pem .switch.active.red {
+        background: var(--red);
+        border-color: var(--red);
+      }
+
+      .readout {
+        display: grid;
+        gap: 12px;
+      }
+
+      .paper {
+        min-height: 280px;
+        border: 1px solid rgba(214, 169, 75, 0.32);
+        border-radius: 8px;
+        padding: 16px;
+        color: #241b14;
+        background:
+          linear-gradient(rgba(36, 27, 20, 0.06) 1px, transparent 1px) 0 0 / 100% 24px,
+          #e5d0a0;
+        overflow: auto;
+      }
+
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 0.82rem;
+        line-height: 1.45;
+      }
+
+      .transmit {
+        width: 100%;
+        min-height: 58px;
+        border: 1px solid rgba(214, 169, 75, 0.62);
+        border-radius: 6px;
+        color: #18110c;
+        background: linear-gradient(180deg, #f0c667, #b98232);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.34), 0 12px 22px rgba(0, 0, 0, 0.28);
+        font-size: 1rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        cursor: pointer;
+      }
+
+      .transmit:disabled {
+        cursor: wait;
+        filter: saturate(0.55);
+        opacity: 0.72;
+      }
+
+      .toast {
+        position: fixed;
+        right: max(18px, env(safe-area-inset-right));
+        bottom: max(18px, env(safe-area-inset-bottom));
+        max-width: min(360px, calc(100vw - 36px));
+        border: 1px solid rgba(214, 169, 75, 0.38);
+        border-radius: 8px;
+        padding: 12px 14px;
+        color: var(--ink);
+        background: rgba(22, 17, 13, 0.96);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+      }
+
+      .toast.success {
+        border-color: rgba(123, 191, 122, 0.74);
+      }
+
+      .toast.error {
+        border-color: rgba(212, 91, 70, 0.74);
+      }
+
+      @media (max-width: 820px) {
+        .header,
+        .grid {
+          display: block;
+        }
+
+        .transport {
+          margin-top: 12px;
+        }
+
+        .meter-bank,
+        .controls {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import React, { useMemo, useState } from 'https://esm.sh/react@19.2.0'
+      import { createRoot } from 'https://esm.sh/react-dom@19.2.0/client'
+
+      const focusModes = ['Deep Work', 'Recovery', 'Admin', 'Creative', 'Low Stim']
+      const projectOptions = ['Ancient Paths', 'AST', 'Walker', 'Music', 'LifeOS', 'Job Search']
+      const bodyStates = ['Clear', 'Tender', 'Wired', 'Heavy', 'Pain']
+      const moods = ['Steady', 'Bright', 'Flat', 'Griefy', 'Anxious', 'Charged']
+      const pemRisks = ['green', 'yellow', 'red']
+
+      function Meter({ label, value, onChange }) {
+        const rotation = -46 + Number(value) * 9.2
+
+        return React.createElement('section', { className: 'meter' }, [
+          React.createElement('p', { className: 'meter-label', key: 'label' }, label),
+          React.createElement('div', { className: 'value', key: 'value' }, value),
+          React.createElement('div', { className: 'vu', key: 'vu' },
+            React.createElement('div', {
+              className: 'needle',
+              style: { transform: `rotate(${rotation}deg)` },
+            })
+          ),
+          React.createElement('input', {
+            className: 'slider',
+            key: 'slider',
+            type: 'range',
+            min: '0',
+            max: '10',
+            value,
+            onChange: (event) => onChange(Number(event.target.value)),
+          }),
+        ])
+      }
+
+      function SwitchGroup({ label, value, options, onChange, className = '' }) {
+        return React.createElement('div', { className: `field ${className}` }, [
+          React.createElement('p', { className: 'field-label', key: 'label' }, label),
+          React.createElement('div', { className: 'switches', key: 'switches' },
+            options.map((option) => React.createElement('button', {
+              className: `switch ${value === option ? 'active' : ''} ${option}`,
+              key: option,
+              type: 'button',
+              onClick: () => onChange(option),
+            }, option))
+          ),
+        ])
+      }
+
+      function MultiSwitchGroup({ label, values, options, onChange }) {
+        function toggle(option) {
+          onChange(values.includes(option)
+            ? values.filter((value) => value !== option)
+            : [...values, option])
+        }
+
+        return React.createElement('div', { className: 'field full' }, [
+          React.createElement('p', { className: 'field-label', key: 'label' }, label),
+          React.createElement('div', { className: 'switches', key: 'switches' },
+            options.map((option) => React.createElement('button', {
+              className: `switch ${values.includes(option) ? 'active' : ''}`,
+              key: option,
+              type: 'button',
+              onClick: () => toggle(option),
+            }, option))
+          ),
+        ])
+      }
+
+      function App() {
+        const [cognitiveActivation, setCognitiveActivation] = useState(5)
+        const [physiologicalCapacity, setPhysiologicalCapacity] = useState(5)
+        const [creativeTemperature, setCreativeTemperature] = useState(5)
+        const [sleepHours, setSleepHours] = useState('7.0')
+        const [focusMode, setFocusMode] = useState(focusModes[0])
+        const [activeProjects, setActiveProjects] = useState(['LifeOS'])
+        const [bodyState, setBodyState] = useState(bodyStates[0])
+        const [mood, setMood] = useState(moods[0])
+        const [pemRisk, setPemRisk] = useState('green')
+        const [freeText, setFreeText] = useState('')
+        const [sharedSecret, setSharedSecret] = useState(() => {
+          try { return localStorage.getItem('morning-console-secret') || '' } catch { return '' }
+        })
+        const [toast, setToast] = useState(null)
+        const [isSending, setIsSending] = useState(false)
+
+        const payload = useMemo(() => ({
+          cognitive_activation: cognitiveActivation,
+          physiological_capacity: physiologicalCapacity,
+          creative_temperature: creativeTemperature,
+          sleep_hours: Number.parseFloat(sleepHours || '0'),
+          focus_mode: focusMode,
+          active_projects: activeProjects,
+          body_state: bodyState,
+          mood,
+          pem_risk: pemRisk,
+          free_text: freeText,
+        }), [
+          cognitiveActivation,
+          physiologicalCapacity,
+          creativeTemperature,
+          sleepHours,
+          focusMode,
+          activeProjects,
+          bodyState,
+          mood,
+          pemRisk,
+          freeText,
+        ])
+
+        async function transmit() {
+          console.log(payload)
+          setIsSending(true)
+          setToast(null)
+
+          try {
+            if (!sharedSecret) {
+              throw new Error('Enter the console access key before transmitting.')
+            }
+
+            const response = await fetch('/api/body-signals', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Morning-Secret': sharedSecret,
+              },
+              body: JSON.stringify(payload),
+            })
+            const result = await response.json().catch(() => ({}))
+
+            if (!response.ok || !result.ok) {
+              throw new Error(result.error || 'Transmission failed')
+            }
+
+            setToast({ type: 'success', message: 'Transmission received by Notion.' })
+          } catch (error) {
+            setToast({ type: 'error', message: error.message })
+          } finally {
+            setIsSending(false)
+          }
+        }
+
+        return React.createElement(React.Fragment, null, [
+          React.createElement('main', { className: 'shell', key: 'shell' },
+            React.createElement('div', { className: 'console' }, [
+              React.createElement('header', { className: 'header', key: 'header' }, [
+                React.createElement('div', { className: 'brand', key: 'brand' }, [
+                  React.createElement('p', { className: 'eyebrow', key: 'eyebrow' }, 'Body Signals'),
+                  React.createElement('h1', { key: 'title' }, 'Morning Console'),
+                ]),
+                React.createElement('div', { className: 'transport', key: 'transport' }, [
+                  React.createElement('span', { className: 'lamp', key: 'lamp' }),
+                  React.createElement('p', { className: 'eyebrow', key: 'label' }, isSending ? 'Transmitting' : 'Armed'),
+                ]),
+              ]),
+              React.createElement('div', { className: 'grid', key: 'grid' }, [
+                React.createElement('section', { className: 'bay', key: 'left' }, [
+                  React.createElement('div', { className: 'meter-bank', key: 'meters' }, [
+                    React.createElement(Meter, {
+                      key: 'cognitive',
+                      label: 'Cognitive Activation',
+                      value: cognitiveActivation,
+                      onChange: setCognitiveActivation,
+                    }),
+                    React.createElement(Meter, {
+                      key: 'physiology',
+                      label: 'Physiological Capacity',
+                      value: physiologicalCapacity,
+                      onChange: setPhysiologicalCapacity,
+                    }),
+                    React.createElement(Meter, {
+                      key: 'creative',
+                      label: 'Creative Temperature',
+                      value: creativeTemperature,
+                      onChange: setCreativeTemperature,
+                    }),
+                  ]),
+                  React.createElement('div', { className: 'controls', key: 'controls' }, [
+                    React.createElement('label', { className: 'field', key: 'sleep' }, [
+                      React.createElement('span', { className: 'field-label', key: 'label' }, 'Sleep Hours'),
+                      React.createElement('input', {
+                        key: 'input',
+                        inputMode: 'decimal',
+                        type: 'number',
+                        step: '0.25',
+                        min: '0',
+                        max: '16',
+                        value: sleepHours,
+                        onChange: (event) => setSleepHours(event.target.value),
+                      }),
+                    ]),
+                    React.createElement(SwitchGroup, {
+                      key: 'focus',
+                      label: 'Focus Mode',
+                      value: focusMode,
+                      options: focusModes,
+                      onChange: setFocusMode,
+                    }),
+                    React.createElement(MultiSwitchGroup, {
+                      key: 'projects',
+                      label: 'Active Projects',
+                      values: activeProjects,
+                      options: projectOptions,
+                      onChange: setActiveProjects,
+                    }),
+                    React.createElement(SwitchGroup, {
+                      key: 'body',
+                      label: 'Body State',
+                      value: bodyState,
+                      options: bodyStates,
+                      onChange: setBodyState,
+                    }),
+                    React.createElement(SwitchGroup, {
+                      key: 'mood',
+                      label: 'Mood',
+                      value: mood,
+                      options: moods,
+                      onChange: setMood,
+                    }),
+                    React.createElement(SwitchGroup, {
+                      key: 'pem',
+                      label: 'PEM Risk',
+                      value: pemRisk,
+                      options: pemRisks,
+                      onChange: setPemRisk,
+                      className: 'pem',
+                    }),
+                    React.createElement('label', { className: 'field full', key: 'free' }, [
+                      React.createElement('span', { className: 'field-label', key: 'label' }, 'Free Text'),
+                      React.createElement('textarea', {
+                        key: 'textarea',
+                        value: freeText,
+                        onChange: (event) => setFreeText(event.target.value),
+                      }),
+                    ]),
+                    React.createElement('label', { className: 'field full', key: 'secret' }, [
+                      React.createElement('span', { className: 'field-label', key: 'label' }, 'Console Access Key'),
+                      React.createElement('input', {
+                        key: 'input',
+                        type: 'password',
+                        autoComplete: 'current-password',
+                        value: sharedSecret,
+                        onChange: (event) => {
+                          const value = event.target.value
+                          setSharedSecret(value)
+                          try { localStorage.setItem('morning-console-secret', value) } catch {}
+                        },
+                      }),
+                    ]),
+                  ]),
+                ]),
+                React.createElement('aside', { className: 'bay dark readout', key: 'right' }, [
+                  React.createElement('p', { className: 'readout-label', key: 'label' }, 'Payload'),
+                  React.createElement('div', { className: 'paper', key: 'paper' },
+                    React.createElement('pre', null, JSON.stringify(payload, null, 2))
+                  ),
+                  React.createElement('button', {
+                    className: 'transmit',
+                    key: 'button',
+                    type: 'button',
+                    disabled: isSending,
+                    onClick: transmit,
+                  }, isSending ? 'TRANSMITTING' : 'TRANSMIT'),
+                ]),
+              ]),
+            ])
+          ),
+          toast && React.createElement('div', {
+            className: `toast ${toast.type}`,
+            key: 'toast',
+            role: 'status',
+          }, toast.message),
+        ])
+      }
+
+      createRoot(document.getElementById('root')).render(React.createElement(App))
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          const basePath = window.location.pathname.startsWith('/X117/') ? '/X117/' : '/'
+          navigator.serviceWorker.register(`${basePath}sw.js`, { scope: basePath }).catch(() => {})
+        })
+      }
+    </script>
+  </body>
+</html>

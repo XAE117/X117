@@ -1,17 +1,18 @@
-# THE PALACE
+# SIXPM
 
-A two-month repertory cinema calendar for Los Angeles arthouse and repertory theaters. Built with React + Vite, styled as a 1930s Art Deco film palace.
+SIXPM is a Los Angeles evening planner built with React + Vite. It combines
+three local guides in one installable app: repertory cinema, jazz/live music,
+and restaurants.
 
 ## Features
 
-- **By Theater** view: grid of theater cards, click to expand and see full screening list
-- **By Month** view: two-column calendar showing all screenings across all theaters by date
-- **Detail Page**: full screening info with format badges, notes, and ticket links
-- **Search**: real-time filtering across all film titles
-- **This Week** filter: narrow both views to the next 7 days
-- Art Deco design with gold/charcoal/burgundy palette, geometric ornaments, and custom typography
+- **Cinema**: repertory screenings by day, theater, watchlist, map, and detail pages
+- **Jazz**: live shows by day, venue, proximity, map, and show detail pages
+- **Eats**: restaurants by category, starred list, map, and guide essays
+- **Roll**: date-night generator that combines cinema, music, and food
+- **Morning Console**: PWA body-signals check-in that posts to Notion through `/api/body-signals`
 
-## Theaters Tracked
+## Cinema Sources
 
 - New Beverly Cinema
 - Vista Theatre
@@ -39,11 +40,40 @@ The app opens at `http://localhost:5173`.
 | `npm run dev` | Start dev server |
 | `npm run build` | Production build to `dist/` |
 | `npm run preview` | Preview production build |
-| `npm run scrape` | Re-scrape theater data from the web |
+| `npm run scrape` | Re-scrape cinema data |
+| `npm run scrape:jazz` | Re-scrape jazz/live music data |
+| `npm run scrape:eats` | Re-scrape restaurant data |
+| `npm run scrape:all` | Run all scrapers |
+| `npm run validate` | Generate `public/health-report.md` |
 
-## Re-running the Scraper
+## Deployments
 
-The scraper fetches screening data from revivalhouses.com and individual theater websites, deduplicates entries, and writes `public/theaters.json`.
+GitHub Pages can serve the static SIXPM app at `/X117/`, but it cannot run
+the Morning Console Notion endpoint. Use the Vercel deployment for
+`morning-console.html` and any feature that calls `/api/*`.
+
+Required Vercel environment variables:
+
+- `NOTION_API_KEY`
+- `NOTION_BODY_SIGNALS_DATABASE_ID`
+- `MORNING_CONSOLE_SECRET`
+
+Generate `MORNING_CONSOLE_SECRET` with `openssl rand -hex 32`. Enter the same
+value once in the Morning Console; it is stored only in that browser's local
+storage and sent as a request header. It is not included in the static bundle.
+
+The Vercel build uses `VITE_BASE_PATH=/` so the app and API run from the root
+of the Vercel deployment. The GitHub Pages build keeps the default `/X117/`
+base path.
+
+For automated production deployments, connect the Vercel project to
+`XAE117/X117` through Vercel's Git integration. Until that integration is
+authorized, deploy from an authenticated workstation with `vercel --prod`.
+
+## Re-running Scrapers
+
+The cinema scraper fetches screening data from revivalhouses.com and individual
+theater websites, deduplicates entries, and writes `public/theaters.json`.
 
 ```bash
 npm install    # ensure scraper deps (axios, cheerio) are installed
@@ -58,7 +88,15 @@ The scraper will:
 
 Some theaters use JavaScript-heavy sites that may need Puppeteer for full rendering. The scraper gracefully handles fetch failures and logs which theaters couldn't be scraped.
 
-## Data Format
+## Data Files
+
+- `public/theaters.json`: cinema screenings and film metadata
+- `public/jazz-venues.json`: jazz/live music listings
+- `public/restaurants.json`: restaurant guide data
+- `public/guide-restaurants.json`: curated guide essay references
+- `public/health-report.md`: generated data quality report
+
+## Cinema Data Format
 
 `public/theaters.json` follows this schema:
 

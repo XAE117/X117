@@ -36,7 +36,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/X117/sw.js', { scope: '/X117/' })
+          const base = '%BASE_URL%'
+          navigator.serviceWorker.register(`${base}sw.js`, { scope: base })
             .then(reg => {
               // Check for updates every 5 minutes
               setInterval(() => reg.update(), 5 * 60 * 1000)
