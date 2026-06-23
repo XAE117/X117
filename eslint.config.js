@@ -32,7 +32,7 @@ export default defineConfig([
   // bodies run in a browser context, so we also expose browser globals here —
   // eslint can't distinguish Node vs evaluated function scope.
   {
-    files: ['scripts/**/*.{js,cjs}', 'eslint.config.js', 'vite.config.js'],
+    files: ['scripts/**/*.{js,cjs}', 'api/**/*.js', 'eslint.config.js', 'vite.config.js'],
     extends: [js.configs.recommended],
     languageOptions: {
       ecmaVersion: 'latest',
