@@ -1,6 +1,6 @@
-# Liza's Palace — Data Health Report
+# SIXPM — Data Health Report
 
-_Generated 2026-06-22 15:24 UTC_
+_Generated 2026-06-23 01:23 UTC_
 
 **Status: WARNINGS** ⚠️
 
