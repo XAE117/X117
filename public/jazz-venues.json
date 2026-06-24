@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T15:51:04.423Z",
+  "lastUpdated": "2026-06-24T12:19:28.705Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -13,15 +13,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "blue-note-la-2026-06-23-louie-vega-elements-of-life",
-          "artist": "Louie Vega: Elements of Life",
-          "date": "2026-06-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/louie-vega-elements-of-life/",
-          "hot": false
-        },
-        {
           "id": "blue-note-la-2026-06-24-louie-vega-elements-of-life",
           "artist": "Louie Vega: Elements of Life",
           "date": "2026-06-24",
@@ -31,8 +22,8 @@
           "hot": false
         },
         {
-          "id": "blue-note-la-2026-06-25-talib-kweli-featuring-hi-tek-w",
-          "artist": "Talib Kweli Featuring Hi-Tek With J. Rawls",
+          "id": "blue-note-la-2026-06-25-talib-kweli-featuring-hi-tek-b",
+          "artist": "Talib Kweli Featuring Hi-Tek & Bun B With J. Rawls",
           "date": "2026-06-25",
           "time": "7:00 PM",
           "notes": "",
@@ -361,18 +352,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-06-23-devin-daniels-tuesday-happenin",
+          "id": "sam-first-2026-06-24-devin-daniels-tuesday-happenin",
           "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-06-23",
+          "date": "2026-06-24",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
         },
         {
-          "id": "sam-first-2026-06-23-mauricio-morales",
+          "id": "sam-first-2026-06-24-mauricio-morales",
           "artist": "Mauricio Morales",
-          "date": "2026-06-23",
+          "date": "2026-06-24",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-06-24-jaz-sawyer",
+          "artist": "Jaz Sawyer",
+          "date": "2026-06-24",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -391,30 +391,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-06-23-alli-starr",
-          "artist": "Alli’ Starr",
-          "date": "2026-06-23",
-          "time": "12:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/alli-starr-2",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-06-23-adam-aejaye-jackson",
-          "artist": "Adam “Aejaye” Jackson",
-          "date": "2026-06-23",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-06-24-l-young-presents-trouble-man-a",
           "artist": "L. Young Presents: Trouble Man – A Marvin Gaye Tribute",
           "date": "2026-06-24",
           "time": "12:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/l-young-presents-trouble-man-a-marvin-gaye-tribute-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-06-24-adam-aejaye-jackson",
+          "artist": "Adam “Aejaye” Jackson",
+          "date": "2026-06-24",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -708,6 +699,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-06-24-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-06-24",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -717,26 +729,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-06-23-saxophone-summit-june-23-24-ny",
-          "artist": "Saxophone Summit (June 23-24, NYC)",
-          "date": "2026-06-23",
-          "time": "8:00 PM",
-          "notes": "All ages",
-          "link": "https://www.minaretrecords.com/shows/saxsummit",
-          "hot": true,
-          "promoter": "Minaret Records"
-        },
-        {
-          "id": "lodge-room-2026-06-23-ics",
-          "artist": "ICS",
-          "date": "2026-06-23",
-          "time": "8:00 PM",
-          "notes": "All ages",
-          "link": "https://www.minaretrecords.com/shows/saxsummit?format=ical",
-          "hot": true,
-          "promoter": "Minaret Records"
-        },
         {
           "id": "lodge-room-2026-06-24-girli",
           "artist": "Girli",
@@ -1395,6 +1387,33 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-10-16-stones-throw-30-day-1-of-3-",
+          "artist": "Stones Throw 30 (Day 1 of 3)",
+          "date": "2026-10-16",
+          "time": "6:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/stonesthrow30/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-10-17-stones-throw-30-day-2-of-3-",
+          "artist": "Stones Throw 30 (Day 2 of 3)",
+          "date": "2026-10-17",
+          "time": "2:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/stonesthrow30-2/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-10-18-stones-throw-30-day-3-of-3-",
+          "artist": "Stones Throw 30 (Day 3 of 3)",
+          "date": "2026-10-18",
+          "time": "2:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/stonesthrow30-3/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-10-21-frankie-cosmos-celebrating-10-",
           "artist": "Frankie Cosmos – Celebrating 10 Years of Next Thing",
           "date": "2026-10-21",
@@ -1622,27 +1641,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-06-23-matt-politano",
-          "artist": "Matt Politano",
-          "date": "2026-06-23",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1653,28 +1651,19 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-06-23-gorden-campbell",
+          "id": "the-mint-2026-06-24-gorden-campbell",
           "artist": "Gorden Campbell",
-          "date": "2026-06-23",
+          "date": "2026-06-24",
           "time": "9:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "the-mint-2026-06-24-gorden-campbell-friends-with-d",
-          "artist": "Gorden Campbell & Friends with DJ Joshua Stephen Huot",
-          "date": "2026-06-24",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://dice.fm/event/q2vgla-gorden-campbell-friends-with-dj-joshua-stephen-huot-23rd-jun-the-mint-los-angeles-tickets",
-          "hot": false
-        },
-        {
           "id": "the-mint-2026-06-27-the-bean-tones-",
           "artist": "The Bean Tones ",
           "date": "2026-06-27",
-          "time": "6:45 PM",
+          "time": "1:45 AM",
           "notes": "",
           "link": "https://dice.fm/event/mxda7l-the-bean-tones-26th-jun-the-mint-los-angeles-tickets",
           "hot": false
@@ -1683,7 +1672,7 @@
           "id": "the-mint-2026-06-29-jazz-sunday-the-jazz-bakers-ke",
           "artist": "Jazz Sunday: The Jazz Bakers & Kevin Kanner Jazz",
           "date": "2026-06-29",
-          "time": "7:00 PM",
+          "time": "2:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/g5x5m2-jazz-sunday-the-jazz-bakers-kevin-kanner-jazz-28th-jun-the-mint-los-angeles-tickets",
           "hot": false
@@ -1692,7 +1681,7 @@
           "id": "the-mint-2026-07-06-jazz-sunday-corbin-jones-big-b",
           "artist": "Jazz Sunday: Corbin Jones' Big Band: Stevie Wonder Hotter Than July & Kevin Kanner Jazz",
           "date": "2026-07-06",
-          "time": "7:00 PM",
+          "time": "2:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/pyd7wp-jazz-sunday-corbin-jones-big-band-stevie-wonder-hotter-than-july-kevin-kanner-jazz-5th-jul-the-mint-los-angeles-tickets",
           "hot": false
@@ -1701,7 +1690,7 @@
           "id": "the-mint-2026-07-09-gabriella-sara-hayden-sandefur",
           "artist": "Gabriella Sara, Hayden Sandefur, McCrae, Bloom Theory",
           "date": "2026-07-09",
-          "time": "7:00 PM",
+          "time": "2:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/dkp9kv-gabriella-sara-hayden-sandefur-mccrae-bloom-theory-8th-jul-the-mint-los-angeles-tickets",
           "hot": false
@@ -1710,7 +1699,7 @@
           "id": "the-mint-2026-07-13-jazz-sunday-the-paul-kreibich-",
           "artist": "Jazz Sunday: The Paul Kreibich Sextet & Kevin Kanner Jazz",
           "date": "2026-07-13",
-          "time": "7:00 PM",
+          "time": "2:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/nvdvn9-jazz-sunday-the-paul-kreibich-sextet-kevin-kanner-jazz-12th-jul-the-mint-los-angeles-tickets",
           "hot": false
@@ -1719,7 +1708,7 @@
           "id": "the-mint-2026-07-15-sierra-sikora-jenny-nuo-sequoi",
           "artist": "Sierra Sikora, Jenny Nuo, SEQUOIA, Heather LaRose",
           "date": "2026-07-15",
-          "time": "7:00 PM",
+          "time": "2:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/yoendp-sierra-sikora-jenny-nuo-sequoia-heather-larose-14th-jul-the-mint-los-angeles-tickets",
           "hot": false
@@ -1728,7 +1717,7 @@
           "id": "the-mint-2026-07-16-tap-night-hosted-by-sarah-reic",
           "artist": "Tap Night hosted by Sarah Reich ",
           "date": "2026-07-16",
-          "time": "7:15 PM",
+          "time": "2:15 AM",
           "notes": "",
           "link": "https://dice.fm/event/bb7k6o-tap-night-hosted-by-sarah-reich-15th-jul-the-mint-los-angeles-tickets",
           "hot": false
@@ -1737,7 +1726,7 @@
           "id": "the-mint-2026-07-18-paul-cornish",
           "artist": "Paul Cornish",
           "date": "2026-07-18",
-          "time": "7:00 PM",
+          "time": "2:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/l8x8ew-paul-cornish-17th-jul-the-mint-los-angeles-tickets",
           "hot": false
@@ -1746,9 +1735,18 @@
           "id": "the-mint-2026-07-18-ravi-campbell-quintet-adam-her",
           "artist": "Ravi Campbell Quintet, Adam Hersh",
           "date": "2026-07-18",
-          "time": "9:00 PM",
+          "time": "4:00 AM",
           "notes": "",
           "link": "https://dice.fm/event/pyb7ey-ravi-campbell-quintet-adam-hersh-17th-jul-the-mint-los-angeles-tickets",
+          "hot": false
+        },
+        {
+          "id": "the-mint-2026-07-20-jazz-sunday-marcello-carelli-s",
+          "artist": "Jazz Sunday: Marcello Carelli's Effervescence Quartet & Kevin Kanner Jazz",
+          "date": "2026-07-20",
+          "time": "2:00 AM",
+          "notes": "",
+          "link": "https://dice.fm/event/oeaqmm-jazz-sunday-marcello-carellis-effervescence-quartet-kevin-kanner-jazz-19th-jul-the-mint-los-angeles-tickets",
           "hot": false
         },
         {
@@ -1758,27 +1756,6 @@
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43216451-rebirth-brass-band-at-mint?utm_medium=organic&utm_source=microformat",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-06-23-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-06-23",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
           "hot": false
         }
       ]
@@ -1794,57 +1771,48 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-06-23-jax-songstagesinger-songwriter",
-          "artist": "JAX SongStageSinger-Songwriter Showcaseft. Danny Beissel, Mark Wood, Majo Insuasti, Rob Gallas, Chris Amodeo, In Deep Duo",
-          "date": "2026-06-23",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/861",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-06-23-jazz-passjuly-2026",
-          "artist": "Jazz PassJuly 2026",
-          "date": "2026-06-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/4",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-06-23-jazz-pass-august-2026",
-          "artist": "Jazz Pass August 2026",
-          "date": "2026-06-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/5",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-06-23-jazz-pass-september-2026",
-          "artist": "Jazz Pass September 2026",
-          "date": "2026-06-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/6",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-06-23-jazz-pass-october-2026",
-          "artist": "Jazz Pass October 2026",
-          "date": "2026-06-23",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-06-24-jukebox-wednesdaya-special-nig",
           "artist": "Jukebox WednesdayA special night of music celebrating our friend Bart ❤️",
           "date": "2026-06-24",
           "time": "5:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1009",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-24-jazz-passjuly-2026",
+          "artist": "Jazz PassJuly 2026",
+          "date": "2026-06-24",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/4",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-24-jazz-pass-august-2026",
+          "artist": "Jazz Pass August 2026",
+          "date": "2026-06-24",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/5",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-24-jazz-pass-september-2026",
+          "artist": "Jazz Pass September 2026",
+          "date": "2026-06-24",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/6",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-06-24-jazz-pass-october-2026",
+          "artist": "Jazz Pass October 2026",
+          "date": "2026-06-24",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
           "hot": false
         },
         {
@@ -1908,6 +1876,15 @@
           "time": "8:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/844",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-04-closed-for-independence-day-we",
+          "artist": "Closed for Independence Day Weekend",
+          "date": "2026-07-04",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1074",
           "hot": false
         },
         {
@@ -2605,7 +2582,7 @@
         },
         {
           "id": "campus-jax-2026-11-28-the-live-pink-floyd-experience",
-          "artist": "The Live Pink Floyd Experience\nShine On",
+          "artist": "The Live Pink Floyd ExperienceShine On",
           "date": "2026-11-28",
           "time": "8:00 PM",
           "notes": "",
@@ -2628,6 +2605,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/950",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-12-05-the-springsteen-experience",
+          "artist": "The Springsteen Experience",
+          "date": "2026-12-05",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1073",
           "hot": false
         },
         {
