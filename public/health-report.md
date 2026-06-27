@@ -1,28 +1,28 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-06-26 12:11 UTC_
+_Generated 2026-06-27 03:41 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 11 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Royal, Secret Movie Club, 2220 Arts + Archives, FILM at LACMA, El Capitan Theatre, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC The Americana at Brand 18
+- **[Cinema (theaters.json)]** 10 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Royal, Secret Movie Club, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Century City 15
 
 ## Cinema (theaters.json)
-- Last updated: 2026-06-26 (today)
-- 36 theaters tracked, 25 with future screenings
-- 458 future screenings, horizon 62 days
-- ⚠️ 11 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Royal, Secret Movie Club, 2220 Arts + Archives, FILM at LACMA, El Capitan Theatre, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC The Americana at Brand 18
+- Last updated: 2026-06-27 (today)
+- 36 theaters tracked, 26 with future screenings
+- 458 future screenings, horizon 61 days
+- ⚠️ 10 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Royal, Secret Movie Club, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Century City 15
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-06-26 (today)
+- Last updated: 2026-06-27 (today)
 - 9 venues, 9 with future shows
-- 277 future shows, horizon 297 days
+- 291 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-06-23 (3 days ago)
-- 277 restaurants tracked
-- Tiers: street 7, feast 213, whale 14
+- Last updated: 2026-06-27 (today)
+- 278 restaurants tracked
+- Tiers: street 7, feast 214, whale 14
 
 ## Guide (guide-restaurants.json)
 - 25 hand-curated entries

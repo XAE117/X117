@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-23T08:24:38.122Z",
-  "lastFullScrape": "2026-06-23T08:24:38.122Z",
+  "lastUpdated": "2026-06-27T03:41:10.567Z",
+  "lastFullScrape": "2026-06-27T03:41:10.567Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -53,7 +53,8 @@
     "montauk-redondo-beach",
     "night-on-earth",
     "seco-silverlake",
-    "san-damian"
+    "san-damian",
+    "padi"
   ],
   "restaurants": [
     {
@@ -4255,7 +4256,7 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "tokyo-neapolitan",
-      "heatScore": 0,
+      "heatScore": 3,
       "fire": 5,
       "color": "#E84830",
       "description": "Yusho Asai's omakase-style pizza counter — 8 seats, 12 courses, each pie a conversation between Japanese precision and Neapolitan tradition. Ingredients imported from Japan and Italy. This is pizza as fine art.",
@@ -4271,9 +4272,15 @@
         "Michelin Guide"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 0,
+      "sourceCount": 1,
       "lat": 34.054959,
-      "lng": -118.383437
+      "lng": -118.383437,
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ]
     },
     {
       "id": "pizzana",
@@ -6441,6 +6448,26 @@
       "heatScore": 3,
       "id": "san-damian",
       "addedDate": "2026-06-13"
+    },
+    {
+      "name": "Padi",
+      "neighborhood": "",
+      "cuisine": "",
+      "sources": [
+        {
+          "name": "The Infatuation Hit List",
+          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        }
+      ],
+      "tags": [
+        "new-opening"
+      ],
+      "isNew": true,
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "padi",
+      "addedDate": "2026-06-27"
     }
   ]
 }
