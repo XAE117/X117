@@ -1,26 +1,26 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-06-27 11:28 UTC_
+_Generated 2026-06-28 11:01 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 10 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Royal, Secret Movie Club, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Century City 15
+- **[Cinema (theaters.json)]** 12 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Nuart Theatre, Laemmle Royal, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Century City 15
 
 ## Cinema (theaters.json)
-- Last updated: 2026-06-27 (today)
-- 36 theaters tracked, 26 with future screenings
-- 458 future screenings, horizon 61 days
-- ⚠️ 10 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Royal, Secret Movie Club, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Century City 15
+- Last updated: 2026-06-28 (today)
+- 36 theaters tracked, 24 with future screenings
+- 429 future screenings, horizon 60 days
+- ⚠️ 12 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, REDCAT, Laemmle Nuart Theatre, Laemmle Royal, Secret Movie Club, Cinespia, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Century City 15
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-06-27 (today)
-- 10 venues, 10 with future shows
-- 292 future shows, horizon 296 days
+- Last updated: 2026-06-28 (today)
+- 11 venues, 11 with future shows
+- 287 future shows, horizon 295 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-06-27 (today)
+- Last updated: 2026-06-28 (today)
 - 278 restaurants tracked
 - Tiers: street 7, feast 214, whale 14
 
