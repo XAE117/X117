@@ -1,26 +1,26 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-01 12:34 UTC_
+_Generated 2026-07-02 12:09 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 16 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Laemmle Royal, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15
+- **[Cinema (theaters.json)]** 11 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, Fine Arts Theatre Beverly Hills, El Capitan Theatre, The Culver Theater, Landmark Sunset Hollywood, AMC Burbank 16
 
 ## Cinema (theaters.json)
-- Last updated: 2026-07-01 (today)
-- 36 theaters tracked, 20 with future screenings
-- 303 future screenings, horizon 43 days
-- ⚠️ 16 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Laemmle Royal, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, Fine Arts Theatre Beverly Hills, El Capitan Theatre, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15
+- Last updated: 2026-07-02 (today)
+- 36 theaters tracked, 25 with future screenings
+- 364 future screenings, horizon 56 days
+- ⚠️ 11 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, Fine Arts Theatre Beverly Hills, El Capitan Theatre, The Culver Theater, Landmark Sunset Hollywood, AMC Burbank 16
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-01 (today)
+- Last updated: 2026-07-02 (today)
 - 9 venues, 9 with future shows
-- 301 future shows, horizon 292 days
+- 320 future shows, horizon 291 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-06-28 (3 days ago)
+- Last updated: 2026-06-28 (4 days ago)
 - 278 restaurants tracked
 - Tiers: street 7, feast 214, whale 14
 
