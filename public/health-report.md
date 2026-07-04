@@ -1,28 +1,28 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-03 12:09 UTC_
+_Generated 2026-07-04 03:23 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 11 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Burbank 16
+- **[Cinema (theaters.json)]** 10 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, El Capitan Theatre, Landmark Sunset Hollywood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-07-03 (today)
-- 36 theaters tracked, 25 with future screenings
-- 371 future screenings, horizon 55 days
-- ⚠️ 11 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, Fine Arts Theatre Beverly Hills, El Capitan Theatre, Landmark Sunset Hollywood, AMC Burbank 16
+- Last updated: 2026-07-04 (today)
+- 36 theaters tracked, 26 with future screenings
+- 355 future screenings, horizon 54 days
+- ⚠️ 10 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, El Capitan Theatre, Landmark Sunset Hollywood
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-03 (today)
-- 9 venues, 9 with future shows
-- 328 future shows, horizon 290 days
+- Last updated: 2026-07-04 (today)
+- 10 venues, 10 with future shows
+- 326 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-06-28 (5 days ago)
-- 278 restaurants tracked
-- Tiers: street 7, feast 214, whale 14
+- Last updated: 2026-07-04 (today)
+- 287 restaurants tracked
+- Tiers: street 7, feast 223, whale 14
 
 ## Guide (guide-restaurants.json)
 - 25 hand-curated entries

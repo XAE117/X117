@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-28T11:01:32.609Z",
-  "lastFullScrape": "2026-06-28T11:01:32.609Z",
+  "lastUpdated": "2026-07-04T03:23:47.620Z",
+  "lastFullScrape": "2026-07-04T03:23:47.620Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -32,10 +32,6 @@
     "miura",
     "asadero",
     "cafe-stella",
-    "the-bohemian",
-    "the-brisket-shoppe",
-    "osteria-ester",
-    "elyu-omakase",
     "bad-roman",
     "sushi-nakazawa",
     "alta-adams",
@@ -54,7 +50,16 @@
     "night-on-earth",
     "seco-silverlake",
     "san-damian",
-    "padi"
+    "padi",
+    "san-dami-n",
+    "pawn-shop",
+    "tacos-royale",
+    "frank-frank-s",
+    "the-tower-bar",
+    "stir-crazy",
+    "coni-seafood-hermosa-hermosa-beach",
+    "superba-food-bread-hollywood",
+    "m-rate"
   ],
   "restaurants": [
     {
@@ -3505,16 +3510,21 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/kismet"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "kismet-los-angeles",
       "addedDate": "2026-03-21",
       "lat": 34.100225,
-      "lng": -118.290726
+      "lng": -118.290726,
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/kismet?venueId=866"
     },
     {
       "name": "Avra",
@@ -4256,7 +4266,7 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "tokyo-neapolitan",
-      "heatScore": 3,
+      "heatScore": 6,
       "fire": 5,
       "color": "#E84830",
       "description": "Yusho Asai's omakase-style pizza counter — 8 seats, 12 courses, each pie a conversation between Japanese precision and Neapolitan tradition. Ingredients imported from Japan and Italy. This is pizza as fine art.",
@@ -4272,13 +4282,17 @@
         "Michelin Guide"
       ],
       "addedDate": "2026-03-31",
-      "sourceCount": 1,
+      "sourceCount": 2,
       "lat": 34.054959,
       "lng": -118.383437,
       "sources": [
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
         }
       ]
     },
@@ -6437,6 +6451,10 @@
         {
           "name": "The Infatuation Hit List",
           "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -6444,10 +6462,11 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
+      "sourceCount": 2,
+      "heatScore": 5,
       "id": "san-damian",
-      "addedDate": "2026-06-13"
+      "addedDate": "2026-06-13",
+      "reservationUrl": "https://resy.com/cities/venice-los-angeles-ca/venues/san-damian?venueId=97817"
     },
     {
       "name": "Padi",
@@ -6468,6 +6487,173 @@
       "heatScore": 3,
       "id": "padi",
       "addedDate": "2026-06-27"
+    },
+    {
+      "name": "San Damián",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "san-dami-n",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Pawn Shop",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "pawn-shop",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Tacos Royale",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "tacos-royale",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Frank & Frank’s",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "sources": [
+        {
+          "name": "Eater Heatmap",
+          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 3,
+      "id": "frank-frank-s",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "The Tower Bar",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-tower-bar?venueId=94047",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "the-tower-bar",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Stir Crazy",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/stir-crazy?venueId=73864",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "stir-crazy",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Coni Seafood – Hermosa",
+      "neighborhood": "Hermosa Beach",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/hermosa-beach-ca/venues/coni-seafood-hermosa?venueId=95266",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "coni-seafood-hermosa-hermosa-beach",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Superba Food + Bread - Hollywood",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/superba-food-and-bread-hollywood?venueId=10535",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "superba-food-bread-hollywood",
+      "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Mírate",
+      "neighborhood": "",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/mirate?venueId=65457",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "m-rate",
+      "addedDate": "2026-07-04"
     }
   ]
 }
