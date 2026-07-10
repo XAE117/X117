@@ -1,26 +1,26 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-08 11:47 UTC_
+_Generated 2026-07-10 12:26 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 13 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, Cinespia, WHAMMY! Analog Media, FILM at LACMA, Laemmle Town Center 5, The Landmark Westwood, Fine Arts Theatre Beverly Hills, The Culver Theater, Landmark Sunset Hollywood
+- **[Cinema (theaters.json)]** 15 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC Rolling Hills 20, AMC The Americana at Brand 18, Universal Cinema AMC at CityWalk
 
 ## Cinema (theaters.json)
-- Last updated: 2026-07-08 (today)
-- 36 theaters tracked, 23 with future screenings
-- 316 future screenings, horizon 50 days
-- ⚠️ 13 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, Cinespia, WHAMMY! Analog Media, FILM at LACMA, Laemmle Town Center 5, The Landmark Westwood, Fine Arts Theatre Beverly Hills, The Culver Theater, Landmark Sunset Hollywood
+- Last updated: 2026-07-10 (today)
+- 36 theaters tracked, 21 with future screenings
+- 344 future screenings, horizon 48 days
+- ⚠️ 15 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle NoHo 7, Secret Movie Club, WHAMMY! Analog Media, FILM at LACMA, The Landmark Westwood, The Culver Theater, Landmark Sunset Hollywood, AMC Century City 15, AMC Burbank 16, AMC Rolling Hills 20, AMC The Americana at Brand 18, Universal Cinema AMC at CityWalk
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-08 (today)
+- Last updated: 2026-07-10 (today)
 - 9 venues, 9 with future shows
-- 316 future shows, horizon 285 days
+- 301 future shows, horizon 283 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-07-05 (3 days ago)
+- Last updated: 2026-07-05 (5 days ago)
 - 287 restaurants tracked
 - Tiers: street 7, feast 223, whale 14
 
