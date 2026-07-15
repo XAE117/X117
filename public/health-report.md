@@ -1,26 +1,26 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-14 11:26 UTC_
+_Generated 2026-07-15 11:29 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 13 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, Laemmle Town Center 5, The Landmark Westwood, Landmark Sunset Hollywood, AMC Century City 15
+- **[Cinema (theaters.json)]** 10 theaters with 0 future screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, Laemmle Town Center 5, The Landmark Westwood, AMC Century City 15
 
 ## Cinema (theaters.json)
-- Last updated: 2026-07-14 (today)
-- 36 theaters tracked, 23 with future screenings
-- 327 future screenings, horizon 47 days
-- ⚠️ 13 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, REDCAT, Laemmle Nuart Theatre, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, Laemmle Town Center 5, The Landmark Westwood, Landmark Sunset Hollywood, AMC Century City 15
+- Last updated: 2026-07-15 (today)
+- 36 theaters tracked, 26 with future screenings
+- 350 future screenings, horizon 47 days
+- ⚠️ 10 theaters with 0 screenings: American Cinematheque — Egyptian Theatre, Billy Wilder Theater at the Hammer, Secret Movie Club, Cinespia, 2220 Arts + Archives, WHAMMY! Analog Media, FILM at LACMA, Laemmle Town Center 5, The Landmark Westwood, AMC Century City 15
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-14 (today)
-- 10 venues, 10 with future shows
-- 304 future shows, horizon 279 days
+- Last updated: 2026-07-15 (today)
+- 9 venues, 9 with future shows
+- 302 future shows, horizon 278 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-07-12 (2 days ago)
+- Last updated: 2026-07-12 (3 days ago)
 - 287 restaurants tracked
 - Tiers: street 7, feast 223, whale 14
 

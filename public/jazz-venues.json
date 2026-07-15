@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T11:26:29.628Z",
+  "lastUpdated": "2026-07-15T11:29:20.076Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-07-14-berhana",
-          "artist": "Berhana",
-          "date": "2026-07-14",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/berhana/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-07-15-slum-village",
           "artist": "Slum Village",
@@ -91,6 +82,15 @@
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.bluenotejazz.com/la/tm-event/averysunshine/",
+          "hot": false
+        },
+        {
+          "id": "blue-note-la-2026-07-21-magnus-friends-residency",
+          "artist": "Magnus & Friends Residency",
+          "date": "2026-07-21",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.bluenotejazz.com/la/tm-event/magnus-friends-residency/",
           "hot": false
         },
         {
@@ -433,18 +433,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-07-14-devin-daniels-tuesday-happenin",
+          "id": "sam-first-2026-07-15-devin-daniels-tuesday-happenin",
           "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-07-14",
+          "date": "2026-07-15",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
         },
         {
-          "id": "sam-first-2026-07-14-jason-hayashi",
+          "id": "sam-first-2026-07-15-jason-hayashi",
           "artist": "Jason Hayashi",
-          "date": "2026-07-14",
+          "date": "2026-07-15",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-07-15-miles-lennox",
+          "artist": "Miles Lennox",
+          "date": "2026-07-15",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -463,21 +472,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-07-14-bee-gees-gold",
-          "artist": "Bee Gees Gold",
-          "date": "2026-07-14",
-          "time": "10:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/bee-gees-gold-3",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-07-15-abba-la-the-live-concert-exper",
           "artist": "ABBA LA: The Live Concert Experience",
           "date": "2026-07-15",
           "time": "10:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/abba-la-the-live-concert-experience-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-07-15-paris-chansons",
+          "artist": "Paris Chansons",
+          "date": "2026-07-15",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -843,6 +852,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-07-15-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-07-15",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -852,24 +882,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-07-14-semi-finals-world-cup-viewing-",
-          "artist": "Semi-Finals – World Cup Viewing Party",
-          "date": "2026-07-14",
-          "time": "12:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/semi-finals-world-cup-viewing-party/",
-          "hot": true
-        },
-        {
-          "id": "lodge-room-2026-07-14-kill-bill-the-rapper-i-found-t",
-          "artist": "Kill Bill the Rapper – I FOUND THE END Tour",
-          "date": "2026-07-14",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/kill-bill-the-rapper-i-found-the-end-tour/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-07-15-semi-finals-world-cup-viewing-",
           "artist": "Semi-Finals – World Cup Viewing Party",
@@ -1593,6 +1605,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-10-30-improvement-movement-your-perf",
+          "artist": "Improvement Movement – Your Perfect Real LIVE '26",
+          "date": "2026-10-30",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/improvement-movement-your-perfect-real-live-26/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-10-31-desire",
           "artist": "Desire",
           "date": "2026-10-31",
@@ -1823,27 +1844,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-07-14-garrett-wingfield",
-          "artist": "Garrett Wingfield",
-          "date": "2026-07-14",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1853,15 +1853,6 @@
       "tier": "regular",
       "region": "LA",
       "shows": [
-        {
-          "id": "the-mint-2026-07-15-sierra-sikora-jenny-nuo-sequoi",
-          "artist": "Sierra Sikora, Jenny Nuo, SEQUOIA, Heather LaRose",
-          "date": "2026-07-15",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/yoendp-sierra-sikora-jenny-nuo-sequoia-heather-larose-14th-jul-the-mint-los-angeles-tickets",
-          "hot": false
-        },
         {
           "id": "the-mint-2026-07-16-tap-night-hosted-by-sarah-reic",
           "artist": "Tap Night hosted by Sarah Reich ",
@@ -1944,42 +1935,12 @@
           "hot": false
         },
         {
-          "id": "the-mint-2026-08-03-jazz-sunday-ay-big-band-kevin-",
-          "artist": "Jazz Sunday: AY BIg Band & Kevin Kanner Jazz",
-          "date": "2026-08-03",
-          "time": "2:00 AM",
-          "notes": "",
-          "link": "https://dice.fm/event/q2pb39-jazz-sunday-ay-big-band-kevin-kanner-jazz-2nd-aug-the-mint-los-angeles-tickets",
-          "hot": false
-        },
-        {
           "id": "the-mint-2026-08-07-rebirth-brass-band",
           "artist": "Rebirth Brass Band",
           "date": "2026-08-07",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43216451-rebirth-brass-band-at-mint?utm_medium=organic&utm_source=microformat",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-07-14-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-07-14",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
           "hot": false
         }
       ]
@@ -1995,48 +1956,39 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-07-14-jax-songstagesinger-songwriter",
-          "artist": "JAX SongStageSinger-Songwriter ShowcaseDanny Beissel, Victoria Vox, Glen Lystne, Will Pond, Tim Ehrreich, Red Jug Horizon",
-          "date": "2026-07-14",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1076",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-07-14-jazz-pass-august-2026",
-          "artist": "Jazz Pass August 2026",
-          "date": "2026-07-14",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/5",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-07-14-jazz-pass-september-2026",
-          "artist": "Jazz Pass September 2026",
-          "date": "2026-07-14",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/6",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-07-14-jazz-pass-october-2026",
-          "artist": "Jazz Pass October 2026",
-          "date": "2026-07-14",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-07-15-matt-mauser-dave-murdy-jax-duo",
           "artist": "Matt Mauser & Dave Murdy JAX Duos",
           "date": "2026-07-15",
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/966",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-15-jazz-pass-august-2026",
+          "artist": "Jazz Pass August 2026",
+          "date": "2026-07-15",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/5",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-15-jazz-pass-september-2026",
+          "artist": "Jazz Pass September 2026",
+          "date": "2026-07-15",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/6",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-15-jazz-pass-october-2026",
+          "artist": "Jazz Pass October 2026",
+          "date": "2026-07-15",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
           "hot": false
         },
         {
@@ -2307,6 +2259,15 @@
           "time": "1:00 PM",
           "notes": "",
           "link": "https://tiasarms.networkforgood.com/events/99664-tias-arms-afternoon-of-jazz-2026?hid=NDI5Njg0OTg=",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-23-the-barenaked-80-s",
+          "artist": "The Barenaked 80's",
+          "date": "2026-08-23",
+          "time": "6:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1117",
           "hot": false
         },
         {
@@ -2721,6 +2682,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1051",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-11-15-jumping-jack-flash-the-tribute",
+          "artist": "Jumping Jack Flash The Tribute to The Rolling Stones",
+          "date": "2026-11-15",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1116",
           "hot": false
         },
         {
