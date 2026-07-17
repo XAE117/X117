@@ -11,26 +11,42 @@ const DEFAULT_CATEGORIES = [
   { key: 'tacos', label: 'Tacos', description: 'The Global Capital · All Styles' },
 ]
 
-function normalizeRestaurants(food) {
-  if (!food.restaurants) return
-  food.restaurants.forEach(r => {
-    // tier ↔ category
-    if (!r.tier && r.category) r.tier = r.category
-    if (!r.category) r.category = r.tier || 'feast'
-    // price ↔ priceRange
-    if (!r.priceRange && r.price) r.priceRange = r.price
-    if (!r.price && r.priceRange) r.price = r.priceRange
-    // bibGourmand → michelinStatus
-    if (!r.michelinStatus && r.bibGourmand) r.michelinStatus = 'bib-gourmand'
-    // defaults
-    if (r.heatScore === undefined) r.heatScore = r.fire || 0
-    if (!r.color) r.color = TIER_COLORS[r.tier] || TIER_COLORS.feast
-    if (!r.neighborhood) r.neighborhood = ''
-    if (!r.cuisine) r.cuisine = ''
+export function normalizeRestaurantData(food) {
+  if (!food) return null
+
+  const restaurants = (food.restaurants || []).map((restaurant) => {
+    const tier = restaurant.tier || restaurant.category || 'feast'
+    const category = restaurant.category || tier
+    const priceRange = restaurant.priceRange || restaurant.price
+    const price = restaurant.price || priceRange
+
+    return {
+      ...restaurant,
+      tier,
+      category,
+      priceRange,
+      price,
+      michelinStatus: restaurant.michelinStatus || (restaurant.bibGourmand ? 'bib-gourmand' : undefined),
+      heatScore: restaurant.heatScore ?? restaurant.fire ?? 0,
+      color: restaurant.color || TIER_COLORS[tier] || TIER_COLORS.feast,
+      neighborhood: restaurant.neighborhood || '',
+      cuisine: restaurant.cuisine || '',
+    }
   })
-  if (!food.categories) {
-    food.categories = DEFAULT_CATEGORIES
+
+  return {
+    ...food,
+    restaurants,
+    categories: food.categories || DEFAULT_CATEGORIES,
   }
+}
+
+async function fetchJson(url) {
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error(`Unable to load ${url}: HTTP ${response.status}`)
+  }
+  return response.json()
 }
 
 export function useAppData() {
@@ -48,20 +64,17 @@ export function useAppData() {
     const t = Date.now()
 
     Promise.all([
-      fetch(base + 'theaters.json?t=' + t).then(res => res.json()),
-      fetch(base + 'jazz-venues.json?t=' + t).then(res => res.json()).catch(() => null),
-      fetch(base + 'restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
-      fetch(base + 'guide-restaurants.json?t=' + t).then(res => res.json()).catch(() => null),
-      fetch(base + 'louis-cole-bio.json?t=' + t).then(res => res.json()).catch(() => null),
+      fetchJson(base + 'theaters.json?t=' + t),
+      fetchJson(base + 'jazz-venues.json?t=' + t).catch(() => null),
+      fetchJson(base + 'restaurants.json?t=' + t).catch(() => null),
+      fetchJson(base + 'guide-restaurants.json?t=' + t).catch(() => null),
+      fetchJson(base + 'louis-cole-bio.json?t=' + t).catch(() => null),
     ])
       .then(([cinemaData, jazz, food, guide, bio]) => {
         setData(cinemaData)
         if (jazz) setJazzData(jazz)
         if (bio) setBioData(bio)
-        if (food) {
-          normalizeRestaurants(food)
-          setFoodData(food)
-        }
+        if (food) setFoodData(normalizeRestaurantData(food))
         if (guide) setGuideData(guide)
         setLoading(false)
         setRefreshing(false)

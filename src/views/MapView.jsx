@@ -46,22 +46,41 @@ function MapView({ data }) {
       const coords = THEATER_COORDS[theater.id]
       if (!coords) return
 
-      const upcoming = theater.screenings.slice(0, 3)
-      const screeningLines = upcoming.map(s => {
-        const d = new Date(s.date + 'T00:00:00')
-        const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
-        const fmt = s.format && s.format !== 'digital' ? ` <span class="map-popup-format">${s.format}</span>` : ''
-        return `<div class="map-popup-screening">${dateStr} — ${s.title}${fmt}</div>`
-      }).join('')
+      const popupContent = document.createElement('div')
+      popupContent.className = 'map-popup'
 
-      const popupContent = `
-        <div class="map-popup">
-          <strong class="map-popup-name" style="color:${theater.color}">${theater.name}</strong>
-          <span class="map-popup-hood">${theater.neighborhood}</span>
-          <span class="map-popup-count">${theater.screenings.length} upcoming</span>
-          ${screeningLines}
-        </div>
-      `
+      const name = document.createElement('strong')
+      name.className = 'map-popup-name'
+      name.textContent = theater.name
+      if (window.CSS?.supports?.('color', theater.color)) name.style.color = theater.color
+      popupContent.appendChild(name)
+
+      const neighborhood = document.createElement('span')
+      neighborhood.className = 'map-popup-hood'
+      neighborhood.textContent = theater.neighborhood
+      popupContent.appendChild(neighborhood)
+
+      const count = document.createElement('span')
+      count.className = 'map-popup-count'
+      count.textContent = `${theater.screenings.length} upcoming`
+      popupContent.appendChild(count)
+
+      theater.screenings.slice(0, 3).forEach((screening) => {
+        const line = document.createElement('div')
+        line.className = 'map-popup-screening'
+        const d = new Date(screening.date + 'T00:00:00')
+        const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+        line.append(document.createTextNode(`${dateStr} — ${screening.title}`))
+
+        if (screening.format && screening.format !== 'digital') {
+          const format = document.createElement('span')
+          format.className = 'map-popup-format'
+          format.textContent = screening.format
+          line.append(' ', format)
+        }
+
+        popupContent.appendChild(line)
+      })
 
       L.circleMarker([coords.lat, coords.lng], {
         radius: 8,

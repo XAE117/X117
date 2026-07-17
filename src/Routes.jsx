@@ -1,12 +1,14 @@
 import { Routes as RouterRoutes, Route, Navigate } from 'react-router-dom'
 import ByTheater from './views/ByTheater.jsx'
 import ByDay from './views/ByDay.jsx'
+import Tonight from './views/Tonight.jsx'
 import Detail from './views/Detail.jsx'
 import Watchlist from './views/Watchlist.jsx'
 import MapView from './views/MapView.jsx'
 import Search from './views/Search.jsx'
 import JazzByVenue from './views/JazzByVenue.jsx'
 import JazzByDay from './views/JazzByDay.jsx'
+import JazzTonight from './views/JazzTonight.jsx'
 import JazzDetail from './views/JazzDetail.jsx'
 import JazzMapView from './views/JazzMapView.jsx'
 import JazzByProximity from './views/JazzByProximity.jsx'
@@ -50,6 +52,7 @@ export default function RoutesView({ standalone = false }) {
       <Route path="/welcome" element={<Navigate to="/" replace />} />
 
       <Route path="/" element={<SmartCinemaDefault filteredData={filteredData} searchQuery={searchQuery} />} />
+      <Route path="/tonight" element={<Tonight data={data} />} />
       <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
       <Route path="/screening/:screeningId" element={<Detail data={data} />} />
       <Route path="/watchlist" element={<Watchlist data={data} />} />
@@ -57,6 +60,7 @@ export default function RoutesView({ standalone = false }) {
       <Route path="/search" element={<Search data={filteredData} />} />
 
       <Route path="/jazz" element={<JazzByDay data={jazzData} />} />
+      <Route path="/jazz/tonight" element={<JazzTonight data={jazzData} />} />
       <Route path="/jazz/by-venue" element={<JazzByVenue data={jazzData} />} />
       <Route path="/jazz/show/:showId" element={<JazzDetail data={jazzData} />} />
       <Route path="/jazz/proximity" element={<JazzByProximity data={jazzData} />} />

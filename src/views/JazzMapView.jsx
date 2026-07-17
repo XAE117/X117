@@ -53,23 +53,42 @@ function JazzMapView({ data }) {
         .filter(s => new Date(s.date + 'T00:00:00') >= today)
         .slice(0, 3)
 
-      const showLines = upcomingShows.map(s => {
-        const d = new Date(s.date + 'T00:00:00')
-        const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
-        const price = s.price ? ` <span class="jazz-map-popup-price">${s.price}</span>` : ''
-        return `<div class="jazz-map-popup-show">${dateStr} — ${s.artist}${price}</div>`
-      }).join('')
-
       const totalUpcoming = venue.shows.filter(s => new Date(s.date + 'T00:00:00') >= today).length
+      const popupContent = document.createElement('div')
+      popupContent.className = 'jazz-map-popup'
 
-      const popupContent = `
-        <div class="jazz-map-popup">
-          <strong class="jazz-map-popup-name" style="color:${venue.color}">${venue.name}</strong>
-          <span class="jazz-map-popup-hood">${venue.neighborhood}</span>
-          <span class="jazz-map-popup-count">${totalUpcoming} upcoming show${totalUpcoming !== 1 ? 's' : ''}</span>
-          ${showLines}
-        </div>
-      `
+      const name = document.createElement('strong')
+      name.className = 'jazz-map-popup-name'
+      name.textContent = venue.name
+      if (window.CSS?.supports?.('color', venue.color)) name.style.color = venue.color
+      popupContent.appendChild(name)
+
+      const neighborhood = document.createElement('span')
+      neighborhood.className = 'jazz-map-popup-hood'
+      neighborhood.textContent = venue.neighborhood
+      popupContent.appendChild(neighborhood)
+
+      const count = document.createElement('span')
+      count.className = 'jazz-map-popup-count'
+      count.textContent = `${totalUpcoming} upcoming show${totalUpcoming !== 1 ? 's' : ''}`
+      popupContent.appendChild(count)
+
+      upcomingShows.forEach((show) => {
+        const line = document.createElement('div')
+        line.className = 'jazz-map-popup-show'
+        const d = new Date(show.date + 'T00:00:00')
+        const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+        line.append(document.createTextNode(`${dateStr} — ${show.artist}`))
+
+        if (show.price) {
+          const price = document.createElement('span')
+          price.className = 'jazz-map-popup-price'
+          price.textContent = show.price
+          line.append(' ', price)
+        }
+
+        popupContent.appendChild(line)
+      })
 
       L.circleMarker([coords.lat, coords.lng], {
         radius: 8,

@@ -1,7 +1,24 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './GuidePage.css'
 import './JazzBioEssay.css'
+
+function renderInlineMarkdown(text, keyPrefix) {
+  return text
+    .replace(/\[\^\d+\]/g, '')
+    .split(/(\*\*[^*\n]+?\*\*|\*[^*\n]+?\*)/g)
+    .filter(Boolean)
+    .map((part, index) => {
+      const key = `${keyPrefix}-${index}`
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={key}>{part.slice(2, -2)}</strong>
+      }
+      if (part.startsWith('*') && part.endsWith('*')) {
+        return <em key={key}>{part.slice(1, -1)}</em>
+      }
+      return part
+    })
+}
 
 function renderContent(text) {
   if (!text) return null
@@ -15,26 +32,16 @@ function renderContent(text) {
       return <hr key={i} className="bio-scene-break" />
     }
 
-    // Escape HTML entities
-    let html = trimmed
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-
-    // Bold before italic (order matters)
-    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    html = html.replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
-
-    // Strip any remaining inline footnote refs
-    html = html.replace(/\[\^\d+\]/g, '')
-
     // Pull quote: block starting with >
     if (trimmed.startsWith('>')) {
-      const pqHtml = html.replace(/^&gt;\s*/, '')
-      return <p key={i} className="guide-pullquote" dangerouslySetInnerHTML={{ __html: pqHtml }} />
+      return (
+        <p key={i} className="guide-pullquote">
+          {renderInlineMarkdown(trimmed.replace(/^>\s*/, ''), `quote-${i}`)}
+        </p>
+      )
     }
 
-    return <p key={i} dangerouslySetInnerHTML={{ __html: html }} />
+    return <p key={i}>{renderInlineMarkdown(trimmed, `paragraph-${i}`)}</p>
   }).filter(Boolean)
 }
 
@@ -57,7 +64,7 @@ function JazzBioEssay({ bioData }) {
   const observerRef = useRef(null)
   const scrollTimerRef = useRef(null)
 
-  const chapters = bioData?.chapters || []
+  const chapters = useMemo(() => bioData?.chapters || [], [bioData])
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import ModeSwitcher from './ModeSwitcher.jsx'
 import { useAppDataContext } from '../context/useAppDataContext'
 import { useAppUIContext } from '../context/useAppUIContext'
@@ -15,6 +14,7 @@ const VIBES_OPTIONS = [
 
 const JAZZ_NAV = [
   { to: '/jazz', end: true, emoji: '📍', label: 'By Day' },
+  { to: '/jazz/tonight', emoji: '🌙', label: 'Tonight' },
   { to: '/jazz/by-venue', emoji: '🏛️', label: 'Venues' },
   { to: '/jazz/proximity', emoji: '📡', label: 'LC ℃' },
   { to: '/jazz/map', emoji: '🗺️', label: 'Map' },
@@ -32,6 +32,7 @@ const FOOD_NAV = [
 
 const CINEMA_NAV = [
   { to: '/', end: true, emoji: '📍', label: 'By Day' },
+  { to: '/tonight', emoji: '🌙', label: 'Tonight' },
   { to: '/by-theater', emoji: '🏛️', label: 'Theaters' },
   { to: '/watchlist', emoji: '💛', label: 'Watchlist' },
   { to: '/map', emoji: '🗺️', label: 'Map' },
@@ -101,7 +102,7 @@ export default function TopBar() {
             </button>
           ) : (
             <div className="filter-notch-expanded">
-              <button className="notch-toggle notch-toggle--close" onClick={() => setVibeOpenFor(null)}>
+              <button className="notch-toggle notch-toggle--close" onClick={() => setVibeOpenFor(null)} aria-label="Close vibe filter">
                 <span className="notch-plus open">+</span>
               </button>
               <div className="notch-nav-group">
@@ -195,41 +196,51 @@ export default function TopBar() {
                 <>
                   <div className="notch-double-divider" />
                   <div className="notch-nav-group">
-                    {FORMAT_FILTERS.map((f, i) => (
-                      <button
-                        key={f.key}
-                        className={`notch-nav-row notch-filter-row ${formatFilter === f.key ? 'active' : ''}`}
-                        onClick={() => { setFormatFilter(f.key); setFiltersExpandedFor(null) }}
-                        style={{ animationDelay: `${(i + 4) * 0.05}s` }}
-                      >
-                        <span className="notch-nav-emoji">{f.emoji}</span>
-                        <span className="notch-nav-label">{f.label}</span>
+                    {FORMAT_FILTERS.map((f, i) => {
+                      const filterButton = (
                         <button
-                          className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
-                          style={{ display: f.key === 'all' ? 'inline-flex' : 'none', marginLeft: 'auto' }}
-                          onClick={(e) => { e.stopPropagation(); fetchData(true) }}
-                          disabled={refreshing}
-                          title="Refresh listings"
+                          className={`notch-nav-row notch-filter-row ${formatFilter === f.key ? 'active' : ''}`}
+                          onClick={() => { setFormatFilter(f.key); setFiltersExpandedFor(null) }}
+                          style={{ animationDelay: `${(i + 4) * 0.05}s` }}
                         >
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-                            <path d="M23 4v6h-6" />
-                            <path d="M1 20v-6h6" />
-                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                          </svg>
+                          <span className="notch-nav-emoji">{f.emoji}</span>
+                          <span className="notch-nav-label">{f.label}</span>
                         </button>
-                      </button>
-                    ))}
+                      )
+
+                      if (f.key !== 'all') return <span key={f.key}>{filterButton}</span>
+
+                      return (
+                        <div key={f.key} className="notch-filter-row-with-action">
+                          {filterButton}
+                          <button
+                            className={`refresh-btn ${refreshing ? 'refreshing' : ''}`}
+                            onClick={() => fetchData(true)}
+                            disabled={refreshing}
+                            title="Refresh listings"
+                            aria-label="Refresh listings"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
+                              <path d="M23 4v6h-6" />
+                              <path d="M1 20v-6h6" />
+                              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                            </svg>
+                          </button>
+                        </div>
+                      )
+                    })}
                   </div>
                   <div className="filter-notch-search notch-search-row">
                     <input
                       type="text"
                       className="expanded-search-input"
+                      aria-label="Search films"
                       placeholder="Search films..."
                       value={searchQuery}
                       onChange={e => setSearchQuery(e.target.value)}
                     />
                     {searchQuery && (
-                      <button className="expanded-search-clear" onClick={() => setSearchQuery('')}>
+                      <button className="expanded-search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">
                         &times;
                       </button>
                     )}
