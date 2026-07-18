@@ -1,5 +1,5 @@
-import { useMemo, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useNow, parseTime } from '../utils/timeUtils.js'
 import './JazzTonight.css'
 
@@ -50,34 +50,17 @@ const SLOT_LABELS = {
 }
 
 function ShowItem({ show, venue, isNow, relative }) {
-  const navigate = useNavigate()
-  const itemRef = useRef(null)
-
-  const handleClick = (e) => {
-    if (e.target.closest('a')) return
-    if (itemRef.current) {
-      itemRef.current.classList.remove('glow-pulse')
-      void itemRef.current.offsetWidth
-      itemRef.current.classList.add('glow-pulse')
-    }
-    setTimeout(() => navigate(`/jazz/show/${show.id}`), 300)
-  }
-
   return (
-    <li
-      ref={itemRef}
-      className={`jazz-tonight-item ${isNow ? 'now-playing' : ''} ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}
-      onClick={handleClick}
-    >
+    <li className={`jazz-tonight-item ${isNow ? 'now-playing' : ''} ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}>
       <div className="jazz-tonight-time-col">
         <span className="jazz-tonight-time">{show.time || 'TBA'}</span>
         {relative && <span className={`jazz-tonight-relative ${isNow ? 'is-now' : ''}`}>{relative}</span>}
       </div>
       <div className="jazz-tonight-info-col">
-        <span className="jazz-tonight-artist-link">
+        <Link className="jazz-tonight-artist-link" to={`/jazz/show/${show.id}`}>
           {show.artist}
           <HotBadge show={show} />
-        </span>
+        </Link>
         <div className="jazz-tonight-sub">
           <span className="jazz-tonight-venue" style={{ color: venue.color }}>
             {venue.shortName}

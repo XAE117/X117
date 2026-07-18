@@ -1,58 +1,51 @@
-// SIXPM — Service Worker
-// Strategy: network-first for all requests, cache as offline fallback only
-const CACHE_NAME = 'sixpm-v3'
-const BASE = self.registration.scope.endsWith('/X117/') ? '/X117/' : '/'
+// SIXPM — bounded offline cache
+const CACHE_NAME = 'sixpm-v4'
+const BASE = new URL(self.registration.scope).pathname
 const PRECACHE_URLS = [
-  `${BASE}`,
-  `${BASE}morning-console.html`,
-  `${BASE}morning-console.webmanifest`,
+  BASE,
+  `${BASE}favicon.svg`,
   `${BASE}icon-192.svg`,
   `${BASE}icon-512.svg`,
 ]
 
-self.addEventListener('install', (e) => {
-  // Skip waiting so the new SW activates immediately
-  e.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS)))
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(PRECACHE_URLS)))
   self.skipWaiting()
 })
 
-self.addEventListener('activate', (e) => {
-  // Purge ALL old caches
-  e.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
-      )
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
     )
   )
   self.clients.claim()
 })
 
-self.addEventListener('fetch', (e) => {
-  const url = new URL(e.request.url)
+function stableCacheKey(request) {
+  const url = new URL(request.url)
+  url.searchParams.delete('t')
+  return new Request(url.toString(), request)
+}
 
-  // Only handle same-origin + app fonts/runtime imports
-  if (url.origin !== self.location.origin &&
-      url.hostname !== 'fonts.googleapis.com' &&
-      url.hostname !== 'fonts.gstatic.com' &&
-      url.hostname !== 'esm.sh') {
-    return
+async function networkFirst(request) {
+  const cache = await caches.open(CACHE_NAME)
+  const key = stableCacheKey(request)
+  try {
+    const response = await fetch(request)
+    if (response.ok) await cache.put(key, response.clone())
+    return response
+  } catch {
+    const cached = await cache.match(key)
+    if (cached) return cached
+    if (request.mode === 'navigate') return cache.match(BASE)
+    throw new Error('Offline and no cached response is available')
   }
+}
 
-  // Skip non-GET requests
-  if (e.request.method !== 'GET') return
-
-  // Network-first for everything
-  e.respondWith(
-    fetch(e.request)
-      .then((res) => {
-        // Only cache successful responses
-        if (res.ok) {
-          const clone = res.clone()
-          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, clone))
-        }
-        return res
-      })
-      .catch(() => caches.match(e.request))
-  )
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return
+  const url = new URL(event.request.url)
+  if (url.origin !== self.location.origin) return
+  event.respondWith(networkFirst(event.request))
 })

@@ -8,8 +8,16 @@ const MODE_TITLES = {
   cinema: "SIXPM — LA Repertory Cinema",
 }
 
-export function usePageTitle(mode) {
+const ROUTE_TITLES = {
+  '/': 'SIXPM — Tonight in Los Angeles',
+  '/search': 'SIXPM — Search Film, Jazz & Food',
+  '/browse': 'SIXPM — Film Calendar',
+  '/tonight': 'SIXPM — Films Tonight',
+  '/watchlist': 'SIXPM — Film Watchlist',
+}
+
+export function usePageTitle(mode, pathname) {
   useEffect(() => {
-    document.title = MODE_TITLES[mode] || MODE_TITLES.cinema
-  }, [mode])
+    document.title = ROUTE_TITLES[pathname] || MODE_TITLES[mode] || MODE_TITLES.cinema
+  }, [mode, pathname])
 }

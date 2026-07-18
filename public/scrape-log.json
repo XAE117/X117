@@ -1,13 +1,51 @@
 {
-  "timestamp": "2026-07-12T10:20:12.251Z",
+  "timestamp": "2026-07-18T01:19:05.597Z",
   "mode": "full",
-  "sourcesScraped": 112,
-  "totalRestaurants": 287,
-  "added": [],
-  "removed": [],
+  "sourcesAttempted": 5,
+  "sourcesSucceeded": 5,
+  "sourceStatuses": [
+    {
+      "name": "Eater LA Heatmap",
+      "group": "hot",
+      "status": "ok",
+      "count": 22
+    },
+    {
+      "name": "Infatuation Hit List",
+      "group": "hot",
+      "status": "ok",
+      "count": 22
+    },
+    {
+      "name": "Eater Essential 38",
+      "group": "full",
+      "status": "ok",
+      "count": 38
+    },
+    {
+      "name": "Resy Hit List",
+      "group": "full",
+      "status": "ok",
+      "count": 26
+    },
+    {
+      "name": "Thrillist LA",
+      "group": "full",
+      "status": "ok",
+      "count": 15
+    }
+  ],
+  "recordsScraped": 150,
+  "totalRestaurants": 230,
+  "added": [
+    "Leo's Taco Truck"
+  ],
+  "removed": [
+    "leo-taqueria-eagle-rock"
+  ],
   "tiers": {
-    "street": 7,
-    "feast": 223,
+    "street": 6,
+    "feast": 167,
     "whale": 14,
     "tacos": null,
     "pizza": null

@@ -62,9 +62,14 @@ function RestaurantCard({ restaurant }) {
     <div
       ref={cardRef}
       className={`eats-card tier-${restaurant.tier} ${expanded ? 'eats-card--open' : ''} ${restaurant.isNew ? 'is-new' : ''}`}
-      onClick={handleClick}
     >
-      <div className="eats-card-header">
+      <button
+        type="button"
+        className="eats-card-header"
+        onClick={handleClick}
+        aria-expanded={expanded}
+        aria-controls={`tier-details-${restaurant.id}`}
+      >
         <div className="eats-card-top">
           <span className="eats-card-name">{restaurant.name}</span>
           <span className="eats-card-neighborhood">{restaurant.neighborhood}</span>
@@ -76,10 +81,10 @@ function RestaurantCard({ restaurant }) {
           <HeatIndicator score={restaurant.heatScore} />
           {restaurant.isNew && <span className="eats-new-badge">NEW</span>}
         </div>
-      </div>
+      </button>
 
       {expanded && (
-        <div className="eats-card-body">
+        <div id={`tier-details-${restaurant.id}`} className="eats-card-body">
           <p className="eats-card-description">{restaurant.description}</p>
           {restaurant.whyHot && (
             <p className="eats-card-whyhot">{restaurant.whyHot}</p>

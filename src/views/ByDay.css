@@ -18,6 +18,88 @@
   gap: 1.5rem;
 }
 
+.browse-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.browse-header h1 {
+  margin: 0.15rem 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  color: var(--cream);
+}
+
+.browse-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.browse-eyebrow {
+  font-size: 0.65rem !important;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold) !important;
+}
+
+.browse-tonight-link {
+  flex: 0 0 auto;
+  padding-bottom: 0.25rem;
+  font-size: 0.72rem;
+}
+
+.day-block-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.day-block-heading-row .day-block-header {
+  flex: 1;
+}
+
+.film-group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.progressive-list-more {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--gold);
+  cursor: pointer;
+}
+
+@media (min-width: 1080px) {
+  .day-view {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .film-group-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .browse-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .day-block {
   border-bottom: 1px solid var(--border);
   padding-bottom: 1.5rem;

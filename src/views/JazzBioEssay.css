@@ -59,3 +59,20 @@
 .bio-chapter .guide-section-title {
   font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
+.bio-chapter-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 3rem 0 1rem;
+}
+
+.bio-chapter-pagination button {
+  max-width: 48%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold);
+  font: inherit;
+  cursor: pointer;
+}

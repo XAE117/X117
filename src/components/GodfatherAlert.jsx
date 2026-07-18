@@ -1,73 +1,26 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo } from 'react'
+import { compareDatedEvents, isScreeningPast, useNow } from '../utils/timeUtils.js'
 import './GodfatherAlert.css'
 
-const APP_URL = 'https://xae117.github.io/X117/'
-
-function sendGodfatherNotification(screenings) {
-  if (!('Notification' in window)) return
-  if (Notification.permission !== 'granted') return
-  if (sessionStorage.getItem('godfather-notified') === 'true') return
-
-  const count = screenings.length
-  const next = screenings[0]
-  const body = `${count} screening${count > 1 ? 's' : ''} coming up!\n` +
-    `Next: ${next.title} at ${next.theaterName} — ${next.date} ${next.time}\n` +
-    `Tap to see all screenings`
-
-  const notification = new Notification('The Godfather is screening!', {
-    body,
-    icon: '🎬',
-    tag: 'godfather-alert',
-    requireInteraction: true,
-  })
-
-  notification.onclick = () => {
-    window.focus()
-    window.open(APP_URL, '_self')
-    notification.close()
-  }
-
-  sessionStorage.setItem('godfather-notified', 'true')
-}
-
 function GodfatherAlert({ data }) {
+  const now = useNow()
   const [dismissed, setDismissed] = useState(
     () => sessionStorage.getItem('godfather-alert-dismissed') === 'true'
   )
-  const notificationSent = useRef(false)
 
   const godfatherScreenings = useMemo(() => {
     if (!data) return []
     const matches = []
     data.theaters.forEach(theater => {
       theater.screenings.forEach(s => {
-        if (/godfather/i.test(s.title)) {
+        if (/godfather/i.test(s.title) && !isScreeningPast(s.date, s.time, now)) {
           matches.push({ ...s, theaterName: theater.shortName, theaterColor: theater.color })
         }
       })
     })
-    matches.sort((a, b) => new Date(a.date) - new Date(b.date))
+    matches.sort(compareDatedEvents)
     return matches
-  }, [data])
-
-  // Request notification permission and send notification
-  useEffect(() => {
-    if (notificationSent.current) return
-    if (godfatherScreenings.length === 0) return
-    notificationSent.current = true
-
-    if (!('Notification' in window)) return
-
-    if (Notification.permission === 'granted') {
-      sendGodfatherNotification(godfatherScreenings)
-    } else if (Notification.permission !== 'denied') {
-      Notification.requestPermission().then(perm => {
-        if (perm === 'granted') {
-          sendGodfatherNotification(godfatherScreenings)
-        }
-      })
-    }
-  }, [godfatherScreenings])
+  }, [data, now])
 
   if (dismissed || godfatherScreenings.length === 0) return null
 

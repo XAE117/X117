@@ -1,6 +1,7 @@
-import { useMemo, useRef, useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { useNow, getRelativeLabel, isScreeningPast } from '../utils/timeUtils.js'
+import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+import DataFreshness from '../components/DataFreshness.jsx'
+import { useNow, compareDatedEvents, getRelativeLabel, isScreeningPast } from '../utils/timeUtils.js'
 import './JazzByDay.css'
 
 function HotBadge({ show }) {
@@ -15,33 +16,17 @@ function OCBadge({ venue }) {
 
 function ShowRow({ show, venue, now }) {
   const relative = getRelativeLabel(show.date, show.time, now)
-  const navigate = useNavigate()
-  const itemRef = useRef(null)
-
-  const handleClick = (e) => {
-    if (e.target.closest('a')) return
-    if (itemRef.current) {
-      itemRef.current.classList.remove('glow-pulse')
-      void itemRef.current.offsetWidth
-      itemRef.current.classList.add('glow-pulse')
-    }
-    setTimeout(() => navigate(`/jazz/show/${show.id}`), 300)
-  }
 
   return (
-    <li
-      ref={itemRef}
-      className={`jbd-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}
-      onClick={handleClick}
-    >
+    <li className={`jbd-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}>
       <span className="jbd-show-venue" style={{ color: venue.color }}>
         {venue.shortName}
         {venue.region === 'OC' && <OCBadge venue={venue} />}
       </span>
-      <span className="jbd-show-artist">
+      <Link className="jbd-show-artist" to={`/jazz/show/${show.id}`}>
         {show.artist}
         <HotBadge show={show} />
-      </span>
+      </Link>
       {show.price && <span className="jbd-show-price">{show.price}</span>}
       <span className="jbd-show-time">{show.time || 'TBA'}</span>
       {relative && (
@@ -75,7 +60,7 @@ function JazzByDay({ data }) {
         const d = new Date(date + 'T00:00:00')
         const label = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
         const weekday = d.getDay()
-        const shows = showsByDate[date].sort((a, b) => (a.time || '').localeCompare(b.time || ''))
+        const shows = showsByDate[date].sort(compareDatedEvents)
         const hotCount = shows.filter(s => s.hot).length
 
         return { date, label, weekday, shows, hotCount }
@@ -87,6 +72,7 @@ function JazzByDay({ data }) {
   return (
     <div className="jbd-page">
       <h2 className="jbd-title">By Day</h2>
+      <DataFreshness sources={[{ label: 'Jazz', updated: data.lastUpdated }]} />
       <div className="jbd-days">
         {dayGroups.length === 0 ? (
           <p className="jbd-empty">No upcoming shows</p>

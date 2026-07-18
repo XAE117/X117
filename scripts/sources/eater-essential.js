@@ -1,16 +1,14 @@
 /**
  * Eater LA Essential 38 scraper
  *
- * NOTE: As of March 2026, the Essential 38 map URL returns 404.
- * Eater may have retired or renamed this list.
- * This scraper uses the same schema.org extraction as eater-heatmap.js
- * and will work if the URL is updated to a valid Eater /maps/ page.
+ * Uses the current Eater 38 map and the same schema.org extraction as the
+ * Eater Heatmap adapter.
  */
 
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 
-const ESSENTIAL_URL = 'https://la.eater.com/maps/38-best-restaurants-los-angeles'
+const ESSENTIAL_URL = 'https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential'
 
 export async function scrapeEaterEssential() {
   let html
@@ -23,10 +21,7 @@ export async function scrapeEaterEssential() {
       timeout: 15000,
       validateStatus: s => s < 500,
     })
-    if (res.status === 404) {
-      console.log('    (Eater Essential page returns 404 — list may be retired)')
-      return []
-    }
+    if (res.status === 404) return []
     html = res.data
   } catch (err) {
     console.log(`    (Eater Essential fetch failed: ${err.message})`)

@@ -3,8 +3,11 @@
  * from existing restaurant, cinema, and jazz data.
  */
 
-import { THEATER_COORDS } from '../data/theaterLocations'
-import { JAZZ_VENUE_COORDS } from '../data/jazzVenueLocations'
+import { THEATER_COORDS } from '../data/theaterLocations.js'
+import { JAZZ_VENUE_COORDS } from '../data/jazzVenueLocations.js'
+import { isRestaurantOpenAt } from './restaurantHours.js'
+
+export const MAX_PLAN_DISTANCE_MILES = 8
 
 // ── Time Parsing ──
 
@@ -39,6 +42,39 @@ function getDistance(lat1, lng1, lat2, lng2) {
     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
     Math.sin(dLng / 2) ** 2
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+}
+
+function hasCoordinates(point) {
+  return Number.isFinite(point?.lat) && Number.isFinite(point?.lng)
+}
+
+function isCompatiblePair(restaurant, activity) {
+  if (!hasCoordinates(restaurant) || !hasCoordinates(activity?.coords)) return false
+  if (!isRestaurantAvailableForActivity(restaurant, activity)) return false
+  return getDistance(
+    restaurant.lat,
+    restaurant.lng,
+    activity.coords.lat,
+    activity.coords.lng,
+  ) <= MAX_PLAN_DISTANCE_MILES
+}
+
+function getDinnerDate(activity) {
+  if (!activity?.date || !Number.isFinite(activity.timeParsed)) return null
+  const [year, month, day] = activity.date.split('-').map(Number)
+  const dinnerTime = Math.max(activity.timeParsed - 2, 17)
+  return new Date(year, month - 1, day, Math.floor(dinnerTime), Math.round((dinnerTime % 1) * 60))
+}
+
+function isRestaurantAvailableForActivity(restaurant, activity) {
+  const dinnerDate = getDinnerDate(activity)
+  return Boolean(dinnerDate && restaurant.hours && isRestaurantOpenAt(restaurant.hours, dinnerDate))
+}
+
+function isPlanStartStillPossible(activity, now) {
+  if (!now) return true
+  const dinnerDate = getDinnerDate(activity)
+  return Boolean(dinnerDate && dinnerDate >= now)
 }
 
 // ── Cost Estimation ──
@@ -122,7 +158,7 @@ function shuffle(arr) {
  * @param {Object} params.previous - previous plan result (for no-repeat)
  * @returns {{ planA: Object|null, planB: Object|null }}
  */
-export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'all', locked = {}, previous = null }) {
+export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'all', locked = {}, previous = null, now = null }) {
   // ── Gather available screenings for the date ──
   const screenings = []
   if (cinemaData?.theaters) {
@@ -133,6 +169,8 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
         if (time === null) continue
         // Evening window: 7:30 PM – 9:30 PM
         if (time < 19.5 || time > 21.5) continue
+        const candidate = { ...s, timeParsed: time }
+        if (!isPlanStartStillPossible(candidate, now)) continue
         if (!matchesVibe(vibe, s, 'movie')) continue
         screenings.push({
           ...s,
@@ -159,6 +197,8 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
         if (time === null) continue
         // Jazz window: 7:30 PM – 11:00 PM
         if (time < 19.5 || time > 23) continue
+        const candidate = { ...show, timeParsed: time }
+        if (!isPlanStartStillPossible(candidate, now)) continue
         if (!matchesVibe(vibe, show, 'jazz')) continue
         jazzShows.push({
           ...show,
@@ -189,7 +229,7 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
     locked: locked.planA || {},
     previousRestaurantId: previous?.planA?.restaurant?.id,
     previousActivityId: previous?.planA?.activity?.id,
-    excludeRestaurantId: null, // will set after planB pick
+    excludeRestaurantId: null,
   })
 
   // ── Pick for Plan B (Dinner & Jazz) ──
@@ -201,15 +241,6 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
     previousActivityId: previous?.planB?.activity?.id,
     excludeRestaurantId: planA?.restaurant?.id || null,
   })
-
-  // If planA restaurant matches planB, try to swap planB restaurant
-  if (planA?.restaurant && planB?.restaurant && planA.restaurant.id === planB.restaurant.id) {
-    const alt = shuffle(restaurants).find(r =>
-      r.id !== planA.restaurant.id &&
-      r.id !== previous?.planB?.restaurant?.id
-    )
-    if (alt) planB.restaurant = enrichRestaurant(alt, planB.activity)
-  }
 
   // ── Compute timelines and costs ──
   if (planA?.restaurant && planA?.activity) {
@@ -225,40 +256,56 @@ export function generatePlans({ foodData, cinemaData, jazzData, date, vibe = 'al
 }
 
 function buildPlan({ restaurants, activities, locked, previousRestaurantId, previousActivityId, excludeRestaurantId }) {
-  // Pick activity
+  const lockedRestaurant = locked.restaurant || null
   let activity = locked.activity || null
-  if (!activity && activities.length > 0) {
-    const pool = activities.filter(a => a.id !== previousActivityId)
-    const pick = pool.length > 0 ? pool : activities
-    activity = shuffle(pick)[0]
+
+  if (activity) {
+    const hasCompatibleRestaurant = lockedRestaurant
+      ? isCompatiblePair(lockedRestaurant, activity)
+      : restaurants.some(restaurant => isCompatiblePair(restaurant, activity))
+    if (!hasCompatibleRestaurant) return null
   }
 
-  // Pick restaurant
-  let restaurant = locked.restaurant || null
-  if (!restaurant && restaurants.length > 0) {
-    let pool = restaurants.filter(r =>
-      r.id !== previousRestaurantId &&
-      r.id !== excludeRestaurantId
-    )
-    if (pool.length === 0) pool = restaurants.filter(r => r.id !== excludeRestaurantId)
-    if (pool.length === 0) pool = restaurants
+  if (!activity) {
+    const viableActivities = activities.filter(candidate => {
+      if (!hasCoordinates(candidate.coords)) return false
+      if (lockedRestaurant) return isCompatiblePair(lockedRestaurant, candidate)
+      return restaurants.some(restaurant => isCompatiblePair(restaurant, candidate))
+    })
+    const nonRepeating = viableActivities.filter(candidate => candidate.id !== previousActivityId)
+    const pool = nonRepeating.length > 0 ? nonRepeating : viableActivities
+    activity = shuffle(pool)[0] || null
+  }
 
-    // Proximity filter: prefer restaurants within 8 miles (~20 min) of activity venue
-    if (activity?.coords) {
-      const nearby = pool.filter(r => {
-        if (!r.lat || !r.lng) return false
-        return getDistance(r.lat, r.lng, activity.coords.lat, activity.coords.lng) <= 8
-      })
-      if (nearby.length >= 3) pool = nearby
+  if (!activity) return null
+
+  if (lockedRestaurant) {
+    if (!isCompatiblePair(lockedRestaurant, activity)) return null
+    return {
+      restaurant: enrichRestaurant(lockedRestaurant, activity),
+      activity,
     }
-    restaurant = enrichRestaurant(shuffle(pool)[0], activity)
-  } else if (restaurant) {
-    restaurant = enrichRestaurant(restaurant, activity)
   }
 
-  if (!restaurant && !activity) return null
+  const compatible = restaurants.filter(restaurant => isCompatiblePair(restaurant, activity))
+  if (compatible.length === 0) return null
 
-  return { restaurant, activity }
+  let pool = compatible.filter(restaurant =>
+    restaurant.id !== previousRestaurantId &&
+    restaurant.id !== excludeRestaurantId
+  )
+  if (pool.length === 0) {
+    pool = compatible.filter(restaurant => restaurant.id !== excludeRestaurantId)
+  }
+  if (pool.length === 0) {
+    pool = compatible.filter(restaurant => restaurant.id !== previousRestaurantId)
+  }
+  if (pool.length === 0) pool = compatible
+
+  return {
+    restaurant: enrichRestaurant(shuffle(pool)[0], activity),
+    activity,
+  }
 }
 
 function enrichRestaurant(r, activity) {

@@ -1,7 +1,24 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import './GuidePage.css'
 import './JazzBioEssay.css'
+
+function renderInlineMarkdown(text, keyPrefix) {
+  return text
+    .replace(/\[\^\d+\]/g, '')
+    .split(/(\*\*[^*\n]+?\*\*|\*[^*\n]+?\*)/g)
+    .filter(Boolean)
+    .map((part, index) => {
+      const key = `${keyPrefix}-${index}`
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={key}>{part.slice(2, -2)}</strong>
+      }
+      if (part.startsWith('*') && part.endsWith('*')) {
+        return <em key={key}>{part.slice(1, -1)}</em>
+      }
+      return part
+    })
+}
 
 function renderContent(text) {
   if (!text) return null
@@ -15,26 +32,16 @@ function renderContent(text) {
       return <hr key={i} className="bio-scene-break" />
     }
 
-    // Escape HTML entities
-    let html = trimmed
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-
-    // Bold before italic (order matters)
-    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    html = html.replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
-
-    // Strip any remaining inline footnote refs
-    html = html.replace(/\[\^\d+\]/g, '')
-
     // Pull quote: block starting with >
     if (trimmed.startsWith('>')) {
-      const pqHtml = html.replace(/^&gt;\s*/, '')
-      return <p key={i} className="guide-pullquote" dangerouslySetInnerHTML={{ __html: pqHtml }} />
+      return (
+        <p key={i} className="guide-pullquote">
+          {renderInlineMarkdown(trimmed.replace(/^>\s*/, ''), `quote-${i}`)}
+        </p>
+      )
     }
 
-    return <p key={i} dangerouslySetInnerHTML={{ __html: html }} />
+    return <p key={i}>{renderInlineMarkdown(trimmed, `paragraph-${i}`)}</p>
   }).filter(Boolean)
 }
 
@@ -50,51 +57,18 @@ function chapterDisplayTitle(ch) {
 }
 
 function JazzBioEssay({ bioData }) {
-  const [activeChapter, setActiveChapter] = useState(null)
+  const [selectedId, setSelectedId] = useState(null)
   const [tocOpen, setTocOpen] = useState(false)
   const [tocDesktopOpen, setTocDesktopOpen] = useState(false)
-  const [tocFaded, setTocFaded] = useState(false)
-  const observerRef = useRef(null)
-  const scrollTimerRef = useRef(null)
 
-  const chapters = bioData?.chapters || []
+  const chapters = useMemo(() => bioData?.chapters || [], [bioData])
+  const selectedIndex = Math.max(0, chapters.findIndex(chapter => chapter.id === selectedId))
+  const selectedChapter = chapters[selectedIndex]
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setTocFaded(true)
-      clearTimeout(scrollTimerRef.current)
-      scrollTimerRef.current = setTimeout(() => setTocFaded(false), 200)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      clearTimeout(scrollTimerRef.current)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!chapters.length) return
-    const els = chapters.map(ch => document.getElementById(ch.id)).filter(Boolean)
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveChapter(entry.target.id)
-            break
-          }
-        }
-      },
-      { rootMargin: '-20% 0px -60% 0px' }
-    )
-
-    els.forEach(el => observerRef.current.observe(el))
-    return () => observerRef.current?.disconnect()
-  }, [chapters])
-
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const selectChapter = (id) => {
+    setSelectedId(id)
     setTocOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   if (!bioData) {
@@ -114,7 +88,7 @@ function JazzBioEssay({ bioData }) {
       </div>
 
       {/* Desktop TOC */}
-      <nav className={`guide-toc-desktop ${tocDesktopOpen ? 'open' : 'collapsed'} ${tocFaded ? 'scroll-faded' : ''}`}>
+      <nav className={`guide-toc-desktop ${tocDesktopOpen ? 'open' : 'collapsed'}`}>
         <button
           className="guide-toc-desktop-toggle"
           onClick={() => setTocDesktopOpen(!tocDesktopOpen)}
@@ -128,8 +102,8 @@ function JazzBioEssay({ bioData }) {
             {chapters.map(ch => (
               <button
                 key={ch.id}
-                className={`guide-toc-item ${activeChapter === ch.id ? 'active' : ''}`}
-                onClick={() => scrollTo(ch.id)}
+                className={`guide-toc-item ${selectedChapter?.id === ch.id ? 'active' : ''}`}
+                onClick={() => selectChapter(ch.id)}
               >
                 <span className="guide-toc-emoji">{ch.emoji}</span>
                 <span className="guide-toc-text">{ch.shortTitle}</span>
@@ -150,8 +124,8 @@ function JazzBioEssay({ bioData }) {
             {chapters.map(ch => (
               <button
                 key={ch.id}
-                className={`guide-toc-item ${activeChapter === ch.id ? 'active' : ''}`}
-                onClick={() => scrollTo(ch.id)}
+                className={`guide-toc-item ${selectedChapter?.id === ch.id ? 'active' : ''}`}
+                onClick={() => selectChapter(ch.id)}
               >
                 <span className="guide-toc-emoji">{ch.emoji}</span>
                 <span className="guide-toc-text">{ch.shortTitle}</span>
@@ -179,19 +153,30 @@ function JazzBioEssay({ bioData }) {
 
         <hr className="guide-divider" />
 
-        {chapters.map((ch, idx) => (
-          <div key={ch.id}>
-            <section id={ch.id} className="guide-section bio-chapter">
+        {selectedChapter && (
+          <div key={selectedChapter.id}>
+            <section id={selectedChapter.id} className="guide-section bio-chapter">
               <div className="guide-section-marker">
-                <span>{ch.emoji}</span>
+                <span>{selectedChapter.emoji}</span>
               </div>
-              <div className="bio-chapter-label">{chapterLabel(ch)}</div>
-              <h2 className="guide-section-title">{chapterDisplayTitle(ch)}</h2>
-              {renderContent(ch.content)}
+              <div className="bio-chapter-label">{chapterLabel(selectedChapter)}</div>
+              <h2 className="guide-section-title">{chapterDisplayTitle(selectedChapter)}</h2>
+              {renderContent(selectedChapter.content)}
             </section>
-            {idx < chapters.length - 1 && <hr className="guide-divider" />}
+            <nav className="bio-chapter-pagination" aria-label="Biography chapters">
+              {selectedIndex > 0 ? (
+                <button type="button" onClick={() => selectChapter(chapters[selectedIndex - 1].id)}>
+                  ← {chapters[selectedIndex - 1].shortTitle}
+                </button>
+              ) : <span />}
+              {selectedIndex < chapters.length - 1 && (
+                <button type="button" onClick={() => selectChapter(chapters[selectedIndex + 1].id)}>
+                  {chapters[selectedIndex + 1].shortTitle} →
+                </button>
+              )}
+            </nav>
           </div>
-        ))}
+        )}
 
         <hr className="guide-divider guide-divider--final" />
 

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { getStarredIds, toggleStar } from '../utils/starredFood.js'
 import './FoodStarred.css'
 
@@ -12,7 +13,9 @@ function StarredCard({ restaurant, onUnstar }) {
     <div className="starred-card" style={{ borderLeftColor: restaurant.color }}>
       <div className="starred-card-header">
         <div className="starred-card-title-row">
-          <h3 className="starred-card-name">{restaurant.name}</h3>
+          <h3 className="starred-card-name">
+            <Link to={`/food/spot/${restaurant.id}`}>{restaurant.name}</Link>
+          </h3>
           <span className="starred-card-hood">{restaurant.neighborhood}</span>
         </div>
         <div className="starred-card-meta">

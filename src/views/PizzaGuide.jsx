@@ -75,23 +75,30 @@ function PizzaCard({ restaurant, starred, onToggleStar, expanded, onToggleExpand
     <div
       ref={cardRef}
       className={`pizza-card ${expanded ? 'expanded' : ''}`}
-      onClick={handleClick}
     >
       <div className="pizza-card-header">
-        <div className="pizza-card-title-row">
-          <h3 className="pizza-card-name">{restaurant.name}</h3>
-          <span className="pizza-card-hood">{restaurant.neighborhood}</span>
-        </div>
-        <div className="pizza-card-meta-row">
-          <StyleBadge style={restaurant.pizzaStyle} />
-          <span className="pizza-card-price">{restaurant.price || restaurant.priceRange}</span>
-          <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
-          <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
-        </div>
+        <button
+          type="button"
+          className="pizza-card-toggle"
+          onClick={handleClick}
+          aria-expanded={expanded}
+          aria-controls={`pizza-details-${restaurant.id}`}
+        >
+          <span className="pizza-card-title-row">
+            <span className="pizza-card-name">{restaurant.name}</span>
+            <span className="pizza-card-hood">{restaurant.neighborhood}</span>
+          </span>
+          <span className="pizza-card-meta-row">
+            <StyleBadge style={restaurant.pizzaStyle} />
+            <span className="pizza-card-price">{restaurant.price || restaurant.priceRange}</span>
+            <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
+          </span>
+        </button>
+        <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
       </div>
 
       {expanded && (
-        <div className="pizza-card-body">
+        <div id={`pizza-details-${restaurant.id}`} className="pizza-card-body">
           <p className="pizza-card-desc">{restaurant.description}</p>
           {restaurant.whyHot && (
             <blockquote className="pizza-card-whyhot">{restaurant.whyHot}</blockquote>

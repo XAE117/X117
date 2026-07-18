@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-12T10:20:12.251Z",
-  "lastFullScrape": "2026-07-12T10:20:12.251Z",
+  "lastUpdated": "2026-07-18T01:19:05.597Z",
+  "lastFullScrape": "2026-07-18T01:19:05.597Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -26,23 +26,7 @@
     "sushisamba",
     "amiguita",
     "sandeomi-hamjipark",
-    "padi-cafe-indonesian-kitchen",
-    "folks-pizzeria",
-    "tev-s-kitchen",
-    "miura",
-    "asadero",
-    "cafe-stella",
-    "san-damian",
-    "padi",
-    "san-dami-n",
-    "pawn-shop",
-    "tacos-royale",
-    "frank-frank-s",
-    "the-tower-bar",
-    "stir-crazy",
-    "coni-seafood-hermosa-hermosa-beach",
-    "superba-food-bread-hollywood",
-    "m-rate"
+    "coni-seafood-hermosa-hermosa-beach"
   ],
   "restaurants": [
     {
@@ -79,13 +63,17 @@
         {
           "name": "Michelin Bib Gourmand",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "pricePp": 14,
       "tier": "tacos",
       "tacoStyle": "mariscos",
-      "sourceCount": 2,
-      "heatScore": 4,
+      "sourceCount": 3,
+      "heatScore": 6,
       "lat": 34.017356,
       "lng": -118.278405
     },
@@ -180,14 +168,18 @@
       "bibGourmand": true,
       "tier": "tacos",
       "tacoStyle": "regional",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "lat": 34.041615,
       "lng": -118.252184,
       "sources": [
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/sonoratown"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ]
     },
@@ -1590,6 +1582,10 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/komal"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "accolades": [
@@ -1606,8 +1602,8 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "masa",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "fire": 5,
       "id": "komal-dtla",
       "addedDate": "2026-03-19",
@@ -1651,14 +1647,18 @@
         {
           "name": "Michelin Bib Gourmand",
           "url": "https://guide.michelin.com/us/en/california/los-angeles/restaurants"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "tags": [
         "bib-gourmand"
       ],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "vin-folk-highland-park",
       "addedDate": "2026-03-19",
       "lat": 33.864575,
@@ -1741,7 +1741,7 @@
       "addedDate": "2026-03-19"
     },
     {
-      "id": "leo-taqueria-eagle-rock",
+      "id": "leos-taco-truck-hollywood",
       "name": "Leo's Taco Truck",
       "neighborhood": "Mid-City / Hollywood / Pico-Union (12 locations)",
       "cuisine": "Al Pastor Tacos",
@@ -2494,6 +2494,10 @@
         {
           "name": "Thrillist LA",
           "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "accolades": [
@@ -2510,8 +2514,8 @@
       "tier": "tacos",
       "category": "tacos",
       "tacoStyle": "al-pastor",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "fire": 5,
       "id": "taqueria-frontera",
       "addedDate": "2026-03-21",
@@ -2759,12 +2763,16 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/restaurant-ki"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "restaurant-ki-los-angeles",
       "addedDate": "2026-03-21",
       "lat": 34.050097,
@@ -2959,12 +2967,16 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/santa-monica/restaurant/pasjoli"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "pasjoli-santa-monica",
       "addedDate": "2026-03-21",
       "lat": 34.000193,
@@ -3570,89 +3582,6 @@
       "lng": -117.924671
     },
     {
-      "name": "La'Shukran",
-      "neighborhood": "417 Morse St NE 2nd Floor",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/la-shukran"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "la-shukran",
-      "addedDate": "2026-03-21",
-      "address": "Alley Entrance, 417 Morse St NE 2nd Floor, Washington, DC 20002, United States",
-      "lat": 38.907275,
-      "lng": -76.999508
-    },
-    {
-      "name": "Café Riggs",
-      "neighborhood": "Downtown Los Angeles",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/cafe-riggs"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "caf-riggs",
-      "addedDate": "2026-03-21",
-      "address": "939 S Figueroa St UNIT 300, Los Angeles, CA 90015, United States",
-      "lat": 34.046988,
-      "lng": -118.251414
-    },
-    {
-      "name": "Xiquet",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/xiquet"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "xiquet",
-      "addedDate": "2026-03-21",
-      "lat": 38.92128,
-      "lng": -77.072426
-    },
-    {
-      "name": "Family Ethiopian",
-      "neighborhood": "Little Ethiopia",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/district-of-columbia/washington-dc/restaurant/family-ethiopian"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "family-ethiopian",
-      "addedDate": "2026-03-21",
-      "address": "1041 S Fairfax Ave, Los Angeles, CA 90019, United States",
-      "lat": 34.056742,
-      "lng": -118.364131
-    },
-    {
       "name": "Badmaash",
       "neighborhood": "Los Angeles",
       "cuisine": "",
@@ -4069,12 +3998,16 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/moo-s-craft-barbecue"
+        },
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "moo-s-craft-barbecue-los-angeles",
       "addedDate": "2026-03-29",
       "lat": 34.073239,
@@ -4179,66 +4112,6 @@
       "addedDate": "2026-03-29",
       "lat": 34.050556,
       "lng": -118.308772
-    },
-    {
-      "name": "Yeobo, Darling",
-      "neighborhood": "Menlo Park",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/california/menlo-park/restaurant/yeobo-darling"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "yeobo-darling-menlo-park",
-      "addedDate": "2026-03-29",
-      "lat": 37.450481,
-      "lng": -122.185137
-    },
-    {
-      "name": "Naides",
-      "neighborhood": "San Francisco",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/california/san-francisco/restaurant/naides"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "naides-san-francisco",
-      "addedDate": "2026-03-29",
-      "lat": 34.062024,
-      "lng": -118.297697
-    },
-    {
-      "name": "Little Mountain",
-      "neighborhood": "Montecito",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/california/montecito/restaurant/little-mountain"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "little-mountain-montecito",
-      "addedDate": "2026-03-29",
-      "lat": 34.437381,
-      "lng": -119.631314
     },
     {
       "id": "pizzeria-sei",
@@ -4626,7 +4499,7 @@
       "tier": "pizza",
       "category": "pizza",
       "pizzaStyle": "detroit-square",
-      "heatScore": 0,
+      "heatScore": 2,
       "fire": 3,
       "color": "#E84830",
       "description": "Family-run shop doing both Detroit-style squares and Neapolitan rounds. The Detroit pies nail the crispy-cheese-edge fundamentals, and they offer both styles so you don't have to choose.",
@@ -4638,9 +4511,15 @@
       ],
       "accolades": [],
       "addedDate": "2026-03-31",
-      "sourceCount": 0,
+      "sourceCount": 1,
       "lat": 34.061775,
-      "lng": -118.342711
+      "lng": -118.342711,
+      "sources": [
+        {
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
+        }
+      ]
     },
     {
       "id": "bub-and-grandmas",
@@ -5394,26 +5273,6 @@
       "lng": -118.346035
     },
     {
-      "name": "Taqueria Frontera",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Thrillist LA",
-          "url": "https://www.thrillist.com/eat/los-angeles/best-restaurants-los-angeles"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "taqueria-frontera",
-      "addedDate": "2026-03-21",
-      "lat": 34.090923,
-      "lng": -118.223712
-    },
-    {
       "name": "Komal",
       "neighborhood": "",
       "cuisine": "",
@@ -5441,35 +5300,6 @@
       "addedDate": "2026-04-04",
       "lat": 34.017311,
       "lng": -118.278148
-    },
-    {
-      "id": "leo-taqueria-eagle-rock",
-      "name": "Leo's Tacos",
-      "neighborhood": "Eagle Rock",
-      "cuisine": "Tacos",
-      "tier": "street",
-      "priceRange": "$5–10/pp",
-      "pricePp": 7,
-      "description": "The most famous al pastor in LA. The spinning trompo is mesmerizing, the tacos are $1.50, and the multiple locations make this the city's most reliable late-night taco option.",
-      "whyHot": "Multiple locations but the truck is the OG experience. Cash only.",
-      "sources": [],
-      "sourceCount": 0,
-      "heatScore": 0,
-      "tags": [
-        "late-night",
-        "cash-only",
-        "truck",
-        "tacos",
-        "al-pastor"
-      ],
-      "isNew": false,
-      "address": "1515 N La Brea Ave, Los Angeles, CA 90028",
-      "lat": 34.096,
-      "lng": -118.3442,
-      "googleMapsUrl": "https://maps.google.com/?q=Leos+Tacos+La+Brea+Los+Angeles",
-      "hours": "Daily 9am-3am",
-      "manualPick": true,
-      "addedDate": "2026-03-19"
     },
     {
       "name": "Amiguita",
@@ -5521,179 +5351,6 @@
       "lng": -118.295878
     },
     {
-      "name": "Pizzeria Bianco Los Angeles",
-      "neighborhood": "Los Angeles",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/pizzeria-bianco"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "pizzeria-bianco-los-angeles-los-angeles",
-      "addedDate": "2026-03-29",
-      "lat": 34.034355,
-      "lng": -118.241566
-    },
-    {
-      "name": "Padi Cafe + Indonesian Kitchen",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "padi-cafe-indonesian-kitchen",
-      "addedDate": "2026-04-25"
-    },
-    {
-      "name": "Elcielo New York",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/elcielo-new-york"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "elcielo-new-york",
-      "addedDate": "2026-04-25"
-    },
-    {
-      "name": "Hwaro",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/hwaro"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "hwaro",
-      "addedDate": "2026-04-25"
-    },
-    {
-      "name": "Le Chêne",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/le-chene"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "le-ch-ne",
-      "addedDate": "2026-04-25"
-    },
-    {
-      "name": "Cove",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/new-york-state/new-york/restaurant/cove-1244899"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "cove",
-      "addedDate": "2026-04-25"
-    },
-    {
-      "name": "Bar di Bello",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/bar-di-bello?venueId=94002",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        },
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 2,
-      "heatScore": 5,
-      "id": "bar-di-bello",
-      "addedDate": "2026-05-02"
-    },
-    {
-      "name": "Azizam",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/azizam?venueId=93275",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "azizam",
-      "addedDate": "2026-05-02"
-    },
-    {
-      "name": "Evil Cooks",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/evil-cooks?venueId=95117",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "evil-cooks",
-      "addedDate": "2026-05-02"
-    },
-    {
       "name": "Two Hommés",
       "neighborhood": "Inglewood",
       "cuisine": "",
@@ -5703,32 +5360,17 @@
         {
           "name": "Resy Hit List",
           "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "two-homm-s-inglewood",
-      "addedDate": "2026-05-02"
-    },
-    {
-      "name": "The Let's Go",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-lets-go?venueId=95084",
-      "sources": [
+        },
         {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "the-let-s-go",
+      "sourceCount": 2,
+      "heatScore": 4,
+      "id": "two-homm-s-inglewood",
       "addedDate": "2026-05-02"
     },
     {
@@ -5760,150 +5402,18 @@
         {
           "name": "Resy Hit List",
           "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "betsy-altadena-ca",
-      "addedDate": "2026-05-02"
-    },
-    {
-      "name": "Picala",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "picala",
-      "addedDate": "2026-05-09"
-    },
-    {
-      "name": "Roshona Bilash",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
         },
         {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
+          "name": "Eater Essential 38",
+          "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
         }
       ],
       "tags": [],
       "tier": "feast",
       "sourceCount": 2,
-      "heatScore": 6,
-      "id": "roshona-bilash",
-      "addedDate": "2026-05-09"
-    },
-    {
-      "name": "Bengara",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "bengara",
-      "addedDate": "2026-05-09"
-    },
-    {
-      "name": "Bar Betsy",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "bar-betsy",
-      "addedDate": "2026-05-09"
-    },
-    {
-      "name": "Folks Pizzeria",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "folks-pizzeria",
-      "addedDate": "2026-05-16"
-    },
-    {
-      "name": "Tev’s Kitchen",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "tev-s-kitchen",
-      "addedDate": "2026-05-16"
-    },
-    {
-      "name": "Miura",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "miura",
-      "addedDate": "2026-05-23"
+      "heatScore": 4,
+      "id": "betsy-altadena-ca",
+      "addedDate": "2026-05-02"
     },
     {
       "name": "Lynx",
@@ -5921,24 +5431,6 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "lynx-los-angeles",
-      "addedDate": "2026-05-23"
-    },
-    {
-      "name": "Kitchen Istanbul",
-      "neighborhood": "San Francisco",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/california/san-francisco/restaurant/kitchen-istanbul"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "kitchen-istanbul-san-francisco",
       "addedDate": "2026-05-23"
     },
     {
@@ -5996,308 +5488,6 @@
       "addedDate": "2026-05-23"
     },
     {
-      "name": "Asadero",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "asadero",
-      "addedDate": "2026-05-30"
-    },
-    {
-      "name": "Cafe Stella",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "cafe-stella",
-      "addedDate": "2026-05-30"
-    },
-    {
-      "name": "The Bohemian",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/florida/bonita-springs_2883470/restaurant/the-bohemian"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "the-bohemian",
-      "addedDate": "2026-05-30"
-    },
-    {
-      "name": "The Brisket Shoppe",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/florida/tampa/restaurant/the-brisket-shoppe"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "the-brisket-shoppe",
-      "addedDate": "2026-05-30"
-    },
-    {
-      "name": "Osteria Ester",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/florida/orlando/restaurant/osteria-ester"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "osteria-ester",
-      "addedDate": "2026-05-30"
-    },
-    {
-      "name": "Elyu Omakase",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Michelin Guide",
-          "url": "https://guide.michelin.com/us/en/florida/coral-gables/restaurant/elyu-omakase"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "elyu-omakase",
-      "addedDate": "2026-05-30"
-    },
-    {
-      "name": "Bad Roman",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "bad-roman",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Sushi Nakazawa",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "sushi-nakazawa",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Alta Adams",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        },
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 2,
-      "heatScore": 6,
-      "id": "alta-adams",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Jacaranda",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "jacaranda",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "ABL Hollywood",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "abl-hollywood",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Brick Lane Los Angeles",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "brick-lane-los-angeles",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Seedy",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "seedy",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Wa-Iro",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "wa-iro",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Mitsi",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/mitsi?venueId=92722",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "mitsi",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Josephine",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/josephine-ca?venueId=96929",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        },
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 2,
-      "heatScore": 5,
-      "id": "josephine",
-      "addedDate": "2026-06-06"
-    },
-    {
       "name": "Hayama by WATAMI",
       "neighborhood": "Culver City",
       "cuisine": "",
@@ -6336,44 +5526,6 @@
       "addedDate": "2026-06-06"
     },
     {
-      "name": "Cafe Triste",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/cafe-triste?date=2026-05-20&seats=2",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "cafe-triste",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Sushi Nakazawa LA",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/sushi-nakazawa-la?venueId=60444",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "sushi-nakazawa-la",
-      "addedDate": "2026-06-06"
-    },
-    {
       "name": "Montauk",
       "neighborhood": "Redondo Beach",
       "cuisine": "",
@@ -6393,199 +5545,6 @@
       "addedDate": "2026-06-06"
     },
     {
-      "name": "Night on Earth",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/night-on-earth?venueId=94967",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "night-on-earth",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "Seco Silverlake",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/seco-silverlake?venueId=84236",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "seco-silverlake",
-      "addedDate": "2026-06-06"
-    },
-    {
-      "name": "San Damian",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        },
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 2,
-      "heatScore": 5,
-      "id": "san-damian",
-      "addedDate": "2026-06-13",
-      "reservationUrl": "https://resy.com/cities/venice-los-angeles-ca/venues/san-damian?venueId=97817"
-    },
-    {
-      "name": "Padi",
-      "neighborhood": "",
-      "cuisine": "",
-      "sources": [
-        {
-          "name": "The Infatuation Hit List",
-          "url": "https://www.theinfatuation.com/los-angeles/guides/best-new-los-angeles-restaurants-hit-list"
-        }
-      ],
-      "tags": [
-        "new-opening"
-      ],
-      "isNew": true,
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "padi",
-      "addedDate": "2026-06-27"
-    },
-    {
-      "name": "San Damián",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "san-dami-n",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "Pawn Shop",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "pawn-shop",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "Tacos Royale",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "tacos-royale",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "Frank & Frank’s",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "sources": [
-        {
-          "name": "Eater Heatmap",
-          "url": "https://la.eater.com/maps/best-new-restaurants-los-angeles-heatmap"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 3,
-      "id": "frank-frank-s",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "The Tower Bar",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/the-tower-bar?venueId=94047",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "the-tower-bar",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "Stir Crazy",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/stir-crazy?venueId=73864",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "stir-crazy",
-      "addedDate": "2026-07-04"
-    },
-    {
       "name": "Coni Seafood – Hermosa",
       "neighborhood": "Hermosa Beach",
       "cuisine": "",
@@ -6602,44 +5561,6 @@
       "sourceCount": 1,
       "heatScore": 2,
       "id": "coni-seafood-hermosa-hermosa-beach",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "Superba Food + Bread - Hollywood",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/superba-food-and-bread-hollywood?venueId=10535",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "superba-food-bread-hollywood",
-      "addedDate": "2026-07-04"
-    },
-    {
-      "name": "Mírate",
-      "neighborhood": "",
-      "cuisine": "",
-      "description": "",
-      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/mirate?venueId=65457",
-      "sources": [
-        {
-          "name": "Resy Hit List",
-          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
-        }
-      ],
-      "tags": [],
-      "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
-      "id": "m-rate",
       "addedDate": "2026-07-04"
     }
   ]

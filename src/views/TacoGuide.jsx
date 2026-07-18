@@ -81,23 +81,30 @@ function TacoCard({ restaurant, starred, onToggleStar, expanded, onToggleExpand 
     <div
       ref={cardRef}
       className={`taco-card ${expanded ? 'expanded' : ''}`}
-      onClick={handleClick}
     >
       <div className="taco-card-header">
-        <div className="taco-card-title-row">
-          <h3 className="taco-card-name">{restaurant.name}</h3>
-          <span className="taco-card-hood">{restaurant.neighborhood}</span>
-        </div>
-        <div className="taco-card-meta-row">
-          <StyleBadge style={restaurant.tacoStyle} />
-          <span className="taco-card-price">{restaurant.price || restaurant.priceRange}</span>
-          <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
-          <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
-        </div>
+        <button
+          type="button"
+          className="taco-card-toggle"
+          onClick={handleClick}
+          aria-expanded={expanded}
+          aria-controls={`taco-details-${restaurant.id}`}
+        >
+          <span className="taco-card-title-row">
+            <span className="taco-card-name">{restaurant.name}</span>
+            <span className="taco-card-hood">{restaurant.neighborhood}</span>
+          </span>
+          <span className="taco-card-meta-row">
+            <StyleBadge style={restaurant.tacoStyle} />
+            <span className="taco-card-price">{restaurant.price || restaurant.priceRange}</span>
+            <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
+          </span>
+        </button>
+        <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
       </div>
 
       {expanded && (
-        <div className="taco-card-body">
+        <div id={`taco-details-${restaurant.id}`} className="taco-card-body">
           <p className="taco-card-desc">{restaurant.description}</p>
           {restaurant.whyHot && (
             <blockquote className="taco-card-whyhot">{restaurant.whyHot}</blockquote>

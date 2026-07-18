@@ -7,6 +7,8 @@
 import { readFileSync, writeFileSync, appendFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import { getRestaurantMarketIssue } from './lib/restaurant-market.js'
+import { isRestaurantOpenAt } from '../src/utils/restaurantHours.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
@@ -111,6 +113,10 @@ function checkTheaters() {
     s.warnings.push(`${emptyTheaters.length} theaters with 0 future screenings: ${emptyTheaters.join(', ')}`)
     s.lines.push(`- ⚠️ ${emptyTheaters.length} theaters with 0 screenings: ${emptyTheaters.join(', ')}`)
   }
+  const monitoredVenues = Array.isArray(data.monitoredVenues) ? data.monitoredVenues : []
+  if (monitoredVenues.length > 0) {
+    s.lines.push(`- ${monitoredVenues.length} unavailable or occasional venues monitored outside the active catalog`)
+  }
 }
 
 function checkJazz() {
@@ -190,6 +196,56 @@ function checkRestaurants() {
   s.lines.push(`- ${total} restaurants tracked`)
   if (total < 200) s.criticals.push(`Only ${total} restaurants (floor: 200)`)
 
+  const restaurantIds = new Set()
+  const duplicateIds = new Set()
+  for (const restaurant of data.restaurants) {
+    if (restaurantIds.has(restaurant.id)) duplicateIds.add(restaurant.id)
+    restaurantIds.add(restaurant.id)
+  }
+  if (duplicateIds.size > 0) {
+    s.criticals.push(`Duplicate restaurant IDs: ${[...duplicateIds].join(', ')}`)
+  }
+
+  const withCoordinates = data.restaurants.filter(restaurant =>
+    Number.isFinite(restaurant.lat) && Number.isFinite(restaurant.lng)
+  ).length
+  const withHours = data.restaurants.filter(restaurant => Boolean(restaurant.hours)).length
+  const withDescriptions = data.restaurants.filter(restaurant => Boolean(restaurant.description)).length
+  s.lines.push(`- Planning coverage: ${withCoordinates}/${total} coordinates, ${withHours}/${total} hours, ${withDescriptions}/${total} descriptions`)
+  if (withCoordinates / total < 0.9) {
+    s.warnings.push(`Restaurant coordinates cover only ${withCoordinates}/${total} records (target: ≥90%)`)
+  }
+  const planningEligible = data.restaurants.filter(restaurant =>
+    Boolean(restaurant.hours)
+    && Number.isFinite(restaurant.lat)
+    && Number.isFinite(restaurant.lng)
+  )
+  const dinnerCoverage = Array.from({ length: 7 }, (_, offset) => {
+    const date = new Date(TODAY)
+    date.setDate(date.getDate() + offset)
+    date.setHours(18, 0, 0, 0)
+    return planningEligible.filter(restaurant => isRestaurantOpenAt(restaurant.hours, date)).length
+  })
+  const minimumDinnerOptions = Math.min(...dinnerCoverage)
+  const planningNeighborhoods = new Set(planningEligible.map(restaurant => restaurant.neighborhood).filter(Boolean))
+  s.lines.push(`- Lineup-ready: ${planningEligible.length} restaurants across ${planningNeighborhoods.size} neighborhoods; at least ${minimumDinnerOptions} open at 6 PM on each of the next 7 days`)
+  if (planningEligible.length < 20 || minimumDinnerOptions < 8 || planningNeighborhoods.size < 10) {
+    s.warnings.push(
+      `Restaurant lineup pool is too thin: ${planningEligible.length} eligible, `
+      + `${planningNeighborhoods.size} neighborhoods, minimum ${minimumDinnerOptions} open at 6 PM `
+      + '(targets: ≥20, ≥10, ≥8)',
+    )
+  }
+
+  const outOfMarket = data.restaurants
+    .map(restaurant => ({ restaurant, issue: getRestaurantMarketIssue(restaurant) }))
+    .filter(({ issue }) => issue)
+  if (outOfMarket.length > 0) {
+    const names = outOfMarket.map(({ restaurant }) => restaurant.name || restaurant.id).join(', ')
+    s.criticals.push(`${outOfMarket.length} out-of-market restaurants: ${names}`)
+    s.lines.push(`- ❌ ${outOfMarket.length} records fail Greater LA market validation`)
+  }
+
   // Tier balance from scrape-log.json
   let log
   try {
@@ -206,6 +262,22 @@ function checkRestaurants() {
   if (street <= 0) s.warnings.push('Tier balance: street = 0')
   if (feast <= 0) s.warnings.push('Tier balance: feast = 0')
   if (whale <= 0) s.warnings.push('Tier balance: whale = 0')
+
+  const sourceStatuses = Array.isArray(log.sourceStatuses) ? log.sourceStatuses : []
+  if (sourceStatuses.length === 0) {
+    s.warnings.push('No source-level restaurant scrape status recorded (run the hardened scraper)')
+    s.lines.push('- ⚠️ Source-level scrape status unavailable')
+  } else {
+    const successfulSources = sourceStatuses.filter(source => source.status === 'ok')
+    const failedSources = sourceStatuses.filter(source => source.status !== 'ok')
+    s.lines.push(`- Live sources: ${successfulSources.length}/${sourceStatuses.length} succeeded`)
+    if (successfulSources.length === 0) {
+      s.criticals.push('No live restaurant sources succeeded in the latest scrape')
+    } else if (failedSources.length > 0) {
+      const names = failedSources.map(source => source.name).join(', ')
+      s.warnings.push(`${failedSources.length} restaurant sources failed: ${names}`)
+    }
+  }
 }
 
 function checkGuide() {

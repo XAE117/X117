@@ -33,6 +33,34 @@ export function parseTime(timeStr) {
 }
 
 /**
+ * Compare display-time strings chronologically, placing unknown times last.
+ */
+export function compareTimeStrings(a, b) {
+  const aMinutes = parseTime(a)
+  const bMinutes = parseTime(b)
+
+  if (aMinutes != null && bMinutes != null) return aMinutes - bMinutes
+  if (aMinutes != null) return -1
+  if (bMinutes != null) return 1
+  return String(a || '').localeCompare(String(b || ''))
+}
+
+/**
+ * Compare dated screening-like records with deterministic tie-breaking.
+ */
+export function compareDatedEvents(a, b) {
+  const dateComp = String(a.date || '').localeCompare(String(b.date || ''))
+  if (dateComp !== 0) return dateComp
+
+  const timeComp = compareTimeStrings(a.time, b.time)
+  if (timeComp !== 0) return timeComp
+
+  const aKey = [a.theaterName, a.venueName, a.venue?.name, a.title, a.artist, a.id].filter(Boolean).join('\0')
+  const bKey = [b.theaterName, b.venueName, b.venue?.name, b.title, b.artist, b.id].filter(Boolean).join('\0')
+  return aKey.localeCompare(bKey)
+}
+
+/**
  * Get a relative time label for a screening given its date and time.
  * Returns an object { label, isNow } or null if not applicable.
  *
@@ -106,6 +134,14 @@ export function isScreeningPast(dateStr, timeStr, now) {
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
   const d = new Date(dateStr + 'T00:00:00')
   return d < today
+}
+
+/** Returns true once an event's listed start time has passed. */
+export function hasEventStarted(dateStr, timeStr, now) {
+  const parsed = parseTime(timeStr)
+  if (parsed == null) return false
+  const [year, month, day] = dateStr.split('-').map(Number)
+  return new Date(year, month - 1, day, Math.floor(parsed / 60), parsed % 60) < now
 }
 
 /**

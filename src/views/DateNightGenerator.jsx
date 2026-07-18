@@ -36,6 +36,7 @@ function DateNightGenerator({ cinemaData, jazzData, foodData, vibe }) {
       vibe,
       locked,
       previous: previousPlans,
+      now: new Date(),
     })
     setPreviousPlans(result)
     setPlans(result)
@@ -108,7 +109,7 @@ function DateNightGenerator({ cinemaData, jazzData, foodData, vibe }) {
   }
 
   if (phase === 'loading') {
-    return <DiceLoader onComplete={handleLoaded} minDuration={1800} />
+    return <DiceLoader onComplete={handleLoaded} minDuration={250} />
   }
 
   const { planA, planB } = plans || {}
@@ -117,14 +118,10 @@ function DateNightGenerator({ cinemaData, jazzData, foodData, vibe }) {
     <div className={`date-night ${rerolling ? 'rerolling' : ''}`}>
       {/* Header */}
       <div className="dn-header">
-        <h1 className="dn-title">TONIGHT'S LINEUP</h1>
+        <h1 className="dn-title">{selectedDate.isTonight ? "TONIGHT'S LINEUP" : `${selectedDate.shortDate.toUpperCase()} LINEUP`}</h1>
         <div className="dn-date-header" ref={headerDateRef}>
           <button className="dn-date-header-btn" onClick={() => setHeaderDateOpen(v => !v)}>
-            tonight
-          </button>
-          <span className="dn-date-vsep">|</span>
-          <button className="dn-date-header-btn" onClick={() => setHeaderDateOpen(v => !v)}>
-            tomorrow
+            {selectedDate.label} ▾
           </button>
           {headerDateOpen && (
             <div className="dn-date-header-dropdown">
@@ -263,7 +260,7 @@ function PlanCard({ plan, type, label, emoji, accentClass, locked, onToggleLock,
           </span>
         )}
         {costRange && <span className="dn-cost">Est. {costRange}</span>}
-        <ShareButton plan={plan} type={type} />
+        <ShareButton plan={plan} type={type} selectedDate={selectedDate} />
       </div>
     </div>
   )
@@ -398,11 +395,12 @@ function TimelineConnector({ timeline }) {
 
 // ── Share Button ──
 
-function ShareButton({ plan, type }) {
+function ShareButton({ plan, type, selectedDate }) {
   const [copied, setCopied] = useState(false)
 
-  const handleShare = () => {
-    const lines = [`Tonight's Plan 🎲\n`]
+  const handleShare = async () => {
+    const dateLabel = selectedDate.isTonight ? "Tonight's Plan" : `${selectedDate.shortDate} Plan`
+    const lines = [`${dateLabel} 🎲\n`]
     if (plan.restaurant) {
       lines.push(`🍽 ${plan.restaurant.name}${plan.restaurant.neighborhood ? ` (${plan.restaurant.neighborhood})` : ''}`)
       if (plan.timeline) lines.push(`   ${plan.timeline.dinnerTime}`)
@@ -416,12 +414,25 @@ function ShareButton({ plan, type }) {
         lines.push(`   ${plan.activity.time}`)
       }
     }
-    lines.push(`\nVia SIXPM ✨`)
+    lines.push(`\nVia SIXPM ✨\n${window.location.href}`)
+    const text = lines.join('\n')
 
-    navigator.clipboard.writeText(lines.join('\n')).then(() => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: dateLabel, text })
+        return
+      } catch (error) {
+        if (error.name === 'AbortError') return
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(text)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-    })
+    } catch {
+      window.prompt('Copy this plan:', text)
+    }
   }
 
   return (
@@ -439,16 +450,16 @@ function EmptyState({ type, selectedDate }) {
   if (type === 'movie') {
     return (
       <div className="dn-empty">
-        <p>No showtimes in the sweet spot for {dayName}.</p>
-        <p>Try a different night, or <Link to="/tonight" className="dn-empty-link">check Now Playing</Link> for the full schedule.</p>
+        <p>No complete, hours-checked movie lineup is available for {dayName}.</p>
+        <p>Try another night, or <Link to="/tonight" className="dn-empty-link">browse all evening films</Link>.</p>
       </div>
     )
   }
 
   return (
     <div className="dn-empty">
-      <p>The jazz clubs are quiet on {dayName}.</p>
-      <p>Weekends are your best bet. <Link to="/jazz" className="dn-empty-link">Browse Jazz</Link> for the full calendar.</p>
+      <p>No complete, hours-checked jazz lineup is available for {dayName}.</p>
+      <p><Link to="/jazz" className="dn-empty-link">Browse the full jazz calendar</Link> and choose your own dinner.</p>
     </div>
   )
 }
