@@ -1,19 +1,19 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-18 01:19 UTC_
+_Generated 2026-07-18 02:40 UTC_
 
 **Status: HEALTHY** ✓
 
 ## Cinema (theaters.json)
 - Last updated: 2026-07-18 (today)
 - 27 theaters tracked, 27 with future screenings
-- 1774 future screenings, horizon 45 days
+- 1573 future screenings, horizon 44 days
 - 9 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-17 (today)
+- Last updated: 2026-07-18 (today)
 - 9 venues, 9 with future shows
-- 304 future shows, horizon 276 days
+- 302 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-07-18 (today)
