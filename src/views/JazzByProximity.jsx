@@ -1,5 +1,5 @@
-import { useMemo, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { useNow, getRelativeLabel } from '../utils/timeUtils.js'
 import { TIERS, getProximityTier } from '../data/louisColeProximity.js'
 import { TargetIcon, BubblesIcon, MusicNoteIcon } from '../components/Icons'
@@ -18,30 +18,13 @@ function OCBadge({ venue }) {
 
 function ShowRow({ show, venue, now }) {
   const relative = getRelativeLabel(show.date, show.time, now)
-  const navigate = useNavigate()
-  const itemRef = useRef(null)
-
-  const handleClick = (e) => {
-    if (e.target.closest('a')) return
-    if (itemRef.current) {
-      itemRef.current.classList.remove('glow-pulse')
-      void itemRef.current.offsetWidth
-      itemRef.current.classList.add('glow-pulse')
-    }
-    setTimeout(() => navigate(`/jazz/show/${show.id}`), 300)
-  }
-
   const d = new Date(show.date + 'T00:00:00')
   const dateLabel = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
 
   return (
-    <li
-      ref={itemRef}
-      className={`jbp-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}
-      onClick={handleClick}
-    >
+    <li className={`jbp-show-row ${show.hot ? 'is-hot' : ''} ${venue.tier === 'indie_scene' ? 'is-underground' : ''}`}>
       <span className="jbp-show-date">{dateLabel}</span>
-      <span className="jbp-show-artist">{show.artist}</span>
+      <Link className="jbp-show-artist" to={`/jazz/show/${show.id}`}>{show.artist}</Link>
       <span className="jbp-show-venue" style={{ color: venue.color }}>
         {venue.shortName}
         {venue.region === 'OC' && <OCBadge venue={venue} />}

@@ -26,6 +26,7 @@ jobs:
         run: npx puppeteer browsers install chrome
       - name: Scrape theater data and send SMS alerts
         env:
+          AMC_API_KEY: ${{ secrets.AMC_API_KEY }}
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
@@ -35,6 +36,8 @@ jobs:
         run: npm run scrape:jazz
       - name: Scrape restaurant data (weekly + Fridays)
         if: github.event.schedule == '0 0 * * 6' || github.event.schedule == '0 9 * * 0' || github.event_name == 'workflow_dispatch'
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
         run: npm run scrape:eats
       - name: Send weekly digest (Fridays only)
         if: github.event.schedule == '0 0 * * 6'

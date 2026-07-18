@@ -2,28 +2,25 @@ import { useState, useEffect } from 'react'
 import './DiceLoader.css'
 
 const PHRASES = [
-  "Scanning tonight's showtimes...",
-  "Cross-referencing open kitchens...",
-  "Checking who's on stage...",
-  "Optimizing your evening...",
-  "Curating the perfect night out...",
-  "Pulling strings at the door...",
-  "Assembling the lineup...",
+  "Matching nearby dinner and show options...",
+  "Checking tonight's listed showtimes...",
+  "Keeping each stop within eight miles...",
+  "Assembling two workable lineups...",
 ]
 
-function DiceLoader({ onComplete, minDuration = 1500 }) {
+function DiceLoader({ onComplete, minDuration = 250 }) {
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [settled, setSettled] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPhraseIndex(i => (i + 1) % PHRASES.length)
-    }, 400)
+    }, 250)
 
     const timer = setTimeout(() => {
       setSettled(true)
       clearInterval(interval)
-      setTimeout(onComplete, 500) // brief pause after dice settle
+      setTimeout(onComplete, 100)
     }, minDuration)
 
     return () => {

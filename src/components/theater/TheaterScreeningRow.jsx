@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import WatchlistButton from '../WatchlistButton.jsx'
 import UrgencyBadge from '../UrgencyBadge.jsx'
 import { getRelativeLabel, filmMeta, getFilmData } from '../../utils/timeUtils.js'
@@ -33,24 +32,11 @@ export default function TheaterScreeningRow({ screening, theater, now, data, for
   const relative = getRelativeLabel(screening.date, screening.time, now)
   const film = getFilmData(screening.title, data.films)
   const urgencyType = getUrgencyType({ ...screening, theaterId: theater.id }, allScreenings)
-  const navigate = useNavigate()
-  const itemRef = useRef(null)
-
-  const handleClick = (e) => {
-    if (e.target.closest('.watchlist-btn') || e.target.closest('a')) return
-    if (itemRef.current) {
-      itemRef.current.classList.remove('glow-pulse')
-      void itemRef.current.offsetWidth
-      itemRef.current.classList.add('glow-pulse')
-    }
-    setTimeout(() => navigate(`/screening/${screening.id}`), 300)
-  }
-
   return (
-    <li ref={itemRef} className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }} onClick={handleClick}>
+    <li className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }}>
       <WatchlistButton screeningId={screening.id} onToggle={forceUpdate} />
       <span className="screening-date-badge">{formatDate(screening.date)}</span>
-      <span className="screening-title-link">{screening.title}</span>
+      <Link className="screening-title-link" to={`/screening/${screening.id}`}>{screening.title}</Link>
       {filmMeta(screening.title, data.films) && (
         <span className="screening-film-meta">{filmMeta(screening.title, data.films)}</span>
       )}

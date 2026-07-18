@@ -132,6 +132,21 @@
 /* Card header */
 .taco-card-header {
   display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.taco-card-toggle {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }

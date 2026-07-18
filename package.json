@@ -18,10 +18,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "check": "npm run lint && npm run test && npm run build && npm audit --audit-level=high"
+    "check": "npm run lint && npm run test && npm run build && npm audit --audit-level=high",
+    "release:check": "npm run check && npm run test:e2e && node scripts/validate-data.js --strict"
   },
   "dependencies": {
     "html2canvas": "^1.4.1",
+    "leaflet": "^1.9.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.18.1"

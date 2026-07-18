@@ -73,6 +73,8 @@ const THEATERS = [
     neighborhood: 'Hollywood',
     url: 'https://www.americancinematheque.com/now-showing/',
     color: '#D9A878',
+    trackingStatus: 'monitor',
+    trackingNote: 'Awaiting a dedicated American Cinematheque venue adapter',
   },
   {
     dataT: '1',
@@ -109,6 +111,8 @@ const THEATERS = [
     neighborhood: 'Westwood',
     url: 'https://hammer.ucla.edu/programs-events',
     color: '#8EA0CF',
+    trackingStatus: 'monitor',
+    trackingNote: 'Occasional institutional film programming',
   },
   {
     dataT: '67',
@@ -118,6 +122,8 @@ const THEATERS = [
     neighborhood: 'Downtown',
     url: 'https://www.redcat.org',
     color: '#D9907A',
+    trackingStatus: 'monitor',
+    trackingNote: 'Occasional institutional film programming',
   },
   {
     dataT: '34',
@@ -164,6 +170,8 @@ const THEATERS = [
     neighborhood: 'Various',
     url: 'https://www.secretmovieclub.com',
     color: '#B89878',
+    trackingStatus: 'monitor',
+    trackingNote: 'Awaiting a dedicated ticketing adapter',
   },
   {
     dataT: '16',
@@ -182,6 +190,8 @@ const THEATERS = [
     neighborhood: 'Historic Filipinotown',
     url: 'https://2220arts.com',
     color: '#D4A0C4',
+    trackingStatus: 'monitor',
+    trackingNote: 'Occasional mixed-discipline programming',
   },
   {
     dataT: '46',
@@ -191,6 +201,8 @@ const THEATERS = [
     neighborhood: 'Various',
     url: 'https://whammyanalog.com',
     color: '#D9A090',
+    trackingStatus: 'monitor',
+    trackingNote: 'Occasional pop-up programming',
   },
   {
     dataT: '48',
@@ -210,6 +222,8 @@ const THEATERS = [
     neighborhood: 'Miracle Mile',
     url: 'https://www.lacma.org/film',
     color: '#C4A870',
+    trackingStatus: 'monitor',
+    trackingNote: 'Occasional institutional film programming',
   },
   {
     dataT: '10',
@@ -228,6 +242,8 @@ const THEATERS = [
     neighborhood: 'Westwood',
     url: 'https://www.landmarktheatres.com',
     color: '#D4B890',
+    trackingStatus: 'monitor',
+    trackingNote: 'Awaiting a dedicated Landmark venue adapter',
   },
   {
     dataT: '38',
@@ -291,6 +307,8 @@ const THEATERS = [
     neighborhood: 'Culver City',
     url: 'https://www.theculvertheater.com',
     color: '#B8A0D4',
+    trackingStatus: 'monitor',
+    trackingNote: 'Awaiting a dedicated venue adapter',
   },
   {
     dataT: '102',
@@ -843,11 +861,15 @@ async function fetchAMCApi(path) {
   const apiKey = process.env.AMC_API_KEY
   if (!apiKey) return null
   const url = `https://api.amctheatres.com${path}`
-  const result = execSync(
-    `curl -s --max-time 15 -H 'X-AMC-Vendor-Key: ${apiKey}' -H 'Accept: application/json' '${url}'`,
-    { encoding: 'utf-8', maxBuffer: 5 * 1024 * 1024 },
-  )
-  return JSON.parse(result)
+  const response = await fetch(url, {
+    headers: {
+      'X-AMC-Vendor-Key': apiKey,
+      Accept: 'application/json',
+    },
+    signal: AbortSignal.timeout(15000),
+  })
+  if (!response.ok) throw new Error(`AMC API returned ${response.status}`)
+  return response.json()
 }
 
 async function scrapeAMCShowtimes() {
@@ -1080,31 +1102,29 @@ function normalizeTitleForSearch(title) {
 }
 
 async function tmdbSearch(title, apiKey, year = null) {
-  let url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(title)}&api_key=${apiKey}`
-  if (year) url += `&year=${year}`
-  const html = execSync(
-    `curl -s --max-time 10 '${url}'`,
-    { encoding: 'utf-8' },
-  )
-  return JSON.parse(html)
+  const url = new URL('https://api.themoviedb.org/3/search/movie')
+  url.searchParams.set('query', title)
+  url.searchParams.set('api_key', apiKey)
+  if (year) url.searchParams.set('year', String(year))
+  return fetchTMDB(url)
 }
 
 async function tmdbCredits(movieId, apiKey) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
-  const html = execSync(
-    `curl -s --max-time 10 '${url}'`,
-    { encoding: 'utf-8' },
-  )
-  return JSON.parse(html)
+  const url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/credits`)
+  url.searchParams.set('api_key', apiKey)
+  return fetchTMDB(url)
 }
 
 async function tmdbMovieDetails(movieId, apiKey) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
-  const html = execSync(
-    `curl -s --max-time 10 '${url}'`,
-    { encoding: 'utf-8' },
-  )
-  return JSON.parse(html)
+  const url = new URL(`https://api.themoviedb.org/3/movie/${movieId}`)
+  url.searchParams.set('api_key', apiKey)
+  return fetchTMDB(url)
+}
+
+async function fetchTMDB(url) {
+  const response = await fetch(url, { signal: AbortSignal.timeout(10000) })
+  if (!response.ok) throw new Error(`TMDB API returned ${response.status}`)
+  return response.json()
 }
 
 async function enrichWithTMDB(outputTheaters) {
@@ -1266,7 +1286,7 @@ async function main() {
   console.log(`  Total supplemental: ${supplementalCount} screenings`)
 
   // Build output
-  const outputTheaters = THEATERS.map(theater => {
+  const allOutputTheaters = THEATERS.map(theater => {
     const screenings = screeningsByTheater[theater.id]
       .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
 
@@ -1282,6 +1302,24 @@ async function main() {
       screenings,
     }
   })
+  const monitoredVenues = allOutputTheaters
+    .filter(theater =>
+      theater.screenings.length === 0
+      && THEATERS.find(candidate => candidate.id === theater.id)?.trackingStatus === 'monitor'
+    )
+    .map(theater => {
+      const definition = THEATERS.find(candidate => candidate.id === theater.id)
+      return {
+        id: theater.id,
+        name: theater.name,
+        url: theater.url,
+        note: definition.trackingNote,
+      }
+    })
+  const outputTheaters = allOutputTheaters.filter(theater =>
+    theater.screenings.length > 0
+    || THEATERS.find(candidate => candidate.id === theater.id)?.trackingStatus !== 'monitor'
+  )
 
   const totalScreenings = outputTheaters.reduce((sum, t) => sum + t.screenings.length, 0)
   const theatersWithScreenings = outputTheaters.filter(t => t.screenings.length > 0).length
@@ -1304,6 +1342,7 @@ async function main() {
     lastUpdated: new Date().toISOString(),
     source: 'revivalhouses.com + theater websites + AMC API',
     theaters: outputTheaters,
+    monitoredVenues,
   }
 
   // Only add films object if we got enrichment data

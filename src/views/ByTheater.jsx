@@ -1,5 +1,5 @@
-import { useState, useCallback, useRef, useMemo } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useState, useCallback, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import WatchlistButton from '../components/WatchlistButton.jsx'
 import UrgencyBadge from '../components/UrgencyBadge.jsx'
 import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData } from '../utils/timeUtils.js'
@@ -34,24 +34,11 @@ function ScreeningRow({ s, theater, now, data, forceUpdate, formatDate, allScree
   const relative = getRelativeLabel(s.date, s.time, now)
   const film = getFilmData(s.title, data.films)
   const urgencyType = getUrgencyType({ ...s, theaterId: theater.id }, allScreenings)
-  const navigate = useNavigate()
-  const itemRef = useRef(null)
-
-  const handleClick = (e) => {
-    if (e.target.closest('.watchlist-btn') || e.target.closest('a')) return
-    if (itemRef.current) {
-      itemRef.current.classList.remove('glow-pulse')
-      void itemRef.current.offsetWidth
-      itemRef.current.classList.add('glow-pulse')
-    }
-    setTimeout(() => navigate(`/screening/${s.id}`), 300)
-  }
-
   return (
-    <li ref={itemRef} className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }} onClick={handleClick}>
+    <li className={`screening-item ${relative?.isNow ? 'screening-now' : ''}`} style={{ borderLeftColor: theater.color }}>
       <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
       <span className="screening-date-badge">{formatDate(s.date)}</span>
-      <span className="screening-title-link">{s.title}</span>
+      <Link className="screening-title-link" to={`/screening/${s.id}`}>{s.title}</Link>
       {filmMeta(s.title, data.films) && (
         <span className="screening-film-meta">{filmMeta(s.title, data.films)}</span>
       )}
@@ -174,19 +161,23 @@ function ByTheater({ data }) {
 
   return (
     <div className="theater-grid">
-      {data.theaters.map(theater => {
+      {data.theaters.filter(theater => theater.screenings.length > 0).map(theater => {
         const isExpanded = expandedId === theater.id
         const monthGroups = groupByMonth(theater.screenings)
 
         return (
           <div
             key={theater.id}
+            id={theater.id}
             className={`theater-card ${isExpanded ? 'expanded' : ''}`}
           >
-            <div
+            <button
+              type="button"
               className="theater-card-header"
               onClick={() => toggle(theater.id)}
               style={{ borderLeftColor: theater.color }}
+              aria-expanded={isExpanded}
+              aria-controls={`theater-screenings-${theater.id}`}
             >
               <div className="theater-info">
                 <h2 className="theater-name">{theater.name}</h2>
@@ -196,10 +187,10 @@ function ByTheater({ data }) {
                 <span className="screening-count">{theater.screenings.length} screenings</span>
                 <span className={`expand-arrow ${isExpanded ? 'open' : ''}`}>&#9662;</span>
               </div>
-            </div>
+            </button>
 
             {isExpanded && (
-              <div className="theater-screenings">
+              <div id={`theater-screenings-${theater.id}`} className="theater-screenings">
                 {Object.entries(monthGroups).map(([month, screenings]) => (
                   <MonthGroup
                     key={month}

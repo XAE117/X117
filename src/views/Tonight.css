@@ -4,6 +4,60 @@
   padding-top: calc(1rem + 10px);
 }
 
+.tonight-editorial-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.tonight-editorial-header h1 {
+  margin: 0.15rem 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  line-height: 1;
+  color: var(--cream);
+}
+
+.tonight-editorial-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.tonight-kicker {
+  font-size: 0.65rem !important;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold) !important;
+}
+
+.tonight-film-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+@media (min-width: 1080px) {
+  .tonight-page {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .tonight-film-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .tonight-editorial-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .tonight-header-row {
   display: flex;
   align-items: center;

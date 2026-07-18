@@ -1,16 +1,33 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { JAZZ_VENUE_COORDS } from '../data/jazzVenueLocations.js'
+import { loadLeaflet } from '../utils/loadLeaflet.js'
 import './JazzMapView.css'
 
 function JazzMapView({ data }) {
   const mapRef = useRef(null)
   const mapInstanceRef = useRef(null)
+  const [leaflet, setLeaflet] = useState(null)
+  const [mapError, setMapError] = useState('')
+
+  useEffect(() => {
+    let active = true
+    loadLeaflet()
+      .then(instance => {
+        if (active) setLeaflet(instance)
+      })
+      .catch(error => {
+        if (active) setMapError(error.message)
+      })
+    return () => {
+      active = false
+    }
+  }, [])
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return
-    if (!window.L) return
+    if (!leaflet) return
 
-    const L = window.L
+    const L = leaflet
     const map = L.map(mapRef.current, {
       center: [34.0, -118.25],
       zoom: 10,
@@ -29,12 +46,12 @@ function JazzMapView({ data }) {
       map.remove()
       mapInstanceRef.current = null
     }
-  }, [])
+  }, [leaflet])
 
   // Add/update markers when data changes
   useEffect(() => {
-    if (!mapInstanceRef.current || !data || !window.L) return
-    const L = window.L
+    if (!mapInstanceRef.current || !data || !leaflet) return
+    const L = leaflet
     const map = mapInstanceRef.current
 
     // Clear existing markers
@@ -74,8 +91,9 @@ function JazzMapView({ data }) {
       popupContent.appendChild(count)
 
       upcomingShows.forEach((show) => {
-        const line = document.createElement('div')
+        const line = document.createElement('a')
         line.className = 'jazz-map-popup-show'
+        line.href = `${import.meta.env.BASE_URL}jazz/show/${encodeURIComponent(show.id)}`
         const d = new Date(show.date + 'T00:00:00')
         const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
         line.append(document.createTextNode(`${dateStr} — ${show.artist}`))
@@ -90,6 +108,14 @@ function JazzMapView({ data }) {
         popupContent.appendChild(line)
       })
 
+      const directions = document.createElement('a')
+      directions.className = 'jazz-map-popup-directions'
+      directions.href = `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`
+      directions.target = '_blank'
+      directions.rel = 'noopener noreferrer'
+      directions.textContent = 'Get directions'
+      popupContent.appendChild(directions)
+
       L.circleMarker([coords.lat, coords.lng], {
         radius: 8,
         fillColor: venue.color,
@@ -101,10 +127,11 @@ function JazzMapView({ data }) {
         .bindPopup(popupContent, { className: 'sixpm-popup jazz-popup', maxWidth: 280 })
         .addTo(map)
     })
-  }, [data])
+  }, [data, leaflet])
 
   return (
     <div className="jazz-map-view">
+      {mapError && <div className="map-load-error" role="alert">{mapError}. Use the venue list instead.</div>}
       <div ref={mapRef} className="jazz-map-container" />
     </div>
   )

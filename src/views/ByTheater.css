@@ -39,12 +39,21 @@
 /* ── Card Header ── */
 
 .theater-card-header {
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1.5rem;
   cursor: pointer;
   border-left: 4px solid transparent;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   transition: background 0.2s ease;
 }
 

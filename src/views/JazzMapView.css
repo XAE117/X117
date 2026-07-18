@@ -70,11 +70,23 @@
 }
 
 .jazz-map-popup-show {
+  display: block;
   font-size: 0.75rem;
   font-weight: 300;
   color: var(--text-dim);
   padding: 0.15rem 0;
   border-top: 1px solid var(--border);
+  text-decoration: none;
+}
+
+.jazz-map-popup-show:hover { color: var(--gold); }
+
+.jazz-map-popup-directions {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .jazz-map-popup-price {

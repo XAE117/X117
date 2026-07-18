@@ -1,5 +1,6 @@
 import { useState, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import DataFreshness from '../components/DataFreshness.jsx'
 import { getStarredIds, toggleStar } from '../utils/starredFood.js'
 import './FoodByCategory.css'
 
@@ -26,8 +27,9 @@ function StarButton({ id, starred, onToggle }) {
 
 function RestaurantCard({ restaurant, starred, onToggleStar, expanded, onToggleExpand }) {
   const cardRef = useRef(null)
+  const detailsId = `food-details-${restaurant.id}`
 
-  const handleClick = () => {
+  const handleToggle = () => {
     if (cardRef.current) {
       cardRef.current.classList.remove('food-glow-pulse')
       void cardRef.current.offsetWidth
@@ -41,24 +43,32 @@ function RestaurantCard({ restaurant, starred, onToggleStar, expanded, onToggleE
       ref={cardRef}
       className={`food-card ${expanded ? 'expanded' : ''}`}
       style={{ borderLeftColor: restaurant.color }}
-      onClick={handleClick}
     >
       <div className="food-card-header">
-        <div className="food-card-title-row">
-          <h3 className="food-card-name">{restaurant.name}</h3>
-          <span className="food-card-hood">{restaurant.neighborhood}</span>
-        </div>
-        <div className="food-card-meta-row">
-          <span className="food-card-cuisine">{restaurant.cuisine}</span>
-          <span className="food-card-price">{restaurant.price || restaurant.priceRange}</span>
-          {(restaurant.bibGourmand || restaurant.michelinStatus === 'bib-gourmand') && <BibBadge />}
-          <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
-          <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
-        </div>
+        <button
+          type="button"
+          className="food-card-toggle"
+          onClick={handleToggle}
+          aria-expanded={expanded}
+          aria-controls={detailsId}
+          aria-label={`${expanded ? 'Hide' : 'Show'} details for ${restaurant.name}`}
+        >
+          <span className="food-card-title-row">
+            <span className="food-card-name">{restaurant.name}</span>
+            <span className="food-card-hood">{restaurant.neighborhood}</span>
+          </span>
+          <span className="food-card-meta-row">
+            <span className="food-card-cuisine">{restaurant.cuisine}</span>
+            <span className="food-card-price">{restaurant.price || restaurant.priceRange}</span>
+            {(restaurant.bibGourmand || restaurant.michelinStatus === 'bib-gourmand') && <BibBadge />}
+            <FireBadge count={restaurant.fire || Math.min(Math.ceil((restaurant.heatScore || 0) / 3), 5)} />
+          </span>
+        </button>
+        <StarButton id={restaurant.id} starred={starred} onToggle={onToggleStar} />
       </div>
 
       {expanded && (
-        <div className="food-card-body">
+        <div id={detailsId} className="food-card-body">
           <p className="food-card-desc">{restaurant.description}</p>
           {restaurant.quote && (
             <blockquote className="food-card-quote">{restaurant.quote}</blockquote>
@@ -91,6 +101,32 @@ function RestaurantCard({ restaurant, starred, onToggleStar, expanded, onToggleE
         </div>
       )}
     </div>
+  )
+}
+
+function RestaurantList({ restaurants, starredIds, onToggleStar, expandedId, onToggleExpand }) {
+  const [visible, setVisible] = useState(18)
+
+  return (
+    <>
+      <div className="food-list">
+        {restaurants.slice(0, visible).map(restaurant => (
+          <RestaurantCard
+            key={restaurant.id}
+            restaurant={restaurant}
+            starred={starredIds.includes(restaurant.id)}
+            onToggleStar={onToggleStar}
+            expanded={expandedId === restaurant.id}
+            onToggleExpand={onToggleExpand}
+          />
+        ))}
+      </div>
+      {visible < restaurants.length && (
+        <button type="button" className="food-show-more" onClick={() => setVisible(count => count + 18)}>
+          Show {Math.min(18, restaurants.length - visible)} more
+        </button>
+      )}
+    </>
   )
 }
 
@@ -127,6 +163,7 @@ function FoodByCategory({ data }) {
 
   return (
     <div className="food-page">
+      <DataFreshness sources={[{ label: 'Food', updated: data.lastUpdated }]} />
       <div className="food-category-bar">
         {categories.map(c => (
           <button
@@ -162,36 +199,27 @@ function FoodByCategory({ data }) {
                 <span className="food-guide-link-arrow">{'\u2192'}</span>
               </Link>
             ) : (
-              <div className="food-list">
-                {group.items.map(r => (
-                  <RestaurantCard
-                    key={r.id}
-                    restaurant={r}
-                    starred={starredIds.includes(r.id)}
-                    onToggleStar={handleToggleStar}
-                    expanded={expandedId === r.id}
-                    onToggleExpand={(id) => setExpandedId(expandedId === id ? null : id)}
-                  />
-                ))}
-              </div>
+              <RestaurantList
+                restaurants={group.items}
+                starredIds={starredIds}
+                onToggleStar={handleToggleStar}
+                expandedId={expandedId}
+                onToggleExpand={(id) => setExpandedId(expandedId === id ? null : id)}
+              />
             )}
           </div>
         ))
       ) : (
         <>
           {activeDesc && <p className="food-cat-desc">{activeDesc}</p>}
-          <div className="food-list">
-            {filtered.map(r => (
-              <RestaurantCard
-                key={r.id}
-                restaurant={r}
-                starred={starredIds.includes(r.id)}
-                onToggleStar={handleToggleStar}
-                expanded={expandedId === r.id}
-                onToggleExpand={(id) => setExpandedId(expandedId === id ? null : id)}
-              />
-            ))}
-          </div>
+          <RestaurantList
+            key={activeCategory}
+            restaurants={filtered}
+            starredIds={starredIds}
+            onToggleStar={handleToggleStar}
+            expandedId={expandedId}
+            onToggleExpand={(id) => setExpandedId(expandedId === id ? null : id)}
+          />
         </>
       )}
     </div>

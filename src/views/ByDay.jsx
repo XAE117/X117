@@ -1,243 +1,151 @@
-import { useState, useCallback, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import WatchlistButton from '../components/WatchlistButton.jsx'
+import { useCallback, useState } from 'react'
+import { Link } from 'react-router-dom'
+import DataFreshness from '../components/DataFreshness.jsx'
 import DecoDivider from '../components/DecoDivider.jsx'
-import UrgencyBadge from '../components/UrgencyBadge.jsx'
-import { useNow, getRelativeLabel, isScreeningPast, filmMeta, getFilmData, parseTime } from '../utils/timeUtils.js'
-import { getUrgencyType } from '../utils/urgencyUtils.js'
+import FilmShowtimeGroup from '../components/cinema/FilmShowtimeGroup.jsx'
+import { groupScreeningsByFilm } from '../utils/cinemaGrouping.js'
+import { compareDatedEvents, isScreeningPast, useNow } from '../utils/timeUtils.js'
 import './ByDay.css'
 
-function FormatBadge({ format }) {
-  if (!format || format === 'digital') return null
-  return <span className="day-format-badge">{format}</span>
-}
-
-function NewReleaseBadge({ film }) {
-  if (!film || !film.year) return null
-  if (film.year >= 2024) {
-    return <span className="day-metric-badge new-release">NEW</span>
-  }
-  return null
-}
-
-function MetricsBadges({ film }) {
-  if (!film) return null
-  const badges = []
-  if (film.letterboxd) badges.push(<span key="lb" className="day-metric-badge lb">★ {film.letterboxd.toFixed(1)}</span>)
-  if (film.rottenTomatoes) badges.push(<span key="rt" className="day-metric-badge rt">{film.rottenTomatoes}% RT</span>)
-  if (film.sightAndSound) badges.push(<span key="ss" className="day-metric-badge ss">S&S #{film.sightAndSound}</span>)
-  if (film.afi100) badges.push(<span key="afi" className="day-metric-badge afi">#{film.afi100} AFI</span>)
-  if (badges.length === 0) return null
-  return <>{badges}</>
-}
-
-function ScreeningRow({ s, now, data, forceUpdate, allScreenings }) {
-  const relative = getRelativeLabel(s.date, s.time, now)
-  const film = getFilmData(s.title, data.films)
-  const urgencyType = getUrgencyType(s, allScreenings)
-  const navigate = useNavigate()
-  const itemRef = useRef(null)
-
-  const handleClick = (e) => {
-    // Don't navigate if clicking interactive elements
-    if (e.target.closest('.watchlist-btn') || e.target.closest('a')) return
-    if (itemRef.current) {
-      itemRef.current.classList.remove('glow-pulse')
-      void itemRef.current.offsetWidth
-      itemRef.current.classList.add('glow-pulse')
-    }
-    setTimeout(() => navigate(`/screening/${s.id}`), 300)
-  }
-
-  return (
-    <li
-      ref={itemRef}
-      className={`day-block-item ${relative?.isNow ? 'day-now-showing' : ''}`}
-      onClick={handleClick}
-    >
-      <div className={`day-row-poster ${film?.posterPath ? '' : 'day-row-poster-empty'}`} aria-hidden="true">
-        {film?.posterPath && (
-          <img
-            src={`https://image.tmdb.org/t/p/w92${film.posterPath}`}
-            alt=""
-            loading="lazy"
-          />
-        )}
-      </div>
-      <div className="day-row-content">
-        <div className="day-row-title">
-          <span className="day-title-truncate">
-            <span className="day-film-link">{s.title}</span>
-            {filmMeta(s.title, data.films) && (
-              <span className="day-film-meta">{filmMeta(s.title, data.films)}</span>
-            )}
-          </span>
-          <a
-            href={s.theaterUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="day-item-theater"
-            style={{ color: s.theaterColor }}
-          >
-            {s.theaterName}
-          </a>
-        </div>
-        <div className="day-row-time">
-          <span className="day-time">{s.time || ''}</span>
-          {s.link && (
-            <a
-              href={s.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="day-ticket-link"
-              title="Get Tickets"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15,3 21,3 21,9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-          )}
-        </div>
-        <div className="day-row-badges">
-          <span className="day-badges-left">
-            <WatchlistButton screeningId={s.id} onToggle={forceUpdate} />
-            <NewReleaseBadge film={film} />
-            <MetricsBadges film={film} />
-            <FormatBadge format={s.format} />
-          </span>
-          {(relative || urgencyType) && (
-            <span className="day-badges-right">
-              {relative && relative.isNow && urgencyType ? (
-                <span className="day-relative is-now">{relative.label} · <UrgencyBadge type={urgencyType} /></span>
-              ) : (
-                <>
-                  {relative && <span className={`day-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>}
-                  <UrgencyBadge type={urgencyType} />
-                </>
-              )}
-            </span>
-          )}
-        </div>
-      </div>
-    </li>
-  )
-}
+const INITIAL_FILMS_PER_DAY = 10
 
 function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings }) {
   const [showPast, setShowPast] = useState(false)
-
-  const past = []
-  const upcoming = []
-  day.screenings.forEach(s => {
-    if (isScreeningPast(s.date, s.time, now)) {
-      past.push(s)
-    } else {
-      upcoming.push(s)
-    }
-  })
+  const [visibleCount, setVisibleCount] = useState(INITIAL_FILMS_PER_DAY)
+  const past = day.screenings.filter(screening => isScreeningPast(screening.date, screening.time, now))
+  const upcoming = day.screenings.filter(screening => !isScreeningPast(screening.date, screening.time, now))
+  const upcomingGroups = groupScreeningsByFilm(upcoming)
+  const pastGroups = groupScreeningsByFilm(past)
+  const visibleGroups = upcomingGroups.slice(0, visibleCount)
 
   return (
-    <div className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
-      <h2 className="day-block-header">
-        {day.label}
+    <section className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
+      <div className="day-block-heading-row">
+        <h2 className="day-block-header">{day.label}</h2>
         <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
           <span className="day-screenshot-label">SCREENSHOT</span>
           <span className="day-screenshot-icon">📸</span>
         </Link>
-      </h2>
-      {past.length > 0 && (
+      </div>
+
+      {pastGroups.length > 0 && (
         <div className="day-past-section">
-          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)}>
-            {past.length} past screening{past.length !== 1 ? 's' : ''}
-            <span className="past-toggle-arrow">&#9662;</span>
+          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(value => !value)}>
+            {past.length} past screening{past.length === 1 ? '' : 's'}
+            <span className="past-toggle-arrow">▾</span>
           </button>
           {showPast && (
-            <ul className="day-block-list past-screenings-list">
-              {past.map(s => <ScreeningRow key={s.id} s={s} now={now} data={data} forceUpdate={forceUpdate} allScreenings={allScreenings} />)}
-            </ul>
+            <div className="film-group-list past-screenings-list">
+              {pastGroups.map(group => (
+                <FilmShowtimeGroup
+                  key={group.key}
+                  group={group}
+                  data={data}
+                  now={now}
+                  allScreenings={allScreenings}
+                  onWatchlistToggle={forceUpdate}
+                  compact
+                />
+              ))}
+            </div>
           )}
         </div>
       )}
-      {upcoming.length > 0 && (
-        <ul className="day-block-list">
-          {upcoming.map(s => <ScreeningRow key={s.id} s={s} now={now} data={data} forceUpdate={forceUpdate} allScreenings={allScreenings} />)}
-        </ul>
+
+      <div className="film-group-list">
+        {visibleGroups.map(group => (
+          <FilmShowtimeGroup
+            key={group.key}
+            group={group}
+            data={data}
+            now={now}
+            allScreenings={allScreenings}
+            onWatchlistToggle={forceUpdate}
+          />
+        ))}
+      </div>
+
+      {visibleCount < upcomingGroups.length && (
+        <button
+          className="progressive-list-more"
+          onClick={() => setVisibleCount(count => count + INITIAL_FILMS_PER_DAY)}
+        >
+          Show {Math.min(INITIAL_FILMS_PER_DAY, upcomingGroups.length - visibleCount)} more films
+        </button>
       )}
-      {upcoming.length === 0 && past.length > 0 && !showPast && (
-        <p className="day-all-past-hint">All screenings have passed</p>
+
+      {upcomingGroups.length === 0 && pastGroups.length > 0 && !showPast && (
+        <p className="day-all-past-hint">All screenings have passed.</p>
       )}
-    </div>
+    </section>
   )
 }
 
-function ByDay({ data, searchQuery = '' }) {
+export default function ByDay({ data, searchQuery = '' }) {
   const [, setTick] = useState(0)
-  const forceUpdate = useCallback(() => setTick(t => t + 1), [])
+  const forceUpdate = useCallback(() => setTick(tick => tick + 1), [])
   const now = useNow()
 
-  if (!data || data.theaters.length === 0) {
+  if (!data?.theaters?.length) {
     return <div className="empty-state">No screenings found.</div>
   }
 
-  // Collect all screenings with theater info
-  const allScreenings = []
-  data.theaters.forEach(theater => {
-    theater.screenings.forEach(s => {
-      allScreenings.push({
-        ...s,
-        theaterName: theater.shortName,
-        theaterColor: theater.color,
-        theaterId: theater.id,
-        theaterUrl: theater.url,
-      })
-    })
-  })
+  const allScreenings = data.theaters.flatMap(theater =>
+    theater.screenings.map(screening => ({
+      ...screening,
+      theaterName: theater.shortName || theater.name,
+      theaterColor: theater.color,
+      theaterId: theater.id,
+      theaterUrl: theater.url,
+    }))
+  ).sort(compareDatedEvents)
 
-  // Sort by date then time (numeric parse for correct chronological order)
-  allScreenings.sort((a, b) => {
-    const dateComp = a.date.localeCompare(b.date)
-    if (dateComp !== 0) return dateComp
-    const aMin = parseTime(a.time) ?? 9999
-    const bMin = parseTime(b.time) ?? 9999
-    return aMin - bMin
-  })
-
-  // Apply search filter
   const query = searchQuery.trim().toLowerCase()
   const filteredScreenings = query
-    ? allScreenings.filter(s => s.title.toLowerCase().includes(query))
+    ? allScreenings.filter(screening => screening.title.toLowerCase().includes(query))
     : allScreenings
 
-  // Group by date only (flat day-by-day)
-  const days = {}
-  filteredScreenings.forEach(s => {
-    if (!days[s.date]) {
-      const d = new Date(s.date + 'T00:00:00')
-      days[s.date] = {
-        label: d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }),
-        weekday: d.getDay(),
+  const days = new Map()
+  for (const screening of filteredScreenings) {
+    if (!days.has(screening.date)) {
+      const date = new Date(`${screening.date}T00:00:00`)
+      days.set(screening.date, {
+        label: date.toLocaleDateString('en-US', {
+          weekday: 'long',
+          month: 'long',
+          day: 'numeric',
+        }),
+        weekday: date.getDay(),
         screenings: [],
-      }
+      })
     }
-    days[s.date].screenings.push(s)
-  })
+    days.get(screening.date).screenings.push(screening)
+  }
 
-  const dayEntries = Object.entries(days).sort(([a], [b]) => a.localeCompare(b))
-
-  const matchCount = query ? filteredScreenings.length : 0
+  const dayEntries = [...days.entries()].sort(([a], [b]) => a.localeCompare(b))
 
   return (
     <div className="day-view">
+      <header className="browse-header">
+        <div>
+          <p className="browse-eyebrow">FILM DIRECTORY</p>
+          <h1>Browse screenings</h1>
+          <p>Grouped by film, with every venue and showtime kept one tap away.</p>
+        </div>
+        <Link to="/tonight" className="browse-tonight-link">Evening only →</Link>
+      </header>
+
+      <DataFreshness sources={[{ label: 'Film', updated: data.lastUpdated }]} />
+
       {query && (
         <div className="day-search-count">
-          {matchCount} screening{matchCount !== 1 ? 's' : ''}{matchCount > 0 ? ` matching \u201c${searchQuery.trim()}\u201d` : ' found'}
+          {filteredScreenings.length} screening{filteredScreenings.length === 1 ? '' : 's'} matching “{searchQuery.trim()}”
         </div>
       )}
-      {dayEntries.map(([dateKey, day], i) => (
+
+      {dayEntries.map(([dateKey, day], index) => (
         <div key={dateKey}>
-          {i > 0 && <DecoDivider variant={i % 2 === 0 ? 'sunburst' : 'fan'} />}
+          {index > 0 && <DecoDivider variant={index % 2 === 0 ? 'sunburst' : 'fan'} />}
           <DayBlock
             dateKey={dateKey}
             day={day}
@@ -248,11 +156,10 @@ function ByDay({ data, searchQuery = '' }) {
           />
         </div>
       ))}
-      {query && dayEntries.length === 0 && (
-        <p className="day-all-past-hint">No screenings match your search</p>
+
+      {dayEntries.length === 0 && (
+        <p className="day-all-past-hint">No screenings match your search.</p>
       )}
     </div>
   )
 }
-
-export default ByDay

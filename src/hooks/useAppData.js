@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { normalizeCinemaEventIds, normalizeJazzEventIds } from '../utils/eventIdentity.js'
 
 const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C', pizza: '#E84830', tacos: '#7CB342' }
 
@@ -19,6 +20,8 @@ export function normalizeRestaurantData(food) {
     const category = restaurant.category || tier
     const priceRange = restaurant.priceRange || restaurant.price
     const price = restaurant.price || priceRange
+    const googleMapsUrl = restaurant.googleMapsUrl ||
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${restaurant.name} ${restaurant.address || restaurant.neighborhood || ''} Los Angeles`)}`
 
     return {
       ...restaurant,
@@ -26,6 +29,7 @@ export function normalizeRestaurantData(food) {
       category,
       priceRange,
       price,
+      googleMapsUrl,
       michelinStatus: restaurant.michelinStatus || (restaurant.bibGourmand ? 'bib-gourmand' : undefined),
       heatScore: restaurant.heatScore ?? restaurant.fire ?? 0,
       color: restaurant.color || TIER_COLORS[tier] || TIER_COLORS.feast,
@@ -57,25 +61,23 @@ export function useAppData() {
   const [bioData, setBioData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [refreshing, setRefreshing] = useState(false)
+  const guideRequest = useRef(null)
+  const bioRequest = useRef(null)
 
   const fetchData = useCallback((isRefresh = false) => {
     if (isRefresh) setRefreshing(true)
     const base = import.meta.env.BASE_URL
-    const t = Date.now()
+    const suffix = isRefresh ? `?t=${Date.now()}` : ''
 
     Promise.all([
-      fetchJson(base + 'theaters.json?t=' + t),
-      fetchJson(base + 'jazz-venues.json?t=' + t).catch(() => null),
-      fetchJson(base + 'restaurants.json?t=' + t).catch(() => null),
-      fetchJson(base + 'guide-restaurants.json?t=' + t).catch(() => null),
-      fetchJson(base + 'louis-cole-bio.json?t=' + t).catch(() => null),
+      fetchJson(base + 'theaters.json' + suffix),
+      fetchJson(base + 'jazz-venues.json' + suffix).catch(() => null),
+      fetchJson(base + 'restaurants.json' + suffix).catch(() => null),
     ])
-      .then(([cinemaData, jazz, food, guide, bio]) => {
-        setData(cinemaData)
-        if (jazz) setJazzData(jazz)
-        if (bio) setBioData(bio)
+      .then(([cinemaData, jazz, food]) => {
+        setData(normalizeCinemaEventIds(cinemaData))
+        if (jazz) setJazzData(normalizeJazzEventIds(jazz))
         if (food) setFoodData(normalizeRestaurantData(food))
-        if (guide) setGuideData(guide)
         setLoading(false)
         setRefreshing(false)
       })
@@ -86,11 +88,52 @@ export function useAppData() {
       })
   }, [])
 
+  const loadGuideData = useCallback(() => {
+    if (guideData) return Promise.resolve(guideData)
+    if (!guideRequest.current) {
+      guideRequest.current = fetchJson(`${import.meta.env.BASE_URL}guide-restaurants.json`)
+        .then(guide => {
+          setGuideData(guide)
+          return guide
+        })
+        .finally(() => {
+          guideRequest.current = null
+        })
+    }
+    return guideRequest.current
+  }, [guideData])
+
+  const loadBioData = useCallback(() => {
+    if (bioData) return Promise.resolve(bioData)
+    if (!bioRequest.current) {
+      bioRequest.current = fetchJson(`${import.meta.env.BASE_URL}louis-cole-bio.json`)
+        .then(bio => {
+          setBioData(bio)
+          return bio
+        })
+        .finally(() => {
+          bioRequest.current = null
+        })
+    }
+    return bioRequest.current
+  }, [bioData])
+
   useEffect(() => {
     // Client-only Vite app: initial data load happens after mount.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchData()
   }, [fetchData])
 
-  return { data, jazzData, foodData, guideData, bioData, loading, refreshing, fetchData }
+  return {
+    data,
+    jazzData,
+    foodData,
+    guideData,
+    bioData,
+    loading,
+    refreshing,
+    fetchData,
+    loadGuideData,
+    loadBioData,
+  }
 }

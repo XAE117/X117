@@ -22,7 +22,8 @@ import { scrapeEaterEssential } from './sources/eater-essential.js'
 import { scrapeInfatuationHitList } from './sources/infatuation-hitlist.js'
 import { scrapeResyHitList } from './sources/resy-hitlist.js'
 import { scrapeThrillistLA } from './sources/thrillist-la.js'
-import { scrapeMichelinGuide } from './sources/michelin-guide.js'
+import { getRestaurantMarketIssue } from './lib/restaurant-market.js'
+import { assertMinimumSuccessfulSources } from './lib/source-health.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -145,11 +146,59 @@ function deduplicateRestaurants(allRestaurants) {
   return Array.from(merged.values())
 }
 
-// ── Google Places neighborhood enrichment ──
-async function enrichNeighborhoods(restaurants) {
+function deduplicateRestaurantIds(restaurants) {
+  const merged = new Map()
+  for (const restaurant of restaurants) {
+    if (!merged.has(restaurant.id)) {
+      merged.set(restaurant.id, restaurant)
+      continue
+    }
+
+    const existing = merged.get(restaurant.id)
+    const sourceNames = new Set((existing.sources || []).map(source => source.name))
+    for (const source of restaurant.sources || []) {
+      if (!sourceNames.has(source.name)) {
+        existing.sources = [...(existing.sources || []), source]
+        sourceNames.add(source.name)
+      }
+    }
+    for (const [key, value] of Object.entries(restaurant)) {
+      if ((existing[key] === undefined || existing[key] === '' || existing[key] === null) && value) {
+        existing[key] = value
+      }
+    }
+  }
+  return [...merged.values()]
+}
+
+function formatGoogleHours(weekdayText) {
+  if (!Array.isArray(weekdayText)) return ''
+  return weekdayText
+    .map(line => line
+      .replace(/^Sunday:/, 'Sun')
+      .replace(/^Monday:/, 'Mon')
+      .replace(/^Tuesday:/, 'Tue')
+      .replace(/^Wednesday:/, 'Wed')
+      .replace(/^Thursday:/, 'Thu')
+      .replace(/^Friday:/, 'Fri')
+      .replace(/^Saturday:/, 'Sat')
+      .replace(/\u202f/g, ' ')
+      .replace(/\s+to\s+/gi, '–'))
+    .join(', ')
+}
+
+function assertPlacesResponse(data, operation) {
+  if (!data?.status || data.status === 'OK' || data.status === 'ZERO_RESULTS') return
+  throw new Error(
+    `Google Places ${operation} failed (${data.status}): ${data.error_message || 'unknown error'}`,
+  )
+}
+
+// ── Google Places planning-data enrichment ──
+async function enrichPlaceDetails(restaurants) {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
   if (!apiKey) {
-    console.log('  ⚠ GOOGLE_PLACES_API_KEY not set, skipping neighborhood enrichment')
+    console.log('  ⚠ GOOGLE_PLACES_API_KEY not set, skipping place enrichment')
     return
   }
 
@@ -159,101 +208,115 @@ async function enrichNeighborhoods(restaurants) {
     cache = JSON.parse(readFileSync(NEIGHBORHOOD_CACHE_PATH, 'utf8'))
   } catch { /* no cache yet */ }
 
-  const needsEnrichment = restaurants.filter(r => !r.neighborhood || r.neighborhood.trim() === '')
+  const needsEnrichment = restaurants.filter(r =>
+    !r.neighborhood?.trim()
+    || !Number.isFinite(r.lat)
+    || !Number.isFinite(r.lng)
+    || !r.hours
+  )
   if (needsEnrichment.length === 0) {
-    console.log('  All restaurants have neighborhoods, skipping enrichment')
+    console.log('  All restaurants have planning details, skipping place enrichment')
     return
   }
 
-  console.log(`\n  Enriching ${needsEnrichment.length} restaurants missing neighborhoods...`)
+  console.log(`\n  Enriching planning details for ${needsEnrichment.length} restaurants...`)
   let enriched = 0
+  let providerError = ''
 
   for (const r of needsEnrichment) {
     const normKey = r.name.toLowerCase().replace(/[^a-z0-9]/g, '')
-
-    // Check cache first
-    if (cache[normKey]) {
-      if (cache[normKey].neighborhood) {
-        r.neighborhood = cache[normKey].neighborhood
-        if (cache[normKey].address && !r.address) r.address = cache[normKey].address
-        enriched++
-      }
-      continue
-    }
+    const cached = cache[normKey] || {}
 
     try {
-      // Step 1: Find the place to get place_id
-      const query = encodeURIComponent(r.name + ' restaurant Los Angeles')
-      const findUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${query}&inputtype=textquery&fields=place_id,formatted_address,name&key=${apiKey}`
-      const findRes = await fetch(findUrl)
-      const findData = await findRes.json()
+      let placeId = cached.placeId
+      let address = cached.address || r.address || ''
+      let location = cached.location
 
-      if (findData.candidates && findData.candidates.length > 0) {
-        const candidate = findData.candidates[0]
-        const placeId = candidate.place_id
-        const address = candidate.formatted_address || ''
-
-        // Step 2: Use Place Details to get structured address_components
-        let neighborhood = ''
-        if (placeId) {
-          const detailUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=address_components&key=${apiKey}`
-          const detailRes = await fetch(detailUrl)
-          const detailData = await detailRes.json()
-
-          if (detailData.result?.address_components) {
-            const components = detailData.result.address_components
-            // Priority order: neighborhood > sublocality_level_1 > sublocality > locality
-            const hoodComp = components.find(c => c.types.includes('neighborhood'))
-              || components.find(c => c.types.includes('sublocality_level_1'))
-              || components.find(c => c.types.includes('sublocality'))
-            if (hoodComp) {
-              neighborhood = hoodComp.long_name
-            }
-            // Fallback: if no neighborhood but we have a locality that isn't "Los Angeles"
-            if (!neighborhood) {
-              const locality = components.find(c => c.types.includes('locality'))
-              if (locality && !/^los angeles$/i.test(locality.long_name)) {
-                neighborhood = locality.long_name
-              }
-            }
-          }
+      if (!placeId) {
+        const query = encodeURIComponent(`${r.name} ${r.address || r.neighborhood || ''} restaurant Los Angeles`)
+        const fields = 'place_id,formatted_address,name,geometry'
+        const findUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${query}&inputtype=textquery&fields=${fields}&key=${apiKey}`
+        const findData = await (await fetch(findUrl)).json()
+        assertPlacesResponse(findData, 'Find Place')
+        const candidate = findData.candidates?.[0]
+        if (!candidate) {
+          cache[normKey] = { ...cached, missCheckedAt: new Date().toISOString() }
+          continue
         }
-
-        // Final fallback: parse from formatted address
-        if (!neighborhood && address) {
-          const parts = address.split(',').map(s => s.trim())
-          if (parts.length >= 4) {
-            const candidate = parts[1]
-            if (!/^(los angeles|ca|california|\d)$/i.test(candidate) && candidate.length > 2) {
-              neighborhood = candidate
-            }
-          }
-        }
-
-        if (neighborhood) {
-          r.neighborhood = neighborhood
-          if (!r.address) r.address = address
-          cache[normKey] = { neighborhood, address }
-          enriched++
-        } else {
-          // Cache the miss so we don't re-query
-          cache[normKey] = { neighborhood: '', address }
-        }
-      } else {
-        // Not found — cache the miss
-        cache[normKey] = { neighborhood: '', address: '' }
+        placeId = candidate.place_id
+        address = candidate.formatted_address || address
+        location = candidate.geometry?.location || location
       }
 
-      // Rate limit: 5 requests per second (2 calls per restaurant)
+      if (!placeId) continue
+
+      const fields = 'address_components,formatted_address,geometry,opening_hours,url,website'
+      const detailUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${apiKey}`
+      const detailData = await (await fetch(detailUrl)).json()
+      assertPlacesResponse(detailData, 'Place Details')
+      const details = detailData.result || {}
+      address = details.formatted_address || address
+      location = details.geometry?.location || location
+
+      let neighborhood = cached.neighborhood || r.neighborhood || ''
+      if (details.address_components) {
+        const components = details.address_components
+        const hoodComp = components.find(c => c.types.includes('neighborhood'))
+          || components.find(c => c.types.includes('sublocality_level_1'))
+          || components.find(c => c.types.includes('sublocality'))
+        if (hoodComp) neighborhood = hoodComp.long_name
+        if (!neighborhood) {
+          const locality = components.find(c => c.types.includes('locality'))
+          if (locality && !/^los angeles$/i.test(locality.long_name)) {
+            neighborhood = locality.long_name
+          }
+        }
+      }
+
+      if (!neighborhood && address) {
+        const candidate = address.split(',').map(s => s.trim())[1]
+        if (candidate && !/^(los angeles|ca|california|\d)$/i.test(candidate)) {
+          neighborhood = candidate
+        }
+      }
+
+      const hours = formatGoogleHours(details.opening_hours?.weekday_text)
+      if (neighborhood) r.neighborhood = neighborhood
+      if (address) r.address = address
+      if (Number.isFinite(location?.lat) && Number.isFinite(location?.lng)) {
+        r.lat = location.lat
+        r.lng = location.lng
+      }
+      if (hours) r.hours = hours
+      if (details.url) r.googleMapsUrl = details.url
+      if (details.website && !r.website) r.website = details.website
+
+      cache[normKey] = {
+        placeId,
+        neighborhood,
+        address,
+        location,
+        hours,
+        googleMapsUrl: details.url || cached.googleMapsUrl || '',
+        checkedAt: new Date().toISOString(),
+      }
+      enriched++
+
+      // Keep within the legacy Places API's ordinary per-second rate.
       await new Promise(resolve => setTimeout(resolve, 200))
-    } catch {
-      // Skip this restaurant, don't fail the whole scrape
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
+      if (message.startsWith('Google Places')) {
+        providerError = message
+        break
+      }
     }
   }
 
   // Save cache
   writeFileSync(NEIGHBORHOOD_CACHE_PATH, JSON.stringify(cache, null, 2))
   console.log(`    → Enriched ${enriched}/${needsEnrichment.length} restaurants`)
+  if (providerError) console.warn(`    ⚠ ${providerError}`)
 }
 
 // ── Main orchestrator ──
@@ -282,64 +345,47 @@ async function main() {
 
   // ── Scrape sources ──
   const scraped = []
+  const sourceStatuses = []
+  const liveSources = [
+    { name: 'Eater LA Heatmap', group: 'hot', run: scrapeEaterHeatmap },
+    { name: 'Infatuation Hit List', group: 'hot', run: scrapeInfatuationHitList },
+    ...(!isHotOnly ? [
+      { name: 'Eater Essential 38', group: 'full', run: scrapeEaterEssential },
+      { name: 'Resy Hit List', group: 'full', run: scrapeResyHitList },
+      { name: 'Thrillist LA', group: 'full', run: scrapeThrillistLA },
+    ] : []),
+  ]
 
-  // Hot sources (always scraped)
-  try {
-    console.log('\n  Scraping Eater LA Heatmap...')
-    const eaterHot = await scrapeEaterHeatmap()
-    scraped.push(...eaterHot)
-    console.log(`    → ${eaterHot.length} restaurants`)
-  } catch (err) {
-    console.error('    ✗ Eater Heatmap failed:', err.message)
-  }
-
-  try {
-    console.log('  Scraping Infatuation Hit List...')
-    const infatuation = await scrapeInfatuationHitList()
-    scraped.push(...infatuation)
-    console.log(`    → ${infatuation.length} restaurants`)
-  } catch (err) {
-    console.error('    ✗ Infatuation Hit List failed:', err.message)
-  }
-
-  // Full scrape sources
-  if (!isHotOnly) {
+  for (const source of liveSources) {
+    console.log(`  Scraping ${source.name}...`)
     try {
-      console.log('  Scraping Eater Essential 38...')
-      const eaterEssential = await scrapeEaterEssential()
-      scraped.push(...eaterEssential)
-      console.log(`    → ${eaterEssential.length} restaurants`)
+      const results = await source.run()
+      if (!Array.isArray(results) || results.length === 0) {
+        throw new Error('source returned no restaurant records')
+      }
+      scraped.push(...results)
+      sourceStatuses.push({
+        name: source.name,
+        group: source.group,
+        status: 'ok',
+        count: results.length,
+      })
+      console.log(`    → ${results.length} restaurants`)
     } catch (err) {
-      console.error('    ✗ Eater Essential 38 failed:', err.message)
-    }
-
-    try {
-      console.log('  Scraping Resy Hit List...')
-      const resy = await scrapeResyHitList()
-      scraped.push(...resy)
-      console.log(`    → ${resy.length} restaurants`)
-    } catch (err) {
-      console.error('    ✗ Resy Hit List failed:', err.message)
-    }
-
-    try {
-      console.log('  Scraping Thrillist LA...')
-      const thrillist = await scrapeThrillistLA()
-      scraped.push(...thrillist)
-      console.log(`    → ${thrillist.length} restaurants`)
-    } catch (err) {
-      console.error('    ✗ Thrillist LA failed:', err.message)
-    }
-
-    try {
-      console.log('  Scraping Michelin Guide (live)...')
-      const michelinLive = await scrapeMichelinGuide()
-      scraped.push(...michelinLive)
-      console.log(`    → ${michelinLive.length} restaurants`)
-    } catch (err) {
-      console.error('    ✗ Michelin Guide failed:', err.message)
+      const error = err instanceof Error ? err.message : String(err)
+      sourceStatuses.push({
+        name: source.name,
+        group: source.group,
+        status: 'error',
+        count: 0,
+        error,
+      })
+      console.error(`    ✗ ${source.name} failed:`, error)
     }
   }
+
+  const requiredSuccesses = isHotOnly ? 1 : 2
+  const successfulSources = assertMinimumSuccessfulSources(sourceStatuses, requiredSuccesses)
 
   // ── Load Michelin seed data and merge as source ──
   try {
@@ -391,21 +437,62 @@ async function main() {
   })
   console.log(`    → ${cleaned.length} after junk filter (removed ${deduplicated.length - cleaned.length})`)
 
+  // ── Reject records outside SIXPM's Greater LA + Orange County market ──
+  const marketChecks = cleaned
+    .map(restaurant => ({ restaurant, issue: getRestaurantMarketIssue(restaurant) }))
+  const rejectedOutOfMarket = marketChecks.filter(({ issue }) => issue)
+  const inMarket = marketChecks
+    .filter(({ issue }) => !issue)
+    .map(({ restaurant }) => restaurant)
+  if (rejectedOutOfMarket.length > 0) {
+    console.log(`    → Rejected ${rejectedOutOfMarket.length} out-of-market restaurants`)
+    for (const { restaurant, issue } of rejectedOutOfMarket) {
+      console.log(`      - ${restaurant.name}: ${issue}`)
+    }
+  }
+
   // ── Classify tiers and calculate heat scores ──
-  for (const r of cleaned) {
+  for (const r of inMarket) {
     r.tier = r.tier || classifyTier(r)
     r.sourceCount = r.sources?.length || 0
     r.heatScore = calculateHeatScore(r.sources || [])
     r.id = r.id || slugify(r.name, r.neighborhood)
+    if (r.id === 'leo-taqueria-eagle-rock') r.id = 'leos-taco-truck-hollywood'
+  }
+  const uniqueById = deduplicateRestaurantIds(inMarket)
+  if (uniqueById.length !== inMarket.length) {
+    console.log(`    → Merged ${inMarket.length - uniqueById.length} duplicate restaurant IDs`)
+    inMarket.splice(0, inMarket.length, ...uniqueById)
   }
 
-  // ── Enrich missing neighborhoods via Google Places ──
-  await enrichNeighborhoods(cleaned)
+  // ── Enrich coordinates, hours, and neighborhoods via Google Places ──
+  await enrichPlaceDetails(inMarket)
+
+  // Enrichment can reveal that an ambiguous name matched a place outside the
+  // market. It can also leave a source-only name with no location evidence.
+  // Neither is trustworthy enough to publish.
+  for (let index = inMarket.length - 1; index >= 0; index--) {
+    const restaurant = inMarket[index]
+    const issue = getRestaurantMarketIssue(restaurant)
+    if (issue) {
+      console.log(`    → Rejected ${restaurant.name} after enrichment: ${issue}`)
+      inMarket.splice(index, 1)
+      continue
+    }
+    const hasLocationEvidence = Boolean(
+      restaurant.neighborhood?.trim()
+      || restaurant.address?.trim()
+      || (Number.isFinite(restaurant.lat) && Number.isFinite(restaurant.lng)),
+    )
+    if (!hasLocationEvidence) {
+      inMarket.splice(index, 1)
+    }
+  }
 
   // ── Scrape diff: detect added/removed, preserve addedDate ──
   const previousIds = new Set(existing.restaurants.map(r => r.id))
-  const currentIds = new Set(cleaned.map(r => r.id))
-  const added = cleaned.filter(r => !previousIds.has(r.id))
+  const currentIds = new Set(inMarket.map(r => r.id))
+  const added = inMarket.filter(r => !previousIds.has(r.id))
   const removed = [...previousIds].filter(id => !currentIds.has(id))
 
   // Set addedDate on new entries
@@ -415,7 +502,7 @@ async function main() {
   }
 
   // Preserve addedDate from previous data
-  for (const r of cleaned) {
+  for (const r of inMarket) {
     const prev = existing.restaurants.find(p => p.id === r.id)
     if (prev?.addedDate && !r.addedDate) r.addedDate = prev.addedDate
   }
@@ -423,13 +510,13 @@ async function main() {
   // ── Determine "new this month" ──
   const thirtyDaysAgo = new Date()
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
-  const newThisMonth = cleaned
+  const newThisMonth = inMarket
     .filter(r => r.isNew || (r.addedDate && new Date(r.addedDate) >= thirtyDaysAgo))
     .map(r => r.id)
 
   // ── Tier stats ──
   const tiers = { street: 0, feast: 0, whale: 0 }
-  for (const r of cleaned) tiers[r.tier]++
+  for (const r of inMarket) tiers[r.tier]++
   console.log(`\n  Tiers: ${tiers.street} street, ${tiers.feast} feast, ${tiers.whale} whale`)
   console.log(`  New this month: ${newThisMonth.length}`)
   if (added.length > 0) console.log(`  Added: ${added.map(r => r.name).join(', ')}`)
@@ -439,8 +526,11 @@ async function main() {
   const log = {
     timestamp: new Date().toISOString(),
     mode: isHotOnly ? 'hot' : 'full',
-    sourcesScraped: scraped.length,
-    totalRestaurants: cleaned.length,
+    sourcesAttempted: sourceStatuses.length,
+    sourcesSucceeded: successfulSources.length,
+    sourceStatuses,
+    recordsScraped: scraped.length,
+    totalRestaurants: inMarket.length,
     added: added.map(r => r.name),
     removed,
     tiers,
@@ -452,11 +542,11 @@ async function main() {
     lastUpdated: new Date().toISOString(),
     lastFullScrape: isHotOnly ? existing.lastFullScrape : new Date().toISOString(),
     newThisMonth,
-    restaurants: cleaned,
+    restaurants: inMarket,
   }
 
   writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2))
-  console.log(`\n  ✓ Wrote ${cleaned.length} restaurants to ${OUTPUT_PATH}\n`)
+  console.log(`\n  ✓ Wrote ${inMarket.length} restaurants to ${OUTPUT_PATH}\n`)
 }
 
 main().catch(err => {
