@@ -78,7 +78,7 @@ The resulting principle is **commitment before catalog**:
 
 ## Verification snapshot
 
-- Unit tests: **41 passing**
+- Unit tests: **45 passing**
 - Desktop/mobile Playwright journeys: **36 passing**
 - Accessibility Lighthouse score: **100**
 - Best Practices Lighthouse score: **100**
