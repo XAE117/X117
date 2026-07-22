@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T11:46:51.690Z",
+  "lastUpdated": "2026-07-22T11:47:31.117Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-07-21-magnus-friends-residency",
-          "artist": "Magnus & Friends Residency",
-          "date": "2026-07-21",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/magnus-friends-residency/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-07-22-katalyst-friends-the-summer-vi",
           "artist": "Katalyst & Friends: The Summer Vibe",
@@ -289,18 +280,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-07-21-kevin-kanner-tuesday-happening",
+          "id": "sam-first-2026-07-22-kevin-kanner-tuesday-happening",
           "artist": "Kevin Kanner Tuesday Happenings Jam Session",
-          "date": "2026-07-21",
+          "date": "2026-07-22",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-07-21-martin-nevin",
+          "id": "sam-first-2026-07-22-martin-nevin",
           "artist": "Martin Nevin",
-          "date": "2026-07-21",
+          "date": "2026-07-22",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-07-22-tim-rachbach",
+          "artist": "Tim Rachbach",
+          "date": "2026-07-22",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -319,30 +319,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-07-21-brent-fischer-orchestra",
-          "artist": "Brent Fischer Orchestra",
-          "date": "2026-07-21",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-07-21-terrell-edwards",
-          "artist": "Terrell Edwards",
-          "date": "2026-07-21",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-07-22-terrell-edwards-unforgettable-",
           "artist": "Terrell Edwards  - \"Unforgettable\"",
           "date": "2026-07-22",
           "time": "11:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/trgdy77arwwsgm6r446m4jfdtae6jm",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-07-22-brent-fischer-orchestra",
+          "artist": "Brent Fischer Orchestra",
+          "date": "2026-07-22",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-07-22-terrell-edwards",
+          "artist": "Terrell Edwards",
+          "date": "2026-07-22",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -654,6 +654,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-07-22-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-07-22",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -900,6 +921,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-08-22-neon-moon-an-la-honky-tonk",
+          "artist": "Neon Moon-an LA Honky Tonk",
+          "date": "2026-08-22",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/neon-moon-an-la-honky-tonk-2/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-08-23-jeff-parker-eta-ivtet-happy-to",
           "artist": "Jeff Parker ETA IVtet 'Happy Today' Album Release Shows In The Round",
           "date": "2026-08-23",
@@ -960,6 +990,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/los-abandoned-mixtape-20th-anniversary-celebration/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-09-01-don-t-stop-or-we-ll-die",
+          "artist": "Don't Stop Or We'll Die",
+          "date": "2026-09-01",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/dont-stop-or-well-die-4/",
           "hot": true
         },
         {
@@ -1467,12 +1506,30 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-11-20-yana-the-feelings-are-forever-",
+          "artist": "YANA – The Feelings Are Forever Tour",
+          "date": "2026-11-20",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/yana-the-feelings-are-forever-tour/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-11-21-bayonne-the-filters-tour",
           "artist": "Bayonne-The Filters Tour",
           "date": "2026-11-21",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/bayonne-the-filters-tour/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-12-08-mark-guiliana-beat-music",
+          "artist": "Mark Guiliana BEAT MUSIC",
+          "date": "2026-12-08",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/mark-guiliana-beat-music/",
           "hot": true
         },
         {
@@ -1580,27 +1637,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-07-21-jordan-proffer",
-          "artist": "Jordan Proffer",
-          "date": "2026-07-21",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -1667,27 +1703,6 @@
       ]
     },
     {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-07-21-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-07-21",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1698,48 +1713,39 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-07-21-roberta-gambarini-tamir-hendel",
-          "artist": "Roberta Gambarini & Tamir Hendelman",
-          "date": "2026-07-21",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1029",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-07-21-jazz-pass-august-2026",
-          "artist": "Jazz Pass August 2026",
-          "date": "2026-07-21",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/5",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-07-21-jazz-pass-september-2026",
-          "artist": "Jazz Pass September 2026",
-          "date": "2026-07-21",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/6",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-07-21-jazz-pass-october-2026",
-          "artist": "Jazz Pass October 2026",
-          "date": "2026-07-21",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-07-22-oc-searches-for-the-greatest-s",
           "artist": "OC Searches for The Greatest Storyteller",
           "date": "2026-07-22",
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/872",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-22-jazz-pass-august-2026",
+          "artist": "Jazz Pass August 2026",
+          "date": "2026-07-22",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/5",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-22-jazz-pass-september-2026",
+          "artist": "Jazz Pass September 2026",
+          "date": "2026-07-22",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/6",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-07-22-jazz-pass-october-2026",
+          "artist": "Jazz Pass October 2026",
+          "date": "2026-07-22",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
           "hot": false
         },
         {
@@ -2545,7 +2551,7 @@
         },
         {
           "id": "campus-jax-2027-01-09-every-story-has-a-song-an-even",
-          "artist": "Every Story has a Song - An Evening with Steven Michael",
+          "artist": "Every Story Has a Song - An Evening with Steven Michael",
           "date": "2027-01-09",
           "time": "8:00 PM",
           "notes": "",
