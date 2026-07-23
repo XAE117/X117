@@ -1,11 +1,14 @@
-import * as AstronomyModule from 'astronomy-engine'
+import { createRequire } from 'node:module'
+
+const require = createRequire(import.meta.url)
+const Astronomy = require('astronomy-engine')
 
 const {
   Body,
   Ecliptic,
   GeoVector,
   MoonPhase,
-} = AstronomyModule.default || AstronomyModule
+} = Astronomy
 
 export const LIFE_PROJECTS_DATABASE_ID = 'd54d374d-bf65-4e52-955e-22138623388c'
 export const BODY_SIGNALS_DATABASE_ID = '01a5184fc8c340e0a0545ab4b0881585'
