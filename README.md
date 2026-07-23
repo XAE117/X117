@@ -17,6 +17,9 @@ Production: [sixpm.vercel.app](https://sixpm.vercel.app)
 - **Saved**: local film/jazz watchlist and starred restaurants
 - **Guides**: editorial taco, pizza, and artist essays, loaded only when opened
 - **Installable**: responsive PWA with bounded offline caching
+- **Morning Console**: a private refresh-driven briefing at
+  `/morning-console` that combines Notion projects, Toggl effort, body signals,
+  and a clearly labeled symbolic astrology layer
 
 SIXPM does not invent availability. Restaurants without coordinates or usable
 hours can be browsed, but they are excluded from generated plans.
@@ -90,6 +93,15 @@ Morning Console API variables:
 - `NOTION_API_KEY`
 - `NOTION_BODY_SIGNALS_DATABASE_ID`
 - `MORNING_CONSOLE_SECRET`
+- `TOGGL_API_TOKEN`
+
+The Morning Console keeps Notion and Toggl credentials server-side. Its private
+access key is stored only in the local browser. Momentum Streaks currently keeps
+its history in that app's browser storage, so the console reports it as
+device-only instead of claiming a live sync. The coaching language is reflective
+planning support, not therapy or medical care. Astrological material is an
+optional symbolic lens and does not override health, legal, financial, or safety
+decisions.
 
 Before production:
 

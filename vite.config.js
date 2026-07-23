@@ -1,6 +1,8 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
 import { submitBodySignals, verifyMorningSecret } from './api/body-signals.js'
+import { buildMorningBrief } from './api/lib/morning-brief.js'
 
 function readRequestBody(req) {
   return new Promise((resolve, reject) => {
@@ -66,12 +68,45 @@ function bodySignalsApi(env) {
   }
 }
 
+function morningBriefApi(env) {
+  return {
+    name: 'morning-brief-api',
+    configureServer(server) {
+      server.middlewares.use('/api/morning-brief', async (req, res, next) => {
+        if (req.method !== 'GET') {
+          next()
+          return
+        }
+
+        if (!verifyMorningSecret(req.headers['x-morning-secret'], env)) {
+          sendJson(res, 401, { ok: false, error: 'Enter the Morning Console access key.' })
+          return
+        }
+
+        try {
+          sendJson(res, 200, await buildMorningBrief(env))
+        } catch (error) {
+          sendJson(res, 500, { ok: false, error: error.message })
+        }
+      })
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = { ...process.env, ...loadEnv(mode, process.cwd(), '') }
 
   return {
-    plugins: [react(), bodySignalsApi(env)],
+    plugins: [react(), bodySignalsApi(env), morningBriefApi(env)],
     base: env.VITE_BASE_PATH || '/X117/',
+    build: {
+      rollupOptions: {
+        input: {
+          main: resolve(process.cwd(), 'index.html'),
+          morningConsole: resolve(process.cwd(), 'morning-console.html'),
+        },
+      },
+    },
   }
 })
