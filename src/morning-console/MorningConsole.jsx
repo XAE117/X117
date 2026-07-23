@@ -558,6 +558,9 @@ export default function MorningConsole() {
                 <div className="effort-total">
                   <strong>{duration(brief.toggl.totalSeconds)}</strong>
                   <span>{brief.toggl.sessions} tracked sessions</span>
+                  {brief.toggl.restSeconds > 0 && (
+                    <span>{duration(brief.toggl.restSeconds)} restorative tracking separated</span>
+                  )}
                 </div>
                 <div className="effort-list">
                   {brief.toggl.topProjects.slice(0, 4).map((project) => (

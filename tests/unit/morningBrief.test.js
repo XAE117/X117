@@ -80,14 +80,22 @@ describe('Morning Console briefing', () => {
         description: 'Current work',
         project_id: 2,
       },
+      {
+        start: '2026-07-21T08:00:00.000Z',
+        stop: '2026-07-21T16:00:00.000Z',
+        duration: 28_800,
+        project_id: 3,
+      },
     ]
     const summary = summarizeToggl(entries, [
       { id: 1, name: 'Editing Reel' },
       { id: 2, name: 'Morning Console' },
+      { id: 3, name: 'SLEEP' },
     ], now)
 
     expect(summary.totalSeconds).toBe(3600)
     expect(summary.sessions).toBe(1)
+    expect(summary.restSeconds).toBe(28_800)
     expect(summary.topProjects[0]).toMatchObject({ name: 'Editing Reel', seconds: 3600 })
     expect(summary.running).toMatchObject({ description: 'Current work', project: 'Morning Console' })
   })

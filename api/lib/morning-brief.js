@@ -346,10 +346,16 @@ export function summarizeToggl(entries, projects = [], now = new Date()) {
   const projectNames = new Map((projects || []).map((project) => [String(project.id), project.name]))
   const weekStart = now.getTime() - 7 * DAY_MS
   const completed = (entries || []).filter((entry) => entry?.stop && Date.parse(entry.start) >= weekStart)
+  const isRestEntry = (entry) => {
+    const label = projectNames.get(String(entry.project_id)) || entry.description || ''
+    return /(^|[/\s_-])(sleep|rest)([/\s_-]|$)/i.test(label)
+  }
+  const activeEntries = completed.filter((entry) => !isRestEntry(entry))
+  const restEntries = completed.filter(isRestEntry)
   const running = (entries || []).find((entry) => !entry?.stop && Number(entry?.duration) < 0) || null
   const buckets = new Map()
 
-  for (const entry of completed) {
+  for (const entry of activeEntries) {
     const label = projectNames.get(String(entry.project_id)) || entry.description || 'Unassigned'
     const seconds = durationSeconds(entry, now.getTime())
     const bucket = buckets.get(label) || { name: label, seconds: 0, sessions: 0 }
@@ -358,11 +364,13 @@ export function summarizeToggl(entries, projects = [], now = new Date()) {
     buckets.set(label, bucket)
   }
 
-  const totalSeconds = completed.reduce((sum, entry) => sum + durationSeconds(entry, now.getTime()), 0)
+  const totalSeconds = activeEntries.reduce((sum, entry) => sum + durationSeconds(entry, now.getTime()), 0)
+  const restSeconds = restEntries.reduce((sum, entry) => sum + durationSeconds(entry, now.getTime()), 0)
   return {
     windowDays: 7,
     totalSeconds,
-    sessions: completed.length,
+    restSeconds,
+    sessions: activeEntries.length,
     topProjects: [...buckets.values()]
       .sort((a, b) => b.seconds - a.seconds)
       .slice(0, 5),
@@ -381,6 +389,12 @@ function projectMatchesEffort(project, effort) {
   const projectWords = normalizeName(project.name).split(' ').filter((word) => word.length > 3)
   const effortName = normalizeName(effort.name)
   return projectWords.some((word) => effortName.includes(word))
+}
+
+function effortLabelIsBroad(effort) {
+  return /^(creative|work|admin|writing|personal|general)(\/general)?$/i.test(
+    String(effort?.name || '').trim()
+  )
 }
 
 export function buildCoachBrief({ projects, toggl, body, astrology }) {
@@ -403,9 +417,13 @@ export function buildCoachBrief({ projects, toggl, body, astrology }) {
 
   let pattern = 'Not enough recent effort data is available to compare intention with time.'
   if (leadingEffort && primary) {
-    pattern = effortAligned
-      ? `Recent effort is aligned: ${leadingEffort.name} is leading the last seven days.`
-      : `Recent effort is concentrated in ${leadingEffort.name}, while the current lock is ${primary.name}. Check whether that is a real obligation or displacement.`
+    if (effortLabelIsBroad(leadingEffort)) {
+      pattern = `Recent effort is concentrated in ${leadingEffort.name}. That may support ${primary.name}, but the Toggl label is too broad to verify alignment.`
+    } else {
+      pattern = effortAligned
+        ? `Recent effort is aligned: ${leadingEffort.name} is leading the last seven days.`
+        : `Recent effort is concentrated in ${leadingEffort.name}, while the current lock is ${primary.name}. Check whether that is a real obligation or displacement.`
+    }
   }
 
   return {
