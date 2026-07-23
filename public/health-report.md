@@ -1,27 +1,27 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-22 11:47 UTC_
+_Generated 2026-07-23 11:51 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 2 theaters with 0 future screenings: Laemmle Nuart Theatre, Cinespia
+- **[Cinema (theaters.json)]** 2 theaters with 0 future screenings: Cinespia, 2220 Arts + Archives
 
 ## Cinema (theaters.json)
-- Last updated: 2026-07-22 (today)
+- Last updated: 2026-07-23 (today)
 - 29 theaters tracked, 27 with future screenings
-- 1820 future screenings, horizon 40 days
-- ⚠️ 2 theaters with 0 screenings: Laemmle Nuart Theatre, Cinespia
+- 1831 future screenings, horizon 39 days
+- ⚠️ 2 theaters with 0 screenings: Cinespia, 2220 Arts + Archives
 - 7 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-22 (today)
+- Last updated: 2026-07-23 (today)
 - 9 venues, 9 with future shows
-- 274 future shows, horizon 271 days
+- 290 future shows, horizon 270 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-07-19 (3 days ago)
+- Last updated: 2026-07-19 (4 days ago)
 - 230 restaurants tracked
 - Planning coverage: 219/230 coordinates, 21/230 hours, 61/230 descriptions
 - Lineup-ready: 21 restaurants across 16 neighborhoods; at least 10 open at 6 PM on each of the next 7 days
