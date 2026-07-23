@@ -57,6 +57,16 @@ function readCachedBrief() {
   }
 }
 
+function readBootSecret() {
+  const hash = window.location.hash.startsWith('#') ? window.location.hash.slice(1) : ''
+  const value = new URLSearchParams(hash).get('access_key')
+  if (!value) return readLocal(SECRET_KEY, '')
+
+  writeLocal(SECRET_KEY, value)
+  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+  return value
+}
+
 function duration(seconds) {
   if (!Number.isFinite(seconds) || seconds <= 0) return '0m'
   const hours = Math.floor(seconds / 3600)
@@ -266,7 +276,7 @@ function EmptyConsole({ onOpenSettings }) {
 }
 
 export default function MorningConsole() {
-  const [secret, setSecretState] = useState(() => readLocal(SECRET_KEY, ''))
+  const [secret, setSecretState] = useState(readBootSecret)
   const [brief, setBrief] = useState(readCachedBrief)
   const [momentumSummary, setMomentumSummary] = useState(() => {
     const value = readLocal(MOMENTUM_CACHE_KEY)
