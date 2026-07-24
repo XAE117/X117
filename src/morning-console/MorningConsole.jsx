@@ -158,17 +158,30 @@ function ConnectorStrip({ connectors = [], momentum, momentumSummary }) {
   )
 }
 
-function SettingsPanel({ secret, setSecret, onClose }) {
+function SettingsPanel({ secret, setSecret, onClose, onSave }) {
+  function submit(event) {
+    event.preventDefault()
+    if (!secret.trim()) return
+    onSave()
+  }
+
   return (
     <div className="settings-backdrop" role="presentation" onMouseDown={onClose}>
-      <section
+      <form
         className="settings-panel"
         role="dialog"
         aria-modal="true"
         aria-labelledby="settings-title"
         onMouseDown={(event) => event.stopPropagation()}
+        onSubmit={submit}
       >
-        <button className="icon-button close-button" onClick={onClose} aria-label="Close settings" title="Close">
+        <button
+          className="icon-button close-button"
+          type="button"
+          onClick={onClose}
+          aria-label="Close settings"
+          title="Close"
+        >
           <X size={18} />
         </button>
         <p className="micro-label">CONNECTION</p>
@@ -178,6 +191,7 @@ function SettingsPanel({ secret, setSecret, onClose }) {
           <input
             type="password"
             autoComplete="current-password"
+            autoFocus
             value={secret}
             onChange={(event) => setSecret(event.target.value)}
           />
@@ -185,12 +199,16 @@ function SettingsPanel({ secret, setSecret, onClose }) {
         <p className="boundary-note">
           The key stays in this browser. Notion and Toggl credentials remain on the server.
         </p>
+        <button className="primary-button settings-save-button" type="submit" disabled={!secret.trim()}>
+          <RefreshCw size={17} />
+          Save &amp; connect
+        </button>
         <div className="boundary-block">
           <strong>Interpretive boundaries</strong>
           <p>Coaching is reflective planning support, not therapy or medical care.</p>
           <p>Astrology and chaos magick are optional symbolic lenses, not evidence or decision authorities.</p>
         </div>
-      </section>
+      </form>
     </div>
   )
 }
@@ -325,6 +343,11 @@ export default function MorningConsole() {
     }
   }, [secret])
 
+  const saveSettings = useCallback(() => {
+    setSettingsOpen(false)
+    void refresh()
+  }, [refresh])
+
   useEffect(() => {
     if (secret && !brief) refresh()
   }, [brief, refresh, secret])
@@ -409,6 +432,7 @@ export default function MorningConsole() {
             secret={secret}
             setSecret={setSecret}
             onClose={() => setSettingsOpen(false)}
+            onSave={saveSettings}
           />
         )}
       </>
@@ -675,6 +699,7 @@ export default function MorningConsole() {
           secret={secret}
           setSecret={setSecret}
           onClose={() => setSettingsOpen(false)}
+          onSave={saveSettings}
         />
       )}
     </main>
