@@ -1,27 +1,27 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-07-28 11:56 UTC_
+_Generated 2026-07-29 12:00 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 5 theaters with 0 future screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, El Capitan Theatre, Landmark Sunset Hollywood
+- **[Cinema (theaters.json)]** 4 theaters with 0 future screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, Landmark Sunset Hollywood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-07-28 (today)
-- 28 theaters tracked, 23 with future screenings
-- 1740 future screenings, horizon 59 days
-- ⚠️ 5 theaters with 0 screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, El Capitan Theatre, Landmark Sunset Hollywood
-- 8 unavailable or occasional venues monitored outside the active catalog
+- Last updated: 2026-07-29 (today)
+- 29 theaters tracked, 25 with future screenings
+- 1793 future screenings, horizon 58 days
+- ⚠️ 4 theaters with 0 screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, Landmark Sunset Hollywood
+- 7 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-07-28 (today)
-- 9 venues, 9 with future shows
-- 264 future shows, horizon 265 days
+- Last updated: 2026-07-29 (today)
+- 8 venues, 8 with future shows
+- 277 future shows, horizon 264 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-07-26 (2 days ago)
+- Last updated: 2026-07-26 (3 days ago)
 - 230 restaurants tracked
 - Planning coverage: 219/230 coordinates, 21/230 hours, 61/230 descriptions
 - Lineup-ready: 21 restaurants across 16 neighborhoods; at least 10 open at 6 PM on each of the next 7 days
