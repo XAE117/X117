@@ -1,6 +1,6 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-08-02 10:29 UTC_
+_Generated 2026-08-02 11:16 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -11,14 +11,14 @@ _Generated 2026-08-02 10:29 UTC_
 ## Cinema (theaters.json)
 - Last updated: 2026-08-02 (today)
 - 31 theaters tracked, 27 with future screenings
-- 1545 future screenings, horizon 54 days
+- 1596 future screenings, horizon 54 days
 - ⚠️ 4 theaters with 0 screenings: Laemmle Nuart Theatre, Secret Movie Club, Cinespia, Landmark Sunset Hollywood
 - 5 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-08-02 (today)
 - 9 venues, 9 with future shows
-- 317 future shows, horizon 364 days
+- 317 future shows, horizon 260 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-08-02 (today)
