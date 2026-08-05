@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04T12:02:34.308Z",
+  "lastUpdated": "2026-08-05T11:58:40.730Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -523,18 +523,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-08-04-gerald-clayton-tuesday-happeni",
+          "id": "sam-first-2026-08-05-gerald-clayton-tuesday-happeni",
           "artist": "Gerald Clayton Tuesday Happenings Jam Session",
-          "date": "2026-08-04",
+          "date": "2026-08-05",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-08-04-ian-coury",
+          "id": "sam-first-2026-08-05-ian-coury",
           "artist": "Ian Coury",
-          "date": "2026-08-04",
+          "date": "2026-08-05",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-08-05-pritesh-walla-henry-godfrey-bi",
+          "artist": "Pritesh Walla/Henry Godfrey Big Band",
+          "date": "2026-08-05",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -553,39 +562,39 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-08-04-the-tom-kubis-big-band-featuri",
-          "artist": "The Tom Kubis Big Band featuring Nicole Kubis",
-          "date": "2026-08-04",
-          "time": "11:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/the-tom-kubis-big-band-featuring-nicole-kubis",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-04-tom-kubis-big-band",
-          "artist": "Tom Kubis Big Band",
-          "date": "2026-08-04",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-04-john-proulx-marina-pacowski",
-          "artist": "John Proulx & Marina Pacowski",
-          "date": "2026-08-04",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-08-05-john-proulx-marina-pacowski-fe",
           "artist": "John Proulx & Marina Pacowski featuring Roy McCurdy & All-Star Band",
           "date": "2026-08-05",
           "time": "11:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/john-proulx-marina-pacowski-feat-roy-mccurdy-all-star-band",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-08-05-seth-macfarlane-his-chamber-or",
+          "artist": "Seth MacFarlane & His Chamber Orchestra",
+          "date": "2026-08-05",
+          "time": "6:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-08-05-tom-kubis-big-band",
+          "artist": "Tom Kubis Big Band",
+          "date": "2026-08-05",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-08-05-john-proulx-marina-pacowski",
+          "artist": "John Proulx & Marina Pacowski",
+          "date": "2026-08-05",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -1014,6 +1023,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-08-05-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-08-05",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -1179,21 +1209,21 @@
           "hot": true
         },
         {
-          "id": "lodge-room-2026-08-22-crack-cloud-canceled",
-          "artist": "Crack Cloud – CANCELED",
-          "date": "2026-08-22",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/crack-cloud-3/",
-          "hot": true
-        },
-        {
           "id": "lodge-room-2026-08-22-neon-moon-an-la-honky-tonk",
           "artist": "Neon Moon-an LA Honky Tonk",
           "date": "2026-08-22",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/neon-moon-an-la-honky-tonk-2/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2026-08-22-crack-cloud-canceled",
+          "artist": "Crack Cloud – CANCELED",
+          "date": "2026-08-22",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/crack-cloud-3/",
           "hot": true
         },
         {
@@ -1964,27 +1994,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-08-04-logan-kane",
-          "artist": "Logan Kane",
-          "date": "2026-08-04",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "the-mint",
       "name": "The Mint",
       "shortName": "The Mint",
@@ -2060,27 +2069,6 @@
       ]
     },
     {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-08-04-jacques-lesure-jam-session",
-          "artist": "Jacques Lesure Jam Session",
-          "date": "2026-08-04",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -2091,36 +2079,27 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-08-04-shannon-kain-and-band-a-specia",
-          "artist": "Shannon Kain and Band — A Special JAX SongStage Album Celebration",
-          "date": "2026-08-04",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1113",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-08-04-jazz-pass-august-2026",
+          "id": "campus-jax-2026-08-05-jazz-pass-august-2026",
           "artist": "Jazz Pass August 2026",
-          "date": "2026-08-04",
+          "date": "2026-08-05",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/5",
           "hot": false
         },
         {
-          "id": "campus-jax-2026-08-04-jazz-pass-september-2026",
+          "id": "campus-jax-2026-08-05-jazz-pass-september-2026",
           "artist": "Jazz Pass September 2026",
-          "date": "2026-08-04",
+          "date": "2026-08-05",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/6",
           "hot": false
         },
         {
-          "id": "campus-jax-2026-08-04-jazz-pass-october-2026",
+          "id": "campus-jax-2026-08-05-jazz-pass-october-2026",
           "artist": "Jazz Pass October 2026",
-          "date": "2026-08-04",
+          "date": "2026-08-05",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/7",
@@ -2343,8 +2322,8 @@
           "hot": false
         },
         {
-          "id": "campus-jax-2026-09-03-tony-guerrero-with-strings",
-          "artist": "Tony Guerrero with Strings",
+          "id": "campus-jax-2026-09-03-tony-guerrero-strings",
+          "artist": "Tony Guerrero & Strings",
           "date": "2026-09-03",
           "time": "6:30 PM",
           "notes": "",
@@ -2667,6 +2646,15 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2026-11-01-michael-o-mara-s-rockshow-inc-",
+          "artist": "Michael O’Mara’s RockShow Inc.",
+          "date": "2026-11-01",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1134",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2026-11-05-tony-guerrero-friends",
           "artist": "Tony Guerrero & Friends",
           "date": "2026-11-05",
@@ -2691,6 +2679,24 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/818",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-11-08-campus-jax-classic-vinyl-serie",
+          "artist": "Campus JAX Classic Vinyl Series: Led Zeppelin IV",
+          "date": "2026-11-08",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1135",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-11-10-steve-miller-s-birthday-party-",
+          "artist": "Steve Miller’s Birthday Party with MPG and Open Rebellion",
+          "date": "2026-11-10",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1133",
           "hot": false
         },
         {
@@ -2943,6 +2949,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1119",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2027-02-20-led-zeppelin-tribute-zeppelin-",
+          "artist": "Led Zeppelin Tribute Zeppelin Revisited",
+          "date": "2027-02-20",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1132",
           "hot": false
         }
       ]
