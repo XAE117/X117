@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T11:58:40.730Z",
+  "lastUpdated": "2026-08-06T12:02:57.148Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-08-05-charlie-bereal",
-          "artist": "Charlie Bereal",
-          "date": "2026-08-05",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/charlie-bereal/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-08-06-sinead-harnett",
           "artist": "Sinead Harnett",
@@ -523,31 +514,31 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-08-05-gerald-clayton-tuesday-happeni",
-          "artist": "Gerald Clayton Tuesday Happenings Jam Session",
-          "date": "2026-08-05",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "sam-first-2026-08-05-ian-coury",
+          "id": "sam-first-2026-08-06-ian-coury",
           "artist": "Ian Coury",
-          "date": "2026-08-05",
+          "date": "2026-08-06",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-08-05-pritesh-walla-henry-godfrey-bi",
+          "id": "sam-first-2026-08-06-pritesh-walla-henry-godfrey-bi",
           "artist": "Pritesh Walla/Henry Godfrey Big Band",
-          "date": "2026-08-05",
+          "date": "2026-08-06",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
+        },
+        {
+          "id": "sam-first-2026-08-06-nicole-mccabe",
+          "artist": "Nicole McCabe",
+          "date": "2026-08-06",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": true
         }
       ]
     },
@@ -562,48 +553,39 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-08-05-john-proulx-marina-pacowski-fe",
-          "artist": "John Proulx & Marina Pacowski featuring Roy McCurdy & All-Star Band",
-          "date": "2026-08-05",
-          "time": "11:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/john-proulx-marina-pacowski-feat-roy-mccurdy-all-star-band",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-05-seth-macfarlane-his-chamber-or",
-          "artist": "Seth MacFarlane & His Chamber Orchestra",
-          "date": "2026-08-05",
-          "time": "6:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-05-tom-kubis-big-band",
-          "artist": "Tom Kubis Big Band",
-          "date": "2026-08-05",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-05-john-proulx-marina-pacowski",
-          "artist": "John Proulx & Marina Pacowski",
-          "date": "2026-08-05",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-08-06-seth-macfarlane-and-his-chambe",
           "artist": "Seth MacFarlane and his Chamber Orchestra",
           "date": "2026-08-06",
           "time": "11:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/aw53gwy6wtszkp3g2etnr22m3klmm2",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-08-06-seth-macfarlane-his-chamber-or",
+          "artist": "Seth MacFarlane & His Chamber Orchestra",
+          "date": "2026-08-06",
+          "time": "6:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-08-06-tony-guerrero-w-lia-booth",
+          "artist": "Tony Guerrero w/Lia Booth",
+          "date": "2026-08-06",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-08-06-john-proulx-marina-pacowski",
+          "artist": "John Proulx & Marina Pacowski",
+          "date": "2026-08-06",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -1033,10 +1015,19 @@
       "region": "LA",
       "shows": [
         {
-          "id": "world-stage-2026-08-05-billy-higgins-instrumental-jam",
+          "id": "world-stage-2026-08-06-billy-higgins-instrumental-jam",
           "artist": "Billy Higgins Instrumental Jam Session",
-          "date": "2026-08-05",
+          "date": "2026-08-06",
           "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "world-stage-2026-08-06-trevor-ware-positive-people",
+          "artist": "Trevor Ware & Positive People",
+          "date": "2026-08-06",
+          "time": "8:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
@@ -2004,12 +1995,21 @@
       "region": "LA",
       "shows": [
         {
+          "id": "the-mint-2026-08-06-rebirth-brass-band",
+          "artist": "Rebirth Brass Band",
+          "date": "2026-08-06",
+          "time": "10:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
           "id": "the-mint-2026-08-07-colette-calls-delta-by-the-bea",
-          "artist": "Colette Calls, Delta By The Beach, Doug Lacy & The Zydeco Party Band ",
+          "artist": "Colette Calls, Delta By The Beach, Doug Legacy & The Zydeco Party Band ",
           "date": "2026-08-07",
           "time": "2:30 AM",
           "notes": "",
-          "link": "https://dice.fm/event/avrmk2-colette-calls-delta-by-the-beach-doug-lacy-the-zydeco-party-band-6th-aug-the-mint-los-angeles-tickets",
+          "link": "https://dice.fm/event/avrmk2-colette-calls-delta-by-the-beach-doug-legacy-the-zydeco-party-band-6th-aug-the-mint-los-angeles-tickets",
           "hot": false
         },
         {
@@ -2079,33 +2079,6 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-08-05-jazz-pass-august-2026",
-          "artist": "Jazz Pass August 2026",
-          "date": "2026-08-05",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/5",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-08-05-jazz-pass-september-2026",
-          "artist": "Jazz Pass September 2026",
-          "date": "2026-08-05",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/6",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-08-05-jazz-pass-october-2026",
-          "artist": "Jazz Pass October 2026",
-          "date": "2026-08-05",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-08-06-tony-guerrero-friends-a-tribut",
           "artist": "Tony Guerrero & Friends - A Tribute to Soul Jazz",
           "date": "2026-08-06",
@@ -2121,6 +2094,33 @@
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.songkick.com/concerts/43346255-tony-guerrero-at-campus-jax?utm_medium=organic&utm_source=microformat",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-06-jazz-pass-august-2026",
+          "artist": "Jazz Pass August 2026",
+          "date": "2026-08-06",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/5",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-06-jazz-pass-september-2026",
+          "artist": "Jazz Pass September 2026",
+          "date": "2026-08-06",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/6",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-06-jazz-pass-october-2026",
+          "artist": "Jazz Pass October 2026",
+          "date": "2026-08-06",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
           "hot": false
         },
         {
@@ -2619,6 +2619,15 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2026-10-25-crystal-lewis-presents-claire-",
+          "artist": "Crystal Lewis Presents:Claire Clementine Finds Her Voice",
+          "date": "2026-10-25",
+          "time": "2:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/842",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2026-10-28-jukebox-wednesday",
           "artist": "Jukebox Wednesday",
           "date": "2026-10-28",
@@ -2799,6 +2808,15 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2026-12-01-joe-di-fiore-big-band-a-swingi",
+          "artist": "Joe Di Fiore Big Band: A Swingin’ Holiday Celebration",
+          "date": "2026-12-01",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1138",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2026-12-04-the-pettybreakers",
           "artist": "The PettyBreakers",
           "date": "2026-12-04",
@@ -2823,6 +2841,15 @@
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1061",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-12-08-concordia-university-commercia",
+          "artist": "Concordia University Commercial Music Concert",
+          "date": "2026-12-08",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1137",
           "hot": false
         },
         {
