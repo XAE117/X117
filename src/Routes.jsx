@@ -6,6 +6,7 @@ import { useAppUIContext } from './context/useAppUIContext'
 
 const ByTheater = lazy(() => import('./views/ByTheater.jsx'))
 const ByDay = lazy(() => import('./views/ByDay.jsx'))
+const AmcLosAngeles = lazy(() => import('./views/AmcLosAngeles.jsx'))
 const Tonight = lazy(() => import('./views/Tonight.jsx'))
 const Detail = lazy(() => import('./views/Detail.jsx'))
 const Watchlist = lazy(() => import('./views/Watchlist.jsx'))
@@ -72,6 +73,7 @@ export default function RoutesView({ standalone = false }) {
 
         <Route path="/" element={<EveningDashboard cinemaData={data} jazzData={jazzData} foodData={foodData} />} />
         <Route path="/browse" element={<ByDay data={filteredData} searchQuery={searchQuery} />} />
+        <Route path="/amc" element={<AmcLosAngeles data={filteredData} searchQuery={searchQuery} />} />
         <Route path="/tonight" element={<Tonight data={data} />} />
         <Route path="/by-theater" element={<ByTheater data={filteredData} />} />
         <Route path="/screening/:screeningId" element={<Detail data={data} />} />

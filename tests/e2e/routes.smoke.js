@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test'
 const routes = [
   '',
   'browse',
+  'amc',
   'tonight',
   'by-theater',
   'map',
@@ -53,6 +54,23 @@ test('food cards expose keyboard-operable disclosure controls', async ({ page })
 
   await expect(toggle).toHaveAttribute('aria-expanded', 'true')
   await expect(page.locator(`#${detailsId}`)).toBeVisible()
+})
+
+test('AMC Los Angeles category isolates one selected theater', async ({ page }) => {
+  await page.goto('amc', { waitUntil: 'networkidle' })
+
+  await expect(page.getByRole('heading', { name: 'AMC Los Angeles' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'All AMC' })).toHaveAttribute('aria-pressed', 'true')
+
+  await page.getByRole('button', { name: /AMC Century City/ }).click()
+
+  await expect(page.getByRole('button', { name: /AMC Century City/ })).toHaveAttribute('aria-pressed', 'true')
+  const visibleTheaters = page.locator('.film-showtime-theater')
+  await expect(visibleTheaters.first()).toContainText('AMC Century City')
+  expect(await visibleTheaters.allTextContents()).toEqual(
+    expect.arrayContaining([expect.stringContaining('AMC Century City')]),
+  )
+  expect((await visibleTheaters.allTextContents()).every(name => name.includes('AMC Century City'))).toBe(true)
 })
 
 test('cinema map waits for its styles before rendering markers', async ({ page }) => {

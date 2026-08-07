@@ -21,6 +21,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { sendGodfatherSMS } from './notify.js'
+import { resolveAMCTheaterIds } from './lib/amc-theaters.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'theaters.json')
@@ -337,6 +338,7 @@ const THEATERS = [
     neighborhood: 'Century City',
     url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-century-city-15',
     color: '#E31937',
+    amcTheatreId: 245,
     amcSlug: 'amc-century-city-15',
   },
   {
@@ -347,6 +349,7 @@ const THEATERS = [
     neighborhood: 'Burbank',
     url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-burbank-16',
     color: '#B50D28',
+    amcTheatreId: 218,
     amcSlug: 'amc-burbank-16',
   },
   {
@@ -357,6 +360,7 @@ const THEATERS = [
     neighborhood: 'Torrance',
     url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-rolling-hills-20',
     color: '#C41230',
+    amcTheatreId: 242,
     amcSlug: 'amc-rolling-hills-20',
   },
   {
@@ -367,6 +371,7 @@ const THEATERS = [
     neighborhood: 'Glendale',
     url: 'https://www.amctheatres.com/movie-theatres/los-angeles/amc-the-americana-at-brand-18',
     color: '#D42039',
+    amcTheatreId: 451,
     amcSlug: 'amc-the-americana-at-brand-18',
   },
   {
@@ -375,9 +380,10 @@ const THEATERS = [
     name: 'Universal Cinema AMC at CityWalk',
     shortName: 'AMC CityWalk',
     neighborhood: 'Universal City',
-    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-amc-at-citywalk-hollywood',
+    url: 'https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-an-amc-theatre',
     color: '#A8102A',
-    amcSlug: 'universal-cinema-amc-at-citywalk-hollywood',
+    amcTheatreId: 2416,
+    amcSlug: 'universal-cinema-an-amc-theatre',
   },
 ]
 
@@ -853,7 +859,7 @@ async function scrape2220Arts(cutoffDate) {
 // ── AMC Theatres API Integration ──
 // Uses AMC Developer API v2 to fetch showtimes for LA-area AMC theaters.
 // Requires AMC_API_KEY env var (X-AMC-Vendor-Key header).
-// API docs: https://developers.amctheatres.com/Showtimes
+// API docs: https://developers.amctheatres.com/ApiReference/showtime-api-v2
 
 const AMC_THEATERS = THEATERS.filter(t => t.amcSlug)
 
@@ -868,8 +874,42 @@ async function fetchAMCApi(path) {
     },
     signal: AbortSignal.timeout(15000),
   })
-  if (!response.ok) throw new Error(`AMC API returned ${response.status}`)
-  return response.json()
+  const body = await response.text()
+  let payload = null
+  try {
+    payload = body ? JSON.parse(body) : null
+  } catch {
+    if (response.ok) throw new Error('AMC API returned invalid JSON')
+  }
+
+  if (!response.ok) {
+    const detail = payload?.message || payload?.error?.message || payload?.errors?.[0]?.message
+    const error = new Error(`AMC API returned ${response.status}${detail ? `: ${detail}` : ''}`)
+    error.status = response.status
+    throw error
+  }
+
+  return payload
+}
+
+async function fetchAMCShowtimesForDate(theatreId, dateStr) {
+  const pageSize = 200
+  const showtimes = []
+  let pageNumber = 1
+
+  while (pageNumber <= 10) {
+    const data = await fetchAMCApi(
+      `/v2/theatres/${theatreId}/showtimes/${dateStr}?page-size=${pageSize}&page-number=${pageNumber}`,
+    )
+    const page = data?._embedded?.showtimes || []
+    showtimes.push(...page)
+
+    const total = Number(data?.count) || showtimes.length
+    if (page.length === 0 || showtimes.length >= total || !data?._links?.next) break
+    pageNumber += 1
+  }
+
+  return showtimes
 }
 
 async function scrapeAMCShowtimes() {
@@ -885,42 +925,40 @@ async function scrapeAMCShowtimes() {
     results[theater.id] = []
   }
 
-  // First, discover theater numeric IDs via the locations endpoint
-  // GET /v2/locations?latitude=34.0522&longitude=-118.2437&page-size=25
-  let theaterIdMap = {} // amcSlug → numeric theatreId
+  // Discover current venue records, while retaining stable configured numeric
+  // IDs as a fallback for renamed or temporarily omitted locations.
+  let theaterIdMap = Object.fromEntries(
+    AMC_THEATERS
+      .filter(theater => theater.amcTheatreId)
+      .map(theater => [theater.id, theater.amcTheatreId]),
+  )
   try {
-    const locData = await fetchAMCApi('/v2/locations?latitude=34.0522&longitude=-118.2437&page-size=25')
-    if (locData && locData._embedded && locData._embedded.locations) {
-      for (const loc of locData._embedded.locations) {
-        const theatre = loc._embedded?.theatre
-        if (theatre) {
-          theaterIdMap[theatre.slug] = theatre.id
-        }
-      }
-    }
-    if (Object.keys(theaterIdMap).length > 0) {
-      console.log(`    Discovered ${Object.keys(theaterIdMap).length} nearby AMC theaters`)
-    } else {
-      console.log('    WARNING: AMC API returned 0 theaters — key may be unauthorized or pending activation.')
-      console.log('    AMC keys can take ~10 days to activate after registration.')
-      console.log('    Verify at: https://developers.amctheatres.com/')
-      return results
+    const locData = await fetchAMCApi('/v2/locations?latitude=34.0522&longitude=-118.2437&page-size=50')
+    const resolution = resolveAMCTheaterIds(AMC_THEATERS, locData)
+    theaterIdMap = resolution.ids
+    console.log(`    Discovered ${resolution.discoveredCount} nearby AMC theaters`)
+
+    for (const change of resolution.slugChanges) {
+      console.log(
+        `    WARNING: ${change.theaterId} slug changed from ${change.configuredSlug} to ${change.apiSlug}`,
+      )
     }
   } catch (err) {
-    const msg = err.message || ''
-    if (msg.includes('Unauthorized') || msg.includes('12005')) {
-      console.log('    AMC API key is unauthorized. Keys take ~10 days to activate.')
-      console.log('    Verify at: https://developers.amctheatres.com/')
-    } else {
-      console.log(`    AMC locations endpoint failed: ${msg}`)
+    if (err.status === 401 || err.status === 403) {
+      throw new Error(
+        `AMC_API_KEY was rejected (${err.status}). Verify access at https://developers.amctheatres.com/`,
+        { cause: err },
+      )
     }
-    return results
+
+    console.log(`    AMC locations endpoint failed: ${err.message}`)
+    console.log('    Falling back to configured AMC theatre IDs.')
   }
 
   // Fetch showtimes for each theater for the next 7 days
   const today = new Date()
   for (const theater of AMC_THEATERS) {
-    const theatreId = theaterIdMap[theater.amcSlug]
+    const theatreId = theaterIdMap[theater.id]
     if (!theatreId) {
       console.log(`    ${theater.shortName}: not found in nearby results`)
       continue
@@ -931,12 +969,15 @@ async function scrapeAMCShowtimes() {
         const date = new Date(today)
         date.setDate(date.getDate() + dayOffset)
         const dateStr = `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`
-        const dateISO = date.toISOString().slice(0, 10)
+        const dateISO = [
+          date.getFullYear(),
+          String(date.getMonth() + 1).padStart(2, '0'),
+          String(date.getDate()).padStart(2, '0'),
+        ].join('-')
 
-        const data = await fetchAMCApi(`/v2/theatres/${theatreId}/showtimes/${dateStr}?page-size=50`)
-        if (!data || !data._embedded || !data._embedded.showtimes) continue
+        const showtimes = await fetchAMCShowtimesForDate(theatreId, dateStr)
 
-        for (const st of data._embedded.showtimes) {
+        for (const st of showtimes) {
           if (st.isCanceled) continue
 
           const localTime = st.showDateTimeLocal
@@ -977,6 +1018,9 @@ async function scrapeAMCShowtimes() {
 
   const totalAMC = Object.values(results).reduce((sum, arr) => sum + arr.length, 0)
   console.log(`    Total AMC showtimes: ${totalAMC}`)
+  if (totalAMC === 0) {
+    throw new Error('AMC API returned no showtimes across the five configured LA theaters.')
+  }
   return results
 }
 

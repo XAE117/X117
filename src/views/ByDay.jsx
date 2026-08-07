@@ -9,7 +9,7 @@ import './ByDay.css'
 
 const INITIAL_FILMS_PER_DAY = 10
 
-function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings }) {
+function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings, showScreenshotLink }) {
   const [showPast, setShowPast] = useState(false)
   const [visibleCount, setVisibleCount] = useState(INITIAL_FILMS_PER_DAY)
   const past = day.screenings.filter(screening => isScreeningPast(screening.date, screening.time, now))
@@ -22,10 +22,12 @@ function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings }) {
     <section className={`day-block ${day.weekday === 0 || day.weekday === 6 ? 'weekend' : ''}`}>
       <div className="day-block-heading-row">
         <h2 className="day-block-header">{day.label}</h2>
-        <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
-          <span className="day-screenshot-label">SCREENSHOT</span>
-          <span className="day-screenshot-icon">📸</span>
-        </Link>
+        {showScreenshotLink && (
+          <Link to={`/day/${dateKey}`} className="day-screenshot-btn" title="Screenshot view">
+            <span className="day-screenshot-label">SCREENSHOT</span>
+            <span className="day-screenshot-icon">📸</span>
+          </Link>
+        )}
       </div>
 
       {pastGroups.length > 0 && (
@@ -81,16 +83,23 @@ function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings }) {
   )
 }
 
-export default function ByDay({ data, searchQuery = '' }) {
+export default function ByDay({
+  data,
+  searchQuery = '',
+  eyebrow = 'FILM DIRECTORY',
+  title = 'Browse screenings',
+  description = 'Grouped by film, with every venue and showtime kept one tap away.',
+  headerAction,
+  toolbar = null,
+  emptyMessage = 'No screenings found.',
+  showScreenshotLinks = true,
+  className = '',
+}) {
   const [, setTick] = useState(0)
   const forceUpdate = useCallback(() => setTick(tick => tick + 1), [])
   const now = useNow()
 
-  if (!data?.theaters?.length) {
-    return <div className="empty-state">No screenings found.</div>
-  }
-
-  const allScreenings = data.theaters.flatMap(theater =>
+  const allScreenings = (data?.theaters || []).flatMap(theater =>
     theater.screenings.map(screening => ({
       ...screening,
       theaterName: theater.shortName || theater.name,
@@ -123,19 +132,24 @@ export default function ByDay({ data, searchQuery = '' }) {
   }
 
   const dayEntries = [...days.entries()].sort(([a], [b]) => a.localeCompare(b))
+  const resolvedHeaderAction = headerAction === undefined
+    ? <Link to="/tonight" className="browse-tonight-link">Evening only →</Link>
+    : headerAction
 
   return (
-    <div className="day-view">
+    <div className={`day-view ${className}`.trim()}>
       <header className="browse-header">
         <div>
-          <p className="browse-eyebrow">FILM DIRECTORY</p>
-          <h1>Browse screenings</h1>
-          <p>Grouped by film, with every venue and showtime kept one tap away.</p>
+          <p className="browse-eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+          <p>{description}</p>
         </div>
-        <Link to="/tonight" className="browse-tonight-link">Evening only →</Link>
+        {resolvedHeaderAction}
       </header>
 
-      <DataFreshness sources={[{ label: 'Film', updated: data.lastUpdated }]} />
+      <DataFreshness sources={[{ label: 'Film', updated: data?.lastUpdated }]} />
+
+      {toolbar}
 
       {query && (
         <div className="day-search-count">
@@ -153,12 +167,13 @@ export default function ByDay({ data, searchQuery = '' }) {
             now={now}
             forceUpdate={forceUpdate}
             allScreenings={allScreenings}
+            showScreenshotLink={showScreenshotLinks}
           />
         </div>
       ))}
 
       {dayEntries.length === 0 && (
-        <p className="day-all-past-hint">No screenings match your search.</p>
+        <p className="empty-state">{query ? 'No screenings match your search.' : emptyMessage}</p>
       )}
     </div>
   )

@@ -12,6 +12,7 @@ const ROUTE_TITLES = {
   '/': 'SIXPM — Tonight in Los Angeles',
   '/search': 'SIXPM — Search Film, Jazz & Food',
   '/browse': 'SIXPM — Film Calendar',
+  '/amc': 'SIXPM — AMC Los Angeles Showtimes',
   '/tonight': 'SIXPM — Films Tonight',
   '/watchlist': 'SIXPM — Film Watchlist',
 }
