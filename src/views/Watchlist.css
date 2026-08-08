@@ -272,6 +272,68 @@
   color: var(--text-muted) !important;
 }
 
+/* ── Profile picker ── */
+
+.user-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(13, 11, 10, 0.9);
+  animation: fadeIn 0.3s ease;
+}
+
+.user-picker {
+  width: min(100%, 360px);
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--gold-dim);
+  border-radius: 12px;
+  background: var(--bg-card);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.user-picker h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--gold);
+}
+
+.user-picker p {
+  margin: 0.7rem 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.user-picker-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.user-picker-btn {
+  min-height: 46px;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.user-picker-btn:hover,
+.user-picker-btn:focus-visible {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--bg-dark);
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 640px) {

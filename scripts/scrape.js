@@ -328,6 +328,8 @@ const THEATERS = [
     neighborhood: 'Hollywood',
     url: 'https://www.landmarktheatres.com',
     color: '#D4B8A0',
+    trackingStatus: 'monitor',
+    trackingNote: 'Awaiting a dedicated Landmark venue adapter',
   },
   // ── AMC Theatres (revivalhouses.com data-t + AMC API fallback) ──
   {
@@ -1403,10 +1405,15 @@ async function main() {
   }
   console.log(`Output: ${OUTPUT_PATH}`)
 
-  // Send an SMS if The Godfather is screening
-  console.log('')
-  console.log('Checking for Godfather screenings...')
-  await sendGodfatherSMS(result)
+  // Maintenance refreshes can update listings without contacting anyone.
+  if (process.argv.includes('--no-notify')) {
+    console.log('')
+    console.log('Skipping Godfather SMS check (--no-notify).')
+  } else {
+    console.log('')
+    console.log('Checking for Godfather screenings...')
+    await sendGodfatherSMS(result)
+  }
 
   console.log('')
 }

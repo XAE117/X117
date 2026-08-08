@@ -235,13 +235,15 @@
 /* Star button */
 .taco-star-btn {
   margin-left: auto;
+  min-width: 36px;
+  min-height: 36px;
   background: none;
   border: none;
   font-size: 1.1rem;
   cursor: pointer;
   color: var(--text-muted);
   transition: color 0.2s ease, transform 0.15s ease;
-  padding: 0.1rem 0.2rem;
+  padding: 0.25rem;
   -webkit-tap-highlight-color: transparent;
 }
 
