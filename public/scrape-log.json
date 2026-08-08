@@ -1,14 +1,15 @@
 {
-  "timestamp": "2026-08-02T10:29:38.237Z",
+  "timestamp": "2026-08-08T01:47:49.347Z",
   "mode": "full",
   "sourcesAttempted": 5,
-  "sourcesSucceeded": 5,
+  "sourcesSucceeded": 4,
   "sourceStatuses": [
     {
       "name": "Eater LA Heatmap",
       "group": "hot",
-      "status": "ok",
-      "count": 22
+      "status": "error",
+      "count": 0,
+      "error": "Request failed with status code 500"
     },
     {
       "name": "Infatuation Hit List",
@@ -26,7 +27,7 @@
       "name": "Resy Hit List",
       "group": "full",
       "status": "ok",
-      "count": 26
+      "count": 22
     },
     {
       "name": "Thrillist LA",
@@ -35,13 +36,16 @@
       "count": 15
     }
   ],
-  "recordsScraped": 146,
-  "totalRestaurants": 230,
-  "added": [],
+  "recordsScraped": 120,
+  "totalRestaurants": 232,
+  "added": [
+    "Azur Beverly Hills",
+    "401k Food and Wine"
+  ],
   "removed": [],
   "tiers": {
     "street": 6,
-    "feast": 167,
+    "feast": 169,
     "whale": 14,
     "tacos": null,
     "pizza": null

@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-02T10:29:38.238Z",
-  "lastFullScrape": "2026-08-02T10:29:38.238Z",
+  "lastUpdated": "2026-08-08T01:47:49.347Z",
+  "lastFullScrape": "2026-08-08T01:47:49.347Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -26,7 +26,8 @@
     "sushisamba",
     "amiguita",
     "sandeomi-hamjipark",
-    "coni-seafood-hermosa-hermosa-beach"
+    "azur-beverly-hills-beverly-hills-ca",
+    "401k-food-and-wine-venice"
   ],
   "restaurants": [
     {
@@ -5562,6 +5563,44 @@
       "heatScore": 2,
       "id": "coni-seafood-hermosa-hermosa-beach",
       "addedDate": "2026-07-04"
+    },
+    {
+      "name": "Azur Beverly Hills",
+      "neighborhood": "Beverly Hills Ca",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/beverly-hills-ca-ca/venues/azur-beverly-hills?venueId=97934",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "azur-beverly-hills-beverly-hills-ca",
+      "addedDate": "2026-08-08"
+    },
+    {
+      "name": "401k Food and Wine",
+      "neighborhood": "Venice",
+      "cuisine": "",
+      "description": "",
+      "reservationUrl": "https://resy.com/cities/venice-los-angeles-ca/venues/401k-food-and-wine?venueId=97623",
+      "sources": [
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
+        }
+      ],
+      "tags": [],
+      "tier": "feast",
+      "sourceCount": 1,
+      "heatScore": 2,
+      "id": "401k-food-and-wine-venice",
+      "addedDate": "2026-08-08"
     }
   ]
 }
