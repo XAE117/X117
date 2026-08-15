@@ -1,21 +1,20 @@
 {
-  "timestamp": "2026-08-09T09:32:16.186Z",
+  "timestamp": "2026-08-15T01:21:53.481Z",
   "mode": "full",
   "sourcesAttempted": 5,
-  "sourcesSucceeded": 4,
+  "sourcesSucceeded": 5,
   "sourceStatuses": [
     {
       "name": "Eater LA Heatmap",
       "group": "hot",
-      "status": "error",
-      "count": 0,
-      "error": "Request failed with status code 500"
+      "status": "ok",
+      "count": 23
     },
     {
       "name": "Infatuation Hit List",
       "group": "hot",
       "status": "ok",
-      "count": 18
+      "count": 17
     },
     {
       "name": "Eater Essential 38",
@@ -36,7 +35,7 @@
       "count": 15
     }
   ],
-  "recordsScraped": 120,
+  "recordsScraped": 142,
   "totalRestaurants": 232,
   "added": [],
   "removed": [],
