@@ -23,14 +23,18 @@ simulator, or local fixture flow passed.
 ## Before owner-authorized merge/deployment
 
 - [ ] Owner explicitly authorizes merging/deploying the reviewed release lane.
-- [ ] Production `catalog/v1/index.json` returns current JSON over HTTPS—not
-  HTML, a redirect, or Vercel SSO—and all catalog digests validate.
+- [ ] Owner supplies/approves a public Support URL with actual contact
+  information.
+
+## After owner-authorized deployment / before device QA
+
+- [ ] `npm run catalog:live:check` passes against the exact production host:
+  it requires current JSON over HTTPS—not HTML, a redirect, or Vercel SSO—plus
+  public CORS, catalog digests, expiry, and approved-provider validation.
 - [ ] `/privacy`, `/terms`, `/support`, and `/credits` are publicly reachable
   from the exact release deployment.
 - [ ] Vercel request logging, Analytics, Observability, and Log Drains are
   reviewed for the final App Store privacy declaration.
-- [ ] Owner supplies/approves a public Support URL with actual contact
-  information.
 
 ## Before signed device testing / archive
 

@@ -30,6 +30,8 @@ jobs:
         run: npm run build
       - name: Rights-gated catalog check
         run: npm run catalog:check
+      - name: Rights-gated catalog build artifact
+        run: npm run catalog:artifact:check
       - name: Dependency audit
         run: npm run audit
       - name: Install Chromium

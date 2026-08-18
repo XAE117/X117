@@ -25,8 +25,9 @@ Before capturing any candidate image:
 
 1. The release build has been synced to a 6.9-inch iPhone Simulator from the
    same commit intended for archive.
-2. `https://sixpm.vercel.app/catalog/v1/index.json` returns the expected JSON
-   with a valid, current rights-gated feed—not HTML, a redirect, or Vercel SSO.
+2. `npm run catalog:live:check` passes against
+   `https://sixpm.vercel.app/`, proving the expected JSON has a valid, current
+   rights-gated feed—not HTML, a redirect, or Vercel SSO.
 3. The simulator has a clean app container, no personal location, no personal
    Calendar data, and no saved evening unless that state is deliberately shown.
 4. A human visually confirms safe areas, status bar treatment, type hierarchy,

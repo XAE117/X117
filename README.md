@@ -112,15 +112,26 @@ planning support, not therapy or medical care. Astrological material is an
 optional symbolic lens and does not override health, legal, financial, or safety
 decisions.
 
-Before production:
+Before an owner-authorized iPhone catalog deployment:
 
 ```bash
-npm run release:check
-vercel --prod
+npm run ios:release:check
 ```
 
-After deployment, verify `/`, `/roll`, `/search`, `/map`, `robots.txt`, and
-`sitemap.xml` on the production hostname.
+`npm run release:check` remains the separate, intentionally strict health gate
+for the broader web guide. Its legacy-data warnings must be reviewed rather
+than silently treated as an iPhone catalog result.
+
+After an owner-authorized deployment, verify the normal web routes plus the
+rights-gated catalog from the public hostname:
+
+```bash
+npm run catalog:live:check
+```
+
+This command requires HTTPS, direct JSON responses, public CORS, current
+catalog integrity, and the approved-provider policy. It deliberately fails
+until the reviewed release branch has reached production; it does not deploy.
 
 ## Architecture
 
