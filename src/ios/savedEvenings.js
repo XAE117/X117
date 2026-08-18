@@ -1,4 +1,5 @@
 import { SIXPM_STORAGE_KEYS, nativeAdapter } from './native/nativeAdapter.js'
+import { formatScreeningTime } from './format.js'
 
 export const SAVED_EVENINGS_SCHEMA_VERSION = 1
 export const SAVED_EVENINGS_LIMIT = 24
@@ -363,7 +364,7 @@ export function calendarEventForSavedEvening(evening, now = new Date()) {
     startAt,
     endAt,
     location: cinema.theaterName,
-    notes: `${cinema.time} at ${cinema.theaterName}\n${foodNote}`,
+    notes: `${formatScreeningTime(cinema.time)} at ${cinema.theaterName}\n${foodNote}`,
     url: cinema.link,
   }
 }
@@ -378,7 +379,7 @@ export function reminderForSavedEvening(evening, id, { leadMinutes = 90, now = n
     id,
     at,
     title: `SIXPM · ${evening.cinema.title}`,
-    body: `${evening.cinema.time} at ${evening.cinema.theaterShortName}. Dinner: ${food}.`,
+    body: `${formatScreeningTime(evening.cinema.time)} at ${evening.cinema.theaterShortName}. Dinner: ${food}.`,
     extra: { eveningId: evening.id },
   }
 }
@@ -387,7 +388,7 @@ export function shareContentForSavedEvening(evening, now = new Date()) {
   const availability = savedEveningAvailability(evening, now)
   const lines = ['A saved SIXPM evening']
   if (availability.cinema) {
-    lines.push(`${evening.cinema.title} · ${evening.cinema.date} at ${evening.cinema.time}`)
+    lines.push(`${evening.cinema.title} · ${evening.cinema.date} at ${formatScreeningTime(evening.cinema.time)}`)
     lines.push(`${evening.cinema.theaterName} · ${evening.cinema.theaterNeighborhood}`)
   }
   if (availability.food) {

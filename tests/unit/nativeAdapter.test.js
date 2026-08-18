@@ -81,6 +81,34 @@ describe('SIXPM native adapter', () => {
     expect(geolocation.getCurrentPosition).not.toHaveBeenCalled()
   })
 
+  it('returns an explicit in-memory location only after the nearby-picks action', async () => {
+    const geolocation = {
+      checkPermissions: vi.fn().mockResolvedValue({ location: 'granted' }),
+      requestPermissions: vi.fn(),
+      getCurrentPosition: vi.fn().mockResolvedValue({
+        coords: { latitude: 34.0522, longitude: -118.2437, accuracy: 32 },
+        timestamp: 1_787_043_600_000,
+      }),
+    }
+    const native = createNativeAdapter(iosDependencies({ geolocation }))
+
+    await expect(native.requestCurrentLocation()).resolves.toEqual({
+      status: 'granted',
+      location: {
+        latitude: 34.0522,
+        longitude: -118.2437,
+        accuracy: 32,
+        timestamp: 1_787_043_600_000,
+      },
+    })
+    expect(geolocation.requestPermissions).not.toHaveBeenCalled()
+    expect(geolocation.getCurrentPosition).toHaveBeenCalledWith({
+      enableHighAccuracy: false,
+      timeout: 10_000,
+      maximumAge: 300_000,
+    })
+  })
+
   it('uses the system calendar editor rather than silently reading the calendar', async () => {
     const calendar = {
       createEventInteractively: vi.fn().mockResolvedValue({ id: 'event-123' }),

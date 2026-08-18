@@ -15,17 +15,20 @@ import {
   directionsForCinema,
   directionsForRestaurant,
   formatCatalogTime,
+  formatDistanceMiles,
+  formatScreeningTime,
   groupScreeningsByTitle,
   localDateKey,
   readableDate,
+  sortRestaurantsByDistance,
   tonightOrNextScreenings,
 } from './format.js'
 
 const TABS = [
-  { id: 'tonight', label: 'Tonight', icon: '◐' },
-  { id: 'browse', label: 'Browse', icon: '⌕' },
-  { id: 'saved', label: 'Saved', icon: '♡' },
-  { id: 'settings', label: 'Settings', icon: '⋯' },
+  { id: 'tonight', label: 'Tonight', index: '01' },
+  { id: 'browse', label: 'Catalog', index: '02' },
+  { id: 'saved', label: 'Saved', index: '03' },
+  { id: 'settings', label: 'Notes', index: '04' },
 ]
 
 const emptyDraft = () => ({ cinema: null, food: null })
@@ -93,27 +96,58 @@ function CatalogState({ status, error, onRetry, savedCount, onOpenSaved }) {
   )
 }
 
+function DecoRule({ compact = false }) {
+  return (
+    <div className={`ios-deco-rule${compact ? ' compact' : ''}`} aria-hidden="true">
+      <span>◆</span>
+    </div>
+  )
+}
+
 function MovieCard({ movie, onSelect, compact = false }) {
   const primary = movie.primary
   const venueCount = new Set(movie.showings.map(showing => showing.theaterId)).size
-  const venueLabel = venueCount === 1
-    ? `${primary.theaterShortName} · ${primary.format || 'Standard'}`
-    : `${venueCount} theaters · from ${primary.time}`
+  const venueLabel = (primary.theaterShortName || primary.theaterName || 'AMC').replace(/^AMC\s+/i, '')
+  const showtimeNote = venueCount === 1 ? 'Current AMC showing' : `${venueCount} AMC theaters`
+  const detail = compact ? `${readableDate(primary.date)} · ${showtimeNote}` : showtimeNote
   return (
-    <button type="button" className={`ios-card ios-movie-card${compact ? ' compact' : ''}`} onClick={() => onSelect({ type: 'cinema', item: movie })}>
-      <span className="ios-card-kicker">{readableDate(primary.date)} · {primary.time}</span>
-      <strong>{movie.title}</strong>
-      <span>{venueLabel}</span>
+    <button type="button" className={`ios-listing ios-movie-listing${compact ? ' compact' : ''}`} onClick={() => onSelect({ type: 'cinema', item: movie })}>
+      <span className="ios-listing-venue">{venueLabel}</span>
+      <span className="ios-listing-copy">
+        <strong>{movie.title}</strong>
+        <span className="ios-listing-details">{detail}</span>
+      </span>
+      <span className="ios-listing-when">
+        <span>{formatScreeningTime(primary.time)}</span>
+        {primary.format && primary.format !== 'Standard' && <span className="ios-format-badge">{primary.format}</span>}
+      </span>
     </button>
   )
 }
 
+function shortRestaurantNeighborhood(value) {
+  if (!value) return 'SIXPM'
+  const locations = value.match(/\((\d+)\s+locations?\)/i)
+  if (!locations) return value
+  const firstNeighborhood = value.split('/')[0].trim()
+  const additionalCount = Math.max(0, Number(locations[1]) - 1)
+  return additionalCount > 0 ? `${firstNeighborhood} + ${additionalCount}` : firstNeighborhood
+}
+
 function RestaurantCard({ restaurant, onSelect }) {
+  const distance = formatDistanceMiles(restaurant.distanceMiles)
+  const neighborhood = shortRestaurantNeighborhood(restaurant.neighborhood || restaurant.cuisine)
   return (
-    <button type="button" className="ios-card ios-food-card" onClick={() => onSelect({ type: 'food', item: restaurant })}>
-      <span className="ios-card-kicker">{restaurant.neighborhood || restaurant.cuisine}</span>
-      <strong>{restaurant.name}</strong>
-      <span>{restaurant.hours} · {restaurant.priceRange || restaurant.tier}</span>
+    <button type="button" className="ios-listing ios-food-listing" onClick={() => onSelect({ type: 'food', item: restaurant })}>
+      <span className="ios-listing-venue">{neighborhood}</span>
+      <span className="ios-listing-copy">
+        <strong>{restaurant.name}</strong>
+        <span className="ios-listing-details">{restaurant.cuisine || 'Dinner'}{distance ? ` · ${distance}` : ''}</span>
+      </span>
+      <span className="ios-listing-when ios-food-when">
+        <span>{restaurant.priceRange || restaurant.tier || 'Dinner'}</span>
+        <span>{restaurant.hours || 'Hours listed'}</span>
+      </span>
     </button>
   )
 }
@@ -130,6 +164,16 @@ function SectionHeader({ eyebrow, title, action }) {
   )
 }
 
+function OfflineCatalogNotice({ status }) {
+  if (status !== 'offline') return null
+  return (
+    <aside className="ios-offline-notice" role="status">
+      <strong>Offline catalog</strong>
+      <span>Showing the last verified picks still inside their approved provider windows.</span>
+    </aside>
+  )
+}
+
 function EveningDraftBanner({ draft, onReview, onChoose, onClear }) {
   const hasCinema = Boolean(draft.cinema)
   const hasFood = Boolean(draft.food)
@@ -139,9 +183,10 @@ function EveningDraftBanner({ draft, onReview, onChoose, onClear }) {
   const nextLabel = hasCinema ? 'Choose dinner' : 'Choose a film'
   return (
     <aside className="ios-draft-banner" aria-label="Evening in progress">
+      <DecoRule compact />
       <div>
-        <p className="ios-eyebrow">EVENING IN PROGRESS</p>
-        <strong>{complete ? 'Your film and dinner are ready to save.' : `One choice held. ${nextLabel}.`}</strong>
+        <p className="ios-eyebrow">HELD FOR TONIGHT</p>
+        <strong>{complete ? 'A film and dinner, held together.' : `One choice held. ${nextLabel}.`}</strong>
         <span>{hasCinema ? draft.cinema.title : 'No film yet'} · {hasFood ? draft.food.name : 'No dinner yet'}</span>
       </div>
       <div className="ios-draft-banner-actions">
@@ -154,29 +199,43 @@ function EveningDraftBanner({ draft, onReview, onChoose, onClear }) {
   )
 }
 
-function Tonight({ catalog, onSelect, onBrowse, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
+function Tonight({ catalog, catalogStatus, location, onSelect, onBrowse, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
   const cinema = useMemo(() => groupScreeningsByTitle(
     tonightOrNextScreenings(catalog.feeds.cinema),
   ).slice(0, 3), [catalog])
-  const food = catalog.feeds.food.data.restaurants || []
+  const food = useMemo(() => sortRestaurantsByDistance(
+    catalog.feeds.food.data.restaurants || [],
+    location,
+  ), [catalog, location])
   const cinemaTitle = cinema.length > 0 && cinema[0].primary.date !== localDateKey()
     ? 'Next up'
     : 'Tonight’s film'
+  const foodTitle = location ? 'Dinner nearby' : 'Dinner, kept simple'
+  const foodEyebrow = location ? 'NEARBY · SIXPM EDITORIAL' : 'SIXPM EDITORIAL'
+  const dispatchDate = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  })
 
   return (
     <main className="ios-page ios-tonight-page">
       <header className="ios-hero">
-        <p className="ios-eyebrow">LOS ANGELES · SIXPM</p>
-        <h1>Make tonight<br />a little easier.</h1>
-        <p>Current AMC showtimes, a small first-party food set, and no account required.</p>
+        <p className="ios-hero-kicker">THE LOS ANGELES EVENING GUIDE</p>
+        <h1>SIXPM</h1>
+        <p className="ios-hero-date">{dispatchDate}</p>
+        <DecoRule />
+        <p className="ios-hero-caption">A current cinema listing and a small dinner notebook for the part of Los Angeles that begins after work.</p>
       </header>
 
-      <section className="ios-feature-card" aria-labelledby="ios-decide-heading">
-        <p className="ios-eyebrow">START HERE</p>
-        <h2 id="ios-decide-heading">Choose the movie. We’ll hold the rest.</h2>
-        <p>Pick a showing, pair it with dinner, then save the whole evening for later.</p>
+      <OfflineCatalogNotice status={catalogStatus} />
+
+      <section className="ios-dispatch" aria-labelledby="ios-decide-heading">
+        <p className="ios-eyebrow">THE FIRST PICK</p>
+        <h2 id="ios-decide-heading">Choose a showing.<br />Make a night of it.</h2>
+        <p>Pair a verified AMC screening with dinner, then keep the whole evening on this iPhone.</p>
         <button type="button" className="ios-primary-button" onClick={() => onBrowse('film')}>
-          Browse showtimes
+          <span>Browse AMC listings</span><span aria-hidden="true">→</span>
         </button>
       </section>
 
@@ -184,7 +243,7 @@ function Tonight({ catalog, onSelect, onBrowse, draft, onReviewDraft, onChooseDr
 
       <section className="ios-section" aria-labelledby="ios-film-heading">
         <SectionHeader eyebrow="AMC CATALOG" title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>See all</button>} />
-        <div className="ios-card-stack">
+        <div className="ios-listing-stack">
           {cinema.length > 0
             ? cinema.map(movie => <MovieCard key={movie.id} movie={movie} onSelect={onSelect} />)
             : <p className="ios-empty-copy">No verified upcoming AMC showtimes are available yet.</p>}
@@ -192,39 +251,46 @@ function Tonight({ catalog, onSelect, onBrowse, draft, onReviewDraft, onChooseDr
       </section>
 
       <section className="ios-section" aria-labelledby="ios-food-heading">
-        <SectionHeader eyebrow="SIXPM EDITORIAL" title="Dinner, kept simple" action={<button type="button" className="ios-text-button" onClick={() => onBrowse('food')}>See all</button>} />
-        <div className="ios-card-stack">
+        <SectionHeader eyebrow={foodEyebrow} title={foodTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('food')}>See all</button>} />
+        <div className="ios-listing-stack">
           {food.map(restaurant => <RestaurantCard key={restaurant.id} restaurant={restaurant} onSelect={onSelect} />)}
         </div>
       </section>
 
       <aside className="ios-source-note">
-        <strong>Jazz is not in iPhone V1 yet.</strong>
-        <span>Its sources remain disabled until they have an explicit catalog approval.</span>
+        <DecoRule compact />
+        <strong>Made for the evening, not the feed.</strong>
+        <span>Provider details are kept only while their approved freshness windows remain open. No account, ads, or tracking.</span>
       </aside>
     </main>
   )
 }
 
-function Browse({ catalog, onSelect, browseMode, onChangeMode, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
+function Browse({ catalog, catalogStatus, location, onSelect, browseMode, onChangeMode, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
   const cinema = useMemo(() => groupScreeningsByTitle(
     collectScreenings(catalog.feeds.cinema),
   ), [catalog])
-  const food = catalog.feeds.food.data.restaurants || []
+  const food = useMemo(() => sortRestaurantsByDistance(
+    catalog.feeds.food.data.restaurants || [],
+    location,
+  ), [catalog, location])
   const items = browseMode === 'film' ? cinema : food
+  const directoryTitle = browseMode === 'film' ? <>Film<br />directory</> : <>Dinner<br />notebook</>
 
   return (
     <main className="ios-page">
       <header className="ios-page-header">
-        <p className="ios-eyebrow">VERIFIED CATALOG</p>
-        <h1>Browse</h1>
+        <p className="ios-eyebrow">LOS ANGELES · CURRENT EDITION</p>
+        <h1>{directoryTitle}</h1>
+        <DecoRule compact />
       </header>
+      <OfflineCatalogNotice status={catalogStatus} />
       <EveningDraftBanner draft={draft} onReview={onReviewDraft} onChoose={onChooseDraft} onClear={onClearDraft} />
-      <div className="ios-segmented-control" role="tablist" aria-label="Catalog type">
-        <button type="button" role="tab" aria-selected={browseMode === 'film'} className={browseMode === 'film' ? 'selected' : ''} onClick={() => onChangeMode('film')}>Film</button>
-        <button type="button" role="tab" aria-selected={browseMode === 'food'} className={browseMode === 'food' ? 'selected' : ''} onClick={() => onChangeMode('food')}>Food</button>
+      <div className="ios-segmented-control" aria-label="Catalog type">
+        <button type="button" aria-pressed={browseMode === 'film'} className={browseMode === 'film' ? 'selected' : ''} onClick={() => onChangeMode('film')}><span aria-hidden="true">01</span> Film</button>
+        <button type="button" aria-pressed={browseMode === 'food'} className={browseMode === 'food' ? 'selected' : ''} onClick={() => onChangeMode('food')}><span aria-hidden="true">02</span> Dinner</button>
       </div>
-      <div className="ios-card-stack ios-browse-list" role="tabpanel">
+      <div className="ios-listing-stack ios-browse-list">
         {browseMode === 'film'
           ? items.map(movie => <MovieCard key={movie.id} movie={movie} onSelect={onSelect} compact />)
           : items.map(item => <RestaurantCard key={item.id} restaurant={item} onSelect={onSelect} />)}
@@ -237,16 +303,17 @@ function EveningDraftReview({ draft, onBack, onSave, onChoose, onClear, actionMe
   const canSave = Boolean(draft.cinema && draft.food)
   return (
     <main className="ios-page ios-detail-page">
-      <button type="button" className="ios-back-button" onClick={onBack}>‹ Back</button>
-      <p className="ios-eyebrow">YOUR EVENING</p>
-      <h1>One good plan.</h1>
-      <p className="ios-draft-intro">SIXPM stores this pair only on this iPhone, and removes provider details after their approved freshness windows end.</p>
+      <button type="button" className="ios-back-button" onClick={onBack}>← Return to catalog</button>
+      <p className="ios-eyebrow">EVENING COMPOSED</p>
+      <h1>One good<br />night.</h1>
+      <DecoRule compact />
+      <p className="ios-draft-intro">SIXPM stores this pair on this iPhone only, and removes provider details when their approved freshness windows end.</p>
       <section className="ios-saved-detail-block">
         <h2>Film</h2>
         {draft.cinema ? (
           <>
             <p>{draft.cinema.title}</p>
-            <p>{readableDate(draft.cinema.date)} · {draft.cinema.time} · {draft.cinema.theaterShortName}</p>
+            <p>{readableDate(draft.cinema.date)} · {formatScreeningTime(draft.cinema.time)} · {draft.cinema.theaterShortName}</p>
           </>
         ) : <p>Choose a verified AMC showing to continue.</p>}
       </section>
@@ -270,6 +337,7 @@ function EveningDraftReview({ draft, onBack, onSave, onChoose, onClear, actionMe
 }
 
 function locationLabel(location) {
+  if (location.state === 'granted' && location.location) return 'Nearby picks enabled'
   if (location.state === 'granted') return 'Ready when you ask'
   if (location.state === 'denied') return 'Not allowed'
   if (location.state === 'checking') return 'Checking…'
@@ -287,11 +355,13 @@ function Settings({ catalog, status, onRefresh, network, location, onUseLocation
   const catalogDescription = status === 'offline'
     ? 'Showing the last verified catalog still within its approved provider windows.'
     : `AMC showtimes updated ${formatCatalogTime(cinema.generatedAt)}.`
+  const hasNearbyPicks = location.state === 'granted' && location.location
   return (
     <main className="ios-page">
       <header className="ios-page-header">
-        <p className="ios-eyebrow">NO ACCOUNT. NO ADS.</p>
-        <h1>Settings</h1>
+        <p className="ios-eyebrow">SIXPM / APP NOTES</p>
+        <h1>Keep it<br />simple.</h1>
+        <DecoRule compact />
       </header>
       <section className="ios-settings-card">
         <span>Catalog status</span>
@@ -307,12 +377,20 @@ function Settings({ catalog, status, onRefresh, network, location, onUseLocation
         <div><span>Calendar and reminders</span><strong>Used only when you save an evening</strong></div>
         <div><span>United States</span><strong>iPhone V1</strong></div>
       </section>
-      {nativeAdapter.isNativeIos && location.state !== 'granted' && (
+      {nativeAdapter.isNativeIos && (
         <section className="ios-settings-action">
-          <p>Location is never collected on launch or stored by SIXPM. It is requested only for an explicit nearby-picks action.</p>
-          <button type="button" className="ios-secondary-button" onClick={onUseLocation}>
-            Use my location
-          </button>
+          {location.state === 'denied' ? (
+            <p>Location is off. SIXPM has not stored or sent it. Enable it in iPhone Settings only if you want dinner picks sorted by distance.</p>
+          ) : (
+            <>
+              <p>{hasNearbyPicks
+                ? 'Dinner picks are sorted nearest first for this session. SIXPM does not store or transmit your location.'
+                : 'Location is never collected on launch or stored by SIXPM. Ask once to sort approved dinner picks by distance.'}</p>
+              <button type="button" className="ios-secondary-button" onClick={onUseLocation}>
+                {hasNearbyPicks ? 'Update my location' : 'Use my location'}
+              </button>
+            </>
+          )}
         </section>
       )}
     </main>
@@ -330,13 +408,14 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
 
   return (
     <main className="ios-page ios-detail-page">
-      <button type="button" className="ios-back-button" onClick={onBack}>‹ Back</button>
-      <p className="ios-eyebrow">{isCinema ? 'AMC SHOWTIME' : 'SIXPM EDITORIAL'}</p>
+      <button type="button" className="ios-back-button" onClick={onBack}>← Return to catalog</button>
+      <p className="ios-eyebrow">{isCinema ? 'AMC / CURRENT SHOWTIME' : 'SIXPM / DINNER NOTE'}</p>
       <h1>{isCinema ? item.title : item.name}</h1>
+      <DecoRule compact />
       <div className="ios-detail-meta">
         {isCinema ? (
           <>
-            <span>{readableDate(cinema.date)} · {cinema.time}</span>
+            <span>{readableDate(cinema.date)} · {formatScreeningTime(cinema.time)}</span>
             <span>{cinema.theaterName} · {cinema.format || 'Standard'}</span>
           </>
         ) : (
@@ -353,7 +432,7 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
           <h2>More showtimes</h2>
           {item.showings.map(showing => (
             <ExternalLink key={showing.id} href={showing.link} className="ios-showtime-link">
-              {readableDate(showing.date)} · {showing.time} · {showing.theaterShortName} · {showing.format || 'Standard'}
+              {readableDate(showing.date)} · {formatScreeningTime(showing.time)} · {showing.theaterShortName} · {showing.format || 'Standard'}
             </ExternalLink>
           ))}
         </section>
@@ -365,7 +444,7 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
           disabled={alreadySelected}
           onClick={() => onAddToEvening(isCinema ? 'cinema' : 'food', isCinema ? cinema : item)}
         >
-          {alreadySelected ? `${isCinema ? 'Film' : 'Dinner'} selected` : addLabel}
+          {alreadySelected ? `${isCinema ? 'Film' : 'Dinner'} held` : addLabel}
         </button>
         <ExternalLink href={primaryLink} className="ios-link-button">
           {isCinema ? 'AMC showtimes' : 'Get directions'}
@@ -471,7 +550,10 @@ export default function IosApp() {
   const useLocation = async () => {
     try {
       const result = await nativeAdapter.requestCurrentLocation()
-      setLocation({ state: result.status })
+      setLocation({
+        state: result.status,
+        ...(result.location ? { location: result.location } : {}),
+      })
     } catch {
       setLocation({ state: 'unavailable' })
     }
@@ -651,6 +733,8 @@ export default function IosApp() {
           : activeTab === 'tonight'
             ? <Tonight
                 catalog={catalog}
+                catalogStatus={status}
+                location={location.location}
                 onSelect={selectCatalogItem}
                 onBrowse={openBrowse}
                 draft={draft}
@@ -661,6 +745,8 @@ export default function IosApp() {
             : activeTab === 'browse'
               ? <Browse
                   catalog={catalog}
+                  catalogStatus={status}
+                  location={location.location}
                   onSelect={selectCatalogItem}
                   browseMode={browseMode}
                   onChangeMode={setBrowseMode}
@@ -684,7 +770,7 @@ export default function IosApp() {
     <div className="ios-app">
       {content}
       {!selection && (
-        <nav className="ios-tab-bar" aria-label="Main navigation">
+        <nav className="ios-tab-bar" aria-label="SIXPM field index">
           {TABS.map(tab => (
             <button
               key={tab.id}
@@ -698,8 +784,8 @@ export default function IosApp() {
                 setActiveTab(tab.id)
               }}
             >
-              <span aria-hidden="true">{tab.icon}</span>
-              {tab.label}
+              <span className="ios-tab-index" aria-hidden="true">{tab.index}</span>
+              <span>{tab.label}</span>
             </button>
           ))}
         </nav>

@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { groupScreeningsByTitle, tonightOrNextScreenings } from '../../src/ios/format.js'
+import {
+  distanceMilesBetween,
+  formatDistanceMiles,
+  formatScreeningTime,
+  groupScreeningsByTitle,
+  sortRestaurantsByDistance,
+  tonightOrNextScreenings,
+} from '../../src/ios/format.js'
 
 const cinemaFeed = {
   data: {
@@ -40,5 +47,35 @@ describe('iOS Tonight screening selection', () => {
     expect(groups.map(group => group.title)).toEqual(['One Film', 'Another Film'])
     expect(groups[0].primary.id).toBe('early')
     expect(groups[0].showings.map(showing => showing.id)).toEqual(['early', 'late'])
+  })
+})
+
+describe('iOS local nearby food ordering', () => {
+  it('sorts only on-device restaurant coordinates while preserving records without coordinates last', () => {
+    const origin = { latitude: 34.0522, longitude: -118.2437 }
+    const restaurants = [
+      { id: 'far', name: 'Far', lat: 34.1800, lng: -118.3000 },
+      { id: 'missing', name: 'Missing' },
+      { id: 'near', name: 'Near', lat: 34.0540, lng: -118.2450 },
+    ]
+
+    const sorted = sortRestaurantsByDistance(restaurants, origin)
+
+    expect(sorted.map(item => item.id)).toEqual(['near', 'far', 'missing'])
+    expect(sorted[0].distanceMiles).toBeLessThan(sorted[1].distanceMiles)
+    expect(sorted[2].distanceMiles).toBeNull()
+    expect(restaurants[0].distanceMiles).toBeUndefined()
+  })
+
+  it('formats a local distance without treating a missing coordinate as a distance', () => {
+    expect(distanceMilesBetween({ latitude: 34.0522, longitude: -118.2437 }, { lat: 34.0522, lng: -118.2437 })).toBe(0)
+    expect(formatDistanceMiles(0.84)).toBe('0.8 mi away')
+    expect(formatDistanceMiles(13.2)).toBe('13 mi away')
+    expect(formatDistanceMiles(null)).toBeNull()
+  })
+
+  it('normalizes AM/PM casing for iPhone presentation without changing sort semantics', () => {
+    expect(formatScreeningTime('7:00 am')).toBe('7:00 AM')
+    expect(formatScreeningTime('12:05 PM')).toBe('12:05 PM')
   })
 })

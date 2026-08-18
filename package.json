@@ -38,6 +38,8 @@
     "release:check": "npm run check && npm run test:e2e && npm run catalog:check && node scripts/validate-data.js --strict"
   },
   "dependencies": {
+    "@fontsource/josefin-sans": "5.3.0",
+    "@fontsource/source-serif-4": "5.3.0",
     "@capacitor/browser": "^8.0.4",
     "@capacitor/calendar": "^1.0.0",
     "@capacitor/core": "^8.5.0",

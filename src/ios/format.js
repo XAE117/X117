@@ -1,6 +1,19 @@
 import { createAppleMapsUrl } from '../utils/directions.js'
 
 const EVENING_START_MINUTES = 17 * 60
+const EARTH_RADIUS_MILES = 3_958.7613
+
+function coordinatesFor(point) {
+  const latitude = Number(point?.latitude ?? point?.lat)
+  const longitude = Number(point?.longitude ?? point?.lng)
+  return Number.isFinite(latitude) && Number.isFinite(longitude)
+    ? { latitude, longitude }
+    : null
+}
+
+function radians(value) {
+  return value * Math.PI / 180
+}
 
 export function localDateKey(date = new Date()) {
   return [
@@ -21,12 +34,56 @@ export function parseTimeMinutes(value) {
   return hours * 60 + minutes
 }
 
+export function formatScreeningTime(value) {
+  const match = String(value || '').match(/^(\d{1,2}):(\d{2})\s*(am|pm)$/i)
+  if (!match) return String(value || 'Time unavailable')
+  return `${Number(match[1])}:${match[2]} ${match[3].toUpperCase()}`
+}
+
 export function formatCatalogTime(value) {
   const parsed = new Date(value)
   if (Number.isNaN(parsed.getTime())) return 'Unknown update time'
   return parsed.toLocaleString('en-US', {
     month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit',
   })
+}
+
+export function distanceMilesBetween(origin, destination) {
+  const start = coordinatesFor(origin)
+  const end = coordinatesFor(destination)
+  if (!start || !end) return null
+
+  const latitudeDelta = radians(end.latitude - start.latitude)
+  const longitudeDelta = radians(end.longitude - start.longitude)
+  const latitudeStart = radians(start.latitude)
+  const latitudeEnd = radians(end.latitude)
+  const halfChord = Math.sin(latitudeDelta / 2) ** 2 +
+    Math.cos(latitudeStart) * Math.cos(latitudeEnd) * Math.sin(longitudeDelta / 2) ** 2
+  return 2 * EARTH_RADIUS_MILES * Math.asin(Math.min(1, Math.sqrt(halfChord)))
+}
+
+export function formatDistanceMiles(value) {
+  if (!Number.isFinite(value) || value < 0) return null
+  if (value < 10) return `${value.toFixed(value < 1 ? 1 : 0)} mi away`
+  return `${Math.round(value)} mi away`
+}
+
+export function sortRestaurantsByDistance(restaurants, origin) {
+  if (!Array.isArray(restaurants)) return []
+  return restaurants
+    .map((restaurant, index) => ({
+      restaurant: {
+        ...restaurant,
+        distanceMiles: distanceMilesBetween(origin, restaurant),
+      },
+      index,
+    }))
+    .sort((left, right) => {
+      const leftDistance = left.restaurant.distanceMiles ?? Number.POSITIVE_INFINITY
+      const rightDistance = right.restaurant.distanceMiles ?? Number.POSITIVE_INFINITY
+      return leftDistance - rightDistance || left.index - right.index
+    })
+    .map(({ restaurant }) => restaurant)
 }
 
 export function collectScreenings(feed) {
