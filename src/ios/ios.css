@@ -156,6 +156,49 @@ button:focus-visible, a:focus-visible {
   padding: 1.2rem;
 }
 
+.ios-draft-banner {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(241, 201, 105, 0.38);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(77, 60, 20, 0.38), rgba(35, 31, 21, 0.96));
+}
+
+.ios-draft-banner > div:first-child {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.ios-draft-banner strong {
+  color: var(--ios-cream);
+  font-size: 0.98rem;
+  letter-spacing: -0.015em;
+  line-height: 1.32;
+}
+
+.ios-draft-banner span {
+  overflow: hidden;
+  color: var(--ios-muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ios-draft-banner-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.ios-draft-banner .ios-secondary-button,
+.ios-draft-banner .ios-text-button {
+  margin: 0;
+}
+
 .ios-feature-card h2 {
   max-width: 23rem;
   margin-top: 0.45rem;
@@ -173,6 +216,7 @@ button:focus-visible, a:focus-visible {
 
 .ios-primary-button,
 .ios-secondary-button,
+.ios-danger-button,
 .ios-text-button,
 .ios-back-button,
 .ios-tab-bar button {
@@ -286,6 +330,10 @@ button:focus-visible, a:focus-visible {
   font-size: 0.82rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.ios-saved-card {
+  border-color: rgba(241, 201, 105, 0.31);
 }
 
 .ios-food-card {
@@ -471,6 +519,78 @@ button:focus-visible, a:focus-visible {
   line-height: 1.55;
 }
 
+.ios-draft-intro {
+  max-width: 31rem;
+  margin-top: 1.15rem !important;
+  color: var(--ios-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ios-saved-detail-block {
+  display: grid;
+  gap: 0.36rem;
+  margin-top: 1.35rem;
+  padding: 1rem;
+  border: 1px solid var(--ios-line);
+  border-radius: 1rem;
+  background: var(--ios-surface);
+}
+
+.ios-saved-detail-block h2 {
+  color: var(--ios-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.ios-saved-detail-block p {
+  color: var(--ios-cream);
+  font-size: 0.94rem;
+  line-height: 1.42;
+}
+
+.ios-saved-detail-block p + p {
+  color: var(--ios-muted);
+}
+
+.ios-saved-detail-block .ios-secondary-button {
+  margin-top: 0.5rem;
+}
+
+.ios-expired-note,
+.ios-detail-boundary {
+  margin-top: 1.3rem !important;
+  padding: 0.9rem;
+  border-left: 2px solid var(--ios-gold);
+  color: var(--ios-muted);
+  background: rgba(241, 201, 105, 0.06);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.ios-action-message {
+  margin-top: 1.25rem !important;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(241, 201, 105, 0.34);
+  border-radius: 0.8rem;
+  color: var(--ios-cream);
+  background: rgba(241, 201, 105, 0.09);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.ios-action-note {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--ios-line);
+  border-radius: 0.8rem;
+  color: var(--ios-muted);
+  background: var(--ios-surface);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
 .ios-detail-note {
   padding-left: 0.9rem;
   border-left: 2px solid var(--ios-gold);
@@ -482,6 +602,15 @@ button:focus-visible, a:focus-visible {
   display: grid;
   gap: 0.7rem;
   margin-top: 1.5rem;
+}
+
+.ios-saved-actions .ios-primary-button,
+.ios-saved-actions .ios-secondary-button,
+.ios-draft-review-actions .ios-primary-button,
+.ios-draft-review-actions .ios-secondary-button,
+.ios-draft-review-actions .ios-text-button {
+  width: 100%;
+  margin-top: 0;
 }
 
 .ios-showtime-list {
@@ -524,6 +653,47 @@ button:focus-visible, a:focus-visible {
   color: var(--ios-muted);
   font-size: 0.82rem;
   line-height: 1.5;
+}
+
+.ios-danger-button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 1.4rem;
+  border: 1px solid rgba(255, 180, 171, 0.56);
+  border-radius: 0.75rem;
+  color: var(--ios-danger);
+  background: rgba(99, 35, 29, 0.24);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ios-delete-confirmation {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 180, 171, 0.56);
+  border-radius: 1rem;
+  background: rgba(99, 35, 29, 0.16);
+}
+
+.ios-delete-confirmation p {
+  color: var(--ios-cream);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.ios-delete-confirmation > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.ios-delete-confirmation .ios-secondary-button,
+.ios-delete-confirmation .ios-danger-button {
+  min-width: 0;
+  margin: 0;
+  padding-inline: 0.55rem;
 }
 
 .ios-tab-bar {

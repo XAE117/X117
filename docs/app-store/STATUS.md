@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-18 (Pacific)  
 Mission state: active  
-Current phase: 5 — Saved evenings and offline snapshots
+Current phase: 6 — Accessibility and iPhone polish
 
 ## Mission
 
@@ -37,11 +37,15 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 2.4 Catalog verification | passed | 58 unit tests, lint, production build, catalog-current check, catalog validator, and 40 browser route checks pass under Node 22. The catalog check is deterministic against the cinema scrape timestamp. |
 | 3.1 Separate iPhone entry | passed | `ios.html` and `src/ios/` form a standalone React surface. `vite --mode ios` builds only `dist-ios/`, with no legacy public tree copied into the bundle. |
 | 3.2 Remote catalog client | passed locally | The client fetches only versioned catalog paths, verifies SHA-256 digests, field allowlists, expiry, source state, and explicit disabled Jazz behavior before rendering. It cannot fall back to `theaters.json`, `restaurants.json`, or jazz source data. |
-| 3.3 Product boundary check | passed | `npm run build:ios` produced a three-file local UI bundle and `ios:bundle:check` found no excluded products or API-key variable tokens. |
+| 3.3 Product boundary check | passed | `npm run build:ios` produces an isolated local UI bundle (10 generated files in the current build) and `ios:bundle:check` found no excluded products or API-key variable tokens. |
 | 3.4 iPhone-size visual QA | passed locally | At 393×852, the catalog rendered without Vite overlays or console errors; evening-first grouped film cards, food browse/detail, and bottom navigation were exercised. This is browser evidence only, not simulator or device proof. |
 | 4.1 Capacitor iPhone shell | passed | Capacitor core/CLI/iOS are `8.5.0`; the generated target uses `com.xae117.sixpm`, iOS 17.0 minimum, and `TARGETED_DEVICE_FAMILY = 1`. The iOS shell loads only `dist-ios/index.html`; the build normalizes the isolated Vite `ios.html` artifact to that Capacitor entrypoint. |
 | 4.2 Native capability boundary | passed | Only Browser, Calendar, Geolocation, Local Notifications, Network, Preferences, and Share are present through Swift Package Manager. `NATIVE_CAPABILITIES.md` records the prompt, storage, and no-tracking boundaries. Calendar uses the interactive system editor; location and notification permission denials are never automatically re-prompted. |
 | 4.3 Native build verification | passed | `npm audit --omit=dev`, lint, 13 focused iOS tests, `npm run build:ios`, and `cap sync ios` passed. An iPhone simulator build completed with `BUILD SUCCEEDED` using `CODE_SIGNING_ALLOWED=NO`; this is compile evidence only, not signed-device proof. |
+| 5.1 Rights-bounded saved evenings | passed | A saved plan contains only an approved AMC showing and first-party food record with catalog provenance. It rejects unapproved providers, missing editorial coordinates, insecure links, stale feeds, and showtimes beyond AMC’s 36-hour freshness window. |
+| 5.2 Expiring local storage and offline catalog | passed | A verified catalog may be cached only after full validation; integrity or expiry failure deletes that whole cache. On saved-plan read/write, expired AMC or editorial sections are redacted and rewritten in Preferences rather than silently reused offline. |
+| 5.3 Local evening actions | passed in browser wiring | The full choose → pair → save → Calendar/reminder/share → completion/delete flow was exercised at 393×852. Calendar/reminder fallbacks are truthful outside iOS, and deletion requires confirmation. The actual native system sheets remain separately unproven until simulator/device QA. |
+| 5.4 Phase verification | passed | Under Node 22: `npm run check` passed (80 tests), `npm run catalog:check`, `npm run build:ios`, `npx cap sync ios`, and an iPhone Simulator `xcodebuild` with `CODE_SIGNING_ALLOWED=NO` all passed. |
 
 ## Phase status
 
@@ -52,8 +56,8 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 2. Rights ledger and safe catalog | complete | Machine-enforced provider states prevent pending or disabled data from entering the iOS catalog; legacy Google persistence is remediated and a versioned catalog is generated and verified. |
 | 3. iOS product boundary | complete | A separately built local UI consumes only the verified V1 catalog and excludes private/tangential web products from its production bundle. |
 | 4. Capacitor and platform adapters | complete | Capacitor 8 iPhone target, local entrypoint, tested platform adapters, truthful purpose strings, and native compile evidence are committed. |
-| 5. Saved evenings and offline | in progress | Whole-evening plans persist locally, work offline, and support native actions. |
-| 6. Accessibility and iPhone polish | pending | Safe-area, Dynamic Type, VoiceOver, reduced-motion, permission-denial, offline paths, and final SIXPM icon/splash artwork pass. |
+| 5. Saved evenings and offline | complete | Whole-evening plans persist locally, work offline only within their source freshness conditions, support native system actions, and erase provider details when they expire. |
+| 6. Accessibility and iPhone polish | in progress | Safe-area, Dynamic Type, VoiceOver, reduced-motion, permission-denial, offline paths, and final SIXPM icon/splash artwork pass. |
 | 7. Legal, privacy, and support | pending | Public legal/support pages and native privacy manifest are complete. |
 | 8. Release checks and device QA | pending | Web/iOS checks, simulator QA, and physical-device QA are evidenced separately. |
 | 9. TestFlight and App Store preparation | pending | Metadata, assets, review notes, and test plan are ready; no submission occurs. |

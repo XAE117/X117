@@ -54,12 +54,12 @@ Exit evidence: `npm run build:ios`, `npx cap sync ios`, an iPhone simulator comp
 
 ## Phase 5 — Saved evening loop
 
-1. Model and validate a whole evening: cinema/jazz/food selections, times, location context, catalog provenance/version, and optional notes.
+1. Model and validate a whole evening from the approved V1 selections: AMC cinema plus first-party food, with times, location context, and catalog provenance/version.
 2. Persist via Preferences with schema versioning, corruption recovery, export/share-safe serialization, and explicit deletion.
 3. Snapshot enough approved catalog data for saved plans to remain intelligible offline.
 4. Add Calendar interactive event creation, local reminders, directions in Apple Maps, system sharing, completion, and deletion.
 
-Exit evidence: saved-plan tests cover create/read/update/delete/migration/offline recovery, and simulator action smoke tests pass.
+Exit evidence: saved-plan tests cover create/read/update/delete/corruption recovery/offline expiry redaction, and a browser flow verifies the complete user journey. Native system-sheet proof remains part of the separately recorded simulator/device release gate.
 
 ## Phase 6 — iPhone quality
 

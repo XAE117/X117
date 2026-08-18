@@ -27,8 +27,9 @@ native bundle.
 - Tonight: evening-first AMC film choices and the currently approved SIXPM
   editorial food records.
 - Browse: grouped films and the small approved food set.
-- Saved: the dedicated destination for locally saved evenings (implemented in
-  the following capability phase).
+- Saved: the dedicated destination for locally saved AMC-and-food evenings,
+  including offline-safe detail redaction, native actions, completion, and
+  explicit deletion.
 - Settings: catalog freshness and privacy-first capability status.
 - External Apple Maps directions and official AMC showtime links.
 

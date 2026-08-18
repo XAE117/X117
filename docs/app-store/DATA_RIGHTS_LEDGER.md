@@ -23,11 +23,13 @@ catalog builder and validator reject every source that is not `approved`.
 | Restaurant editorial, reservation, and guide sources | pending | none | Scraped editorial copy, source badges, reservation links, and location data are excluded from the iOS catalog. |
 | OpenStreetMap, CARTO, and Leaflet | disabled for iOS | none | Embedded maps are out of V1. The app opens Apple Maps only as an external directions destination. |
 | SIXPM Vercel catalog transport | approved, transport-only | Versioned JSON feeds with SHA-256 index digests | The user-controlled [SIXPM deployment](https://sixpm.vercel.app/) transports the catalog. Transport approval does not approve third-party content. |
+| Local catalog cache and saved-evening snapshots | controlled local processing | Only the already-approved fields from a verified V1 feed; no raw legacy payload, key, or pending provider field | A full offline catalog cache is revalidated on every use and deleted on integrity or freshness failure. Saved evenings retain a provider section only until that section’s own expiry; loading or persisting a plan redacts expired fields and rewrites Preferences. |
 
 ## Native catalog rules
 
 1. `pending` and `disabled` records fail catalog generation, rather than being filtered only in a view.
 2. Accepted records carry provider IDs, attribution, schema version, generation time, expiry, and a SHA-256-indexed payload.
 3. `scripts/build-ios-catalog.js` emits only hard-coded allowed fields; `scripts/validate-ios-catalog.js` rejects non-approved providers, stale AMC data, digest mismatches, and forbidden provider markers.
-4. The browser/native client will reject an invalid or expired remote catalog and may use only a previously verified local snapshot with its timestamp.
-5. Provider metadata is never a substitute for the public legal, privacy, support, and attribution disclosures required before release.
+4. The browser/native client rejects an invalid or expired remote catalog. It may use only a previously verified local snapshot, and deletes the entire snapshot if any active feed fails integrity or freshness validation.
+5. A saved evening can include only a declared AMC showing and a declared first-party food pick. The AMC showing must start before the approved AMC persistence window ends; an expired provider section is redacted to its provider and expiry marker before the plan is rendered or rewritten.
+6. Provider metadata is never a substitute for the public legal, privacy, support, and attribution disclosures required before release.
