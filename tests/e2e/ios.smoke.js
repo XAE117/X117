@@ -31,8 +31,8 @@ test.describe('SIXPM iPhone shell', () => {
     const tabs = fieldIndex.getByRole('button')
 
     await expect(main).toBeVisible()
-    await expect(page.getByText("AMC / TONIGHT'S PROGRAM")).toBeVisible()
-    await expect(tabs).toHaveCount(4)
+    await expect(page.getByRole('heading', { name: 'Tonight', exact: true })).toBeVisible()
+    await expect(tabs).toHaveCount(5)
     await expect(fieldIndex.getByRole('button', { name: 'Tonight' })).toHaveAttribute('aria-current', 'page')
 
     for (const tab of await tabs.all()) {
@@ -40,9 +40,9 @@ test.describe('SIXPM iPhone shell', () => {
       expect(box?.height).toBeGreaterThanOrEqual(44)
     }
 
-    await fieldIndex.getByRole('button', { name: 'Catalog' }).click()
+    await fieldIndex.getByRole('button', { name: 'Cinema' }).click()
     await expect(main).toBeFocused()
-    await expect(fieldIndex.getByRole('button', { name: 'Catalog' })).toHaveAttribute('aria-current', 'page')
+    await expect(fieldIndex.getByRole('button', { name: 'Cinema' })).toHaveAttribute('aria-current', 'page')
   })
 
   test('keeps catalog response failures clear and non-technical', async ({ page }) => {
@@ -82,11 +82,11 @@ test.describe('SIXPM iPhone shell', () => {
   test('keeps named regions and touch-safe labeled controls across the directory', async ({ page }) => {
     await page.goto(IOS_URL, { waitUntil: 'networkidle' })
 
-    await expect(page.getByRole('region', { name: /Tonight.?s film|Next up/ })).toBeVisible()
+    await expect(page.getByRole('region', { name: /Tonight|Next up/ })).toBeVisible()
     await expect(page.getByRole('region', { name: /Dinner/ })).toBeVisible()
     await expectUsableVisibleControls(page)
 
-    await page.getByRole('button', { name: 'Catalog' }).click()
+    await page.getByRole('navigation', { name: 'SIXPM field index' }).getByRole('button', { name: 'Cinema' }).click()
     await expect(page.getByRole('group', { name: 'Catalog type' })).toBeVisible()
     await expectUsableVisibleControls(page)
 

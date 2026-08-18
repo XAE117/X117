@@ -27,10 +27,11 @@ import {
 } from './format.js'
 
 const TABS = [
-  { id: 'tonight', label: 'Tonight', index: '01' },
-  { id: 'browse', label: 'Catalog', index: '02' },
-  { id: 'saved', label: 'Saved', index: '03' },
-  { id: 'settings', label: 'Notes', index: '04' },
+  { id: 'tonight', label: 'Tonight', glyph: '◐' },
+  { id: 'film', label: 'Cinema', glyph: '◉' },
+  { id: 'food', label: 'Dinner', glyph: '✦' },
+  { id: 'saved', label: 'Saved', glyph: '♡' },
+  { id: 'settings', label: 'Notes', glyph: '☷' },
 ]
 
 const emptyDraft = () => ({ cinema: null, food: null })
@@ -176,6 +177,24 @@ function DecoRule({ compact = false }) {
   )
 }
 
+function HeritageMasthead({ onBrowse }) {
+  return (
+    <header className="ios-heritage-masthead">
+      <div className="ios-heritage-rule" aria-hidden="true" />
+      <p className="ios-heritage-title">SIXPM</p>
+      <p className="ios-heritage-subtitle">Los Angeles cinema &amp; dinner</p>
+      <div className="ios-heritage-rule" aria-hidden="true" />
+      <nav className="ios-heritage-nav" aria-label="Tonight's index">
+        <span className="active" aria-current="page">Tonight</span>
+        <i aria-hidden="true">◆</i>
+        <button type="button" onClick={() => onBrowse('film')}>Cinema</button>
+        <i aria-hidden="true">◆</i>
+        <button type="button" onClick={() => onBrowse('food')}>Dinner</button>
+      </nav>
+    </header>
+  )
+}
+
 function MovieCard({ movie, onSelect, compact = false }) {
   const primary = movie.primary
   const venueCount = new Set(movie.showings.map(showing => showing.theaterId)).size
@@ -281,8 +300,8 @@ function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, dr
   ), [catalog, location])
   const cinemaTitle = cinema.length > 0 && cinema[0].primary.date !== localDateKey(now)
     ? 'Next up'
-    : 'Tonight’s film'
-  const foodTitle = location ? 'Dinner nearby' : 'Dinner, kept simple'
+    : 'Tonight'
+  const foodTitle = location ? 'Dinner, nearby' : 'Dinner'
   const foodEyebrow = location ? 'NEARBY · SIXPM EDITORIAL' : 'SIXPM EDITORIAL'
   const dispatchDate = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -292,21 +311,15 @@ function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, dr
 
   return (
     <main className="ios-page ios-tonight-page" data-ios-screen tabIndex={-1}>
-      <header className="ios-hero">
-        <p className="ios-hero-kicker">THE LOS ANGELES EVENING GUIDE</p>
-        <h1>SIXPM</h1>
-        <p className="ios-hero-date">{dispatchDate}</p>
-        <DecoRule />
-        <p className="ios-hero-caption">A current cinema listing and a small dinner notebook for the part of Los Angeles that begins after work.</p>
-      </header>
+      <HeritageMasthead onBrowse={onBrowse} />
 
       <OfflineCatalogNotice status={catalogStatus} />
 
       <EveningDraftBanner draft={draft} onReview={onReviewDraft} onChoose={onChooseDraft} onClear={onClearDraft} />
 
       <section className="ios-section ios-tonight-film-section" aria-labelledby="ios-film-heading">
-        <SectionHeader headingId="ios-film-heading" eyebrow="AMC / TONIGHT'S PROGRAM" title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>Browse all</button>} />
-        <p className="ios-directory-note">Choose a verified showing, then add dinner from its listing.</p>
+        <SectionHeader headingId="ios-film-heading" eyebrow={dispatchDate} title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>All cinema</button>} />
+        <p className="ios-directory-note">Verified AMC showtimes, ordered for tonight.</p>
         <div className="ios-listing-stack">
           {cinema.length > 0
             ? cinema.map(movie => <MovieCard key={movie.id} movie={movie} onSelect={onSelect} />)
@@ -321,11 +334,6 @@ function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, dr
         </div>
       </section>
 
-      <aside className="ios-source-note">
-        <DecoRule compact />
-        <strong>Made for the evening, not the feed.</strong>
-        <span>Provider details are kept only while their approved freshness windows remain open. No account, ads, or tracking.</span>
-      </aside>
     </main>
   )
 }
@@ -339,20 +347,20 @@ function Browse({ catalog, catalogStatus, location, now, onSelect, browseMode, o
     location,
   ), [catalog, location])
   const items = browseMode === 'film' ? cinema : food
-  const directoryTitle = browseMode === 'film' ? <>Film<br />directory</> : <>Dinner<br />notebook</>
+  const directoryTitle = browseMode === 'film' ? <>Cinema<br />index</> : <>Dinner<br />notebook</>
 
   return (
     <main className="ios-page" data-ios-screen tabIndex={-1}>
       <header className="ios-page-header">
-        <p className="ios-eyebrow">LOS ANGELES · CURRENT EDITION</p>
+        <p className="ios-eyebrow">SIXPM / CURRENT EDITION</p>
         <h1>{directoryTitle}</h1>
         <DecoRule compact />
       </header>
       <OfflineCatalogNotice status={catalogStatus} />
       <EveningDraftBanner draft={draft} onReview={onReviewDraft} onChoose={onChooseDraft} onClear={onClearDraft} />
       <div className="ios-segmented-control" role="group" aria-label="Catalog type">
-        <button type="button" aria-pressed={browseMode === 'film'} className={browseMode === 'film' ? 'selected' : ''} onClick={() => onChangeMode('film')}><span aria-hidden="true">01</span> Film</button>
-        <button type="button" aria-pressed={browseMode === 'food'} className={browseMode === 'food' ? 'selected' : ''} onClick={() => onChangeMode('food')}><span aria-hidden="true">02</span> Dinner</button>
+        <button type="button" aria-pressed={browseMode === 'film'} className={browseMode === 'film' ? 'selected' : ''} onClick={() => onChangeMode('film')}><span aria-hidden="true">I</span> Cinema</button>
+        <button type="button" aria-pressed={browseMode === 'food'} className={browseMode === 'food' ? 'selected' : ''} onClick={() => onChangeMode('food')}><span aria-hidden="true">II</span> Dinner</button>
       </div>
       <div className="ios-listing-stack ios-browse-list">
         {browseMode === 'film'
@@ -1064,29 +1072,40 @@ export default function IosApp() {
       {content}
       {!selection && (
         <nav className="ios-tab-bar" aria-label="SIXPM field index">
-          {TABS.map(tab => (
-            <button
-              key={tab.id}
-              type="button"
-              className={activeTab === tab.id ? 'active' : ''}
-              aria-current={activeTab === tab.id ? 'page' : undefined}
-              onClick={() => {
-                if (tab.id === 'settings') {
-                  openSettings()
-                  return
-                }
-                setActionMessage(null)
-                setDeleting(false)
-                setDataDeletionArmed(false)
-                setDataDeletionMessage(null)
-                setSelection(null)
-                setActiveTab(tab.id)
-              }}
-            >
-              <span className="ios-tab-index" aria-hidden="true">{tab.index}</span>
-              <span>{tab.label}</span>
-            </button>
-          ))}
+          {TABS.map(tab => {
+            const isActive = tab.id === 'film'
+              ? activeTab === 'browse' && browseMode === 'film'
+              : tab.id === 'food'
+                ? activeTab === 'browse' && browseMode === 'food'
+                : activeTab === tab.id
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                className={isActive ? 'active' : ''}
+                aria-current={isActive ? 'page' : undefined}
+                onClick={() => {
+                  if (tab.id === 'film' || tab.id === 'food') {
+                    openBrowse(tab.id)
+                    return
+                  }
+                  if (tab.id === 'settings') {
+                    openSettings()
+                    return
+                  }
+                  setActionMessage(null)
+                  setDeleting(false)
+                  setDataDeletionArmed(false)
+                  setDataDeletionMessage(null)
+                  setSelection(null)
+                  setActiveTab(tab.id)
+                }}
+              >
+                <span className="ios-tab-glyph" aria-hidden="true">{tab.glyph}</span>
+                <span>{tab.label}</span>
+              </button>
+            )
+          })}
         </nav>
       )}
     </div>

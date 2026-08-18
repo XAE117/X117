@@ -232,6 +232,110 @@ button:focus-visible, a:focus-visible {
   line-height: 1.58;
 }
 
+/* The iPhone app deliberately carries forward the original Palace/SIXPM
+ * masthead: a compact piece of movie-house signage, not a startup hero. */
+.ios-heritage-masthead {
+  padding: 0.45rem 0 1.5rem;
+  text-align: center;
+}
+
+.ios-heritage-rule {
+  position: relative;
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent 0%, var(--ios-line) 12%, var(--ios-line-strong) 35%, var(--ios-line-strong) 65%, var(--ios-line) 88%, transparent 100%);
+}
+
+.ios-heritage-rule::before,
+.ios-heritage-rule::after {
+  position: absolute;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  content: '';
+  background: var(--ios-gold);
+  transform: rotate(45deg);
+}
+
+.ios-heritage-rule::before { left: 17%; }
+.ios-heritage-rule::after { right: 17%; }
+
+.ios-heritage-title {
+  margin: 0.78rem 0 0.28rem !important;
+  color: var(--ios-gold);
+  font-family: var(--ios-display);
+  font-size: clamp(3.45rem, 17.5vw, 5.4rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 0.82;
+  text-indent: 0.15em;
+  text-shadow: 0 0 1.35rem rgba(201, 168, 76, 0.16);
+}
+
+.ios-heritage-subtitle {
+  margin: 0 0 0.78rem !important;
+  color: var(--ios-cream);
+  font-family: var(--ios-body);
+  font-size: clamp(0.53rem, 2.45vw, 0.71rem);
+  font-weight: 400;
+  letter-spacing: 0.185em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.ios-heritage-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.38rem, 2.45vw, 0.85rem);
+  margin-top: 1.15rem;
+  color: var(--ios-muted);
+  font-family: var(--ios-body);
+  font-size: clamp(0.59rem, 2.9vw, 0.73rem);
+  font-weight: 600;
+  letter-spacing: 0.135em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.ios-heritage-nav button {
+  position: relative;
+  min-height: 44px;
+  padding: 0.32rem 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-transform: inherit;
+}
+
+.ios-heritage-nav button:hover,
+.ios-heritage-nav button:focus-visible { color: var(--ios-cream); }
+
+.ios-heritage-nav .active {
+  position: relative;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  color: var(--ios-gold);
+}
+
+.ios-heritage-nav .active::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.15rem;
+  left: 0;
+  height: 1px;
+  content: '';
+  background: var(--ios-gold);
+}
+
+.ios-heritage-nav i {
+  color: var(--ios-gold);
+  font-size: 0.42rem;
+  font-style: normal;
+}
+
 .ios-deco-rule {
   display: flex;
   align-items: center;
@@ -1105,52 +1209,55 @@ button:focus-visible, a:focus-visible {
 .ios-tab-bar {
   position: fixed;
   z-index: 20;
-  right: 0.6rem;
-  bottom: max(0.6rem, env(safe-area-inset-bottom));
-  left: 0.6rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: grid;
-  width: min(calc(100% - 1.2rem), 450px);
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin: 0 auto;
-  padding: 0.24rem;
-  border: 1px solid rgba(201, 168, 76, 0.42);
-  background: rgba(16, 14, 12, 0.94);
-  box-shadow: 0 0 0 3px rgba(13, 11, 10, 0.88), 0 0.8rem 2.4rem rgba(0, 0, 0, 0.46);
+  padding: 0.32rem 0.45rem calc(0.43rem + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(201, 168, 76, 0.42);
+  background: linear-gradient(180deg, rgba(13, 11, 10, 0.92), rgba(13, 11, 10, 0.985));
+  box-shadow: 0 -0.9rem 1.8rem rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(14px);
 }
 
 .ios-tab-bar button {
   position: relative;
   display: grid;
-  min-height: 44px;
+  min-height: 47px;
   place-content: center;
-  gap: 0.14rem;
-  padding: 0.32rem 0.18rem;
+  gap: 0.24rem;
+  padding: 0.25rem 0.1rem;
   color: var(--ios-muted);
   background: transparent;
   font-family: var(--ios-body);
-  font-size: 0.57rem;
+  font-size: 0.5rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.075em;
   line-height: 1;
   text-transform: uppercase;
 }
 
-.ios-tab-bar button + button { border-left: 1px solid var(--ios-line); }
+.ios-tab-bar button + button { border-left: 0; }
 
-.ios-tab-index {
+.ios-tab-glyph {
   color: var(--ios-faint);
-  font-family: var(--ios-mono);
-  font-size: 0.5rem;
+  font-family: var(--ios-display);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 0.8;
 }
 
 .ios-tab-bar button.active { color: var(--ios-gold); }
+.ios-tab-bar button.active .ios-tab-glyph { color: var(--ios-gold); }
 
 .ios-tab-bar button.active::after {
   position: absolute;
-  right: 0.45rem;
-  bottom: 0.05rem;
-  left: 0.45rem;
+  right: 0.68rem;
+  bottom: -0.02rem;
+  left: 0.68rem;
   height: 1px;
   content: '';
   background: var(--ios-gold);
