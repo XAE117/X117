@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const simulatorId = process.env.IOS_SIMULATOR_ID?.trim()
+const bundleId = 'com.xae117.sixpm'
 
 if (!simulatorId) {
   console.error('Set IOS_SIMULATOR_ID to the disposable iPhone Simulator UDID before running native UI tests.')
@@ -17,13 +18,31 @@ if (!/^[A-F0-9-]{36}$/i.test(simulatorId)) {
   process.exit(2)
 }
 
+// Keep this a genuine fresh-install test. Reusing a previous app container can
+// silently substitute a verified offline catalog for the recovery state.
+const uninstall = spawnSync('xcrun', [
+  'simctl',
+  'uninstall',
+  simulatorId,
+  bundleId,
+], {
+  cwd: root,
+  stdio: 'inherit',
+})
+
+if (uninstall.error) {
+  console.error(uninstall.error.message)
+  process.exit(1)
+}
+
+if (uninstall.status !== 0) process.exit(uninstall.status ?? 1)
+
 const privacyReset = spawnSync('xcrun', [
   'simctl',
   'privacy',
   simulatorId,
-  'revoke',
+  'reset',
   'location',
-  'com.xae117.sixpm',
 ], {
   cwd: root,
   stdio: 'inherit',
