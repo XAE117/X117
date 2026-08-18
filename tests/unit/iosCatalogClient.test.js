@@ -21,6 +21,13 @@ function readCatalogFixture() {
   }
 }
 
+function jsonResponse(payload) {
+  return new Response(JSON.stringify(payload), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  })
+}
+
 describe('iOS remote catalog client', () => {
   it('accepts the checked-in rights-gated catalog', async () => {
     const { index, feeds } = readCatalogFixture()
@@ -37,11 +44,11 @@ describe('iOS remote catalog client', () => {
     const fixture = readCatalogFixture()
     const calls = []
     const fetchImpl = async (url) => {
+      calls.push(url)
       const path = new URL(url).pathname
-      calls.push(path)
       const name = path.split('/').pop().replace('.json', '')
       const payload = name === 'index' ? fixture.index : fixture.feeds[name]
-      return new Response(JSON.stringify(payload), { status: 200 })
+      return jsonResponse(payload)
     }
 
     const catalog = await loadRemoteCatalog({
@@ -51,12 +58,13 @@ describe('iOS remote catalog client', () => {
     })
 
     expect(catalog.feeds.cinema.data.theaters.length).toBeGreaterThan(0)
-    expect(calls).toEqual([
+    expect(calls.map(url => new URL(url).pathname)).toEqual([
       '/catalog/v1/index.json',
       '/catalog/v1/cinema.json',
       '/catalog/v1/jazz.json',
       '/catalog/v1/food.json',
     ])
+    expect(calls.every(url => typeof url === 'string')).toBe(true)
   })
 
   it('rejects a payload that attempts to relabel a record as a pending provider', async () => {
@@ -79,7 +87,7 @@ describe('iOS remote catalog client', () => {
       const path = new URL(url).pathname
       const name = path.split('/').pop().replace('.json', '')
       const payload = name === 'index' ? fixture.index : fixture.feeds[name]
-      return new Response(JSON.stringify(payload), { status: 200 })
+      return jsonResponse(payload)
     }
 
     await expect(loadRemoteCatalog({
@@ -87,5 +95,17 @@ describe('iOS remote catalog client', () => {
       fetchImpl,
       now: new Date(fixture.index.generatedAt),
     })).rejects.toBeInstanceOf(CatalogValidationError)
+  })
+
+  it('rejects an HTML response before parsing it as a catalog', async () => {
+    const fetchImpl = async () => new Response('<!doctype html><title>SIXPM</title>', {
+      status: 200,
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    })
+
+    await expect(loadRemoteCatalog({
+      baseUrl: 'https://catalog.example.test/',
+      fetchImpl,
+    })).rejects.toThrow('Catalog response was not JSON')
   })
 })

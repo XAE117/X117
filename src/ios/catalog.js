@@ -206,14 +206,23 @@ export async function validateRemoteCatalog({
 }
 
 async function fetchJson(url, { fetchImpl, signal }) {
-  const response = await fetchImpl(url, {
+  const requestUrl = typeof url === 'string' ? url : url.href
+  const response = await fetchImpl(requestUrl, {
     method: 'GET',
     headers: { Accept: 'application/json' },
     cache: 'no-store',
     signal,
   })
   if (!response.ok) throw new Error(`Catalog request failed (${response.status})`)
-  return response.json()
+  const contentType = response.headers.get('content-type') || ''
+  if (!/\b(?:application|text)\/(?:[a-z0-9.+-]*\+)?json\b/i.test(contentType)) {
+    throw new Error('Catalog response was not JSON')
+  }
+  try {
+    return await response.json()
+  } catch {
+    throw new Error('Catalog response was not valid JSON')
+  }
 }
 
 export async function loadRemoteCatalog({

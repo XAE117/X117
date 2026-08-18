@@ -139,7 +139,7 @@ function LegalNote({ page, onBack }) {
   )
 }
 
-function CatalogState({ status, error, onRetry, savedCount, onOpenSaved }) {
+function CatalogState({ status, onRetry, savedCount, onOpenSaved }) {
   const savedLabel = `Open ${savedCount} saved evening${savedCount === 1 ? '' : 's'}`
   if (status === 'loading') {
     return (
@@ -156,7 +156,7 @@ function CatalogState({ status, error, onRetry, savedCount, onOpenSaved }) {
     <main className="ios-status-screen" data-ios-screen tabIndex={-1} aria-live="assertive" aria-atomic="true">
       <span className="ios-status-mark ios-status-mark-error" aria-hidden="true">!</span>
       <h1>Catalog unavailable.</h1>
-      <p>{error?.message || 'SIXPM could not verify a current catalog.'}</p>
+      <p>SIXPM could not verify a current catalog. Check your connection and try again.</p>
       <button type="button" className="ios-primary-button" onClick={() => onRetry()}>
         Try again
       </button>
@@ -577,7 +577,7 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
 }
 
 export default function IosApp() {
-  const { catalog, status, error, refresh } = useIosCatalog()
+  const { catalog, status, refresh } = useIosCatalog()
   const saved = useSavedEvenings()
   const [activeTab, setActiveTab] = useState('tonight')
   const [browseMode, setBrowseMode] = useState('film')
@@ -972,7 +972,7 @@ export default function IosApp() {
   if (!catalog && activeTab !== 'saved' && activeTab !== 'settings') {
     return (
       <div ref={contentRef} className={appClassName}>
-        <CatalogState status={status} error={error} onRetry={refresh} savedCount={saved.evenings.length} onOpenSaved={openSaved} />
+        <CatalogState status={status} onRetry={refresh} savedCount={saved.evenings.length} onOpenSaved={openSaved} />
       </div>
     )
   }
