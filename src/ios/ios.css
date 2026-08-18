@@ -263,7 +263,6 @@ button:focus-visible, a:focus-visible {
   margin: 0.78rem 0;
 }
 
-.ios-dispatch,
 .ios-source-note,
 .ios-saved-detail-block,
 .ios-settings-card,
@@ -273,42 +272,6 @@ button:focus-visible, a:focus-visible {
   border: 1px solid var(--ios-line-strong);
   background: linear-gradient(135deg, rgba(60, 43, 23, 0.22), rgba(21, 18, 16, 0.64) 68%);
   box-shadow: inset 0 0 0 3px var(--ios-bg), inset 0 0 0 4px rgba(201, 168, 76, 0.18);
-}
-
-.ios-dispatch {
-  padding: 1.25rem 1.2rem 1.15rem;
-}
-
-.ios-dispatch::before,
-.ios-dispatch::after {
-  position: absolute;
-  top: 0.5rem;
-  width: 0.42rem;
-  height: 0.42rem;
-  content: '';
-  border: 1px solid var(--ios-gold);
-  transform: rotate(45deg);
-}
-
-.ios-dispatch::before { left: 0.55rem; }
-.ios-dispatch::after { right: 0.55rem; }
-
-.ios-dispatch h2 {
-  margin-top: 0.46rem;
-  color: var(--ios-cream);
-  font-family: var(--ios-display);
-  font-size: clamp(1.7rem, 8vw, 2.35rem);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
-}
-
-.ios-dispatch > p:not(.ios-eyebrow) {
-  max-width: 29rem;
-  margin-top: 0.85rem;
-  color: var(--ios-muted);
-  font-size: 0.91rem;
-  line-height: 1.55;
 }
 
 .ios-primary-button,
@@ -493,6 +456,10 @@ button:focus-visible, a:focus-visible {
   margin-top: 2.7rem;
 }
 
+.ios-tonight-film-section {
+  margin-top: 0.3rem;
+}
+
 .ios-section-heading {
   display: flex;
   align-items: flex-end;
@@ -501,6 +468,14 @@ button:focus-visible, a:focus-visible {
   margin-bottom: 0.48rem;
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--ios-line);
+}
+
+.ios-directory-note {
+  margin: 0.68rem 0 0.2rem;
+  color: var(--ios-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.015em;
+  line-height: 1.45;
 }
 
 .ios-section-heading h2 {
@@ -1277,7 +1252,6 @@ button:focus-visible, a:focus-visible {
     --ios-faint: #bdb2a2;
   }
 
-  .ios-dispatch,
   .ios-source-note,
   .ios-saved-detail-block,
   .ios-settings-card,

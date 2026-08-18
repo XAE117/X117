@@ -300,19 +300,11 @@ function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, dr
 
       <OfflineCatalogNotice status={catalogStatus} />
 
-      <section className="ios-dispatch" aria-labelledby="ios-decide-heading">
-        <p className="ios-eyebrow">THE FIRST PICK</p>
-        <h2 id="ios-decide-heading">Choose a showing.<br />Make a night of it.</h2>
-        <p>Pair a verified AMC screening with dinner, then keep the whole evening on this iPhone.</p>
-        <button type="button" className="ios-primary-button" onClick={() => onBrowse('film')}>
-          <span>Browse AMC listings</span><span aria-hidden="true">→</span>
-        </button>
-      </section>
-
       <EveningDraftBanner draft={draft} onReview={onReviewDraft} onChoose={onChooseDraft} onClear={onClearDraft} />
 
-      <section className="ios-section" aria-labelledby="ios-film-heading">
-        <SectionHeader eyebrow="AMC CATALOG" title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>See all</button>} />
+      <section className="ios-section ios-tonight-film-section" aria-labelledby="ios-film-heading">
+        <SectionHeader eyebrow="AMC / TONIGHT'S PROGRAM" title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>Browse all</button>} />
+        <p className="ios-directory-note">Choose a verified showing, then add dinner from its listing.</p>
         <div className="ios-listing-stack">
           {cinema.length > 0
             ? cinema.map(movie => <MovieCard key={movie.id} movie={movie} onSelect={onSelect} />)
