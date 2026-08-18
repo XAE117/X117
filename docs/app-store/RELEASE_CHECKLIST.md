@@ -11,6 +11,8 @@ simulator, or local fixture flow passed.
 - [x] Node 22, lint, unit tests, web build, audit, iOS bundle boundary, privacy
   manifest, Capacitor sync, browser smoke checks, and native simulator QA have
   recorded evidence in [STATUS.md](STATUS.md).
+- [x] `npm run ios:release:check` passes from the current clean release commit;
+  `npm run release:check` remains a separate strict web-guide health gate.
 - [x] The iPhone surface restores SIXPM’s editorial directory identity rather
   than the generic dashboard/card direction.
 - [x] The iOS catalog permits only approved AMC and owner-authored dinner data;

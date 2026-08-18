@@ -47,15 +47,21 @@ The app opens at `http://localhost:5173`.
 | `npm run test:e2e` | Run desktop and mobile Playwright journeys |
 | `npm run check` | Lint, unit test, build, and dependency audit |
 | `npm run validate` | Validate data and update `public/health-report.md` |
-| `npm run release:check` | Run all quality checks and strict data validation |
+| `npm run release:check` | Run the web-wide quality gate and strict guide-data validation without rewriting the report |
+| `npm run ios:release:check` | Run the iPhone quality, rights-catalog, bundle, privacy, and Capacitor-sync checks |
+| `IOS_SIMULATOR_ID=<udid> npm run test:ios:ui` | Run native iPhone recovery and denied-location QA on an explicit disposable simulator |
 | `npm run scrape` | Refresh cinema data |
 | `npm run scrape:jazz` | Refresh jazz data |
 | `npm run scrape:eats` | Refresh the full restaurant catalog |
 | `npm run scrape:eats:hot` | Refresh the fast-moving restaurant lists |
 | `npm run scrape:all` | Run all three data pipelines |
 
-`release:check` is the release gate. Warnings are allowed during ordinary data
-refreshes but fail the strict release check.
+`release:check` is the web-wide release gate. Warnings are allowed during
+ordinary data refreshes but fail its strict validation. The iPhone lane uses
+`ios:release:check`: it still requires the rights-gated catalog, isolated
+bundle, privacy manifest, web quality checks, and Capacitor sync, but it does
+not confuse the intentionally rights-cleared iPhone dinner notebook with the
+full web guide’s coordinate and coverage thresholds.
 
 ## Data trust
 
