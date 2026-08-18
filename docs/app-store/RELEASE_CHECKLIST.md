@@ -15,6 +15,9 @@ simulator, or local fixture flow passed.
   `npm run release:check` remains a separate strict web-guide health gate.
 - [x] The iPhone surface restores SIXPM’s editorial directory identity rather
   than the generic dashboard/card direction.
+- [x] A disposable simulator exercised the actual iOS notification permission,
+  local-reminder schedule, and cancellation lifecycle; this is recorded as
+  simulator evidence only in [STATUS.md](STATUS.md).
 - [x] The iOS catalog permits only approved AMC and owner-authored dinner data;
   unresolved providers are disabled.
 - [ ] Confirm a PR review of the final release diff and resolve all actionable

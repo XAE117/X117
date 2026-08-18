@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url'
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const simulatorId = process.env.IOS_SIMULATOR_ID?.trim()
 const bundleId = 'com.xae117.sixpm'
+const normalUiTest = 'AppUITests/SIXPMAppUITests/testFreshCatalogRecoveryKeepsSupportAndLocationDenialReachable'
 
 if (!simulatorId) {
   console.error('Set IOS_SIMULATOR_ID to the disposable iPhone Simulator UDID before running native UI tests.')
@@ -63,6 +64,7 @@ const result = spawnSync('xcodebuild', [
   '-derivedDataPath', '/tmp/sixpm-ios-ui-tests',
   'CODE_SIGNING_ALLOWED=NO',
   'test',
+  `-only-testing:${normalUiTest}`,
 ], {
   cwd: root,
   stdio: 'inherit',

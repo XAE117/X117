@@ -58,7 +58,15 @@ final class SIXPMAccessibilityPlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func getContentSizeCategory(_ call: CAPPluginCall) {
-        call.resolve(payload())
+        // Capacitor invokes plugin methods on its bridge queue. UIKit trait
+        // collection reads must stay on the main thread.
+        DispatchQueue.main.async { [weak self] in
+            guard let self else {
+                call.reject("SIXPM could not read the current text-size setting.")
+                return
+            }
+            call.resolve(self.payload())
+        }
     }
 
     private func payload() -> [String: Any] {

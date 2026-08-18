@@ -4,6 +4,10 @@ export default defineConfig({
   testDir: './tests/e2e',
   testMatch: '**/*.smoke.js',
   fullyParallel: true,
+  // Vite's dev server transforms the legacy web routes on first request. A
+  // small fixed worker pool keeps the release smoke run deterministic instead
+  // of turning that cold-start work into an artificial route timeout.
+  workers: 2,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? 'github' : 'list',

@@ -28,6 +28,7 @@
     "ios:sync": "npm run build:ios && npm run ios:privacy:check && cap sync ios",
     "ios:release:check": "npm run check && npm run test:e2e && npm run catalog:check && npm run catalog:artifact:check && npm run ios:sync",
     "test:ios:ui": "node scripts/run-ios-ui-tests.js",
+    "test:ios:native-actions": "node scripts/run-ios-native-action-tests.js",
     "ios:open": "cap open ios",
     "ios:run": "npm run ios:sync && cap run ios",
     "ios:doctor": "cap doctor",

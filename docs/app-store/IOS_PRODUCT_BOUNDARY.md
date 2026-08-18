@@ -73,3 +73,19 @@ npm run build:ios
 `dev:ios` enables CORS only for the local Capacitor QA origin, so a temporary
 rights-gated catalog can render in Simulator. It does not alter a production
 build, the Vercel headers, or the release app's HTTPS-only catalog endpoint.
+
+For the native local-reminder lifecycle only, run the explicit disposable-
+simulator command:
+
+```sh
+IOS_SIMULATOR_ID=<disposable-simulator-udid> npm run test:ios:native-actions
+```
+
+That harness builds a separate `com.xae117.sixpm.qa` app against the local,
+rights-gated catalog and uses `App/Info-QA.plist` solely to allow local
+networking during the test. It asserts the native notification permission,
+schedule, and cancellation flow and refuses a Main Thread Checker diagnostic,
+then uninstalls the QA app and runs `npm run ios:sync` in a `finally` block.
+The shipping bundle and
+`App/Info.plist` remain HTTPS-only and must never contain the local-network
+exception.
