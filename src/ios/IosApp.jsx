@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { SavedEveningDetail, SavedEvenings } from './SavedEveningViews.jsx'
+import { clearOfflineCatalogSnapshot } from './offlineCatalog.js'
+import { eraseSIXPMOnDeviceData } from './onDeviceData.js'
 import { useIosCatalog } from './useIosCatalog.js'
 import { nativeAdapter } from './native/nativeAdapter.js'
 import { useNetworkStatus } from './useNetworkStatus.js'
@@ -32,6 +34,53 @@ const TABS = [
 ]
 
 const emptyDraft = () => ({ cinema: null, food: null })
+
+const IOS_LEGAL_NOTES = Object.freeze({
+  privacy: {
+    eyebrow: 'SIXPM / PRIVACY',
+    title: 'Your evening stays yours.',
+    sections: [
+      ['On this iPhone', 'Saved evenings, a verified offline catalog snapshot, and related Calendar/reminder status are stored locally. SIXPM has no account, ads, analytics SDKs, tracking pixels, subscription, or in-app purchase.'],
+      ['Your choices', 'Location is requested only when you ask for nearby picks and is used only in memory. Calendar, reminders, sharing, and external links open only after you choose their action. SIXPM does not read your Calendar, contacts, share recipients, or notification history.'],
+      ['Catalog and deletion', 'The app fetches a rights-gated catalog over HTTPS from Vercel. Vercel may process routine request metadata under its Privacy Notice; SIXPM does not use it for advertising, profiling, or cross-app tracking. You can erase saved evenings and the offline catalog in App Notes. Calendar events you chose to add remain in Calendar under your control.'],
+    ],
+    href: 'https://sixpm.vercel.app/privacy',
+    linkLabel: 'Open full Privacy Policy',
+  },
+  terms: {
+    eyebrow: 'SIXPM / TERMS',
+    title: 'Use the guide. Make the call.',
+    sections: [
+      ['Informational only', 'SIXPM helps you discover current entertainment and dinner options. It does not sell tickets, make reservations, guarantee availability, or operate any venue. Confirm details directly with the provider before you go.'],
+      ['Your choices', 'You control saved evenings, Calendar, reminders, directions, sharing, travel, purchases, and venue decisions. Showtimes and provider details can change.'],
+      ['Source limits', 'AMC showtimes are shown only inside the approved catalog boundary. The dinner notebook is a small first-party editorial set, not a guarantee or a complete city guide.'],
+    ],
+    href: 'https://sixpm.vercel.app/terms',
+    linkLabel: 'Open full Terms',
+  },
+  support: {
+    eyebrow: 'SIXPM / SUPPORT',
+    title: 'A clear way back in.',
+    sections: [
+      ['Get help', 'Use the public support tracker with your iPhone model, iOS version, app version, and a short description. Do not include passwords, payment details, tickets, or precise location in a public issue.'],
+      ['A catalog is unavailable', 'Check your connection and try Refresh. SIXPM shows an offline catalog only while its approved provider windows remain current; saved plans remain on this iPhone with expired provider details removed.'],
+      ['Permissions', 'SIXPM respects a denied permission and never repeatedly asks. Re-enable Location, Calendar, or Notifications in iPhone Settings only if you want that feature again.'],
+    ],
+    href: 'https://github.com/XAE117/X117/issues/new',
+    linkLabel: 'Open support tracker',
+  },
+  credits: {
+    eyebrow: 'SIXPM / CREDITS',
+    title: 'Sources, with limits.',
+    sections: [
+      ['Catalog attribution', 'Showtimes supplied by AMC Theatres. The dinner notebook is curated by SIXPM from owner-authored, rights-cleared records only.'],
+      ['Excluded from V1', 'No TMDB enrichment or imagery, Google Places or Maps content, scraped restaurant editorial, Jazz listings, embedded maps, accounts, ads, or tracking SDKs are included.'],
+      ['Technology and type', 'SIXPM uses React, Vite, and Capacitor. Source Serif 4 and Josefin Sans are bundled locally through Fontsource under the SIL Open Font License 1.1.'],
+    ],
+    href: 'https://sixpm.vercel.app/credits',
+    linkLabel: 'Open full credits',
+  },
+})
 
 function ExternalLink({ href, children, className = 'ios-link-button' }) {
   const [error, setError] = useState(null)
@@ -66,6 +115,27 @@ function ExternalLink({ href, children, className = 'ios-link-button' }) {
       </a>
       {error && <span className="ios-inline-error" role="alert">{error}</span>}
     </span>
+  )
+}
+
+function LegalNote({ page, onBack }) {
+  const note = IOS_LEGAL_NOTES[page] || IOS_LEGAL_NOTES.privacy
+  return (
+    <main className="ios-page ios-detail-page ios-legal-page" data-ios-screen tabIndex={-1}>
+      <button type="button" className="ios-back-button" onClick={onBack}>← Return to app notes</button>
+      <p className="ios-eyebrow">{note.eyebrow}</p>
+      <h1>{note.title}</h1>
+      <DecoRule compact />
+      <div className="ios-legal-sections">
+        {note.sections.map(([heading, copy]) => (
+          <section key={heading} className="ios-saved-detail-block">
+            <h2>{heading}</h2>
+            <p>{copy}</p>
+          </section>
+        ))}
+      </div>
+      <ExternalLink href={note.href} className="ios-secondary-button">{note.linkLabel}</ExternalLink>
+    </main>
   )
 }
 
@@ -344,17 +414,37 @@ function locationLabel(location) {
   return nativeAdapter.isNativeIos ? 'Off until you ask' : 'Available in iPhone app'
 }
 
-function Settings({ catalog, status, onRefresh, network, location, locationMessage, onUseLocation, textScale }) {
-  const cinema = catalog.feeds.cinema
+function Settings({
+  catalog,
+  status,
+  onRefresh,
+  network,
+  location,
+  locationMessage,
+  onUseLocation,
+  textScale,
+  onOpenLegal,
+  dataDeletionArmed,
+  dataDeletionPending,
+  dataDeletionMessage,
+  onBeginDataDeletion,
+  onCancelDataDeletion,
+  onConfirmDataDeletion,
+}) {
+  const cinema = catalog?.feeds?.cinema
   const isConnected = network.connected
   const catalogLabel = status === 'refreshing'
     ? 'Refreshing…'
     : status === 'offline'
       ? 'Offline snapshot'
-      : 'Verified'
+      : cinema
+        ? 'Verified'
+        : 'Unavailable'
   const catalogDescription = status === 'offline'
     ? 'Showing the last verified catalog still within its approved provider windows.'
-    : `AMC showtimes updated ${formatCatalogTime(cinema.generatedAt)}.`
+    : cinema
+      ? `AMC showtimes updated ${formatCatalogTime(cinema.generatedAt)}.`
+      : 'No verified catalog is available. Saved evenings and app notes remain on this iPhone.'
   const hasNearbyPicks = location.state === 'granted' && location.location
   return (
     <main className="ios-page" data-ios-screen tabIndex={-1}>
@@ -395,6 +485,40 @@ function Settings({ catalog, status, onRefresh, network, location, locationMessa
           {locationMessage && <p className="ios-action-message" role="status">{locationMessage}</p>}
         </section>
       )}
+      <section className="ios-settings-action ios-policy-card" aria-labelledby="ios-policy-heading">
+        <h2 id="ios-policy-heading">Policies + support</h2>
+        <p>Read the app’s local privacy summary, terms, source credits, or support guidance. The complete public pages are available when you choose to open them.</p>
+        <div className="ios-policy-index">
+          {[
+            ['privacy', 'Privacy'],
+            ['terms', 'Terms'],
+            ['support', 'Support'],
+            ['credits', 'Credits'],
+          ].map(([page, label], index) => (
+            <button type="button" key={page} onClick={() => onOpenLegal(page)}>
+              <span aria-hidden="true">0{index + 1}</span>{label}
+            </button>
+          ))}
+        </div>
+      </section>
+      <section className="ios-settings-action ios-data-controls" aria-labelledby="ios-data-heading">
+        <h2 id="ios-data-heading">On-device data</h2>
+        {!dataDeletionArmed ? (
+          <>
+            <p>Erase saved evenings and the verified offline catalog from this iPhone. Any Calendar event you chose to add remains in Calendar.</p>
+            <button type="button" className="ios-danger-button" onClick={onBeginDataDeletion} disabled={dataDeletionPending}>Erase on-device data</button>
+          </>
+        ) : (
+          <div className="ios-delete-confirmation" role="alert" aria-busy={dataDeletionPending || undefined}>
+            <p>Erase every saved evening and the offline catalog from this iPhone? This cannot be undone. Calendar events remain in Calendar.</p>
+            <div>
+              <button type="button" className="ios-secondary-button" onClick={onCancelDataDeletion} disabled={dataDeletionPending}>Keep data</button>
+              <button type="button" className="ios-danger-button" onClick={onConfirmDataDeletion} disabled={dataDeletionPending}>{dataDeletionPending ? 'Erasing…' : 'Erase permanently'}</button>
+            </div>
+          </div>
+        )}
+        {dataDeletionMessage && <p className="ios-action-message" role="status">{dataDeletionMessage}</p>}
+      </section>
     </main>
   )
 }
@@ -469,6 +593,9 @@ export default function IosApp() {
   const [draft, setDraft] = useState(emptyDraft)
   const [actionMessage, setActionMessage] = useState(null)
   const [deleting, setDeleting] = useState(false)
+  const [dataDeletionArmed, setDataDeletionArmed] = useState(false)
+  const [dataDeletionPending, setDataDeletionPending] = useState(false)
+  const [dataDeletionMessage, setDataDeletionMessage] = useState(null)
   const [location, setLocation] = useState({ state: 'checking' })
   const [locationMessage, setLocationMessage] = useState(null)
   const [textScale, setTextScale] = useState({ category: 'UICTContentSizeCategoryL', scale: 1, source: 'default' })
@@ -529,6 +656,7 @@ export default function IosApp() {
     setActiveTab('browse')
     setSelection(null)
     setLocationMessage(null)
+    setDataDeletionArmed(false)
   }
 
   const openSaved = () => {
@@ -537,6 +665,27 @@ export default function IosApp() {
     setActiveTab('saved')
     setSelection(null)
     setLocationMessage(null)
+    setDataDeletionArmed(false)
+  }
+
+  const openLegalNote = (page) => {
+    setActionMessage(null)
+    setDeleting(false)
+    setDataDeletionArmed(false)
+    setDataDeletionMessage(null)
+    setActiveTab('settings')
+    setSelection({ type: 'legal', page })
+  }
+
+  const beginDataDeletion = () => {
+    if (dataDeletionPending) return
+    setDataDeletionArmed(true)
+    setDataDeletionMessage(null)
+  }
+
+  const cancelDataDeletion = () => {
+    if (dataDeletionPending) return
+    setDataDeletionArmed(false)
   }
 
   const selectCatalogItem = (nextSelection) => {
@@ -674,6 +823,41 @@ export default function IosApp() {
     }
   }
 
+  const eraseOnDeviceData = async () => {
+    if (!dataDeletionArmed || dataDeletionPending) return
+
+    setDataDeletionPending(true)
+    setDataDeletionMessage(null)
+    setActionMessage(null)
+
+    try {
+      const result = await eraseSIXPMOnDeviceData({
+        evenings: saved.evenings,
+        cancelReminder: cancelNativeReminder,
+        clearSavedEvenings: saved.clear,
+        clearOfflineCatalog: clearOfflineCatalogSnapshot,
+      })
+      const fullyCleared = result.savedEveningsCleared && result.offlineCatalogCleared
+
+      if (!fullyCleared) {
+        setDataDeletionMessage('SIXPM could not confirm that every local item was erased. Try again before deleting the app. Calendar events are never changed.')
+        return
+      }
+
+      setDraft(emptyDraft())
+      if (result.unresolvedReminderCount > 0) {
+        setDataDeletionMessage(`Saved evenings and the offline catalog were erased. ${result.unresolvedReminderCount} local reminder${result.unresolvedReminderCount === 1 ? '' : 's'} could not be confirmed as removed; check iPhone Settings if needed.`)
+        return
+      }
+      setDataDeletionMessage('Saved evenings and the offline catalog were erased from this iPhone. Calendar events remain in Calendar.')
+    } catch {
+      setDataDeletionMessage('SIXPM could not confirm that every local item was erased. Try again before deleting the app. Calendar events are never changed.')
+    } finally {
+      setDataDeletionPending(false)
+      setDataDeletionArmed(false)
+    }
+  }
+
   const removeReminder = async (evening) => {
     try {
       await cancelNativeReminder(evening)
@@ -762,7 +946,7 @@ export default function IosApp() {
   }
 
   const appClassName = `ios-app${textScale.scale >= 1.24 ? ' ios-type-accessibility' : ''}`
-  const routeKey = `${!catalog && activeTab !== 'saved' ? 'catalog-state' : 'catalog'}:${selection?.type === 'saved'
+  const routeKey = `${!catalog && activeTab !== 'saved' && activeTab !== 'settings' ? 'catalog-state' : 'catalog'}:${selection?.type === 'saved'
     ? `saved:${selection.id}`
     : selection?.type || activeTab}`
 
@@ -779,7 +963,7 @@ export default function IosApp() {
     return () => clearTimeout(timeout)
   }, [routeKey])
 
-  if (!catalog && activeTab !== 'saved') {
+  if (!catalog && activeTab !== 'saved' && activeTab !== 'settings') {
     return (
       <div ref={contentRef} className={appClassName}>
         <CatalogState status={status} error={error} onRetry={refresh} savedCount={saved.evenings.length} onOpenSaved={openSaved} />
@@ -787,10 +971,34 @@ export default function IosApp() {
     )
   }
 
-  const content = !catalog
-    ? renderSaved()
-    : selection?.type === 'saved'
-      ? renderSaved()
+  const settings = (
+    <Settings
+      catalog={catalog}
+      status={status}
+      onRefresh={refresh}
+      network={network}
+      location={location}
+      locationMessage={locationMessage}
+      onUseLocation={useLocation}
+      textScale={textScale}
+      onOpenLegal={openLegalNote}
+      dataDeletionArmed={dataDeletionArmed}
+      dataDeletionPending={dataDeletionPending}
+      dataDeletionMessage={dataDeletionMessage}
+      onBeginDataDeletion={beginDataDeletion}
+      onCancelDataDeletion={cancelDataDeletion}
+      onConfirmDataDeletion={eraseOnDeviceData}
+    />
+  )
+
+  const content = selection?.type === 'legal'
+    ? <LegalNote page={selection.page} onBack={() => setSelection(null)} />
+    : !catalog
+      ? activeTab === 'saved'
+        ? renderSaved()
+        : settings
+      : selection?.type === 'saved'
+        ? renderSaved()
       : selection?.type === 'draft'
         ? <EveningDraftReview
             draft={draft}
@@ -829,16 +1037,7 @@ export default function IosApp() {
                 />
               : activeTab === 'saved'
                 ? renderSaved()
-                : <Settings
-                    catalog={catalog}
-                    status={status}
-                    onRefresh={refresh}
-                    network={network}
-                    location={location}
-                    locationMessage={locationMessage}
-                    onUseLocation={useLocation}
-                    textScale={textScale}
-                  />
+                : settings
 
   return (
     <div ref={contentRef} className={appClassName}>
@@ -854,6 +1053,8 @@ export default function IosApp() {
               onClick={() => {
                 setActionMessage(null)
                 setDeleting(false)
+                setDataDeletionArmed(false)
+                setDataDeletionMessage(null)
                 setSelection(null)
                 setActiveTab(tab.id)
               }}

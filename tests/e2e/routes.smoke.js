@@ -18,6 +18,10 @@ const routes = [
   'food/map',
   'guide',
   'roll',
+  'privacy',
+  'terms',
+  'support',
+  'credits',
 ]
 
 test.beforeEach(async ({ page }) => {
@@ -80,4 +84,15 @@ test('cinema map waits for its styles before rendering markers', async ({ page }
   await expect(pane).toHaveCount(1)
   await expect(pane).toHaveCSS('position', 'absolute')
   await expect(page.locator('.leaflet-interactive').first()).toBeVisible()
+})
+
+test('privacy page remains available when catalog requests fail', async ({ page }) => {
+  await page.route('**/theaters.json', route => route.abort())
+  await page.route('**/jazz-venues.json', route => route.abort())
+  await page.route('**/restaurants.json', route => route.abort())
+
+  await page.goto('privacy', { waitUntil: 'domcontentloaded' })
+
+  await expect(page.getByRole('heading', { name: 'Your evening stays yours.' })).toBeVisible()
+  await expect(page.locator('#root')).not.toContainText('Unable to load data')
 })

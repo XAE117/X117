@@ -834,6 +834,76 @@ button:focus-visible, a:focus-visible {
   background: rgba(26, 23, 21, 0.55);
 }
 
+.ios-settings-action h2,
+.ios-legal-page .ios-saved-detail-block h2 {
+  margin: 0 0 0.55rem;
+  color: var(--ios-cream);
+  font-family: var(--ios-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.ios-policy-index {
+  display: grid;
+  margin-top: 0.92rem;
+  border-top: 1px solid var(--ios-line);
+}
+
+.ios-policy-index button {
+  display: grid;
+  min-height: 45px;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  align-items: center;
+  padding: 0.48rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--ios-line);
+  color: var(--ios-cream);
+  background: transparent;
+  font-family: var(--ios-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.ios-policy-index button span {
+  color: var(--ios-gold);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+}
+
+.ios-policy-index button:hover,
+.ios-policy-index button:focus-visible {
+  color: var(--ios-gold);
+}
+
+.ios-legal-page .ios-legal-sections {
+  display: grid;
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--ios-line);
+}
+
+.ios-legal-page .ios-saved-detail-block {
+  padding: 1rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--ios-line);
+  background: transparent;
+  box-shadow: none;
+}
+
+.ios-legal-page .ios-saved-detail-block p {
+  color: var(--ios-muted);
+  font-size: 0.89rem;
+  line-height: 1.56;
+}
+
+.ios-legal-page .ios-secondary-button {
+  margin-top: 1.2rem;
+}
+
 .ios-detail-page {
   padding-bottom: calc(env(safe-area-inset-bottom) + 2.1rem);
 }
@@ -1161,6 +1231,10 @@ button:focus-visible, a:focus-visible {
 .ios-app.ios-type-accessibility .ios-settings-list strong {
   max-width: none;
   text-align: left;
+}
+
+.ios-app.ios-type-accessibility .ios-delete-confirmation > div {
+  grid-template-columns: 1fr;
 }
 
 .ios-app.ios-type-accessibility .ios-tab-bar button {

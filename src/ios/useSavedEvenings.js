@@ -101,6 +101,8 @@ export function useSavedEvenings({ adapter = nativeAdapter, clock = currentDate 
     return removed
   }, [persist])
 
+  const clear = useCallback(async () => persist(() => []), [persist])
+
   return {
     evenings,
     status,
@@ -111,5 +113,6 @@ export function useSavedEvenings({ adapter = nativeAdapter, clock = currentDate 
     setReminder,
     setCalendar,
     remove,
+    clear,
   }
 }

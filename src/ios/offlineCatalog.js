@@ -57,3 +57,7 @@ export async function loadOfflineCatalogSnapshot({
     verifiedAt: snapshot.savedAt,
   }
 }
+
+export async function clearOfflineCatalogSnapshot({ adapter = nativeAdapter } = {}) {
+  await adapter.removePreference(SIXPM_STORAGE_KEYS.catalogSnapshot)
+}

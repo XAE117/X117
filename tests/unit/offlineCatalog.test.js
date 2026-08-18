@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import {
+  clearOfflineCatalogSnapshot,
   loadOfflineCatalogSnapshot,
   saveOfflineCatalogSnapshot,
 } from '../../src/ios/offlineCatalog.js'
@@ -56,5 +57,16 @@ describe('iOS offline catalog snapshots', () => {
 
     expect(expired).toBeNull()
     expect(removed).toBe(true)
+  })
+
+  it('offers an explicit on-device catalog erase path', async () => {
+    const removed = []
+    const adapter = {
+      removePreference: async key => { removed.push(key) },
+    }
+
+    await clearOfflineCatalogSnapshot({ adapter })
+
+    expect(removed).toEqual(['sixpm.catalog-snapshot.v1'])
   })
 })

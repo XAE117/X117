@@ -46,8 +46,25 @@ permission, identifier, or telemetry behavior.
   be added to Calendar only on request.
 
 Local notifications use iOS notification authorization at the reminder action;
-they do not require an Info.plist privacy usage string. `PrivacyInfo.xcprivacy`
-and the App Store privacy declaration remain a separate release gate.
+they do not require an Info.plist privacy usage string.
+
+## Privacy manifest
+
+`ios/App/App/PrivacyInfo.xcprivacy` is a target resource and declares:
+
+- `NSPrivacyTracking = false`, with no tracking domains;
+- no app-collected data types in the local UI/native code path; and
+- `NSPrivacyAccessedAPICategoryUserDefaults` for Capacitor Preferences with
+  Apple reason `CA92.1` (app-only local storage).
+
+The manifest is valid XML and has been copied into the simulator app bundle.
+It is not an App Store Connect privacy-label waiver: the Vercel catalog host
+may retain end-user request metadata, so the separate submission draft must be
+revalidated against the live Vercel configuration before an App Store privacy
+answer is entered.
+
+Run `npm run ios:privacy:check` to fail if the committed manifest no longer
+declares this boundary or is no longer in the iPhone target.
 
 ## Verification record
 

@@ -3,6 +3,7 @@ import { Routes as RouterRoutes, Route, Navigate } from 'react-router-dom'
 import LoadingSpinner from './components/LoadingSpinner.jsx'
 import { useAppDataContext } from './context/useAppDataContext'
 import { useAppUIContext } from './context/useAppUIContext'
+import LegalPage from './views/LegalPages.jsx'
 
 const ByTheater = lazy(() => import('./views/ByTheater.jsx'))
 const ByDay = lazy(() => import('./views/ByDay.jsx'))
@@ -103,6 +104,11 @@ export default function RoutesView({ standalone = false }) {
         <Route path="/guide" element={<GuideHub />} />
         <Route path="/guide/tacos" element={<TacoGuideRoute />} />
         <Route path="/guide/pizza" element={<PizzaGuideEssay />} />
+
+        <Route path="/privacy" element={<LegalPage page="privacy" />} />
+        <Route path="/terms" element={<LegalPage page="terms" />} />
+        <Route path="/support" element={<LegalPage page="support" />} />
+        <Route path="/credits" element={<LegalPage page="credits" />} />
         <Route path="*" element={
           <div className="route-not-found">
             <h1>That page slipped off the calendar.</h1>
