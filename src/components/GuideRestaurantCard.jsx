@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useId } from 'react'
+import { createAppleMapsUrl } from '../utils/directions.js'
 import './GuideRestaurantCard.css'
 
 function GuideRestaurantCard({ restaurant, children }) {
@@ -44,6 +45,7 @@ function GuideRestaurantCard({ restaurant, children }) {
   }, [open])
 
   if (!restaurant) return <span>{children}</span>
+  const directionsUrl = restaurant.directionsUrl || createAppleMapsUrl(restaurant)
 
   return (
     <span className="guide-restaurant-trigger-wrap">
@@ -68,8 +70,8 @@ function GuideRestaurantCard({ restaurant, children }) {
             <span className="guide-card-note">{restaurant.notableFor}</span>
           )}
           <span className="guide-card-links">
-            {restaurant.googleMapsUrl && (
-              <a href={restaurant.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="guide-card-link">
+            {directionsUrl && (
+              <a href={directionsUrl} target="_blank" rel="noopener noreferrer" className="guide-card-link">
                 Directions ↗
               </a>
             )}

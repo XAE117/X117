@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "catalog": "food",
+  "generatedAt": "2026-08-18T12:28:43.152Z",
+  "expiresAt": "2027-08-18T12:28:43.152Z",
+  "providers": [
+    "sixpm-editorial"
+  ],
+  "attribution": [
+    "Curated by SIXPM."
+  ],
+  "availability": {
+    "status": "limited",
+    "reasonCode": "editorial_seed_only"
+  },
+  "data": {
+    "restaurants": [
+      {
+        "id": "tacos-el-chato-olympic",
+        "provider": "sixpm-editorial",
+        "name": "Tacos El Chato",
+        "neighborhood": "Olympic/La Brea",
+        "address": "Olympic Blvd & La Brea Ave, Los Angeles, CA",
+        "cuisine": "Tacos",
+        "tier": "street",
+        "priceRange": "$6–12/pp",
+        "description": "Late-night taco stand. Al pastor and suadero are the move. The kind of spot you tell people about in whispers.",
+        "whyHot": "The most iconic late-night taco stand in central LA. Go after midnight.",
+        "tags": [
+          "late-night",
+          "cash-only",
+          "outdoor",
+          "no-reservations",
+          "tacos"
+        ],
+        "hours": "Thu-Sun 9pm-3am",
+        "lat": 34.0532,
+        "lng": -118.3442
+      },
+      {
+        "id": "leos-taco-truck-hollywood",
+        "provider": "sixpm-editorial",
+        "name": "Leo's Taco Truck",
+        "neighborhood": "Mid-City / Hollywood / Pico-Union (12 locations)",
+        "address": "1515 N La Brea Ave, Los Angeles, CA 90028",
+        "cuisine": "Al Pastor Tacos",
+        "tier": "tacos",
+        "priceRange": "$5–10/pp",
+        "description": "The most famous al pastor in LA, with 12 locations citywide. The spinning trompo is mesmerizing. Leo's institutionalized the 'pineapple flick' — the taquero carves a thin slice of pineapple from the top of the trompo and catches it on your taco. The bromelain enzymes provide a necessary counterpoint to the rich adobo pork.",
+        "whyHot": "24/7 accessibility, $1.50 tacos, and that iconic pineapple flick. The most reliable late-night taco in the city.",
+        "tags": [
+          "LATE-NIGHT",
+          "CASH ONLY",
+          "TRUCK",
+          "AL PASTOR",
+          "PINEAPPLE FLICK"
+        ],
+        "hours": "Daily 9am-3am",
+        "lat": 34.096,
+        "lng": -118.3442
+      }
+    ]
+  }
+}

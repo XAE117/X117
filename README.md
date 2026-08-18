@@ -76,8 +76,11 @@ Optional enrichment keys:
 
 - `AMC_API_KEY` for AMC showtimes
 - `TMDB_API_KEY` for film metadata
-- `GOOGLE_PLACES_API_KEY` for restaurant address/neighborhood enrichment
 - Twilio credentials for configured SMS alerts
+
+Google Places enrichment is retired. The App Store catalog never receives
+Google-derived place content; its provider policy and field-level validator
+are documented in [`docs/app-store/DATA_RIGHTS_LEDGER.md`](docs/app-store/DATA_RIGHTS_LEDGER.md).
 
 ## Deployment
 

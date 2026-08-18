@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { normalizeRestaurantData } from '../../src/hooks/useAppData.js'
 
 describe('restaurant normalization', () => {
-  it('creates actionable map links when ingestion did not provide one', () => {
+  it('creates an Apple Maps directions link when ingestion did not provide one', () => {
     const data = normalizeRestaurantData({
       restaurants: [{
         id: 'spot',
@@ -12,7 +12,7 @@ describe('restaurant normalization', () => {
       }],
     })
 
-    expect(data.restaurants[0].googleMapsUrl).toContain('google.com/maps/search')
-    expect(data.restaurants[0].googleMapsUrl).toContain('Test%20Kitchen')
+    expect(data.restaurants[0].directionsUrl).toContain('maps.apple.com')
+    expect(data.restaurants[0].directionsUrl).toContain('Test+Kitchen')
   })
 })

@@ -31,6 +31,10 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 0.6 Native toolchain | passed | Xcode 26.6, iOS 26.5 iPhone simulator, and one Apple Development identity are present. Node 22.23.2 is installed at `/opt/homebrew/opt/node@22`; `.nvmrc` and `package.json` now pin the repository to Node 22. |
 | 0.7 Baseline release checks | complete with data warning | Under Node 22: lint, 53 unit tests, production build, and dependency audit pass; 40 desktop/mobile browser checks pass. `release:check` exits 2 only because strict data validation reports five theatre records with no future screenings. This is recorded as a catalog-health condition to resolve through the iOS provider/catalog gate, not waived as a native-release pass. |
 | 0.8 Draft release lane | passed | Draft PR #14 (`codex/ios-app-store` → `main`) is the sole authoritative App Store mission lane. |
+| 2.1 Provider policy | passed | `config/ios-provider-policy.json` defines machine-readable `approved` / `pending` / `disabled` states. Only limited AMC catalog fields and two owner-authored `manualPick` restaurant records are approved. |
+| 2.2 Google Places remediation | passed | The restaurant scraper no longer calls Google Places; its geocoder was removed. The deterministic migration stripped legacy Google URLs from 232 restaurant records and 25 guide records, retaining coordinates/hours only on the two documented editorial records. No remote secret was changed. |
+| 2.3 Versioned catalog | passed locally | `public/catalog/v1/` contains SHA-256-indexed cinema, food, and explicit-disabled jazz feeds. It contains 5 AMC theatres / 2,366 screenings and 2 SIXPM editorial restaurants; no TMDB, Google, jazz, or unapproved source payload is emitted. The feed will reach production only through the normal reviewed PR/deployment path. |
+| 2.4 Catalog verification | passed | 58 unit tests, lint, production build, catalog-current check, catalog validator, and 40 browser route checks pass under Node 22. The catalog check is deterministic against the cinema scrape timestamp. |
 
 ## Phase status
 
@@ -38,8 +42,8 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | --- | --- | --- |
 | 0. Revalidate, integrate, and baseline | complete | Clean worktree, protected canonical tree, current catalog snapshot, Node 22 baseline, audited dependencies, and one draft release lane are established. |
 | 1. App Store control documents | complete | This status, scope, execution plan, owner gates, and initial rights ledger are committed. |
-| 2. Rights ledger and safe catalog | in progress | Machine-enforced provider states must prevent pending or disabled data from entering the iOS catalog. |
-| 3. iOS product boundary | pending | Native build excludes private/tangential products and loads only the V1 surface. |
+| 2. Rights ledger and safe catalog | complete | Machine-enforced provider states prevent pending or disabled data from entering the iOS catalog; legacy Google persistence is remediated and a versioned catalog is generated and verified. |
+| 3. iOS product boundary | in progress | Native build excludes private/tangential products and loads only the V1 surface. |
 | 4. Capacitor and platform adapters | pending | iOS project and tested native capability adapters exist. |
 | 5. Saved evenings and offline | pending | Whole-evening plans persist locally, work offline, and support native actions. |
 | 6. Accessibility and iPhone polish | pending | Safe-area, Dynamic Type, VoiceOver, reduced-motion, permission-denial, and offline paths pass. |
@@ -52,7 +56,7 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 
 - Integrate the already-reviewed PR #12 content without overwriting scheduled catalog updates.
 - Establish the Node 22 command path and baseline test evidence.
-- Build a rights-cleared native catalog path. Pending sources will be disabled rather than treated as approved.
+- Build a native-only product surface that consumes the verified catalog without inheriting private or tangential web routes.
 
 ## Owner and external gates
 

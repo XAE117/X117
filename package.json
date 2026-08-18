@@ -14,7 +14,11 @@
     "scrape:jazz": "node --env-file-if-exists=.env scripts/scrape-jazz.js",
     "scrape:eats": "node --env-file-if-exists=.env scripts/scrape-restaurants.js",
     "scrape:eats:hot": "node --env-file-if-exists=.env scripts/scrape-restaurants.js --hot",
-    "scrape:all": "node --env-file-if-exists=.env scripts/scrape.js && node --env-file-if-exists=.env scripts/scrape-jazz.js && node --env-file-if-exists=.env scripts/scrape-restaurants.js",
+    "scrape:all": "node --env-file-if-exists=.env scripts/scrape.js && node --env-file-if-exists=.env scripts/scrape-jazz.js && node --env-file-if-exists=.env scripts/scrape-restaurants.js && node scripts/build-ios-catalog.js",
+    "catalog:build": "node scripts/build-ios-catalog.js",
+    "catalog:validate": "node scripts/validate-ios-catalog.js",
+    "catalog:check": "node scripts/build-ios-catalog.js --check && node scripts/validate-ios-catalog.js",
+    "restaurant:rights": "node scripts/migrate-restaurant-rights.js",
     "validate": "node scripts/validate-data.js",
     "notify": "node scripts/notify.js",
     "lint": "eslint .",
@@ -23,7 +27,7 @@
     "test:e2e": "playwright test",
     "audit": "node scripts/audit-dependencies.js",
     "check": "npm run lint && npm run test && npm run build && npm run audit",
-    "release:check": "npm run check && npm run test:e2e && node scripts/validate-data.js --strict"
+    "release:check": "npm run check && npm run test:e2e && npm run catalog:check && node scripts/validate-data.js --strict"
   },
   "dependencies": {
     "astronomy-engine": "^2.1.19",

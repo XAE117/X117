@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import DiceLoader from '../components/DiceLoader.jsx'
-import { generatePlans, getNextDays, getVenueMapsUrl, formatCostRange } from '../utils/generatePlan.js'
+import { generatePlans, getNextDays, getVenueDirectionsUrl, formatCostRange } from '../utils/generatePlan.js'
 import './DateNightGenerator.css'
 
 const VIBES = [
@@ -311,7 +311,7 @@ function RestaurantContent({ data }) {
         <div className="dn-activity-detail">📍 {data.distanceMiles.toFixed(1)} mi from venue</div>
       )}
       <a
-        href={data.googleMapsUrl}
+        href={data.directionsUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="dn-maps-link"
@@ -323,7 +323,7 @@ function RestaurantContent({ data }) {
 }
 
 function MovieContent({ data }) {
-  const mapsUrl = getVenueMapsUrl(data.theaterName, data.theaterNeighborhood)
+  const mapsUrl = getVenueDirectionsUrl(data.theaterName, data.theaterNeighborhood)
 
   return (
     <div className="dn-activity-body">
@@ -345,7 +345,7 @@ function MovieContent({ data }) {
 }
 
 function JazzContent({ data }) {
-  const mapsUrl = getVenueMapsUrl(data.venueName, data.venueNeighborhood)
+  const mapsUrl = getVenueDirectionsUrl(data.venueName, data.venueNeighborhood)
 
   return (
     <div className="dn-activity-body">

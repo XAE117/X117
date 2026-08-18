@@ -109,9 +109,9 @@ function RestaurantCard({ restaurant }) {
                 Reserve
               </a>
             )}
-            {restaurant.googleMapsUrl && (
+            {restaurant.directionsUrl && (
               <a
-                href={restaurant.googleMapsUrl}
+                href={restaurant.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="eats-action-btn eats-maps-btn"

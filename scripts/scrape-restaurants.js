@@ -8,9 +8,6 @@
  * Run: node scripts/scrape-restaurants.js [--full | --hot]
  *   --full: Scrape all sources (default)
  *   --hot:  Scrape only hot sources (Eater Heatmap + Infatuation Hit List)
- *
- * Environment variables:
- *   GOOGLE_PLACES_API_KEY — For address/hours/rating enrichment
  */
 
 import { readFileSync, writeFileSync } from 'fs'
@@ -24,6 +21,7 @@ import { scrapeResyHitList } from './sources/resy-hitlist.js'
 import { scrapeThrillistLA } from './sources/thrillist-la.js'
 import { getRestaurantMarketIssue } from './lib/restaurant-market.js'
 import { assertMinimumSuccessfulSources } from './lib/source-health.js'
+import { sanitizeRestaurantForRights } from './lib/restaurant-rights.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -45,7 +43,6 @@ const MANUAL_PATH = join(__dirname, '..', 'public', 'restaurants-manual.json')
 const MICHELIN_PATH = join(__dirname, '..', 'public', 'michelin-seed.json')
 const ALIASES_PATH = join(__dirname, '..', 'public', 'restaurant-aliases.json')
 const LOG_PATH = join(__dirname, '..', 'public', 'scrape-log.json')
-const NEIGHBORHOOD_CACHE_PATH = join(__dirname, '..', 'public', 'neighborhood-cache.json')
 
 // ── Source weights for heat scoring ──
 const SOURCE_WEIGHTS = {
@@ -64,7 +61,6 @@ const SOURCE_WEIGHTS = {
   'LA Times 101': 2,
   'LA Magazine': 1,
   'The Infatuation': 1,
-  'Google': 1,
 }
 
 // ── Name normalization for deduplication ──
@@ -169,154 +165,6 @@ function deduplicateRestaurantIds(restaurants) {
     }
   }
   return [...merged.values()]
-}
-
-function formatGoogleHours(weekdayText) {
-  if (!Array.isArray(weekdayText)) return ''
-  return weekdayText
-    .map(line => line
-      .replace(/^Sunday:/, 'Sun')
-      .replace(/^Monday:/, 'Mon')
-      .replace(/^Tuesday:/, 'Tue')
-      .replace(/^Wednesday:/, 'Wed')
-      .replace(/^Thursday:/, 'Thu')
-      .replace(/^Friday:/, 'Fri')
-      .replace(/^Saturday:/, 'Sat')
-      .replace(/\u202f/g, ' ')
-      .replace(/\s+to\s+/gi, '–'))
-    .join(', ')
-}
-
-function assertPlacesResponse(data, operation) {
-  if (!data?.status || data.status === 'OK' || data.status === 'ZERO_RESULTS') return
-  throw new Error(
-    `Google Places ${operation} failed (${data.status}): ${data.error_message || 'unknown error'}`,
-  )
-}
-
-// ── Google Places planning-data enrichment ──
-async function enrichPlaceDetails(restaurants) {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY
-  if (!apiKey) {
-    console.log('  ⚠ GOOGLE_PLACES_API_KEY not set, skipping place enrichment')
-    return
-  }
-
-  // Load cache
-  let cache = {}
-  try {
-    cache = JSON.parse(readFileSync(NEIGHBORHOOD_CACHE_PATH, 'utf8'))
-  } catch { /* no cache yet */ }
-
-  const needsEnrichment = restaurants.filter(r =>
-    !r.neighborhood?.trim()
-    || !Number.isFinite(r.lat)
-    || !Number.isFinite(r.lng)
-    || !r.hours
-  )
-  if (needsEnrichment.length === 0) {
-    console.log('  All restaurants have planning details, skipping place enrichment')
-    return
-  }
-
-  console.log(`\n  Enriching planning details for ${needsEnrichment.length} restaurants...`)
-  let enriched = 0
-  let providerError = ''
-
-  for (const r of needsEnrichment) {
-    const normKey = r.name.toLowerCase().replace(/[^a-z0-9]/g, '')
-    const cached = cache[normKey] || {}
-
-    try {
-      let placeId = cached.placeId
-      let address = cached.address || r.address || ''
-      let location = cached.location
-
-      if (!placeId) {
-        const query = encodeURIComponent(`${r.name} ${r.address || r.neighborhood || ''} restaurant Los Angeles`)
-        const fields = 'place_id,formatted_address,name,geometry'
-        const findUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${query}&inputtype=textquery&fields=${fields}&key=${apiKey}`
-        const findData = await (await fetch(findUrl)).json()
-        assertPlacesResponse(findData, 'Find Place')
-        const candidate = findData.candidates?.[0]
-        if (!candidate) {
-          cache[normKey] = { ...cached, missCheckedAt: new Date().toISOString() }
-          continue
-        }
-        placeId = candidate.place_id
-        address = candidate.formatted_address || address
-        location = candidate.geometry?.location || location
-      }
-
-      if (!placeId) continue
-
-      const fields = 'address_components,formatted_address,geometry,opening_hours,url,website'
-      const detailUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${apiKey}`
-      const detailData = await (await fetch(detailUrl)).json()
-      assertPlacesResponse(detailData, 'Place Details')
-      const details = detailData.result || {}
-      address = details.formatted_address || address
-      location = details.geometry?.location || location
-
-      let neighborhood = cached.neighborhood || r.neighborhood || ''
-      if (details.address_components) {
-        const components = details.address_components
-        const hoodComp = components.find(c => c.types.includes('neighborhood'))
-          || components.find(c => c.types.includes('sublocality_level_1'))
-          || components.find(c => c.types.includes('sublocality'))
-        if (hoodComp) neighborhood = hoodComp.long_name
-        if (!neighborhood) {
-          const locality = components.find(c => c.types.includes('locality'))
-          if (locality && !/^los angeles$/i.test(locality.long_name)) {
-            neighborhood = locality.long_name
-          }
-        }
-      }
-
-      if (!neighborhood && address) {
-        const candidate = address.split(',').map(s => s.trim())[1]
-        if (candidate && !/^(los angeles|ca|california|\d)$/i.test(candidate)) {
-          neighborhood = candidate
-        }
-      }
-
-      const hours = formatGoogleHours(details.opening_hours?.weekday_text)
-      if (neighborhood) r.neighborhood = neighborhood
-      if (address) r.address = address
-      if (Number.isFinite(location?.lat) && Number.isFinite(location?.lng)) {
-        r.lat = location.lat
-        r.lng = location.lng
-      }
-      if (hours) r.hours = hours
-      if (details.url) r.googleMapsUrl = details.url
-      if (details.website && !r.website) r.website = details.website
-
-      cache[normKey] = {
-        placeId,
-        neighborhood,
-        address,
-        location,
-        hours,
-        googleMapsUrl: details.url || cached.googleMapsUrl || '',
-        checkedAt: new Date().toISOString(),
-      }
-      enriched++
-
-      // Keep within the legacy Places API's ordinary per-second rate.
-      await new Promise(resolve => setTimeout(resolve, 200))
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err)
-      if (message.startsWith('Google Places')) {
-        providerError = message
-        break
-      }
-    }
-  }
-
-  // Save cache
-  writeFileSync(NEIGHBORHOOD_CACHE_PATH, JSON.stringify(cache, null, 2))
-  console.log(`    → Enriched ${enriched}/${needsEnrichment.length} restaurants`)
-  if (providerError) console.warn(`    ⚠ ${providerError}`)
 }
 
 // ── Main orchestrator ──
@@ -465,11 +313,7 @@ async function main() {
     inMarket.splice(0, inMarket.length, ...uniqueById)
   }
 
-  // ── Enrich coordinates, hours, and neighborhoods via Google Places ──
-  await enrichPlaceDetails(inMarket)
-
-  // Enrichment can reveal that an ambiguous name matched a place outside the
-  // market. It can also leave a source-only name with no location evidence.
+  // Source data can leave an ambiguous name with no location evidence.
   // Neither is trustworthy enough to publish.
   for (let index = inMarket.length - 1; index >= 0; index--) {
     const restaurant = inMarket[index]
@@ -488,6 +332,11 @@ async function main() {
       inMarket.splice(index, 1)
     }
   }
+
+  // Persist only fields cleared by the provider-rights policy. This happens
+  // after geographic validation so legacy source records can still be checked
+  // without retaining provider-derived coordinates or operating hours.
+  inMarket.splice(0, inMarket.length, ...inMarket.map(sanitizeRestaurantForRights))
 
   // ── Scrape diff: detect added/removed, preserve addedDate ──
   const previousIds = new Set(existing.restaurants.map(r => r.id))

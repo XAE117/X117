@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "v1",
+  "generatedAt": "2026-08-18T12:28:43.152Z",
+  "feeds": [
+    {
+      "id": "cinema",
+      "path": "catalog/v1/cinema.json",
+      "sha256": "b7d2ce8ec6134429833c02e522498377c68ac2d5569864b882c2d117e5986ba2",
+      "generatedAt": "2026-08-18T12:28:43.152Z",
+      "expiresAt": "2026-08-20T00:28:43.152Z",
+      "status": "available",
+      "providers": [
+        "amc-catalog"
+      ],
+      "recordCount": 2366
+    },
+    {
+      "id": "jazz",
+      "path": "catalog/v1/jazz.json",
+      "sha256": "47cc81b85a5c959e7d97a77e7ada9febe001ba065dfaf9a07989dbf0ef5831bd",
+      "generatedAt": "2026-08-18T12:28:43.152Z",
+      "expiresAt": "2026-08-18T12:28:43.152Z",
+      "status": "disabled",
+      "providers": [],
+      "recordCount": 0
+    },
+    {
+      "id": "food",
+      "path": "catalog/v1/food.json",
+      "sha256": "801e7c2ba545abde0d17634a3995518b911fd3fb043c69c5086b17ba97943527",
+      "generatedAt": "2026-08-18T12:28:43.152Z",
+      "expiresAt": "2027-08-18T12:28:43.152Z",
+      "status": "limited",
+      "providers": [
+        "sixpm-editorial"
+      ],
+      "recordCount": 2
+    }
+  ]
+}

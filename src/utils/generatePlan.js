@@ -6,6 +6,7 @@
 import { THEATER_COORDS } from '../data/theaterLocations.js'
 import { JAZZ_VENUE_COORDS } from '../data/jazzVenueLocations.js'
 import { isRestaurantOpenAt } from './restaurantHours.js'
+import { createAppleMapsUrl } from './directions.js'
 
 export const MAX_PLAN_DISTANCE_MILES = 8
 
@@ -317,11 +318,7 @@ function enrichRestaurant(r, activity) {
     enriched.distanceMiles = getDistance(r.lat, r.lng, activity.coords.lat, activity.coords.lng)
   }
 
-  // Google Maps URL
-  if (!enriched.googleMapsUrl) {
-    const q = encodeURIComponent(`${r.name} ${r.neighborhood || ''} Los Angeles`)
-    enriched.googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${q}`
-  }
+  if (!enriched.directionsUrl) enriched.directionsUrl = createAppleMapsUrl(enriched)
 
   return enriched
 }
@@ -382,9 +379,8 @@ export function getNextDays(count = 7) {
   return days
 }
 
-export function getVenueMapsUrl(name, neighborhood) {
-  const q = encodeURIComponent(`${name} ${neighborhood || ''} Los Angeles`)
-  return `https://www.google.com/maps/search/?api=1&query=${q}`
+export function getVenueDirectionsUrl(name, neighborhood) {
+  return createAppleMapsUrl({ name, neighborhood })
 }
 
 export function formatCostRange([low, high]) {

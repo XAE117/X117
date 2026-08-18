@@ -104,8 +104,8 @@ function EatsDetail({ data }) {
               Reserve a Table
             </a>
           )}
-          {restaurant.googleMapsUrl && (
-            <a href={restaurant.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="eats-action-btn eats-maps-btn">
+          {restaurant.directionsUrl && (
+            <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer" className="eats-action-btn eats-maps-btn">
               Get Directions
             </a>
           )}

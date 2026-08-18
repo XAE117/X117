@@ -6,24 +6,28 @@ Status definitions:
 - `pending`: an unresolved source or usage question; catalog tooling must reject it.
 - `disabled`: deliberately excluded from iOS, whether or not it remains in the legacy web product.
 
-No entry is approved merely because a web scraper currently returns data. Evidence links and exact terms are added during Phase 2 after current official-source review.
+No entry is approved merely because a web scraper currently returns data. This is an
+implementation control ledger, not legal advice or a claim that a third party has
+granted broader permission. The canonical machine-readable source is
+[`config/ios-provider-policy.json`](../../config/ios-provider-policy.json); the
+catalog builder and validator reject every source that is not `approved`.
 
-| Provider / source class | Current iOS state | Permitted iOS fields today | Required decision before approval |
+| Provider / source class | Current iOS state | Permitted iOS fields today | Recorded basis and boundary |
 | --- | --- | --- | --- |
-| SIXPM first-party editorial records | pending | none until per-record provenance exists | Record author, source evidence, verification date, and permitted facts for each entry. |
-| AMC developer API | pending | none | Confirm the agreement permits the planned catalog, attribution, caching, external links, and free App Store distribution. |
-| TMDB API / imagery | pending | none | Confirm permitted non-commercial/mobile use and exact attribution; otherwise disable enrichment. |
-| Google Places / Google Maps content | disabled | none | Do not persist or display Google-derived place content in the iOS catalog or on a non-Google map. A future approved use would need its own compliant design. |
-| Eater, Infatuation, Resy, Thrillist, Michelin, and other editorial lists | pending | none | Establish whether independently verified factual listing data can be used, with source-specific terms and attribution. |
-| Venue official sites and venue calendars | pending | none | Document each venue's permitted use, facts versus copyrighted copy/images, refresh policy, and attribution. |
-| Songkick, DICE, Eventbrite, ticketing/event aggregators | pending | none | Confirm API/content license and required attribution; otherwise use only provider links where separately cleared. |
-| OpenStreetMap, CARTO, Leaflet | disabled for embedded iOS maps | none | V1 uses Apple Maps external directions only; revisit only with proper licensing and attribution architecture. |
-| Vercel | pending catalog transport | none | Verify configured transport, cache behavior, public legal URLs, and catalog integrity controls; no third-party content clearance is implied. |
+| AMC Theatres catalog API | approved, limited | AMC theater identity, neighborhood, official URL, screening title/date/time/format/notes, and AMC link | [AMC's vendor guidance](https://developers.amctheatres.com/GettingStarted/NewVendorRequest) states developers may use catalog APIs to display AMC showtimes and associated movie data. The app excludes commerce, ticket purchase, non-AMC data, API keys, and all undeclared fields. Attribution: “Showtimes supplied by AMC Theatres.” Freshness maximum: 36 hours. |
+| SIXPM first-party editorial restaurant records | approved, seed-only | The two existing `manualPick` records after Google URLs and provider-derived enrichment are removed: name, address, editorial copy, hours, and owner-maintained coordinates | Provenance is recorded in `public/restaurants-manual.json`; only records marked `locationProvenance: sixpm-editorial` are emitted. This is intentionally a two-record starter set, not clearance for scraped restaurant editorial data. Attribution: “Curated by SIXPM.” |
+| TMDB API / imagery | disabled | none | [TMDB's FAQ](https://developer.themoviedb.org/docs/faq) supplies attribution guidance for free non-commercial API use, but V1 keeps `VITE_IOS_TMDB_ENRICHMENT` off until the release usage basis is explicitly cleared. No TMDB text, IDs, images, credits, or metadata may enter the iOS feed. |
+| Google Places / Google Maps content | disabled | none | [Places policies](https://developers.google.com/maps/documentation/places/web-service/policies) impose attribution, map-display, and caching restrictions. Legacy Google URLs, coordinates, and hours are stripped before web persistence and before catalog generation; V1 uses external Apple Maps directions only. |
+| Non-AMC cinema and venue sources | pending | none | A source-specific written basis, allowed facts, freshness policy, and required attribution are needed before catalog inclusion. |
+| Jazz venues and event aggregators | pending | none | Jazz is represented as an explicit disabled feed until every included source is independently cleared. |
+| Restaurant editorial, reservation, and guide sources | pending | none | Scraped editorial copy, source badges, reservation links, and location data are excluded from the iOS catalog. |
+| OpenStreetMap, CARTO, and Leaflet | disabled for iOS | none | Embedded maps are out of V1. The app opens Apple Maps only as an external directions destination. |
+| SIXPM Vercel catalog transport | approved, transport-only | Versioned JSON feeds with SHA-256 index digests | The user-controlled [SIXPM deployment](https://sixpm.vercel.app/) transports the catalog. Transport approval does not approve third-party content. |
 
 ## Native catalog rules
 
 1. `pending` and `disabled` records fail catalog generation, rather than being filtered only in a view.
-2. Every accepted record carries provider IDs, attribution requirements, fetched/verified timestamps, and a schema version.
-3. Remote feeds must be signed or integrity-checked before the app treats them as current.
-4. A stale but previously verified catalog may be shown with its timestamp; an invalid catalog is rejected.
-5. Provider metadata is never a substitute for a public legal/support disclosure.
+2. Accepted records carry provider IDs, attribution, schema version, generation time, expiry, and a SHA-256-indexed payload.
+3. `scripts/build-ios-catalog.js` emits only hard-coded allowed fields; `scripts/validate-ios-catalog.js` rejects non-approved providers, stale AMC data, digest mismatches, and forbidden provider markers.
+4. The browser/native client will reject an invalid or expired remote catalog and may use only a previously verified local snapshot with its timestamp.
+5. Provider metadata is never a substitute for the public legal, privacy, support, and attribution disclosures required before release.
