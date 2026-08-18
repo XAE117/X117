@@ -2,6 +2,26 @@ import { expect, test } from '@playwright/test'
 
 const IOS_URL = 'http://127.0.0.1:4173/X117/ios.html'
 
+async function expectUsableVisibleControls(page) {
+  const issues = await page.locator('button:visible, a:visible').evaluateAll(elements => elements
+    .map(element => {
+      const bounds = element.getBoundingClientRect()
+      const name = (element.getAttribute('aria-label') || element.innerText || element.textContent || '')
+        .replace(/\s+/g, ' ')
+        .trim()
+      return {
+        name,
+        height: bounds.height,
+        width: bounds.width,
+        tag: element.tagName.toLowerCase(),
+      }
+    })
+    .filter(control => !control.name || control.height < 44 || control.width < 44),
+  )
+
+  expect(issues).toEqual([])
+}
+
 test.describe('SIXPM iPhone shell', () => {
   test('renders the rights-gated directory with accessible field navigation', async ({ page }) => {
     await page.goto(IOS_URL, { waitUntil: 'networkidle' })
@@ -52,5 +72,22 @@ test.describe('SIXPM iPhone shell', () => {
     })
     expect(motion.transition).toBeLessThanOrEqual(0.01)
     expect(motion.animation).toBeLessThanOrEqual(0.01)
+  })
+
+  test('keeps named regions and touch-safe labeled controls across the directory', async ({ page }) => {
+    await page.goto(IOS_URL, { waitUntil: 'networkidle' })
+
+    await expect(page.getByRole('region', { name: /Tonight.?s film|Next up/ })).toBeVisible()
+    await expect(page.getByRole('region', { name: /Dinner/ })).toBeVisible()
+    await expectUsableVisibleControls(page)
+
+    await page.getByRole('button', { name: 'Catalog' }).click()
+    await expect(page.getByRole('group', { name: 'Catalog type' })).toBeVisible()
+    await expectUsableVisibleControls(page)
+
+    await page.getByRole('button', { name: 'Notes' }).click()
+    await expect(page.getByRole('region', { name: 'Policies + support' })).toBeVisible()
+    await expect(page.getByRole('region', { name: 'On-device data' })).toBeVisible()
+    await expectUsableVisibleControls(page)
   })
 })

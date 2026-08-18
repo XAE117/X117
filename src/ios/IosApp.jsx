@@ -222,12 +222,12 @@ function RestaurantCard({ restaurant, onSelect }) {
   )
 }
 
-function SectionHeader({ eyebrow, title, action }) {
+function SectionHeader({ eyebrow, title, action, headingId }) {
   return (
     <div className="ios-section-heading">
       <div>
         {eyebrow && <p>{eyebrow}</p>}
-        <h2>{title}</h2>
+        <h2 id={headingId}>{title}</h2>
       </div>
       {action}
     </div>
@@ -303,7 +303,7 @@ function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, dr
       <EveningDraftBanner draft={draft} onReview={onReviewDraft} onChoose={onChooseDraft} onClear={onClearDraft} />
 
       <section className="ios-section ios-tonight-film-section" aria-labelledby="ios-film-heading">
-        <SectionHeader eyebrow="AMC / TONIGHT'S PROGRAM" title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>Browse all</button>} />
+        <SectionHeader headingId="ios-film-heading" eyebrow="AMC / TONIGHT'S PROGRAM" title={cinemaTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('film')}>Browse all</button>} />
         <p className="ios-directory-note">Choose a verified showing, then add dinner from its listing.</p>
         <div className="ios-listing-stack">
           {cinema.length > 0
@@ -313,7 +313,7 @@ function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, dr
       </section>
 
       <section className="ios-section" aria-labelledby="ios-food-heading">
-        <SectionHeader eyebrow={foodEyebrow} title={foodTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('food')}>See all</button>} />
+        <SectionHeader headingId="ios-food-heading" eyebrow={foodEyebrow} title={foodTitle} action={<button type="button" className="ios-text-button" onClick={() => onBrowse('food')}>See all</button>} />
         <div className="ios-listing-stack">
           {food.map(restaurant => <RestaurantCard key={restaurant.id} restaurant={restaurant} onSelect={onSelect} />)}
         </div>
@@ -348,7 +348,7 @@ function Browse({ catalog, catalogStatus, location, now, onSelect, browseMode, o
       </header>
       <OfflineCatalogNotice status={catalogStatus} />
       <EveningDraftBanner draft={draft} onReview={onReviewDraft} onChoose={onChooseDraft} onClear={onClearDraft} />
-      <div className="ios-segmented-control" aria-label="Catalog type">
+      <div className="ios-segmented-control" role="group" aria-label="Catalog type">
         <button type="button" aria-pressed={browseMode === 'film'} className={browseMode === 'film' ? 'selected' : ''} onClick={() => onChangeMode('film')}><span aria-hidden="true">01</span> Film</button>
         <button type="button" aria-pressed={browseMode === 'food'} className={browseMode === 'food' ? 'selected' : ''} onClick={() => onChangeMode('food')}><span aria-hidden="true">02</span> Dinner</button>
       </div>
