@@ -266,7 +266,9 @@ function validateFeed(feed, expectedId, policy, now, errors) {
 
   const expiry = new Date(feed.expiresAt)
   if (Number.isNaN(expiry.getTime())) errors.push(`${expectedId} has invalid expiresAt`)
-  if (expectedId === 'cinema' && expiry.getTime() < now.getTime()) errors.push('cinema catalog is expired')
+  if (feed.availability?.status !== 'disabled' && expiry.getTime() < now.getTime()) {
+    errors.push(`${expectedId} catalog is expired`)
+  }
   if (feed.availability?.status !== 'disabled' && (!Array.isArray(feed.providers) || feed.providers.length === 0)) {
     errors.push(`${expectedId} is available without an approved provider`)
   }

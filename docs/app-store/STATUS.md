@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-18 (Pacific)  
 Mission state: active  
-Current phase: 2 — provider rights and safe catalog boundary
+Current phase: 4 — Capacitor and native platform adapters
 
 ## Mission
 
@@ -35,6 +35,10 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 2.2 Google Places remediation | passed | The restaurant scraper no longer calls Google Places; its geocoder was removed. The deterministic migration stripped legacy Google URLs from 232 restaurant records and 25 guide records, retaining coordinates/hours only on the two documented editorial records. No remote secret was changed. |
 | 2.3 Versioned catalog | passed locally | `public/catalog/v1/` contains SHA-256-indexed cinema, food, and explicit-disabled jazz feeds. It contains 5 AMC theatres / 2,366 screenings and 2 SIXPM editorial restaurants; no TMDB, Google, jazz, or unapproved source payload is emitted. The feed will reach production only through the normal reviewed PR/deployment path. |
 | 2.4 Catalog verification | passed | 58 unit tests, lint, production build, catalog-current check, catalog validator, and 40 browser route checks pass under Node 22. The catalog check is deterministic against the cinema scrape timestamp. |
+| 3.1 Separate iPhone entry | passed | `ios.html` and `src/ios/` form a standalone React surface. `vite --mode ios` builds only `dist-ios/`, with no legacy public tree copied into the bundle. |
+| 3.2 Remote catalog client | passed locally | The client fetches only versioned catalog paths, verifies SHA-256 digests, field allowlists, expiry, source state, and explicit disabled Jazz behavior before rendering. It cannot fall back to `theaters.json`, `restaurants.json`, or jazz source data. |
+| 3.3 Product boundary check | passed | `npm run build:ios` produced a three-file local UI bundle and `ios:bundle:check` found no excluded products or API-key variable tokens. |
+| 3.4 iPhone-size visual QA | passed locally | At 393×852, the catalog rendered without Vite overlays or console errors; evening-first grouped film cards, food browse/detail, and bottom navigation were exercised. This is browser evidence only, not simulator or device proof. |
 
 ## Phase status
 
@@ -43,8 +47,8 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 0. Revalidate, integrate, and baseline | complete | Clean worktree, protected canonical tree, current catalog snapshot, Node 22 baseline, audited dependencies, and one draft release lane are established. |
 | 1. App Store control documents | complete | This status, scope, execution plan, owner gates, and initial rights ledger are committed. |
 | 2. Rights ledger and safe catalog | complete | Machine-enforced provider states prevent pending or disabled data from entering the iOS catalog; legacy Google persistence is remediated and a versioned catalog is generated and verified. |
-| 3. iOS product boundary | in progress | Native build excludes private/tangential products and loads only the V1 surface. |
-| 4. Capacitor and platform adapters | pending | iOS project and tested native capability adapters exist. |
+| 3. iOS product boundary | complete | A separately built local UI consumes only the verified V1 catalog and excludes private/tangential web products from its production bundle. |
+| 4. Capacitor and platform adapters | in progress | iOS project and tested native capability adapters exist. |
 | 5. Saved evenings and offline | pending | Whole-evening plans persist locally, work offline, and support native actions. |
 | 6. Accessibility and iPhone polish | pending | Safe-area, Dynamic Type, VoiceOver, reduced-motion, permission-denial, and offline paths pass. |
 | 7. Legal, privacy, and support | pending | Public legal/support pages and native privacy manifest are complete. |
@@ -57,6 +61,7 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 - Integrate the already-reviewed PR #12 content without overwriting scheduled catalog updates.
 - Establish the Node 22 command path and baseline test evidence.
 - Build a native-only product surface that consumes the verified catalog without inheriting private or tangential web routes.
+- Add Capacitor 8 and native adapters without putting a key, a private product, or a provider-content fallback in the iOS target.
 
 ## Owner and external gates
 
