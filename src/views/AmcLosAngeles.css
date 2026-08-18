@@ -1,0 +1,75 @@
+.amc-day-view .browse-eyebrow {
+  color: #e31937 !important;
+}
+
+.amc-browser {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid rgba(227, 25, 55, 0.35);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(227, 25, 55, 0.1), rgba(26, 23, 21, 0.96));
+}
+
+.amc-browser-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.amc-browser-summary strong {
+  color: var(--cream);
+}
+
+.amc-theater-filter {
+  display: flex;
+  gap: 0.45rem;
+  padding-bottom: 0.15rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.amc-theater-filter button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.amc-theater-filter button:hover {
+  border-color: rgba(227, 25, 55, 0.7);
+  color: var(--cream);
+}
+
+.amc-theater-filter button.active {
+  border-color: #e31937;
+  background: rgba(227, 25, 55, 0.18);
+  color: var(--cream);
+}
+
+.amc-theater-count {
+  min-width: 1.5rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .amc-browser {
+    padding-inline: 0.75rem;
+  }
+}

@@ -12,6 +12,7 @@ const PRIMARY_NAV = [
 
 const CINEMA_NAV = [
   { to: '/browse', label: 'By day' },
+  { to: '/amc', label: 'AMC LA' },
   { to: '/tonight', label: 'After 5' },
   { to: '/by-theater', label: 'Theaters' },
   { to: '/watchlist', label: 'Watchlist' },
