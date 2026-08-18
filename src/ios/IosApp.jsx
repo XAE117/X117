@@ -553,16 +553,6 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
       </div>
       {!isCinema && <p className="ios-detail-copy">{item.description}</p>}
       {!isCinema && item.whyHot && <p className="ios-detail-note">{item.whyHot}</p>}
-      {isCinema && item.showings.length > 1 && (
-        <section className="ios-showtime-list" aria-label="Available showtimes">
-          <h2>More showtimes</h2>
-          {item.showings.map(showing => (
-            <ExternalLink key={showing.id} href={showing.link} className="ios-showtime-link">
-              {readableDate(showing.date)} · {formatScreeningTime(showing.time)} · {showing.theaterShortName} · {showing.format || 'Standard'}
-            </ExternalLink>
-          ))}
-        </section>
-      )}
       <div className="ios-detail-actions">
         <button
           type="button"
@@ -577,6 +567,16 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
         </ExternalLink>
         {isCinema && <ExternalLink href={directions}>Get directions</ExternalLink>}
       </div>
+      {isCinema && item.showings.length > 1 && (
+        <section className="ios-showtime-list" aria-label="Available showtimes">
+          <h2>More showtimes</h2>
+          {item.showings.map(showing => (
+            <ExternalLink key={showing.id} href={showing.link} className="ios-showtime-link">
+              {readableDate(showing.date)} · {formatScreeningTime(showing.time)} · {showing.theaterShortName} · {showing.format || 'Standard'}
+            </ExternalLink>
+          ))}
+        </section>
+      )}
       <aside className="ios-detail-boundary">
         Save this pair while the verified catalog is current. SIXPM removes provider details when their freshness window ends.
       </aside>
