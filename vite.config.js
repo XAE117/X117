@@ -104,6 +104,12 @@ export default defineConfig(({ mode, command }) => {
     // private/tangential products from being copied into the native bundle.
     plugins: isIosBuild ? [react()] : [react(), bodySignalsApi(env), morningBriefApi(env)],
     base: isIosBuild ? './' : env.VITE_BASE_PATH || '/X117/',
+    // Capacitor uses capacitor://localhost for its locally bundled shell. Allow
+    // that origin only in the documented iOS development server so a temporary,
+    // rights-gated local catalog can be exercised in Simulator QA.
+    server: isIosBuild && command === 'serve'
+      ? { cors: { origin: 'capacitor://localhost' } }
+      : undefined,
     // Local iOS development may serve the generated catalog from this checkout,
     // while the release build copies no legacy public assets into dist-ios.
     publicDir: isIosBuild && command === 'build' ? false : 'public',

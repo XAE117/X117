@@ -69,3 +69,7 @@ VITE_IOS_CATALOG_BASE=http://127.0.0.1:5173/ npm run dev:ios
 # Build only the native web bundle and verify its boundary.
 npm run build:ios
 ```
+
+`dev:ios` enables CORS only for the local Capacitor QA origin, so a temporary
+rights-gated catalog can render in Simulator. It does not alter a production
+build, the Vercel headers, or the release app's HTTPS-only catalog endpoint.
