@@ -7,7 +7,6 @@
 Required environment variables (see `.env.example`):
 - `TMDB_API_KEY` — The Movie Database v3 API key (film enrichment in `scripts/scrape.js`)
 - `AMC_API_KEY` — AMC Theatres Developer API vendor key (X-AMC-Vendor-Key header)
-- `GOOGLE_PLACES_API_KEY` — Google Places API key (restaurant neighborhood enrichment)
 - `NOTION_API_KEY` — Notion integration token (shared with iMessage pipeline)
 - `TWILIO_ACCOUNT_SID` / `TWILIO_AUTH_TOKEN` / `TWILIO_PHONE_NUMBER` — Godfather SMS alert + weekly digest
 

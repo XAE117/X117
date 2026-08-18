@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { normalizeCinemaEventIds, normalizeJazzEventIds } from '../utils/eventIdentity.js'
+import { createAppleMapsUrl } from '../utils/directions.js'
 
 const TIER_COLORS = { street: '#FF6B35', feast: '#D4A574', whale: '#C9A84C', pizza: '#E84830', tacos: '#7CB342' }
 
@@ -20,8 +21,7 @@ export function normalizeRestaurantData(food) {
     const category = restaurant.category || tier
     const priceRange = restaurant.priceRange || restaurant.price
     const price = restaurant.price || priceRange
-    const googleMapsUrl = restaurant.googleMapsUrl ||
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${restaurant.name} ${restaurant.address || restaurant.neighborhood || ''} Los Angeles`)}`
+    const directionsUrl = restaurant.directionsUrl || createAppleMapsUrl(restaurant)
 
     return {
       ...restaurant,
@@ -29,7 +29,7 @@ export function normalizeRestaurantData(food) {
       category,
       priceRange,
       price,
-      googleMapsUrl,
+      directionsUrl,
       michelinStatus: restaurant.michelinStatus || (restaurant.bibGourmand ? 'bib-gourmand' : undefined),
       heatScore: restaurant.heatScore ?? restaurant.fire ?? 0,
       color: restaurant.color || TIER_COLORS[tier] || TIER_COLORS.feast,

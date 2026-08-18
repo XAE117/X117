@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .route-not-found {
@@ -503,7 +504,10 @@
 }
 
 .site-nav-link {
-  padding: 0.55rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.35rem 0.7rem;
   border-radius: 999px;
 }
 
@@ -519,6 +523,9 @@
 
 .site-search-link,
 .site-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
   padding: 0.35rem;
   cursor: pointer;
 }
@@ -530,7 +537,7 @@
 .site-context-nav {
   gap: 1rem;
   width: min(1200px, calc(100% - 2rem));
-  min-height: 34px;
+  min-height: 40px;
   margin: 0 auto;
   overflow-x: auto;
   scrollbar-width: none;
@@ -542,20 +549,16 @@
 
 .site-context-link {
   flex: 0 0 auto;
-  padding: 0.55rem 0 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.35rem 0;
   border-bottom: 2px solid transparent;
 }
 
 .site-context-link.active {
   border-bottom-color: var(--gold);
   color: var(--cream);
-}
-
-.site-route-context {
-  margin-left: auto;
-  font-family: monospace;
-  font-size: 0.58rem;
-  color: rgba(201, 168, 76, 0.42);
 }
 
 @media (max-width: 760px) {
@@ -595,9 +598,6 @@
     width: calc(100% - 1rem);
   }
 
-  .site-route-context {
-    display: none;
-  }
 }
 
 .refresh-btn {

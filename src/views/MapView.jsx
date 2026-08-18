@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { THEATER_COORDS } from '../data/theaterLocations.js'
 import { loadLeaflet } from '../utils/loadLeaflet.js'
+import { createAppleMapsUrl } from '../utils/directions.js'
 import './MapView.css'
 
 function MapView({ data }) {
@@ -103,7 +104,7 @@ function MapView({ data }) {
       const actions = document.createElement('div')
       actions.className = 'map-popup-actions'
       const directions = document.createElement('a')
-      directions.href = `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`
+      directions.href = createAppleMapsUrl({ name: theater.name, neighborhood: theater.neighborhood, ...coords })
       directions.target = '_blank'
       directions.rel = 'noopener noreferrer'
       directions.textContent = 'Directions'

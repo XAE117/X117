@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { JAZZ_VENUE_COORDS } from '../data/jazzVenueLocations.js'
 import { loadLeaflet } from '../utils/loadLeaflet.js'
+import { createAppleMapsUrl } from '../utils/directions.js'
 import './JazzMapView.css'
 
 function JazzMapView({ data }) {
@@ -110,7 +111,7 @@ function JazzMapView({ data }) {
 
       const directions = document.createElement('a')
       directions.className = 'jazz-map-popup-directions'
-      directions.href = `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`
+      directions.href = createAppleMapsUrl({ name: venue.name, neighborhood: venue.neighborhood, ...coords })
       directions.target = '_blank'
       directions.rel = 'noopener noreferrer'
       directions.textContent = 'Get directions'

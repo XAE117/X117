@@ -2,7 +2,7 @@
 // Data Health Validator
 // Sanity-checks all four data files and emits a health report.
 // Exit codes: 0 healthy, 1 warnings only, 2 critical.
-// CLI: node scripts/validate-data.js [--strict]
+// CLI: node scripts/validate-data.js [--strict] [--no-write]
 
 import { readFileSync, writeFileSync, appendFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -15,6 +15,7 @@ const ROOT = path.resolve(__dirname, '..')
 const PUBLIC = path.join(ROOT, 'public')
 
 const STRICT = process.argv.includes('--strict')
+const NO_WRITE = process.argv.includes('--no-write')
 
 // ANSI color helpers (for terminal output only; report file uses markdown)
 const c = {
@@ -397,10 +398,12 @@ for (const s of sections) {
 console.log(term.join('\n'))
 
 // --- Write health-report.md ---
-try {
-  writeFileSync(path.join(PUBLIC, 'health-report.md'), mdReport)
-} catch (err) {
-  console.error(`Failed to write public/health-report.md: ${err.message}`)
+if (!NO_WRITE) {
+  try {
+    writeFileSync(path.join(PUBLIC, 'health-report.md'), mdReport)
+  } catch (err) {
+    console.error(`Failed to write public/health-report.md: ${err.message}`)
+  }
 }
 
 // --- Append to GITHUB_STEP_SUMMARY if in CI ---

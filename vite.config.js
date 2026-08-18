@@ -94,18 +94,34 @@ function morningBriefApi(env) {
 }
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   const env = { ...process.env, ...loadEnv(mode, process.cwd(), '') }
+  const isIosBuild = mode === 'ios'
 
   return {
-    plugins: [react(), bodySignalsApi(env), morningBriefApi(env)],
-    base: env.VITE_BASE_PATH || '/X117/',
+    // The Capacitor shell is a separate product entrypoint. Keeping its build
+    // free of the web-only dev API plugins and public directory prevents
+    // private/tangential products from being copied into the native bundle.
+    plugins: isIosBuild ? [react()] : [react(), bodySignalsApi(env), morningBriefApi(env)],
+    base: isIosBuild ? './' : env.VITE_BASE_PATH || '/X117/',
+    // Capacitor uses capacitor://localhost for its locally bundled shell. Allow
+    // that origin only in the documented iOS development server so a temporary,
+    // rights-gated local catalog can be exercised in Simulator QA.
+    server: isIosBuild && command === 'serve'
+      ? { cors: { origin: 'capacitor://localhost' } }
+      : undefined,
+    // Local iOS development may serve the generated catalog from this checkout,
+    // while the release build copies no legacy public assets into dist-ios.
+    publicDir: isIosBuild && command === 'build' ? false : 'public',
     build: {
+      outDir: isIosBuild ? 'dist-ios' : 'dist',
       rollupOptions: {
-        input: {
-          main: resolve(process.cwd(), 'index.html'),
-          morningConsole: resolve(process.cwd(), 'morning-console.html'),
-        },
+        input: isIosBuild
+          ? resolve(process.cwd(), 'ios.html')
+          : {
+              main: resolve(process.cwd(), 'index.html'),
+              morningConsole: resolve(process.cwd(), 'morning-console.html'),
+            },
       },
     },
   }

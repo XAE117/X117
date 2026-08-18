@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="snD-IY-ifK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-xp-QmU">
+                                <rect key="frame" x="77.5" y="272.5" width="220" height="82"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="70"/>
+                                <color key="textColor" red="0.7882352941" green="0.6588235294" blue="0.2980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE LOS ANGELES EVENING GUIDE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoD-wd-r01">
+                                <rect key="frame" x="47.5" y="370.5" width="280" height="13"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                <color key="textColor" red="0.9098039216" green="0.8352941176" blue="0.6392156863" alpha="0.76" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v79-0H-rfb">
+                                <rect key="frame" x="147.5" y="403.5" width="80" height="1"/>
+                                <color key="backgroundColor" red="0.7882352941" green="0.6588235294" blue="0.2980392157" alpha="0.72" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.05098039216" green="0.0431372549" blue="0.03921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nRW-xp-QmU" firstAttribute="centerX" secondItem="snD-IY-ifK" secondAttribute="centerX" id="0z4-lB-3kD"/>
+                            <constraint firstItem="nRW-xp-QmU" firstAttribute="centerY" secondItem="snD-IY-ifK" secondAttribute="centerY" constant="-35" id="FvF-Rq-yj3"/>
+                            <constraint firstItem="nRW-xp-QmU" firstAttribute="width" constant="220" id="HTn-Gu-RZ4"/>
+                            <constraint firstItem="nRW-xp-QmU" firstAttribute="height" constant="82" id="Kns-X1-jfK"/>
+                            <constraint firstItem="GoD-wd-r01" firstAttribute="top" secondItem="nRW-xp-QmU" secondAttribute="bottom" constant="16" id="L2d-xf-lqF"/>
+                            <constraint firstItem="GoD-wd-r01" firstAttribute="centerX" secondItem="snD-IY-ifK" secondAttribute="centerX" id="R8a-lc-MzA"/>
+                            <constraint firstItem="GoD-wd-r01" firstAttribute="width" constant="280" id="S8O-Ew-wpx"/>
+                            <constraint firstItem="GoD-wd-r01" firstAttribute="height" constant="13" id="a2e-xT-YCI"/>
+                            <constraint firstItem="v79-0H-rfb" firstAttribute="top" secondItem="GoD-wd-r01" secondAttribute="bottom" constant="20" id="g2D-zm-VKO"/>
+                            <constraint firstItem="v79-0H-rfb" firstAttribute="centerX" secondItem="snD-IY-ifK" secondAttribute="centerX" id="mvM-sj-3Nk"/>
+                            <constraint firstItem="v79-0H-rfb" firstAttribute="width" constant="80" id="rdS-Qd-Uo2"/>
+                            <constraint firstItem="v79-0H-rfb" firstAttribute="height" constant="1" id="yT7-fX-y04"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>

@@ -47,15 +47,21 @@ The app opens at `http://localhost:5173`.
 | `npm run test:e2e` | Run desktop and mobile Playwright journeys |
 | `npm run check` | Lint, unit test, build, and dependency audit |
 | `npm run validate` | Validate data and update `public/health-report.md` |
-| `npm run release:check` | Run all quality checks and strict data validation |
+| `npm run release:check` | Run the web-wide quality gate and strict guide-data validation without rewriting the report |
+| `npm run ios:release:check` | Run the iPhone quality, rights-catalog, bundle, privacy, and Capacitor-sync checks |
+| `IOS_SIMULATOR_ID=<udid> npm run test:ios:ui` | Run native iPhone recovery and denied-location QA on an explicit disposable simulator |
 | `npm run scrape` | Refresh cinema data |
 | `npm run scrape:jazz` | Refresh jazz data |
 | `npm run scrape:eats` | Refresh the full restaurant catalog |
 | `npm run scrape:eats:hot` | Refresh the fast-moving restaurant lists |
 | `npm run scrape:all` | Run all three data pipelines |
 
-`release:check` is the release gate. Warnings are allowed during ordinary data
-refreshes but fail the strict release check.
+`release:check` is the web-wide release gate. Warnings are allowed during
+ordinary data refreshes but fail its strict validation. The iPhone lane uses
+`ios:release:check`: it still requires the rights-gated catalog, isolated
+bundle, privacy manifest, web quality checks, and Capacitor sync, but it does
+not confuse the intentionally rights-cleared iPhone dinner notebook with the
+full web guide’s coordinate and coverage thresholds.
 
 ## Data trust
 
@@ -76,8 +82,11 @@ Optional enrichment keys:
 
 - `AMC_API_KEY` for AMC showtimes
 - `TMDB_API_KEY` for film metadata
-- `GOOGLE_PLACES_API_KEY` for restaurant address/neighborhood enrichment
 - Twilio credentials for configured SMS alerts
+
+Google Places enrichment is retired. The App Store catalog never receives
+Google-derived place content; its provider policy and field-level validator
+are documented in [`docs/app-store/DATA_RIGHTS_LEDGER.md`](docs/app-store/DATA_RIGHTS_LEDGER.md).
 
 ## Deployment
 
@@ -103,15 +112,26 @@ planning support, not therapy or medical care. Astrological material is an
 optional symbolic lens and does not override health, legal, financial, or safety
 decisions.
 
-Before production:
+Before an owner-authorized iPhone catalog deployment:
 
 ```bash
-npm run release:check
-vercel --prod
+npm run ios:release:check
 ```
 
-After deployment, verify `/`, `/roll`, `/search`, `/map`, `robots.txt`, and
-`sitemap.xml` on the production hostname.
+`npm run release:check` remains the separate, intentionally strict health gate
+for the broader web guide. Its legacy-data warnings must be reviewed rather
+than silently treated as an iPhone catalog result.
+
+After an owner-authorized deployment, verify the normal web routes plus the
+rights-gated catalog from the public hostname:
+
+```bash
+npm run catalog:live:check
+```
+
+This command requires HTTPS, direct JSON responses, public CORS, current
+catalog integrity, and the approved-provider policy. It deliberately fails
+until the reviewed release branch has reached production; it does not deploy.
 
 ## Architecture
 

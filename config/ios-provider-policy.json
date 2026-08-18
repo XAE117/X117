@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "v1",
+  "defaultStatus": "disabled",
+  "providers": {
+    "amc-catalog": {
+      "status": "approved",
+      "displayName": "AMC Theatres catalog API",
+      "evidence": [
+        {
+          "url": "https://developers.amctheatres.com/GettingStarted/NewVendorRequest",
+          "observedAt": "2026-08-18",
+          "basis": "AMC states that developers may access catalog APIs to display AMC showtimes and associated movie data. A user-owned catalog credential was live-verified during Phase 0; transaction endpoints are out of scope."
+        }
+      ],
+      "maxAgeHours": 36,
+      "attribution": "Showtimes supplied by AMC Theatres.",
+      "allowedFields": [
+        "theater.id",
+        "theater.name",
+        "theater.shortName",
+        "theater.neighborhood",
+        "theater.url",
+        "screening.id",
+        "screening.title",
+        "screening.date",
+        "screening.time",
+        "screening.format",
+        "screening.notes",
+        "screening.link"
+      ]
+    },
+    "sixpm-editorial": {
+      "status": "approved",
+      "displayName": "SIXPM editorial",
+      "evidence": [
+        {
+          "path": "public/restaurants-manual.json",
+          "observedAt": "2026-08-18",
+          "basis": "The two manualPick records are user-owned editorial records in this repository. Only those records, without Google URLs or provider-derived enrichment, are eligible for the iOS food catalog."
+        }
+      ],
+      "maxAgeHours": 8760,
+      "attribution": "Curated by SIXPM.",
+      "allowedFields": [
+        "restaurant.id",
+        "restaurant.name",
+        "restaurant.neighborhood",
+        "restaurant.address",
+        "restaurant.cuisine",
+        "restaurant.tier",
+        "restaurant.priceRange",
+        "restaurant.description",
+        "restaurant.whyHot",
+        "restaurant.tags",
+        "restaurant.hours",
+        "restaurant.lat",
+        "restaurant.lng"
+      ]
+    },
+    "tmdb": {
+      "status": "disabled",
+      "displayName": "TMDB API and imagery",
+      "featureFlag": "VITE_IOS_TMDB_ENRICHMENT",
+      "evidence": [
+        {
+          "url": "https://developer.themoviedb.org/docs/faq",
+          "observedAt": "2026-08-18",
+          "basis": "TMDB documents attribution for free non-commercial API use, but the iOS mission requires enrichment to remain disabled until the usage basis is explicitly cleared for this release."
+        }
+      ],
+      "requiredAttribution": "This product uses the TMDB API but is not endorsed or certified by TMDB."
+    },
+    "google-places": {
+      "status": "disabled",
+      "displayName": "Google Places and Google Maps content",
+      "evidence": [
+        {
+          "url": "https://developers.google.com/maps/documentation/places/web-service/policies",
+          "observedAt": "2026-08-18",
+          "basis": "Places content has attribution and caching restrictions; results on a map must use Google Maps."
+        },
+        {
+          "url": "https://developers.google.com/maps/terms-20180207",
+          "observedAt": "2026-08-18",
+          "basis": "The published terms prohibit use of Google content with a non-Google map and generally prohibit persistent caching outside limited exceptions."
+        }
+      ]
+    },
+    "non-amc-cinema": {
+      "status": "pending",
+      "displayName": "Non-AMC cinema and venue sources",
+      "evidence": [],
+      "requiredDecision": "Document a source-specific license or first-party editorial record before inclusion."
+    },
+    "jazz-venues": {
+      "status": "pending",
+      "displayName": "Jazz venues and event aggregators",
+      "evidence": [],
+      "requiredDecision": "Document a source-specific license or first-party editorial record before inclusion."
+    },
+    "restaurant-editorial-sources": {
+      "status": "pending",
+      "displayName": "Restaurant editorial and reservation sources",
+      "evidence": [],
+      "requiredDecision": "Document a source-specific license or first-party editorial record before inclusion."
+    },
+    "openstreetmap-cartography": {
+      "status": "disabled",
+      "displayName": "Embedded cartography",
+      "evidence": [],
+      "requiredDecision": "V1 uses Apple Maps as an external directions destination only; embedded maps are excluded."
+    },
+    "vercel-catalog-transport": {
+      "status": "approved",
+      "displayName": "SIXPM Vercel catalog transport",
+      "evidence": [
+        {
+          "url": "https://sixpm.vercel.app/",
+          "observedAt": "2026-08-18",
+          "basis": "SIXPM's user-controlled deployment serves the versioned catalog; transport approval does not approve third-party content."
+        }
+      ],
+      "maxAgeHours": 36
+    }
+  }
+}

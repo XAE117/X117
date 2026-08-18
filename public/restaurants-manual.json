@@ -13,15 +13,21 @@
       "sources": [],
       "sourceCount": 0,
       "heatScore": 0,
-      "tags": ["late-night", "cash-only", "outdoor", "no-reservations", "tacos"],
+      "tags": [
+        "late-night",
+        "cash-only",
+        "outdoor",
+        "no-reservations",
+        "tacos"
+      ],
       "isNew": false,
       "address": "Olympic Blvd & La Brea Ave, Los Angeles, CA",
       "lat": 34.0532,
       "lng": -118.3442,
-      "googleMapsUrl": "https://maps.google.com/?q=Tacos+El+Chato+Olympic+La+Brea+Los+Angeles",
       "hours": "Thu-Sun 9pm-3am",
       "instagramHandle": "tacoselchato_la",
-      "manualPick": true
+      "manualPick": true,
+      "locationProvenance": "sixpm-editorial"
     },
     {
       "id": "leos-taco-truck-hollywood",
@@ -36,14 +42,20 @@
       "sources": [],
       "sourceCount": 0,
       "heatScore": 0,
-      "tags": ["late-night", "cash-only", "truck", "tacos", "al-pastor"],
+      "tags": [
+        "late-night",
+        "cash-only",
+        "truck",
+        "tacos",
+        "al-pastor"
+      ],
       "isNew": false,
       "address": "1515 N La Brea Ave, Los Angeles, CA 90028",
-      "lat": 34.0960,
+      "lat": 34.096,
       "lng": -118.3442,
-      "googleMapsUrl": "https://maps.google.com/?q=Leos+Tacos+La+Brea+Los+Angeles",
       "hours": "Daily 9am-3am",
-      "manualPick": true
+      "manualPick": true,
+      "locationProvenance": "sixpm-editorial"
     }
   ]
 }

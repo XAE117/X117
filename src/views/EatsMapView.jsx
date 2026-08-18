@@ -55,7 +55,7 @@ function EatsMapView({ data }) {
                 .map(r => (
                   <li key={r.id} className="eats-map-spot">
                     <a
-                      href={r.googleMapsUrl}
+                      href={r.directionsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="eats-map-spot-link"
@@ -86,7 +86,7 @@ function EatsMapView({ data }) {
                 .map(r => (
                   <li key={r.id} className="eats-map-spot">
                     <a
-                      href={r.googleMapsUrl}
+                      href={r.directionsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="eats-map-spot-link"

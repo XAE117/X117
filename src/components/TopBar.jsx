@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useAppDataContext } from '../context/useAppDataContext'
 import { useAppUIContext } from '../context/useAppUIContext'
 
@@ -42,7 +42,6 @@ function navClass({ isActive }) {
 }
 
 export default function TopBar() {
-  const location = useLocation()
   const { refreshing, fetchData } = useAppDataContext()
   const { isJazz, isFood, isGuide, isRoll } = useAppUIContext()
   const isCinema = !isJazz && !isFood && !isGuide && !isRoll
@@ -86,7 +85,6 @@ export default function TopBar() {
               {item.label}
             </NavLink>
           ))}
-          <span className="site-route-context" aria-hidden="true">{location.pathname}</span>
         </nav>
       )}
     </header>

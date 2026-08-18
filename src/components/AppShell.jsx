@@ -4,11 +4,13 @@ import BackPill from './BackPill.jsx'
 import Footer from './Footer.jsx'
 import LoadingSpinner from './LoadingSpinner.jsx'
 import RoutesView from '../Routes.jsx'
+import { useLocation } from 'react-router-dom'
 import { useAppDataContext } from '../context/useAppDataContext'
 import { useAppUIContext } from '../context/useAppUIContext'
 
 export default function AppShell() {
   const { data, jazzData, foodData, loading } = useAppDataContext()
+  const location = useLocation()
   const {
     isJazz,
     isFood,
@@ -17,6 +19,10 @@ export default function AppShell() {
     isScreenshotRoute,
     showBackPill,
   } = useAppUIContext()
+
+  const isLegalRoute = ['/privacy', '/terms', '/support', '/credits'].includes(location.pathname)
+
+  if (isLegalRoute) return <RoutesView />
 
   if (loading) return <LoadingSpinner />
 

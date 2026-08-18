@@ -1,10 +1,12 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useId } from 'react'
+import { createAppleMapsUrl } from '../utils/directions.js'
 import './GuideRestaurantCard.css'
 
 function GuideRestaurantCard({ restaurant, children }) {
   const [open, setOpen] = useState(false)
   const cardRef = useRef(null)
   const triggerRef = useRef(null)
+  const cardId = useId()
 
   useEffect(() => {
     if (!open) return
@@ -16,6 +18,17 @@ function GuideRestaurantCard({ restaurant, children }) {
     }
     document.addEventListener('click', handleClick)
     return () => document.removeEventListener('click', handleClick)
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    const handleKeyDown = (event) => {
+      if (event.key !== 'Escape') return
+      setOpen(false)
+      triggerRef.current?.focus()
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
   }, [open])
 
   useEffect(() => {
@@ -32,21 +45,22 @@ function GuideRestaurantCard({ restaurant, children }) {
   }, [open])
 
   if (!restaurant) return <span>{children}</span>
+  const directionsUrl = restaurant.directionsUrl || createAppleMapsUrl(restaurant)
 
   return (
     <span className="guide-restaurant-trigger-wrap">
-      <span
+      <button
+        type="button"
         ref={triggerRef}
         className="guide-restaurant-name"
-        onClick={() => setOpen(!open)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && setOpen(!open)}
+        onClick={() => setOpen(value => !value)}
+        aria-expanded={open}
+        aria-controls={cardId}
       >
         {children}
-      </span>
+      </button>
       {open && (
-        <span className="guide-restaurant-card" ref={cardRef}>
+        <span id={cardId} className="guide-restaurant-card" ref={cardRef} role="region" aria-label={`${restaurant.name} details`}>
           <span className="guide-card-header">
             <span className="guide-card-name">{restaurant.name}</span>
             <span className="guide-card-price">{restaurant.priceRange}</span>
@@ -56,8 +70,8 @@ function GuideRestaurantCard({ restaurant, children }) {
             <span className="guide-card-note">{restaurant.notableFor}</span>
           )}
           <span className="guide-card-links">
-            {restaurant.googleMapsUrl && (
-              <a href={restaurant.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="guide-card-link">
+            {directionsUrl && (
+              <a href={directionsUrl} target="_blank" rel="noopener noreferrer" className="guide-card-link">
                 Directions ↗
               </a>
             )}

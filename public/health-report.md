@@ -1,18 +1,18 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-08-18 10:26 UTC_
+_Generated 2026-08-18 12:32 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 6 theaters with 0 future screenings: Laemmle Nuart Theatre, Cinespia, Laemmle Town Center 5, El Capitan Theatre, Laemmle Monica Film Center, Landmark Sunset Hollywood
+- **[Cinema (theaters.json)]** 5 theaters with 0 future screenings: Laemmle Nuart Theatre, Cinespia, Laemmle Town Center 5, El Capitan Theatre, Laemmle Monica Film Center
 
 ## Cinema (theaters.json)
 - Last updated: 2026-08-18 (today)
-- 30 theaters tracked, 24 with future screenings
-- 1601 future screenings, horizon 43 days
-- ⚠️ 6 theaters with 0 screenings: Laemmle Nuart Theatre, Cinespia, Laemmle Town Center 5, El Capitan Theatre, Laemmle Monica Film Center, Landmark Sunset Hollywood
+- 30 theaters tracked, 25 with future screenings
+- 2680 future screenings, horizon 43 days
+- ⚠️ 5 theaters with 0 screenings: Laemmle Nuart Theatre, Cinespia, Laemmle Town Center 5, El Capitan Theatre, Laemmle Monica Film Center
 - 6 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)

@@ -22,6 +22,7 @@ function WatchlistButton({ screeningId, onToggle }) {
 
   return (
     <button
+      type="button"
       className={className}
       onClick={handleClick}
       title={self ? 'Remove from watchlist' : 'Add to watchlist'}

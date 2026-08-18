@@ -35,6 +35,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
 }
 
 .jbd-day-header {
