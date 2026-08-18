@@ -150,6 +150,24 @@ a:hover {
   transform: rotate(180deg);
 }
 
+.progressive-list-more {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.progressive-list-more:hover,
+.progressive-list-more:focus-visible {
+  border-color: var(--gold-dim);
+  background: var(--bg-card-hover);
+}
+
 .past-screenings-list {
   animation: pastFadeIn 0.3s ease;
 }

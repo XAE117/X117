@@ -56,6 +56,7 @@ function StyleBadge({ style }) {
 function StarButton({ id, starred, onToggle }) {
   return (
     <button
+      type="button"
       className={`taco-star-btn ${starred ? 'starred' : ''}`}
       onClick={(e) => { e.stopPropagation(); onToggle(id) }}
       aria-label={starred ? 'Unstar' : 'Star'}
