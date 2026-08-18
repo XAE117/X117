@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { SavedEveningDetail, SavedEvenings } from './SavedEveningViews.jsx'
 import { useIosCatalog } from './useIosCatalog.js'
 import { nativeAdapter } from './native/nativeAdapter.js'
@@ -73,7 +73,7 @@ function CatalogState({ status, error, onRetry, savedCount, onOpenSaved }) {
   const savedLabel = `Open ${savedCount} saved evening${savedCount === 1 ? '' : 's'}`
   if (status === 'loading') {
     return (
-      <main className="ios-status-screen" aria-live="polite">
+      <main className="ios-status-screen" data-ios-screen tabIndex={-1} aria-live="polite">
         <span className="ios-status-mark" aria-hidden="true">◐</span>
         <h1>Finding tonight.</h1>
         <p>Verifying the current SIXPM catalog.</p>
@@ -83,7 +83,7 @@ function CatalogState({ status, error, onRetry, savedCount, onOpenSaved }) {
   }
 
   return (
-    <main className="ios-status-screen" role="alert">
+    <main className="ios-status-screen" data-ios-screen tabIndex={-1} aria-live="assertive" aria-atomic="true">
       <span className="ios-status-mark ios-status-mark-error" aria-hidden="true">!</span>
       <h1>Catalog unavailable.</h1>
       <p>{error?.message || 'SIXPM could not verify a current catalog.'}</p>
@@ -219,7 +219,7 @@ function Tonight({ catalog, catalogStatus, location, onSelect, onBrowse, draft, 
   })
 
   return (
-    <main className="ios-page ios-tonight-page">
+    <main className="ios-page ios-tonight-page" data-ios-screen tabIndex={-1}>
       <header className="ios-hero">
         <p className="ios-hero-kicker">THE LOS ANGELES EVENING GUIDE</p>
         <h1>SIXPM</h1>
@@ -278,7 +278,7 @@ function Browse({ catalog, catalogStatus, location, onSelect, browseMode, onChan
   const directoryTitle = browseMode === 'film' ? <>Film<br />directory</> : <>Dinner<br />notebook</>
 
   return (
-    <main className="ios-page">
+    <main className="ios-page" data-ios-screen tabIndex={-1}>
       <header className="ios-page-header">
         <p className="ios-eyebrow">LOS ANGELES · CURRENT EDITION</p>
         <h1>{directoryTitle}</h1>
@@ -302,7 +302,7 @@ function Browse({ catalog, catalogStatus, location, onSelect, browseMode, onChan
 function EveningDraftReview({ draft, onBack, onSave, onChoose, onClear, actionMessage }) {
   const canSave = Boolean(draft.cinema && draft.food)
   return (
-    <main className="ios-page ios-detail-page">
+    <main className="ios-page ios-detail-page" data-ios-screen tabIndex={-1}>
       <button type="button" className="ios-back-button" onClick={onBack}>← Return to catalog</button>
       <p className="ios-eyebrow">EVENING COMPOSED</p>
       <h1>One good<br />night.</h1>
@@ -344,7 +344,7 @@ function locationLabel(location) {
   return nativeAdapter.isNativeIos ? 'Off until you ask' : 'Available in iPhone app'
 }
 
-function Settings({ catalog, status, onRefresh, network, location, onUseLocation }) {
+function Settings({ catalog, status, onRefresh, network, location, locationMessage, onUseLocation, textScale }) {
   const cinema = catalog.feeds.cinema
   const isConnected = network.connected
   const catalogLabel = status === 'refreshing'
@@ -357,7 +357,7 @@ function Settings({ catalog, status, onRefresh, network, location, onUseLocation
     : `AMC showtimes updated ${formatCatalogTime(cinema.generatedAt)}.`
   const hasNearbyPicks = location.state === 'granted' && location.location
   return (
-    <main className="ios-page">
+    <main className="ios-page" data-ios-screen tabIndex={-1}>
       <header className="ios-page-header">
         <p className="ios-eyebrow">SIXPM / APP NOTES</p>
         <h1>Keep it<br />simple.</h1>
@@ -374,6 +374,7 @@ function Settings({ catalog, status, onRefresh, network, location, onUseLocation
       <section className="ios-settings-list" aria-label="App details">
         <div><span>Connection</span><strong>{isConnected ? 'Online' : 'Offline saved evenings only'}</strong></div>
         <div><span>Location</span><strong>{locationLabel(location)}</strong></div>
+        <div><span>Text size</span><strong>{textScale.source === 'ios' ? 'Follows iPhone' : 'Standard preview'}</strong></div>
         <div><span>Calendar and reminders</span><strong>Used only when you save an evening</strong></div>
         <div><span>United States</span><strong>iPhone V1</strong></div>
       </section>
@@ -391,6 +392,7 @@ function Settings({ catalog, status, onRefresh, network, location, onUseLocation
               </button>
             </>
           )}
+          {locationMessage && <p className="ios-action-message" role="status">{locationMessage}</p>}
         </section>
       )}
     </main>
@@ -407,7 +409,7 @@ function Detail({ selection, onBack, draft, onAddToEvening }) {
   const addLabel = isCinema ? 'Add film to evening' : 'Add dinner to evening'
 
   return (
-    <main className="ios-page ios-detail-page">
+    <main className="ios-page ios-detail-page" data-ios-screen tabIndex={-1}>
       <button type="button" className="ios-back-button" onClick={onBack}>← Return to catalog</button>
       <p className="ios-eyebrow">{isCinema ? 'AMC / CURRENT SHOWTIME' : 'SIXPM / DINNER NOTE'}</p>
       <h1>{isCinema ? item.title : item.name}</h1>
@@ -468,6 +470,10 @@ export default function IosApp() {
   const [actionMessage, setActionMessage] = useState(null)
   const [deleting, setDeleting] = useState(false)
   const [location, setLocation] = useState({ state: 'checking' })
+  const [locationMessage, setLocationMessage] = useState(null)
+  const [textScale, setTextScale] = useState({ category: 'UICTContentSizeCategoryL', scale: 1, source: 'default' })
+  const contentRef = useRef(null)
+  const lastRouteRef = useRef(null)
   const network = useNetworkStatus()
   const selectedSavedEvening = selection?.type === 'saved'
     ? saved.evenings.find(evening => evening.id === selection.id) || null
@@ -485,10 +491,44 @@ export default function IosApp() {
     }
   }, [])
 
+  useEffect(() => {
+    let active = true
+    let unsubscribe = () => {}
+    Promise.resolve().then(async () => {
+      const next = await nativeAdapter.getTextScale()
+      if (active) setTextScale(next)
+      const nextUnsubscribe = await nativeAdapter.subscribeTextScale(nextScale => {
+        if (active) setTextScale(nextScale)
+      })
+      if (!active) {
+        await Promise.resolve(nextUnsubscribe()).catch(() => {})
+        return
+      }
+      unsubscribe = nextUnsubscribe
+    }).catch(() => {
+      if (active) setTextScale({ category: 'UICTContentSizeCategoryL', scale: 1, source: 'default' })
+    })
+    return () => {
+      active = false
+      void Promise.resolve(unsubscribe()).catch(() => {})
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!nativeAdapter.isNativeIos || typeof document === 'undefined') return undefined
+    const root = document.documentElement
+    const previousFontSize = root.style.fontSize
+    root.style.fontSize = `${(16 * textScale.scale).toFixed(2)}px`
+    return () => {
+      root.style.fontSize = previousFontSize
+    }
+  }, [textScale.scale])
+
   const openBrowse = (mode) => {
     setBrowseMode(mode)
     setActiveTab('browse')
     setSelection(null)
+    setLocationMessage(null)
   }
 
   const openSaved = () => {
@@ -496,6 +536,7 @@ export default function IosApp() {
     setDeleting(false)
     setActiveTab('saved')
     setSelection(null)
+    setLocationMessage(null)
   }
 
   const selectCatalogItem = (nextSelection) => {
@@ -550,12 +591,21 @@ export default function IosApp() {
   const useLocation = async () => {
     try {
       const result = await nativeAdapter.requestCurrentLocation()
-      setLocation({
+      const nextLocation = {
         state: result.status,
         ...(result.location ? { location: result.location } : {}),
-      })
+      }
+      setLocation(nextLocation)
+      if (result.status === 'granted') {
+        setLocationMessage('Dinner picks are now sorted by distance for this session. SIXPM does not retain or send your location.')
+      } else if (result.status === 'denied') {
+        setLocationMessage('Location remains off. Enable it in iPhone Settings only if you want nearby dinner picks.')
+      } else {
+        setLocationMessage(result.message || 'SIXPM could not use your location right now.')
+      }
     } catch {
       setLocation({ state: 'unavailable' })
+      setLocationMessage('SIXPM could not use your location right now.')
     }
   }
 
@@ -711,8 +761,30 @@ export default function IosApp() {
     )
   }
 
+  const appClassName = `ios-app${textScale.scale >= 1.24 ? ' ios-type-accessibility' : ''}`
+  const routeKey = `${!catalog && activeTab !== 'saved' ? 'catalog-state' : 'catalog'}:${selection?.type === 'saved'
+    ? `saved:${selection.id}`
+    : selection?.type || activeTab}`
+
+  useEffect(() => {
+    if (lastRouteRef.current === null) {
+      lastRouteRef.current = routeKey
+      return undefined
+    }
+    if (lastRouteRef.current === routeKey) return undefined
+    lastRouteRef.current = routeKey
+    const timeout = setTimeout(() => {
+      contentRef.current?.querySelector('[data-ios-screen]')?.focus({ preventScroll: true })
+    }, 0)
+    return () => clearTimeout(timeout)
+  }, [routeKey])
+
   if (!catalog && activeTab !== 'saved') {
-    return <CatalogState status={status} error={error} onRetry={refresh} savedCount={saved.evenings.length} onOpenSaved={openSaved} />
+    return (
+      <div ref={contentRef} className={appClassName}>
+        <CatalogState status={status} error={error} onRetry={refresh} savedCount={saved.evenings.length} onOpenSaved={openSaved} />
+      </div>
+    )
   }
 
   const content = !catalog
@@ -763,11 +835,13 @@ export default function IosApp() {
                     onRefresh={refresh}
                     network={network}
                     location={location}
+                    locationMessage={locationMessage}
                     onUseLocation={useLocation}
+                    textScale={textScale}
                   />
 
   return (
-    <div className="ios-app">
+    <div ref={contentRef} className={appClassName}>
       {content}
       {!selection && (
         <nav className="ios-tab-bar" aria-label="SIXPM field index">

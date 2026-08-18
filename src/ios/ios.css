@@ -84,6 +84,11 @@ button:focus-visible, a:focus-visible {
   overflow-wrap: anywhere;
 }
 
+.ios-page:focus,
+.ios-status-screen:focus {
+  outline: 0;
+}
+
 .ios-page::before,
 .ios-page::after {
   position: absolute;
@@ -1104,6 +1109,62 @@ button:focus-visible, a:focus-visible {
   height: 1px;
   content: '';
   background: var(--ios-gold);
+}
+
+/* The local bridge maps the current iPhone Dynamic Type category to this
+ * layout class. At accessibility sizes, keep the editorial directory but
+ * reflow its dense metadata instead of clipping or shrinking it. */
+.ios-app.ios-type-accessibility .ios-section-heading {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.ios-app.ios-type-accessibility .ios-hero h1 {
+  /* The masthead is a brand mark as well as text. Keep it legible on one
+   * line while the surrounding editorial copy follows Dynamic Type. */
+  font-size: min(17vw, 4.2rem);
+}
+
+.ios-app.ios-type-accessibility .ios-listing {
+  grid-template-columns: minmax(0, 1fr) minmax(4.35rem, auto);
+  row-gap: 0.42rem;
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+}
+
+.ios-app.ios-type-accessibility .ios-listing-venue {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.ios-app.ios-type-accessibility .ios-listing-copy {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.ios-app.ios-type-accessibility .ios-listing-when {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.ios-app.ios-type-accessibility .ios-primary-button {
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.ios-app.ios-type-accessibility .ios-settings-list > div {
+  min-height: 0;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.ios-app.ios-type-accessibility .ios-settings-list strong {
+  max-width: none;
+  text-align: left;
+}
+
+.ios-app.ios-type-accessibility .ios-tab-bar button {
+  letter-spacing: 0.04em;
 }
 
 @media (min-width: 520px) {

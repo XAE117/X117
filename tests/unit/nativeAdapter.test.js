@@ -8,6 +8,10 @@ function iosDependencies(overrides = {}) {
       getPlatform: () => 'ios',
     },
     browser: { open: vi.fn() },
+    accessibility: {
+      getContentSizeCategory: vi.fn(),
+      addListener: vi.fn(),
+    },
     calendar: { createEventInteractively: vi.fn() },
     geolocation: {
       checkPermissions: vi.fn(),
@@ -66,6 +70,40 @@ describe('SIXPM native adapter', () => {
       toolbarColor: '#10100f',
     })
     await expect(native.openExternal('http://example.test')).rejects.toThrow('Only secure external links')
+  })
+
+  it('uses the iPhone Dynamic Type category and safely normalizes listener updates', async () => {
+    let listener = null
+    const remove = vi.fn().mockResolvedValue(undefined)
+    const accessibility = {
+      getContentSizeCategory: vi.fn().mockResolvedValue({
+        category: 'UICTContentSizeCategoryAccessibilityL',
+        scale: 1.68,
+      }),
+      addListener: vi.fn().mockImplementation(async (_event, callback) => {
+        listener = callback
+        return { remove }
+      }),
+    }
+    const native = createNativeAdapter(iosDependencies({ accessibility }))
+
+    await expect(native.getTextScale()).resolves.toEqual({
+      category: 'UICTContentSizeCategoryAccessibilityL',
+      scale: 1.68,
+      source: 'ios',
+    })
+
+    const onChange = vi.fn()
+    const unsubscribe = await native.subscribeTextScale(onChange)
+    listener({ category: 'UICTContentSizeCategoryXL', scale: 9 })
+
+    expect(onChange).toHaveBeenCalledWith({
+      category: 'UICTContentSizeCategoryXL',
+      scale: 1,
+      source: 'ios',
+    })
+    await unsubscribe()
+    expect(remove).toHaveBeenCalledTimes(1)
   })
 
   it('does not re-prompt after location permission is denied', async () => {

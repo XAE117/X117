@@ -1,11 +1,13 @@
 import { Browser } from '@capacitor/browser'
 import { Calendar } from '@capacitor/calendar'
-import { Capacitor } from '@capacitor/core'
+import { Capacitor, registerPlugin } from '@capacitor/core'
 import { Geolocation } from '@capacitor/geolocation'
 import { LocalNotifications } from '@capacitor/local-notifications'
 import { Network } from '@capacitor/network'
 import { Preferences } from '@capacitor/preferences'
 import { Share } from '@capacitor/share'
+
+const SIXPMAccessibility = registerPlugin('SIXPMAccessibility')
 
 export const SIXPM_STORAGE_KEYS = Object.freeze({
   catalogSnapshot: 'sixpm.catalog-snapshot.v1',
@@ -53,6 +55,16 @@ function statusForPermission(state) {
   return 'unavailable'
 }
 
+function normalizedTextScale(payload) {
+  const scale = Number(payload?.scale)
+  return {
+    category: typeof payload?.category === 'string' && payload.category.trim()
+      ? payload.category.trim()
+      : 'UICTContentSizeCategoryL',
+    scale: Number.isFinite(scale) && scale >= 0.8 && scale <= 2.2 ? scale : 1,
+  }
+}
+
 function nativePlatform(capacitor) {
   try {
     return Boolean(capacitor?.isNativePlatform?.())
@@ -69,6 +81,7 @@ export function createNativeAdapter(dependencies = {}) {
   const globalObject = dependencies.globalObject || globalThis
   const capacitor = dependencies.capacitor || null
   const browser = dependencies.browser || null
+  const accessibility = dependencies.accessibility || null
   const calendar = dependencies.calendar || null
   const geolocation = dependencies.geolocation || null
   const localNotifications = dependencies.localNotifications || null
@@ -203,6 +216,30 @@ export function createNativeAdapter(dependencies = {}) {
     return () => {
       globalObject.removeEventListener('online', online)
       globalObject.removeEventListener('offline', offline)
+    }
+  }
+
+  async function getTextScale() {
+    if (!isNativeIos || !accessibility?.getContentSizeCategory) {
+      return { category: 'UICTContentSizeCategoryL', scale: 1, source: 'default' }
+    }
+    try {
+      return { ...normalizedTextScale(await accessibility.getContentSizeCategory()), source: 'ios' }
+    } catch (error) {
+      return { ...normalizedTextScale(), source: 'default', message: messageFor(error) }
+    }
+  }
+
+  async function subscribeTextScale(callback) {
+    if (typeof callback !== 'function') throw new Error('A text-scale listener is required.')
+    if (!isNativeIos || !accessibility?.addListener) return () => {}
+    try {
+      const handle = await accessibility.addListener('contentSizeCategoryChange', payload => {
+        callback({ ...normalizedTextScale(payload), source: 'ios' })
+      })
+      return () => handle?.remove?.()
+    } catch {
+      return () => {}
     }
   }
 
@@ -358,6 +395,8 @@ export function createNativeAdapter(dependencies = {}) {
     openExternal,
     getNetworkStatus,
     subscribeNetworkStatus,
+    getTextScale,
+    subscribeTextScale,
     getLocationPermission,
     requestCurrentLocation,
     addCalendarEvent,
@@ -371,6 +410,7 @@ export function createNativeAdapter(dependencies = {}) {
 export const nativeAdapter = createNativeAdapter({
   capacitor: Capacitor,
   browser: Browser,
+  accessibility: SIXPMAccessibility,
   calendar: Calendar,
   geolocation: Geolocation,
   localNotifications: LocalNotifications,

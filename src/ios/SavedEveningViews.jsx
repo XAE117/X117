@@ -34,7 +34,7 @@ function SavedEveningCard({ evening, onSelect }) {
 export function SavedEvenings({ evenings, status, error, onSelect }) {
   if (status === 'loading') {
     return (
-      <main className="ios-page ios-empty-page" aria-live="polite">
+      <main className="ios-page ios-empty-page" data-ios-screen tabIndex={-1} aria-live="polite">
         <span className="ios-empty-symbol" aria-hidden="true">◌</span>
         <p className="ios-eyebrow">LOCAL ARCHIVE</p>
         <h1>Loading saved evenings.</h1>
@@ -44,7 +44,7 @@ export function SavedEvenings({ evenings, status, error, onSelect }) {
 
   if (status === 'error') {
     return (
-      <main className="ios-page ios-empty-page" role="alert">
+      <main className="ios-page ios-empty-page" data-ios-screen tabIndex={-1} aria-live="assertive" aria-atomic="true">
         <span className="ios-empty-symbol" aria-hidden="true">!</span>
         <p className="ios-eyebrow">LOCAL ARCHIVE</p>
         <h1>Saved evenings unavailable.</h1>
@@ -57,7 +57,7 @@ export function SavedEvenings({ evenings, status, error, onSelect }) {
   const completed = evenings.filter(evening => evening.status === 'completed')
   if (evenings.length === 0) {
     return (
-      <main className="ios-page ios-empty-page">
+      <main className="ios-page ios-empty-page" data-ios-screen tabIndex={-1}>
         <span className="ios-empty-symbol" aria-hidden="true">♡</span>
         <p className="ios-eyebrow">LOCAL ARCHIVE</p>
         <h1>Nothing held yet.</h1>
@@ -67,7 +67,7 @@ export function SavedEvenings({ evenings, status, error, onSelect }) {
   }
 
   return (
-    <main className="ios-page">
+    <main className="ios-page" data-ios-screen tabIndex={-1}>
       <header className="ios-page-header">
         <p className="ios-eyebrow">LOCAL ARCHIVE / THIS IPHONE</p>
         <h1>Saved<br />evenings</h1>
@@ -112,7 +112,7 @@ export function SavedEveningDetail({
   const canPlanActions = evening.status === 'planned' && availability.cinema
 
   return (
-      <main className="ios-page ios-detail-page">
+      <main className="ios-page ios-detail-page" data-ios-screen tabIndex={-1}>
       <button type="button" className="ios-back-button" onClick={onBack}>← Return to saved evenings</button>
       <p className="ios-eyebrow">{evening.status === 'completed' ? 'COMPLETED EVENING' : 'SAVED EVENING'}</p>
       <h1>{availability.cinema ? evening.cinema.title : 'Saved evening'}</h1>
