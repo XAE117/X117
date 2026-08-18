@@ -1,27 +1,22 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-08-06 12:02 UTC_
+_Generated 2026-08-08 23:43 UTC_
 
-**Status: WARNINGS** ⚠️
-
-## Warnings (1)
-
-- **[Cinema (theaters.json)]** 2 theaters with 0 future screenings: Cinespia, The Culver Theater
+**Status: HEALTHY** ✓
 
 ## Cinema (theaters.json)
-- Last updated: 2026-08-06 (today)
-- 31 theaters tracked, 29 with future screenings
-- 1750 future screenings, horizon 50 days
-- ⚠️ 2 theaters with 0 screenings: Cinespia, The Culver Theater
-- 5 unavailable or occasional venues monitored outside the active catalog
+- Last updated: 2026-08-08 (today)
+- 30 theaters tracked, 30 with future screenings
+- 2833 future screenings, horizon 48 days
+- 6 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-08-06 (today)
-- 8 venues, 8 with future shows
-- 321 future shows, horizon 256 days
+- Last updated: 2026-08-06 (2 days ago)
+- 8 venues, 6 with future shows
+- 293 future shows, horizon 254 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-08-02 (4 days ago)
+- Last updated: 2026-08-02 (6 days ago)
 - 230 restaurants tracked
 - Planning coverage: 219/230 coordinates, 21/230 hours, 61/230 descriptions
 - Lineup-ready: 21 restaurants across 16 neighborhoods; at least 10 open at 6 PM on each of the next 7 days

@@ -8,6 +8,7 @@ import { compareDatedEvents, isScreeningPast, useNow } from '../utils/timeUtils.
 import './ByDay.css'
 
 const INITIAL_FILMS_PER_DAY = 10
+const INITIAL_DAYS = 7
 
 function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings, showScreenshotLink }) {
   const [showPast, setShowPast] = useState(false)
@@ -32,7 +33,7 @@ function DayBlock({ dateKey, day, data, now, forceUpdate, allScreenings, showScr
 
       {pastGroups.length > 0 && (
         <div className="day-past-section">
-          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(value => !value)}>
+          <button type="button" className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(value => !value)} aria-expanded={showPast}>
             {past.length} past screening{past.length === 1 ? '' : 's'}
             <span className="past-toggle-arrow">▾</span>
           </button>
@@ -96,6 +97,7 @@ export default function ByDay({
   className = '',
 }) {
   const [, setTick] = useState(0)
+  const [dayDisplay, setDayDisplay] = useState({ query: '', count: INITIAL_DAYS })
   const forceUpdate = useCallback(() => setTick(tick => tick + 1), [])
   const now = useNow()
 
@@ -110,6 +112,7 @@ export default function ByDay({
   ).sort(compareDatedEvents)
 
   const query = searchQuery.trim().toLowerCase()
+  const visibleDayCount = dayDisplay.query === query ? dayDisplay.count : INITIAL_DAYS
   const filteredScreenings = query
     ? allScreenings.filter(screening => screening.title.toLowerCase().includes(query))
     : allScreenings
@@ -132,6 +135,7 @@ export default function ByDay({
   }
 
   const dayEntries = [...days.entries()].sort(([a], [b]) => a.localeCompare(b))
+  const visibleDayEntries = dayEntries.slice(0, visibleDayCount)
   const resolvedHeaderAction = headerAction === undefined
     ? <Link to="/tonight" className="browse-tonight-link">Evening only →</Link>
     : headerAction
@@ -157,7 +161,7 @@ export default function ByDay({
         </div>
       )}
 
-      {dayEntries.map(([dateKey, day], index) => (
+      {visibleDayEntries.map(([dateKey, day], index) => (
         <div key={dateKey}>
           {index > 0 && <DecoDivider variant={index % 2 === 0 ? 'sunburst' : 'fan'} />}
           <DayBlock
@@ -171,6 +175,19 @@ export default function ByDay({
           />
         </div>
       ))}
+
+      {visibleDayEntries.length < dayEntries.length && (
+        <button
+          type="button"
+          className="progressive-list-more"
+          onClick={() => setDayDisplay(current => ({
+            query,
+            count: (current.query === query ? current.count : INITIAL_DAYS) + INITIAL_DAYS,
+          }))}
+        >
+          Show the next {Math.min(INITIAL_DAYS, dayEntries.length - visibleDayEntries.length)} days
+        </button>
+      )}
 
       {dayEntries.length === 0 && (
         <p className="empty-state">{query ? 'No screenings match your search.' : emptyMessage}</p>

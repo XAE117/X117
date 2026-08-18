@@ -1,17 +1,24 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { getCurrentUser, getOtherUser, getWatchlistIds, toggleWatchlist } from '../utils/watchlist.js'
 import { useNow, getRelativeLabel, isScreeningPast, getFilmData } from '../utils/timeUtils.js'
 import './Watchlist.css'
 
 function UserPicker({ onPick }) {
+  const firstChoiceRef = useRef(null)
+
+  useEffect(() => {
+    firstChoiceRef.current?.focus()
+  }, [])
+
   return (
-    <div className="user-picker-overlay">
+    <div className="user-picker-overlay" role="dialog" aria-modal="true" aria-labelledby="watchlist-picker-title">
       <div className="user-picker">
-        <h2>Who are you?</h2>
+        <h1 id="watchlist-picker-title">Who are you?</h1>
+        <p>Choose a profile to save films for tonight.</p>
         <div className="user-picker-buttons">
-          <button className="user-picker-btn" onClick={() => onPick('James')}>James</button>
-          <button className="user-picker-btn" onClick={() => onPick('Visitor')}>Visitor</button>
+          <button ref={firstChoiceRef} type="button" className="user-picker-btn" onClick={() => onPick('James')}>James</button>
+          <button type="button" className="user-picker-btn" onClick={() => onPick('Visitor')}>Visitor</button>
         </div>
       </div>
     </div>
@@ -53,7 +60,7 @@ function WatchlistItem({ screening, theater, isBoth, onRemove, films, now }) {
           <span className={`watchlist-relative ${relative.isNow ? 'is-now' : ''}`}>{relative.label}</span>
         )}
       </span>
-      <button className="watchlist-remove" onClick={() => onRemove(screening.id)} title="Remove">
+      <button type="button" className="watchlist-remove" onClick={() => onRemove(screening.id)} title="Remove" aria-label={`Remove ${screening.title} from watchlist`}>
         &times;
       </button>
     </li>
@@ -80,7 +87,7 @@ function WatchlistSection({ title, items, isBoth, onRemove, films, now, classNam
       <h3 className={`watchlist-section-header ${className || ''}`}>{title}</h3>
       {past.length > 0 && (
         <div className="watchlist-past-section">
-          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)}>
+          <button type="button" className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)} aria-expanded={showPast}>
             {past.length} past screening{past.length !== 1 ? 's' : ''}
             <span className="past-toggle-arrow">&#9662;</span>
           </button>
@@ -173,8 +180,8 @@ function Watchlist({ data }) {
   return (
     <div className="watchlist-page">
       <div className="watchlist-header-row">
-        <h2 className="watchlist-header">Watchlist</h2>
-        <button className="watchlist-switch-user" onClick={() => {
+        <h1 className="watchlist-header">Watchlist</h1>
+        <button type="button" className="watchlist-switch-user" onClick={() => {
           const other = otherUser
           if (other) {
             localStorage.setItem('sixpm-user', other)

@@ -4,6 +4,8 @@ import DataFreshness from '../components/DataFreshness.jsx'
 import { useNow, compareDatedEvents, getRelativeLabel, isScreeningPast } from '../utils/timeUtils.js'
 import './JazzByDay.css'
 
+const INITIAL_DAYS = 14
+
 function HotBadge({ show }) {
   if (!show.hot) return null
   return <span className="jazz-hot-badge" title="LA modern jazz scene">🔥</span>
@@ -38,6 +40,7 @@ function ShowRow({ show, venue, now }) {
 
 function JazzByDay({ data }) {
   const now = useNow()
+  const [visibleDayCount, setVisibleDayCount] = useState(INITIAL_DAYS)
 
   const dayGroups = useMemo(() => {
     if (!data) return []
@@ -77,11 +80,20 @@ function JazzByDay({ data }) {
         {dayGroups.length === 0 ? (
           <p className="jbd-empty">No upcoming shows</p>
         ) : (
-          dayGroups.map(day => (
+          dayGroups.slice(0, visibleDayCount).map(day => (
             <DayBlock key={day.date} day={day} now={now} />
           ))
         )}
       </div>
+      {visibleDayCount < dayGroups.length && (
+        <button
+          type="button"
+          className="progressive-list-more"
+          onClick={() => setVisibleDayCount(count => count + INITIAL_DAYS)}
+        >
+          Show the next {Math.min(INITIAL_DAYS, dayGroups.length - visibleDayCount)} dates
+        </button>
+      )}
     </div>
   )
 }
@@ -112,7 +124,7 @@ function DayBlock({ day, now }) {
 
       {past.length > 0 && (
         <div className="jbd-past-section">
-          <button className={`past-toggle jazz-past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)}>
+          <button type="button" className={`past-toggle jazz-past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(v => !v)} aria-expanded={showPast}>
             {past.length} past show{past.length !== 1 ? 's' : ''}
             <span className="past-toggle-arrow">&#9662;</span>
           </button>

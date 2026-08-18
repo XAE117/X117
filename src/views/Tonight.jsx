@@ -70,7 +70,7 @@ export default function Tonight({ data }) {
 
       {pastGroups.length > 0 && (
         <div className="tonight-past-section">
-          <button className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(value => !value)}>
+          <button type="button" className={`past-toggle ${showPast ? 'open' : ''}`} onClick={() => setShowPast(value => !value)} aria-expanded={showPast}>
             {past.length} finished evening screening{past.length === 1 ? '' : 's'}
             <span className="past-toggle-arrow">▾</span>
           </button>
@@ -114,6 +114,7 @@ export default function Tonight({ data }) {
 
       {visibleCount < upcomingGroups.length && (
         <button
+          type="button"
           className="progressive-list-more"
           onClick={() => setVisibleCount(count => count + INITIAL_VISIBLE_FILMS)}
         >

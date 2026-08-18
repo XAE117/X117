@@ -1,3 +1,5 @@
+import './DataFreshness.css'
+
 function formatUpdated(value) {
   if (!value) return 'Update time unavailable'
   const date = new Date(value)

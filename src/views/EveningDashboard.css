@@ -66,33 +66,6 @@
   background: var(--bg-card);
 }
 
-.data-freshness {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin-bottom: 2rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: rgba(26, 23, 21, 0.6);
-}
-
-.data-freshness-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-
-.data-freshness-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #6fbd86;
-  box-shadow: 0 0 6px rgba(111, 189, 134, 0.5);
-}
-
 .dashboard-lineups,
 .dashboard-picks {
   margin-top: 2.5rem;
