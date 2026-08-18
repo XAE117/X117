@@ -12,7 +12,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: 'npm run dev -- --host 127.0.0.1 --port 4173',
+    command: 'VITE_IOS_CATALOG_BASE=http://127.0.0.1:4173/X117/ npm run dev -- --host 127.0.0.1 --port 4173',
     url: 'http://127.0.0.1:4173/X117/',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
