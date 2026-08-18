@@ -17,6 +17,25 @@ if (!/^[A-F0-9-]{36}$/i.test(simulatorId)) {
   process.exit(2)
 }
 
+const privacyReset = spawnSync('xcrun', [
+  'simctl',
+  'privacy',
+  simulatorId,
+  'revoke',
+  'location',
+  'com.xae117.sixpm',
+], {
+  cwd: root,
+  stdio: 'inherit',
+})
+
+if (privacyReset.error) {
+  console.error(privacyReset.error.message)
+  process.exit(1)
+}
+
+if (privacyReset.status !== 0) process.exit(privacyReset.status ?? 1)
+
 const result = spawnSync('xcodebuild', [
   '-project', 'ios/App/App.xcodeproj',
   '-scheme', 'App',

@@ -5,7 +5,7 @@ final class SIXPMAppUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testUnavailableCatalogHasAnAccessibleRetryControl() throws {
+    func testCatalogRecoveryKeepsSupportAndDeniedLocationReachable() throws {
         let app = XCUIApplication()
         app.launch()
 
@@ -34,6 +34,17 @@ final class SIXPMAppUITests: XCTestCase {
         XCTAssertTrue(
             policies.waitForExistence(timeout: 5),
             "Privacy, terms, credits, and support must remain reachable without a catalog."
+        )
+
+        let locationDenied = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "not allowed")).firstMatch
+        XCTAssertTrue(
+            locationDenied.waitForExistence(timeout: 5),
+            "A denied location permission must be visible without presenting another request.\n\n\(app.debugDescription)"
+        )
+        let locationGuidance = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "location is off")).firstMatch
+        XCTAssertTrue(
+            locationGuidance.exists,
+            "Location denial must explain that the user can opt back in through iPhone Settings."
         )
     }
 }
