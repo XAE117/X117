@@ -34,27 +34,42 @@ advice and it does not authorize App Store Connect changes.
 On-device processing alone is not App Store “collection.” It must remain on
 device and must not later be transmitted before that statement remains valid.
 
-## Production-host fact that prevents a no-data answer
+## Production-host evidence and the remaining privacy decision
 
-The catalog request goes to Vercel. Vercel’s current Privacy Notice says it
-collects end-user IP address, coarse location derived from that address,
-device/system information, and request/log data for hosted sites. Vercel’s
-documentation also describes retained runtime logs and optional log drains.
+The catalog request goes to Vercel. A read-only project audit on 2026-08-18
+established all of the following for the linked `sixpm` project:
 
-Therefore **do not select “No, we do not collect data from this app”** in App
-Store Connect based solely on the local native code scan. Before entry, inspect
-the production project’s logging, observability, analytics, and log-drain
-configuration and classify the retained Vercel request data against the live
-App Store Connect questionnaire. If it is retained, the answer must include
-the relevant Apple data types and purposes for the production catalog request;
-if an owner turns off or removes every retained request-data path, re-evaluate
-with evidence rather than carrying this draft forward.
+- Web Analytics is disabled in the project configuration and no analytics
+  client marker appears in either the public production HTML or the current
+  Vercel Preview HTML.
+- A Speed Insights configuration exists but reports `hasData: false`; no Speed
+  Insights client marker appears in either rendered HTML response.
+- The team has zero configured Log Drains for this project, and the
+  Observability Plus configuration endpoint reports that the feature is not
+  enabled.
+- The release artifact is a static catalog/UI build; it has no app-owned
+  analytics SDK, tracking SDK, or server-side personal-data endpoint.
+
+Those facts rule out SIXPM-configured behavior analytics, but they do **not**
+make Vercel's underlying network operation disappear. Vercel's current Privacy
+Notice says that its hosted-site service processes end-user IP address,
+IP-derived city/country, device/system information, and request/log data, and
+retains information for operational, legal, and business purposes. Apple
+defines “collect” as off-device transmission retained longer than real-time
+servicing. The Vercel notice is therefore sufficient reason not to select
+**“No, we do not collect data from this app”** merely because the local native
+code has no analytics.
+
+Before App Store Connect entry, the owner must approve a conservative mapping
+of the actual Vercel retention path to Apple's then-current questionnaire. Do
+not infer an unverified retention exception from the absence of a dashboard
+feature. No project setting was changed during this audit.
 
 ## Tentative questionnaire posture after that review
 
 | Question | Current answer | What is needed to finalize |
 | --- | --- | --- |
-| Does the app or a third-party partner collect data? | **Yes / pending exact types.** | Production Vercel retention and any configured observability/log drain must be inspected. |
+| Does the app or a third-party partner collect data? | **Yes / pending owner-approved exact types.** | Read-only audit ruled out SIXPM-configured Web Analytics, client analytics scripts, Log Drains, and Observability Plus; Vercel's platform privacy notice still describes retained hosted-request metadata. Map that exact path conservatively before entry. |
 | Is tracking used? | **No.** | Keep the iOS bundle free of tracking SDKs/domains and do not enable Vercel or another partner for advertising/cross-app tracking. |
 | Is local location collection disclosed? | **No, if it stays on device.** | Recheck that no location or derived distance leaves the device. |
 | Are local saved evenings, Calendar state, reminders, or share recipients disclosed as collected? | **No, if they stay on device.** | Recheck that no cloud sync, analytics, crash report, or support attachment transmits them. |
@@ -86,12 +101,13 @@ NSPrivacyAccessedAPICategoryUserDefaults = CA92.1
    address, or telephone number.
 2. Merge/deploy the reviewed legal routes through the normal release lane and
    verify each public URL directly.
-3. Inspect the actual production Vercel project for Analytics, Observability,
-   Runtime Logs, and Log Drains. Record which request fields are retained,
-   where they go, and for how long.
-4. Use that evidence to choose current App Store Connect privacy data types,
-   purposes, linkage, and tracking answers. The Account Holder, Admin, or App
-   Manager performs the entry.
+3. Obtain owner approval for the conservative App Store mapping of Vercel's
+   retained hosted-request metadata, then record the chosen data types,
+   purposes, and linkage. Do not inspect or export real end-user logs merely
+   to complete this paperwork.
+4. Use that approval and current Apple guidance to choose App Store Connect
+   privacy data types, purposes, linkage, and tracking answers. The Account
+   Holder, Admin, or App Manager performs the entry.
 5. Recheck this document immediately before submission; privacy practices and
    provider behavior can change.
 
