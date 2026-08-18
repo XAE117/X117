@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-18 (Pacific)  
 Mission state: active  
-Current phase: 0 — baseline, branch integration, and release controls
+Current phase: 2 — provider rights and safe catalog boundary
 
 ## Mission
 
@@ -26,18 +26,19 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 0.1 Repository and dirty-tree revalidation | passed | Protected canonical changes confirmed; iOS work occurs only in the clean Codex worktree. |
 | 0.2 PR #11 revalidation and merge | passed | Mergeable, green checks, no human review threads; merged to `main` as `dc15dfa1dc3d78e2e871fe9c0389ff648571b2e9`. |
 | 0.3 PR #12 revalidation | passed | Mergeable, green checks, no human review threads before merge. Its original stacked base remained `agent/amc-la-category`; its merge commit `4da559cfe34c6f9bbbd722a0c8b79a4140e14b3d` is not yet on `main`. |
-| 0.4 PR #12 integration | in progress | The iOS branch now carries the reviewed source changes and a fresh cinema regeneration. Integration PR #13 remains open only as a transparent record of the original stack-base issue; update or supersede it after this resolved branch is published. |
+| 0.4 PR #12 integration | passed | The iOS branch carries the reviewed source changes and a fresh cinema regeneration. Conflicting integration PR #13 was closed with an explanation after it was superseded by the resolved release lane. |
 | 0.5 Production data reachability | passed | `theaters.json`, `jazz-venues.json`, `restaurants.json`, and the application all returned HTTP 200 on 2026-08-18. Cinema feed timestamp: `2026-08-18T10:25:59.832Z`. |
 | 0.6 Native toolchain | passed | Xcode 26.6, iOS 26.5 iPhone simulator, and one Apple Development identity are present. Node 22.23.2 is installed at `/opt/homebrew/opt/node@22`; `.nvmrc` and `package.json` now pin the repository to Node 22. |
 | 0.7 Baseline release checks | complete with data warning | Under Node 22: lint, 53 unit tests, production build, and dependency audit pass; 40 desktop/mobile browser checks pass. `release:check` exits 2 only because strict data validation reports five theatre records with no future screenings. This is recorded as a catalog-health condition to resolve through the iOS provider/catalog gate, not waived as a native-release pass. |
+| 0.8 Draft release lane | passed | Draft PR #14 (`codex/ios-app-store` → `main`) is the sole authoritative App Store mission lane. |
 
 ## Phase status
 
 | Phase | State | Completion condition |
 | --- | --- | --- |
-| 0. Revalidate, integrate, and baseline | in progress | Commit the resolved stack and current data snapshot; then publish the branch and reconcile PR #13's integration record. |
-| 1. App Store control documents | in progress | This status, scope, execution plan, owner gates, and initial rights ledger exist and are committed. |
-| 2. Rights ledger and safe catalog | pending | Machine-enforced provider states prevent pending or disabled data from entering the iOS catalog. |
+| 0. Revalidate, integrate, and baseline | complete | Clean worktree, protected canonical tree, current catalog snapshot, Node 22 baseline, audited dependencies, and one draft release lane are established. |
+| 1. App Store control documents | complete | This status, scope, execution plan, owner gates, and initial rights ledger are committed. |
+| 2. Rights ledger and safe catalog | in progress | Machine-enforced provider states must prevent pending or disabled data from entering the iOS catalog. |
 | 3. iOS product boundary | pending | Native build excludes private/tangential products and loads only the V1 surface. |
 | 4. Capacitor and platform adapters | pending | iOS project and tested native capability adapters exist. |
 | 5. Saved evenings and offline | pending | Whole-evening plans persist locally, work offline, and support native actions. |
