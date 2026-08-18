@@ -139,7 +139,7 @@ function LegalNote({ page, onBack }) {
   )
 }
 
-function CatalogState({ status, onRetry, savedCount, onOpenSaved }) {
+function CatalogState({ status, onRetry, savedCount, onOpenSaved, onOpenNotes }) {
   const savedLabel = `Open ${savedCount} saved evening${savedCount === 1 ? '' : 's'}`
   if (status === 'loading') {
     return (
@@ -148,6 +148,7 @@ function CatalogState({ status, onRetry, savedCount, onOpenSaved }) {
         <h1>Finding tonight.</h1>
         <p>Verifying the current SIXPM catalog.</p>
         {savedCount > 0 && <button type="button" className="ios-secondary-button" onClick={onOpenSaved}>{savedLabel}</button>}
+        <button type="button" className="ios-text-button" onClick={onOpenNotes}>App notes</button>
       </main>
     )
   }
@@ -161,6 +162,7 @@ function CatalogState({ status, onRetry, savedCount, onOpenSaved }) {
         Try again
       </button>
       {savedCount > 0 && <button type="button" className="ios-secondary-button" onClick={onOpenSaved}>{savedLabel}</button>}
+      <button type="button" className="ios-text-button" onClick={onOpenNotes}>App notes</button>
       <p className="ios-status-note">Saved plans stay on this iPhone only while their provider details remain current.</p>
     </main>
   )
@@ -674,6 +676,16 @@ export default function IosApp() {
     setDataDeletionArmed(false)
   }
 
+  const openSettings = () => {
+    setActionMessage(null)
+    setDeleting(false)
+    setDataDeletionArmed(false)
+    setDataDeletionMessage(null)
+    setLocationMessage(null)
+    setSelection(null)
+    setActiveTab('settings')
+  }
+
   const openLegalNote = (page) => {
     setActionMessage(null)
     setDeleting(false)
@@ -969,14 +981,6 @@ export default function IosApp() {
     return () => clearTimeout(timeout)
   }, [routeKey])
 
-  if (!catalog && activeTab !== 'saved' && activeTab !== 'settings') {
-    return (
-      <div ref={contentRef} className={appClassName}>
-        <CatalogState status={status} onRetry={refresh} savedCount={saved.evenings.length} onOpenSaved={openSaved} />
-      </div>
-    )
-  }
-
   const settings = (
     <Settings
       catalog={catalog}
@@ -1002,7 +1006,15 @@ export default function IosApp() {
     : !catalog
       ? activeTab === 'saved'
         ? renderSaved()
-        : settings
+        : activeTab === 'settings'
+          ? settings
+          : <CatalogState
+              status={status}
+              onRetry={refresh}
+              savedCount={saved.evenings.length}
+              onOpenSaved={openSaved}
+              onOpenNotes={openSettings}
+            />
       : selection?.type === 'saved'
         ? renderSaved()
       : selection?.type === 'draft'
@@ -1059,6 +1071,10 @@ export default function IosApp() {
               className={activeTab === tab.id ? 'active' : ''}
               aria-current={activeTab === tab.id ? 'page' : undefined}
               onClick={() => {
+                if (tab.id === 'settings') {
+                  openSettings()
+                  return
+                }
                 setActionMessage(null)
                 setDeleting(false)
                 setDataDeletionArmed(false)

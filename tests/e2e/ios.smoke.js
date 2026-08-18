@@ -56,6 +56,11 @@ test.describe('SIXPM iPhone shell', () => {
     await expect(page.getByRole('heading', { name: 'Catalog unavailable.' })).toBeVisible()
     await expect(page.getByText('SIXPM could not verify a current catalog. Check your connection and try again.')).toBeVisible()
     await expect(page.locator('#root')).not.toContainText('Catalog response was not JSON')
+    await expect(page.getByRole('navigation', { name: 'SIXPM field index' })).toBeVisible()
+
+    await page.getByRole('button', { name: 'Notes', exact: true }).click()
+    await expect(page.getByRole('heading', { name: 'Keep it simple.' })).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Policies + support' })).toBeVisible()
   })
 
   test('honors the reduced-motion preference', async ({ page }) => {
