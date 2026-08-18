@@ -1,5 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useIosCatalog } from './useIosCatalog.js'
+import { nativeAdapter } from './native/nativeAdapter.js'
+import { useNetworkStatus } from './useNetworkStatus.js'
 import {
   collectScreenings,
   directionsForCinema,
@@ -19,11 +21,38 @@ const TABS = [
 ]
 
 function ExternalLink({ href, children, className = 'ios-link-button' }) {
+  const [error, setError] = useState(null)
+  const [opening, setOpening] = useState(false)
   if (!href) return null
+
+  const handleClick = async (event) => {
+    if (!nativeAdapter.isNativeIos) return
+    event.preventDefault()
+    setOpening(true)
+    setError(null)
+    try {
+      await nativeAdapter.openExternal(href)
+    } catch (nextError) {
+      setError(nextError.message || 'Could not open that link.')
+    } finally {
+      setOpening(false)
+    }
+  }
+
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {children} <span aria-hidden="true">↗</span>
-    </a>
+    <span className="ios-external-link-wrap">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        aria-busy={opening || undefined}
+        onClick={handleClick}
+      >
+        {children} <span aria-hidden="true">↗</span>
+      </a>
+      {error && <span className="ios-inline-error" role="alert">{error}</span>}
+    </span>
   )
 }
 
@@ -175,8 +204,16 @@ function Saved() {
   )
 }
 
-function Settings({ catalog, status, onRefresh }) {
+function locationLabel(location) {
+  if (location.state === 'granted') return 'Ready when you ask'
+  if (location.state === 'denied') return 'Not allowed'
+  if (location.state === 'checking') return 'Checking…'
+  return nativeAdapter.isNativeIos ? 'Off until you ask' : 'Available in iPhone app'
+}
+
+function Settings({ catalog, status, onRefresh, network, location, onUseLocation }) {
   const cinema = catalog.feeds.cinema
+  const isConnected = network.connected
   return (
     <main className="ios-page">
       <header className="ios-page-header">
@@ -192,10 +229,19 @@ function Settings({ catalog, status, onRefresh }) {
         </button>
       </section>
       <section className="ios-settings-list" aria-label="App details">
-        <div><span>Location</span><strong>Off until you ask</strong></div>
+        <div><span>Connection</span><strong>{isConnected ? 'Online' : 'Offline saved evenings only'}</strong></div>
+        <div><span>Location</span><strong>{locationLabel(location)}</strong></div>
         <div><span>Calendar and reminders</span><strong>Used only when you save an evening</strong></div>
         <div><span>United States</span><strong>iPhone V1</strong></div>
       </section>
+      {nativeAdapter.isNativeIos && location.state !== 'granted' && (
+        <section className="ios-settings-action">
+          <p>Location is never collected on launch or stored by SIXPM. It is requested only for an explicit nearby-picks action.</p>
+          <button type="button" className="ios-secondary-button" onClick={onUseLocation}>
+            Use my location
+          </button>
+        </section>
+      )}
     </main>
   )
 }
@@ -255,10 +301,29 @@ export default function IosApp() {
   const [activeTab, setActiveTab] = useState('tonight')
   const [browseMode, setBrowseMode] = useState('film')
   const [selection, setSelection] = useState(null)
+  const [location, setLocation] = useState({ state: 'checking' })
+  const network = useNetworkStatus()
+
+  useEffect(() => {
+    let active = true
+    nativeAdapter.getLocationPermission().then(next => {
+      if (active) setLocation(next)
+    }).catch(() => {
+      if (active) setLocation({ state: 'unavailable' })
+    })
+    return () => {
+      active = false
+    }
+  }, [])
 
   const openBrowse = (mode) => {
     setBrowseMode(mode)
     setActiveTab('browse')
+  }
+
+  const useLocation = async () => {
+    const result = await nativeAdapter.requestCurrentLocation()
+    setLocation({ state: result.status })
   }
 
   if (!catalog && status !== 'error') return <CatalogState status={status} error={error} onRetry={refresh} />
@@ -272,7 +337,14 @@ export default function IosApp() {
         ? <Browse catalog={catalog} onSelect={setSelection} browseMode={browseMode} onChangeMode={setBrowseMode} />
         : activeTab === 'saved'
           ? <Saved />
-          : <Settings catalog={catalog} status={status} onRefresh={refresh} />
+          : <Settings
+              catalog={catalog}
+              status={status}
+              onRefresh={refresh}
+              network={network}
+              location={location}
+              onUseLocation={useLocation}
+            />
 
   return (
     <div className="ios-app">

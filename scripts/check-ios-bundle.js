@@ -36,6 +36,10 @@ if (!statSync(bundleDir, { throwIfNoEntry: false })) {
   throw new Error('dist-ios is missing. Run npm run build:ios first.')
 }
 
+if (!statSync(path.join(bundleDir, 'index.html'), { throwIfNoEntry: false })) {
+  throw new Error('dist-ios/index.html is missing. The Capacitor shell requires a local index.html entrypoint.')
+}
+
 const files = walk(bundleDir)
 const failures = []
 for (const file of files) {

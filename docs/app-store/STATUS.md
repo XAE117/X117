@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-18 (Pacific)  
 Mission state: active  
-Current phase: 4 — Capacitor and native platform adapters
+Current phase: 5 — Saved evenings and offline snapshots
 
 ## Mission
 
@@ -39,6 +39,9 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 3.2 Remote catalog client | passed locally | The client fetches only versioned catalog paths, verifies SHA-256 digests, field allowlists, expiry, source state, and explicit disabled Jazz behavior before rendering. It cannot fall back to `theaters.json`, `restaurants.json`, or jazz source data. |
 | 3.3 Product boundary check | passed | `npm run build:ios` produced a three-file local UI bundle and `ios:bundle:check` found no excluded products or API-key variable tokens. |
 | 3.4 iPhone-size visual QA | passed locally | At 393×852, the catalog rendered without Vite overlays or console errors; evening-first grouped film cards, food browse/detail, and bottom navigation were exercised. This is browser evidence only, not simulator or device proof. |
+| 4.1 Capacitor iPhone shell | passed | Capacitor core/CLI/iOS are `8.5.0`; the generated target uses `com.xae117.sixpm`, iOS 17.0 minimum, and `TARGETED_DEVICE_FAMILY = 1`. The iOS shell loads only `dist-ios/index.html`; the build normalizes the isolated Vite `ios.html` artifact to that Capacitor entrypoint. |
+| 4.2 Native capability boundary | passed | Only Browser, Calendar, Geolocation, Local Notifications, Network, Preferences, and Share are present through Swift Package Manager. `NATIVE_CAPABILITIES.md` records the prompt, storage, and no-tracking boundaries. Calendar uses the interactive system editor; location and notification permission denials are never automatically re-prompted. |
+| 4.3 Native build verification | passed | `npm audit --omit=dev`, lint, 13 focused iOS tests, `npm run build:ios`, and `cap sync ios` passed. An iPhone simulator build completed with `BUILD SUCCEEDED` using `CODE_SIGNING_ALLOWED=NO`; this is compile evidence only, not signed-device proof. |
 
 ## Phase status
 
@@ -48,9 +51,9 @@ The canonical checkout has two pre-existing protected changes: a modified `scrip
 | 1. App Store control documents | complete | This status, scope, execution plan, owner gates, and initial rights ledger are committed. |
 | 2. Rights ledger and safe catalog | complete | Machine-enforced provider states prevent pending or disabled data from entering the iOS catalog; legacy Google persistence is remediated and a versioned catalog is generated and verified. |
 | 3. iOS product boundary | complete | A separately built local UI consumes only the verified V1 catalog and excludes private/tangential web products from its production bundle. |
-| 4. Capacitor and platform adapters | in progress | iOS project and tested native capability adapters exist. |
-| 5. Saved evenings and offline | pending | Whole-evening plans persist locally, work offline, and support native actions. |
-| 6. Accessibility and iPhone polish | pending | Safe-area, Dynamic Type, VoiceOver, reduced-motion, permission-denial, and offline paths pass. |
+| 4. Capacitor and platform adapters | complete | Capacitor 8 iPhone target, local entrypoint, tested platform adapters, truthful purpose strings, and native compile evidence are committed. |
+| 5. Saved evenings and offline | in progress | Whole-evening plans persist locally, work offline, and support native actions. |
+| 6. Accessibility and iPhone polish | pending | Safe-area, Dynamic Type, VoiceOver, reduced-motion, permission-denial, offline paths, and final SIXPM icon/splash artwork pass. |
 | 7. Legal, privacy, and support | pending | Public legal/support pages and native privacy manifest are complete. |
 | 8. Release checks and device QA | pending | Web/iOS checks, simulator QA, and physical-device QA are evidenced separately. |
 | 9. TestFlight and App Store preparation | pending | Metadata, assets, review notes, and test plan are ready; no submission occurs. |

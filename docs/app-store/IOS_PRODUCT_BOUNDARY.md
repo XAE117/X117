@@ -7,13 +7,15 @@ of the broad web product.
 
 | Concern | iPhone behavior |
 | --- | --- |
-| Entry HTML | `ios.html` |
+| Source entry HTML | `ios.html` |
+| Capacitor entry HTML | `dist-ios/index.html`, produced from the isolated source entry during `npm run build:ios` |
 | React entry | `src/ios/main.jsx` |
 | Production bundle | `dist-ios/` from `npm run build:ios` |
 | Local UI | React, CSS, and UI logic ship in the Capacitor bundle; no remote web page is loaded. |
 | Catalog | The app fetches only `catalog/v1/index.json`, `cinema.json`, `jazz.json`, and `food.json` from `https://sixpm.vercel.app/` by default. |
 | Verification | Every feed path, SHA-256 digest, expiry, provider state, and declared field set is checked before it is rendered. |
 | Local QA override | `VITE_IOS_CATALOG_BASE` may point at a local catalog server. It is public configuration only and never contains a key. |
+| Native bridge | The iPhone target exposes only the capabilities documented in [NATIVE_CAPABILITIES.md](NATIVE_CAPABILITIES.md). |
 
 `vite.config.js` uses `publicDir: false` for the iOS production build, so the
 legacy `public/` tree cannot be copied into `dist-ios`. `scripts/check-ios-bundle.js`
@@ -29,6 +31,10 @@ native bundle.
   the following capability phase).
 - Settings: catalog freshness and privacy-first capability status.
 - External Apple Maps directions and official AMC showtime links.
+
+Native external links accept HTTPS only. On iPhone they are handled by the
+Capacitor Browser adapter, rather than allowing the WebView to navigate away
+from SIXPM or embedding an unreviewed third-party map.
 
 ## Explicitly excluded
 

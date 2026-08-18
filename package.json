@@ -10,7 +10,7 @@
     "dev": "vite",
     "dev:ios": "vite --mode ios",
     "build": "vite build",
-    "build:ios": "vite build --mode ios && node scripts/check-ios-bundle.js",
+    "build:ios": "vite build --mode ios && node scripts/prepare-ios-capacitor-assets.js && node scripts/check-ios-bundle.js",
     "preview": "vite preview",
     "preview:ios": "vite preview --outDir dist-ios",
     "scrape": "node --env-file-if-exists=.env scripts/scrape.js",
@@ -22,6 +22,10 @@
     "catalog:validate": "node scripts/validate-ios-catalog.js",
     "catalog:check": "node scripts/build-ios-catalog.js --check && node scripts/validate-ios-catalog.js",
     "ios:bundle:check": "node scripts/check-ios-bundle.js",
+    "ios:sync": "npm run build:ios && cap sync ios",
+    "ios:open": "cap open ios",
+    "ios:run": "npm run ios:sync && cap run ios",
+    "ios:doctor": "cap doctor",
     "restaurant:rights": "node scripts/migrate-restaurant-rights.js",
     "validate": "node scripts/validate-data.js",
     "notify": "node scripts/notify.js",
@@ -34,6 +38,15 @@
     "release:check": "npm run check && npm run test:e2e && npm run catalog:check && node scripts/validate-data.js --strict"
   },
   "dependencies": {
+    "@capacitor/browser": "^8.0.4",
+    "@capacitor/calendar": "^1.0.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/geolocation": "^8.2.2",
+    "@capacitor/ios": "^8.5.0",
+    "@capacitor/local-notifications": "^8.3.0",
+    "@capacitor/network": "^8.0.1",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/share": "^8.0.1",
     "astronomy-engine": "^2.1.19",
     "html2canvas": "^1.4.1",
     "leaflet": "^1.9.4",
@@ -43,6 +56,7 @@
     "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.0",
     "@eslint/js": "^9.39.1",
     "@playwright/test": "^1.61.1",
     "@types/react": "^19.2.7",

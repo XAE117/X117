@@ -198,6 +198,17 @@ button:focus-visible, a:focus-visible {
   text-decoration: none;
 }
 
+.ios-external-link-wrap {
+  display: inline-grid;
+  gap: 0.42rem;
+}
+
+.ios-inline-error {
+  color: var(--ios-danger);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
 .ios-primary-button:disabled,
 .ios-secondary-button:disabled {
   cursor: default;
@@ -355,6 +366,24 @@ button:focus-visible, a:focus-visible {
   display: grid;
   gap: 0.35rem;
   padding: 1.1rem;
+}
+
+.ios-settings-action {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--ios-line);
+  border-radius: 1rem;
+  background: var(--ios-surface);
+}
+
+.ios-settings-action p {
+  color: var(--ios-muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.ios-settings-action .ios-secondary-button {
+  margin-top: 0.75rem;
 }
 
 .ios-settings-card > span,

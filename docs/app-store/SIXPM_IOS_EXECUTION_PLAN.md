@@ -46,11 +46,11 @@ Exit evidence: deterministic iOS web build has no excluded route/chunk or privat
 ## Phase 4 — Capacitor 8 and native capabilities
 
 1. Add Capacitor 8 with an iPhone-only Xcode project targeted to iOS 17+.
-2. Add adapters for Preferences, Geolocation, Calendar, Local Notifications, Share, Browser/App external-link handling, Network, Status Bar, and Splash Screen.
+2. Add adapters for Preferences, Geolocation, Calendar, Local Notifications, Share, Browser external-link handling, and Network. Do not add an unused native package or API merely for platform cosmetics.
 3. Keep plugin imports behind platform adapters so the web build remains functional without native binaries.
-4. Add truthful Info.plist purpose strings and the required privacy manifest entries.
+4. Add truthful Info.plist purpose strings for the included APIs. Keep the privacy manifest and App Store privacy declaration as a separately auditable release gate.
 
-Exit evidence: `npm run build:ios`, `npx cap sync ios`, and a signed simulator build pass with no API keys in the bundle.
+Exit evidence: `npm run build:ios`, `npx cap sync ios`, an iPhone simulator compile pass, and no API keys in the bundle. Device signing is proved independently in the physical-device gate.
 
 ## Phase 5 — Saved evening loop
 
@@ -66,6 +66,7 @@ Exit evidence: saved-plan tests cover create/read/update/delete/migration/offlin
 1. Tune safe areas, thumb reach, target sizes, keyboard behavior, iPhone-only orientation, and loading/error states.
 2. Audit semantic headings, focus order, VoiceOver labels, Dynamic Type, contrast, reduced motion, and state announcements.
 3. Test permission-denial, location unavailable, calendar unavailable, notification unavailable, network loss, stale catalog, and empty catalog paths.
+4. Replace the generated Capacitor icon and splash artwork with final SIXPM artwork before any archive or TestFlight build.
 
 Exit evidence: accessible native navigation and all denial/offline paths pass scripted simulator QA.
 

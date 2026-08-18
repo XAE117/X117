@@ -1,0 +1,16 @@
+{
+  "appId": "com.xae117.sixpm",
+  "appName": "SIXPM",
+  "webDir": "dist-ios",
+  "backgroundColor": "#10100f",
+  "loggingBehavior": "debug",
+  "ios": {
+    "contentInset": "never",
+    "allowsLinkPreview": false
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "presentationOptions": ["badge", "sound", "banner", "list"]
+    }
+  }
+}
