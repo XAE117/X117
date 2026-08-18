@@ -6,6 +6,7 @@ import {
   groupScreeningsByTitle,
   sortRestaurantsByDistance,
   tonightOrNextScreenings,
+  upcomingScreenings,
 } from '../../src/ios/format.js'
 
 const cinemaFeed = {
@@ -26,15 +27,27 @@ const cinemaFeed = {
 
 describe('iOS Tonight screening selection', () => {
   it('shows only unstarted evening screenings for tonight', () => {
-    const result = tonightOrNextScreenings(cinemaFeed, new Date('2026-08-18T06:00:00'))
+    const result = tonightOrNextScreenings(cinemaFeed, new Date('2026-08-18T13:00:00.000Z'))
 
     expect(result.map(item => item.id)).toEqual(['tonight'])
   })
 
   it('falls forward to the next available evening instead of presenting a daytime matinee', () => {
-    const result = tonightOrNextScreenings(cinemaFeed, new Date('2026-08-18T22:00:00'))
+    const result = tonightOrNextScreenings(cinemaFeed, new Date('2026-08-19T05:00:00.000Z'))
 
     expect(result.map(item => item.id)).toEqual(['tomorrow-evening'])
+  })
+
+  it('omits screenings that have already started from the current iPhone directory', () => {
+    const result = upcomingScreenings(cinemaFeed, new Date('2026-08-18T15:30:00.000Z'))
+
+    expect(result.map(item => item.id)).toEqual([
+      'morning',
+      'matinee',
+      'tonight',
+      'tomorrow-morning',
+      'tomorrow-evening',
+    ])
   })
 
   it('groups the same film into one stable card with its venue options', () => {

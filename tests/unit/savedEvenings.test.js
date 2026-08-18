@@ -101,6 +101,16 @@ describe('SIXPM saved evenings', () => {
     })).toThrow('outside the approved offline-save window')
   })
 
+  it('refuses a showing that has already started even while its catalog feed is current', () => {
+    expect(() => createSavedEvening({
+      cinema: { ...cinema, time: '7:00 AM' },
+      food,
+      catalog,
+      now: new Date('2026-08-18T15:30:00.000Z'),
+      createId: () => 'sixpm-started-evening',
+    })).toThrow('already started')
+  })
+
   it('redacts expired provider data instead of retaining it in local saved storage', async () => {
     const writes = []
     const adapter = {

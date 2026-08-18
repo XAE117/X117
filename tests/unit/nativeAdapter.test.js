@@ -170,6 +170,22 @@ describe('SIXPM native adapter', () => {
     }))
   })
 
+  it('explains an unavailable Calendar account without exposing a plugin I/O error', async () => {
+    const calendar = {
+      createEventInteractively: vi.fn().mockRejectedValue({ code: 'OS-PLUG-CLDR-0004' }),
+    }
+    const native = createNativeAdapter(iosDependencies({ calendar }))
+
+    await expect(native.addCalendarEvent({
+      title: 'SIXPM · Film + dinner',
+      startAt: '2026-08-18T19:00:00-07:00',
+      endAt: '2026-08-18T22:00:00-07:00',
+    })).resolves.toEqual({
+      status: 'unavailable',
+      message: 'Calendar is unavailable on this iPhone. Add or enable a Calendar account, then try again.',
+    })
+  })
+
   it('does not re-prompt after local reminders are denied and schedules only future reminders', async () => {
     const localNotifications = {
       checkPermissions: vi.fn().mockResolvedValue({ display: 'denied' }),

@@ -13,7 +13,6 @@ import {
 } from './savedEvenings.js'
 import { useSavedEvenings } from './useSavedEvenings.js'
 import {
-  collectScreenings,
   directionsForCinema,
   directionsForRestaurant,
   formatCatalogTime,
@@ -24,6 +23,7 @@ import {
   readableDate,
   sortRestaurantsByDistance,
   tonightOrNextScreenings,
+  upcomingScreenings,
 } from './format.js'
 
 const TABS = [
@@ -269,15 +269,15 @@ function EveningDraftBanner({ draft, onReview, onChoose, onClear }) {
   )
 }
 
-function Tonight({ catalog, catalogStatus, location, onSelect, onBrowse, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
+function Tonight({ catalog, catalogStatus, location, now, onSelect, onBrowse, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
   const cinema = useMemo(() => groupScreeningsByTitle(
-    tonightOrNextScreenings(catalog.feeds.cinema),
-  ).slice(0, 3), [catalog])
+    tonightOrNextScreenings(catalog.feeds.cinema, now),
+  ).slice(0, 3), [catalog, now])
   const food = useMemo(() => sortRestaurantsByDistance(
     catalog.feeds.food.data.restaurants || [],
     location,
   ), [catalog, location])
-  const cinemaTitle = cinema.length > 0 && cinema[0].primary.date !== localDateKey()
+  const cinemaTitle = cinema.length > 0 && cinema[0].primary.date !== localDateKey(now)
     ? 'Next up'
     : 'Tonight’s film'
   const foodTitle = location ? 'Dinner nearby' : 'Dinner, kept simple'
@@ -336,10 +336,10 @@ function Tonight({ catalog, catalogStatus, location, onSelect, onBrowse, draft, 
   )
 }
 
-function Browse({ catalog, catalogStatus, location, onSelect, browseMode, onChangeMode, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
+function Browse({ catalog, catalogStatus, location, now, onSelect, browseMode, onChangeMode, draft, onReviewDraft, onChooseDraft, onClearDraft }) {
   const cinema = useMemo(() => groupScreeningsByTitle(
-    collectScreenings(catalog.feeds.cinema),
-  ), [catalog])
+    upcomingScreenings(catalog.feeds.cinema, now),
+  ), [catalog, now])
   const food = useMemo(() => sortRestaurantsByDistance(
     catalog.feeds.food.data.restaurants || [],
     location,
@@ -598,6 +598,7 @@ export default function IosApp() {
   const [dataDeletionMessage, setDataDeletionMessage] = useState(null)
   const [location, setLocation] = useState({ state: 'checking' })
   const [locationMessage, setLocationMessage] = useState(null)
+  const [currentTime, setCurrentTime] = useState(() => new Date())
   const [textScale, setTextScale] = useState({ category: 'UICTContentSizeCategoryL', scale: 1, source: 'default' })
   const contentRef = useRef(null)
   const lastRouteRef = useRef(null)
@@ -605,6 +606,19 @@ export default function IosApp() {
   const selectedSavedEvening = selection?.type === 'saved'
     ? saved.evenings.find(evening => evening.id === selection.id) || null
     : null
+
+  useEffect(() => {
+    const refreshCurrentTime = () => setCurrentTime(new Date())
+    const interval = window.setInterval(refreshCurrentTime, 60_000)
+    const refreshOnForeground = () => {
+      if (document.visibilityState === 'visible') refreshCurrentTime()
+    }
+    document.addEventListener('visibilitychange', refreshOnForeground)
+    return () => {
+      window.clearInterval(interval)
+      document.removeEventListener('visibilitychange', refreshOnForeground)
+    }
+  }, [])
 
   useEffect(() => {
     let active = true
@@ -1015,6 +1029,7 @@ export default function IosApp() {
                 catalog={catalog}
                 catalogStatus={status}
                 location={location.location}
+                now={currentTime}
                 onSelect={selectCatalogItem}
                 onBrowse={openBrowse}
                 draft={draft}
@@ -1027,6 +1042,7 @@ export default function IosApp() {
                   catalog={catalog}
                   catalogStatus={status}
                   location={location.location}
+                  now={currentTime}
                   onSelect={selectCatalogItem}
                   browseMode={browseMode}
                   onChangeMode={setBrowseMode}

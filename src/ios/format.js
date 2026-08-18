@@ -2,6 +2,23 @@ import { createAppleMapsUrl } from '../utils/directions.js'
 
 const EVENING_START_MINUTES = 17 * 60
 const EARTH_RADIUS_MILES = 3_958.7613
+export const LOS_ANGELES_TIME_ZONE = 'America/Los_Angeles'
+
+const LOS_ANGELES_CLOCK = new Intl.DateTimeFormat('en-US', {
+  timeZone: LOS_ANGELES_TIME_ZONE,
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hourCycle: 'h23',
+})
+
+function losAngelesClockParts(date = new Date()) {
+  return Object.fromEntries(LOS_ANGELES_CLOCK.formatToParts(date)
+    .filter(part => part.type !== 'literal')
+    .map(part => [part.type, Number(part.value)]))
+}
 
 function coordinatesFor(point) {
   const latitude = Number(point?.latitude ?? point?.lat)
@@ -16,11 +33,17 @@ function radians(value) {
 }
 
 export function localDateKey(date = new Date()) {
+  const { year, month, day } = losAngelesClockParts(date)
   return [
-    date.getFullYear(),
-    String(date.getMonth() + 1).padStart(2, '0'),
-    String(date.getDate()).padStart(2, '0'),
+    year,
+    String(month).padStart(2, '0'),
+    String(day).padStart(2, '0'),
   ].join('-')
+}
+
+function localTimeMinutes(date = new Date()) {
+  const { hour, minute } = losAngelesClockParts(date)
+  return hour * 60 + minute
 }
 
 export function parseTimeMinutes(value) {
@@ -139,10 +162,20 @@ export function groupScreeningsByTitle(screenings) {
     ))
 }
 
+export function upcomingScreenings(feed, now = new Date()) {
+  const today = localDateKey(now)
+  const nowMinutes = localTimeMinutes(now)
+  return collectScreenings(feed).filter(item => {
+    const startMinutes = parseTimeMinutes(item.time)
+    if (startMinutes === Number.MAX_SAFE_INTEGER) return false
+    return item.date > today || (item.date === today && startMinutes >= nowMinutes)
+  })
+}
+
 export function tonightOrNextScreenings(feed, now = new Date()) {
   const today = localDateKey(now)
-  const nowMinutes = now.getHours() * 60 + now.getMinutes()
-  const screenings = collectScreenings(feed)
+  const nowMinutes = localTimeMinutes(now)
+  const screenings = upcomingScreenings(feed, now)
   const tonight = screenings.filter(item =>
     item.date === today &&
     parseTimeMinutes(item.time) >= EVENING_START_MINUTES &&

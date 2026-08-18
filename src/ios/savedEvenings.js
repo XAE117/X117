@@ -105,6 +105,9 @@ function cinemaSnapshot(cinema, feed, now) {
   const end = new Date(expiresAt).getTime()
   if (!Number.isFinite(end) || end < now.getTime()) throw new Error('The cinema catalog is no longer current.')
   const startAt = screeningStartAt(cinema)
+  if (startAt.getTime() <= now.getTime()) {
+    throw new Error('This showing has already started. Choose a future screening.')
+  }
   if (startAt.getTime() > end) {
     throw new Error('This showing is outside the approved offline-save window. Refresh closer to the date.')
   }

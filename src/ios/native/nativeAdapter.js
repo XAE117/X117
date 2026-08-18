@@ -309,6 +309,12 @@ export function createNativeAdapter(dependencies = {}) {
     } catch (error) {
       if (error?.code === 'OS-PLUG-CLDR-0006') return { status: 'cancelled' }
       if (error?.code === 'OS-PLUG-CLDR-0020') return { status: 'denied' }
+      if (error?.code === 'OS-PLUG-CLDR-0004') {
+        return {
+          status: 'unavailable',
+          message: 'Calendar is unavailable on this iPhone. Add or enable a Calendar account, then try again.',
+        }
+      }
       return { status: 'unavailable', message: messageFor(error) }
     }
   }
