@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-16T09:20:08.371Z",
+  "timestamp": "2026-08-22T01:21:47.007Z",
   "mode": "full",
   "sourcesAttempted": 5,
-  "sourcesSucceeded": 5,
+  "sourcesSucceeded": 4,
   "sourceStatuses": [
     {
       "name": "Eater LA Heatmap",
@@ -14,7 +14,7 @@
       "name": "Infatuation Hit List",
       "group": "hot",
       "status": "ok",
-      "count": 17
+      "count": 18
     },
     {
       "name": "Eater Essential 38",
@@ -25,8 +25,9 @@
     {
       "name": "Resy Hit List",
       "group": "full",
-      "status": "ok",
-      "count": 22
+      "status": "error",
+      "count": 0,
+      "error": "timeout of 15000ms exceeded"
     },
     {
       "name": "Thrillist LA",
@@ -35,7 +36,7 @@
       "count": 15
     }
   ],
-  "recordsScraped": 142,
+  "recordsScraped": 121,
   "totalRestaurants": 232,
   "added": [],
   "removed": [],
