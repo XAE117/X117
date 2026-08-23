@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-22T01:21:47.007Z",
+  "timestamp": "2026-08-23T09:21:54.854Z",
   "mode": "full",
   "sourcesAttempted": 5,
-  "sourcesSucceeded": 4,
+  "sourcesSucceeded": 5,
   "sourceStatuses": [
     {
       "name": "Eater LA Heatmap",
@@ -25,9 +25,8 @@
     {
       "name": "Resy Hit List",
       "group": "full",
-      "status": "error",
-      "count": 0,
-      "error": "timeout of 15000ms exceeded"
+      "status": "ok",
+      "count": 22
     },
     {
       "name": "Thrillist LA",
@@ -36,7 +35,7 @@
       "count": 15
     }
   ],
-  "recordsScraped": 121,
+  "recordsScraped": 143,
   "totalRestaurants": 232,
   "added": [],
   "removed": [],
