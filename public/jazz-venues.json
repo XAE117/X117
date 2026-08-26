@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-25T10:29:39.246Z",
+  "lastUpdated": "2026-08-26T10:34:19.525Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-08-25-jeff-goldblum-the-mildred-snit",
-          "artist": "Jeff Goldblum & The Mildred Snitzer Orchestra",
-          "date": "2026-08-25",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/jeff-goldblum-the-mildred-snitzer-orchestra/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-08-26-jeff-goldblum-the-mildred-snit",
           "artist": "Jeff Goldblum & The Mildred Snitzer Orchestra",
@@ -205,8 +196,8 @@
           "hot": false
         },
         {
-          "id": "catalina-jazz-2026-09-09-a-celebration-of-life-for-tom-",
-          "artist": "A Celebration of Life for TOM CULVER (1932 – 2026)",
+          "id": "catalina-jazz-2026-09-09-tom-culver-1932-2026-a-celebra",
+          "artist": "TOM CULVER (1932-2026): A Celebration of Life",
           "date": "2026-09-09",
           "time": "8:30 PM",
           "notes": "",
@@ -286,6 +277,15 @@
           "hot": false
         },
         {
+          "id": "catalina-jazz-2026-09-20-divas-through-the-decades-by-s",
+          "artist": "Divas Through the Decades by Satin Keys",
+          "date": "2026-09-20",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/divas-through-the-decades-by-satin-keys/",
+          "hot": false
+        },
+        {
           "id": "catalina-jazz-2026-09-23-the-soul-trio-an-evening-of-ti",
           "artist": "The Soul Trio: An Evening of Timeless Blues, Jazz & Boleros",
           "date": "2026-09-23",
@@ -311,15 +311,6 @@
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/chaz-shepherd-soulful-rb-vocalist-songwriter-and-pianist/",
           "hot": false
-        },
-        {
-          "id": "catalina-jazz-2026-09-26-freda-payne-legendary-ladies-o",
-          "artist": "FREDA PAYNE: LEGENDARY LADIES OF JAZZ (2x Grammy Award-nominee)",
-          "date": "2026-09-26",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/freda-payne-legendary-ladies-of-jazz-2x-grammy-award-nominee/",
-          "hot": false
         }
       ]
     },
@@ -334,22 +325,31 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-08-25-devin-daniels-tuesday-happenin",
+          "id": "sam-first-2026-08-26-devin-daniels-tuesday-happenin",
           "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-08-25",
+          "date": "2026-08-26",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
         },
         {
-          "id": "sam-first-2026-08-25-steve-lehman-garden-of-kl-ns",
+          "id": "sam-first-2026-08-26-steve-lehman-garden-of-kl-ns",
           "artist": "Steve Lehman & Garden of Klōns",
-          "date": "2026-08-25",
+          "date": "2026-08-26",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
+        },
+        {
+          "id": "sam-first-2026-08-26-syndee-winters-sings-lena-horn",
+          "artist": "Syndee Winters Sings Lena Horne",
+          "date": "2026-08-26",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
         }
       ]
     },
@@ -364,30 +364,12 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-08-25-the-genesis-project-simply-tem",
-          "artist": "The Genesis Project \"Simply Temptin’\"",
-          "date": "2026-08-25",
-          "time": "11:00 AM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/the-genesis-project-simply-temptin",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-25-phatback-earl-me",
+          "id": "vibrato-2026-08-26-phatback-earl-me",
           "artist": "Phatback, Earl & Me",
-          "date": "2026-08-25",
+          "date": "2026-08-26",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-08-26-phatback-earl-me-",
-          "artist": "Phatback, Earl & Me!",
-          "date": "2026-08-26",
-          "time": "11:00 AM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/phatback-earl-me",
           "hot": false
         },
         {
@@ -672,6 +654,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-08-26-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-08-26",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -681,15 +684,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-08-25-jeff-parker-eta-ivtet-happy-to",
-          "artist": "Jeff Parker ETA IVtet 'Happy Today' Album Release Shows In The Round",
-          "date": "2026-08-25",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/jeff-parker-eta-ivtet-happy-today-album-release-shows-in-the-round-3/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-08-26-my-new-band-believe",
           "artist": "My New Band Believe",
@@ -1494,48 +1488,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-08-25-galecstacy-quartet",
-          "artist": "Galecstacy Quartet",
-          "date": "2026-08-25",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-08-25-lighthouse",
-          "artist": "Lighthouse",
-          "date": "2026-08-25",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1546,48 +1498,39 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-08-25-jax-songstage-singer-songwrite",
-          "artist": "JAX SongStage Singer-Songwriter Showcase Thea The Band, Michael Hill, Rhett Elton, Donna McCaul, In Deep Duo, Jack Howell",
-          "date": "2026-08-25",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1143",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-08-25-jazz-pass-september-2026",
-          "artist": "Jazz Pass September 2026",
-          "date": "2026-08-25",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/6",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-08-25-jazz-pass-october-2026",
-          "artist": "Jazz Pass October 2026",
-          "date": "2026-08-25",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-08-25-rockin-cruise-pass-november-20",
-          "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-08-25",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-08-26-jukebox-wednesday",
           "artist": "Jukebox Wednesday",
           "date": "2026-08-26",
           "time": "5:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1011",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-26-jazz-pass-september-2026",
+          "artist": "Jazz Pass September 2026",
+          "date": "2026-08-26",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/6",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-26-jazz-pass-october-2026",
+          "artist": "Jazz Pass October 2026",
+          "date": "2026-08-26",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-08-26-rockin-cruise-pass-november-20",
+          "artist": "Rockin' Cruise Pass November 2026",
+          "date": "2026-08-26",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/8",
           "hot": false
         },
         {
