@@ -1,27 +1,27 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-08-28 21:06 UTC_
+_Generated 2026-08-29 06:10 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 3 theaters with 0 future screenings: Laemmle Royal, Laemmle Town Center 5, Landmark Sunset Hollywood
+- **[Cinema (theaters.json)]** 5 theaters with 0 future screenings: Laemmle Royal, Laemmle Town Center 5, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-08-28 (today)
-- 29 theaters tracked, 26 with future screenings
-- 2872 future screenings, horizon 41 days
-- ⚠️ 3 theaters with 0 screenings: Laemmle Royal, Laemmle Town Center 5, Landmark Sunset Hollywood
+- Last updated: 2026-08-29 (today)
+- 29 theaters tracked, 24 with future screenings
+- 2519 future screenings, horizon 40 days
+- ⚠️ 5 theaters with 0 screenings: Laemmle Royal, Laemmle Town Center 5, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
 - 7 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-08-28 (today)
+- Last updated: 2026-08-29 (today)
 - 8 venues, 8 with future shows
-- 243 future shows, horizon 234 days
+- 246 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-08-23 (5 days ago)
+- Last updated: 2026-08-29 (today)
 - 232 restaurants tracked
 - Planning coverage: 219/232 coordinates, 21/232 hours, 61/232 descriptions
 - Lineup-ready: 21 restaurants across 16 neighborhoods; at least 10 open at 6 PM on each of the next 7 days
