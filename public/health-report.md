@@ -1,6 +1,6 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-08-30 14:09 UTC_
+_Generated 2026-08-30 14:42 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -11,7 +11,7 @@ _Generated 2026-08-30 14:09 UTC_
 ## Cinema (theaters.json)
 - Last updated: 2026-08-30 (today)
 - 30 theaters tracked, 24 with future screenings
-- 2229 future screenings, horizon 39 days
+- 2227 future screenings, horizon 39 days
 - ⚠️ 6 theaters with 0 screenings: Laemmle NoHo 7, Laemmle Royal, Cinespia, Laemmle Town Center 5, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
 - 6 unavailable or occasional venues monitored outside the active catalog
 
