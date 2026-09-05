@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-30T14:09:18.190Z",
-  "lastFullScrape": "2026-08-30T14:09:18.190Z",
+  "lastUpdated": "2026-09-05T03:31:53.695Z",
+  "lastFullScrape": "2026-09-05T03:31:53.695Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -1140,6 +1140,10 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/morihiro"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
@@ -1147,13 +1151,14 @@
       ],
       "isNew": true,
       "tier": "feast",
-      "sourceCount": 2,
-      "heatScore": 5,
+      "sourceCount": 3,
+      "heatScore": 7,
       "id": "morihiro",
       "addedDate": "2026-03-19",
       "address": "1115 Sunset Blvd Ste 100, Los Angeles, CA 90012, United States",
       "lat": 34.067102,
-      "lng": -118.248923
+      "lng": -118.248923,
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/morihiro?venueId=95916"
     },
     {
       "name": "Sonny's",
@@ -1652,18 +1657,23 @@
         {
           "name": "Eater Essential 38",
           "url": "https://la.eater.com/maps/best-los-angeles-restaurants-eater-38-essential"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [
         "bib-gourmand"
       ],
       "tier": "feast",
-      "sourceCount": 2,
-      "heatScore": 4,
+      "sourceCount": 3,
+      "heatScore": 6,
       "id": "vin-folk-highland-park",
       "addedDate": "2026-03-19",
       "lat": 33.864575,
-      "lng": -118.400863
+      "lng": -118.400863,
+      "reservationUrl": "https://resy.com/cities/hermosa-beach-ca/venues/vin-folk?venueId=84295"
     },
     {
       "name": "L'Antica Pizzeria da Michele",
@@ -5479,14 +5489,19 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/casa-leo"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [],
       "tier": "feast",
-      "sourceCount": 1,
-      "heatScore": 2,
+      "sourceCount": 2,
+      "heatScore": 4,
       "id": "casa-leo-los-angeles",
-      "addedDate": "2026-05-23"
+      "addedDate": "2026-05-23",
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/casa-leo?venueId=98496"
     },
     {
       "name": "Hayama by WATAMI",
