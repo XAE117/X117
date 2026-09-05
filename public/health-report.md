@@ -1,6 +1,6 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-09-05 03:31 UTC_
+_Generated 2026-09-05 13:16 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -11,14 +11,14 @@ _Generated 2026-09-05 03:31 UTC_
 ## Cinema (theaters.json)
 - Last updated: 2026-09-05 (today)
 - 31 theaters tracked, 27 with future screenings
-- 2704 future screenings, horizon 42 days
+- 2703 future screenings, horizon 42 days
 - ⚠️ 4 theaters with 0 screenings: 2220 Arts + Archives, The Landmark Westwood, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
 - 5 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-09-05 (today)
 - 7 venues, 7 with future shows
-- 284 future shows, horizon 364 days
+- 283 future shows, horizon 226 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-09-05 (today)
