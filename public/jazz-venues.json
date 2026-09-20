@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19T13:43:22.589Z",
+  "lastUpdated": "2026-09-20T13:22:19.062Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-09-19-robert-glasper",
-          "artist": "Robert Glasper",
-          "date": "2026-09-19",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/robert-glasper-31/",
-          "hot": true
-        },
         {
           "id": "blue-note-la-2026-09-20-robert-glasper",
           "artist": "Robert Glasper",
@@ -132,15 +123,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "catalina-jazz-2026-09-19-the-winehouse-songbook-jazz-bl",
-          "artist": "The Winehouse Songbook: Jazz & Blues Tribute to Amy Winehouse feat. Estani",
-          "date": "2026-09-19",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/the-winehouse-songbook-jazz-blues-tribute-to-amy-winehouse-feat-estani/",
-          "hot": false
-        },
         {
           "id": "catalina-jazz-2026-09-20-jazz-soul-r-b-pop-by-satin-key",
           "artist": "Jazz, Soul, R&B & Pop by Satin Keys: Celebrating Iconic Voices from Ella & Eartha to Whitney & Britney",
@@ -302,6 +284,36 @@
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/art-webb-tribute-jazz-latin-jazz-afro-cuban-jazz/",
           "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-10-21-jazz-up-your-wine-wednesdays-p",
+          "artist": "Jazz Up Your Wine Wednesdays Presents: Andy Dominguez Quartet: Celebrating Jazz Trumpet Legends (Miles Davis – Dizzy Gillespie – Clifford Brown)",
+          "date": "2026-10-21",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/jazz-up-your-wine-wednesdays-presents-andy-dominguez-quartet-celebrating-jazz-trumpet-legends-miles-davis-dizzy-gillespie-clifford-brown/",
+          "hot": true
+        }
+      ]
+    },
+    {
+      "id": "sam-first",
+      "name": "Sam First",
+      "shortName": "Sam First",
+      "neighborhood": "Westchester",
+      "url": "https://www.samfirstbar.com/",
+      "color": "#2E86C1",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "sam-first-2026-09-20-devin-daniels-tuesday-happenin",
+          "artist": "Devin Daniels Tuesday Happenings Jam Session",
+          "date": "2026-09-20",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": true
         }
       ]
     },
@@ -316,30 +328,12 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-09-19-closed-private-event",
-          "artist": "Closed - Private Event",
-          "date": "2026-09-19",
-          "time": "2:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/closed-private-event-2",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-09-19-adam-aejaye-jackson",
-          "artist": "Adam Aejaye Jackson",
-          "date": "2026-09-19",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-09-20-adam-aejaye-jackson",
           "artist": "Adam Aejaye Jackson",
           "date": "2026-09-20",
-          "time": "2:00 PM",
+          "time": "7:30 PM",
           "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/m5hkwfa9lt2bha5ze5pc8w47rh48ba",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -660,27 +654,6 @@
       ]
     },
     {
-      "id": "world-stage",
-      "name": "The World Stage",
-      "shortName": "World Stage",
-      "neighborhood": "Leimert Park",
-      "url": "https://www.theworldstage.org/",
-      "color": "#D4AC0D",
-      "tier": "dedicated",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "world-stage-2026-09-19-eric-reed-workshop-reed-s-cree",
-          "artist": "Eric Reed Workshop Reed's Creeds",
-          "date": "2026-09-19",
-          "time": "1:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -690,35 +663,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-09-19-uway-elsewhere-takeover-minare",
-          "artist": "UWAY Elsewhere Takeover - Minaret in the Loft (NYC, September 19)",
-          "date": "2026-09-19",
-          "time": "10:00 PM",
-          "notes": "All ages",
-          "link": "https://www.minaretrecords.com/shows/september19nyc",
-          "hot": true,
-          "promoter": "Minaret Records"
-        },
-        {
-          "id": "lodge-room-2026-09-19-ics",
-          "artist": "ICS",
-          "date": "2026-09-19",
-          "time": "10:00 PM",
-          "notes": "All ages",
-          "link": "https://www.minaretrecords.com/shows/september19nyc?format=ical",
-          "hot": true,
-          "promoter": "Minaret Records"
-        },
-        {
-          "id": "lodge-room-2026-09-19-kiefer-presents-over-the-break",
-          "artist": "Kiefer presents: Over the Breaks",
-          "date": "2026-09-19",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/kiefer-presents-over-the-breaks-2/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-09-20-be-your-own-pet",
           "artist": "Be Your Own Pet",
@@ -1427,9 +1371,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-high-low-2026-09-19-ethan-snyder",
+          "id": "the-high-low-2026-09-20-ethan-snyder",
           "artist": "Ethan Snyder",
-          "date": "2026-09-19",
+          "date": "2026-09-20",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1448,18 +1392,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-09-19-mateo-arce",
+          "id": "the-mint-2026-09-20-mateo-arce",
           "artist": "Mateo Arce",
-          "date": "2026-09-19",
+          "date": "2026-09-20",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "the-mint-2026-09-19-kevin-kanner-s-jazz-jam",
+          "id": "the-mint-2026-09-20-gorden-campbell",
+          "artist": "Gorden Campbell",
+          "date": "2026-09-20",
+          "time": "9:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "the-mint-2026-09-20-kevin-kanner-s-jazz-jam",
           "artist": "Kevin Kanner's Jazz Jam",
-          "date": "2026-09-19",
+          "date": "2026-09-20",
           "time": "9:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1478,9 +1431,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "lighthouse-cafe-2026-09-19-lighthouse",
+          "id": "lighthouse-cafe-2026-09-20-lighthouse",
           "artist": "Lighthouse",
-          "date": "2026-09-19",
+          "date": "2026-09-20",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1499,39 +1452,30 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-09-19-jazz-pass-october-2026",
-          "artist": "Jazz Pass October 2026",
-          "date": "2026-09-19",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-09-19-rockin-cruise-pass-november-20",
-          "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-09-19",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-09-19-a-steely-dan-revuepretzel-logi",
-          "artist": "A Steely Dan RevuePretzel Logic",
-          "date": "2026-09-19",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/819",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-09-20-tony-guerrero-s-big-birthday-s",
           "artist": "Tony Guerrero's Big Birthday Show",
           "date": "2026-09-20",
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1019",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-09-20-jazz-pass-october-2026",
+          "artist": "Jazz Pass October 2026",
+          "date": "2026-09-20",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-09-20-rockin-cruise-pass-november-20",
+          "artist": "Rockin' Cruise Pass November 2026",
+          "date": "2026-09-20",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/8",
           "hot": false
         },
         {
