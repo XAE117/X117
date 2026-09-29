@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-28T17:59:12.068Z",
+  "lastUpdated": "2026-09-29T16:21:42.450Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-09-28-flwr-chyld-with-live-band",
-          "artist": "Flwr Chyld With Live Band",
-          "date": "2026-09-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/flwr-chyld-with-live-band/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-09-29-bashfortheworld-presents-un-mu",
           "artist": "BashfortheWorld Presents: Un Mundo de Musica",
@@ -51,15 +42,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "catalina-jazz-2026-09-28-martini-in-the-morning-honorin",
-          "artist": "MARTINI IN THE MORNING: honoring GREAT AMERICAN SONGBOOK (20th Anniversary Celebration)",
-          "date": "2026-09-28",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/martini-in-the-morning-honoring-great-american-songbook-20th-anniversary-celebration/",
-          "hot": false
-        },
         {
           "id": "catalina-jazz-2026-10-01-kenny-g-brian-culbertson-tribu",
           "artist": "Kenny G & Brian Culbertson Tribute: A Smooth Jazz Night feat. Smooth 'n' Groovin'",
@@ -221,6 +203,15 @@
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/ilene-graff-travelin-thru-a-road-map-of-gratitude-grammy-award-nominated-tv-broadway-star/",
           "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-10-29-whole-lotta-swing-presents-zep",
+          "artist": "Whole Lotta Swing presents Zeppelin in Jazz",
+          "date": "2026-10-29",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/zeppelin-jazz-with-whole-lotta-swing/",
+          "hot": false
         }
       ]
     },
@@ -235,18 +226,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-09-28-herbie-hancock-institute-ensem",
+          "id": "sam-first-2026-09-29-herbie-hancock-institute-ensem",
           "artist": "Herbie Hancock Institute Ensemble Tuesday Happenings Jam Session",
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-09-28-victor-baker",
+          "id": "sam-first-2026-09-29-victor-baker",
           "artist": "Victor Baker",
-          "date": "2026-09-28",
+          "date": "2026-09-29",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-09-29-efajemue-etoroma-jr-",
+          "artist": "Efajemue Etoroma, Jr.",
+          "date": "2026-09-29",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -265,21 +265,21 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-09-28-wayne-bergeron-big-band",
-          "artist": "Wayne Bergeron Big Band",
-          "date": "2026-09-28",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-09-29-wayne-bergeron-big-band-jazz",
           "artist": "Wayne Bergeron - Big Band Jazz",
           "date": "2026-09-29",
           "time": "2:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/wayne-bergeron-big-band-jazz-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-09-29-wayne-bergeron-big-band",
+          "artist": "Wayne Bergeron Big Band",
+          "date": "2026-09-29",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -537,6 +537,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-09-29-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-09-29",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -546,15 +567,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-09-28-an-evening-with-geordie-greep",
-          "artist": "An evening with Geordie Greep",
-          "date": "2026-09-28",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/an-evening-with-geordie-greep/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-09-29-an-evening-with-geordie-greep",
           "artist": "An evening with Geordie Greep",
@@ -1265,48 +1277,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-09-28-tobias-cole-israel",
-          "artist": "Tobias Cole Israel",
-          "date": "2026-09-28",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-09-28-lighthouse",
-          "artist": "Lighthouse",
-          "date": "2026-09-28",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1317,30 +1287,30 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-09-28-jax-thursdays-jazz-pass-octobe",
-          "artist": "JAX THURSDAYS Jazz Pass October 2026",
-          "date": "2026-09-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/7",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-09-28-rockin-cruise-pass-november-20",
-          "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-09-28",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-09-29-jax-songstage-singer-songwrite",
           "artist": "JAX SongStage Singer-Songwriter Showcasefeaturing Shannon Kain, Masha, Dale Scott, Jessa, Macie Rae",
           "date": "2026-09-29",
           "time": "6:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1154",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-09-29-jax-thursdays-jazz-pass-octobe",
+          "artist": "JAX THURSDAYS Jazz Pass October 2026",
+          "date": "2026-09-29",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/7",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-09-29-rockin-cruise-pass-november-20",
+          "artist": "Rockin' Cruise Pass November 2026",
+          "date": "2026-09-29",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/8",
           "hot": false
         },
         {
