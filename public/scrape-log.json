@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-04T14:33:25.418Z",
+  "timestamp": "2026-10-10T04:54:55.763Z",
   "mode": "full",
   "sourcesAttempted": 5,
   "sourcesSucceeded": 5,
@@ -14,7 +14,7 @@
       "name": "Infatuation Hit List",
       "group": "hot",
       "status": "ok",
-      "count": 14
+      "count": 20
     },
     {
       "name": "Eater Essential 38",
@@ -26,7 +26,7 @@
       "name": "Resy Hit List",
       "group": "full",
       "status": "ok",
-      "count": 6
+      "count": 24
     },
     {
       "name": "Thrillist LA",
@@ -35,13 +35,16 @@
       "count": 15
     }
   ],
-  "recordsScraped": 122,
-  "totalRestaurants": 232,
-  "added": [],
+  "recordsScraped": 146,
+  "totalRestaurants": 234,
+  "added": [
+    "Met Her at a Bar Santa Monica",
+    "Bower Surf Club"
+  ],
   "removed": [],
   "tiers": {
     "street": 6,
-    "feast": 169,
+    "feast": 171,
     "whale": 14,
     "tacos": null,
     "pizza": null
