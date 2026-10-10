@@ -1,24 +1,19 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-10-10 04:54 UTC_
+_Generated 2026-10-10 15:43 UTC_
 
-**Status: WARNINGS** ⚠️
-
-## Warnings (1)
-
-- **[Cinema (theaters.json)]** 1 theaters with 0 future screenings: The Landmark Westwood
+**Status: HEALTHY** ✓
 
 ## Cinema (theaters.json)
 - Last updated: 2026-10-10 (today)
-- 32 theaters tracked, 31 with future screenings
-- 2503 future screenings, horizon 36 days
-- ⚠️ 1 theaters with 0 screenings: The Landmark Westwood
-- 4 unavailable or occasional venues monitored outside the active catalog
+- 31 theaters tracked, 31 with future screenings
+- 2640 future screenings, horizon 36 days
+- 5 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-10-10 (today)
-- 9 venues, 9 with future shows
-- 251 future shows, horizon 364 days
+- 10 venues, 10 with future shows
+- 249 future shows, horizon 343 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-10-10 (today)
