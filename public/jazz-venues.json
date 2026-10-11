@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T15:43:29.289Z",
+  "lastUpdated": "2026-10-11T15:14:28.720Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-10-10-shabaka",
-          "artist": "SHABAKA",
-          "date": "2026-10-10",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/shabaka/",
-          "hot": true
-        },
         {
           "id": "blue-note-la-2026-10-11-shabaka",
           "artist": "SHABAKA",
@@ -223,15 +214,6 @@
       "region": "LA",
       "shows": [
         {
-          "id": "catalina-jazz-2026-10-10-fa-mli-inc-proudly-presents-a-",
-          "artist": "FA-MLI, Inc. proudly presents a night of Classic Doo Wop and Inspirational music!",
-          "date": "2026-10-10",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/fa-mli-inc-proudly-presents-a-night-of-classic-doo-wop-and-inspirational-music/",
-          "hot": false
-        },
-        {
           "id": "catalina-jazz-2026-10-11-generations-of-song-an-evening",
           "artist": "GENERATIONS OF SONG An Evening with Shanice & Family performances by: Imani Knox and Crystal Penny",
           "date": "2026-10-11",
@@ -401,6 +383,15 @@
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/keiko-matsui-2/",
           "hot": false
+        },
+        {
+          "id": "catalina-jazz-2026-11-08-betty-bryant-birthday-bash-bru",
+          "artist": "Betty Bryant Birthday Bash Brunch",
+          "date": "2026-11-08",
+          "time": "12:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/betty-bryant-birthday-bash-brunch/",
+          "hot": false
         }
       ]
     },
@@ -415,13 +406,13 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-10-10-anthony-wilson-gerald-clayton",
-          "artist": "Anthony Wilson & Gerald Clayton",
-          "date": "2026-10-10",
+          "id": "sam-first-2026-10-11-devin-daniels-tuesday-happenin",
+          "artist": "Devin Daniels Tuesday Happenings Jam Session",
+          "date": "2026-10-11",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
-          "hot": false
+          "hot": true
         }
       ]
     },
@@ -436,39 +427,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-10-10--friends-featuring-olivia-kupe",
-          "artist": "“Friends\" Featuring Olivia Kuper Harris",
-          "date": "2026-10-10",
-          "time": "4:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/cc3xaywhba6hes5nlbcr4ptkx5sch9",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-10-10-olivia-kuper-harris",
-          "artist": "Olivia Kuper Harris",
-          "date": "2026-10-10",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-10-10-greg-adams-east-bay-soul",
-          "artist": "Greg Adams & East Bay Soul",
-          "date": "2026-10-10",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-10-11-greg-adams-and-east-bay-soul",
           "artist": "Greg Adams and East Bay Soul",
           "date": "2026-10-11",
           "time": "4:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/mr3rca27ytzlzb82zwwpbfnjj9mlgj",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-11-yellowjackets",
+          "artist": "Yellowjackets",
+          "date": "2026-10-11",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-11-greg-adams-east-bay-soul",
+          "artist": "Greg Adams & East Bay Soul",
+          "date": "2026-10-11",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -852,27 +834,6 @@
       ]
     },
     {
-      "id": "world-stage",
-      "name": "The World Stage",
-      "shortName": "World Stage",
-      "neighborhood": "Leimert Park",
-      "url": "https://www.theworldstage.org/",
-      "color": "#D4AC0D",
-      "tier": "dedicated",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "world-stage-2026-10-10-eric-reed-workshop-reed-s-cree",
-          "artist": "Eric Reed Workshop Reed's Creeds",
-          "date": "2026-10-10",
-          "time": "1:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -882,15 +843,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-10-10-y-la-bamba-ojos-de-sol-10th-an",
-          "artist": "Y La Bamba – Ojos De Sol – 10th Anniversary Tour",
-          "date": "2026-10-10",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/y-la-bamba-ojos-de-sol-10th-anniversary-tour/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-10-11-dani-hank-s-wedding-reception",
           "artist": "Dani & Hank’s Wedding Reception",
@@ -1545,9 +1497,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-high-low-2026-10-10-loren-benedict-anthony-fung",
+          "id": "the-high-low-2026-10-11-loren-benedict-anthony-fung",
           "artist": "Loren Benedict & Anthony Fung",
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1566,18 +1518,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-10-10-shaky-eddie",
+          "id": "the-mint-2026-10-11-shaky-eddie",
           "artist": "Shaky Eddie",
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "the-mint-2026-10-10-kevin-kanner-s-jazz-jam",
+          "id": "the-mint-2026-10-11-kevin-kanner-s-jazz-jam",
           "artist": "Kevin Kanner's Jazz Jam",
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "time": "9:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1596,18 +1548,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "lighthouse-cafe-2026-10-10-lia-booth",
+          "id": "lighthouse-cafe-2026-10-11-lia-booth",
           "artist": "Lia Booth",
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "time": "10:00 AM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "lighthouse-cafe-2026-10-10-lighthouse",
+          "id": "lighthouse-cafe-2026-10-11-lighthouse",
           "artist": "Lighthouse",
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1626,30 +1578,21 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-10-10-rockin-cruise-pass-november-20",
-          "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-10-10",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-10-10-urgent-a-foreigner-tribute-ft-",
-          "artist": "Urgent A Foreigner Tribute ft. Jeff Lyons",
-          "date": "2026-10-10",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1035",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-10-11-jimmy-buffett-tribute-mark-woo",
           "artist": "Jimmy Buffett Tribute Mark Wood and the Parrot Head Band",
           "date": "2026-10-11",
           "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1072",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-10-11-rockin-cruise-pass-november-20",
+          "artist": "Rockin' Cruise Pass November 2026",
+          "date": "2026-10-11",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/8",
           "hot": false
         },
         {
