@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-12T19:37:48.112Z",
+  "lastUpdated": "2026-10-13T17:22:11.692Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-10-12-willow",
-          "artist": "Willow",
-          "date": "2026-10-12",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/willow-3/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-10-13-emma-nissen",
           "artist": "Emma Nissen",
@@ -227,6 +218,15 @@
           "notes": "",
           "link": "https://www.songkick.com/concerts/43414613-terrace-martin-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
           "hot": true
+        },
+        {
+          "id": "blue-note-la-2026-12-04-karriem-riggins",
+          "artist": "Karriem Riggins",
+          "date": "2026-12-04",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.songkick.com/concerts/43422220-karriem-riggins-at-blue-note-los-angeles?utm_medium=organic&utm_source=microformat",
+          "hot": false
         }
       ]
     },
@@ -469,18 +469,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-10-12-devin-daniels-tuesday-happenin",
+          "id": "sam-first-2026-10-13-devin-daniels-tuesday-happenin",
           "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-10-12",
+          "date": "2026-10-13",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
         },
         {
-          "id": "sam-first-2026-10-12-brandon-goldberg",
+          "id": "sam-first-2026-10-13-brandon-goldberg",
           "artist": "Brandon Goldberg",
-          "date": "2026-10-12",
+          "date": "2026-10-13",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-10-13-max-light",
+          "artist": "Max Light",
+          "date": "2026-10-13",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -499,21 +508,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-10-12-yellowjackets",
-          "artist": "Yellowjackets",
-          "date": "2026-10-12",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-10-13-yellowjackets-grammy-winning-j",
           "artist": "YELLOWJACKETS | Grammy-Winning Jazz Fusion Group",
           "date": "2026-10-13",
           "time": "4:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/yellowjackets-grammy-winning-jazz-fusion-group",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-13-yellowjackets",
+          "artist": "Yellowjackets",
+          "date": "2026-10-13",
+          "time": "6:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-13-sergio-mendes-band",
+          "artist": "Sergio Mendes Band",
+          "date": "2026-10-13",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -897,6 +915,27 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-10-13-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-10-13",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -906,15 +945,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-10-12-the-blasting-company-plays-ove",
-          "artist": "The Blasting Company – plays Over the Garden Wall",
-          "date": "2026-10-12",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/the-blasting-company-plays-over-the-garden-wall/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-10-13-the-blasting-company-plays-ove",
           "artist": "The Blasting Company – plays Over the Garden Wall",
@@ -1285,6 +1315,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-11-27-train-breaks-down",
+          "artist": "Train Breaks Down",
+          "date": "2026-11-27",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/train-breaks-down/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2026-11-28-emma-ruth-rundle-these-killing",
           "artist": "Emma Ruth Rundle-These Killing Times",
           "date": "2026-11-28",
@@ -1447,6 +1486,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2027-01-24-dead-floyd",
+          "artist": "Dead Floyd",
+          "date": "2027-01-24",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/dead-floyd/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2027-01-29-temachii",
           "artist": "Temachii",
           "date": "2027-01-29",
@@ -1501,6 +1549,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2027-03-20-tmotv-the-music-of-tom-verlain",
+          "artist": "TMOTV – The Music of Tom Verlaine",
+          "date": "2027-03-20",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/the-music-of-tom-verlaine/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2027-04-02-valencia-grace",
           "artist": "Valencia Grace",
           "date": "2027-04-02",
@@ -1530,48 +1587,6 @@
       ]
     },
     {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-10-12-loren-benedict-anthony-fung",
-          "artist": "Loren Benedict & Anthony Fung",
-          "date": "2026-10-12",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-10-12-lighthouse",
-          "artist": "Lighthouse",
-          "date": "2026-10-12",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
       "id": "campus-jax",
       "name": "Campus JAX",
       "shortName": "Campus JAX",
@@ -1582,21 +1597,21 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-10-12-rockin-cruise-pass-november-20",
-          "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-10-12",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-10-13-jackshrimp-37-year-anniversary",
           "artist": "JACKshrimp 37-Year Anniversary!!",
           "date": "2026-10-13",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1199",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-10-13-rockin-cruise-pass-november-20",
+          "artist": "Rockin' Cruise Pass November 2026",
+          "date": "2026-10-13",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/8",
           "hot": false
         },
         {
