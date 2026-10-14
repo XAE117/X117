@@ -1,6 +1,6 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-10-13 17:22 UTC_
+_Generated 2026-10-14 14:54 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -9,16 +9,16 @@ _Generated 2026-10-13 17:22 UTC_
 - **[Cinema (theaters.json)]** 5 theaters with 0 future screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-10-13 (today)
+- Last updated: 2026-10-14 (today)
 - 32 theaters tracked, 27 with future screenings
-- 2703 future screenings, horizon 46 days
+- 2849 future screenings, horizon 45 days
 - ⚠️ 5 theaters with 0 screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
 - 4 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-10-13 (today)
+- Last updated: 2026-10-14 (today)
 - 7 venues, 7 with future shows
-- 250 future shows, horizon 340 days
+- 235 future shows, horizon 339 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-10-11 (2 days ago)
