@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T14:40:34.630Z",
+  "lastUpdated": "2026-10-21T14:51:54.014Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-10-20-eric-bellinger",
-          "artist": "Eric Bellinger",
-          "date": "2026-10-20",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/eric-bellinger/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-10-21-talib-kweli",
           "artist": "Talib Kweli",
@@ -325,13 +316,31 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-10-20-devin-daniels-tuesday-happenin",
-          "artist": "Devin Daniels Tuesday Happenings Jam Session",
-          "date": "2026-10-20",
+          "id": "sam-first-2026-10-21-devon-gates-christina-galisatu",
+          "artist": "Devon Gates & Christina Galisatus",
+          "date": "2026-10-21",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
-          "hot": true
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-10-21-yvonne-rogers",
+          "artist": "Yvonne Rogers",
+          "date": "2026-10-21",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-10-21-joel-frahm",
+          "artist": "Joel Frahm",
+          "date": "2026-10-21",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
         }
       ]
     },
@@ -346,30 +355,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-10-20-mathis-picard-feat-braxton-coo",
-          "artist": "Mathis Picard feat. Braxton Cook",
-          "date": "2026-10-20",
-          "time": "4:30 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/mathis-picard-feat-braxton-cook",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-10-20-mathis-picard-braxton-cook",
-          "artist": "Mathis Picard & Braxton Cook",
-          "date": "2026-10-20",
-          "time": "7:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-10-21-alex-minasian-trio-ashley-anne",
           "artist": "Alex Minasian Trio / Ashley Anne & The Carnations",
           "date": "2026-10-21",
           "time": "4:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/alex-minasian-trio-ashley-anne-the-carnations",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-21-alex-minasian-ashley-anne-the-",
+          "artist": "Alex Minasian + Ashley Anne & The Carnations",
+          "date": "2026-10-21",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-21-paris-chansons",
+          "artist": "Paris Chansons",
+          "date": "2026-10-21",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -681,6 +690,36 @@
       ]
     },
     {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-10-21-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-10-21",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "world-stage-2026-10-21-danny-janklow",
+          "artist": "Danny Janklow",
+          "date": "2026-10-21",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        }
+      ]
+    },
+    {
       "id": "lodge-room",
       "name": "Lodge Room",
       "shortName": "Lodge Room",
@@ -690,15 +729,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-10-20-spencer-krug-of-wolf-parade-su",
-          "artist": "Spencer Krug (of Wolf Parade, Sunset Rubdown)",
-          "date": "2026-10-20",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/spencer-krug-2/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-10-21-frankie-cosmos-celebrating-10-",
           "artist": "Frankie Cosmos – Celebrating 10 Years of Next Thing",
@@ -1168,6 +1198,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2026-12-21-el-vez-mex-mas",
+          "artist": "El Vez MEX-Mas",
+          "date": "2026-12-21",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/el-vez-mex-mas/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2027-01-06-robyn-hitchcock-sings-syd-barr",
           "artist": "Robyn Hitchcock Sings Syd Barrett",
           "date": "2027-01-06",
@@ -1228,6 +1267,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/marty-schwartz-workshop-and-show/",
+          "hot": true
+        },
+        {
+          "id": "lodge-room-2027-02-09-the-sheepdogs-out-all-night-to",
+          "artist": "The Sheepdogs- Out All Night Tour",
+          "date": "2027-02-09",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/the-sheepdogs-out-all-night-tour/",
           "hot": true
         },
         {
@@ -1339,6 +1387,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2027-04-13-clap-your-hands-say-yeah",
+          "artist": "Clap Your Hands Say Yeah",
+          "date": "2027-04-13",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/clap-your-hands-say-yeah/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2027-04-19-henge",
           "artist": "Henge",
           "date": "2027-04-19",
@@ -1346,105 +1403,6 @@
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/henge/",
           "hot": true
-        }
-      ]
-    },
-    {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-10-20-sasha-masakowski",
-          "artist": "Sasha Masakowski",
-          "date": "2026-10-20",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "the-mint",
-      "name": "The Mint",
-      "shortName": "The Mint",
-      "neighborhood": "Mid-Wilshire",
-      "url": "https://www.themintla.com/",
-      "color": "#16A085",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-mint-2026-10-20-corbin-jones-big-band",
-          "artist": "Corbin Jones Big Band",
-          "date": "2026-10-20",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-10-20-gorden-campbell",
-          "artist": "Gorden Campbell",
-          "date": "2026-10-20",
-          "time": "9:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "the-mint-2026-10-20-kevin-kanner-s-jazz-jam",
-          "artist": "Kevin Kanner's Jazz Jam",
-          "date": "2026-10-20",
-          "time": "9:30 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-10-20-matt-greif",
-          "artist": "Matt Greif",
-          "date": "2026-10-20",
-          "time": "10:00 AM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "lighthouse-cafe-2026-10-20--sunday-10-1810-00am-matt-grei",
-          "artist": "​Sunday 10/1810:00AM Matt Greif",
-          "date": "2026-10-20",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "lighthouse-cafe-2026-10-20-lighthouse",
-          "artist": "Lighthouse",
-          "date": "2026-10-20",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
         }
       ]
     },
@@ -1459,30 +1417,21 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-10-20-jax-songstage-singer-songwrite",
-          "artist": "JAX SongStage Singer-Songwriter Showcase ft. Ruby Greenberg, The Ideal Pedestrian, Charlotte Desorcy, Derek Thomas, David Kurtz",
-          "date": "2026-10-20",
-          "time": "6:30 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/1213",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-10-20-rockin-cruise-pass-november-20",
-          "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-10-20",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
           "id": "campus-jax-2026-10-21-mike-staggs-the-soul",
           "artist": "Mike Staggs& The Soul",
           "date": "2026-10-21",
           "time": "5:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1160",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2026-10-21-rockin-cruise-pass-november-20",
+          "artist": "Rockin' Cruise Pass November 2026",
+          "date": "2026-10-21",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/package/8",
           "hot": false
         },
         {
@@ -1969,6 +1918,15 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1146",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2027-02-06-matt-mauser-sinatra-more",
+          "artist": "Matt Mauser Sinatra + More",
+          "date": "2027-02-06",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1218",
           "hot": false
         },
         {
