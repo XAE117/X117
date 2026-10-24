@@ -1,27 +1,27 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-10-23 14:40 UTC_
+_Generated 2026-10-24 03:46 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 1 theaters with 0 future screenings: Cinespia
+- **[Cinema (theaters.json)]** 2 theaters with 0 future screenings: Cinespia, The Landmark Westwood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-10-23 (today)
-- 32 theaters tracked, 31 with future screenings
-- 2514 future screenings, horizon 41 days
-- ⚠️ 1 theaters with 0 screenings: Cinespia
-- 4 unavailable or occasional venues monitored outside the active catalog
+- Last updated: 2026-10-24 (today)
+- 33 theaters tracked, 31 with future screenings
+- 2266 future screenings, horizon 40 days
+- ⚠️ 2 theaters with 0 screenings: Cinespia, The Landmark Westwood
+- 3 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-10-23 (today)
-- 7 venues, 7 with future shows
-- 221 future shows, horizon 330 days
+- Last updated: 2026-10-24 (today)
+- 9 venues, 9 with future shows
+- 220 future shows, horizon 364 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-10-18 (5 days ago)
+- Last updated: 2026-10-24 (today)
 - 234 restaurants tracked
 - Planning coverage: 219/234 coordinates, 21/234 hours, 61/234 descriptions
 - Lineup-ready: 21 restaurants across 16 neighborhoods; at least 10 open at 6 PM on each of the next 7 days
