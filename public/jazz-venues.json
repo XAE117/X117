@@ -1,28 +1,7 @@
 {
-  "lastUpdated": "2026-10-30T16:33:52.423Z",
+  "lastUpdated": "2026-10-31T04:38:44.003Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
-    {
-      "id": "blue-note-la",
-      "name": "Blue Note Los Angeles",
-      "shortName": "Blue Note",
-      "neighborhood": "Hollywood",
-      "url": "https://www.bluenotejazz.com/la/",
-      "color": "#1A5276",
-      "tier": "dedicated",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "blue-note-la-2026-10-30-goapele",
-          "artist": "Goapele",
-          "date": "2026-10-30",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/goapele-5/",
-          "hot": false
-        }
-      ]
-    },
     {
       "id": "catalina-jazz",
       "name": "Catalina Jazz Club",
@@ -33,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "catalina-jazz-2026-10-30-monique-renee-a-tribute-to-tee",
-          "artist": "Monique Renee: A Tribute to Teena Marie",
-          "date": "2026-10-30",
-          "time": "8:30 PM",
-          "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/monique-renee-a-tribute-to-teena-marie/",
-          "hot": false
-        },
         {
           "id": "catalina-jazz-2026-11-01-fraser-entertainment-group-pre",
           "artist": "Fraser Entertainment Group Presents YOU WILL BE FOUND – THE 4th ANNUAL BENEFIT CONCERT FOR NAMI GLAC (National Alliance on Mental Illness)",
@@ -212,6 +182,15 @@
           "notes": "",
           "link": "https://catalinajazzclub.com/tm-event/david-benoit-a-charlie-brown-christmas-grammy-award-nominated-pianist-kjazz-host/",
           "hot": false
+        },
+        {
+          "id": "catalina-jazz-2027-10-30-monique-renee-a-tribute-to-tee",
+          "artist": "Monique Renee: A Tribute to Teena Marie",
+          "date": "2027-10-30",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://catalinajazzclub.com/tm-event/monique-renee-a-tribute-to-teena-marie/",
+          "hot": false
         }
       ]
     },
@@ -226,18 +205,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-10-30-billy-mohler",
+          "id": "sam-first-2026-10-31-billy-mohler",
           "artist": "Billy Mohler",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": true
         },
         {
-          "id": "sam-first-2026-10-30-bill-cunliffe-plays-oliver-nel",
+          "id": "sam-first-2026-10-31-bill-cunliffe-plays-oliver-nel",
           "artist": "Bill Cunliffe Plays Oliver Nelson",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -256,39 +235,30 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-10-30-rique-pantoja-and-friends-feat",
-          "artist": "Rique Pantoja and friends featuring Téka - Brazilian Jazz",
-          "date": "2026-10-30",
-          "time": "5:00 PM",
-          "notes": "",
-          "link": "https://www.vibratogrilljazz.com/music/rique-pantoja-and-friends-featuring-tka-brazilian-jazz-1",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-10-30-rique-pantoja-w-teka",
-          "artist": "Rique Pantoja w/Teka",
-          "date": "2026-10-30",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
-          "id": "vibrato-2026-10-30-maiya-sykes-halloween-party",
-          "artist": "Maiya Sykes Halloween Party",
-          "date": "2026-10-30",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
-        },
-        {
           "id": "vibrato-2026-10-31-maiya-sykes-monster-mash-hallo",
           "artist": "Maiya Sykes’ Monster Mash: Halloween Costume Party",
           "date": "2026-10-31",
           "time": "5:00 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/maiya-sykes-monster-mash-halloween-costume-party",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-31-rique-pantoja-w-teka",
+          "artist": "Rique Pantoja w/Teka",
+          "date": "2026-10-31",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-10-31-maiya-sykes-halloween-party",
+          "artist": "Maiya Sykes Halloween Party",
+          "date": "2026-10-31",
+          "time": "7:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
@@ -529,18 +499,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "world-stage-2026-10-30-eric-reed-workshop-reed-s-cree",
+          "id": "world-stage-2026-10-31-eric-reed-workshop-reed-s-cree",
           "artist": "Eric Reed Workshop Reed's Creeds",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "1:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "world-stage-2026-10-30-jacques-lesure",
+          "id": "world-stage-2026-10-31-jacques-lesure",
           "artist": "Jacques Lesure",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "8:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -558,15 +528,6 @@
       "tier": "indie_scene",
       "region": "LA",
       "shows": [
-        {
-          "id": "lodge-room-2026-10-30-improvement-movement-your-perf",
-          "artist": "Improvement Movement – Your Perfect Real LIVE '26",
-          "date": "2026-10-30",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lodgeroomhlp.com/shows/improvement-movement-your-perfect-real-live-26/",
-          "hot": true
-        },
         {
           "id": "lodge-room-2026-10-31-desire",
           "artist": "Desire",
@@ -1210,18 +1171,18 @@
       "region": "LA",
       "shows": [
         {
-          "id": "the-mint-2026-10-30-ay-big-band",
+          "id": "the-mint-2026-10-31-ay-big-band",
           "artist": "AY Big Band",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "the-mint-2026-10-30-kevin-kanner-s-jazz-jam",
+          "id": "the-mint-2026-10-31-kevin-kanner-s-jazz-jam",
           "artist": "Kevin Kanner's Jazz Jam",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "9:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1240,9 +1201,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "lighthouse-cafe-2026-10-30-socal-jazz-collective",
+          "id": "lighthouse-cafe-2026-10-31-socal-jazz-collective",
           "artist": "SoCal Jazz Collective",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "10:00 AM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -1261,21 +1222,12 @@
       "region": "OC",
       "shows": [
         {
-          "id": "campus-jax-2026-10-30-rockin-cruise-pass-november-20",
+          "id": "campus-jax-2026-10-31-rockin-cruise-pass-november-20",
           "artist": "Rockin' Cruise Pass November 2026",
-          "date": "2026-10-30",
+          "date": "2026-10-31",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/package/8",
-          "hot": false
-        },
-        {
-          "id": "campus-jax-2026-10-30-k-tel-all-stars-70s-soundtrack",
-          "artist": "K-Tel All Stars 70s Soundtrack",
-          "date": "2026-10-30",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.campusjax.com/events/event/967",
           "hot": false
         },
         {
@@ -1588,7 +1540,7 @@
           "id": "campus-jax-2026-12-16-oc-searches-for-the-greatest-s",
           "artist": "OC Searches for The Greatest Storyteller",
           "date": "2026-12-16",
-          "time": "6:30 PM",
+          "time": "6:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/874",
           "hot": false
@@ -1900,6 +1852,24 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2027-05-14-turn-the-page-bob-seger-tribut",
+          "artist": "Turn the Page Bob Seger Tribute",
+          "date": "2027-05-14",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1226",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2027-06-11-the-sam-morrison-band-presents",
+          "artist": "The Sam Morrison Band Presents: Southern Rock Explosion!",
+          "date": "2027-06-11",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1225",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2027-06-13-carpenters-once-morea-tribute-",
           "artist": "Carpenters Once MoreA Tribute to the Timeless Music of The Carpenters",
           "date": "2027-06-13",
@@ -1918,6 +1888,15 @@
           "hot": false
         },
         {
+          "id": "campus-jax-2027-07-16-turn-the-page-bob-seger-tribut",
+          "artist": "Turn the Page Bob Seger Tribute",
+          "date": "2027-07-16",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1227",
+          "hot": false
+        },
+        {
           "id": "campus-jax-2027-08-08-sweet-seasonsa-tribute-to-caro",
           "artist": "Sweet SeasonsA Tribute to Carole King",
           "date": "2027-08-08",
@@ -1933,6 +1912,24 @@
           "time": "8:00 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1162",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2027-10-09-turn-the-page-bob-seger-tribut",
+          "artist": "Turn the Page Bob Seger Tribute",
+          "date": "2027-10-09",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1228",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2027-10-30-k-tel-all-stars-70s-soundtrack",
+          "artist": "K-Tel All Stars 70s Soundtrack",
+          "date": "2027-10-30",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/967",
           "hot": false
         }
       ]
