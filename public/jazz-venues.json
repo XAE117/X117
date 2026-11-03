@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T20:00:57.370Z",
+  "lastUpdated": "2026-11-03T17:31:25.686Z",
   "source": "bluenotejazz.com + lajazz.com + minaretrecords.com + venue sites",
   "venues": [
     {
@@ -12,15 +12,6 @@
       "tier": "dedicated",
       "region": "LA",
       "shows": [
-        {
-          "id": "blue-note-la-2026-11-02-dixson",
-          "artist": "Dixson",
-          "date": "2026-11-02",
-          "time": "7:00 PM",
-          "notes": "",
-          "link": "https://www.bluenotejazz.com/la/tm-event/dixson-3/",
-          "hot": false
-        },
         {
           "id": "blue-note-la-2026-11-03-josh-levi-one-year-of-hydrauli",
           "artist": "Josh Levi: One Year of Hydraulic",
@@ -448,12 +439,12 @@
           "hot": false
         },
         {
-          "id": "catalina-jazz-2026-12-04-artur-zakiyan-the-sound-of-arm",
-          "artist": "Artur Zakiyan: The Sound of Armenia",
-          "date": "2026-12-04",
+          "id": "catalina-jazz-2026-12-02-the-hive-brings-jazz-meets-sam",
+          "artist": "The Hive brings \"Jazz Meets Samba\"",
+          "date": "2026-12-02",
           "time": "8:30 PM",
           "notes": "",
-          "link": "https://catalinajazzclub.com/tm-event/artur-zakiyan-the-sound-of-armenia/",
+          "link": "https://catalinajazzclub.com/tm-event/the-hive-jazz-meets-samba/",
           "hot": false
         }
       ]
@@ -469,18 +460,27 @@
       "region": "LA",
       "shows": [
         {
-          "id": "sam-first-2026-11-02-gerald-clayton-tuesday-happeni",
+          "id": "sam-first-2026-11-03-gerald-clayton-tuesday-happeni",
           "artist": "Gerald Clayton Tuesday Happenings Jam Session",
-          "date": "2026-11-02",
+          "date": "2026-11-03",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
           "hot": false
         },
         {
-          "id": "sam-first-2026-11-02-gabrielle-cavassa",
+          "id": "sam-first-2026-11-03-gabrielle-cavassa",
           "artist": "Gabrielle Cavassa",
-          "date": "2026-11-02",
+          "date": "2026-11-03",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
+          "hot": false
+        },
+        {
+          "id": "sam-first-2026-11-03-emiliano-lasansky",
+          "artist": "Emiliano Lasansky",
+          "date": "2026-11-03",
           "time": "7:30 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -499,9 +499,9 @@
       "region": "LA",
       "shows": [
         {
-          "id": "vibrato-2026-11-02-ron-king-big-band-w-paul-brown",
+          "id": "vibrato-2026-11-03-ron-king-big-band-w-paul-brown",
           "artist": "Ron King Big Band w/Paul Brown",
-          "date": "2026-11-02",
+          "date": "2026-11-03",
           "time": "7:00 PM",
           "notes": "",
           "link": "https://www.lajazz.com/",
@@ -721,6 +721,288 @@
           "time": "9:30 PM",
           "notes": "",
           "link": "https://www.vibratogrilljazz.com/music/abba-la-the-live-concert-experience-2",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-01-st-paul-the-minneapolis-funk-a",
+          "artist": "St. Paul & The Minneapolis Funk All Stars With Special Guest Jesse Johnson",
+          "date": "2026-12-01",
+          "time": "4:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/st-paul-the-minneapolis-funk-all-stars-with-special-guest-jesse-johnson",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-02-the-terrell-edwards-holiday-sh",
+          "artist": "The Terrell Edwards Holiday Show",
+          "date": "2026-12-02",
+          "time": "4:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/the-terrell-edwards-holiday-show",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-03-to-be-announced",
+          "artist": "To be announced",
+          "date": "2026-12-03",
+          "time": "4:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/to-be-announced-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-04-closed-private-event",
+          "artist": "Closed - Private Event",
+          "date": "2026-12-04",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/5a8k42mlba2rrtr5tc4atmsfrbg43n-fbba5-hcyl3-99nzw-ra6m7-6hwa7-5ld2c-t7cdp",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-05-george-kahn-jazz-blues-revue-h",
+          "artist": "George Kahn: Jazz & Blues Revue - Holiday Soirée",
+          "date": "2026-12-05",
+          "time": "4:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/george-kahn-jazz-blues-revue-holiday-soire-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-06-swinging-big-band-christmas-wi",
+          "artist": "Swinging Big Band Christmas with Mrs. Claus",
+          "date": "2026-12-06",
+          "time": "4:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/swinging-big-band-christmas-with-mrs-claus",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-06-the-vde-jazz-orchestra-featuri",
+          "artist": "The VDE Jazz Orchestra featuring Lia Booth",
+          "date": "2026-12-06",
+          "time": "7:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/the-vde-jazz-orchestra-featuring-lia-booth",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-08-l-young-featuring-crystal-star",
+          "artist": "L. Young featuring Crystal Starr: Soul for the Holiday",
+          "date": "2026-12-08",
+          "time": "4:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/l-young-featuring-crystal-starr-soul-for-the-holiday",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-09-bee-gees-gold-the-tribute",
+          "artist": "Bee Gees Gold: The Tribute",
+          "date": "2026-12-09",
+          "time": "4:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/bee-gees-gold-the-tribute",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-10-fisher-and-thames",
+          "artist": "Fisher and Thames",
+          "date": "2026-12-10",
+          "time": "4:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/bwncx5pnwbsnga547as8bdaycp7yyg",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-11-niemietz-kesler-shelby-holiday",
+          "artist": "Niemietz Kesler Shelby Holiday Show: Funk, Soul & R&B",
+          "date": "2026-12-11",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/niemietz-kesler-shelby-holiday-show-funk-soul-rb",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-12-closed-private-event",
+          "artist": "Closed - Private Event",
+          "date": "2026-12-12",
+          "time": "8:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/5a8k42mlba2rrtr5tc4atmsfrbg43n-fbba5-hcyl3-99nzw-ra6m7-6hwa7-5ld2c-t7cdp-6z642",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-13-terry-steele-sings-luther-vand",
+          "artist": "Terry Steele Sings Luther Vandross: A Christmas Celebration",
+          "date": "2026-12-13",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/terry-steele-sings-luther-vandross-a-christmas-celebration",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-15-kat-edmonson-have-your-merry-c",
+          "artist": "Kat Edmonson - Have Your Merry Christmas With Me",
+          "date": "2026-12-15",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/kat-edmonson-have-your-merry-christmas-with-me",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-16-dear-amy-an-unforgettable-amy-",
+          "artist": "Dear Amy: An Unforgettable Amy Winehouse Tribute",
+          "date": "2026-12-16",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/dear-amy-an-unforgettable-amy-winehouse-tribute",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-17-jason-spicy-g-goldman-the-17-b",
+          "artist": "Jason ’Spicy G’ Goldman & The 17 Big Band: The Holidays Are Here",
+          "date": "2026-12-17",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/jason-spicy-g-goldman-the-17-big-band-the-holidays-are-here",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-18-a-holiday-affair-with-olivia-k",
+          "artist": "A Holiday Affair with Olivia Kuper Harris & Friends",
+          "date": "2026-12-18",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/a-holiday-affair-with-olivia-kuper-harris-friends",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-19-brenna-whitaker-simply-christm",
+          "artist": "Brenna Whitaker: Simply Christmas",
+          "date": "2026-12-19",
+          "time": "5:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/a-holiday-affair-with-olivia-kuper-harris-friends-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-20-freddie-ravel-power-band-a-win",
+          "artist": "Freddie Ravel Power Band: A Winter SOULstice",
+          "date": "2026-12-20",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/freddie-ravel-power-band-a-winter-soulstice",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-22-gordon-goodwin-s-big-phat-band",
+          "artist": "Gordon Goodwin’s Big Phat Band: CHRISTMAS!",
+          "date": "2026-12-22",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/gordon-goodwins-big-phat-band-christmas",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-23-to-be-announced",
+          "artist": "To be announced",
+          "date": "2026-12-23",
+          "time": "4:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/to-be-announced-1-zklhc",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-24-ellis-hall-s-funky-soul-christ",
+          "artist": "Ellis Hall’s Funky Soul Christmas Eve Bash!",
+          "date": "2026-12-24",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/ellis-halls-funky-soul-christmas-eve-bash-1",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-25-closed",
+          "artist": "Closed",
+          "date": "2026-12-25",
+          "time": "9:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/53kc9byzs6arhzddgn9pj46pktnjpt-hmhxk",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-26-vi-jordan-and-the-collective",
+          "artist": "Vi Jordan and the Collective",
+          "date": "2026-12-26",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/vi-jordan-and-the-collective-2",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-27-greg-adams-and-east-bay-soul",
+          "artist": "Greg Adams and East Bay Soul",
+          "date": "2026-12-27",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/4wzzec3z6s6gc7shcedxlztckdtffn",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-29-paris-chansons",
+          "artist": "Paris Chansons",
+          "date": "2026-12-29",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/3mxg4fjw4dlmty6eexjce39cf7nf6l",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-30-billy-valentine",
+          "artist": "Billy Valentine",
+          "date": "2026-12-30",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/734e7srwjttffwl28enneyeg2r9yyf",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-31-the-summit-a-rat-pack-new-year",
+          "artist": "The Summit: A Rat Pack New Year’s Eve",
+          "date": "2026-12-31",
+          "time": "5:30 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/the-summit-a-rat-pack-new-years-eve",
+          "hot": false
+        },
+        {
+          "id": "vibrato-2026-12-31-the-midnight-summit-a-rat-pack",
+          "artist": "The Midnight Summit: A Rat Pack New Year’s Eve",
+          "date": "2026-12-31",
+          "time": "9:00 PM",
+          "notes": "",
+          "link": "https://www.vibratogrilljazz.com/music/the-midnight-summit-a-rat-pack-new-years-eve",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "id": "world-stage",
+      "name": "The World Stage",
+      "shortName": "World Stage",
+      "neighborhood": "Leimert Park",
+      "url": "https://www.theworldstage.org/",
+      "color": "#D4AC0D",
+      "tier": "dedicated",
+      "region": "LA",
+      "shows": [
+        {
+          "id": "world-stage-2026-11-03-billy-higgins-instrumental-jam",
+          "artist": "Billy Higgins Instrumental Jam Session",
+          "date": "2026-11-03",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lajazz.com/",
           "hot": false
         }
       ]
@@ -1285,6 +1567,15 @@
           "hot": true
         },
         {
+          "id": "lodge-room-2027-03-17-noah-gundersen-rites-of-spring",
+          "artist": "Noah Gundersen – Rites of Spring Tour – Spring 2027",
+          "date": "2027-03-17",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.lodgeroomhlp.com/shows/noah-gundersen-rites-of-spring-tour-spring-2027/",
+          "hot": true
+        },
+        {
           "id": "lodge-room-2027-03-20-tmotv-the-music-of-tom-verlain",
           "artist": "TMOTV – The Music of Tom Verlaine",
           "date": "2027-03-20",
@@ -1355,48 +1646,6 @@
           "notes": "",
           "link": "https://www.lodgeroomhlp.com/shows/henge/",
           "hot": true
-        }
-      ]
-    },
-    {
-      "id": "the-high-low",
-      "name": "The High Low",
-      "shortName": "High Low",
-      "neighborhood": "Atwater Village",
-      "url": "https://www.thehighlow.com/",
-      "color": "#27AE60",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "the-high-low-2026-11-02-steve-lehman-jeff-parker-quart",
-          "artist": "Steve Lehman/Jeff Parker Quartet",
-          "date": "2026-11-02",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": true
-        }
-      ]
-    },
-    {
-      "id": "lighthouse-cafe",
-      "name": "Lighthouse Cafe",
-      "shortName": "Lighthouse",
-      "neighborhood": "Hermosa Beach",
-      "url": "https://www.thelighthousecafe.net/",
-      "color": "#3498DB",
-      "tier": "regular",
-      "region": "LA",
-      "shows": [
-        {
-          "id": "lighthouse-cafe-2026-11-02-lighthouse",
-          "artist": "Lighthouse",
-          "date": "2026-11-02",
-          "time": "8:00 PM",
-          "notes": "",
-          "link": "https://www.lajazz.com/",
-          "hot": false
         }
       ]
     },
@@ -2074,6 +2323,15 @@
           "time": "8:30 PM",
           "notes": "",
           "link": "https://www.campusjax.com/events/event/1228",
+          "hot": false
+        },
+        {
+          "id": "campus-jax-2027-10-15-the-live-pink-floyd-experience",
+          "artist": "The Live Pink Floyd ExperienceShine On",
+          "date": "2027-10-15",
+          "time": "8:00 PM",
+          "notes": "",
+          "link": "https://www.campusjax.com/events/event/1229",
           "hot": false
         }
       ]
