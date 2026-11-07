@@ -1,6 +1,6 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-11-07 05:06 UTC_
+_Generated 2026-11-07 16:05 UTC_
 
 **Status: WARNINGS** ⚠️
 
@@ -18,7 +18,7 @@ _Generated 2026-11-07 05:06 UTC_
 ## Jazz (jazz-venues.json)
 - Last updated: 2026-11-07 (today)
 - 9 venues, 9 with future shows
-- 306 future shows, horizon 364 days
+- 296 future shows, horizon 342 days
 
 ## Restaurants (restaurants.json)
 - Last updated: 2026-11-07 (today)
