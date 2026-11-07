@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T15:38:39.189Z",
-  "lastFullScrape": "2026-11-01T15:38:39.189Z",
+  "lastUpdated": "2026-11-07T05:06:22.994Z",
+  "lastFullScrape": "2026-11-07T05:06:22.994Z",
   "newThisMonth": [
     "lielle",
     "sonmari",
@@ -5327,17 +5327,22 @@
         {
           "name": "Michelin Guide",
           "url": "https://guide.michelin.com/us/en/california/us-los-angeles/restaurant/komal"
+        },
+        {
+          "name": "Resy Hit List",
+          "url": "https://blog.resy.com/the-hit-list/la-restaurants/"
         }
       ],
       "tags": [],
       "pricePp": 15,
       "tier": "street",
-      "sourceCount": 3,
-      "heatScore": 6,
+      "sourceCount": 4,
+      "heatScore": 8,
       "id": "komal",
       "addedDate": "2026-04-04",
       "lat": 34.017311,
-      "lng": -118.278148
+      "lng": -118.278148,
+      "reservationUrl": "https://resy.com/cities/los-angeles-ca/venues/komal?venueId=94141"
     },
     {
       "name": "Amiguita",
