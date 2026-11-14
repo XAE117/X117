@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-14T05:28:56.597Z",
+  "lastUpdated": "2026-11-14T16:22:57.648Z",
   "source": "revivalhouses.com + theater websites + AMC API",
   "theaters": [
     {
@@ -10,33 +10,6 @@
       "url": "https://thenewbev.com/schedule/",
       "color": "#D98A87",
       "screenings": [
-        {
-          "id": "new-beverly-once-upon-a-time-in-hollywood-2026-11-13-11-59-pm",
-          "title": "Once Upon a Time In... Hollywood",
-          "date": "2026-11-13",
-          "time": "11:59 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/5094?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
-        {
-          "id": "new-beverly-snatch-2026-11-13-2-00-pm",
-          "title": "Snatch",
-          "date": "2026-11-13",
-          "time": "2:00 pm",
-          "format": "35mm",
-          "notes": "In 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/5093?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
-        {
-          "id": "new-beverly-the-burning-madman-2026-11-13-6-30-pm-8-30-pm",
-          "title": "The Burning / Madman",
-          "date": "2026-11-13",
-          "time": "6:30 pm / 8:30 pm",
-          "format": "35mm",
-          "notes": "Both in 35mm.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/5095?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
-        },
         {
           "id": "new-beverly-kung-fu-panda-2026-11-14-10-00-am",
           "title": "Kung Fu Panda",
@@ -92,22 +65,13 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/5101?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
-          "id": "new-beverly-onslaught-2026-11-16-7-30-pm",
-          "title": "Onslaught",
+          "id": "new-beverly-onslaught-one-spoon-of-chocolate-2026-11-16-7-30-pm-9-30-pm",
+          "title": "Onslaught / One Spoon of Chocolate",
           "date": "2026-11-16",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/november-16-onslaught-one-spoon-of-chocolate/"
-        },
-        {
-          "id": "new-beverly-one-spoon-of-chocolate-2026-11-16-9-30-pm",
-          "title": "One Spoon of Chocolate",
-          "date": "2026-11-16",
-          "time": "9:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thenewbev.com/program/november-16-onslaught-one-spoon-of-chocolate/"
+          "time": "7:30 pm / 9:30 pm",
+          "format": "35mm",
+          "notes": "Both in 35mm.",
+          "link": "https://ticketing.uswest.veezi.com/purchase/5103?siteToken=fmtswb0qqbym3de6c4bbsqj89m"
         },
         {
           "id": "new-beverly-onslaught-2026-11-17-7-30-pm",
@@ -453,51 +417,6 @@
       "color": "#B89AD4",
       "screenings": [
         {
-          "id": "vista-theatre-lady-terminator-2026-11-13-11-59-pm",
-          "title": "Lady Terminator",
-          "date": "2026-11-13",
-          "time": "11:59 pm",
-          "format": "digital",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4258?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-paper-tiger-35mm-2026-11-13-12-00-pm",
-          "title": "Paper Tiger 35mm",
-          "date": "2026-11-13",
-          "time": "12:00 pm",
-          "format": "35mm",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4266?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-paper-tiger-35mm-2026-11-13-3-30-pm",
-          "title": "Paper Tiger 35mm",
-          "date": "2026-11-13",
-          "time": "3:30 pm",
-          "format": "35mm",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4273?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-paper-tiger-35mm-2026-11-13-7-30-pm",
-          "title": "Paper Tiger 35mm",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "35mm",
-          "notes": "Showing in the main theater.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4274?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
-          "id": "vista-theatre-bullitt-2026-11-13-8-00-pm",
-          "title": "Bullitt",
-          "date": "2026-11-13",
-          "time": "8:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Video Archives microcinema. VHS screening.",
-          "link": "https://ticketing.uswest.veezi.com/purchase/4344?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
-        },
-        {
           "id": "vista-theatre-the-westerner-2026-11-14-10-00-am",
           "title": "The Westerner",
           "date": "2026-11-14",
@@ -588,30 +507,30 @@
           "link": "https://ticketing.uswest.veezi.com/purchase/4286?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-paper-tiger-2026-11-16-12-00-pm",
-          "title": "Paper Tiger",
+          "id": "vista-theatre-paper-tiger-35mm-2026-11-16-12-00-pm",
+          "title": "Paper Tiger 35mm",
           "date": "2026-11-16",
           "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
+          "format": "35mm",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/4267?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-paper-tiger-2026-11-16-3-30-pm",
-          "title": "Paper Tiger",
+          "id": "vista-theatre-paper-tiger-35mm-2026-11-16-3-30-pm",
+          "title": "Paper Tiger 35mm",
           "date": "2026-11-16",
           "time": "3:30 pm",
-          "format": "digital",
-          "notes": "",
+          "format": "35mm",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/4275?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
-          "id": "vista-theatre-paper-tiger-2026-11-16-7-30-pm",
-          "title": "Paper Tiger",
+          "id": "vista-theatre-paper-tiger-35mm-2026-11-16-7-30-pm",
+          "title": "Paper Tiger 35mm",
           "date": "2026-11-16",
           "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
+          "format": "35mm",
+          "notes": "Showing in the main theater.",
           "link": "https://ticketing.uswest.veezi.com/purchase/4276?siteToken=20xhpa3yt2hhkwt4zjvfcwsaww"
         },
         {
@@ -1165,24 +1084,6 @@
       "color": "#C98A8E",
       "screenings": [
         {
-          "id": "academy-museum-some-like-it-hot-in-4k-2026-11-13-2-30-pm",
-          "title": "Some Like It Hot in 4K",
-          "date": "2026-11-13",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater.",
-          "link": "https://www.academymuseum.org/programs/detail/some-like-it-hot-019fcea3-ccaa-c2d2-ff8b-84cf0163a319"
-        },
-        {
-          "id": "academy-museum-black-fire-with-kevin-jerome-everson-and-claudrena-n-harold-2026-11-13-7-30-pm",
-          "title": "Black Fire with Kevin Jerome Everson and Claudrena N. Harold",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "At the Ted Mann Theater. In person: filmmakers Kevin Jerome Everson and Claudrena N. Harold conversation, moderated by filmmaker Cauleen Smith.",
-          "link": "https://www.academymuseum.org/programs/detail/black-fire-019fcea8-1372-4e4b-7da1-c6c524c438f6"
-        },
-        {
           "id": "academy-museum-frankenweenie-in-35mm-2026-11-14-11-00-am",
           "title": "Frankenweenie in 35mm",
           "date": "2026-11-14",
@@ -1226,6 +1127,24 @@
           "format": "35mm",
           "notes": "At the Ted Mann Theater.",
           "link": "https://www.academymuseum.org/programs/detail/germany-year-zero-019fceb0-6341-861a-27b3-b8a22f7f663a"
+        },
+        {
+          "id": "academy-museum-the-misfits-in-4k-2026-11-16-2-30-pm",
+          "title": "The Misfits in 4K",
+          "date": "2026-11-16",
+          "time": "2:30 pm",
+          "format": "digital",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/programs/detail/the-misfits-019fceb1-50e8-5b11-dffc-d44ae7c0f6e1"
+        },
+        {
+          "id": "academy-museum-l-amore-in-35mm-2026-11-16-7-30-pm",
+          "title": "L'amore in 35mm",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "35mm",
+          "notes": "At the Ted Mann Theater.",
+          "link": "https://www.academymuseum.org/programs/detail/lamore-019fceb4-23c7-f820-6cf6-bf395ffa1298"
         }
       ]
     },
@@ -1237,42 +1156,6 @@
       "url": "https://drafthouse.com/los-angeles",
       "color": "#D4C07A",
       "screenings": [
-        {
-          "id": "alamo-dtla-mystery-voyage-2026-11-13-10-00-pm",
-          "title": "Mystery Voyage",
-          "date": "2026-11-13",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "Part of the “AGFADROME” series.",
-          "link": "https://drafthouse.com/los-angeles/event/agfadrome-mystery-voyage-november-2026#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-all-about-my-mother-2026-11-13-10-15-pm",
-          "title": "All About My Mother",
-          "date": "2026-11-13",
-          "time": "10:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/all-about-my-mother#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-all-about-my-mother-2026-11-13-7-00-pm",
-          "title": "All About My Mother",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/all-about-my-mother#js-showtimescomponent"
-        },
-        {
-          "id": "alamo-dtla-all-about-my-mother-2026-11-13-7-20-pm",
-          "title": "All About My Mother",
-          "date": "2026-11-13",
-          "time": "7:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://drafthouse.com/los-angeles/show/all-about-my-mother"
-        },
         {
           "id": "alamo-dtla-volver-2026-11-14-12-00-pm",
           "title": "Volver",
@@ -1362,6 +1245,42 @@
           "format": "digital",
           "notes": "Cast and crew in various cities coast-to-coast!",
           "link": "https://drafthouse.com/los-angeles/event/live-q-a-chunks#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-all-about-my-mother-2026-11-16-1-30-pm",
+          "title": "All About My Mother",
+          "date": "2026-11-16",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/all-about-my-mother#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-volver-2026-11-16-3-40-pm",
+          "title": "Volver",
+          "date": "2026-11-16",
+          "time": "3:40 pm",
+          "format": "digital",
+          "notes": "Part of the “Sad Girl Cinema Club” series.",
+          "link": "https://drafthouse.com/los-angeles/event/sad-girl-cinema-club-volver#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-married-to-the-mob-2026-11-16-7-30-pm",
+          "title": "Married to the Mob",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://drafthouse.com/los-angeles/show/married-to-the-mob#js-showtimescomponent"
+        },
+        {
+          "id": "alamo-dtla-mystery-voyage-2026-11-16-9-50-pm",
+          "title": "Mystery Voyage",
+          "date": "2026-11-16",
+          "time": "9:50 pm",
+          "format": "digital",
+          "notes": "Part of the “AGFADROME” series.",
+          "link": "https://drafthouse.com/los-angeles/event/agfadrome-mystery-voyage-november-2026#js-showtimescomponent"
         }
       ]
     },
@@ -1373,15 +1292,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#D9A878",
       "screenings": [
-        {
-          "id": "egyptian-la-la-land-in-70mm-2026-11-13-7-00-pm",
-          "title": "La La Land in 70mm",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "70mm",
-          "notes": "10th anniversary. Premiere of Newly Struck 70mm print.",
-          "link": "https://www.americancinematheque.com/now-showing/la-la-land-in-70mm-11-13-2026/"
-        },
         {
           "id": "egyptian-la-bola-negra-2026-11-14-10-00-am",
           "title": "La Bola Negra",
@@ -1426,6 +1336,33 @@
           "format": "70mm",
           "notes": "The American Cinematheque’s own pristine 70mm archival print!",
           "link": "https://www.americancinematheque.com/now-showing/lawrence-of-arabia-in-70mm-11-15-2026/"
+        },
+        {
+          "id": "egyptian-poetry-2026-11-16-12-15-pm",
+          "title": "Poetry",
+          "date": "2026-11-16",
+          "time": "12:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2556/seats"
+        },
+        {
+          "id": "egyptian-burning-2026-11-16-3-30-pm",
+          "title": "Burning",
+          "date": "2026-11-16",
+          "time": "3:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2557/seats"
+        },
+        {
+          "id": "egyptian-peppermint-candy-2026-11-16-7-00-pm",
+          "title": "Peppermint Candy",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Includes Q&A.",
+          "link": "https://tickets.egyptiantheatre.com/order/showtimes/1001-2558/seats"
         }
       ]
     },
@@ -1437,24 +1374,6 @@
       "url": "https://www.americancinematheque.com/now-showing/",
       "color": "#7ABFC0",
       "screenings": [
-        {
-          "id": "aero-backrooms-2026-11-13-2-30-pm",
-          "title": "Backrooms",
-          "date": "2026-11-13",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Kane Parsons. Moderated by Jeremy Saulnier.",
-          "link": "https://www.americancinematheque.com/now-showing/backrooms-11-13-2026/"
-        },
-        {
-          "id": "aero-gentle-monster-2026-11-13-7-30-pm",
-          "title": "Gentle Monster",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Q&A with filmmaker Marie Kreutzer and actor Léa Seydoux. Moderated by Katey Rich. Part of the “Léa Seydoux: An American Cinematheque Retrospective” series.",
-          "link": "https://www.americancinematheque.com/now-showing/gentle-monster-11-13-2026/"
-        },
         {
           "id": "aero-possible-love-2026-11-14-1-00-pm",
           "title": "Possible Love",
@@ -1490,6 +1409,15 @@
           "format": "digital",
           "notes": "Pre-screening career conversation with actor Skyler Gisondo.",
           "link": "https://www.americancinematheque.com/now-showing/primetime-licorice-pizza-11-15-2026/"
+        },
+        {
+          "id": "aero-the-debut-2026-11-16-7-30-pm",
+          "title": "The Debut",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Q&A with actor Paul Giamatti. Advance screening.",
+          "link": "https://www.americancinematheque.com/now-showing/the-debut-11-16-2026/"
         }
       ]
     },
@@ -1501,60 +1429,6 @@
       "url": "https://vidiotsfoundation.org/calendar",
       "color": "#D4A0B8",
       "screenings": [
-        {
-          "id": "vidiots-you-had-to-be-there-how-the-toronto-godspell-ignited-the-comedy-revolution-2026-11-13-10",
-          "title": "You Had to Be There: How the Toronto Godspell Ignited the Comedy Revolution...",
-          "date": "2026-11-13",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/4883133/"
-        },
-        {
-          "id": "vidiots-porco-rosso-japanese-with-english-subtitles-2026-11-13-4-15-pm",
-          "title": "Porco Rosso (Japanese with English Subtitles)",
-          "date": "2026-11-13",
-          "time": "4:15 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/4815598/"
-        },
-        {
-          "id": "vidiots-wicker-2026-11-13-4-30-pm",
-          "title": "Wicker",
-          "date": "2026-11-13",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/4883128/"
-        },
-        {
-          "id": "vidiots-blood-simple-2026-11-13-7-00-pm",
-          "title": "Blood Simple",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/4815600/"
-        },
-        {
-          "id": "vidiots-wicker-2026-11-13-7-20-pm",
-          "title": "Wicker",
-          "date": "2026-11-13",
-          "time": "7:20 pm",
-          "format": "digital",
-          "notes": "Showing in the MUBI Microcinema.",
-          "link": "https://vidiotsfoundation.org/purchase/4883129/"
-        },
-        {
-          "id": "vidiots-the-return-of-the-living-dead-2026-11-13-9-45-pm",
-          "title": "The Return of the Living Dead",
-          "date": "2026-11-13",
-          "time": "9:45 pm",
-          "format": "digital",
-          "notes": "Showing in the Eagle.",
-          "link": "https://vidiotsfoundation.org/purchase/4815618/"
-        },
         {
           "id": "vidiots-big-hero-6-2026-11-14-1-00-pm",
           "title": "Big Hero 6",
@@ -1669,8 +1543,17 @@
           "date": "2026-11-16",
           "time": "7:00 pm",
           "format": "digital",
-          "notes": "",
+          "notes": "Showing in the MUBI Microcinema.",
           "link": "https://vidiotsfoundation.org/purchase/4883283/"
+        },
+        {
+          "id": "vidiots-the-devils-on-35mm-2026-11-16-7-30-pm",
+          "title": "The Devils on 35mm",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "35mm",
+          "notes": "",
+          "link": "https://vidiotsfoundation.org/purchase/4908859/"
         },
         {
           "id": "vidiots-wicker-2026-11-18-7-00-pm",
@@ -2439,15 +2322,6 @@
       "color": "#8EBF8E",
       "screenings": [
         {
-          "id": "brain-dead-cybercon-peow-studio-book-launch-exhibition-with-zimmerit-panel-godzilla-final-wars-2",
-          "title": "CYBERCON: Peow Studio Book Launch & Exhibition with Zimmerit Panel + Godzilla: Final Wars",
-          "date": "2026-11-13",
-          "time": "6:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://dice.fm/partner/tickets/event/l8p5yr-cybercon-peow-studio-book-launch-exhibition-w-zimmerit-panel-godzilla-final-wars-13th-nov-brain-dead-studios-los-angeles-tickets"
-        },
-        {
           "id": "brain-dead-cybercon-sosupersam-kyle-ng-live-score-to-interstella-5555-2026-11-14-7-00-pm",
           "title": "Cybercon: Sosupersam & Kyle Ng Live Score to Interstella 5555",
           "date": "2026-11-14",
@@ -2738,15 +2612,6 @@
       "color": "#B4A0D4",
       "screenings": [
         {
-          "id": "laemmle-nuart-dark-city-director-s-cut-2026-11-13-10-30-pm",
-          "title": "Dark City: Director’s Cut",
-          "date": "2026-11-13",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://booking.landmarktheatres.com/launch/ticketing/fc63c3d5-9c92-5ddc-8009-6badffc7e0bf"
-        },
-        {
           "id": "laemmle-nuart-the-rocky-horror-picture-show-2026-11-14-11-00-pm",
           "title": "The Rocky Horror Picture Show",
           "date": "2026-11-14",
@@ -2765,78 +2630,6 @@
       "url": "https://www.laemmle.com",
       "color": "#C8A8D9",
       "screenings": [
-        {
-          "id": "laemmle-noho-the-violinist-2026-11-13-1-00-pm",
-          "title": "The Violinist",
-          "date": "2026-11-13",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146212"
-        },
-        {
-          "id": "laemmle-noho-being-heumann-2026-11-13-1-30-pm",
-          "title": "Being Heumann",
-          "date": "2026-11-13",
-          "time": "1:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146367"
-        },
-        {
-          "id": "laemmle-noho-the-violinist-2026-11-13-10-00-pm",
-          "title": "The Violinist",
-          "date": "2026-11-13",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146382"
-        },
-        {
-          "id": "laemmle-noho-the-violinist-2026-11-13-4-00-pm",
-          "title": "The Violinist",
-          "date": "2026-11-13",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146213"
-        },
-        {
-          "id": "laemmle-noho-2026-first-glance-film-festival-2026-11-13-4-45-pm",
-          "title": "2026 First Glance Film Festival",
-          "date": "2026-11-13",
-          "time": "4:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146359"
-        },
-        {
-          "id": "laemmle-noho-being-heumann-2026-11-13-7-00-pm",
-          "title": "Being Heumann",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146368"
-        },
-        {
-          "id": "laemmle-noho-the-violinist-2026-11-13-7-00-pm",
-          "title": "The Violinist",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146214"
-        },
-        {
-          "id": "laemmle-noho-2026-first-glance-film-festival-2026-11-13-7-30-pm",
-          "title": "2026 First Glance Film Festival",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/41820/146360"
-        },
         {
           "id": "laemmle-noho-the-violinist-2026-11-14-1-00-pm",
           "title": "The Violinist",
@@ -2980,6 +2773,60 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/41820/146366"
+        },
+        {
+          "id": "laemmle-noho-the-violinist-2026-11-16-1-00-pm",
+          "title": "The Violinist",
+          "date": "2026-11-16",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/146221"
+        },
+        {
+          "id": "laemmle-noho-being-heumann-2026-11-16-1-30-pm",
+          "title": "Being Heumann",
+          "date": "2026-11-16",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/146412"
+        },
+        {
+          "id": "laemmle-noho-the-violinist-2026-11-16-4-00-pm",
+          "title": "The Violinist",
+          "date": "2026-11-16",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/146222"
+        },
+        {
+          "id": "laemmle-noho-being-heumann-2026-11-16-7-00-pm",
+          "title": "Being Heumann",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/146413"
+        },
+        {
+          "id": "laemmle-noho-the-violinist-2026-11-16-7-00-pm",
+          "title": "The Violinist",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/41820/146223"
+        },
+        {
+          "id": "laemmle-noho-a-simple-machine-2026-11-16-7-30-pm",
+          "title": "A Simple Machine",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Writer/director Mark Alan Hoffman and star Richard Blackmon will participate in a Q&A.",
+          "link": "https://tickets.laemmle.com/ticketing/41820/146518"
         }
       ]
     },
@@ -2991,42 +2838,6 @@
       "url": "https://www.vintagecinemas.com/losfeliz",
       "color": "#CCA8C8",
       "screenings": [
-        {
-          "id": "los-feliz-3-blue-velvet-2026-11-13-1-00-pm",
-          "title": "Blue Velvet",
-          "date": "2026-11-13",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "40th anniversary.",
-          "link": "https://www.americancinematheque.com/now-showing/blue-velvet-11-13-2026/"
-        },
-        {
-          "id": "los-feliz-3-raise-the-red-lantern-2026-11-13-10-00-pm",
-          "title": "Raise the Red Lantern",
-          "date": "2026-11-13",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "New 4K restoration. 35th anniversary.",
-          "link": "https://www.americancinematheque.com/now-showing/raise-the-red-lantern-11-13-2026/"
-        },
-        {
-          "id": "los-feliz-3-if-i-go-will-they-miss-me-2026-11-13-4-00-pm",
-          "title": "If I Go Will They Miss Me",
-          "date": "2026-11-13",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.americancinematheque.com/now-showing/if-i-go-will-they-miss-me-11-13-2026/"
-        },
-        {
-          "id": "los-feliz-3-ash-and-crayons-2026-11-13-7-00-pm",
-          "title": "Ash and Crayons",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "Virtual Q&A with filmmaker Evgeny Afineevsky. Advance screening.",
-          "link": "https://www.americancinematheque.com/now-showing/ash-and-crayons-11-13-2026/"
-        },
         {
           "id": "los-feliz-3-two-seasons-two-strangers-2026-11-14-12-00-pm",
           "title": "Two Seasons, Two Strangers",
@@ -3051,7 +2862,7 @@
           "date": "2026-11-14",
           "time": "5:30 pm",
           "format": "digital",
-          "notes": "Q&A with filmmaker Ryûsuke Hamaguchi and actors Tao Okamoto and Virginie Efira. Advance screening.",
+          "notes": "Q&A with filmmaker Ryūsuke Hamaguchi and actors Tao Okamoto and Virginie Efira. Advance screening.",
           "link": "https://www.americancinematheque.com/now-showing/all-of-a-sudden-11-14-2026/"
         },
         {
@@ -3098,6 +2909,33 @@
           "format": "digital",
           "notes": "Part of the “Léa Seydoux: An American Cinematheque Retrospective” series.",
           "link": "https://www.americancinematheque.com/now-showing/the-beast-11-15-2026/"
+        },
+        {
+          "id": "los-feliz-3-blue-velvet-2026-11-16-10-15-pm",
+          "title": "Blue Velvet",
+          "date": "2026-11-16",
+          "time": "10:15 pm",
+          "format": "digital",
+          "notes": "40th anniversary.",
+          "link": "https://www.americancinematheque.com/now-showing/blue-velvet-11-16-2026/"
+        },
+        {
+          "id": "los-feliz-3-tenzing-2026-11-16-5-00-pm",
+          "title": "Tenzing",
+          "date": "2026-11-16",
+          "time": "5:00 pm",
+          "format": "digital",
+          "notes": "Q&A with filmmaker Jennifer Peedom.",
+          "link": "https://www.americancinematheque.com/now-showing/tenzing-11-16-2026/"
+        },
+        {
+          "id": "los-feliz-3-cinematic-void-presents-w-r-mysteries-of-the-organism-2026-11-16-8-00-pm",
+          "title": "Cinematic Void Presents W.R.: Mysteries of the Organism",
+          "date": "2026-11-16",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "Part of the “Cinematic Void” series.",
+          "link": "https://www.americancinematheque.com/now-showing/cinematic-void-presents-wr-mysteries-of-the-organism-11-16-2026/"
         }
       ]
     },
@@ -3109,51 +2947,6 @@
       "url": "https://www.laemmle.com",
       "color": "#7AAED4",
       "screenings": [
-        {
-          "id": "laemmle-royal-bitter-christmas-2026-11-13-1-10-pm",
-          "title": "Bitter Christmas",
-          "date": "2026-11-13",
-          "time": "1:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/65572"
-        },
-        {
-          "id": "laemmle-royal-ten-will-2026-11-13-3-10-pm",
-          "title": "Ten Will",
-          "date": "2026-11-13",
-          "time": "3:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/65578"
-        },
-        {
-          "id": "laemmle-royal-bitter-christmas-2026-11-13-4-10-pm",
-          "title": "Bitter Christmas",
-          "date": "2026-11-13",
-          "time": "4:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/65573"
-        },
-        {
-          "id": "laemmle-royal-raise-the-red-lantern-2026-11-13-4-10-pm",
-          "title": "Raise the Red Lantern",
-          "date": "2026-11-13",
-          "time": "4:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/65575"
-        },
-        {
-          "id": "laemmle-royal-bitter-christmas-2026-11-13-7-10-pm",
-          "title": "Bitter Christmas",
-          "date": "2026-11-13",
-          "time": "7:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/90/65574"
-        },
         {
           "id": "laemmle-royal-bitter-christmas-2026-11-14-1-10-pm",
           "title": "Bitter Christmas",
@@ -3243,6 +3036,60 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/90/65600"
+        },
+        {
+          "id": "laemmle-royal-bitter-christmas-2026-11-16-1-10-pm",
+          "title": "Bitter Christmas",
+          "date": "2026-11-16",
+          "time": "1:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/65603"
+        },
+        {
+          "id": "laemmle-royal-ten-will-2026-11-16-3-10-pm",
+          "title": "Ten Will",
+          "date": "2026-11-16",
+          "time": "3:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/65605"
+        },
+        {
+          "id": "laemmle-royal-bitter-christmas-2026-11-16-4-10-pm",
+          "title": "Bitter Christmas",
+          "date": "2026-11-16",
+          "time": "4:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/65607"
+        },
+        {
+          "id": "laemmle-royal-raise-the-red-lantern-2026-11-16-4-10-pm",
+          "title": "Raise the Red Lantern",
+          "date": "2026-11-16",
+          "time": "4:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/65606"
+        },
+        {
+          "id": "laemmle-royal-ask-e-jean-2026-11-16-7-00-pm",
+          "title": "Ask E. Jean",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "Director Ivy Meeropol will participate in a Q&A.",
+          "link": "https://tickets.laemmle.com/ticketing/90/64537"
+        },
+        {
+          "id": "laemmle-royal-bitter-christmas-2026-11-16-7-10-pm",
+          "title": "Bitter Christmas",
+          "date": "2026-11-16",
+          "time": "7:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/90/65610"
         }
       ]
     },
@@ -3254,15 +3101,6 @@
       "url": "https://www.secretmovieclub.com",
       "color": "#B89878",
       "screenings": [
-        {
-          "id": "secret-movie-club-opening-night-premiere-drink-coffee-talk-fast-gilmore-girls-doc-2026-11-13-7-3",
-          "title": "Opening Night Premiere: Drink Coffee, Talk Fast (Gilmore Girls Doc)",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "At the Palace Theatre, 630 S. Broadway, DTLA.",
-          "link": "https://www.secretmovieclub.com/events/705627a8-389e-479a-9778-5d132c1f10ef"
-        },
         {
           "id": "secret-movie-club-shorts-block-1-2026-11-14-12-00-pm",
           "title": "Shorts Block #1",
@@ -3326,7 +3164,17 @@
       "neighborhood": "Hollywood Forever",
       "url": "https://cinespia.org",
       "color": "#8EBFD4",
-      "screenings": []
+      "screenings": [
+        {
+          "id": "cinespia-rocky-2026-11-16-7-30-pm",
+          "title": "Rocky",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "At the Saban Theater, 8440 Wilshire Blvd, Beverly Hills.",
+          "link": "https://www.ticketweb.com/event/rocky-50th-anniversary-cinespia-at-saban-theater-tickets/15053463"
+        }
+      ]
     },
     {
       "id": "2220-arts",
@@ -3353,6 +3201,15 @@
           "format": "digital",
           "notes": "Ryûsuke Hamaguchi in person. Tonight's event will also include an interactive conversation with Hamaguchi featuring clips from his movies in which the director will discuss his unique approach to working with actors.",
           "link": "https://dice.fm/event/qnx25a-rysuke-hamaguchi-presents-opening-night-all-of-a-sudden-15th-nov-2220-arts-archives-los-angeles-tickets"
+        },
+        {
+          "id": "2220-arts-tooth-lifeless-baddie-cannibal-punitive-worm-s-99-cent-2026-11-16-8-00-pm",
+          "title": "Tooth Lifeless’ Baddie Cannibal + Punitive Worm’s 99 Cent",
+          "date": "2026-11-16",
+          "time": "8:00 pm",
+          "format": "digital",
+          "notes": "cast and crew in person.",
+          "link": "https://dice.fm/event/vvp397-tooth-lifeless-baddie-cannibal-punitive-worms-99-cent-16th-nov-2220-arts-archives-los-angeles-tickets"
         }
       ]
     },
@@ -3383,87 +3240,6 @@
       "url": "https://lumieremusichall.com",
       "color": "#D4C890",
       "screenings": [
-        {
-          "id": "lumiere-cinema-ten-will-2026-11-13-3-25-pm",
-          "title": "Ten Will",
-          "date": "2026-11-13",
-          "time": "3:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74422"
-        },
-        {
-          "id": "lumiere-cinema-situations-2026-11-13-3-40-pm",
-          "title": "Situations",
-          "date": "2026-11-13",
-          "time": "3:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74274"
-        },
-        {
-          "id": "lumiere-cinema-if-i-go-will-they-miss-me-2026-11-13-3-50-pm",
-          "title": "If I Go Will They Miss Me",
-          "date": "2026-11-13",
-          "time": "3:50 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74421"
-        },
-        {
-          "id": "lumiere-cinema-laiff-shorts-block-1-2026-11-13-5-30-pm",
-          "title": "LAIFF - Shorts Block 1",
-          "date": "2026-11-13",
-          "time": "5:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74277"
-        },
-        {
-          "id": "lumiere-cinema-trauma-or-monsters-all-2026-11-13-6-00-pm",
-          "title": "Trauma or, Monsters All",
-          "date": "2026-11-13",
-          "time": "6:00 pm",
-          "format": "digital",
-          "notes": "Plus a Q&A with filmmaker Larry Fessenden.",
-          "link": "https://lumieretickets.com/purchase?showId=74275"
-        },
-        {
-          "id": "lumiere-cinema-zi-2026-11-13-6-15-pm",
-          "title": "Zi",
-          "date": "2026-11-13",
-          "time": "6:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74272"
-        },
-        {
-          "id": "lumiere-cinema-laiff-hamilton-house-2026-11-13-7-30-pm",
-          "title": "LAIFF - Hamilton House",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Plus a Q&A.",
-          "link": "https://lumieretickets.com/purchase?showId=74278"
-        },
-        {
-          "id": "lumiere-cinema-beyond-the-ruins-2026-11-13-8-30-pm",
-          "title": "Beyond the Ruins",
-          "date": "2026-11-13",
-          "time": "8:30 pm",
-          "format": "digital",
-          "notes": "Plus a Q&A with Director Brady Skye with MJ Alhabeeb, Jr moderating.",
-          "link": "https://lumieretickets.com/purchase?showId=74271"
-        },
-        {
-          "id": "lumiere-cinema-catch-a-killer-2026-11-13-8-35-pm",
-          "title": "Catch a Killer",
-          "date": "2026-11-13",
-          "time": "8:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74276"
-        },
         {
           "id": "lumiere-cinema-if-i-go-will-they-miss-me-2026-11-14-12-00-pm",
           "title": "If I Go Will They Miss Me",
@@ -3591,51 +3367,6 @@
           "link": "https://lumieretickets.com/purchase?showId=74293"
         },
         {
-          "id": "lumiere-cinema-naza-2026-11-15-12-00-pm",
-          "title": "Naza",
-          "date": "2026-11-15",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74443"
-        },
-        {
-          "id": "lumiere-cinema-the-history-of-concrete-2026-11-15-12-05-pm",
-          "title": "The History of Concrete",
-          "date": "2026-11-15",
-          "time": "12:05 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74446"
-        },
-        {
-          "id": "lumiere-cinema-case-137-2026-11-15-12-10-pm",
-          "title": "Case 137",
-          "date": "2026-11-15",
-          "time": "12:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74447"
-        },
-        {
-          "id": "lumiere-cinema-zi-2026-11-15-2-00-pm",
-          "title": "Zi",
-          "date": "2026-11-15",
-          "time": "2:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74441"
-        },
-        {
-          "id": "lumiere-cinema-ten-will-2026-11-15-2-15-pm",
-          "title": "Ten Will",
-          "date": "2026-11-15",
-          "time": "2:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74445"
-        },
-        {
           "id": "lumiere-cinema-laiff-shorts-block-4-2026-11-15-3-30-pm",
           "title": "LAIFF - Shorts Block 4",
           "date": "2026-11-15",
@@ -3643,24 +3374,6 @@
           "format": "digital",
           "notes": "",
           "link": "https://lumieretickets.com/purchase?showId=74283"
-        },
-        {
-          "id": "lumiere-cinema-trauma-or-monsters-all-2026-11-15-4-05-pm",
-          "title": "Trauma or, Monsters All",
-          "date": "2026-11-15",
-          "time": "4:05 pm",
-          "format": "digital",
-          "notes": "Plus a Q&A with filmmaker Larry Fessenden.",
-          "link": "https://lumieretickets.com/purchase?showId=74439"
-        },
-        {
-          "id": "lumiere-cinema-naza-2026-11-15-4-15-pm",
-          "title": "Naza",
-          "date": "2026-11-15",
-          "time": "4:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74442"
         },
         {
           "id": "lumiere-cinema-laiff-shorts-block-5-2026-11-15-5-30-pm",
@@ -3672,24 +3385,6 @@
           "link": "https://lumieretickets.com/purchase?showId=74284"
         },
         {
-          "id": "lumiere-cinema-zi-2026-11-15-6-15-pm",
-          "title": "Zi",
-          "date": "2026-11-15",
-          "time": "6:15 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74440"
-        },
-        {
-          "id": "lumiere-cinema-situations-2026-11-15-6-40-pm",
-          "title": "Situations",
-          "date": "2026-11-15",
-          "time": "6:40 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74444"
-        },
-        {
           "id": "lumiere-cinema-laiff-save-the-queen-2026-11-15-7-30-pm",
           "title": "LAIFF - Save the Queen",
           "date": "2026-11-15",
@@ -3699,22 +3394,94 @@
           "link": "https://lumieretickets.com/purchase?showId=74282"
         },
         {
-          "id": "lumiere-cinema-beyond-the-ruins-2026-11-15-8-30-pm",
+          "id": "lumiere-cinema-situations-2026-11-16-1-50-pm",
+          "title": "Situations",
+          "date": "2026-11-16",
+          "time": "1:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74453"
+        },
+        {
+          "id": "lumiere-cinema-if-i-go-will-they-miss-me-2026-11-16-1-55-pm",
+          "title": "If I Go Will They Miss Me",
+          "date": "2026-11-16",
+          "time": "1:55 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74459"
+        },
+        {
+          "id": "lumiere-cinema-naza-2026-11-16-2-00-pm",
+          "title": "Naza",
+          "date": "2026-11-16",
+          "time": "2:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74457"
+        },
+        {
+          "id": "lumiere-cinema-chronovisor-2026-11-16-3-55-pm",
+          "title": "Chronovisor",
+          "date": "2026-11-16",
+          "time": "3:55 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74455"
+        },
+        {
+          "id": "lumiere-cinema-the-history-of-concrete-2026-11-16-4-05-pm",
+          "title": "The History of Concrete",
+          "date": "2026-11-16",
+          "time": "4:05 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74456"
+        },
+        {
+          "id": "lumiere-cinema-ten-will-2026-11-16-4-10-pm",
+          "title": "Ten Will",
+          "date": "2026-11-16",
+          "time": "4:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74458"
+        },
+        {
+          "id": "lumiere-cinema-trauma-or-monsters-all-2026-11-16-6-00-pm",
+          "title": "Trauma or, Monsters All",
+          "date": "2026-11-16",
+          "time": "6:00 pm",
+          "format": "digital",
+          "notes": "Plus a Q&A with filmmaker Larry Fessenden.",
+          "link": "https://lumieretickets.com/purchase?showId=74454"
+        },
+        {
+          "id": "lumiere-cinema-zi-2026-11-16-6-15-pm",
+          "title": "Zi",
+          "date": "2026-11-16",
+          "time": "6:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://lumieretickets.com/purchase?showId=74450"
+        },
+        {
+          "id": "lumiere-cinema-beyond-the-ruins-2026-11-16-8-30-pm",
           "title": "Beyond the Ruins",
-          "date": "2026-11-15",
+          "date": "2026-11-16",
           "time": "8:30 pm",
           "format": "digital",
           "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74438"
+          "link": "https://lumieretickets.com/purchase?showId=74449"
         },
         {
-          "id": "lumiere-cinema-catch-a-killer-2026-11-15-9-00-pm",
+          "id": "lumiere-cinema-catch-a-killer-2026-11-16-8-35-pm",
           "title": "Catch a Killer",
-          "date": "2026-11-15",
-          "time": "9:00 pm",
+          "date": "2026-11-16",
+          "time": "8:35 pm",
           "format": "digital",
           "notes": "",
-          "link": "https://lumieretickets.com/purchase?showId=74437"
+          "link": "https://lumieretickets.com/purchase?showId=74448"
         }
       ]
     },
@@ -3726,42 +3493,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8C0D4",
       "screenings": [
-        {
-          "id": "laemmle-town-center-the-dads-2026-11-13-1-00-pm",
-          "title": "The Dads",
-          "date": "2026-11-13",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/78499"
-        },
-        {
-          "id": "laemmle-town-center-the-dads-2026-11-13-3-10-pm",
-          "title": "The Dads",
-          "date": "2026-11-13",
-          "time": "3:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/78500"
-        },
-        {
-          "id": "laemmle-town-center-jimmy-2026-11-13-4-10-pm",
-          "title": "Jimmy",
-          "date": "2026-11-13",
-          "time": "4:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/86/79076"
-        },
-        {
-          "id": "laemmle-town-center-the-dads-2026-11-13-7-30-pm",
-          "title": "The Dads",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "Director Luchina Fisher and producer Stephen Chukumba will participate in Q&As with special guests following the 7:30 pm shows on November 13 and November 14. Producer Stephen Chukumba will also participate in Q&As plus special guests following the 1:00 pm show on November 15, and the 7:30 pm shows on November 16 and November 17.",
-          "link": "https://tickets.laemmle.com/ticketing/86/78502"
-        },
         {
           "id": "laemmle-town-center-piff-block-1-2026-11-14-1-00-pm",
           "title": "PIFF: Block 1",
@@ -3869,6 +3600,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/86/78510"
+        },
+        {
+          "id": "laemmle-town-center-the-dads-2026-11-16-1-00-pm",
+          "title": "The Dads",
+          "date": "2026-11-16",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/78511"
+        },
+        {
+          "id": "laemmle-town-center-the-dads-2026-11-16-3-10-pm",
+          "title": "The Dads",
+          "date": "2026-11-16",
+          "time": "3:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/78512"
+        },
+        {
+          "id": "laemmle-town-center-jimmy-2026-11-16-4-10-pm",
+          "title": "Jimmy",
+          "date": "2026-11-16",
+          "time": "4:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/86/79083"
+        },
+        {
+          "id": "laemmle-town-center-the-dads-2026-11-16-7-30-pm",
+          "title": "The Dads",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "Director Luchina Fisher and producer Stephen Chukumba will participate in Q&As with special guests following the 7:30 pm shows on November 13 and November 14. Producer Stephen Chukumba will also participate in Q&As plus special guests following the 1:00 pm show on November 15, and the 7:30 pm shows on November 16 and November 17.",
+          "link": "https://tickets.laemmle.com/ticketing/86/78514"
         }
       ]
     },
@@ -3880,42 +3647,6 @@
       "url": "https://www.thearttheatre.com",
       "color": "#90C4A8",
       "screenings": [
-        {
-          "id": "art-theatre-possession-2026-11-13-10-30-pm",
-          "title": "Possession",
-          "date": "2026-11-13",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatrelongbeach.org/purchase/61675/"
-        },
-        {
-          "id": "art-theatre-la-bola-negra-2026-11-13-11-45-am",
-          "title": "La Bola Negra",
-          "date": "2026-11-13",
-          "time": "11:45 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatrelongbeach.org/purchase/69354/"
-        },
-        {
-          "id": "art-theatre-la-bola-negra-2026-11-13-3-20-pm",
-          "title": "La Bola Negra",
-          "date": "2026-11-13",
-          "time": "3:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatrelongbeach.org/purchase/69352/"
-        },
-        {
-          "id": "art-theatre-la-bola-negra-2026-11-13-6-55-pm",
-          "title": "La Bola Negra",
-          "date": "2026-11-13",
-          "time": "6:55 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://arttheatrelongbeach.org/purchase/69350/"
-        },
         {
           "id": "art-theatre-do-the-right-thing-2026-11-14-10-30-pm",
           "title": "Do the Right Thing",
@@ -3978,6 +3709,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://arttheatrelongbeach.org/purchase/69374/"
+        },
+        {
+          "id": "art-theatre-la-bola-negra-2026-11-16-1-30-pm",
+          "title": "La Bola Negra",
+          "date": "2026-11-16",
+          "time": "1:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatrelongbeach.org/purchase/69378/"
+        },
+        {
+          "id": "art-theatre-la-bola-negra-2026-11-16-5-05-pm",
+          "title": "La Bola Negra",
+          "date": "2026-11-16",
+          "time": "5:05 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatrelongbeach.org/purchase/69379/"
+        },
+        {
+          "id": "art-theatre-la-bola-negra-2026-11-16-8-35-pm",
+          "title": "La Bola Negra",
+          "date": "2026-11-16",
+          "time": "8:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://arttheatrelongbeach.org/purchase/69380/"
         }
       ]
     },
@@ -3998,33 +3756,6 @@
       "url": "https://elcapitantheatre.com",
       "color": "#D4A0A0",
       "screenings": [
-        {
-          "id": "el-capitan-the-santa-clause-2026-11-13-1-00-pm",
-          "title": "The Santa Clause",
-          "date": "2026-11-13",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-santa-clause"
-        },
-        {
-          "id": "el-capitan-the-santa-clause-2026-11-13-4-00-pm",
-          "title": "The Santa Clause",
-          "date": "2026-11-13",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-santa-clause"
-        },
-        {
-          "id": "el-capitan-the-santa-clause-2026-11-13-7-00-pm",
-          "title": "The Santa Clause",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://elcapitantheatre.com/showings/the-santa-clause"
-        },
         {
           "id": "el-capitan-the-santa-clause-2026-11-14-1-00-pm",
           "title": "The Santa Clause",
@@ -4078,6 +3809,33 @@
           "format": "digital",
           "notes": "",
           "link": "https://elcapitantheatre.com/showings/the-santa-clause"
+        },
+        {
+          "id": "el-capitan-home-alone-2026-11-16-1-00-pm",
+          "title": "Home Alone",
+          "date": "2026-11-16",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/home-alone"
+        },
+        {
+          "id": "el-capitan-home-alone-2026-11-16-4-00-pm",
+          "title": "Home Alone",
+          "date": "2026-11-16",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/home-alone"
+        },
+        {
+          "id": "el-capitan-home-alone-2026-11-16-7-00-pm",
+          "title": "Home Alone",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://elcapitantheatre.com/showings/home-alone"
         }
       ]
     },
@@ -4089,69 +3847,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A0CFB4",
       "screenings": [
-        {
-          "id": "laemmle-glendale-raise-the-red-lantern-2026-11-13-1-00-pm",
-          "title": "Raise the Red Lantern",
-          "date": "2026-11-13",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61872"
-        },
-        {
-          "id": "laemmle-glendale-space-cadet-2026-11-13-10-00-pm",
-          "title": "Space Cadet",
-          "date": "2026-11-13",
-          "time": "10:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61989"
-        },
-        {
-          "id": "laemmle-glendale-closure-2026-11-13-10-10-pm",
-          "title": "Closure",
-          "date": "2026-11-13",
-          "time": "10:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61982"
-        },
-        {
-          "id": "laemmle-glendale-soul-patrol-2026-11-13-12-50-pm",
-          "title": "Soul Patrol",
-          "date": "2026-11-13",
-          "time": "12:50 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61407"
-        },
-        {
-          "id": "laemmle-glendale-closure-2026-11-13-4-20-pm",
-          "title": "Closure",
-          "date": "2026-11-13",
-          "time": "4:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61779"
-        },
-        {
-          "id": "laemmle-glendale-raise-the-red-lantern-2026-11-13-7-10-pm",
-          "title": "Raise the Red Lantern",
-          "date": "2026-11-13",
-          "time": "7:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61873"
-        },
-        {
-          "id": "laemmle-glendale-soul-patrol-2026-11-13-7-30-pm",
-          "title": "Soul Patrol",
-          "date": "2026-11-13",
-          "time": "7:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/325402/61408"
-        },
         {
           "id": "laemmle-glendale-raise-the-red-lantern-2026-11-14-1-00-pm",
           "title": "Raise the Red Lantern",
@@ -4313,6 +4008,51 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/325402/61412"
+        },
+        {
+          "id": "laemmle-glendale-raise-the-red-lantern-2026-11-16-1-00-pm",
+          "title": "Raise the Red Lantern",
+          "date": "2026-11-16",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/61878"
+        },
+        {
+          "id": "laemmle-glendale-soul-patrol-2026-11-16-12-50-pm",
+          "title": "Soul Patrol",
+          "date": "2026-11-16",
+          "time": "12:50 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/61413"
+        },
+        {
+          "id": "laemmle-glendale-closure-2026-11-16-4-20-pm",
+          "title": "Closure",
+          "date": "2026-11-16",
+          "time": "4:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/61782"
+        },
+        {
+          "id": "laemmle-glendale-raise-the-red-lantern-2026-11-16-7-10-pm",
+          "title": "Raise the Red Lantern",
+          "date": "2026-11-16",
+          "time": "7:10 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/61879"
+        },
+        {
+          "id": "laemmle-glendale-soul-patrol-2026-11-16-7-30-pm",
+          "title": "Soul Patrol",
+          "date": "2026-11-16",
+          "time": "7:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/325402/61414"
         }
       ]
     },
@@ -4324,42 +4064,6 @@
       "url": "https://www.laemmle.com",
       "color": "#A8B8D4",
       "screenings": [
-        {
-          "id": "laemmle-monica-the-slightest-touch-2026-11-13-1-00-pm",
-          "title": "The Slightest Touch",
-          "date": "2026-11-13",
-          "time": "1:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/94093"
-        },
-        {
-          "id": "laemmle-monica-the-slightest-touch-2026-11-13-4-00-pm",
-          "title": "The Slightest Touch",
-          "date": "2026-11-13",
-          "time": "4:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/94094"
-        },
-        {
-          "id": "laemmle-monica-everest-the-other-side-2026-11-13-4-30-pm",
-          "title": "Everest: The Other Side",
-          "date": "2026-11-13",
-          "time": "4:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/94591"
-        },
-        {
-          "id": "laemmle-monica-the-slightest-touch-2026-11-13-7-00-pm",
-          "title": "The Slightest Touch",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://tickets.laemmle.com/ticketing/57796/94095"
-        },
         {
           "id": "laemmle-monica-the-slightest-touch-2026-11-14-1-00-pm",
           "title": "The Slightest Touch",
@@ -4431,6 +4135,42 @@
           "format": "digital",
           "notes": "",
           "link": "https://tickets.laemmle.com/ticketing/57796/94101"
+        },
+        {
+          "id": "laemmle-monica-the-slightest-touch-2026-11-16-1-00-pm",
+          "title": "The Slightest Touch",
+          "date": "2026-11-16",
+          "time": "1:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/94102"
+        },
+        {
+          "id": "laemmle-monica-the-slightest-touch-2026-11-16-4-00-pm",
+          "title": "The Slightest Touch",
+          "date": "2026-11-16",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/94103"
+        },
+        {
+          "id": "laemmle-monica-everest-the-other-side-2026-11-16-4-30-pm",
+          "title": "Everest: The Other Side",
+          "date": "2026-11-16",
+          "time": "4:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/94626"
+        },
+        {
+          "id": "laemmle-monica-the-slightest-touch-2026-11-16-7-00-pm",
+          "title": "The Slightest Touch",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://tickets.laemmle.com/ticketing/57796/94104"
         }
       ]
     },
@@ -4442,33 +4182,6 @@
       "url": "https://rooftopcinemaclub.com/los-angeles",
       "color": "#C4D490",
       "screenings": [
-        {
-          "id": "rooftop-cinema-friday-the-13th-1980-2026-11-13-10-30-pm",
-          "title": "Friday the 13th (1980)",
-          "date": "2026-11-13",
-          "time": "10:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/friday-the-13th-1980-25985"
-        },
-        {
-          "id": "rooftop-cinema-the-princess-bride-2026-11-13-5-20-pm",
-          "title": "The Princess Bride",
-          "date": "2026-11-13",
-          "time": "5:20 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/the-princess-bride-25983"
-        },
-        {
-          "id": "rooftop-cinema-how-to-lose-a-guy-in-10-days-2026-11-13-7-45-pm",
-          "title": "How to Lose a Guy in 10 Days",
-          "date": "2026-11-13",
-          "time": "7:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/how-to-lose-a-guy-in-10-days-25984"
-        },
         {
           "id": "rooftop-cinema-pulp-fiction-2026-11-14-10-30-pm",
           "title": "Pulp Fiction",
@@ -4513,6 +4226,15 @@
           "format": "digital",
           "notes": "",
           "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/sinners-25990"
+        },
+        {
+          "id": "rooftop-cinema-michael-2026-11-16-6-30-pm",
+          "title": "Michael",
+          "date": "2026-11-16",
+          "time": "6:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://rooftopcinemaclub.com/us/los-angeles/dtla/screenings/michael-25991"
         }
       ]
     },
@@ -4525,13 +4247,13 @@
       "color": "#B8A0D4",
       "screenings": [
         {
-          "id": "culver-theater-konrad-parker-presents-jason-x-2026-11-13-9-45-pm",
-          "title": "Konrad Parker Presents: Jason X",
-          "date": "2026-11-13",
-          "time": "9:45 pm",
+          "id": "culver-theater-movie-mad-mondays-barry-lyndon-2026-11-16-7-00-pm",
+          "title": "Movie-Mad Mondays: Barry Lyndon",
+          "date": "2026-11-16",
+          "time": "7:00 pm",
           "format": "digital",
-          "notes": "Friday the 13th party in the lobby and meet & greet with Derwin Jordan and Miguel A. Núñez Jr., 8:30–9:30 pm. Film preceded by panel discussion with Jordan, Núñez Jr., Adam Marcus, Lexa Doig, and Todd Farmer.",
-          "link": "https://web.theculvertheater.com/order/showtimes/1001-46984/tickets"
+          "notes": "",
+          "link": "https://web.theculvertheater.com/order/showtimes/1001-46750/seats"
         }
       ]
     },
@@ -4543,96 +4265,6 @@
       "url": "https://www.thefridacinema.org",
       "color": "#D4908A",
       "screenings": [
-        {
-          "id": "frida-cinema-the-only-living-pickpocket-in-new-york-2026-11-13-10-00-am",
-          "title": "The Only Living Pickpocket in New York",
-          "date": "2026-11-13",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2145044/"
-        },
-        {
-          "id": "frida-cinema-queen-at-sea-2026-11-13-10-00-am",
-          "title": "Queen at Sea",
-          "date": "2026-11-13",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2145042/"
-        },
-        {
-          "id": "frida-cinema-friday-the-13th-presented-by-see-it-on-16mm-2026-11-13-10-30-pm",
-          "title": "Friday the 13th: Presented by See It on 16mm",
-          "date": "2026-11-13",
-          "time": "10:30 pm",
-          "format": "16mm",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2166414/"
-        },
-        {
-          "id": "frida-cinema-the-rocky-horror-picture-show-co-presented-by-k-a-o-s-2026-11-13-11-00-pm",
-          "title": "The Rocky Horror Picture Show: Co-Presented by K.A.O.S.",
-          "date": "2026-11-13",
-          "time": "11:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2064027/"
-        },
-        {
-          "id": "frida-cinema-la-bola-negra-2026-11-13-12-00-pm",
-          "title": "La Bola Negra",
-          "date": "2026-11-13",
-          "time": "12:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2069420/"
-        },
-        {
-          "id": "frida-cinema-the-only-living-pickpocket-in-new-york-2026-11-13-12-30-pm",
-          "title": "The Only Living Pickpocket in New York",
-          "date": "2026-11-13",
-          "time": "12:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2145046/"
-        },
-        {
-          "id": "frida-cinema-queen-at-sea-2026-11-13-2-30-pm",
-          "title": "Queen at Sea",
-          "date": "2026-11-13",
-          "time": "2:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2145048/"
-        },
-        {
-          "id": "frida-cinema-la-bola-negra-2026-11-13-3-30-pm",
-          "title": "La Bola Negra",
-          "date": "2026-11-13",
-          "time": "3:30 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2069423/"
-        },
-        {
-          "id": "frida-cinema-la-bola-negra-2026-11-13-7-00-pm",
-          "title": "La Bola Negra",
-          "date": "2026-11-13",
-          "time": "7:00 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2069426/"
-        },
-        {
-          "id": "frida-cinema-the-devils-director-s-cut-2026-11-13-7-45-pm",
-          "title": "The Devils: Director’s Cut",
-          "date": "2026-11-13",
-          "time": "7:45 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://thefridacinema.org/purchase/2068169/"
-        },
         {
           "id": "frida-cinema-the-only-living-pickpocket-in-new-york-2026-11-14-10-00-am",
           "title": "The Only Living Pickpocket in New York",
@@ -4740,6 +4372,51 @@
           "format": "digital",
           "notes": "",
           "link": "https://thefridacinema.org/purchase/1729715/"
+        },
+        {
+          "id": "frida-cinema-the-only-living-pickpocket-in-new-york-2026-11-16-10-00-am",
+          "title": "The Only Living Pickpocket in New York",
+          "date": "2026-11-16",
+          "time": "10:00 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/2145059/"
+        },
+        {
+          "id": "frida-cinema-la-bola-negra-2026-11-16-12-30-pm",
+          "title": "La Bola Negra",
+          "date": "2026-11-16",
+          "time": "12:30 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/2069447/"
+        },
+        {
+          "id": "frida-cinema-la-bola-negra-2026-11-16-4-00-pm",
+          "title": "La Bola Negra",
+          "date": "2026-11-16",
+          "time": "4:00 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/2069449/"
+        },
+        {
+          "id": "frida-cinema-minority-report-2026-11-16-7-45-pm",
+          "title": "Minority Report",
+          "date": "2026-11-16",
+          "time": "7:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1729717/"
+        },
+        {
+          "id": "frida-cinema-saving-face-2026-11-16-8-15-pm",
+          "title": "Saving Face",
+          "date": "2026-11-16",
+          "time": "8:15 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://thefridacinema.org/purchase/1990257/"
         }
       ]
     },
@@ -11774,15 +11451,6 @@
       "color": "#C41230",
       "screenings": [
         {
-          "id": "amc-rolling-hills-the-angry-birds-movie-2026-11-13-5-25-pm",
-          "title": "The Angry Birds Movie",
-          "date": "2026-11-13",
-          "time": "5:25 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-11-13/rollinghills/all/148415265"
-        },
-        {
           "id": "amc-rolling-hills-met-opera-carmen-2026-encore-2026-11-14-1-00-pm",
           "title": "MET Opera: Carmen (2026 Encore)",
           "date": "2026-11-14",
@@ -13302,6 +12970,15 @@
           "format": "digital",
           "notes": "PG13",
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/rollinghills/all/148720733"
+        },
+        {
+          "id": "amc-rolling-hills-the-angry-birds-movie-2026-11-16-3-35-pm",
+          "title": "The Angry Birds Movie",
+          "date": "2026-11-16",
+          "time": "3:35 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/rollinghills/all/148720652"
         },
         {
           "id": "amc-rolling-hills-the-angry-birds-movie-10th-anniversary-2026-11-16-3-35-pm",
@@ -17040,15 +16717,6 @@
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-17/AMCTheAmericanaatBrand18/all/148681520"
         },
         {
-          "id": "amc-americana-ebenezer-2026-11-17-10-00-pm",
-          "title": "Ebenezer",
-          "date": "2026-11-17",
-          "time": "10:00 PM",
-          "format": "digital",
-          "notes": "PG13",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-11-17/AMCTheAmericanaatBrand18/all/148163910"
-        },
-        {
           "id": "amc-americana-you-can-see-everything-2026-11-17-10-00-pm",
           "title": "You Can See Everything",
           "date": "2026-11-17",
@@ -17481,6 +17149,15 @@
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-17/AMCTheAmericanaatBrand18/all/148681499"
         },
         {
+          "id": "amc-americana-wild-horse-nine-2026-11-17-6-30-pm",
+          "title": "Wild Horse Nine",
+          "date": "2026-11-17",
+          "time": "6:30 PM",
+          "format": "digital",
+          "notes": "R",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-11-17/AMCTheAmericanaatBrand18/all/148748678"
+        },
+        {
           "id": "amc-americana-godzilla-minus-zero-2026-11-17-6-40-pm",
           "title": "Godzilla Minus Zero",
           "date": "2026-11-17",
@@ -17587,6 +17264,15 @@
           "format": "digital",
           "notes": "R",
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-17/AMCTheAmericanaatBrand18/all/148163989"
+        },
+        {
+          "id": "amc-americana-ebenezer-2026-11-17-9-30-pm",
+          "title": "Ebenezer",
+          "date": "2026-11-17",
+          "time": "9:30 PM",
+          "format": "digital",
+          "notes": "PG13",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-11-17/AMCTheAmericanaatBrand18/all/148163910"
         },
         {
           "id": "amc-americana-i-play-rocky-2026-11-17-9-30-pm",
@@ -18633,33 +18319,6 @@
       "url": "https://www.amctheatres.com/movie-theatres/los-angeles/universal-cinema-an-amc-theatre",
       "color": "#A8102A",
       "screenings": [
-        {
-          "id": "amc-citywalk-the-angry-birds-movie-2026-11-13-10-00-am",
-          "title": "The Angry Birds Movie",
-          "date": "2026-11-13",
-          "time": "10:00 am",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-11-13/citywalk/all/148078119"
-        },
-        {
-          "id": "amc-citywalk-the-angry-birds-movie-2026-11-13-12-35-pm",
-          "title": "The Angry Birds Movie",
-          "date": "2026-11-13",
-          "time": "12:35 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-11-13/citywalk/all/148078114"
-        },
-        {
-          "id": "amc-citywalk-the-angry-birds-movie-2026-11-13-3-10-pm",
-          "title": "The Angry Birds Movie",
-          "date": "2026-11-13",
-          "time": "3:10 pm",
-          "format": "digital",
-          "notes": "",
-          "link": "https://www.amctheatres.com/showtimes/all/2026-11-13/citywalk/all/148078116"
-        },
         {
           "id": "amc-citywalk-wildwood-2026-11-14-1-10-pm",
           "title": "Wildwood",
@@ -20479,6 +20138,15 @@
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/citywalk/all/148646780"
         },
         {
+          "id": "amc-citywalk-the-angry-birds-movie-2026-11-16-10-05-am",
+          "title": "The Angry Birds Movie",
+          "date": "2026-11-16",
+          "time": "10:05 am",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/citywalk/all/148078140"
+        },
+        {
           "id": "amc-citywalk-the-angry-birds-movie-10th-anniversary-2026-11-16-10-05-am",
           "title": "The Angry Birds Movie: 10th Anniversary",
           "date": "2026-11-16",
@@ -20677,6 +20345,15 @@
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/citywalk/all/148078197"
         },
         {
+          "id": "amc-citywalk-the-angry-birds-movie-2026-11-16-12-45-pm",
+          "title": "The Angry Birds Movie",
+          "date": "2026-11-16",
+          "time": "12:45 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/citywalk/all/148078136"
+        },
+        {
           "id": "amc-citywalk-the-angry-birds-movie-10th-anniversary-2026-11-16-12-45-pm",
           "title": "The Angry Birds Movie: 10th Anniversary",
           "date": "2026-11-16",
@@ -20747,6 +20424,15 @@
           "format": "digital",
           "notes": "R",
           "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/citywalk/all/148646837"
+        },
+        {
+          "id": "amc-citywalk-the-angry-birds-movie-2026-11-16-3-20-pm",
+          "title": "The Angry Birds Movie",
+          "date": "2026-11-16",
+          "time": "3:20 pm",
+          "format": "digital",
+          "notes": "",
+          "link": "https://www.amctheatres.com/showtimes/all/2026-11-16/citywalk/all/148078138"
         },
         {
           "id": "amc-citywalk-the-angry-birds-movie-10th-anniversary-2026-11-16-3-20-pm",
@@ -23129,56 +22815,13 @@
       "overview": "A man trapped in an endless sterile subway passageway sets out to find Exit 8. The rules of his quest are simple: do not overlook anything out of the ordinary. If you discover an anomaly, turn back im",
       "rating": 7
     },
-    "once-upon-a-time-in-hollywood": {
-      "director": "Quentin Tarantino",
-      "year": 2019,
-      "runtime": 162,
-      "posterPath": "/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg",
-      "overview": "Los Angeles, 1969. TV star Rick Dalton, a struggling actor specializing in westerns, and stuntman Cliff Booth, his best friend, try to survive in a constantly changing movie industry. Dalton is the ne",
-      "rating": 7.4,
-      "rottenTomatoes": 85,
-      "letterboxd": 3.8,
-      "reviews": [
-        {
-          "critic": "Manohla Dargis",
-          "publication": "The New York Times",
-          "quote": "A gorgeous fever dream, funny and sharp, and a series of love letters — to Los Angeles, to the movies, to a lost time."
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "The Rewatchables",
-          "episode": "Once Upon a Time in Hollywood"
-        },
-        {
-          "name": "Blank Check",
-          "episode": "Once Upon a Time in Hollywood"
-        }
-      ]
-    },
-    "snatch": {
-      "director": "Guy Ritchie",
-      "year": 2000,
-      "runtime": 103,
-      "posterPath": "/kIBMvdZ3qLUycHLbT6IFs7UtaCq.jpg",
-      "overview": "Unscrupulous boxing promoters, violent bookies, a Russian gangster, incompetent amateur robbers, and supposedly Jewish jewellers fight to track down a priceless stolen diamond.",
-      "rating": 7.8
-    },
-    "the-burning-madman": {
-      "director": "Tony Maylam",
-      "year": 1981,
-      "runtime": 91,
-      "posterPath": "/d8as1GtCAhlc5rirarnUUd85gJA.jpg",
-      "overview": "A caretaker at a summer camp is burned when a prank goes tragically wrong. After several years of intensive treatment at hospital, he is released back into society, albeit missing some social skills. ",
-      "rating": 6.202
-    },
     "kung-fu-panda": {
       "director": "Mark Osborne",
       "year": 2008,
       "runtime": 90,
       "posterPath": "/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg",
       "overview": "Chosen by prophecy but doubted by all, Po is an unlikely choice for the mystical title of the Dragon Warrior—a clumsy panda thrust into the world of kung fu as a deadly enemy threatens the Valley of P",
-      "rating": 7.345
+      "rating": 7.344
     },
     "the-jerk": {
       "director": "Carl Reiner",
@@ -23186,7 +22829,7 @@
       "runtime": 94,
       "posterPath": "/mIjOWtUofyt9Jawge7FbvITjU3D.jpg",
       "overview": "After discovering he's not really black like the rest of his family, likable dimwit Navin Johnson sets off on a hilarious misadventure that takes him from rags to riches and back again. The slaphappy ",
-      "rating": 6.866
+      "rating": 6.9
     },
     "ratatouille": {
       "director": "Brad Bird",
@@ -23195,6 +22838,14 @@
       "posterPath": "/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg",
       "overview": "In one of Paris's finest restaurants, Remy, a determined young rat, dreams of becoming a renowned French chef. Torn between his family's wishes and his true calling, Remy and his pal Linguini set in m",
       "rating": 7.85
+    },
+    "onslaught-one-spoon-of-chocolate": {
+      "director": "Adam Wingard",
+      "year": 2026,
+      "runtime": 92,
+      "posterPath": "/eAs7G3yFaULpfwfVdGvPo5HmFJS.jpg",
+      "overview": "When a rogue squad of genetically engineered super soldiers break loose in the desert, a badass Army sniper must unleash hell to protect her young daughter.",
+      "rating": 5.565
     },
     "onslaught": {
       "director": "Adam Wingard",
@@ -23246,6 +22897,33 @@
         }
       ]
     },
+    "once-upon-a-time-in-hollywood": {
+      "director": "Quentin Tarantino",
+      "year": 2019,
+      "runtime": 162,
+      "posterPath": "/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg",
+      "overview": "Los Angeles, 1969. TV star Rick Dalton, a struggling actor specializing in westerns, and stuntman Cliff Booth, his best friend, try to survive in a constantly changing movie industry. Dalton is the ne",
+      "rating": 7.417,
+      "rottenTomatoes": 85,
+      "letterboxd": 3.8,
+      "reviews": [
+        {
+          "critic": "Manohla Dargis",
+          "publication": "The New York Times",
+          "quote": "A gorgeous fever dream, funny and sharp, and a series of love letters — to Los Angeles, to the movies, to a lost time."
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "The Rewatchables",
+          "episode": "Once Upon a Time in Hollywood"
+        },
+        {
+          "name": "Blank Check",
+          "episode": "Once Upon a Time in Hollywood"
+        }
+      ]
+    },
     "ocean-s-eleven-2001": {
       "director": "Steven Soderbergh",
       "year": 2001,
@@ -23276,7 +22954,7 @@
       "runtime": 87,
       "posterPath": "/bOVr292mwn3jxr1e0NmUPM1rcjo.jpg",
       "overview": "The Fantastic Mr. Fox, bored with his current life, plans a heist against the three local farmers. The farmers, tired of sharing their chickens with the sly fox, seek revenge against him and his famil",
-      "rating": 7.828
+      "rating": 7.829
     },
     "hot-water-silent-with-live-music-score": {
       "director": "Sven Spur",
@@ -23318,22 +22996,6 @@
       "overview": "The monstrous Penguin, who dwells in the sewers beneath Gotham, joins up with corrupt mayoral candidate Max Shreck to topple the Batman once and for all. But when Shreck's timid assistant Selina Kyle ",
       "rating": 6.955
     },
-    "lady-terminator": {
-      "director": "H. Tjut Djalil",
-      "year": 1988,
-      "runtime": 81,
-      "posterPath": "/qKfm8rKAeflvnvdHDmRAi1Yvj5d.jpg",
-      "overview": "The spirit of an ancient evil queen possesses the body of a young anthropological student, who then goes on a murderous rampage.",
-      "rating": 5.2
-    },
-    "bullitt": {
-      "director": "Peter Yates",
-      "year": 1968,
-      "runtime": 113,
-      "posterPath": "/2ffzF1WmeXtH420fSUoCrecFvDA.jpg",
-      "overview": "Senator Walter Chalmers is aiming to take down mob boss Pete Ross with the help of testimony from the criminal's hothead brother Johnny, who is in protective custody in San Francisco under the watch o",
-      "rating": 7.2
-    },
     "the-westerner": {
       "director": "William Wyler",
       "year": 1940,
@@ -23341,6 +23003,14 @@
       "posterPath": "/5DpDg1GYiqAKoCozbunCqPYvRPD.jpg",
       "overview": "Drifter Cole Harden is accused of stealing a horse and faces hanging by self-appointed Judge Roy Bean, but Harden manages to talk his way out of it by claiming to be a friend of stage star Lillie Lang",
       "rating": 7.1
+    },
+    "lady-terminator": {
+      "director": "H. Tjut Djalil",
+      "year": 1988,
+      "runtime": 81,
+      "posterPath": "/qKfm8rKAeflvnvdHDmRAi1Yvj5d.jpg",
+      "overview": "The spirit of an ancient evil queen possesses the body of a young anthropological student, who then goes on a murderous rampage.",
+      "rating": 5.2
     },
     "coffy": {
       "director": "Jack Hill",
@@ -23430,21 +23100,13 @@
       "overview": "In the ruins of post-WWII Berlin, a twelve-year-old boy is left to his own devices in order to help provide for his family.",
       "rating": 7.622
     },
-    "mystery-voyage": {
-      "director": "",
-      "year": 2006,
-      "runtime": null,
-      "posterPath": null,
-      "overview": "",
-      "rating": 0
-    },
-    "all-about-my-mother": {
-      "director": "Pedro Almodóvar",
-      "year": 1999,
-      "runtime": 101,
-      "posterPath": "/hjQhzhkGYXPNM96k0mOgob6HMmn.jpg",
-      "overview": "Following the tragic death of her teenage son, Manuela travels from Madrid to Barcelona in an attempt to contact the long-estranged father the boy never knew. She reunites with an old friend, an outsp",
-      "rating": 7.606
+    "l-amore-in-35mm": {
+      "director": "Rachel Morrison",
+      "year": 2026,
+      "runtime": 109,
+      "posterPath": "/dL3Tcv4FU2K85bgnGRBgLjFSrLr.jpg",
+      "overview": "After a chance encounter sparks a sweeping romance, Maya's future is suddenly upended, sending her on an unexpected journey to love and live again.",
+      "rating": 6.684
     },
     "volver": {
       "director": "Pedro Almodóvar",
@@ -23452,7 +23114,7 @@
       "runtime": 121,
       "posterPath": "/ljRPzuI1xybiFUGU1uCRdx68h0K.jpg",
       "overview": "Three generations of women deal with family secrets while surviving the east wind, fire, insanity, superstition, lies and even death.",
-      "rating": 7.5
+      "rating": 7.454
     },
     "the-searchers": {
       "director": "John Ford",
@@ -23461,6 +23123,14 @@
       "posterPath": "/jLBmgW0epNzJ1N9uzaVCjbyT94v.jpg",
       "overview": "As a Civil War veteran spends years searching for a young niece captured by Indians, his motivation becomes increasingly questionable.",
       "rating": 7.683
+    },
+    "all-about-my-mother": {
+      "director": "Pedro Almodóvar",
+      "year": 1999,
+      "runtime": 101,
+      "posterPath": "/hjQhzhkGYXPNM96k0mOgob6HMmn.jpg",
+      "overview": "Following the tragic death of her teenage son, Manuela travels from Madrid to Barcelona in an attempt to contact the long-estranged father the boy never knew. She reunites with an old friend, an outsp",
+      "rating": 7.606
     },
     "married-to-the-mob": {
       "director": "Jonathan Demme",
@@ -23486,13 +23156,13 @@
       "overview": "An anthology film inspired by late-night public access TV. Featuring six comedy shorts (live-action and animated) threaded together from various creators, hosted by faded Hollywood starlet Ruby.",
       "rating": 2
     },
-    "la-la-land-in-70mm": {
-      "director": "Damien Chazelle",
-      "year": 2016,
-      "runtime": 129,
-      "posterPath": "/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
-      "overview": "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced w",
-      "rating": 7.893
+    "mystery-voyage": {
+      "director": "",
+      "year": 2006,
+      "runtime": null,
+      "posterPath": null,
+      "overview": "",
+      "rating": 0
     },
     "la-bola-negra": {
       "director": "Javier Ambrossi",
@@ -23510,29 +23180,45 @@
       "overview": "Adèle's life is changed when she meets Emma, a young woman with blue hair, who will allow her to discover desire, to assert herself as a woman and as an adult. In front of others, Adele grows, seeks h",
       "rating": 7.076
     },
+    "la-la-land-in-70mm": {
+      "director": "Damien Chazelle",
+      "year": 2016,
+      "runtime": 129,
+      "posterPath": "/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
+      "overview": "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced w",
+      "rating": 7.893
+    },
     "lawrence-of-arabia-in-70mm": {
       "director": "David Lean",
       "year": 1962,
       "runtime": 228,
       "posterPath": "/AiAm0EtDvyGqNpVoieRw4u65vD1.jpg",
       "overview": "During World War I, English officer Thomas Edward 'T.E.' Lawrence sets out to unite and lead the diverse, often warring, Arab tribes to fight the Turks.",
-      "rating": 8.002
+      "rating": 8
     },
-    "backrooms": {
-      "director": "Kane Parsons",
-      "year": 2026,
-      "runtime": 111,
-      "posterPath": "/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
-      "overview": "A strange doorway appears in the basement of a furniture showroom.",
-      "rating": 6.989
+    "poetry": {
+      "director": "Lee Chang-dong",
+      "year": 2010,
+      "runtime": 139,
+      "posterPath": "/5RS3zovYbHdpZqLqyEOr24qWKwf.jpg",
+      "overview": "A South Korean woman in her sixties enrolls in a poetry class as she grapples with her faltering memory and her grandson's appalling wrongdoing.",
+      "rating": 7.578
     },
-    "gentle-monster": {
-      "director": "Marie Kreutzer",
-      "year": 2026,
-      "runtime": 114,
-      "posterPath": "/v7sbP2qv8ezCfo9FOI6DVUXDSaw.jpg",
-      "overview": "After relocating with her family to the countryside, a renowned pianist uncovers a life-shattering truth that forces her to confront the complexities of love, trust, and deception.",
-      "rating": 7.9
+    "burning": {
+      "director": "Lee Chang-dong",
+      "year": 2018,
+      "runtime": 148,
+      "posterPath": "/kXiF80o74fE9gf3Utf9moAI7ar0.jpg",
+      "overview": "Deliveryman Jong-su is out on a job when he runs into Hae-mi, a girl who once lived in his neighborhood. She asks if he'd mind looking after her cat while she's away on a trip to Africa. On her return",
+      "rating": 7.38
+    },
+    "peppermint-candy": {
+      "director": "Lee Chang-dong",
+      "year": 2000,
+      "runtime": 131,
+      "posterPath": "/jPP0gFDgdXRa1YgP8Cn8arzOHI3.jpg",
+      "overview": "In the spring of 1999, a group of old friends gather to celebrate their 20 year reunion. Among the group is Yeong-ho, a cold, unhappy man, whose demeanor puts a damper on the festivities. The seriousn",
+      "rating": 7.497
     },
     "possible-love": {
       "director": "Lee Chang-dong",
@@ -23540,7 +23226,7 @@
       "runtime": 165,
       "posterPath": "/1ERGPNiKtnEcsvJS1ywsmqmcIDO.jpg",
       "overview": "A laid-off worker and his wife cross paths with a documentary filmmaker and her spouse and confront their hidden desires.",
-      "rating": 7.493
+      "rating": 7.403
     },
     "three-billboards-outside-ebbing-missouri-wild-horse-nine-surprise-film": {
       "director": "Martin McDonagh",
@@ -23556,7 +23242,7 @@
       "runtime": 175,
       "posterPath": "/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
       "overview": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enig",
-      "rating": 8.885
+      "rating": 8.868
     },
     "primetime-licorice-pizza": {
       "director": "Lance Oppenheim",
@@ -23564,39 +23250,15 @@
       "runtime": 110,
       "posterPath": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
       "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative",
-      "rating": 6.779
+      "rating": 6.767
     },
-    "you-had-to-be-there-how-the-toronto-godspell-ignited-the-comedy-revolution": {
-      "director": "Nick Davis",
-      "year": 2026,
-      "runtime": 98,
-      "posterPath": "/ww7BKE0TdKYLz0h6Ms8vLpptaiE.jpg",
-      "overview": "Martin Short, Eugene Levy, Gilda Radner, Victor Garber, Paul Shaffer, and other entertainment icons got their start in a 1972 Toronto production of the musical Godspell. Featuring interviews with the ",
-      "rating": 0
-    },
-    "wicker": {
-      "director": "Alex Huston Fischer",
+    "the-debut": {
+      "director": "Jesse Eisenberg",
       "year": 2026,
       "runtime": 105,
-      "posterPath": "/6FcBZOKvyrLCKGCyBG0ySCR4okt.jpg",
-      "overview": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to ",
-      "rating": 7.5
-    },
-    "blood-simple": {
-      "director": "Joel Coen",
-      "year": 1985,
-      "runtime": 97,
-      "posterPath": "/n8D1gVXUgmW4kkDzUzzoezAmUUa.jpg",
-      "overview": "The owner of a seedy small-town Texas bar discovers that one of his employees is having an affair with his wife. A chaotic chain of misunderstandings, lies and mischief ensues after he devises a plot ",
-      "rating": 7.248
-    },
-    "the-return-of-the-living-dead": {
-      "director": "Dan O'Bannon",
-      "year": 1985,
-      "runtime": 91,
-      "posterPath": "/oNsV9BychAe4Sk6xFKp558Rlpyz.jpg",
-      "overview": "Two employees at a medical supply warehouse accidentally release a toxic gas from a misplaced top-secret U.S. Army shipment, causing the dead to rise from a nearby cemetery with an insatiable hunger f",
-      "rating": 7.2
+      "posterPath": "/qk8qWJxM9hZSbSjSoEz0LAzcoPb.jpg",
+      "overview": "When Mona Friedman is cast in a bit part at a small community theater, she transforms from a shy, unassuming housewife into a zealous method actor willing to do anything to protect the artistic integr",
+      "rating": 0
     },
     "big-hero-6": {
       "director": "Chris Williams",
@@ -23605,6 +23267,14 @@
       "posterPath": "/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
       "overview": "A special bond develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
       "rating": 7.723
+    },
+    "wicker": {
+      "director": "Alex Huston Fischer",
+      "year": 2026,
+      "runtime": 105,
+      "posterPath": "/6FcBZOKvyrLCKGCyBG0ySCR4okt.jpg",
+      "overview": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to ",
+      "rating": 7.5
     },
     "on-the-waterfront": {
       "director": "Elia Kazan",
@@ -23621,6 +23291,14 @@
       "posterPath": "/jeFJyzJBufJexpOuywuPp8q2tCJ.jpg",
       "overview": "Andie is an outcast, hanging out either with her older boss, who owns the record store where she works, or her quirky high school classmate Duckie, who has a crush on her. When one of the rich and pop",
       "rating": 6.7
+    },
+    "you-had-to-be-there-how-the-toronto-godspell-ignited-the-comedy-revolution": {
+      "director": "Nick Davis",
+      "year": 2026,
+      "runtime": 98,
+      "posterPath": "/ww7BKE0TdKYLz0h6Ms8vLpptaiE.jpg",
+      "overview": "Martin Short, Eugene Levy, Gilda Radner, Victor Garber, Paul Shaffer, and other entertainment icons got their start in a 1972 Toronto production of the musical Godspell. Featuring interviews with the ",
+      "rating": 0
     },
     "stop-making-sense": {
       "director": "Jonathan Demme",
@@ -23654,6 +23332,14 @@
       "overview": "Josie, Melody and Val are three small-town girl musicians determined to take their rock band out of their garage and straight to the top, while remaining true to their look, style and sound. They get ",
       "rating": 6.736
     },
+    "the-devils-on-35mm": {
+      "director": "Ken Russell",
+      "year": 1971,
+      "runtime": 112,
+      "posterPath": "/y1k7eiOFc6fzm8XeTa1kNGx6JIs.jpg",
+      "overview": "In 1634 France, charismatic Father Urbain Grandier becomes the target of sexually depraved Sister Jeanne's accusations of witchcraft, which corrupt officials of church and state are all too happy to e",
+      "rating": 7.5
+    },
     "the-daytrippers": {
       "director": "Greg Mottola",
       "year": 1997,
@@ -23669,14 +23355,6 @@
       "posterPath": "/gl66K7zRdtNYGrxyS2YDUP5ASZd.jpg",
       "overview": "Lady Bird McPherson, a strong willed, deeply opinionated, artistic 17 year old comes of age in Sacramento. Her relationship with her mother and her upbringing are questioned and tested as she plans to",
       "rating": 7.249
-    },
-    "the-devils-on-35mm": {
-      "director": "Ken Russell",
-      "year": 1971,
-      "runtime": 112,
-      "posterPath": "/y1k7eiOFc6fzm8XeTa1kNGx6JIs.jpg",
-      "overview": "In 1634 France, charismatic Father Urbain Grandier becomes the target of sexually depraved Sister Jeanne's accusations of witchcraft, which corrupt officials of church and state are all too happy to e",
-      "rating": 7.52
     },
     "once-upon-a-time-in-harlem": {
       "director": "David Greaves",
@@ -23748,7 +23426,7 @@
       "runtime": 92,
       "posterPath": "/fwi2cET87xArJCb8MdbWq2BZO3n.jpg",
       "overview": "An irritable marketing executive, Neal Page, is heading home to Chicago for Thanksgiving when a number of delays force him to travel with a well meaning but overbearing shower curtain ring salesman, D",
-      "rating": 7.251
+      "rating": 7.252
     },
     "wildwood": {
       "director": "Travis Knight",
@@ -23756,15 +23434,15 @@
       "runtime": 132,
       "posterPath": "/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
       "overview": "Prue and her classmate Curtis are drawn into a magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to rescue Prue's abducted ba",
-      "rating": 8.471
+      "rating": 8.475
     },
     "singin-in-the-rain": {
-      "director": "Gene Kelly",
+      "director": "Stanley Donen",
       "year": 1952,
       "runtime": 103,
       "posterPath": "/zjrpWniKbzu0zFR5sUI1Ptdfl9y.jpg",
       "overview": "In 1927 Hollywood, a silent film star falls for a chorus girl just as he and his paranoid screen partner struggle to make the difficult transition to talking pictures.",
-      "rating": 8.1,
+      "rating": 8.126,
       "sightAndSound": 10,
       "afi100": 5,
       "rottenTomatoes": 100,
@@ -23804,7 +23482,7 @@
       "rating": 7.4
     },
     "fantasia-on-35mm": {
-      "director": "Bill Roberts",
+      "director": "Samuel Armstrong",
       "year": 1940,
       "runtime": 124,
       "posterPath": "/5m9njnidjR0syG2gpVPVgcEMB2X.jpg",
@@ -23825,7 +23503,7 @@
       "runtime": 113,
       "posterPath": "/d4ie3f6QTvNw40V770Uzo87SDZn.jpg",
       "overview": "An unprecedented series of violent tornadoes is sweeping across Oklahoma. Tornado chasers, headed by Dr. Jo Harding, attempt to release a groundbreaking device that will allow them to track them and c",
-      "rating": 6.58
+      "rating": 6.6
     },
     "oldboy": {
       "director": "Park Chan-wook",
@@ -23889,7 +23567,7 @@
       "runtime": 95,
       "posterPath": "/wpchRGhRhvhtU083PfX2yixXtiw.jpg",
       "overview": "A young Peruvian bear travels to London in search of a home. Finding himself lost and alone at Paddington Station, he meets the kindly Brown family, who offer him a temporary haven.",
-      "rating": 7.126
+      "rating": 7.125
     },
     "portrait-of-jason-on-35mm": {
       "director": "Shirley Clarke",
@@ -23929,7 +23607,7 @@
       "runtime": 120,
       "posterPath": "/uuitWHpJwxD1wruFl2nZHIb4UGN.jpg",
       "overview": "Instead of flying to Florida with his folks, Kevin ends up alone in New York, where he gets a hotel room with his dad's credit card—despite problems from a clerk and meddling bellboy. But when Kevin r",
-      "rating": 6.798
+      "rating": 6.799
     },
     "dolores": {
       "director": "Taylor Hackford",
@@ -23969,7 +23647,7 @@
       "runtime": 117,
       "posterPath": "/djRAvxyvvN2yqlJKDbT3uy4vOBw.jpg",
       "overview": "An African prince decides it’s time for him to find a princess... and his mission leads him and his most loyal friend to Queens, New York. In disguise as an impoverished immigrant, the pampered prince",
-      "rating": 6.9
+      "rating": 6.884
     },
     "stoker": {
       "director": "Park Chan-wook",
@@ -24108,7 +23786,7 @@
       "runtime": 108,
       "posterPath": "/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg",
       "overview": "Joel Barish, heartbroken that his girlfriend underwent a procedure to erase him from her memory, decides to do the same. However, as he watches his memories of her fade away, he realises that he still",
-      "rating": 8.1
+      "rating": 8.091
     },
     "3-women": {
       "director": "Robert Altman",
@@ -24119,7 +23797,7 @@
       "rating": 7.1
     },
     "chicken-run": {
-      "director": "Nick Park",
+      "director": "Peter Lord",
       "year": 2000,
       "runtime": 84,
       "posterPath": "/8XgmIsbpVamdhwcNVsYzohFZTtT.jpg",
@@ -24234,7 +23912,7 @@
       "runtime": 76,
       "posterPath": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
       "overview": "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly Pumpkin King of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and othe",
-      "rating": 7.861
+      "rating": 7.86
     },
     "rear-window": {
       "director": "Alfred Hitchcock",
@@ -24242,7 +23920,7 @@
       "runtime": 113,
       "posterPath": "/ILVF0eJxHMddjxeQhswFtpMtqx.jpg",
       "overview": "A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder.",
-      "rating": 8.331
+      "rating": 8.3
     },
     "the-long-goodbye": {
       "director": "Robert Altman",
@@ -24274,7 +23952,7 @@
     "castration-movie-year-of-the-hyaena": {
       "director": "Louise Weard",
       "year": 2026,
-      "runtime": 300,
+      "runtime": 355,
       "posterPath": "/eK37SoEOj1P2RRSBifoHPueUcuh.jpg",
       "overview": "Michaela tries her best to be a good person.",
       "rating": 0
@@ -24293,7 +23971,7 @@
       "runtime": 100,
       "posterPath": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
       "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters",
-      "rating": 7.44,
+      "rating": 7.441,
       "rottenTomatoes": 80,
       "letterboxd": 3.6,
       "reviews": [
@@ -24328,59 +24006,14 @@
       "runtime": 127,
       "posterPath": "/ouGH1PS0xjDyfTQOhppn7QzJqQZ.jpg",
       "overview": "Scrappy, defiant, and done being treated like a burden, Judy Heumann turns her outrage into a revolution. In 1977, she and more than 100 disability rights protestors send a very loud message: The syst",
-      "rating": 8
+      "rating": 6.95
     },
-    "blue-velvet": {
-      "director": "David Lynch",
-      "year": 1986,
-      "runtime": 120,
-      "posterPath": "/6v1zYh2FKOYVddY5pCQhd4PO9uX.jpg",
-      "overview": "The discovery of a severed human ear found in a field leads a young man on an investigation related to a beautiful, mysterious nightclub singer and a group of psychopathic criminals who have kidnapped",
-      "rating": 7.6,
-      "rottenTomatoes": 94,
-      "letterboxd": 4.1,
-      "sightAndSound": 68,
-      "reviews": [
-        {
-          "critic": "Roger Ebert",
-          "publication": "Chicago Sun-Times",
-          "quote": "Lynch peels back the surface of a typical American town and shows the rot underneath — a dark, fascinating vision."
-        },
-        {
-          "critic": "Pauline Kael",
-          "publication": "The New Yorker",
-          "quote": "The work of a genuine, visionary artist who sees into our shared nightmares."
-        }
-      ],
-      "podcasts": [
-        {
-          "name": "Blank Check",
-          "episode": "Blue Velvet"
-        }
-      ]
-    },
-    "raise-the-red-lantern": {
-      "director": "Zhang Yimou",
-      "year": 1991,
-      "runtime": 125,
-      "posterPath": "/j6MGZpg55cTqlHHwahBtzI2qQg1.jpg",
-      "overview": "In 1920s China, 19-year-old Songlian becomes a concubine of a powerful lord and is forced to compete with his three wives for the privileges gained.",
-      "rating": 8
-    },
-    "if-i-go-will-they-miss-me": {
-      "director": "Walter Thompson-Hernández",
+    "a-simple-machine": {
+      "director": "Mark Alan Hoffman",
       "year": 2026,
-      "runtime": 89,
-      "posterPath": "/v8Bcs5kC5EtKmFMomBv5BAB5SRi.jpg",
-      "overview": "In Watts, California, a 12-year-old boy attempts to connect with his distant father following his incarceration while sensing mysterious visions, from airplanes and Greek gods, that seem to follow him",
-      "rating": 7.75
-    },
-    "ash-and-crayons": {
-      "director": "Evgeny Afineevsky",
-      "year": 2026,
-      "runtime": 98,
-      "posterPath": "/9ay4eosyvRT6HfWKQwHiBRVvxj2.jpg",
-      "overview": "Seven Ukrainian children demonstrate resilience while facing catastrophic injuries and forcible deportations during the ongoing war, their stories told through verité footage and animation by Ukrainia",
+      "runtime": 97,
+      "posterPath": "/xJVvyHF6BbufA1Ov0Byh5N89Mux.jpg",
+      "overview": "In a last-ditch attempt to get out of debt, an indecisive young man makes a series of radically frugal lifestyle choices without telling his girlfriend that he's going off the grid.",
       "rating": 0
     },
     "two-seasons-two-strangers": {
@@ -24448,7 +24081,52 @@
       "runtime": 101,
       "posterPath": "/6sYemVUn79UPKz1ZsSG6kPU4RVy.jpg",
       "overview": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for",
-      "rating": 7.552
+      "rating": 7.574
+    },
+    "blue-velvet": {
+      "director": "David Lynch",
+      "year": 1986,
+      "runtime": 120,
+      "posterPath": "/6v1zYh2FKOYVddY5pCQhd4PO9uX.jpg",
+      "overview": "The discovery of a severed human ear found in a field leads a young man on an investigation related to a beautiful, mysterious nightclub singer and a group of psychopathic criminals who have kidnapped",
+      "rating": 7.6,
+      "rottenTomatoes": 94,
+      "letterboxd": 4.1,
+      "sightAndSound": 68,
+      "reviews": [
+        {
+          "critic": "Roger Ebert",
+          "publication": "Chicago Sun-Times",
+          "quote": "Lynch peels back the surface of a typical American town and shows the rot underneath — a dark, fascinating vision."
+        },
+        {
+          "critic": "Pauline Kael",
+          "publication": "The New Yorker",
+          "quote": "The work of a genuine, visionary artist who sees into our shared nightmares."
+        }
+      ],
+      "podcasts": [
+        {
+          "name": "Blank Check",
+          "episode": "Blue Velvet"
+        }
+      ]
+    },
+    "tenzing": {
+      "director": "Jennifer Peedom",
+      "year": 2026,
+      "runtime": 126,
+      "posterPath": "/eI0QW02PYqhnmIvLRdn9vrfVVP7.jpg",
+      "overview": "A determined man embarks on a high-stakes quest—and defies seemingly impossible odds—to fulfill his dream of being the first to reach the summit of Mount Everest.",
+      "rating": 8.208
+    },
+    "cinematic-void-presents-w-r-mysteries-of-the-organism": {
+      "director": "Dušan Makavejev",
+      "year": 1971,
+      "runtime": 85,
+      "posterPath": "/k0TNEVnIUgMIQrkcBasprdZh5Bz.jpg",
+      "overview": "What does the energy harnessed through orgasm have to do with the state of communist Yugoslavia circa 1971? Only counterculture filmmaker extraordinaire Dušan Makavejev has the answers (or the questio",
+      "rating": 6.2
     },
     "bitter-christmas": {
       "director": "Pedro Almodóvar",
@@ -24466,6 +24144,22 @@
       "overview": "Tennessee Williams aka TEN WILL, a recently released convict, must race against time to register as a sex offender.",
       "rating": 0
     },
+    "raise-the-red-lantern": {
+      "director": "Zhang Yimou",
+      "year": 1991,
+      "runtime": 125,
+      "posterPath": "/j6MGZpg55cTqlHHwahBtzI2qQg1.jpg",
+      "overview": "In 1920s China, 19-year-old Songlian becomes a concubine of a powerful lord and is forced to compete with his three wives for the privileges gained.",
+      "rating": 8.042
+    },
+    "ask-e-jean": {
+      "director": "Ivy Meeropol",
+      "year": 2026,
+      "runtime": 91,
+      "posterPath": "/yFZ40JJcjJM7u5tfZFFb9lrF6Yt.jpg",
+      "overview": "The thrilling story of E. Jean Carroll’s life, from her early days as Miss Cheerleader USA to her rise as a trailblazing journalist, author, and beloved advice columnist. Carroll broke barriers as the",
+      "rating": 8.7
+    },
     "celebrity-caregiver": {
       "director": "Frank Hegyi",
       "year": 2026,
@@ -24480,6 +24174,38 @@
       "runtime": 85,
       "posterPath": "/zDpkgeHZPkQtnFgCQiekbPZaBOH.jpg",
       "overview": "A mockumentary that follows two comedians, one an image-obsessed social climber in Los Angeles and the other a degenerate podcaster in Ohio, as their ironically similar egotism threatens to end their ",
+      "rating": 0
+    },
+    "rocky": {
+      "director": "John G. Avildsen",
+      "year": 1976,
+      "runtime": 119,
+      "posterPath": "/1mcJmdbRLusxhoSGjFI3pbEboXt.jpg",
+      "overview": "Rocky Balboa is a Philadelphia club fighter who seems to be going nowhere. But when a stroke of fate puts him in the ring with a world heavyweight champion, Rocky knows that it's his one shot at the b",
+      "rating": 7.803
+    },
+    "if-i-go-will-they-miss-me": {
+      "director": "Walter Thompson-Hernández",
+      "year": 2026,
+      "runtime": 89,
+      "posterPath": "/v8Bcs5kC5EtKmFMomBv5BAB5SRi.jpg",
+      "overview": "In Watts, California, a 12-year-old boy attempts to connect with his distant father following his incarceration while sensing mysterious visions, from airplanes and Greek gods, that seem to follow him",
+      "rating": 7.75
+    },
+    "naza": {
+      "director": "Yuval Abraham",
+      "year": 2026,
+      "runtime": 77,
+      "posterPath": "/cbxiZ1l21KUATu2KKQQ8J8fJhpe.jpg",
+      "overview": "Filmed at night from Tel Aviv rooftops, this investigative documentary examines the civilian casualties of Israel's military operations in Gaza and the systems behind targeted killings of Palestinians",
+      "rating": 7.958
+    },
+    "zi": {
+      "director": "Kogonada",
+      "year": 2026,
+      "runtime": 99,
+      "posterPath": "/k0MdqAUD3PsdgjDGBNGhP5E0Xct.jpg",
+      "overview": "In Hong Kong, a young woman haunted by visions of her future self meets a stranger who changes the course of her night -- and possibly her life.",
       "rating": 0
     },
     "situations": {
@@ -24498,14 +24224,6 @@
       "overview": "An aspiring author gets more than she bargained for when she writes an article for the local paper about her small town’s dark history, prompting unwanted speculation on what monsters may lie within.",
       "rating": 8
     },
-    "zi": {
-      "director": "Kogonada",
-      "year": 2026,
-      "runtime": 99,
-      "posterPath": "/k0MdqAUD3PsdgjDGBNGhP5E0Xct.jpg",
-      "overview": "In Hong Kong, a young woman haunted by visions of her future self meets a stranger who changes the course of her night -- and possibly her life.",
-      "rating": 0
-    },
     "beyond-the-ruins": {
       "director": "Brady Skye",
       "year": 2024,
@@ -24520,15 +24238,15 @@
       "runtime": 119,
       "posterPath": "/mFp3l4lZg1NSEsyxKrdi0rNK8r1.jpg",
       "overview": "Baltimore. New Year's Eve. A talented but troubled police officer is recruited by the FBI's chief investigator to help profile and track down a mass murderer.",
-      "rating": 6.832
+      "rating": 6.83
     },
-    "naza": {
-      "director": "Yuval Abraham",
+    "chronovisor": {
+      "director": "Kevin Walker",
       "year": 2026,
-      "runtime": 77,
-      "posterPath": "/cbxiZ1l21KUATu2KKQQ8J8fJhpe.jpg",
-      "overview": "Filmed at night from Tel Aviv rooftops, this investigative documentary examines the civilian casualties of Israel's military operations in Gaza and the systems behind targeted killings of Palestinians",
-      "rating": 7.958
+      "runtime": 99,
+      "posterPath": "/AngfVgLk5EngnbuFpISjvFJkYBz.jpg",
+      "overview": "A French academic is seduced into a world of untold histories in her scholarly quest to uncover the mystery of a history-capturing camera-like machine created by clandestine Benedictine monks.",
+      "rating": 8
     },
     "the-history-of-concrete": {
       "director": "John Wilson",
@@ -24537,14 +24255,6 @@
       "posterPath": "/2GWR1g1VdUNnNpLh6XfAQ6LVfyd.jpg",
       "overview": "After attending a workshop on how to write and sell a Hallmark movie, filmmaker John Wilson tries to use the same formula to sell a documentary about concrete.",
       "rating": 7.2
-    },
-    "case-137": {
-      "director": "Dominik Moll",
-      "year": 2025,
-      "runtime": 115,
-      "posterPath": "/4QL4LcsYX8mdNktst0CnyHQDRLg.jpg",
-      "overview": "When Internal Affairs officer Stéphanie investigates a young man severely injured during a chaotic Paris demonstration and finds no police misconduct, the routine case hits close to home upon her disc",
-      "rating": 6.884
     },
     "the-dads": {
       "director": "Logan Edwards",
@@ -24562,14 +24272,6 @@
       "overview": "A look into the life of American actor James Stewart, whose inspiring tale of valor, purpose and faith will win over everyone.",
       "rating": 9.333
     },
-    "possession": {
-      "director": "Andrzej Żuławski",
-      "year": 1981,
-      "runtime": 124,
-      "posterPath": "/A9bnRn05riOKWftvQlLKa2gl51n.jpg",
-      "overview": "A young woman left her family for an unspecified reason. The husband determines to find out the truth and starts following his wife. At first, he suspects that a man is involved. But gradually, he fin",
-      "rating": 7.3
-    },
     "do-the-right-thing": {
       "director": "Spike Lee",
       "year": 1989,
@@ -24584,7 +24286,15 @@
       "runtime": 97,
       "posterPath": "/hvV2rI60qOYELT7tHHLpxtafnBZ.jpg",
       "overview": "On Christmas Eve, divorced dad Scott Calvin and his son discover Santa Claus has fallen off their roof. When Scott takes the reins of the magical sleigh, he finds he is now the new Santa, and must con",
-      "rating": 6.536
+      "rating": 6.538
+    },
+    "home-alone": {
+      "director": "Raja Gosnell",
+      "year": 1997,
+      "runtime": 102,
+      "posterPath": "/6uOadrCfle0n2LOOxHbgWEdnrm2.jpg",
+      "overview": "9-year-old Alex Pruitt is home alone with the chicken pox. Turns out, due to a mix-up among nefarious spies, Alex was given a toy car concealing a top-secret microchip. Now Alex must fend off the spie",
+      "rating": 5.281
     },
     "space-cadet": {
       "director": "Kid Koala",
@@ -24625,30 +24335,6 @@
       "posterPath": "/2m9ts8LfjG8d4xcUtx66aApngJL.jpg",
       "overview": "An intimate portrait of two people bound by love, ambition, and the pursuit of the impossible. Elite ski mountaineers Jim Morrison and Hilaree Nelson fell deeply in love while reaching the pinnacle of",
       "rating": 6.5
-    },
-    "friday-the-13th-1980": {
-      "director": "Sean S. Cunningham",
-      "year": 1980,
-      "runtime": 95,
-      "posterPath": "/uGGpnWHOmWTARVN9wbC1nPxNgps.jpg",
-      "overview": "Camp counselors are stalked and murdered by an unknown assailant while trying to reopen a summer camp that was the site of a child's drowning.",
-      "rating": 6.398
-    },
-    "the-princess-bride": {
-      "director": "Rob Reiner",
-      "year": 1987,
-      "runtime": 99,
-      "posterPath": "/2FC9L9MrjBoGHYjYZjdWQdopVYb.jpg",
-      "overview": "In this enchantingly cracked fairy tale, the beautiful Princess Buttercup and the dashing Westley must overcome staggering odds to find happiness amid six-fingered swordsmen, murderous princes, Sicili",
-      "rating": 7.711
-    },
-    "how-to-lose-a-guy-in-10-days": {
-      "director": "Donald Petrie",
-      "year": 2003,
-      "runtime": 116,
-      "posterPath": "/2dlftyPz7mTYbrsPvTogyFmYd7d.jpg",
-      "overview": "It's the battle of wills, as Andie needs to prove she can dump a guy in 10 days, whereas Ben needs to prove he can win a girl in 10 days. Now, the clock is ticking—and the wildly entertaining comedy s",
-      "rating": 6.872
     },
     "pulp-fiction": {
       "rottenTomatoes": 92,
@@ -24737,7 +24423,7 @@
       "runtime": 138,
       "posterPath": "/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
       "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
-      "rating": 7.518,
+      "rating": 7.5,
       "rottenTomatoes": 93,
       "letterboxd": 4,
       "reviews": [
@@ -24759,6 +24445,14 @@
         }
       ]
     },
+    "michael": {
+      "director": "Antoine Fuqua",
+      "year": 2026,
+      "runtime": 128,
+      "posterPath": "/dueFqKLvjftnELZaGYwY7xinfaI.jpg",
+      "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the",
+      "rating": 8.58
+    },
     "the-only-living-pickpocket-in-new-york": {
       "director": "Noah Segan",
       "year": 2026,
@@ -24766,14 +24460,6 @@
       "posterPath": "/pNdB9va2AEPQe9UfhKAdIt8nus9.jpg",
       "overview": "Harry Lehman is an aging pickpocket who plies his trade with ever-diminishing returns in a drastically changed New York. Wallets stuffed with cash have been replaced by easily cancelled credit cards, ",
       "rating": 7.6
-    },
-    "queen-at-sea": {
-      "director": "Lance Hammer",
-      "year": 2026,
-      "runtime": 121,
-      "posterPath": "/ueYawr1nldKchzyP8Q9KJpn31SK.jpg",
-      "overview": "As advanced dementia erodes an older woman's ability to communicate her inner life, her husband and daughter struggle to act in her best interests, navigating love and the fragile boundaries between c",
-      "rating": 7.2
     },
     "the-devils-director-s-cut": {
       "director": "Rob Zombie",
@@ -24789,7 +24475,7 @@
       "runtime": 108,
       "posterPath": "/mWN6knIVJ2o7eGwSm7mOgSCwNUc.jpg",
       "overview": "Assigned his toughest mission yet, the Cat must cheer up siblings Gabby and Sebastian as they adjust to life in a new town. Known for pushing boundaries, this agent of chaos must prove himself or risk",
-      "rating": 7.109
+      "rating": 7
     },
     "minority-report": {
       "director": "Steven Spielberg",
@@ -24797,7 +24483,7 @@
       "runtime": 145,
       "posterPath": "/qtgFcnwh9dAFLocsDk2ySDVS8UF.jpg",
       "overview": "John Anderton is a top 'Precrime' cop in the late-21st century, when technology can predict crimes before they're committed. But Anderton becomes the quarry when another investigator targets him for a",
-      "rating": 7.356
+      "rating": 7.357
     },
     "satantango": {
       "director": "Béla Tarr",
@@ -24807,13 +24493,21 @@
       "overview": "Inhabitants of a small village in Hungary deal with the effects of the fall of Communism. The town's source of revenue, a factory, has closed, and the locals, who include a doctor and three couples, a",
       "rating": 8.058
     },
+    "saving-face": {
+      "director": "Alice Wu",
+      "year": 2004,
+      "runtime": 97,
+      "posterPath": "/7XbbgkKi4nEMOu9iwiANXpjKKhe.jpg",
+      "overview": "A Chinese-American lesbian and her traditionalist mother are reluctant to go public with secret loves that clash against cultural expectations.",
+      "rating": 7.2
+    },
     "how-to-rob-a-bank": {
       "director": "David Leitch",
       "year": 2026,
       "runtime": 122,
       "posterPath": "/ifYDZkr2qkHFz87TNVvlxajOxl5.jpg",
       "overview": "A crew of social media-savvy bank robbers broadcasts their daring heists, unaware that their growing viral fame has put them in the crosshairs of a veteran FBI agent and a brilliant software engineer.",
-      "rating": 7.091
+      "rating": 6.342
     },
     "ebenezer": {
       "director": "Ti West",
@@ -24821,7 +24515,7 @@
       "runtime": 115,
       "posterPath": "/6H2N59jJW1hZEzn2ZdrMvJw5vNI.jpg",
       "overview": "An elderly miser embarks on a supernatural journey after visits from the ghost of his former business partner and the Spirits of Christmas Past, Present, and Yet to Come force him to confront his past",
-      "rating": 7.919
+      "rating": 7.859
     },
     "wild-horse-nine": {
       "director": "Martin McDonagh",
@@ -24829,7 +24523,7 @@
       "runtime": 117,
       "posterPath": "/dNJFRtVg3xLQ7dbNIQ55cmmIniD.jpg",
       "overview": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter Island by their bureau chief, MJ. Amongst the Island's iconic statues, and as the longtime partner",
-      "rating": 8.064
+      "rating": 8.08
     },
     "clayface": {
       "director": "James Watkins",
@@ -24837,7 +24531,7 @@
       "runtime": 109,
       "posterPath": "/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
       "overview": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothi",
-      "rating": 7.403
+      "rating": 7.389
     },
     "club-kid": {
       "director": "Jordan Firstman",
@@ -24845,7 +24539,7 @@
       "runtime": 122,
       "posterPath": "/o1qMU0ZB5XDX8IXJFFu3AkhOqjh.jpg",
       "overview": "A hard-partying New York City club promoter sees his whirlwind lifestyle upended by the arrival of the 10-year-old son he never knew he had.",
-      "rating": 7.886
+      "rating": 7.9
     },
     "ghost-soldier": {
       "director": "William Eubank",
@@ -24869,7 +24563,7 @@
       "runtime": 128,
       "posterPath": "/xE5tY3lppZUyG7WKKThsuYHuAHr.jpg",
       "overview": "The electrifying true story about an unknown actor with an unshakable belief that he wasn't just meant to write Rocky—he was meant to be Rocky Balboa. Told \"no\" at every turn, Sylvester Stallone bets ",
-      "rating": 8.833
+      "rating": 8.75
     },
     "dive-in-wonderland": {
       "director": "Toshiya Shinohara",
@@ -24883,9 +24577,9 @@
       "director": "Francis Lawrence",
       "year": 2026,
       "runtime": 159,
-      "posterPath": "/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg",
+      "posterPath": "/jNcZH8yplxttRlf0wwqfGGMKHxX.jpg",
       "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-      "rating": 8.5
+      "rating": 9
     },
     "the-hunger-games-sunrise-on-the-reaping": {
       "director": "Francis Lawrence",
@@ -24893,7 +24587,7 @@
       "runtime": 159,
       "posterPath": "/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg",
       "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-      "rating": 8.5
+      "rating": 9
     },
     "minotaur": {
       "director": "Andrei Zvyagintsev",
@@ -24933,15 +24627,7 @@
       "runtime": 201,
       "posterPath": "/vBQ7wks68OhJKlb3RnXSl2yXBXK.jpg",
       "overview": "An ancient epic follows a young prince and princess whose marriage and subsequent exile mark the beginning of a legendary journey. Their story of love, duty and destiny sets the stage for greater chal",
-      "rating": 7.5
-    },
-    "the-angry-birds-movie": {
-      "director": "Clay Kaytis",
-      "year": 2016,
-      "runtime": 97,
-      "posterPath": "/iOH0fEFtV9z9rZp9zmBFGGeWicv.jpg",
-      "overview": "An island populated entirely by happy, flightless birds or almost entirely. In this paradise, Red, a bird with a temper problem, speedy Chuck, and the volatile Bomb have always been outsiders. But whe",
-      "rating": 6.295
+      "rating": 7.6
     },
     "remember": {
       "director": "Allen Coulter",
@@ -24950,6 +24636,14 @@
       "posterPath": "/j7umuMiLCHvWT7wYhFKJOTFSokF.jpg",
       "overview": "Still reeling from a heartbreaking family event and his parents' subsequent divorce, Tyler Hawkins discovers a fresh lease on life when he meets Ally Craig, a gregarious beauty who witnessed her mothe",
       "rating": 7.1
+    },
+    "the-angry-birds-movie": {
+      "director": "Clay Kaytis",
+      "year": 2016,
+      "runtime": 97,
+      "posterPath": "/iOH0fEFtV9z9rZp9zmBFGGeWicv.jpg",
+      "overview": "An island populated entirely by happy, flightless birds or almost entirely. In this paradise, Red, a bird with a temper problem, speedy Chuck, and the volatile Bomb have always been outsiders. But whe",
+      "rating": 6.295
     },
     "god-with-us": {
       "director": "Jimmy Jenkins",
@@ -24989,13 +24683,13 @@
       "runtime": 93,
       "posterPath": "/fGRNCssTRrhYZxNzykGGCoMsAVq.jpg",
       "overview": "Young Bela forms a relationship with a sinister entity in her home that looks uncannily like her own mother, drawing her into a terrifying and increasingly dark world.",
-      "rating": 6.221
+      "rating": 6.3
     },
     "ufc-334-gane-vs-hokit": {
       "director": "",
       "year": 2026,
       "runtime": null,
-      "posterPath": "/q0UOtv57Y1pXNZuqAGGORge3eCg.jpg",
+      "posterPath": "/jHQOPItMB8wUn7otHhXLaCewg9o.jpg",
       "overview": "UFC 334: Gane vs. Hokit (branded as Polymarket UFC 334 for sponsorship reasons) is an upcoming mixed martial arts event produced by the Ultimate Fighting Championship that is scheduled to take place o",
       "rating": 0
     },
@@ -25008,7 +24702,7 @@
       "rating": 7.8
     },
     "mouse": {
-      "director": "Kelly O'Sullivan",
+      "director": "Alex Thompson",
       "year": 2026,
       "runtime": 120,
       "posterPath": "/iKBFfOCdeu21lxxLxWaSAXxkmJ5.jpg",
@@ -25021,14 +24715,14 @@
       "runtime": 120,
       "posterPath": "/dJPT2Uf12X6aFg8i5N67NTpIZ9t.jpg",
       "overview": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and f",
-      "rating": 6.32
+      "rating": 6.319
     },
     "ene-repeat": {
       "director": "Tharun Bhascker",
       "year": 2026,
       "runtime": 167,
       "posterPath": "/qMBlRfQNusaUhhBAIcHmforVTW5.jpg",
-      "overview": "A close-knit group of friends embark on another unforgettable journey, where old memories, new adventures, and unexpected twists test their friendship.",
+      "overview": "Vivek and his gang of friends embark on an attempt to create an ambitious survival film.",
       "rating": 0
     },
     "giant-the-play": {
@@ -25045,7 +24739,119 @@
       "runtime": 94,
       "posterPath": "/gAgWJhUSQWCgtKR8170nMkYlBda.jpg",
       "overview": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
-      "rating": 7.523
+      "rating": 7.5
+    },
+    "snatch": {
+      "director": "Guy Ritchie",
+      "year": 2000,
+      "runtime": 103,
+      "posterPath": "/kIBMvdZ3qLUycHLbT6IFs7UtaCq.jpg",
+      "overview": "Unscrupulous boxing promoters, violent bookies, a Russian gangster, incompetent amateur robbers, and supposedly Jewish jewellers fight to track down a priceless stolen diamond.",
+      "rating": 7.8
+    },
+    "the-burning-madman": {
+      "director": "Tony Maylam",
+      "year": 1981,
+      "runtime": 91,
+      "posterPath": "/d8as1GtCAhlc5rirarnUUd85gJA.jpg",
+      "overview": "A caretaker at a summer camp is burned when a prank goes tragically wrong. After several years of intensive treatment at hospital, he is released back into society, albeit missing some social skills. ",
+      "rating": 6.202
+    },
+    "bullitt": {
+      "director": "Peter Yates",
+      "year": 1968,
+      "runtime": 113,
+      "posterPath": "/2ffzF1WmeXtH420fSUoCrecFvDA.jpg",
+      "overview": "Senator Walter Chalmers is aiming to take down mob boss Pete Ross with the help of testimony from the criminal's hothead brother Johnny, who is in protective custody in San Francisco under the watch o",
+      "rating": 7.2
+    },
+    "backrooms": {
+      "director": "Kane Parsons",
+      "year": 2026,
+      "runtime": 111,
+      "posterPath": "/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+      "overview": "A strange doorway appears in the basement of a furniture showroom.",
+      "rating": 6.989
+    },
+    "gentle-monster": {
+      "director": "Marie Kreutzer",
+      "year": 2026,
+      "runtime": 114,
+      "posterPath": "/v7sbP2qv8ezCfo9FOI6DVUXDSaw.jpg",
+      "overview": "After relocating with her family to the countryside, a renowned pianist uncovers a life-shattering truth that forces her to confront the complexities of love, trust, and deception.",
+      "rating": 7.9
+    },
+    "blood-simple": {
+      "director": "Joel Coen",
+      "year": 1985,
+      "runtime": 97,
+      "posterPath": "/n8D1gVXUgmW4kkDzUzzoezAmUUa.jpg",
+      "overview": "The owner of a seedy small-town Texas bar discovers that one of his employees is having an affair with his wife. A chaotic chain of misunderstandings, lies and mischief ensues after he devises a plot ",
+      "rating": 7.248
+    },
+    "the-return-of-the-living-dead": {
+      "director": "Dan O'Bannon",
+      "year": 1985,
+      "runtime": 91,
+      "posterPath": "/oNsV9BychAe4Sk6xFKp558Rlpyz.jpg",
+      "overview": "Two employees at a medical supply warehouse accidentally release a toxic gas from a misplaced top-secret U.S. Army shipment, causing the dead to rise from a nearby cemetery with an insatiable hunger f",
+      "rating": 7.2
+    },
+    "ash-and-crayons": {
+      "director": "Evgeny Afineevsky",
+      "year": 2026,
+      "runtime": 98,
+      "posterPath": "/9ay4eosyvRT6HfWKQwHiBRVvxj2.jpg",
+      "overview": "Seven Ukrainian children demonstrate resilience while facing catastrophic injuries and forcible deportations during the ongoing war, their stories told through verité footage and animation by Ukrainia",
+      "rating": 0
+    },
+    "case-137": {
+      "director": "Dominik Moll",
+      "year": 2025,
+      "runtime": 115,
+      "posterPath": "/4QL4LcsYX8mdNktst0CnyHQDRLg.jpg",
+      "overview": "When Internal Affairs officer Stéphanie investigates a young man severely injured during a chaotic Paris demonstration and finds no police misconduct, the routine case hits close to home upon her disc",
+      "rating": 6.884
+    },
+    "possession": {
+      "director": "Andrzej Żuławski",
+      "year": 1981,
+      "runtime": 124,
+      "posterPath": "/A9bnRn05riOKWftvQlLKa2gl51n.jpg",
+      "overview": "A young woman left her family for an unspecified reason. The husband determines to find out the truth and starts following his wife. At first, he suspects that a man is involved. But gradually, he fin",
+      "rating": 7.3
+    },
+    "friday-the-13th-1980": {
+      "director": "Sean S. Cunningham",
+      "year": 1980,
+      "runtime": 95,
+      "posterPath": "/uGGpnWHOmWTARVN9wbC1nPxNgps.jpg",
+      "overview": "Camp counselors are stalked and murdered by an unknown assailant while trying to reopen a summer camp that was the site of a child's drowning.",
+      "rating": 6.398
+    },
+    "the-princess-bride": {
+      "director": "Rob Reiner",
+      "year": 1987,
+      "runtime": 99,
+      "posterPath": "/2FC9L9MrjBoGHYjYZjdWQdopVYb.jpg",
+      "overview": "In this enchantingly cracked fairy tale, the beautiful Princess Buttercup and the dashing Westley must overcome staggering odds to find happiness amid six-fingered swordsmen, murderous princes, Sicili",
+      "rating": 7.711
+    },
+    "how-to-lose-a-guy-in-10-days": {
+      "director": "Donald Petrie",
+      "year": 2003,
+      "runtime": 116,
+      "posterPath": "/2dlftyPz7mTYbrsPvTogyFmYd7d.jpg",
+      "overview": "It's the battle of wills, as Andie needs to prove she can dump a guy in 10 days, whereas Ben needs to prove he can win a girl in 10 days. Now, the clock is ticking—and the wildly entertaining comedy s",
+      "rating": 6.872
+    },
+    "queen-at-sea": {
+      "director": "Lance Hammer",
+      "year": 2026,
+      "runtime": 121,
+      "posterPath": "/ueYawr1nldKchzyP8Q9KJpn31SK.jpg",
+      "overview": "As advanced dementia erodes an older woman's ability to communicate her inner life, her husband and daughter struggle to act in her best interests, navigating love and the fragile boundaries between c",
+      "rating": 7.2
     },
     "the-getaway-ib-tech-print-charley-varrick": {
       "director": "Roger Donaldson",
@@ -25174,14 +24980,6 @@
       "posterPath": "/alsb3UC17kxIcytLWvwkmL0STgU.jpg",
       "overview": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
       "rating": 6
-    },
-    "chronovisor": {
-      "director": "Kevin Walker",
-      "year": 2026,
-      "runtime": 99,
-      "posterPath": "/AngfVgLk5EngnbuFpISjvFJkYBz.jpg",
-      "overview": "A French academic is seduced into a world of untold histories in her scholarly quest to uncover the mystery of a history-capturing camera-like machine created by clandestine Benedictine monks.",
-      "rating": 8
     },
     "in-spite-of-ourselves": {
       "director": "Josh Loeb",
@@ -25453,14 +25251,6 @@
       "overview": "A city boy's summer at his grandparents' Godavari village transforms when he befriends a spirited local paper boy. Together they explore rural life through adventures that forge an unforgettable child",
       "rating": 0
     },
-    "rocky": {
-      "director": "John G. Avildsen",
-      "year": 1976,
-      "runtime": 119,
-      "posterPath": "/1mcJmdbRLusxhoSGjFI3pbEboXt.jpg",
-      "overview": "Rocky Balboa is a Philadelphia club fighter who seems to be going nowhere. But when a stroke of fate puts him in the ring with a world heavyweight champion, Rocky knows that it's his one shot at the b",
-      "rating": 7.803
-    },
     "the-burning": {
       "director": "Tony Maylam",
       "year": 1981,
@@ -25508,14 +25298,6 @@
       "posterPath": "/aaajiBpeBVbVwovpSQKaMfKRGKw.jpg",
       "overview": "A young man released from prison visits the widow of the man he killed drunk-driving and becomes infatuated with his cerebral palsy-stricken daughter.",
       "rating": 7.739
-    },
-    "burning": {
-      "director": "Lee Chang-dong",
-      "year": 2018,
-      "runtime": 148,
-      "posterPath": "/kXiF80o74fE9gf3Utf9moAI7ar0.jpg",
-      "overview": "Deliveryman Jong-su is out on a job when he runs into Hae-mi, a girl who once lived in his neighborhood. She asks if he'd mind looking after her cat while she's away on a trip to Africa. On her return",
-      "rating": 7.4
     },
     "paterson": {
       "rottenTomatoes": 96,
@@ -26532,14 +26314,6 @@
       "overview": "Chris, the heir to a powerful empire, discovers true freedom in Celina, a soulful pianist whose music stirs his heart and defies his destiny. They risk everything for love fighting against family, fat",
       "rating": 0
     },
-    "tenzing": {
-      "director": "Jennifer Peedom",
-      "year": 2026,
-      "runtime": 126,
-      "posterPath": "/eI0QW02PYqhnmIvLRdn9vrfVVP7.jpg",
-      "overview": "A determined man embarks on a high-stakes quest—and defies seemingly impossible odds—to fulfill his dream of being the first to reach the summit of Mount Everest.",
-      "rating": 8.249
-    },
     "american-doctor": {
       "director": "Poh Si Teng",
       "year": 2026,
@@ -27531,22 +27305,6 @@
       "posterPath": "/6yrrddjIjx0ElCRZp5pTZeqrj3k.jpg",
       "overview": "Arthur and his two children inherit his uncle's estate: a glass house that serves as a prison to twelve ghosts. When the family, accompanied by a nanny and an attorney, enter the house they find thems",
       "rating": 6.202
-    },
-    "peppermint-candy": {
-      "director": "Lee Chang-dong",
-      "year": 2000,
-      "runtime": 131,
-      "posterPath": "/jPP0gFDgdXRa1YgP8Cn8arzOHI3.jpg",
-      "overview": "In the spring of 1999, a group of old friends gather to celebrate their 20 year reunion. Among the group is Yeong-ho, a cold, unhappy man, whose demeanor puts a damper on the festivities. The seriousn",
-      "rating": 7.5
-    },
-    "poetry": {
-      "director": "Lee Chang-dong",
-      "year": 2010,
-      "runtime": 139,
-      "posterPath": "/5RS3zovYbHdpZqLqyEOr24qWKwf.jpg",
-      "overview": "A South Korean woman in her sixties enrolls in a poetry class as she grapples with her faltering memory and her grandson's appalling wrongdoing.",
-      "rating": 7.6
     },
     "ginger-snaps": {
       "director": "John Fawcett",
@@ -33383,14 +33141,6 @@
       "posterPath": "/wMVPRZGPL9DhyZHtSJvAkzhcp0E.jpg",
       "overview": "Tate Britain is now holding the first major retrospective of Whistler in three decades. This blockbuster exhibition promises to reawaken the world to just how important Whistler is to art history, uni",
       "rating": 0
-    },
-    "michael": {
-      "director": "Antoine Fuqua",
-      "year": 2026,
-      "runtime": 128,
-      "posterPath": "/dueFqKLvjftnELZaGYwY7xinfaI.jpg",
-      "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the",
-      "rating": 8.637
     },
     "the-dog-stars": {
       "director": "Ridley Scott",
@@ -43328,14 +43078,6 @@
       "posterPath": "/i9XqCdF0jrgqveYUaLjOSiRepIq.jpg",
       "overview": "Hassan, a Somali-American airport shuttle driver in Minneapolis, is struggling to make ends meet. When Lloyd, a stranded twenty-something at the airport, offers to pay Hassan to take him overland to C",
       "rating": 5.7
-    },
-    "ask-e-jean": {
-      "director": "Ivy Meeropol",
-      "year": 2026,
-      "runtime": 91,
-      "posterPath": "/yFZ40JJcjJM7u5tfZFFb9lrF6Yt.jpg",
-      "overview": "Chronicles E. Jean Carroll's life, trailblazing work and legal battles.",
-      "rating": 0
     },
     "chum": {
       "director": "Jonathan Zuck",
