@@ -1,27 +1,27 @@
 # SIXPM — Data Health Report
 
-_Generated 2026-11-23 21:54 UTC_
+_Generated 2026-11-24 20:31 UTC_
 
 **Status: WARNINGS** ⚠️
 
 ## Warnings (1)
 
-- **[Cinema (theaters.json)]** 3 theaters with 0 future screenings: Laemmle Nuart Theatre, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
+- **[Cinema (theaters.json)]** 4 theaters with 0 future screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, Landmark Sunset Hollywood
 
 ## Cinema (theaters.json)
-- Last updated: 2026-11-23 (today)
-- 31 theaters tracked, 28 with future screenings
-- 2750 future screenings, horizon 38 days
-- ⚠️ 3 theaters with 0 screenings: Laemmle Nuart Theatre, Fine Arts Theatre Beverly Hills, Landmark Sunset Hollywood
-- 5 unavailable or occasional venues monitored outside the active catalog
+- Last updated: 2026-11-24 (today)
+- 29 theaters tracked, 25 with future screenings
+- 3173 future screenings, horizon 37 days
+- ⚠️ 4 theaters with 0 screenings: Academy Museum, Laemmle Nuart Theatre, Cinespia, Landmark Sunset Hollywood
+- 7 unavailable or occasional venues monitored outside the active catalog
 
 ## Jazz (jazz-venues.json)
-- Last updated: 2026-11-23 (today)
-- 10 venues, 10 with future shows
-- 286 future shows, horizon 355 days
+- Last updated: 2026-11-24 (today)
+- 9 venues, 9 with future shows
+- 286 future shows, horizon 354 days
 
 ## Restaurants (restaurants.json)
-- Last updated: 2026-11-22 (yesterday)
+- Last updated: 2026-11-22 (2 days ago)
 - 234 restaurants tracked
 - Planning coverage: 219/234 coordinates, 21/234 hours, 61/234 descriptions
 - Lineup-ready: 21 restaurants across 16 neighborhoods; at least 10 open at 6 PM on each of the next 7 days
